@@ -1,0 +1,1218 @@
+###########################################
+#                                         #
+# New Immersive Events v. 0.01a           #
+# Rulership Events: Part 1                #
+# ID NIE.100-NIE.108			  		  #
+# Written and designed by wielkicien      #
+# Bugfixed and edited by Erbkaiser		  #
+#                                         #
+###########################################
+
+namespace = NIE
+
+### The Thief
+
+# Thief caught in the castle
+narrative_event = {
+	id = NIE.100
+	title = "EVTNAMENIE.100"
+	desc = EVTDESC_NIE_100
+	picture = GFX_evt_catching_heretic
+	border = GFX_event_narrative_frame_economy
+	
+	min_age = 16
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	trigger = {
+		ai = no
+		war = no
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_thief }
+		NOT = { has_character_modifier = sister_was }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		ROOT = { set_character_flag = NIE_thief }
+		hidden_tooltip = {
+			create_character = { #Father
+				random_traits = yes
+				dynasty = NONE
+				female = no
+				age = 50
+				culture = ROOT
+				religion = ROOT
+			}
+			new_character = {
+				death = yes
+				save_event_target_as = thief_father
+			}
+			create_character = { #Sister
+				genetic_father = event_target:thief_father
+				dynasty = none
+				religion = event_target:thief_father
+				culture = event_target:thief_father
+				female = yes
+				random_traits = yes
+				age = 17	
+				health = 6 #So that she won't die in dungeon...			
+			}
+			new_character = {
+				add_trait = thief_sister_trait
+				set_father = event_target:thief_father
+				banish = yes
+			}
+			create_character = { #Thief
+				genetic_father = event_target:thief_father
+				religion = event_target:thief_father
+				culture = event_target:thief_father
+				dynasty = none
+				age = 25
+				random_traits = yes
+				female = no
+				attributes = {	
+					diplomacy = 1
+					stewardship = 2
+					learning = 0
+					intrigue = 8
+					martial = 2
+				}
+				health = 6 #So that he won't die in dungeon...
+			}
+			new_character = {
+				add_trait = thief_trait
+				add_trait = deceitful
+				set_father = event_target:thief_father
+				save_event_target_as = thief_event_target
+				banish = yes
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_NIE_100
+		custom_tooltip = { text = thief_executed }
+		tooltip_info =  wroth
+		trigger =  {
+			OR = {
+				trait = wroth
+			   	trait = cruel
+			   	trait = impaler
+			}
+			NOR = {
+				trait = kind
+				trait = charitable
+			}
+		}
+		piety = -20
+		hidden_tooltip = {
+			character_event = { id = NIE.102 days = 2 }
+		}
+		random_list = {	
+			45 = { add_trait = cruel }
+			25 = { add_trait = impaler }
+			10 = { add_trait = just }
+			20 = {}
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = kind }
+				remove_trait = kind
+			}
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = charitable }
+				remove_trait = charitable
+			}
+		}
+		event_target:thief_event_target = {
+			death = {
+				death_reason = death_execution	
+				killer = ROOT
+			}
+		}
+		capital_scope = {
+			add_province_modifier = {
+				name = peasants_angry_01
+				duration = 365 
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_100
+		custom_tooltip = { text = thief_imprisoned }
+		prestige = 20
+		hidden_tooltip = {
+			event_target:thief_event_target = {
+				imprison = ROOT
+				opinion = {
+					modifier = opinion_imprisoned
+					who = ROOT
+				}
+				random = {
+					chance = 15
+					add_rival = ROOT
+				}
+				diplomatic_immunity = yes # Hopefully prevents player from messing up the chain
+			}
+			character_event = { id = NIE.101 days = 30 }
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = kind }
+				remove_trait = kind
+			}
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = charitable }
+				remove_trait = charitable
+			}
+		}
+		random_list = {	
+				25 = { add_trait = cruel }
+				5 =	{ add_trait = just }
+				70 = {}
+		}
+			
+	}
+	option = {
+		name = EVTOPTC_NIE_100
+		custom_tooltip = { text = thief_fingerless }
+		hidden_tooltip = {
+			character_event = { id = NIE.132 }
+		}
+		random = {
+			chance = 15
+			if = {
+				limit = { trait = kind }
+				remove_trait = kind
+			}
+		}
+		random = {
+			chance = 15
+			if = {
+				limit = { trait = charitable }
+				remove_trait = charitable
+			}
+		}
+		random_list = {	
+				45 = { add_trait = just }
+				15 = { add_trait = cruel }
+				40 = {}
+		}
+	}
+	option = {
+		name = EVTOPTD_NIE_100
+		custom_tooltip = { text = thief_released1 }
+		trigger = {
+			NOR = {
+				trait = cruel
+				trait = impaler
+				trait = wroth
+			}
+		}
+		hidden_tooltip = {
+			random = {
+				chance = 100
+				random_list = {
+					50 = {
+						character_event = { id = NIE.117 days = 75 random = 120 } 
+					}
+					50 = {
+						character_event = { id = NIE.125 days = 75 random = 120 }
+					}
+				}
+			}
+		}
+		event_target:thief_event_target = {
+			if = {
+				limit = { prisoner = yes }
+				prisoner = no
+				banish = yes
+			}
+		}
+		random_list = {	
+			45 = { add_trait = arbitrary }
+			30 = { add_trait = kind }
+			15 = { add_trait = charitable }
+			10 = {}
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = just }
+				remove_trait = just
+			}
+		}
+		any_realm_character = {
+			limit = {
+				is_adult = yes
+				NOT = { character = ROOT }
+				NOT = { trait = cynical }
+				NOT = { trait = arbitrary }
+			}
+			opinion = {
+				modifier = opinion_dislike
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+}
+###
+# Sister begs for thief's release
+character_event = {
+	id = NIE.101
+	title = "EVTNAMENIE.101"
+	desc = EVTDESC_NIE_101
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	
+	immediate = {
+		random_courtier = {
+			limit = {
+				trait = thief_trait
+			}
+			save_event_target_as = thief_event_target
+		}
+		event_target:thief_event_target = {
+			any_sibling = {
+				limit = {
+					trait = thief_sister_trait
+				}
+				save_event_target_as = thief_sister_target
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_NIE_101
+		custom_tooltip = { text = thief_released2 }
+		event_target:thief_sister_target = {
+			tooltip = { show_portrait = yes }
+		}
+		trigger = {
+			event_target:thief_event_target = {
+				prisoner = yes
+			}
+		}
+		hidden_tooltip = {
+			add_character_modifier = {
+				modifier = sister_was
+				duration = 100000
+			}
+			random_list = {
+				50 = {
+					character_event = { id = NIE.117 days = 100 random = 200 } 
+				}
+				50 = {
+					character_event = { id = NIE.125 days = 100 random = 200 }
+				}
+			}
+		}
+		piety = 20
+		prestige = -20
+		add_trait = kind
+		any_realm_character = {
+			limit = {
+				is_adult = yes
+				NOT = { character = ROOT }
+				NOT = { trait = cynical }
+				NOT = { trait = arbitrary }
+			}
+			opinion = {
+				modifier = opinion_dislike
+				who = ROOT
+				years = 1
+			}
+		}
+		event_target:thief_event_target = {
+			if = {
+				limit = { prisoner = yes }
+				prisoner = no
+				banish = yes
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_101
+		custom_tooltip = { text = thief_not_released }
+		trigger = {
+			event_target:thief_event_target = {
+				prisoner = yes
+			}
+		}
+		hidden_tooltip = { 
+			add_character_modifier = {
+				modifier = sister_was
+				duration = 100000
+			}
+			character_event = { id = NIE.106 days = 25 }
+			event_target:thief_sister_target = {
+				random = {
+					chance = 15
+					add_rival = ROOT
+				}
+			}	
+		}
+		random = {
+			chance = 15
+			if = {
+				limit = { trait = kind }
+				remove_trait = kind
+			}
+		}
+		random = {
+			chance = 15
+			if = {
+				limit = { trait = charitable }
+				remove_trait = charitable
+			}
+		}
+		random_list = {	
+				25 = { add_trait = just }
+				15 = { add_trait = cruel }
+				60 = {}
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_101
+		custom_tooltip = { text = sister_in_dungeon }
+		hidden_tooltip = {
+			add_character_modifier = {
+				modifier = sister_was
+				duration = 100000
+			}
+			character_event = { id = NIE.103 days = 60 }
+			event_target:thief_sister_target = {
+				imprison = ROOT
+				opinion = {
+					modifier = opinion_imprisoned
+					who = ROOT
+				}
+				random = {
+					chance = 15
+					add_rival = ROOT
+				}
+				diplomatic_immunity = yes # Hopefully prevents player from messing up the chain
+			}
+		}
+		tooltip_info =  wroth			    
+		trigger =  {
+			OR = {
+				trait = wroth
+				trait = cruel
+				trait = impaler 
+			}
+			event_target:thief_event_target = {
+				prisoner = yes
+			}
+		}
+		if = {
+			limit = { trait = kind }
+			remove_trait = kind
+		}
+		if = {
+			limit = { trait = charitable }
+			remove_trait = charitable
+		}
+		random = {
+			chance = 65
+			if = {
+				limit = { trait = just }
+				remove_trait = just
+			}
+		}
+		random_list = {	
+			45 = { add_trait = cruel }
+			25 = { add_trait = wroth }
+			30 = {}
+		}
+		capital_scope = {
+			add_province_modifier = {
+				name = peasants_angry_02
+				duration = 365 
+			}
+		}
+	}
+	option = {
+		name = EVTOPTD_NIE_101
+		custom_tooltip = { text = sister_lover }
+		hidden_tooltip = {
+			character_event = { id = NIE.130 days = 1 }
+			event_target:thief_event_target = {
+				remove_trait = thief_trait
+				diplomatic_immunity = no
+			}
+			event_target:thief_sister_target = {
+				if = {
+					limit = { same_sex = ROOT }
+					add_trait = homosexual
+				}
+				character_event = { id = WoL.98 }
+				random = {
+					chance = 60
+					add_trait = lustful
+				}
+				#random = {
+				#	chance = 25
+				#	character_event = { id = 6359 days = 15 random = 5 } #Gives lover's pox
+				#}
+			}
+		}
+		tooltip_info = lustful
+		trigger =  {
+			event_target:thief_event_target = {
+				prisoner = yes
+			}
+			OR = {
+				trait = lustful
+				trait = hedonist
+				trait = gregarious 
+			}
+			OR = {
+				AND = {
+					is_female = no
+					NOT = { trait = homosexual }
+				}
+				AND = {
+					is_female = yes
+					trait = homosexual
+				}
+			}
+		}
+		event_target:thief_sister_target = {
+			add_lover = ROOT
+			move_character = ROOT
+		}
+		piety = -20
+		prestige = -20
+		random = {
+			chance = 15
+			add_trait = arbitrary
+		}
+		random = {
+			chance = 25
+			if = {
+				limit = { trait = just }
+				remove_trait = just
+			}
+		}
+	}
+	option = { #Just in case player already released him
+		name = EVTOPTE_NIE_101
+		custom_tooltip = { text = thief_already_released }
+		trigger = {
+			event_target:thief_event_target = {
+				prisoner = no
+			}
+		}
+		hidden_tooltip = {
+			add_character_modifier = {
+				modifier = sister_was
+				duration = 100000
+			}
+			random_list = {
+				50 = {
+					character_event = { id = NIE.117 days = 100 random = 200 } 
+				}
+				50 = {
+					character_event = { id = NIE.125 days = 100 random = 200 }
+				}
+			}
+		}
+	}
+}
+###
+# Sister came for thief's body
+character_event = {
+	id = NIE.102
+	title = "EVTNAMENIE.102"
+	desc = EVTDESC_NIE_102
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		any_character = {
+			limit = {
+				trait = thief_sister_trait
+			}
+			save_event_target_as = thief_sister_target
+		}
+	}
+
+	option = {
+		name = EVTOPTA_NIE_102
+		custom_tooltip = { text = body_given }
+		event_target:thief_sister_target = {
+			tooltip = { show_portrait = yes }
+		}
+		piety = 10
+		random = {
+			chance = 30
+			add_trait = kind
+		}
+		random = {
+			chance = 25
+			if = {
+				limit = { trait = wroth }
+				remove_trait = wroth
+			}
+		}
+		random = {
+			chance = 25
+			if = {
+				limit = { trait = cruel }
+				remove_trait = cruel
+			}
+		}
+		hidden_tooltip = {
+			event_target:thief_sister_target = {
+				remove_trait = thief_sister_trait
+			}
+			add_character_modifier = {
+				modifier = sister_was
+				duration = 100000
+			}
+		}		
+	}
+	option = {
+		name = EVTOPTB_NIE_102
+		custom_tooltip = { text = skull_kept }
+		event_target:thief_sister_target = {
+			add_rival = ROOT
+		}
+		hidden_tooltip = {
+			add_character_modifier = {
+				modifier = sister_was
+				duration = 100000
+			}
+		}
+		add_artifact = rival_skull
+		prestige = 40
+		piety = -20
+		random = {
+			chance = 30
+			add_trait = envious
+		}
+		random = {
+			chance = 30
+			add_trait = wroth
+		}
+		random = {
+			chance = 25
+			if = {
+				limit = { trait = kind }
+				remove_trait = kind
+			}
+		}
+		random = {
+			chance = 25
+			if = {
+				limit = { trait = charitable }
+				remove_trait = charitable
+			}
+		}
+		random = {
+			chance = 5
+			if = {
+				limit = { trait = just }
+				remove_trait = just
+			}
+		}
+		hidden_tooltip = {
+			event_target:thief_sister_target = {
+				remove_trait = thief_sister_trait
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_102
+		custom_tooltip = { text = sister_imprisoned }
+		hidden_tooltip = {
+			add_character_modifier = {
+				modifier = sister_was
+				duration = 100000
+			}
+			character_event = { id = NIE.109 days = 60 }
+			event_target:thief_sister_target = {
+				imprison = ROOT
+				opinion = {
+					modifier = opinion_imprisoned
+					who = ROOT
+				}
+				random = {
+					chance = 15
+					add_rival = ROOT
+				}
+			}
+		}
+		tooltip_info =  wroth			    
+		trigger =  {
+			OR = {
+				trait = wroth
+				trait = cruel
+				trait = impaler 
+			}
+		}
+		piety = -50
+		if = {
+			limit = { trait = just }
+			remove_trait = just
+		}
+		if = {
+			limit = { trait = kind }
+			remove_trait = kind
+		}
+		random_list = {	
+			45 = 	{ add_trait = cruel }
+			25 = 	{ add_trait = wroth }
+			30 = {}
+		}
+		capital_scope = {
+			add_province_modifier = {
+				name = peasants_angry_03
+				duration = 365 
+			}
+		}
+	}
+}
+###
+# Brother and sister in dungeon
+character_event = {
+	id = NIE.103
+	title = "EVTNAMENIE.103"
+	desc = EVTDESC_NIE_103
+	picture = GFX_evt_into_the_dungeon
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier = {
+			limit = {
+				trait = thief_trait
+			}
+			save_event_target_as = thief_event_target
+		}
+		event_target:thief_event_target = {
+			any_sibling = {
+				limit = {
+					trait = thief_sister_trait
+				}
+				save_event_target_as = thief_sister_target
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_NIE_103
+		custom_tooltip = { text = have_fun }
+		hidden_tooltip = {
+			character_event = { id = NIE.104 days = 1 }
+		}
+		tooltip_info =  wroth
+		trigger =  {
+			OR = {
+				trait = wroth
+				trait = cruel
+				trait = impaler 
+			}
+			NAND = {
+				has_character_flag = brother_torment
+				has_character_flag = sister_torment
+			}
+		}
+		piety = -50
+	}
+	option = {
+		name = EVTOPTB_NIE_103
+		custom_tooltip = { text = release_both }
+		hidden_tooltip = {
+			random_list = {
+				50 = {
+					character_event = { id = NIE.117 days = 175 random = 220 } 
+				}
+				50 = {
+					character_event = { id = NIE.125 days = 175 random = 220 }
+				}
+			}
+		}
+		piety = 10
+		random = {
+			chance = 25
+			add_trait = kind
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = cruel }
+				remove_trait = cruel
+			}
+		}
+		random = {
+			chance = 15
+			if = {
+				limit = { trait = wroth }
+				remove_trait = wroth
+			}
+		}
+		random = {
+			chance = 5
+			add_trait = just
+		}
+		event_target:thief_event_target = {
+			if = {
+				limit = { prisoner = yes }
+				prisoner = no
+			}
+		}
+		event_target:thief_sister_target = {
+			if = {
+				limit = { prisoner = yes }
+				prisoner = no
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_103
+		custom_tooltip = { text = leave_them_to_their_fate }
+		hidden_tooltip = {
+			character_event = { id = NIE.105 days = 365 }
+		}
+		piety = -10
+		random = {
+			chance = 25
+			add_trait = cruel
+		}
+	}
+}
+###
+# Brother and sister in dungeon (have fun)
+character_event = {
+	id = NIE.104
+	title = "EVTNAMENIE.104"
+	desc = EVTDESC_NIE_104
+	picture = GFX_evt_bloody_tools
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	
+	immediate = {
+		random_courtier = {
+			limit = {
+				trait = thief_trait
+			}
+			save_event_target_as = thief_event_target
+		}
+		event_target:thief_event_target = {
+			any_sibling = {
+				limit = {
+					trait = thief_sister_trait
+				}
+				save_event_target_as = thief_sister_target
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_NIE_104
+		custom_tooltip = { text = torture_sister }
+		hidden_tooltip = {
+			character_event = { id = NIE.112 days = 1 }
+		}
+		trigger = {
+			NOT = {
+				has_character_flag = sister_torment
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_104
+		custom_tooltip = { text = torture_brother }
+		hidden_tooltip = {
+			character_event = { id = NIE.113 days = 1 }
+		}
+		trigger = {
+			NOT = {
+				has_character_flag = brother_torment
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_104
+		custom_tooltip = { text = leave_them_in_dungeon }
+		piety = -10
+		random = {
+			chance = 25
+			add_trait = cruel
+		}
+		hidden_tooltip = {
+			character_event = { id = NIE.105 days = 165 }
+		}
+	}
+}
+###
+# Brother and sister in dungeon (dead)
+character_event = {
+	id = NIE.105
+	title = "EVTNAMENIE.105"
+	desc = EVTDESC_NIE_105
+	picture = GFX_evt_into_the_dungeon
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier = {
+			limit = {
+				trait = thief_trait
+			}
+			save_event_target_as = thief_event_target
+		}
+		event_target:thief_event_target = {
+			any_sibling = {
+				limit = {
+					trait = thief_sister_trait
+				}
+				save_event_target_as = thief_sister_target
+			}
+		}
+		hidden_tooltip = {
+			clr_character_flag = sister_torment
+			clr_character_flag = brother_torment
+		}
+	}
+
+	option = {
+		name = EVTOPTA_NIE_105
+		custom_tooltip = { text = they_are_dead }
+		event_target:thief_event_target = {
+			death = {
+				death_reason = death_dungeon	
+				killer = ROOT
+			}
+		}
+		event_target:thief_sister_target = {
+			death = {
+				death_reason = death_dungeon	
+				killer = ROOT
+			}
+		}
+	}
+}
+###
+# Thief in dungeon
+character_event = {
+	id = NIE.106
+	title = "EVTNAMENIE.106"
+	desc = EVTDESC_NIE_106
+	picture = GFX_evt_into_the_dungeon
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier = {
+			limit = {
+				trait = thief_trait
+			}
+			save_event_target_as = thief_event_target
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_NIE_106
+		custom_tooltip = { text = torture_him }
+		trigger = {
+			NOT = {
+				has_character_flag = brother_torment
+			}
+		}
+		hidden_tooltip = {
+			if = {
+				limit = {
+					has_nickname = no
+					is_adult = yes
+					NOT = { trait = incapable }
+				}
+			}
+			random_list = {
+				5 = {
+					give_nickname = nick_the_cruel
+				}
+				5 = {
+					give_nickname = nick_the_evil
+				}
+				5 = {
+					give_nickname = nick_the_tormentor
+				}
+				5 = {
+					give_nickname = nick_the_depraved
+				}
+				100 = {}
+			}
+		}
+		hidden_tooltip = {
+			character_event = { id = NIE.116 days = 1 }
+		}
+		random = {
+			chance = 65
+			if = {
+				limit = { trait = just }
+				remove_trait = just
+			}
+		}
+		random = {
+			chance = 65
+			if = {
+				limit = { trait = kind }
+				remove_trait = kind
+			}
+		}
+		random = {
+			chance = 65
+			if = {
+				limit = { trait = charitable }
+				remove_trait = charitable
+			}
+		}
+		piety = -10
+		hidden_tooltip = {
+			set_character_flag = brother_torment
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_106
+		custom_tooltip = { text = spoil_me_your_secrets }
+		random = {
+			chance = 15
+			add_trait = arbitrary
+		}
+		random = {
+			chance = 5
+			add_trait = ambitious
+		}
+		hidden_tooltip = {
+				character_event = { id = NIE.108 days = 1 }
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_106
+		custom_tooltip = { text = release_from_dungeon }
+		hidden_tooltip = {
+			random_list = {
+				10 = {
+					character_event = { id = NIE.117 days = 75 random = 120 } 
+				}
+				90 = {
+					character_event = { id = NIE.125 days = 75 random = 120 }
+				}
+			}
+		}
+		piety = 10
+		random = {
+			chance = 25
+			add_trait = kind
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = cruel }
+				remove_trait = cruel
+			}
+		}
+		random = {
+			chance = 15
+			if = {
+				limit = { trait = wroth }
+				remove_trait = wroth
+			}
+		}
+		random = {
+			chance = 5
+			add_trait = just
+		}
+		event_target:thief_event_target = {
+			if = {
+				limit = { prisoner = yes }
+				prisoner = no
+			}
+		}
+	}
+	option = {
+		name = EVTOPTD_NIE_106
+		custom_tooltip = { text = leave_him }
+		piety = -10
+		random = {
+			chance = 25
+			add_trait = cruel
+			}
+		hidden_tooltip = {
+				character_event = { id = NIE.107 days = 165 }
+		}
+	}
+}
+###
+# Thief in dungeon (dead)
+character_event = {
+	id = NIE.107
+	title = "EVTNAMENIE.107"
+	desc = EVTDESC_NIE_107
+	picture = GFX_evt_into_the_dungeon
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_tooltip = {
+			random_courtier = {
+				limit = {
+					trait = thief_trait
+				}
+				save_event_target_as = thief_event_target
+			}
+			event_target:thief_event_target = {
+				any_sibling = {
+					limit = {
+						trait = thief_sister_trait
+					}
+					save_event_target_as = thief_sister_target
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_NIE_107
+		custom_tooltip = { text = he_is_dead }
+		hidden_tooltip = { 
+			event_target:thief_event_target = {
+				remove_trait = thief_trait
+			}
+			clr_character_flag = brother_torment
+			event_target:thief_sister_target = {
+				remove_trait = thief_sister_trait
+			}
+		}
+		event_target:thief_event_target = {
+			death = {
+				death_reason = death_dungeon	
+				killer = ROOT
+			}
+		}
+	}
+}
+###
+# Spoiling secrets
+character_event = {
+	id = NIE.108
+	title = "EVTNAMENIE.108"
+	desc = EVTDESC_NIE_108
+	picture = GFX_evt_into_the_dungeon
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_tooltip = {
+			random_courtier = {
+				limit = {
+					trait = thief_trait
+				}
+				save_event_target_as = thief_event_target
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_NIE_108
+		custom_tooltip = { text = spoiling_secrets }
+		hidden_tooltip = {
+			random = {
+				chance = 100
+				random_list = {
+					25 = {
+						character_event = { id = NIE.117 days = 175 random = 220 } 
+					}
+					75 = {
+						character_event = { id = NIE.125 days = 175 random = 220 }
+					}	
+				}
+			}
+		}
+		random_list = {
+			50 = { FROM = { change_intrigue = 1 } }
+			30 = { FROM = { change_intrigue = 2 } }
+			20 = { FROM = { change_intrigue = 3 } }
+		}
+		if = {
+			limit = {
+				trait = amateurish_plotter
+			}	
+			add_trait = flamboyant_schemer
+			remove_trait = amateurish_plotter
+		}
+		if = {
+			limit = {
+				trait = flamboyant_schemer
+			}
+			add_trait = intricate_webweaver
+			remove_trait = flamboyant_schemer
+		}
+		if = {
+			limit = {
+				trait = intricate_webweaver
+			}
+			add_trait = elusive_shadow
+			remove_trait = intricate_webweaver
+		}
+	}
+}

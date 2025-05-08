@@ -1,0 +1,7 @@
+#clear_special_artifact_modifiers_effect = {
+#	if = {
+#		limit = { artifact_type = }
+#		
+#	
+#	}
+#}

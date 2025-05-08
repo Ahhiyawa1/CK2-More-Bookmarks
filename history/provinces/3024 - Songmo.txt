@@ -1,0 +1,27 @@
+# 3024 - Songmo
+
+# County Title
+title = c_songmo
+
+# Settlements
+max_settlements = 4
+
+b_songmo = tribal
+b_songmo_longxing = temple
+#b_songmo_raozhou = tribal
+#b_songmo_fengzhou = tribal
+#b_songmo_yongzhou = tribal
+#b_songmo_yongan = tribal
+#b_songmo_changning = tribal
+
+# Misc
+culture = khitan
+religion = tengri_pagan
+
+# History
+907.1.1 = {
+	religion = buddhist
+	b_songmo = castle
+	b_songmo_longxing = city
+	b_songmo_raozhou = temple
+}

@@ -1,0 +1,754 @@
+# Christian Warrior Lodge decisions
+decisions = {
+	# Create Christian Warrior Lodge - Non-existent at start.
+	create_warrior_lodge_cws_christian = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 120 #check only once every 120 months.
+		
+		potential = {
+			NOT = {
+				has_global_flag = flag_started_warrior_lodge_cws_christian
+			}
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+			has_dlc = "Holy Fury"
+			NOT = { has_religion_feature = religion_peaceful }
+			religion_group = christian
+			NOT = { 
+				warrior_lodge_cws_christian = {
+					society_has_members = yes								
+				}
+			}
+			OR = {
+				has_game_rule = { name = ws_christian_rule value = on }
+				has_game_rule = { name = ws_christian_rule value = ws_exists }
+				AND = {
+					ai = no
+					has_game_rule = { name = ws_christian_rule value = ws_player }
+				}
+			}
+		}
+		
+		allow = {
+			is_in_society = no
+			is_incapable = no
+			has_education_martial_trigger = yes
+			OR = {
+				has_lifestyle_martial_trigger = yes
+				martial = 22
+			}
+			higher_tier_than = DUKE
+			martial = 18
+			is_adult = yes
+			is_inaccessible_trigger = no
+			scaled_wealth = 0.75
+			prestige = 1500
+			is_heretic = no
+			trigger_if = {
+				limit = { has_game_rule = { name = ws_christian_rule value = ws_player } }
+				ai = no
+			}
+		}
+		
+		effect = {
+			scaled_wealth = -0.75
+			custom_tooltip = {
+				text = create_warrior_lodge_cws_christian_tooltip
+				set_global_flag = flag_started_warrior_lodge_cws_christian 
+				join_society = warrior_lodge_cws_christian
+				set_society_grandmaster = yes # Set character as Grand Master
+				add_society_currency_massive_effect = yes
+				spawn_good_commander_effect = yes
+				new_character = { join_society = warrior_lodge_cws_christian }
+				spawn_good_commander_effect = yes
+				new_character = { join_society = warrior_lodge_cws_christian }
+				spawn_good_commander_effect = yes
+				new_character = { join_society = warrior_lodge_cws_christian }
+				spawn_good_commander_effect = yes
+				new_character = { join_society = warrior_lodge_cws_christian }
+				spawn_good_commander_effect = yes
+				new_character = { join_society = warrior_lodge_cws_christian }
+				spawn_good_commander_effect = yes
+				new_character = { join_society = warrior_lodge_cws_christian }
+				any_vassal = {
+					limit = {
+						ai = yes
+						can_join_society = warrior_lodge_cws_christian
+					}
+					random = { chance = 75 join_society = warrior_lodge_cws_christian }
+				}
+				any_neighbor_independent_ruler = {
+					limit = {
+						ai = yes
+						can_join_society = warrior_lodge_cws_christian
+					}
+					random = { chance = 35 join_society = warrior_lodge_cws_christian }
+				}
+				any_player = {
+					limit = {
+						OR = {
+							religion_group = christian
+							is_within_diplo_range = ROOT
+						}
+					}
+					narrative_event = { id = CWS.25026 }
+				}
+			}
+		}
+			
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+
+settlement_decisions = {
+	#Power, rank 3: Christian Fortifications
+	warrior_lodge_christian_fortifications = {
+		# filter = owned # CleanSlate: Nonfunctional
+		ai_target_filter = owned
+		ai_check_interval = 80
+
+		is_high_prio = yes
+
+		is_in_society = yes
+		only_playable = yes
+
+		from_potential = {
+			has_dlc = "Holy Fury"
+
+			trigger_if = {
+				limit = {
+					society_rank = {
+						society = warrior_lodge_ws_jewish
+						rank >= 2
+					}
+				}
+
+				religion_group = jewish_group
+			}
+			trigger_else = {
+				society_rank = {
+					society = warrior_lodge_cws_christian
+					rank >= 2
+				}
+
+				religion_group = christian
+			}
+			higher_real_tier_than = BARON
+			is_nomadic = no
+			is_adult = yes
+		}
+		
+		potential = {
+			holder = FROM
+
+			trigger_if = {
+				limit = { holding_type = tribal }
+
+				NAND = {
+					OR = {
+						has_building = tb_hillfort_4
+						is_building = tb_hillfort_4
+					}
+
+					OR = {
+						has_building = tb_defensive_fortifications_4
+						is_building = tb_defensive_fortifications_4
+					}
+				}
+			}
+
+			trigger_else = {
+				holding_type = castle
+
+				NAND = {
+					OR = {
+						has_building = ca_wall_5
+						is_building = ca_wall_5
+						has_building = ca_con_wall_6
+						is_building = ca_con_wall_6
+					}
+
+					OR = {
+						has_building = ca_wall_q_5
+						is_building = ca_wall_q_5
+					}
+				}
+			}
+		}
+		allow = { # Now it's going to get ugly...
+			FROM = { has_society_currency_minor_trigger = yes }
+
+			trigger_if = {
+				trigger = { holding_type = tribal }
+
+				OR = {
+					trigger_if = {
+						limit = {
+							NOR = {
+								has_building = tb_hillfort_4
+								is_building = tb_hillfort_4
+							}
+						}
+
+						trigger_if = {
+							limit = { has_building = tb_hillfort_3 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_tb_hillfort_4
+								location = { TECH_CASTLE_CONSTRUCTION >= 1 }
+							}
+						}
+						trigger_else_if = {
+							limit = { has_building = tb_hillfort_2 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_tb_hillfort_3
+
+								NOT = { is_building = tb_hillfort_3 }
+								location = { TECH_CASTLE_CONSTRUCTION >= 1 }
+							}
+						}
+						trigger_else_if = {
+							limit = { has_building = tb_hillfort_1 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_tb_hillfort_2
+
+								NOT = { is_building = tb_hillfort_2 }
+								# location = { TECH_CASTLE_CONSTRUCTION >= 0 }
+							}
+						}
+						trigger_else = {
+							custom_tooltip = {
+								text = tooltip_can_build_tb_hillfort_1
+
+								NOT = { is_building = tb_hillfort_1 }
+								# location = { TECH_CASTLE_CONSTRUCTION >= 0 }
+							}
+						}
+					}
+
+					trigger_if = {
+						limit = {
+							NOR = {
+								is_building = tb_defensive_fortifications_4
+								has_building = tb_defensive_fortifications_4
+							}
+						}
+
+						trigger_if = {
+							limit = { has_building = tb_defensive_fortifications_3 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_tb_defensive_fortifications_4
+								location = { TECH_CASTLE_CONSTRUCTION >= 1 }
+							}
+						}
+						trigger_else_if = {
+							limit = { has_building = tb_defensive_fortifications_2 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_tb_defensive_fortifications_3
+
+								NOT = { is_building = tb_defensive_fortifications_3 }
+								location = { TECH_CASTLE_CONSTRUCTION >= 1 }
+							}
+						}
+						trigger_else_if = {
+							limit = { has_building = tb_defensive_fortifications_1 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_tb_defensive_fortifications_2
+
+								NOT = { is_building = tb_defensive_fortifications_2 }
+								# location = { TECH_CASTLE_CONSTRUCTION >= 0 }
+							}
+						}
+						trigger_else = {
+							custom_tooltip = {
+								text = tooltip_can_build_tb_defensive_fortifications_1
+
+								NOT = { is_building = tb_defensive_fortifications_1 }
+								# location = { TECH_CASTLE_CONSTRUCTION >= 0 }
+							}
+						}
+					}
+				}
+			}
+			trigger_else_if = {
+				limit = { holding_type = castle }
+
+				OR = {
+					trigger_if = {
+						limit = {
+							NOR = {
+								has_building = ca_wall_5
+								is_building = ca_wall_5
+							}
+						}
+
+						trigger_if = {
+							limit = { has_building = ca_wall_4 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_ca_wall_5
+								location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 8 }
+							}
+						}
+						trigger_else_if = {
+							limit = { has_building = ca_wall_3 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_ca_wall_4
+
+								NOT = { is_building = ca_wall_4 }
+								location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 6 }
+							}
+						}
+						trigger_else_if = {
+							limit = { has_building = ca_wall_2 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_ca_wall_3
+
+								NOT = { is_building = ca_wall_3 }
+								location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 4 }
+							}
+						}
+						trigger_else_if = {
+							limit = { has_building = ca_wall_1 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_ca_wall_2
+
+								NOT = { is_building = ca_wall_2 }
+								location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 2 }
+							}
+						}
+						trigger_else = {
+							custom_tooltip = {
+								text = tooltip_can_build_ca_wall_1
+
+								NOT = { is_building = ca_wall_1 }
+								# location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 0 }
+							}
+						}
+					}
+
+					trigger_if = {
+						limit = {
+							NOR = {
+								is_building = ca_wall_q_5
+								has_building = ca_wall_q_5
+							}
+						}
+
+						trigger_if = {
+							limit = { has_building = ca_wall_q_4 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_ca_wall_q_5
+								location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 7 }
+							}
+						}
+						trigger_else_if = {
+							limit = { has_building = ca_wall_q_3 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_ca_wall_q_4
+
+								NOT = { is_building = ca_wall_q_4 }
+								location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 5 }
+							}
+						}
+						trigger_else_if = {
+							limit = { has_building = ca_wall_q_2 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_ca_wall_q_3
+
+								NOT = { is_building = ca_wall_q_3 }
+								location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 3 }
+							}
+						}
+						trigger_else_if = {
+							limit = { has_building = ca_wall_q_1 }
+
+							custom_tooltip = {
+								text = tooltip_can_build_ca_wall_q_2
+
+								NOT = { is_building = ca_wall_q_2 }
+								location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 1 }
+							}
+						}
+						trigger_else = {
+							custom_tooltip = {
+								text = tooltip_can_build_ca_wall_q_1
+
+								NOT = { is_building = ca_wall_q_1 }
+								# location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 0 }
+							}
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				show_scope_change = no
+
+				detract_society_currency_minor_effect = yes
+
+				hidden_effect = {
+					random_list = {
+						33 = { sound_effect = baltic_holds_01 }
+						33 = { sound_effect = baltic_holds_02 }
+						33 = { sound_effect = baltic_holds_03 }
+					}
+				}
+			}
+
+			if = {
+				limit = { holding_type = castle }
+
+				# Prioritize walls first, as they give more benefits
+				if = {
+					limit = {
+						NOR = {
+							has_building = ca_wall_5
+							is_building = ca_wall_5
+						}
+
+						# Ensure walls can be improved before attempting
+						trigger_if = {
+							limit = { has_building = ca_wall_4 }
+							location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 8 }
+						}
+						trigger_else_if = {
+							limit = { has_building = ca_wall_3 }
+
+							NOT = { is_building = ca_wall_4 }
+							location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 6 }
+						}
+						trigger_else_if = {
+							limit = { has_building = ca_wall_2 }
+
+							NOT = { is_building = ca_wall_3 }
+							location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 4 }
+						}
+						trigger_else_if = {
+							limit = { has_building = ca_wall_1 }
+
+							NOT = { is_building = ca_wall_2 }
+							location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 2 }
+						}
+						trigger_else = {
+							NOR = {
+								has_building = ca_wall_1
+								is_building = ca_wall_1
+							}
+						}
+					}
+
+					if = {
+						limit = {
+							has_building = ca_wall_4
+							location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 8 }
+						}
+
+						add_building = ca_wall_5
+
+						FROM = {
+							character_event = { id = HF.25068 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							has_building = ca_wall_3
+							NOT = { is_building = ca_wall_4 }
+							location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 6 }
+						}
+
+						add_building = ca_wall_4
+
+						FROM = {
+							character_event = { id = HF.25068 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							has_building = ca_wall_2
+							NOT = { is_building = ca_wall_3 }
+							location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 4 }
+						}
+
+						add_building = ca_wall_3
+
+						FROM = {
+							character_event = { id = HF.25068 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							has_building = ca_wall_1
+							NOT = { is_building = ca_wall_2 }
+							location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 2 }
+						}
+
+						add_building = ca_wall_2
+
+						FROM = {
+							character_event = { id = HF.25068 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							NOR = {
+								is_building = ca_wall_1
+								has_building = ca_wall_1
+							}
+							# location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 0 }
+						}
+
+						add_building = ca_wall_1
+
+						FROM = {
+							character_event = { id = HF.25068 } # Notify
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						NOR = {
+							has_building = ca_wall_q_5
+							is_building = ca_wall_q_5
+						}
+					}
+
+					if = {
+						limit = {
+							has_building = ca_wall_q_4
+							location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 7 }
+						}
+
+						add_building = ca_wall_q_5
+
+						FROM = {
+							character_event = { id = HF.25069 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							has_building = ca_wall_q_3
+							NOT = { is_building = ca_wall_q_4 }
+							location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 5 }
+						}
+
+						add_building = ca_wall_q_4
+
+						FROM = {
+							character_event = { id = HF.25069 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							has_building = ca_wall_q_2
+							NOT = { is_building = ca_wall_q_3 }
+							location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 3 }
+						}
+
+						add_building = ca_wall_q_3
+
+						FROM = {
+							character_event = { id = HF.25069 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							has_building = ca_wall_q_1
+							NOT = { is_building = ca_wall_q_2 }
+							location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 1 }
+						}
+
+						add_building = ca_wall_q_2
+
+						FROM = {
+							character_event = { id = HF.25069 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							NOR = {
+								has_building = ca_wall_q_1
+								is_building = ca_wall_q_1
+							}
+							# location = { TECH_FORTIFICATIONS_CONSTRUCTION >= 0 }
+						}
+
+						add_building = ca_wall_q_1
+
+						FROM = {
+							character_event = { id = HF.25069 } # Notify
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = { holding_type = tribal }
+
+				# Prioritize hillfort first, as is more important
+				if = {
+					limit = {
+						NOR = {
+							has_building = tb_hillfort_4
+							is_building = tb_hillfort_4
+						}
+
+						# Ensure the hillfort can be improved before attempting
+						trigger_if = {
+							limit = { has_building = tb_hillfort_3 }
+							location = { TECH_CASTLE_CONSTRUCTION >= 1 }
+						}
+						trigger_else_if = {
+							limit = { has_building = tb_hillfort_2 }
+
+							NOT = { is_building = tb_hillfort_3 }
+							location = { TECH_CASTLE_CONSTRUCTION >= 1 }
+						}
+						trigger_else_if = {
+							limit = { has_building = tb_hillfort_1 }
+
+							NOT = { is_building = tb_hillfort_2 }
+							# location = { TECH_CASTLE_CONSTRUCTION >= 0 }
+						}
+						trigger_else = {
+							NOT = { is_building = tb_hillfort_1 }
+							# location = { TECH_CASTLE_CONSTRUCTION >= 0 }
+						}
+					}
+
+					if = {
+						limit = {
+							has_building = tb_hillfort_3
+							location = { TECH_CASTLE_CONSTRUCTION >= 1 }
+						}
+
+						add_building = tb_hillfort_4
+
+						FROM = {
+							character_event = { id = HF.25067 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							has_building = tb_hillfort_2
+							NOT = { is_building = tb_hillfort_3 }
+							location = { TECH_CASTLE_CONSTRUCTION >= 1 }
+						}
+
+						add_building = tb_hillfort_3
+
+						FROM = {
+							character_event = { id = HF.25066 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							has_building = tb_hillfort_1
+							NOT = { is_building = tb_hillfort_2 }
+							# location = { TECH_CASTLE_CONSTRUCTION >= 0 }
+						}
+
+						add_building = tb_hillfort_2
+
+						FROM = {
+							character_event = { id = HF.25065 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							NOT = { is_building = tb_hillfort_1 }
+							# location = { TECH_CASTLE_CONSTRUCTION >= 0 }
+						}
+
+						add_building = tb_hillfort_1
+
+						FROM = {
+							character_event = { id = HF.25064 } # Notify
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						NOR = {
+							has_building = tb_defensive_fortifications_4
+							is_building = tb_defensive_fortifications_4
+						}
+					}
+
+					if = {
+						limit = {
+							has_building = tb_defensive_fortifications_3
+							location = { TECH_CASTLE_CONSTRUCTION >= 1 }
+						}
+
+						add_building = tb_defensive_fortifications_4
+
+						FROM = {
+							character_event = { id = HF.25063 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							has_building = tb_defensive_fortifications_2
+							NOT = { is_building = tb_defensive_fortifications_3 }
+							location = { TECH_CASTLE_CONSTRUCTION >= 1 }
+						}
+
+						add_building = tb_defensive_fortifications_3
+
+						FROM = {
+							character_event = { id = HF.25062 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							has_building = tb_defensive_fortifications_1
+							NOT = { is_building = tb_defensive_fortifications_2 }
+							# location = { TECH_CASTLE_CONSTRUCTION >= 0 }
+						}
+
+						add_building = tb_defensive_fortifications_2
+
+						FROM = {
+							character_event = { id = HF.25061 } # Notify
+						}
+					}
+					else_if = {
+						limit = {
+							NOR = {
+								is_building = tb_defensive_fortifications_1
+								has_building = tb_defensive_fortifications_1
+							}
+							# location = { TECH_CASTLE_CONSTRUCTION >= 0 }
+						}
+
+						add_building = tb_defensive_fortifications_1
+
+						FROM = {
+							character_event = { id = HF.25060 } # Notify
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

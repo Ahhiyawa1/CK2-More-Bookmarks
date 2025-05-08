@@ -1,0 +1,15 @@
+#493 - St. Thomas
+
+culture = atlantean
+owner = ATL
+controller = ATL
+add_core = ATL
+is_city = yes
+religion = hellenic_pagan
+capital = "Tenaphos"
+trade_goods = sugar
+hre = no
+base_tax = 4
+base_production = 4
+base_manpower = 3
+discovered_by = ATL

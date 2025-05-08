@@ -1,0 +1,25 @@
+defined_text = {
+	name = CWSGetFortifications_of_Christ
+
+	text = { #Christian
+		trigger = { FROM = { religion_group = christian } }
+		localisation_key = CWS_christ
+	}
+	text = { #Jew
+		trigger = { FROM = { religion_group = jewish_group } }
+		localisation_key = CWS_moses
+	}
+}
+
+defined_text = {
+	name = CWSGetChristianorJew
+
+	text = { #Christian
+		trigger = { FROM = { religion_group = christian } }
+		localisation_key = CWS_christian
+	}
+	text = { #Jew
+		trigger = { FROM = { religion_group = jewish_group } }
+		localisation_key = CWS_jew
+	}
+}

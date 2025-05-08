@@ -1,0 +1,2 @@
+nick_the_wrath_of_perun = {}
+nick_the_son_of_odin = {}

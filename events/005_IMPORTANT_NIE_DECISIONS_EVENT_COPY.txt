@@ -1,0 +1,566 @@
+###########################################
+#                                         #
+# New Immersive Events v. 0.01b           #
+# Rulership Events: copied                #
+# ID NIEc.100; NIEc.231                   #
+# Written and designed by wielkicien      #
+# Bugfixed by Erbkaiser			  #
+#                                         #
+###########################################
+
+namespace = NIEc
+
+### The Thief
+
+# Thief caught in the castle
+narrative_event = {
+	id = NIEc.100
+	title = "EVTNAMENIE.100"
+	desc = EVTDESC_NIE_100
+	picture = GFX_evt_catching_heretic
+	border = GFX_event_narrative_frame_economy
+	
+	min_age = 16
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	trigger = {
+		ai = no
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_thief }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		ROOT = { set_character_flag = NIE_thief }
+		ROOT = { set_character_flag = NIE_fired_event_chain }
+		hidden_tooltip = {
+			create_character = { #Father
+				random_traits = yes
+				dynasty = NONE
+				female = no
+				age = 50
+				culture = ROOT
+				religion = ROOT
+			}
+			new_character = {
+				death = yes
+				save_event_target_as = thief_father
+			}
+			create_character = { #Sister
+				genetic_father = event_target:thief_father
+				dynasty = none
+				religion = ROOT
+				culture = event_target:thief_father
+				female = yes
+				random_traits = yes
+				age = 17	
+				health = 6 #So that she won't die in dungeon...			
+			}
+			new_character = {
+				add_trait = thief_sister_trait
+				set_father = event_target:thief_father
+				leave_court_effect = yes
+			}
+			create_character = { #Thief
+				genetic_father = event_target:thief_father
+				religion = ROOT
+				culture = event_target:thief_father
+				dynasty = none
+				age = 25
+				random_traits = yes
+				female = no
+				attributes = {	
+					diplomacy = 1
+					stewardship = 2
+					learning = 0
+					intrigue = 8
+					martial = 2
+				}
+				health = 6 #So that he won't die in dungeon...
+			}
+			new_character = {
+				add_trait = thief_trait
+				add_trait = deceitful
+				set_father = event_target:thief_father
+				save_event_target_as = thief_event_target
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_NIE_100
+		custom_tooltip = { text = thief_executed }
+		tooltip_info =  wroth
+		trigger =  {
+			OR = {
+				trait = wroth
+			   	trait = cruel
+			   	trait = impaler
+			}
+			NOR = {
+				trait = kind
+				trait = charitable
+			}
+		}
+		piety = -20
+		hidden_tooltip = {
+			character_event = { id = NIE.102 days = 2 }
+		}
+		event_target:thief_event_target = {
+			death = {
+				death_reason = death_dungeon	
+				killer = ROOT
+			}
+		}
+		capital_scope = {
+			add_province_modifier = {
+				name = peasants_angry_01
+				duration = 365 
+			}
+		}
+		random_list = {	
+			45 = { add_trait = cruel }
+			25 = { add_trait = impaler }
+			10 = { add_trait = just }
+			20 = {}
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = kind }
+				remove_trait = kind
+			}
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = charitable }
+				remove_trait = charitable
+			}
+		}
+
+	}
+	option = {
+		name = EVTOPTB_NIE_100
+		custom_tooltip = { text = thief_imprisoned }
+		prestige = 20
+		hidden_tooltip = {
+			event_target:thief_event_target = {
+				imprison = ROOT
+				opinion = {
+					modifier = opinion_imprisoned
+					who = ROOT
+				}
+				random = {
+					chance = 15
+					add_rival = ROOT
+				}
+			}
+			character_event = { id = NIE.101 days = 30 }
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = kind }
+				remove_trait = kind
+			}
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = charitable }
+				remove_trait = charitable
+			}
+		}
+		random_list = {	
+				25 = { add_trait = cruel }
+				5 =	{ add_trait = just }
+				70 = {}
+		}
+			
+	}
+	option = {
+		name = EVTOPTC_NIE_100
+		custom_tooltip = { text = thief_fingerless }
+		hidden_tooltip = {
+			character_event = { id = NIE.132 }
+		}
+		random = {
+			chance = 15
+			if = {
+				limit = { trait = kind }
+				remove_trait = kind
+			}
+		}
+		random = {
+			chance = 15
+			if = {
+				limit = { trait = charitable }
+				remove_trait = charitable
+			}
+		}
+		random_list = {	
+				45 = { add_trait = just }
+				15 = { add_trait = cruel }
+				40 = {}
+		}
+	}
+	option = {
+		name = EVTOPTD_NIE_100
+		custom_tooltip = { text = thief_released1 }
+		trigger = {
+			NOR = {
+				trait = cruel
+				trait = impaler
+				trait = wroth
+			}
+		}
+		hidden_tooltip = {
+			random = {
+				chance = 100
+				random_list = {
+					50 = {
+						character_event = { id = NIE.117 days = 75 random = 120 } 
+					}
+					50 = {
+						character_event = { id = NIE.125 days = 75 random = 120 }
+					}
+				}
+			}
+		}
+		event_target:thief_event_target = {
+			leave_court_effect = yes
+		}
+		random_list = {	
+			45 = { add_trait = arbitrary }
+			30 = { add_trait = kind }
+			15 = { add_trait = charitable }
+			10 = {}
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = just }
+				remove_trait = just
+			}
+		}
+		any_realm_character = {
+			limit = {
+				is_adult = yes
+				NOT = { character = ROOT }
+				NOT = { trait = cynical }
+				NOT = { trait = arbitrary }
+			}
+			opinion = {
+				modifier = opinion_dislike
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+}
+### Wife ambitions
+#Vassals advising
+narrative_event = {
+	id = NIEc.231
+	title = "EVTNAMENIE.231"
+	desc = EVTDESC_NIE_231
+	picture = GFX_evt_throne
+	border = GFX_event_narrative_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		any_vassal = {
+				trait = just				
+		}
+		any_vassal = {
+				trait = arbitrary
+		}
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_eventchainsmall }
+		NOT = { trait = arbitrary }
+		NOT = { trait = just }
+		spouse = {
+			is_alive = yes
+			ai = yes
+		}
+		ai = no
+	}	
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_eventchainsmall }
+		ROOT = { set_character_flag = NIE_fired_event_chain }
+		any_vassal = {
+				limit = {
+					trait = just
+				}
+		save_event_target_as = advise_one
+		set_character_flag = advise_one
+		}
+		any_vassal = {
+				limit = {
+					trait = arbitrary
+				}
+		save_event_target_as = advise_two
+		set_character_flag = advise_two
+		}
+		any_spouse = {
+				limit = {
+					is_alive = yes
+					ai = yes
+				}
+		save_event_target_as = spouse_one
+		set_character_flag = spouse_one
+		}
+	}
+
+	option = {
+		name = EVTOPTA_NIE_231
+		custom_tooltip = { text = listen_to_first }	
+		hidden_tooltip = {
+				character_event = { id = NIE.232 days = 2 }
+				event_target:advise_two = {
+					clr_character_flag = advise_two
+				}
+		}
+		if = {
+			limit = {
+				spouse = {
+					NOT = {
+						trait = just
+					}
+				}
+			}
+			random = {
+				chance = 30
+				add_trait = just
+			}
+		}
+		event_target:advise_one = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+					random = {
+						chance = 10
+						add_friend = ROOT
+					}
+		}
+		event_target:advise_two = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 2
+					}
+					random = {
+						chance = 10
+						add_rival = ROOT
+					}
+		}
+		if = {
+			limit = {
+				spouse = {
+					trait = just
+				}
+			}
+			random = {
+				chance = 60
+				add_trait = just
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+			}
+			
+		}
+		if = {
+			limit = {
+				spouse = {
+					trait = arbitrary
+				}
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 2
+					}
+			}
+			
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_231
+		custom_tooltip = { text = listen_to_second }
+		hidden_tooltip = {
+				character_event = { id = NIE.232 days = 2 }
+				event_target:advise_one = {
+					clr_character_flag = advise_one
+				}
+		}
+		if = {
+			limit = {
+				spouse = {
+					NOT = {
+						trait = arbitrary
+					}
+				}
+			}
+			random = {
+				chance = 30
+				add_trait = arbitrary
+			}
+		}
+		event_target:advise_one = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 2
+					}
+					random = {
+						chance = 10
+						add_rival = ROOT
+					}
+		}
+		event_target:advise_two = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+					random = {
+						chance = 10
+						add_friend = ROOT
+					}
+		}
+		if = {
+			limit = {
+				spouse = {
+					trait = arbitrary
+				}
+			}
+			random = {
+				chance = 60
+				add_trait = arbitrary
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+			}
+		}
+		if = {
+			limit = {
+				spouse = {
+					trait = just
+				}
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 2
+					}
+			}
+			
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_231
+		custom_tooltip = { text = listen_to_wife_only }
+		hidden_tooltip = {
+				character_event = { id = NIE.232 days = 2 }
+		}
+		event_target:advise_one = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 2
+					}
+					random = {
+						chance = 10
+						add_rival = ROOT
+					}
+		}
+		event_target:advise_two = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 2
+					}
+					random = {
+						chance = 10
+						add_rival = ROOT
+					}
+		}
+		if = {
+			limit = {
+				spouse = {
+					trait = arbitrary
+				}
+			}
+			random = {
+				chance = 60
+				add_trait = arbitrary
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+			}
+		}
+		if = {
+			limit = {
+				spouse = {
+					trait = just
+				}
+			}
+			random = {
+				chance = 60
+				add_trait = just
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+			}
+		}
+		if = {
+			limit = {
+				spouse = {
+					NAND = {
+						trait = arbitrary
+						trait = just
+					}
+				}
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+			}
+		}
+	}
+	
+}

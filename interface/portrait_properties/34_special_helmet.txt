@@ -1,0 +1,248 @@
+# p34 Special Helmets
+34 = {
+	0 = { # 0 - blank
+		factor = 1
+	}
+
+	1 = { # a - Templar special headgear.
+		factor = 100
+		hide_layers = {  1 = {} } #Hide Hair.
+		hide_layers = {  3 = {} } #Hide Clothes.
+		hide_layers = {  5 = {} } #Hide layer 5 (headgear) when this frame is picked.
+		hide_layers = { 12 = {} } #Hide layer 12 (disfigured masks) when this frame is picked.
+		hide_layers = { 19 = {} } #Hide layers with special crowns.
+		hide_layers = { 31 = {} } #Veil overload.
+		hide_layers = { 32 = {} }
+		hide_layers = { 33 = {} }
+		hide_layers = { 43 = {} }
+
+		trigger = {
+			blg_knights_templar = yes
+
+			OR = {
+				in_command = yes
+				blg_duelling = yes
+				blg_headgear_military_on_rule = yes
+			}
+			blg_headgear_military_off_rule = no
+		}
+	}
+
+	2 = { # b - Crusader King helmet - Male.
+		factor = 100
+		hide_layers = {  1 = {} } #Hide Hair.
+		hide_layers = {  3 = {} } #Hide Clothes.
+		hide_layers = {  5 = {} } #Hide layer 5 (headgear) when this frame is picked.
+		hide_layers = { 12 = {} } #Hide layer 12 (disfigured masks) when this frame is picked.
+		hide_layers = { 19 = {} } #Hide layers with special crowns.
+		hide_layers = { 31 = {} } #Veil overload.
+		hide_layers = { 43 = {} }
+
+		trigger = {
+			is_female = no
+			blg_helmet_crusader = yes
+			blg_headgear_military = yes
+		}
+	}
+
+	3 = { # c - Crusader King helmet - Female.
+		factor = 100
+		hide_layers = {  1 = {} } #Hide Hair.
+		hide_layers = {  3 = {} } #Hide Clothes.
+		hide_layers = {  5 = {} } #Hide layer 5 (headgear) when this frame is picked.
+		hide_layers = { 12 = {} } #Hide layer 12 (disfigured masks) when this frame is picked.
+		hide_layers = { 19 = {} } #Hide layers with special crowns.
+		hide_layers = { 32 = {} }
+		hide_layers = { 33 = {} }
+		hide_layers = { 43 = {} }
+
+		trigger = {
+			is_female = yes
+			blg_helmet_crusader = yes
+			blg_headgear_military = yes
+		}
+	}
+
+	4 = { # d - Hospitaler special headgear.
+		factor = 100
+		hide_layers = {  1 = {} } #Hide Hair.
+		hide_layers = {  3 = {} } #Hide Clothes.
+		hide_layers = {  5 = {} } #Hide layer 5 (headgear) when this frame is picked.
+		hide_layers = { 12 = {} } #Hide layer 12 (disfigured masks) when this frame is picked.
+		hide_layers = { 19 = {} } #Hide layers with special crowns.
+		hide_layers = { 31 = {} } #Veil overload.
+		hide_layers = { 32 = {} }
+		hide_layers = { 33 = {} }
+		hide_layers = { 43 = {} }
+
+		trigger = {
+			blg_knights_hospitaler = yes
+
+			OR = {
+				in_command = yes
+				blg_duelling = yes
+				blg_headgear_military_on_rule = yes
+			}
+			blg_headgear_military_off_rule = no
+		}
+	}
+
+	5 = { # e - Teuton special headgear.
+		factor = 100
+		hide_layers = {  1 = {} } #Hide Hair.
+		hide_layers = {  3 = {} } #Hide Clothes.
+		hide_layers = {  5 = {} } #Hide layer 5 (headgear) when this frame is picked.
+		hide_layers = { 12 = {} } #Hide layer 12 (disfigured masks) when this frame is picked.
+		hide_layers = { 19 = {} } #Hide layers with special crowns.
+		hide_layers = { 31 = {} } #Veil overload.
+		hide_layers = { 32 = {} }
+		hide_layers = { 33 = {} }
+		hide_layers = { 43 = {} }
+
+		trigger = {
+			blg_knights_teutonic = yes
+
+			OR = {
+				in_command = yes
+				blg_duelling = yes
+				blg_headgear_military_on_rule = yes
+			}
+			blg_headgear_military_off_rule = no
+		}
+	}
+
+	6 = { # f - Wearable Winged Helmet
+		factor = 100
+		hide_layers = {  1 = {} } #Hide Hair.
+		hide_layers = {  3 = {} } #Hide Clothes.
+		hide_layers = {  5 = {} } #Hide layer 5 (headgear) when this frame is picked.
+		hide_layers = { 12 = {} } #Hide layer 12 (disfigured masks) when this frame is picked.
+		hide_layers = { 19 = {} } #Hide layers with special crowns.
+		hide_layers = { 31 = {} } #Veil overload.
+		hide_layers = { 32 = {} }
+		hide_layers = { 33 = {} }
+		hide_layers = { 43 = {} }
+
+		trigger = {
+			blg_helmet_winged = yes
+			blg_headgear_military = yes
+		}
+	}
+
+	7 = { # g - Calatrava/Santiago special headgear.
+		factor = 100
+		hide_layers = {  1 = {} } #Hide Hair.
+		hide_layers = {  3 = {} } #Hide Clothes.
+		hide_layers = {  5 = {} } #Hide layer 5 (headgear) when this frame is picked.
+		hide_layers = { 12 = {} } #Hide layer 12 (disfigured masks) when this frame is picked.
+		hide_layers = { 19 = {} } #Hide layers with special crowns.
+		hide_layers = { 31 = {} } #Veil overload.
+		hide_layers = { 32 = {} }
+		hide_layers = { 33 = {} }
+		hide_layers = { 43 = {} }
+
+		trigger = {
+			blg_knights_calatrava = yes
+
+			OR = {
+				in_command = yes
+				blg_duelling = yes
+				blg_headgear_military_on_rule = yes
+			}
+			blg_headgear_military_off_rule = no
+		}
+	}
+
+	8 = { # h - Wearable Wrapped Helmet
+		factor = 100
+		hide_layers = {  1 = {} } #Hide Hair.
+		hide_layers = {  3 = {} } #Hide Clothes.
+		hide_layers = {  5 = {} } #Hide layer 5 (headgear) when this frame is picked.
+		hide_layers = { 12 = {} } #Hide layer 12 (disfigured masks) when this frame is picked.
+		hide_layers = { 19 = {} } #Hide layers with special crowns.
+		hide_layers = { 31 = {} } #Veil overload.
+		hide_layers = { 32 = {} }
+		hide_layers = { 33 = {} }
+		hide_layers = { 43 = {} }
+
+		trigger = {
+			blg_helmet_wrapped = yes
+			blg_headgear_military = yes
+		}
+	}
+
+	9 = { # i - Livonian special headgear.
+		factor = 100
+		hide_layers = {  1 = {} } #Hide Hair.
+		hide_layers = {  3 = {} } #Hide Clothes.
+		hide_layers = {  5 = {} } #Hide layer 5 (headgear) when this frame is picked.
+		hide_layers = { 12 = {} } #Hide layer 12 (disfigured masks) when this frame is picked.
+		hide_layers = { 19 = {} } #Hide layers with special crowns.
+		hide_layers = { 31 = {} } #Veil overload.
+		hide_layers = { 32 = {} }
+		hide_layers = { 33 = {} }
+		hide_layers = { 43 = {} }
+
+		trigger = {
+			blg_knights_livonian = yes
+
+			OR = {
+				in_command = yes
+				blg_duelling = yes
+				blg_headgear_military_on_rule = yes
+			}
+			blg_headgear_military_off_rule = no
+		}
+	}
+
+	10 = { # j - Unicorn headgear.
+		factor = 100
+
+		trigger = {
+			blg_artifact_unicorn = yes
+		}
+	}
+
+	11 = { # k - Miaphysite priest.
+		factor = 100
+
+		trigger = {
+			is_female = no
+			blg_priest = yes
+			blg_religion_oriental = yes
+		}
+	}
+
+	12 = { # l - Zunist Crown
+		factor = 100
+		hide_layers = { 5 = {}} #Hide layer 5 (headgear) when this frame is picked.
+		hide_layers = {31 = {}}
+		hide_layers = {32 = {}}
+
+		trigger = {
+			NOT = { has_game_rule = { name = blg_artifacts value = off } }
+			blg_crown_zunist = yes
+		}
+	}
+
+	13 = { # m - Bald
+		factor = 100
+		hide_layers = { 1 = {}} #Hide layer 1 (hair) when this frame is picked.
+
+		trigger = {
+			blg_shaved = yes
+		}
+	}
+
+	14 = { # n - Early Priest without headgear.
+		factor = 100
+		hide_layers = { 5 = {}} #Hide layer 5 (headgear) when this frame is picked.
+
+		trigger = {
+			blg_priest = yes
+			blg_religion_early = yes
+			NOT = { rightful_religious_head = ROOT }
+			is_in_society = no
+		}
+	}
+}

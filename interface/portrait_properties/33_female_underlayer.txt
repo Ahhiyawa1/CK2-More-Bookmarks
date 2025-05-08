@@ -1,0 +1,447 @@
+#p33 Frankish Culture Underlayer and Hair - Female
+33 = {
+	0 = { # 0 - blank
+		factor = 25
+
+		trigger = {
+			OR = {
+				is_variable_equal = { which = ca_underlayer value = 0 }
+				is_variable_equal = { which = ca_underlayer value = 1 }
+			}
+		}
+
+		modifier = {
+			factor = 100
+			OR = {
+				NOT = { has_dlc = "Holy Fury" }
+				is_female = no
+				blg_priest = yes
+				blg_prisoner = yes
+			}
+		}
+
+		modifier = {
+			factor = 100
+			OR = {
+				has_portrait_property = { layer = 5 index = 9 }
+				has_portrait_property = { layer = 5 index = 10 }
+				has_portrait_property = { layer = 5 index = 12 }
+				has_portrait_property = { layer = 5 index = 13 }
+				has_portrait_property = { layer = 3 index = 10 }
+				has_portrait_property = { layer = 3 index = 12 }
+				has_portrait_property = { layer = 3 index = 13 }
+				blg_modest = no
+				blg_culture_european = no
+			}
+			NOT = { check_variable = { which = ca_underlayer value = 2 } }
+		}
+
+		modifier = {
+			factor = 0.5
+			calc_true_if = {
+				amount = 2
+
+				is_married = yes
+				is_consort = yes
+				any_spouse_even_if_dead = { is_alive = no }
+				age >= 40
+				trait = chaste
+				trait = celibate
+				trait = zealous
+				has_focus = focus_theology
+				is_ascetic_trigger = yes
+				blg_pilgrimage = yes
+			}
+		}
+	}
+
+	1 = { # a - Empress / Queen Pre-1180
+		factor = 5
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_early = yes
+				blg_veiled_crown = yes
+				OR = {
+					higher_real_tier_than = duke
+					is_or_was_offmap_power_ruler = yes
+					spouse_even_if_dead = {
+						OR = {
+							higher_real_tier_than = duke
+							is_or_was_offmap_power_ruler = yes
+						}
+					}
+					blg_royal_title = yes
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 2 }
+			}
+		}
+	}
+
+	2 = { # b - Empress / Queen Pre-1180
+		factor = 5
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_early = yes
+				blg_veiled_crown = yes
+				OR = {
+					higher_real_tier_than = duke
+					is_or_was_offmap_power_ruler = yes
+					spouse_even_if_dead = {
+						OR = {
+							higher_real_tier_than = duke
+							is_or_was_offmap_power_ruler = yes
+						}
+					}
+					blg_royal_title = yes
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 3 }
+			}
+		}
+	}
+
+	3 = { # c - Empress / Queen Pre-1180
+		factor = 5
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_early = yes
+				blg_veiled_crown = yes
+				OR = {
+					higher_real_tier_than = duke
+					is_or_was_offmap_power_ruler = yes
+					spouse_even_if_dead = {
+						OR = {
+							higher_real_tier_than = duke
+							is_or_was_offmap_power_ruler = yes
+						}
+					}
+					blg_royal_title = yes
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 4 }
+			}
+		}
+	}
+
+	4 = { # d - Empress / Queen Pre-1180
+		factor = 5
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_early = yes
+				blg_veiled_crown = yes
+				OR = {
+					higher_real_tier_than = duke
+					is_or_was_offmap_power_ruler = yes
+					spouse_even_if_dead = {
+						OR = {
+							higher_real_tier_than = duke
+							is_or_was_offmap_power_ruler = yes
+						}
+					}
+					blg_royal_title = yes
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 5 }
+			}
+		}
+	}
+
+	5 = { # e - Empress / Queen Post-1180
+		factor = 5
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_late = yes
+				blg_veiled_crown = yes
+				OR = {
+					higher_real_tier_than = duke
+					is_or_was_offmap_power_ruler = yes
+					spouse_even_if_dead = {
+						OR = {
+							higher_real_tier_than = duke
+							is_or_was_offmap_power_ruler = yes
+						}
+					}
+					blg_royal_title = yes
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 6 }
+			}
+		}
+	}
+
+	6 = { # f - Empress / Queen Post-1180
+		factor = 5
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_late = yes
+				blg_veiled_crown = yes
+				OR = {
+					higher_real_tier_than = duke
+					is_or_was_offmap_power_ruler = yes
+					spouse_even_if_dead = {
+						OR = {
+							higher_real_tier_than = duke
+							is_or_was_offmap_power_ruler = yes
+						}
+					}
+					blg_royal_title = yes
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 7 }
+			}
+		}
+	}
+
+	7 = { # g - Empress / Queen Post-1180
+		factor = 5
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_late = yes
+				blg_headgear_overlayer = yes
+				OR = {
+					higher_real_tier_than = duke
+					is_or_was_offmap_power_ruler = yes
+					spouse_even_if_dead = {
+						OR = {
+							higher_real_tier_than = duke
+							is_or_was_offmap_power_ruler = yes
+						}
+					}
+					blg_royal_title = yes
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 8 }
+			}
+		}
+	}
+
+	8 = { # h - Empress / Queen Post-1180
+		factor = 5
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_late = yes
+				blg_veiled_crown = yes
+				OR = {
+					higher_real_tier_than = duke
+					is_or_was_offmap_power_ruler = yes
+					spouse_even_if_dead = {
+						OR = {
+							higher_real_tier_than = duke
+							is_or_was_offmap_power_ruler = yes
+						}
+					}
+					blg_royal_title = yes
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 9 }
+			}
+		}
+	}
+
+	9 = { # i - Duchess Early
+		factor = 2
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_early = yes
+				blg_headgear_duke = yes
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 10 }
+			}
+		}
+	}
+
+	10 = { # j - Duchess Early
+		factor = 2
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_early = yes
+				blg_veiled_crown = yes
+				blg_headgear_duke = yes
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 11 }
+			}
+		}
+	}
+
+	11 = { # k - Duchess Early
+		factor = 2
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_early = yes
+				blg_veiled_crown = yes
+				blg_headgear_duke = yes
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 12 }
+			}
+		}
+	}
+
+	12 = { # l - Duchess Early
+		factor = 2
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_early = yes
+				blg_veiled_crown = yes
+				blg_headgear_duke = yes
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 13 }
+			}
+		}
+	}
+
+	13 = { # m - Duchess Post-1180
+		factor = 2
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_late = yes
+				blg_headgear_duke = yes
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 14 }
+			}
+		}
+	}
+
+	14 = { # n - Duchess Post-1180
+		factor = 2
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_late = yes
+				blg_headgear_duke = yes
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 15 }
+			}
+		}
+	}
+
+	15 = { # o - Countess Early
+		factor = 1
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_early = yes
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 16 }
+			}
+		}
+	}
+
+	16 = { # p - Countess Early
+		factor = 1
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_early = yes
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 17 }
+			}
+		}
+	}
+
+	17 = { # q - Countess Early
+		factor = 1
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_early = yes
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 18 }
+			}
+		}
+	}
+
+	18 = { # r - Countess Post-1180
+		factor = 1
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_late = yes
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 19 }
+			}
+		}
+	}
+
+	19 = { # s - Countess Post-1180
+		factor = 1
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_underlayer value = 0 } }
+				blg_style_late = yes
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_underlayer value = 20 }
+			}
+		}
+	}
+}

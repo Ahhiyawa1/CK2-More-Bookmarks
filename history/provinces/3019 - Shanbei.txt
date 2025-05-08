@@ -1,0 +1,26 @@
+# 3019 - Shanbei
+
+# County Title
+title = c_shanbei
+
+# Settlements
+max_settlements = 3
+
+b_shanbei_taizhou = tribal
+#b_shanbei_taer = tribal
+#b_shanbei_lipahan = tribal
+#b_shanbei_jida = tribal
+#b_shanbei_mingantuo = tribal
+#b_shanbei_yaci = tribal
+#b_shanbei_xingguo = tribal
+
+# Misc
+culture = khitan
+religion = tengri_pagan
+
+# History
+907.1.1 = {
+	religion = buddhist
+	b_shanbei_taizhou = castle
+	b_shanbei_taer = city
+}

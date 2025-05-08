@@ -1,0 +1,1548 @@
+spriteTypes = {
+	# monastic_order_hindu
+
+	# vaishnavist_hindu
+
+	# Male
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_vaishnavite_male_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_vaishnavite_monk_male_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_vaishnavite_male_clothing_front"
+		textureFile = "gfx/characters/societies/mom_vaishnavite_monk_male_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	#spriteType = {
+	#	name = "GFX_society_monastic_order_hindu_vaishnavite_male_headgear_front"
+	#	textureFile = "gfx/characters/societies/mom_vaishnavite_monk_male_headgear_front.dds"
+	#	noOfFrames = 2
+	#}
+
+	#spriteType = {
+	#	name = "GFX_society_monastic_order_hindu_vaishnavite_male_headgear_mid"
+	#	textureFile = "gfx/characters/societies/mom_vaishnavite_monk_male_headgear_mid.dds"
+	#	noOfFrames = 2
+	#}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_hindu_vaishnavite_clothing_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_hindu_vaishnavist = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = sanyasi
+					portrait_has_trait = on_indian_pilgrimage
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_hindu_vaishnavite_male_clothing_behind:c0"
+			"GFX_society_monastic_order_hindu_vaishnavite_male_clothing_front:c2"
+			"GFX_empty:c5"
+			"GFX_empty:c3"
+			"GFX_empty:c1"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_hindu_vaishnavite_clothing_male_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+
+				blg_society_hindu_vaishnavist = yes
+				portrait_in_command = no
+				blg_wear_society_clothing_off = no
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_hindu_vaishnavite_male_clothing_behind:c0"
+			"GFX_society_monastic_order_hindu_vaishnavite_male_clothing_front:c2"
+		}
+	}
+
+	# Female
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_vaishnavite_female_headgear_behind"
+		textureFile = "gfx/characters/societies/mom_vaishnavite_monk_female_headgear_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_vaishnavite_female_headgear_front"
+		textureFile = "gfx/characters/societies/mom_vaishnavite_monk_female_headgear_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	#spriteType = {
+	#	name = "GFX_society_monastic_order_hindu_vaishnavite_female_headgear_mid"
+	#	textureFile = "gfx/characters/societies/mom_vaishnavite_monk_female_headgear_mid.dds"
+	#	noOfFrames = 2
+	#}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_hindu_vaishnavite_clothing_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_hindu_vaishnavist = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = sanyasini
+					portrait_has_trait = on_indian_pilgrimage
+					portrait_has_trait = blgquesting
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_hindu_vaishnavite_female_headgear_behind:c0"
+			"GFX_society_monastic_order_hindu_vaishnavite_female_headgear_front:c2"
+			"GFX_society_monastic_order_hindu_vaishnavite_female_headgear_behind:c1"
+			"GFX_society_monastic_order_hindu_vaishnavite_female_headgear_front:c5"
+			"GFX_empty:c3"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			32 = {
+				0 = { always = yes }
+			}
+			33 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	# smartist_hindu
+
+	# Male
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_smarta_male_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_smarta_monk_male_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_smarta_male_clothing_front"
+		textureFile = "gfx/characters/societies/mom_smarta_monk_male_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_smarta_male_headgear_behind"
+		textureFile = "gfx/characters/societies/mom_smarta_monk_male_headgear_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_smarta_male_headgear_front"
+		textureFile = "gfx/characters/societies/mom_smarta_monk_male_headgear_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	#spriteType = {
+	#	name = "GFX_society_monastic_order_hindu_smarta_male_headgear_mid"
+	#	textureFile = "gfx/characters/societies/mom_smarta_monk_male_headgear_mid.dds"
+	#	noOfFrames = 2
+	#}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_hindu_smarta_clothing_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_hindu_smartist = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = sanyasi
+					portrait_has_trait = on_indian_pilgrimage
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_hindu_smarta_male_clothing_behind:c0"
+			"GFX_society_monastic_order_hindu_smarta_male_clothing_front:c2"
+			"GFX_society_monastic_order_hindu_smarta_male_headgear_behind:c1"
+			"GFX_society_monastic_order_hindu_smarta_male_headgear_front:c5"
+			"GFX_empty:c3"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_hindu_smarta_clothing_male_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+
+				blg_society_hindu_smartist = yes
+				portrait_in_command = no
+				blg_wear_society_clothing_off = no
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_hindu_smarta_male_clothing_behind:c0"
+			"GFX_society_monastic_order_hindu_smarta_male_clothing_front:c2"
+		}
+	}
+
+	# Female
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_smarta_female_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_smarta_monk_female_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_smarta_female_clothing_front"
+		textureFile = "gfx/characters/societies/mom_smarta_monk_female_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_smarta_female_headgear_behind"
+		textureFile = "gfx/characters/societies/mom_smarta_monk_female_headgear_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_smarta_female_headgear_front"
+		textureFile = "gfx/characters/societies/mom_smarta_monk_female_headgear_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_smarta_female_headgear_mid"
+		textureFile = "gfx/characters/societies/mom_smarta_monk_female_headgear_mid.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_hindu_smarta_clothing_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_hindu_smartist = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = sanyasini
+					portrait_has_trait = on_indian_pilgrimage
+					portrait_has_trait = blgquesting
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_hindu_smarta_female_clothing_behind:c0"
+			"GFX_society_monastic_order_hindu_smarta_female_clothing_front:c2"
+			"GFX_society_monastic_order_hindu_smarta_female_headgear_behind:c1"
+			"GFX_society_monastic_order_hindu_smarta_female_headgear_front:c5"
+			"GFX_society_monastic_order_hindu_smarta_female_headgear_mid:c3"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			32 = {
+				0 = { always = yes }
+			}
+			33 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	# shaktist_hindu
+
+	# Male
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_shakti_male_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_shakti_monk_male_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_shakti_male_clothing_front"
+		textureFile = "gfx/characters/societies/mom_shakti_monk_male_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	#spriteType = {
+	#	name = "GFX_society_monastic_order_hindu_shakti_male_headgear_mid"
+	#	textureFile = "gfx/characters/societies/mom_shakti_monk_male_headgear_mid.dds"
+	#	noOfFrames = 2
+	#}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_hindu_shakti_clothing_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_hindu_shaktist = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = sanyasi
+					portrait_has_trait = on_indian_pilgrimage
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_hindu_shakti_male_clothing_behind:c0"
+			"GFX_society_monastic_order_hindu_shakti_male_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_empty:c1"
+			"GFX_empty:c5"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_hindu_shakti_clothing_male_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_hindu_shaktist = yes
+				portrait_in_command = no
+				blg_wear_society_clothing_off = no
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_hindu_shakti_male_clothing_behind:c0"
+			"GFX_society_monastic_order_hindu_shakti_male_clothing_front:c2"
+		}
+	}
+
+	# Female
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_shakti_female_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_shakti_monk_female_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_shakti_female_clothing_front"
+		textureFile = "gfx/characters/societies/mom_shakti_monk_female_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	#spriteType = {
+	#	name = "GFX_society_monastic_order_hindu_shakti_female_headgear_mid"
+	#	textureFile = "gfx/characters/societies/mom_shakti_monk_female_headgear_mid.dds"
+	#	noOfFrames = 2
+	#}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_hindu_shakti_clothing_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_hindu_shaktist = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = sanyasini
+					portrait_has_trait = on_indian_pilgrimage
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_hindu_shakti_female_clothing_behind:c0"
+			"GFX_society_monastic_order_hindu_shakti_female_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_empty:c1"
+			"GFX_empty:c5"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			32 = {
+				0 = { always = yes }
+			}
+			33 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_hindu_shakti_clothing_female_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_hindu_shaktist = yes
+				portrait_in_command = no
+				blg_wear_society_clothing_off = no
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_hindu_shakti_female_clothing_behind:c0"
+			"GFX_society_monastic_order_hindu_shakti_female_clothing_front:c2"
+		}
+	}
+
+	# shaivist_hindu
+
+	# Male
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_shaivite_male_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_shaivite_monk_male_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_shaivite_male_clothing_front"
+		textureFile = "gfx/characters/societies/mom_shaivite_monk_male_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	#spriteType = {
+	#	name = "GFX_society_monastic_order_hindu_shaivite_male_headgear_mid"
+	#	textureFile = "gfx/characters/societies/mom_shaivite_monk_male_headgear_mid.dds"
+	#	noOfFrames = 2
+	#}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_hindu_shaivite_clothing_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_hindu_shaivist = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = sanyasi
+					portrait_has_trait = on_indian_pilgrimage
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_hindu_shaivite_male_clothing_behind:c0"
+			"GFX_society_monastic_order_hindu_shaivite_male_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_empty:c1"
+			"GFX_empty:c5"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_hindu_shaivite_clothing_male_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+
+				blg_society_hindu_shaivist = yes
+				portrait_in_command = no
+				blg_wear_society_clothing_off = no
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_hindu_shaivite_male_clothing_behind:c0"
+			"GFX_society_monastic_order_hindu_shaivite_male_clothing_front:c2"
+		}
+	}
+
+	# Female
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_shaivite_female_headgear_behind"
+		textureFile = "gfx/characters/societies/mom_shaivite_monk_female_headgear_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_hindu_shaivite_female_headgear_front"
+		textureFile = "gfx/characters/societies/mom_shaivite_monk_female_headgear_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	#spriteType = {
+	#	name = "GFX_society_monastic_order_hindu_shaivite_female_headgear_mid"
+	#	textureFile = "gfx/characters/societies/mom_shaivite_monk_female_headgear_mid.dds"
+	#	noOfFrames = 2
+	#}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_hindu_shaivite_clothing_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_hindu_shaivist = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = sanyasini
+					portrait_has_trait = on_indian_pilgrimage
+					portrait_has_trait = blgquesting
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_hindu_shaivite_female_headgear_behind:c0"
+			"GFX_society_monastic_order_hindu_shaivite_female_headgear_front:c2"
+			"GFX_society_monastic_order_hindu_shaivite_female_headgear_behind:c1"
+			"GFX_society_monastic_order_hindu_shaivite_female_headgear_front:c5"
+			"GFX_empty:c3"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	# monastic_order_buddhist
+
+	# Vajrayana
+
+	# Male
+
+	spriteType = {
+		name = "GFX_society_monastic_order_buddhist_vajrayana_male_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_buddhist_vajrayana_male_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_buddhist_vajrayana_male_clothing_front"
+		textureFile = "gfx/characters/societies/mom_buddhist_vajrayana_male_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_buddhist_vajrayana_clothing_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_buddhist_vajrayana = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = bhikkhu
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_buddhist_vajrayana_male_clothing_behind:c0"
+			"GFX_society_monastic_order_buddhist_vajrayana_male_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_empty:c1"
+			"GFX_empty:c5"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+
+		headgear_that_hides_hair = {}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_buddhist_vajrayana_clothing_male_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_buddhist_vajrayana = yes
+				portrait_in_command = no
+				OR = {
+					blg_wear_society_clothing_off = no
+					portrait_has_trait = on_indian_pilgrimage
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_buddhist_vajrayana_male_clothing_behind:c0"
+			"GFX_society_monastic_order_buddhist_vajrayana_male_clothing_front:c2"
+		}
+	}
+
+	# Female
+
+	spriteType = {
+		name = "GFX_society_monastic_order_buddhist_vajrayana_female_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_buddhist_vajrayana_female_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_buddhist_vajrayana_female_clothing_front"
+		textureFile = "gfx/characters/societies/mom_buddhist_vajrayana_female_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_buddhist_vajrayana_clothing_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_buddhist_vajrayana = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = bhikkhuni
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_buddhist_vajrayana_female_clothing_behind:c0"
+			"GFX_society_monastic_order_buddhist_vajrayana_female_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_empty:c1"
+			"GFX_empty:c5"
+			"GFX_empty:c7"
+		}
+
+		# Hide hair
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			32 = {
+				0 = { always = yes }
+			}
+			33 = {
+				0 = { always = yes }
+			}
+		}
+
+		headgear_that_hides_hair = {}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_buddhist_vajrayana_clothing_female_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_buddhist_vajrayana = yes
+				portrait_in_command = no
+				OR = {
+					blg_wear_society_clothing_off = no
+					portrait_has_trait = on_indian_pilgrimage
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_buddhist_vajrayana_female_clothing_behind:c0"
+			"GFX_society_monastic_order_buddhist_vajrayana_female_clothing_front:c2"
+		}
+	}
+
+	# Theravada
+
+	# Male
+
+	spriteType = {
+		name = "GFX_society_monastic_order_buddhist_theravada_male_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_buddhist_theravada_male_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_buddhist_theravada_male_clothing_front"
+		textureFile = "gfx/characters/societies/mom_buddhist_theravada_male_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_buddhist_theravada_clothing_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_buddhist_theravada = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = bhikkhu
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_buddhist_theravada_male_clothing_behind:c0"
+			"GFX_society_monastic_order_buddhist_theravada_male_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_empty:c1"
+			"GFX_empty:c5"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+
+		headgear_that_hides_hair = {}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_buddhist_theravada_clothing_male_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_buddhist_theravada = yes
+				portrait_in_command = no
+				OR = {
+					blg_wear_society_clothing_off = no
+					portrait_has_trait = on_indian_pilgrimage
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_buddhist_theravada_male_clothing_behind:c0"
+			"GFX_society_monastic_order_buddhist_theravada_male_clothing_front:c2"
+		}
+	}
+
+	# Female
+
+	spriteType = {
+		name = "GFX_society_monastic_order_buddhist_theravada_female_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_buddhist_theravada_female_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_buddhist_theravada_female_clothing_front"
+		textureFile = "gfx/characters/societies/mom_buddhist_theravada_female_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_buddhist_theravada_clothing_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_buddhist_theravada = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = bhikkhuni
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_buddhist_theravada_female_clothing_behind:c0"
+			"GFX_society_monastic_order_buddhist_theravada_female_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_empty:c1"
+			"GFX_empty:c5"
+			"GFX_empty:c7"
+		}
+
+		# Hide hair
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			32 = {
+				0 = { always = yes }
+			}
+			33 = {
+				0 = { always = yes }
+			}
+		}
+
+		headgear_that_hides_hair = { 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 }
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_buddhist_theravada_clothing_female_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_buddhist_theravada = yes
+				portrait_in_command = no
+				OR = {
+					blg_wear_society_clothing_off = no
+					portrait_has_trait = on_indian_pilgrimage
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_buddhist_theravada_female_clothing_behind:c0"
+			"GFX_society_monastic_order_buddhist_theravada_female_clothing_front:c2"
+		}
+	}
+
+	# Mahayana
+
+	# Male
+
+	spriteType = {
+		name = "GFX_society_monastic_order_buddhist_mahayana_male_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_buddhist_mahayana_male_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_buddhist_mahayana_male_clothing_front"
+		textureFile = "gfx/characters/societies/mom_buddhist_mahayana_male_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_buddhist_mahayana_clothing_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_buddhist_mahayana = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = bhikkhu
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_buddhist_mahayana_male_clothing_behind:c0"
+			"GFX_society_monastic_order_buddhist_mahayana_male_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_empty:c1"
+			"GFX_empty:c5"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+
+		headgear_that_hides_hair = {}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_buddhist_mahayana_clothing_male_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_buddhist_mahayana = yes
+				portrait_in_command = no
+				OR = {
+					blg_wear_society_clothing_off = no
+					portrait_has_trait = on_indian_pilgrimage
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_buddhist_mahayana_male_clothing_behind:c0"
+			"GFX_society_monastic_order_buddhist_mahayana_male_clothing_front:c2"
+		}
+	}
+
+	# Female
+
+	spriteType = {
+		name = "GFX_society_monastic_order_buddhist_mahayana_female_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_buddhist_mahayana_female_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_buddhist_mahayana_female_clothing_front"
+		textureFile = "gfx/characters/societies/mom_buddhist_mahayana_female_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_buddhist_mahayana_clothing_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_buddhist_mahayana = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = bhikkhuni
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_buddhist_mahayana_female_clothing_behind:c0"
+			"GFX_society_monastic_order_buddhist_mahayana_female_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_empty:c1"
+			"GFX_empty:c5"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			32 = {
+				0 = { always = yes }
+			}
+			33 = {
+				0 = { always = yes }
+			}
+		}
+
+		headgear_that_hides_hair = {}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_buddhist_mahayana_clothing_female_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_buddhist_mahayana = yes
+				portrait_in_command = no
+				OR = {
+					blg_wear_society_clothing_off = no
+					portrait_has_trait = on_indian_pilgrimage
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_buddhist_mahayana_female_clothing_behind:c0"
+			"GFX_society_monastic_order_buddhist_mahayana_female_clothing_front:c2"
+		}
+	}
+
+	# monastic_order_jain
+
+	# digambara_jain
+
+	# male
+
+	spriteType = {
+		name = "GFX_society_monastic_order_jain_digambara_male_clothing_front"
+		textureFile = "gfx/characters/societies/mom_jain_digambara_male_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_jain_digambara_clothing_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 11000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_jain_digambara = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = muni
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_empty:c0"
+			"GFX_society_monastic_order_jain_digambara_male_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_empty:c1"
+			"GFX_empty:c5"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+
+		headgear_that_hides_hair = {}
+	}
+
+	# female
+
+	spriteType = {
+		name = "GFX_society_monastic_order_jain_digambara_female_headgear_behind"
+		textureFile = "gfx/characters/societies/mom_jain_digambara_female_headgear_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_jain_digambara_female_headgear_front"
+		textureFile = "gfx/characters/societies/mom_jain_digambara_female_headgear_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_jain_digambara_clothing_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_jain_digambara = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = aryika
+					portrait_has_trait = on_indian_pilgrimage
+					portrait_has_trait = blgquesting
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_jain_svetambara_female_clothing_behind:c0"
+			"GFX_society_monastic_order_jain_svetambara_female_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_society_monastic_order_jain_digambara_female_headgear_behind:c1"
+			"GFX_society_monastic_order_jain_digambara_female_headgear_front:c5"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			32 = {
+				0 = { always = yes }
+			}
+			33 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	# svetambara_jain
+
+	# male
+
+	spriteType = {
+		name = "GFX_society_monastic_order_jain_svetambara_male_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_jain_svetambara_male_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_jain_svetambara_male_clothing_front"
+		textureFile = "gfx/characters/societies/mom_jain_svetambara_male_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_jain_svetambara_male_headgear_front"
+		textureFile = "gfx/characters/societies/mom_jain_svetambara_male_headgear_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_jain_svetambara_male_headgear_mid"
+		textureFile = "gfx/characters/societies/mom_jain_svetambara_male_headgear_mid.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_jain_svetambara_clothing_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_jain = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = muni
+					portrait_has_trait = on_indian_pilgrimage
+					portrait_has_trait = blgquesting
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_jain_svetambara_male_clothing_behind:c0"
+			"GFX_society_monastic_order_jain_svetambara_male_clothing_front:c2"
+			"GFX_society_monastic_order_jain_svetambara_male_headgear_front:c5"
+			"GFX_society_monastic_order_jain_svetambara_male_headgear_mid:c3"
+			"GFX_empty:c1"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_jain_svetambara_clothing_male_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_jain = yes
+				portrait_in_command = no
+				blg_wear_society_clothing_off = no
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_jain_svetambara_male_clothing_behind:c0"
+			"GFX_society_monastic_order_jain_svetambara_male_clothing_front:c2"
+		}
+	}
+
+	# female
+
+	spriteType = {
+		name = "GFX_society_monastic_order_jain_svetambara_female_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_jain_svetambara_female_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_jain_svetambara_female_clothing_front"
+		textureFile = "gfx/characters/societies/mom_jain_svetambara_female_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_jain_svetambara_female_headgear_behind"
+		textureFile = "gfx/characters/societies/mom_jain_svetambara_female_headgear_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_monastic_order_jain_svetambara_female_headgear_front"
+		textureFile = "gfx/characters/societies/mom_jain_svetambara_female_headgear_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_jain_svetambara_clothing_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_jain_theravada = yes
+				OR = {
+					blg_wear_monastic_clothing = yes
+					portrait_has_trait = aryika
+					portrait_has_trait = on_indian_pilgrimage
+					portrait_has_trait = blgquesting
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_jain_svetambara_female_clothing_behind:c0"
+			"GFX_society_monastic_order_jain_svetambara_female_clothing_front:c2"
+			"GFX_society_monastic_order_jain_svetambara_female_headgear_behind:c1"
+			"GFX_society_monastic_order_jain_svetambara_female_headgear_front:c5"
+			"GFX_empty:c3"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			3 = {
+				0 = { always = yes }
+				1 = { always = yes }
+			}
+			19 = {
+				0 = { always = yes }
+			}
+			32 = {
+				0 = { always = yes }
+			}
+			33 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monastic_order_jain_svetambara_clothing_female_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_jain = yes
+				portrait_in_command = no
+				blg_wear_society_clothing_off = no
+			}
+		}
+
+		layer = {
+			"GFX_society_monastic_order_jain_svetambara_female_clothing_behind:c0"
+			"GFX_society_monastic_order_jain_svetambara_female_clothing_front:c2"
+		}
+	}
+}

@@ -1,0 +1,25 @@
+# 3029 - Haciha
+
+# County Title
+title = c_haciha
+
+# Settlements
+max_settlements = 2
+
+b_haciha = tribal
+#b_haciha_hacihai = tribal
+#b_haciha_qingshui = tribal
+#b_haciha_nuomenhan = tribal
+#b_haciha_xilibiansi = tribal
+#b_haciha_hui = tribal
+#b_haciha_yimian = tribal
+
+# Misc
+culture = khitan
+religion = tengri_pagan
+
+# History
+907.1.1 = {
+	religion = buddhist
+	b_haciha = castle
+}

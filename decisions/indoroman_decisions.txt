@@ -1,0 +1,1061 @@
+targetted_decisions = {
+iaponi_marriage = {
+		filter = home_court
+		ai_target_filter = self
+		is_high_prio = yes
+
+		from_potential = {
+			ai = no
+			prisoner = no
+			has_landed_title = e_iaponi
+			is_married = no
+		}
+	
+		potential = {
+			is_married = no
+			OR = {
+				AND = {
+					FROM = {
+						is_female = yes
+					}
+					is_female = no
+				}
+				AND = {
+					FROM = {
+						is_female = no
+					}
+					is_female = yes
+				}
+			}
+			prisoner = no
+		}
+
+		allow = {
+			prisoner = no
+			opinion = { who = FROM value = 100 }
+		}
+		effect = {
+			add_lover = FROM
+			if = {
+				limit = {
+					FROM = {
+						is_female = no
+					}
+				}
+			  add_spouse = FROM
+			}
+			if = {
+				limit = {
+					FROM = {
+						is_female = yes
+					}
+				}
+			  add_spouse_matrilineal = FROM
+			}
+		}
+		ai_will_do = {
+    	factor = 1
+ 		}
+	}
+}
+
+decisions = {
+
+raise_japanese_invasion_force = {
+		only_playable = yes
+		is_high_prio = yes
+		is_mercenary = yes
+
+		potential = {
+			has_landed_title = e_iaponi
+			NOT = {
+			has_earmarked_regiments = japanese_regiment
+			}
+		}
+		allow = {
+		wealth = 100
+		OR = {
+		war = yes
+		ai = no
+		}
+		}
+		effect = {
+		wealth = -250
+			spawn_fleet = {
+			province = 1411 # ganges delta
+			owner = ROOT
+			disband_on_peace = no
+			troops =
+			{
+			galleys = { 35 35 }
+			}
+			merge = yes
+			}
+			spawn_fleet = {
+			province = 1411 # ganges delta
+			owner = ROOT
+			disband_on_peace = no
+			troops =
+			{
+			galleys = { 35 35 }
+			}
+			merge = yes
+			}
+			spawn_unit = {
+			province = 1318
+			owner = ROOT
+			troops = {
+			archers = { 1000 1000 }
+			heavy_infantry = { 1000 1000 }
+			pikemen = { 100 100 }
+			knights = { 50 50 }
+			horse_archers = { 50 50 }
+			}
+			merge = yes
+			attrition = 1.0
+			disband_on_peace = no
+			maintenance_multiplier = 0.20
+			earmark = japanese_regiment
+			}
+			spawn_unit = {
+			province = 1318
+			owner = ROOT
+			troops = {
+			archers = { 600 600 }
+			heavy_infantry = { 500 500 }
+			pikemen = { 100 100 }
+			knights = { 100 100 }
+			horse_archers = { 50 50 }
+			}
+			merge = yes
+			attrition = 1.0
+			disband_on_peace = no
+			maintenance_multiplier = 0.20
+			earmark = japanese_regiment
+			}
+			spawn_unit = {
+			province = 1318
+			owner = ROOT
+			troops = {
+			archers = { 600 600 }
+			heavy_infantry = { 500 500 }
+			pikemen = { 100 100 }
+			knights = { 100 100 }
+			horse_archers = { 50 50 }
+			}
+			merge = yes
+			attrition = 1.0
+			disband_on_peace = no
+			maintenance_multiplier = 0.20
+			earmark = japanese_regiment
+			}
+			}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+go_back_weast = {
+		only_independent = yes
+		is_high_prio = yes
+
+		potential = {
+		NOT = { has_global_flag = indo_romans_victorious }
+		has_landed_title = k_walakrios_expedition
+		has_character_flag = wala_wants_war
+		}
+		allow = {
+		has_landed_title = k_walakrios_expedition
+		}
+		effect = {
+		k_walakrios_expedition = {
+		set_name = "Daqin Band"
+	    adjective = "Daqin Band"
+		set_coa = e_orientis
+		}
+		random_independent_ruler = {
+	limit = {
+	has_landed_title = e_indo_roman_empire
+	}
+	save_event_target_as = red_indo_emperor
+	}
+		if = {
+			limit = { is_tributary = yes }
+			custom_tooltip = {
+				text = "REMOVE_PREVIOUS_SUZERAIN"
+				hidden_tooltip = {
+					any_suzerain = {
+						ROOT = {
+							remove_tributary = PREV
+						}
+					}
+				}
+			}
+		}
+		clr_character_flag = wala_wants_war
+		spawn_unit = {
+	province = 1513
+	owner = ROOT
+	match_character = event_target:red_indo_emperor
+	match_mult = 0.008
+	attrition = 0.3
+	reinforces = yes
+	}
+	hidden_tooltip = {
+	spawn_unit = {
+	province = 1513
+	owner = ROOT
+	match_character = event_target:red_indo_emperor
+	match_mult = 0.004
+	attrition = 0.3
+	reinforces = yes
+	}
+	spawn_unit = {
+	province = 1513
+	owner = ROOT
+	match_character = event_target:red_indo_emperor
+	match_mult = 0.004
+	attrition = 0.3
+	reinforces = yes
+	}
+	spawn_unit = {
+	province = 1513
+	owner = ROOT
+	match_character = event_target:red_indo_emperor
+	match_mult = 0.01
+	attrition = 0.3
+	reinforces = yes
+	}
+	spawn_unit = {
+	province = 1513
+	owner = ROOT
+	match_character = event_target:red_indo_emperor
+	match_mult = 0.01
+	attrition = 0.3
+	reinforces = yes
+	}
+	spawn_unit = {
+	province = 1513
+	owner = ROOT
+	match_character = event_target:red_indo_emperor
+	match_mult = 0.02
+	attrition = 0.3
+	reinforces = yes
+	}
+	}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+indo_roman_return = {
+		only_independent = yes
+		is_high_prio = yes
+
+		potential = {
+		NOT = { has_global_flag = indo_romans_victorious }
+		has_landed_title = e_indo_roman_empire
+		}
+		allow = {
+		OR = {
+		has_landed_title = c_roma
+		any_realm_lord = { 
+		has_landed_title = c_roma
+		}
+		}
+
+		}
+		effect = {
+		ROOT = {
+		create_bloodline = {
+		type = indoroman_ultimus_romanorum
+		}
+		new_bloodline = {
+		set_description = "indoroman_ultimus_romanorum_desc"
+		}
+		set_global_flag = indo_romans_victorious
+		save_global_event_target_as = the_best_roman
+        narrative_event = { id = indoromans.44 }
+		}
+		c_roma = {
+		location = {
+		culture = FROM
+		religion = FROM
+		}
+		}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	summon_india_rome = {
+		only_independent = yes
+		is_high_prio = yes
+
+		potential = {
+		NOT = { has_global_flag = summoned_the_indo_romans }
+		ai = no
+		e_indo_roman_empire = {
+		has_holder = no
+		}
+		NOT = { has_global_flag = indo_roman_arrival }
+		}
+		allow = {
+		OR = {
+        trait = lunatic
+		piety = 1500
+		}
+
+		}
+		effect = {
+		#piety = -1500
+		ROOT = {
+		set_character_flag = summoned_the_indo_romans
+        narrative_event = { id = indoromans.1 }
+		}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+
+
+	form_praetorians_india = {
+		is_high_prio = yes
+		only_playable = yes
+		ai_check_interval = 24
+		
+		ai_will_do = {
+		factor = 15
+		}
+
+		potential = {
+			any_demesne_title = {
+				higher_tier_than = DUKE
+			}
+			NOT = {
+			is_title_active = d_indo_praetorians
+			}
+			OR = {
+				religion = vieti_orthodox
+			}
+			has_landed_title = e_indo_roman_empire
+
+			independent = yes
+
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+
+		allow = {
+			piety = 400
+			wealth = 300
+
+		}
+
+		effect = {
+			wealth = -400
+			piety = -300
+
+			custom_tooltip = {
+
+		create_random_soldier = {
+		dynasty = none
+		random_traits = yes
+		trait = praetorian_ultra
+		religion = orthodox
+		}
+		
+			new_character = {
+			d_indo_praetorians = {
+			grant_title = PREV
+			}
+			hidden_effect = {
+			primary_title = { gender_succ = true_cognatic }
+			any_demesne_title = { add_law = status_of_women_4 } 
+			}
+			set_defacto_liege = PREV
+			wealth = 100
+			set_government_type = feudal_government
+		}
+			}
+
+			sound_effect = generic_click_01
+		}
+	}
+	
+		form_knights_of_saint_thomas = {
+		is_high_prio = yes
+		only_playable = yes
+		
+		ai_will_do = {
+		factor = 15
+		}
+
+		potential = {
+			NOT = {
+				is_title_active = d_knights_of_saint_thomas
+			}
+			religion = vieti_orthodox
+			has_landed_title = e_indo_roman_empire
+
+			independent = yes
+
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		ai_check_interval = 30
+		allow = {
+			piety = 500
+			wealth = 500
+			independent = yes
+
+		}
+		effect = {
+			wealth = -500
+			piety = -500
+
+			custom_tooltip = {
+
+				create_random_soldier = {
+					random_traits = yes
+					dynasty = random
+					culture = bengali
+					religion = ROOT
+					age = 20
+				}
+				new_character = {
+					set_government_type = order_government
+					add_trait = shrewd
+					add_trait = zealous
+					add_trait = diligent
+					add_trait = inspiring_leader
+					add_trait = organizer
+					if = {
+						limit = {
+							NOT = {
+								trait = brilliant_strategist
+							}
+						}
+						remove_trait = misguided_warrior
+						remove_trait = tough_soldier
+						remove_trait = skilled_tactician
+						add_trait = brilliant_strategist
+					}
+					grant_title_no_opinion = d_knights_of_saint_thomas
+					set_defacto_liege = ROOT
+
+					opinion = {
+						name = opinion_formed_order
+						who = ROOT
+						years = 25
+					}
+					add_friend = ROOT
+
+					primary_title = {
+						holy_order_set_law_effect = yes
+					}
+				}
+
+			sound_effect = generic_click_01
+		}
+	}
+	
+	}
+	
+		employ_hero_of_rome = {
+		only_playable = yes
+		
+		ai_will_do = {
+		factor = 4
+		}
+		
+		ai_check_interval = 120
+
+		potential = {
+		has_landed_title = e_indo_roman_empire
+		
+		}
+		allow = {
+			prestige = 75
+			scaled_wealth = 0.45
+			NOT = {
+				has_character_modifier = in_seclusion
+			}
+			has_landed_title = e_indo_roman_empire
+		}
+		effect = {
+			prestige = -75
+			scaled_wealth = -0.45
+			hidden_tooltip = {
+					random_list = {
+						80 = {
+					   create_character = {
+			           dynasty = random
+			           random_traits = yes
+			           religion = ROOT
+					   	trait = indoroman_champ
+		                }
+						new_character = {
+						save_event_target_as = invited_character
+						hidden_tooltip = {
+						random_list = {
+						2 = { add_artifact = spatha_tier_1_new }
+		                1 = { add_artifact = spatha_tier_2_new }
+						}
+		                }
+		                random_list = {
+		                2 = { add_artifact = indoroman_lamellar }
+		                1 = { }
+		                }
+						}
+						}
+						}
+						10 = {
+						 create_character = {
+			           dynasty = random
+			           random_traits = yes
+			           religion = ROOT
+					   	trait = indoroman_champ
+						trait = ambitious
+						trait = scarred
+						trait = cruel
+						trait = deceitful
+		                }
+						new_character = {
+						save_event_target_as = invited_character
+						2 = { add_artifact = spatha_tier_1_new }
+		                1 = { add_artifact = spatha_tier_2_new }
+		                }
+		                random_list = {
+		                2 = { add_artifact = indoroman_lamellar }
+		                1 = { }
+		                }
+						}
+						}
+						10 = {
+					   create_character = {
+			           dynasty = random
+			           random_traits = yes
+			           religion = ROOT
+					   female = yes
+					   trait = brilliant_strategist
+					   trait = robust
+					   trait = indoroman_champ
+			           trait = praetorian_ultra
+		                }
+						new_character = {
+						save_event_target_as = invited_character
+						2 = { add_artifact = spatha_tier_1_new }
+		                1 = { add_artifact = spatha_tier_2_new }
+		                }
+		                random_list = {
+		                2 = { add_artifact = indoroman_lamellar }
+		                1 = { }
+		                }
+
+					}
+			
+			custom_tooltip = { text = promoted_commander_TT }
+			character_event = { id = NE.1 }
+		}
+		revoke_allowed = {
+			always = no
+		}
+	}
+	
+		reform_comitatenses = {
+		is_high_prio = yes
+		only_playable = yes
+		#ai_check_interval = 1
+		potential = {
+			#religion_group = christian
+			NOT = {
+				has_earmarked_regiments = comitatenses_guard
+			}
+			culture = romanoindian
+			OR = {
+			has_character_flag = proclaimed_divus 
+			liege_before_war = {
+			has_landed_title = e_indo_roman_empire
+			}
+			has_landed_title = e_indo_roman_empire
+			}
+		}
+		
+		ai_will_do = {
+		factor = 1
+		}
+
+		allow = {
+			prestige = 100
+			wealth = 300
+			#war = no
+		}
+
+		effect = {
+			prestige = -100
+			if = {
+			limit = { ai = no }
+			wealth = -300
+			}
+
+			capital_scope = {
+				show_scope_change = no
+				ROOT = {
+					show_scope_change = no
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							heavy_infantry = { 1500 1500 }
+							light_infantry = { 1500 1500 }
+							pikemen = { 800 800 }
+							archers = { 800 800 }
+						}
+						attrition = 1.0
+						reinforces = yes
+						disband_on_peace = no
+						maintenance_multiplier = 0.1
+						earmark = comitatenses_guard
+					}	
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							heavy_infantry = { 1500 1500 }
+							light_infantry = { 1500 1500 }
+							pikemen = { 800 800 }
+							archers = { 800 800 }
+						}
+						attrition = 1.0
+						reinforces = yes
+						disband_on_peace = no
+						maintenance_multiplier = 0.1
+						earmark = comitatenses_guard
+					}
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							heavy_infantry = { 1500 1500 }
+							light_infantry = { 1500 1500 }
+							pikemen = { 800 800 }
+							archers = { 800 800 }
+						}
+						attrition = 1.0
+						reinforces = yes
+						disband_on_peace = no
+						maintenance_multiplier = 0.1
+						earmark = comitatenses_guard
+					}
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							war_elephants = { 10 10 }
+							pikemen = { 100 100 }
+						}
+						attrition = 1.0
+						reinforces = yes
+						disband_on_peace = no
+						maintenance_multiplier = 0.06
+						earmark = comitatenses_guard
+					}
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							war_elephants = { 10 10 }
+							pikemen = { 100 100 }
+						}
+						attrition = 1.0
+						reinforces = yes
+						disband_on_peace = no
+						maintenance_multiplier = 0.06
+						earmark = comitatenses_guard
+					}
+					spawn_unit = {
+						owner = ROOT
+						province = PREV
+						home = PREV
+						troops = {
+							war_elephants = { 10 10 }
+							pikemen = { 100 100 }
+						}
+						attrition = 1.0
+						reinforces = yes
+						disband_on_peace = no
+						maintenance_multiplier = 0.06
+						earmark = comitatenses_guard
+					}
+				}
+			}
+			sound_effect = generic_click_01
+		}
+	}
+	
+	employ_a_roman_sculptor = {
+		only_playable = yes
+		ai_check_interval = 36
+		potential = {
+		OR = {
+		culture = romanoindian
+		culture = roman
+		}
+		NOT = {
+		has_artifact = indoroman_prev_emperor_sculpture_mastercraft
+		}
+		has_landed_title = e_indo_roman_empire
+		age = 14
+		}
+		allow = {
+			wealth = 200
+			is_inaccessible_trigger = no
+		}
+		effect = {
+		wealth = -200
+		random_list = {
+		2 = { add_artifact = indoroman_prev_emperor_sculpture_mastercraft }
+		5 = { add_artifact = indoroman_prev_emperor_sculpture_decent }
+		3 = { add_artifact = indoroman_prev_emperor_sculpture_lowquality }
+		}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				NOR = {
+					tier = KING
+					tier = EMPEROR
+				}
+			}
+			modifier = {
+				factor = 0.5
+				trait = greedy
+			}
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 0.1
+				trait = content
+			}
+		}
+	}
+	
+	acquire_stabby_spatha = {
+		only_playable = yes
+		ai_check_interval = 36
+		potential = {
+		OR = {
+		culture = romanoindian
+		culture = roman
+		}
+		NOR = {
+		has_artifact = spatha_tier_1_new
+		has_artifact = spatha_tier_2_new
+		}
+		has_landed_title = e_indo_roman_empire
+		age = 14
+		}
+		allow = {
+			wealth = 150
+			is_inaccessible_trigger = no
+		}
+		effect = {
+		wealth = -150
+		random_list = {
+		2 = { add_artifact = spatha_tier_1_new }
+		1 = { add_artifact = spatha_tier_2_new }
+		}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				NOR = {
+					tier = KING
+					tier = EMPEROR
+				}
+			}
+			modifier = {
+				factor = 0.5
+				trait = greedy
+			}
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 0.1
+				trait = content
+			}
+		}
+	}
+	
+	become_a_vieti_witch = {
+		only_playable = yes
+		ai_check_interval = 36
+		potential = {
+		NOT = {
+		has_character_modifier = vieti_witch
+		}
+		#NOT = {
+		#trait = mystic
+		#}
+		OR = {
+		religion = vieti_krioticism
+		religion = romist_pagan
+		}
+		OR = {
+		trait = mystic
+		trait = zealous
+		trait = physician
+		}
+		OR = {
+		trait = mystic
+		trait = lunatic
+		trait = possessed
+		}
+		
+		age = 14
+		}
+		allow = {
+		#religion = romist_pagan
+		OR = {
+		trait = mystic
+		trait = zealous
+		trait = physician
+		}
+		OR = {
+		trait = mystic
+		trait = lunatic
+		trait = possessed
+		}
+		piety = 200
+		}
+		effect = {
+		piety = -200
+		add_trait = mystic
+		add_character_modifier = { 
+	    name = vieti_witch
+	    duration = -1
+	    }
+		if = {
+		limit = { has_nickname = no }
+		random_list = {
+		4 = { give_nickname = nick_the_witch }
+		2 = { give_nickname = nick_of_the_wilds }
+		2 = { give_nickname = nick_the_strange }
+		2 = { give_nickname = nick_the_monster }
+		1 = { give_nickname = nick_the_abomination }
+		1 = { give_nickname = nick_the_bleeding_eyes }
+		1 = { give_nickname = nick_the_white_raven }
+		2 = { give_nickname = nick_the_accursed }
+		1 = { give_nickname = nick_the_wicked }
+		1 = { give_nickname = nick_the_bewitched }
+		2 = { give_nickname = nick_the_twitchy }
+		}
+		}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				OR = {
+					tier = KING
+					tier = EMPEROR
+				}
+			}
+		}
+	}
+	
+	become_a_vieti_divus = {
+		only_playable = yes
+		ai_check_interval = 10
+		potential = {
+		NOT = { has_character_flag = proclaimed_divus }
+		OR = {
+		has_common_devilworship_prerequisites = no
+		has_character_modifier = madman_of_deccan
+		has_landed_title = e_indo_roman_empire
+		}
+		culture = romanoindian
+		OR = {
+		has_character_modifier = madman_of_deccan
+		#AND = {
+		#religion = vieti_orthodox
+		#trait = sympathy_pagans
+		#}
+		religion = vieti_orthodox
+		religion = vieti_krioticism
+		religion = romist_pagan
+		religion = hereclemasculist_pagan
+		religion = vieti_mithras_pagan
+		religion = britannic_hyperborean_pagan
+		}
+		OR = {
+		tier = DUKE
+		tier = KING
+		tier = EMPEROR
+		}
+		
+		age = 14
+		}
+		allow = {
+		OR = {
+		has_character_modifier = madman_of_deccan
+		AND = {
+		has_benevolent_trait_trigger = yes
+		OR = {
+		trait = quick
+		trait = genius
+		trait = brave
+		trait = strong
+		trait = fair
+		}
+		}
+		}
+		piety = 1000
+		OR = {
+		tier = KING
+		tier = EMPEROR
+		}
+		}
+		effect = {
+		set_character_flag = proclaimed_divus 
+		if = {
+		limit = {
+		is_female = yes
+		}
+		set_special_character_title = VIETI_DIVA
+		}
+		if = {
+		limit = {
+		is_female = no
+		}
+		set_special_character_title = VIETI_DIVUS
+		}
+		piety = -1000
+		add_character_modifier = { 
+	    name = vieti_divus
+	    duration = -1
+	    }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	found_vieti_krioticism = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 16
+		potential = {
+		NOT = { has_global_flag = walakrioticism_founded }
+		OR = {
+		trait = mystic
+		trait = lunatic
+		trait = possessed
+		has_artifact = walakriotic_texts_in_china
+		}
+		OR = {
+		AND = {
+		dynasty = 1069096
+		has_artifact = walakriotic_texts_in_china
+		}
+		has_character_flag = proto_walakriotic_texts
+		}
+		
+		age = 14
+		}
+		allow = {
+		OR = {
+		trait = mystic
+		trait = lunatic
+		trait = possessed
+		has_artifact = walakriotic_texts_in_china
+		}
+		piety = 500
+		}
+		effect = {
+		set_parent_religion = {
+		religion = vieti_krioticism
+		parent = vieti_orthodox
+		}
+	    c_roma = {
+	    set_holy_site = vieti_krioticism
+	    }
+	    c_bikrampur = {
+	    set_holy_site = vieti_krioticism
+	    }
+	    c_dunhuang = {
+	    set_holy_site = vieti_krioticism
+	    }
+	    c_jerusalem = {
+	    set_holy_site = vieti_krioticism
+	    }
+	    c_byzantion = {
+	    set_holy_site = vieti_krioticism
+	    }
+		set_global_flag = walakrioticism_founded
+		piety = -400
+		religion = vieti_krioticism
+		spawn_elder_effect = yes
+		new_character = {
+		health = 2
+		religion = vieti_krioticism
+		}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				OR = {
+					tier = KING
+					tier = EMPEROR
+				}
+			}
+		}
+	}
+
+	
+}
+

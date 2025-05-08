@@ -1,0 +1,236 @@
+spriteTypes = {
+
+# Andalusian clothing for European Muslims
+	portraitType = {
+		name = "PORTRAIT_clothing_andalusian_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 1000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_portrait_muslim = yes
+				OR = {
+					blg_portrait_mediterranean = yes
+					blg_portrait_european = yes
+				}
+			}
+		}
+
+		layer = {
+			#"GFX_muslim_male_clothes_behind:c0"
+			"GFX_muslim_male_headgear_behind_early:c1"
+			#"GFX_andalusian_male_clothes:c2"
+			"GFX_muslim_male_headgear_mid_early:c3"
+			"GFX_muslim_male_headgear_early:c5"
+		}
+
+		headgear_that_hides_hair = {}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_clothing_andalusian_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 1000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_portrait_muslim = yes
+				OR = {
+					blg_portrait_mediterranean = yes
+					blg_portrait_european = yes
+				}
+			}
+		}
+
+		layer = {
+			#"GFX_andalusian_female_clothes_behind:c0"
+			#"GFX_andalusian_female_clothes:c2"
+			"GFX_muslim_female_headgear_behind_early:c1"
+			"GFX_muslim_female_headgear_mid_early:c3"
+			"GFX_muslim_female_headgear_early:c5"
+		}
+
+		headgear_that_hides_hair = {}
+	}
+
+# West-African pagan clothing
+	portraitType = {
+		name = "PORTRAIT_clothing_westafrican_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 1000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_portrait_african_pagan = yes
+			}
+		}
+
+		layer = {
+			#"GFX_westafrican_male_clothes_behind:c0"
+			"GFX_westafrican_male_headgear_behind:c1"
+			#"GFX_westafrican_male_clothes:c2"
+			"GFX_empty:c3"
+			"GFX_westafrican_male_headgear:c5"
+		}
+
+		headgear_that_hides_hair = {12 13}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_clothing_westafrican_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 1000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_portrait_african_pagan = yes
+			}
+		}
+
+		layer = {
+			#"GFX_westafrican_female_clothes_behind:c0"
+			"GFX_westafrican_female_headgear_behind:c1"
+			#"GFX_westafrican_female_clothes:c2"
+			"GFX_empty:c3"
+			"GFX_westafrican_female_headgear:c5"
+		}
+
+		headgear_that_hides_hair = {12 13}
+	}
+
+# Tengri pagan clothing for Europeans
+	portraitType = {
+		name = "PORTRAIT_clothing_tengri_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 1000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_portrait_tengri = yes
+				OR = {
+					blg_portrait_european = yes
+					blg_portrait_mediterranean = yes
+					blg_portrait_byzantine = yes
+				}
+			}
+		}
+
+		layer = {
+			#"GFX_hungarian_male_clothes_behind:c0"
+			"GFX_hungarian_male_headgear_behind:c1"
+			#"GFX_hungarian_male_clothes:c2"
+			"GFX_empty:c3"
+			"GFX_hungarian_male_headgear:c5"
+		}
+
+		headgear_that_hides_hair = {10 12 13}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_clothing_tengri_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 1000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_portrait_tengri = yes
+				OR = {
+					blg_portrait_european = yes
+					blg_portrait_mediterranean = yes
+					blg_portrait_byzantine = yes
+				}
+			}
+		}
+
+		layer = {
+			#"GFX_pecheneg_female_clothes_behind:c0"
+			"GFX_pecheneg_female_headgear_behind:c1"
+			#"GFX_pecheneg_female_clothes:c2"
+			"GFX_empty:c3"
+			"GFX_pecheneg_female_headgear:c5"
+		}
+
+		headgear_that_hides_hair = {10 12 13}
+	}
+
+# Eastern-Orthodox / Jewish clothing for Arabic cultures
+		portraitType = {
+		name = "PORTRAIT_clothing_arabicchristian_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 1000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				OR = {
+					blg_portrait_orthodox = yes
+					blg_portrait_hellenic = yes
+				}
+				blg_portrait_arabic = yes
+			}
+		}
+
+		layer = {
+			"GFX_african_male_headgear_behind:c1"
+			"GFX_empty:c3"
+			"GFX_african_male_headgear:c5"
+		}
+
+		headgear_that_hides_hair = {}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_clothing_arabicchristian_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 1000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				OR = {
+					blg_portrait_orthodox = yes
+					blg_portrait_hellenic = yes
+				}
+				blg_portrait_arabic = yes
+			}
+		}
+
+		layer = {
+			"GFX_african_female_headgear_behind:c1"
+			"GFX_african_female_headgear_mid:c3"
+			"GFX_african_female_headgear:c5"
+		}
+
+		headgear_that_hides_hair = {}
+	}
+}

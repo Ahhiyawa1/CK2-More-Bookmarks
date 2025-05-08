@@ -1,0 +1,17 @@
+#498 - Martinique
+
+culture = atlantean
+owner = ATL
+controller = ATL
+add_core = ATL
+is_city = yes
+religion = hellenic_pagan
+capital = "Pergestias"
+trade_goods = sugar
+hre = no
+base_tax = 4
+base_production = 5
+base_manpower = 4
+discovered_by = CAB
+discovered_by = ARW
+discovered_by = ATL

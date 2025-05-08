@@ -1,0 +1,108 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+tb_culture_gaulish_1;Cavalry Field;Cavalerie Gauloise;;;;;;;;;;;;x
+tb_culture_gaulish_2;Cavalry Field;Cavalerie Gauloise;;;;;;;;;;;;x
+tb_culture_gaulish_3;Cavalry Field;Cavalerie Gauloise;;;;;;;;;;;;x
+tb_culture_gaulish_4;Cavalry Field;Cavalerie Gauloise;;;;;;;;;;;;x
+tb_culture_egyptian_coptic_1;Shrine of Anhur;;;;;;;;;;;;;x
+tb_culture_egyptian_coptic_2;Temple of Anhur;;;;;;;;;;;;;x
+tb_culture_egyptian_coptic_3;High Temple of Anhur;;;;;;;;;;;;;x
+tb_culture_egyptian_coptic_4;Grand Temple of Anhur;;;;;;;;;;;;;x
+tb_great_pillar_celtic;Standing Stones;Pierres Dressées;Stehende Steine;;Piedras de Pie;;;;;;;;x
+tb_great_pillar_celtic_desc;A sacred carved pillar bearing deep religious significance for the local pagan tribes.;Une colonne sculptée sacrée ayant une signification religieuse profonde pour les tribus païennes locales.;Eine heilige geschnitzte Säule, die für die lokalen heidnischen Stämme eine tiefe religiöse Bedeutung hat.;;Un pilar sagrado tallado de honda importancia religiosa para las tribus paganas locales.;;;;;;;;x
+tb_great_pillar_celtic_empty;Standing Stones;Pierres Dressées;Stehende Steine;;Piedras de Pie;;;;;;;;x
+tb_great_pillar_celtic_empty_desc;A sacred carved pillar bearing deep religious significance for the local pagan tribes.;Une colonne sculptée sacrée ayant une signification religieuse profonde pour les tribus païennes locales.;Eine heilige geschnitzte Säule, die für die lokalen heidnischen Stämme eine tiefe religiöse Bedeutung hat.;;Un pilar sagrado tallado de honda importancia religiosa para las tribus paganas locales.;;;;;;;;x
+tb_great_pillar_egyptian;Great [egyptian_pagan.GetName] Pillar;Grande colonne [egyptian_pagan.GetName];Große [egyptian_pagan.GetName]e Säule;;Gran pilar [egyptian_pagan.GetName] ;;;;;;;;x
+tb_great_pillar_egyptian_desc;A sacred carved pillar bearing deep religious significance for the local pagan tribes.;Une colonne sculptée sacrée ayant une signification religieuse profonde pour les tribus païennes locales.;Eine heilige geschnitzte Säule, die für die lokalen heidnischen Stämme eine tiefe religiöse Bedeutung hat.;;Un pilar sagrado tallado de honda importancia religiosa para las tribus paganas locales.;;;;;;;;x
+tb_great_pillar_egyptian_empty;Great [egyptian_pagan.GetName] Idol;Grande idole [egyptian_pagan.GetName];Großer [egyptian_pagan.GetName]er Götze;;Gran ídolo de [egyptian_pagan.GetName];;;;;;;;x
+tb_great_pillar_egyptian_empty_desc;A sacred carved pillar bearing deep religious significance for the local pagan tribes.;Une colonne sculptée sacrée ayant une signification religieuse profonde pour les tribus païennes locales.;Eine heilige geschnitzte Säule, die für die lokalen heidnischen Stämme eine tiefe religiöse Bedeutung hat.;;Un pilar sagrado tallado de honda importancia religiosa para las tribus paganas locales.;;;;;;;;x
+tb_great_pillar_titan;Kronos Column;Colonne de Kronos;Kronossäule;;Columna de Kronos;;;;;;;;x
+tb_great_pillar_titan_desc;A sacred carved pillar bearing deep religious significance for the local pagan tribes.;Une colonne sculptée sacrée ayant une signification religieuse profonde pour les tribus païennes locales.;Eine heilige geschnitzte Säule, die für die lokalen heidnischen Stämme eine tiefe religiöse Bedeutung hat.;;Un pilar sagrado tallado de honda importancia religiosa para las tribus paganas locales.;;;;;;;;x
+tb_great_pillar_titan_empty;Old Column;Vieille colonne;Alte Säule;;Columna vieja;;;;;;;;x
+tb_great_pillar_titan_empty_desc;A sacred carved pillar bearing deep religious significance for the local pagan tribes.;Une colonne sculptée sacrée ayant une signification religieuse profonde pour les tribus païennes locales.;Eine heilige geschnitzte Säule, die für die lokalen heidnischen Stämme eine tiefe religiöse Bedeutung hat.;;Un pilar sagrado tallado de honda importancia religiosa para las tribus paganas locales.;;;;;;;;x
+RETTYPE_CUL_2_ECOPTIC;Anhuri Warriors;;;;;;;;;;;;;x
+acr_pagan_papal_rule;§BAncient Religions:§! Pagan Papal;;;;;;;;;;;;;x
+acr_pagan_papal_rule.off;Off;;;;;;;;;;;;;x
+acr_pagan_papal_rule.off.desc;College of Cardinals & Antipope mechanics are unchanged.;;;;;;;;;;;;;x
+acr_pagan_papal_rule.cardinals;College of Cardinals;;;;;;;;;;;;;x
+acr_pagan_papal_rule.cardinals.desc;Reformed Pagan religions with a hierocratic head will have College of Cardinals mechanics, as will Zoroastrians, Jews, & Manichaeans.;;;;;;;;;;;;;x
+acr_pagan_papal_rule.antipopes;Antipopes;;;;;;;;;;;;;x
+acr_pagan_papal_rule.antipopes.desc;Reformed Pagan religions with a hierocratic head will have Antipopes, as will Zoroastrians, Jews, & Manichaeans.;;;;;;;;;;;;;x
+acr_pagan_papal_rule.both;Both;;;;;;;;;;;;;x
+acr_pagan_papal_rule.both.desc;Reformed Pagan religions with a hierocratic head will have Antipopes & College of Cardinals mechanics, as will Zoroastrians, Jews, & Manichaeans.;;;;;;;;;;;;;x
+acr_holy_order_cardinals_rule;§BAncient Religions:§! Holy Order Cardinals;;;;;;;;;;;;;x
+acr_holy_order_cardinals_rule.off;Off;;;;;;;;;;;;;x
+acr_holy_order_cardinals_rule.off.desc;Only theocratic characters may be appointed Cardinals.;;;;;;;;;;;;;x
+acr_holy_order_cardinals_rule.on;On;;;;;;;;;;;;;x
+acr_holy_order_cardinals_rule.on.desc;Theocracies & Heads of Holy Orders may both be appointed as Cardinals.;;;;;;;;;;;;;x
+acr_mpb_rule;§BAncient Religions:§! More Pagan Branches?;;;;;;;;;;;;;x
+acr_mpb_rule.off;Off;;;;;;;;;;;;;x
+acr_mpb_rule.off.desc;Reformed Pagan religions without a head will only have access to the four default pagan branch traits;;;;;;;;;;;;;x
+acr_mpb_rule.on;On;;;;;;;;;;;;;x
+acr_mpb_rule.on.desc;Reformed Pagan religions without a head will have access to the pagan branch traits from More Pagan Branches;;;;;;;;;;;;;x
+wonder_crotone_university;[target_province.GetName] Pythagorean Academy;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+wonder_crotone_university_desc;This Grand Experiment is a piece of the Ancient World brought to life, giving the finest minds in [Owner.PrimaryTitle.GetName] a classical education.;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+upgrade_cow_district_crotone_university;[target_province.GetName] Pythagorean Academy;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+upgrade_cow_district_crotone_university_desc;This Grand Experiment is a piece of the Ancient World brought to life, giving the finest minds in [Owner.PrimaryTitle.GetName] a classical education.;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+religion_openly_egyptian_or_reformed_tooltip;Publicly follows the §Y[egyptian_pagan_reformed.GetName]§! religion;Suit publiquement la religion §Y[egyptian_pagan_reformed.GetName]§!;Befolgt öffentlich die §Y[egyptian_pagan_reformed.GetName]e§! Religion;;Sigue públicamente el credo §Y[egyptian_pagan_reformed.GetName]§!.;;;;;;;;;x
+string_saint_view_title_egyptian;Akhu;;;;;;;;;x
+acr_cl_make_antipope;Appoint Anti[Root.RelHead.GetTitle];;;;;;;;;;;;;x
+acr_cl_make_antipope_desc;[From.GetTitledFirstNameWithNick] believes that [Root.RelHead.GetTitledFirstName] is wicked, corrupt, & unsuited to lead the [Root.Religion.GetName] faithful- [Root.GetTitledFirstName] would obviously be a better choice!;;;;;;;;;;;;;x
+k_acr_depose_antipope_tip;§G[From.RelHead.GetFirstNameWithNick]§! will lose [From.RelHead.GetHerHis] claim on the §G[Root.RelHead.GetTitle]§!;;;;;;;;;;;;;x
+k_acr_recent_antipope_tip;There has not been an §GAnti[From.RelHead.GetTitle]§! for at least §G50 years§!;;;;;;;;;;;;;x
+acr_cl_invest_priest;Appoint Successor;;;;;;;;;;;;;x
+acr_cl_invest_priest_desc;Choose someone to succeed [Root.GetTitledFirstName] as [Root.GetTitle] of [Root.PrimaryTitle.GetName].;;;;;;;;;;;;;x
+EVTDESC_ke_ancrel_m.5;The individual that was appointed to succeed [From.GetTitledFirstName] as [From.GetTitle] of [From.PrimaryTitle.GetName] no longer qualifies for the position.;;;;;;;;;;;;;x
+acr_cl_check_invested_priest;Revoke appointed successor;;;;;;;;;;;;;x
+acr_cl_check_invested_priest_desc;I no longer believe that the person I appointed to succeed [Root.GetTitledFirstName] is up to the job.;;;;;;;;;;;;;x
+EVTDESC_ke_ancrel_m.7;[Root.GetBestName] was appointed to succeed [From.GetTitledFirstName] as [From.GetTitle] of [From.PrimaryTitle.GetName].;;;;;;;;;;;;;x
+acr_cl_nominate_priest;Nominate Successor;;;;;;;;;;;;;x
+acr_cl_nominate_priest_desc;Ask [Root.GetTitledFirstName] to appoint someone of my choosing as the next [From.Religion.GetPriestTitle] of [From.PrimaryTitle.GetName].;;;;;;;;;;;;;x
+EVTDESC_ke_ancrel_m.9;The individual that I nominated as the next [Root.Religion.GetPriestTitle] of [Root.PrimaryTitle.GetName] no longer qualifies for the position.;;;;;;;;;;;;;x
+acr_is_not_rejected_nominee;§Y[Root.GetTitledFirstName]§! has §RNOT§! refused the nomination of §Y[This.GetBestName]§! in the last §Y10§! years.;;;;;;;;;;;;;x
+acr_ask_pagan_pope_to_invest_priest;You will send a letter to [Root.GetTitledFirstName], asking [Root.GetHerHim] to approve the nomination of [FromFrom.GetBestName];;;;;;;;;;;;;x
+acr_cl_check_nominated_priest;Revoke Nominee;;;;;;;;;;;;;x
+acr_cl_check_nominated_priest_desc;I no longer support [pagan_papal_priest_nominee.GetBestName] as the next [From.Religion.GetPriestTitle] of [From.PrimaryTitle.GetName].;;;;;;;;;;;;;x
+EVTDESC_ke_ancrel_m.12;I, [From.GetTitledFirstNameWithNick], have graciously decided to accede to your petition. [pagan_papal_priest_nominee.GetBestName] shall be the the next [From.Religion.GetPriestTitle] of [Root.PrimaryTitle.GetName], by the Grace of [From.Religion.GetHighGodNameCap].;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+EVTOPT_ke_ancrel_m.12a;Excellent News!;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+EVTOPT_ke_ancrel_m.12b;Alas, [pagan_papal_priest_nominee.GetBestName] is no longer with us...;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+EVTDESC_ke_ancrel_m.13;While I am certain you had your reasons for nominating [pagan_papal_priest_nominee.GetFirstName] as [From.Religion.GetPriestTitle] of [Root.PrimaryTitle.GetName], I must admit I find [pagan_papal_priest_nominee.GetHerHim] lacking in certain [From.Religion.GetPriestTitle]ly qualities. Your request has been denied.;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+EVTOPT_ke_ancrel_m.13;Rats;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+acr_greater_egypt_bloodline;Blood of the Old & New Kingdoms;;;;;;;;;;;;;x
+acr_greater_egypt_bloodline_desc;The age of the Cross & the Moon has ended. For three millennia Kemet stood tall, the envy of all the world- & [From.Founder.Religion.GetHighGodNameCap] willing, it will do so again.;;;;;;;;;;;;;x
+acr_cl_revive_egyptian_coptic;Revive the Ancient Egyptian Culture;;;;;;;;;;;;;x
+acr_cl_revive_egyptian_coptic_desc;Most of the language & customs of Ancient Egypt have been lost to the mists of time, forever beyond our reach- but if I were to carefully piece together what little information we have, I might be able to contruct a modern facsimile of the ancient ways...;;;;;;;;;;;;;x
+acr_cl_embrace_egyptian_coptic;Adopt Neo-Coptic Culture;;;;;;;;;;;;;x
+acr_cl_embrace_egyptian_coptic_desc;As I become more exposed to the reconstructed Ancient Egyptian ways, they start to seem not so strange after all. Perhaps the keys to the future lie in the past?;;;;;;;;;;;;;x
+egyptian_coptic_courtier_conversion;§YQualifying Courtiers§! will become §YNeo-Coptic§!;;;;;;;;;;;;;x
+acr_cl_revive_gaulish;Revive Pre-Roman Gaulish Culture;;;;;;;;;;;;;x
+acr_cl_revive_gaulish_desc;Most of the language & customs of Pre-Roman Gaul have been lost to the mists of time, forever beyond our reach- but if I were to carefully piece together what little information we have, I might be able to contruct a modern facsimile of the ancient ways...;;;;;;;;;;;;;x
+acr_cl_embrace_gaulish;Adopt Gaulish Culture;;;;;;;;;;;;;x
+acr_cl_embrace_gaulish_desc;As I become more exposed to the reconstructed Gaulish ways, they start to seem not so strange after all. Perhaps the keys to the future lie in the past?;;;;;;;;;;;;;x
+gaulish_courtier_conversion;§YQualifying Courtiers§! will become §YGaulish§!;;;;;;;;;;;;;x
+ancrel_cleanslate.1.title;Revival of the Ancient Egyptian Culture!;;;;;;;;;;;;;x
+ancrel_cleanslate.1.desc;By delicately combing through what little records [From.GetSheHe] had, [From.GetTitledNameWithNick] has announced that the [From.Culture.GetName] ways of the Ancient World shall live once more. Already they have adopted the [From.Culture.GetName] in their court. Only time will tell if [From.Culture.GetName] culture will take hold among the people of [From.PrimaryTitle.GetName] or remain the curious experiment of a few power-drunk [From.GetLordLady]s.;;;;;;;;;;;;;x
+ancrel_cleanslate.1.a;Perhaps I should follow in [From.GetHerHis] footsteps...;;;;;;;;;;;;;x
+ancrel_cleanslate.1.b;A glorious day for the people of [From.PrimaryTitle.GetName]!;;;;;;;;;;;;;x
+ancrel_cleanslate.1.c;It's just a passing fad!;;;;;;;;;;;;;x
+ancrel_cleanslate.2.title;Revival of Pre-Roman Gaulish Culture!;;;;;;;;;;;;;x
+acr_cl_reforge_achilles_shield;Reforge the Shield of Achilles;;;;;;;;;;;;;x
+acr_cl_reforge_achilles_shield_desc;I have acquired one of the fragments of the Shield of Achilles, legendary Hero of the Trojan War. If I can acquire the other fragments, I might be able to have my smiths reforge it...;;;;;;;;;;;;;x
+reforge_achilles_shield_tooltip_01;I possess at least §Y4 fragments§! of the Shield of Achilles;;;;;;;;;;;;;x
+reforge_achilles_shield_tooltip_02;I have access to a §YLegendary Armory§!, worthy of the Gods;;;;;;;;;;;;;x
+tooltip_cl_investiture_score_dynasty;[FromFrom.GetSheHeCap] is of my dynasty;[FromFrom.GetIlElleCap] est de ma dynastie;[FromFrom.GetSheHeCap] ist aus meiner Dynastie;;Es de mi dinastía;;;;;;;;;x
+tooltip_cl_investiture_score_relative;[FromFrom.GetSheHeCap] is my relative;C'est un[FromFrom.Get_E] parent[FromFrom.Get_E] à moi;[FromFrom.GetSheHeCap] ist aus meiner Verwandtschaft;;Es pariente mí[FromFrom.GetOA];;;;;;;;;x
+tooltip_cl_investiture_score_opinion_foe;[FromFrom.GetSheHeCap] is my foe;;;;;;;;;;;;;x
+tooltip_cl_investiture_score_opinion_friend;[FromFrom.GetSheHeCap] is my friend;;;;;;;;;;;;;x
+tooltip_cl_investiture_score_ill;[FromFrom.GetSheHeCap] is §YSick§! and might die soon;[FromFrom.GetIlElleCap] est §Ymalade§! et pourrait mourir bientôt;[FromFrom.GetSheHeCap] ist §Ykrank§! und könnte bald sterben;;Está §Yenferm[FromFrom.GetOA]§! y podría morir pronto;;;;;;;;;x
+tooltip_cl_investiture_score_maimed;[FromFrom.GetSheHeCap] is §YMaimed§!;[FromFrom.GetIlElleCap] est §Ymutilé[FromFrom.Get_E]§!;[FromFrom.GetSheHeCap] ist §Yverstümmelt§!;;Está §Ylisiad[FromFrom.GetOA]§!;;;;;;;;;x
+tooltip_cl_investiture_score_opinion_favor;[FromFrom.GetSheHeCap] owes me a favor;;;;;;;;;;;;;x
+GOD_LUGH_2;Lugh;Lugh;;;;;;;;;;;;x
+GOD_DANA_2;Dannu;Dannu;;;;;;;;;;;;x
+GOD_AMON_2;Amon;Amon;Amon;;Amon;;;;;;;;;x
+GOD_AMAUNET_2;Amaunet;Amaunet;Amaunet;;Amaunet;;;;;;;;;x
+acr_cl_check_venerated_ancestors_01;Check [GetSaintViewTitle];;;;;;;;;;;;;x
+acr_cl_check_venerated_ancestors_01_desc;Check [Root.Religion.GetName] [GetSaintViewTitle];;;;;;;;;;;;;x
+acr_cl_check_venerated_ancestors_02;Check [GetSaintViewTitle];;;;;;;;;;;;;x
+acr_cl_check_venerated_ancestors_02_desc;Check [Root.Religion.GetName] [GetSaintViewTitle];;;;;;;;;;;;;x
+acr_ancestor_worship_bloodline_exists;There is at least 1 §G[Root.Religion.GetName] Ancestor Worship§! bloodline in existence;;;;;;;;;;;;;x
+EVTDESC_ke_ancrel_m.14;[acr_target_ancestor.GetBestName] is one of the [GetSaintViewTitle] of the [acr_target_ancestor.Religion.GetName] faith;;;;;;;;;;;;;x

@@ -1,0 +1,26 @@
+# 3025 - Longhua
+
+# County Title
+title = c_longhua
+
+# Settlements
+max_settlements = 3
+
+b_longhua = tribal
+#b_longhua_wei = tribal
+#b_longhua_jiangjing = tribal
+#b_longhua_wudan = tribal
+#b_longhua_chedobu = tribal
+#b_longhua_xicinuoer = tribal
+#b_longhua_laoha = tribal
+
+# Misc
+culture = khitan
+religion = tengri_pagan
+
+# History
+907.1.1 = {
+	religion = buddhist
+	b_longhua = castle
+	b_longhua_wei = city
+}

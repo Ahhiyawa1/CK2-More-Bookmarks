@@ -1,0 +1,19 @@
+e_atlantis = {
+	color = { 25 98 130 }
+	
+	short_name = yes
+	
+	landless = yes
+	
+	culture = atlantean
+	religion = hellenic_pagan
+}
+
+e_atlantis_landed = {
+	color = { 25 98 130 }
+	
+	short_name = yes
+	
+	culture = atlantean
+	religion = hellenic_pagan
+}

@@ -1,0 +1,20 @@
+# County Title
+title = c_monreal
+# Terrain
+terrain = hills
+# Settlements
+max_settlements = 4
+b_monreal = castle
+# b_hurmniz = city
+b_sela = temple
+# Misc
+culture = levantine_arabic
+religion = orthodox
+867.1.1 = { religion = sunni }
+################################################################################
+# History
+################################################################################
+1187.1.1 = { b_hurmniz = city } 
+################################################################################
+# 1521 - Monreal
+################################################################################

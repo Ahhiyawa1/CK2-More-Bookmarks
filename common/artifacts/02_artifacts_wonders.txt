@@ -1,0 +1,168 @@
+
+
+
+antiquity_book_poetry = {
+	monthly_character_piety = 0.2
+	monthly_character_prestige = 0.1
+	diplomacy = 2
+	
+	active = { learning = 10 }
+	
+	quality = 4
+	flags = { book antiquity_book }
+	#stacking = no
+	picture = "GFX_classic_of_poetry" #ToDo Check and find appropriate picture
+	slot = library
+}
+antiquity_book_play = {
+	monthly_character_prestige = 0.1
+	intrigue = 2
+	defensive_plot_power_modifier = 0.05
+	
+	active = {
+		intrigue = 3
+		learning = 10
+	}
+	
+	quality = 4
+	flags = { book antiquity_book }
+	#stacking = no
+	picture = "GFX_book_illiad"
+	slot = library
+}
+antiquity_book_medicine = {
+	health = 0.5
+	fertility = 0.15
+	
+	active = { learning = 10 }
+	
+	quality = 4
+	flags = { book antiquity_book }
+	#stacking = no
+	picture = "GFX_book_health_01"  
+	slot = library
+}
+antiquity_book_philosophy = {
+	vassal_opinion = 3
+	general_opinion = 2
+	monthly_character_prestige = 0.2
+	
+	active = { learning = 10 }
+	
+	quality = 4
+	flags = { book antiquity_book }
+	#stacking = no
+	picture = "GFX_book_honor_root_1"
+	slot = library
+}
+antiquity_book_architecture = {
+	tech_growth_modifier = 0.05
+	build_cost_modifier = -0.1
+	build_time_modifier = -0.2
+	
+	active = { learning = 10 }
+	
+	quality = 4
+	flags = { book antiquity_book }
+	stacking = no
+	picture = "GFX_book_architect_01"  
+	slot = library
+}
+antiquity_book_history = {
+	intrigue = 1
+	diplomacy = 1
+	martial = 1
+	monthly_character_prestige = 0.1
+	
+	active = { learning = 10 }
+	
+	quality = 4
+	flags = { book antiquity_book }
+	#stacking = no
+	picture = "GFX_book_honor_root_1"  
+	slot = library
+}
+antiquity_book_astronomy = {
+	learning = 1
+	christian_opinion = 3
+	general_opinion = 2
+	
+	active = { learning = 10 }
+	
+	quality = 3
+	flags = { book antiquity_book }
+	#stacking = no
+	picture = "GFX_book_learnblank_02"  
+	slot = library
+}
+antiquity_book_fake  = {
+	learning = 1
+	intrigue = 1 
+	#monthly_character_prestige = -0.1
+	#general_opinion = -1
+	
+	active = { learning = 10 }
+		
+	quality = 4
+	flags = { book fake_book }
+	#stacking = no
+	picture = "GFX_book_cook_roman"  
+	slot = library
+}
+
+terrible_armor = {
+	combat_rating = 2
+	
+	active = { is_adult = yes }
+	
+	quality = 1
+	stacking = no
+	picture = "GFX_rusty_chain_mail"
+	slot = torso
+}
+
+
+zweihander_sword = {
+	combat_rating = 15
+	vassal_opinion = 5
+	tribal_opinion = 5
+	command_modifier = {
+		morale_offence = 0.2
+		heavy_infantry = 0.15
+	}
+	
+	active = {
+		is_adult = yes
+		OR = {
+			likes_germanics = yes
+			likes_latino_iberians = yes
+			culture_group = celtic
+		}
+		OR = {
+			combat_rating = 20
+			trait = strong
+			trait = giant
+			trait = robust
+		}
+	}
+	
+	quality = 4
+	flags = { combat_weapon sword created }
+	stacking = no
+	picture = "GFX_zweihander_sword"
+	slot = weapon
+}
+
+#The default name and desccription refer to Cathedral, but this can be overwrritten at spawn
+wonder_artifact_bells = {
+	monthly_character_prestige = 0.5
+	same_religion_opinion = 2
+	
+	active = { NOT = { religion_group = christian } }
+	
+	quality = 3
+	flags = { religious bells cathedral_part created }
+	stacking = no
+	picture = "GFX_relic_box_iron"  
+}
+

@@ -1,0 +1,23 @@
+# County Title
+title = c_astibus
+# Settlements
+max_settlements = 3
+b_astibus = castle
+b_veles = city
+# Misc
+culture = thraco_roman
+religion = orthodox
+################################################################################
+# History
+################################################################################
+752.1.1 = { religion = paulician } # many Paulicians were deported to here
+################################################################################
+# History
+################################################################################
+865.1.1 = { culture = bulgarian } 
+950.1.1 = { religion = bogomilist } 
+1050.1.1 = { religion = orthodox } 
+1082.1.1 = { religion = orthodox culture = bulgarian } 
+################################################################################
+# 526 - Astibus
+################################################################################

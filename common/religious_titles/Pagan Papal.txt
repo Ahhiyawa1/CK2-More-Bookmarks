@@ -1,0 +1,791 @@
+title_baltic_pagan_reformed_cardinal = {
+	can_elect_head = yes
+	message = yes
+	realm_in_name = no
+	show_as_title = yes
+
+	religion = baltic_pagan_reformed
+	
+	grant_limit = 9
+	dignity = 0.9
+
+	opinion_effect = 20
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	allow = {
+		religion = baltic_pagan_reformed
+		has_global_flag = acr_pagan_papal
+		baltic_pagan_reformed = {
+			persistent_event_target:religion_title = {
+				has_title_flag = acr_uses_college_of_cardinals
+				NOT = { has_title_flag = acr_uses_autocephaly }
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = acr_holy_order_cardinals }
+			OR = {
+				is_theocracy = yes
+				holy_order = yes
+			}
+		}
+		trigger_else = {
+			is_theocracy = yes
+		}
+		rightful_religious_head_scope = {
+			controls_religion = yes # Not in a realm with an anti-pope
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}
+
+title_tengri_pagan_reformed_cardinal = {
+	can_elect_head = yes
+	message = yes
+	realm_in_name = no
+	show_as_title = yes
+
+	religion = tengri_pagan_reformed
+	
+	grant_limit = 9
+	dignity = 0.9
+
+	opinion_effect = 20
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	allow = {
+		religion = tengri_pagan_reformed
+		has_global_flag = acr_pagan_papal
+		tengri_pagan_reformed = {
+			persistent_event_target:religion_title = {
+				has_title_flag = acr_uses_college_of_cardinals
+				NOT = { has_title_flag = acr_uses_autocephaly }
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = acr_holy_order_cardinals }
+			OR = {
+				is_theocracy = yes
+				holy_order = yes
+			}
+		}
+		trigger_else = {
+			is_theocracy = yes
+		}
+		rightful_religious_head_scope = {
+			controls_religion = yes # Not in a realm with an anti-pope
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}
+
+title_finnish_pagan_reformed_cardinal = {
+	can_elect_head = yes
+	message = yes
+	realm_in_name = no
+	show_as_title = yes
+
+	religion = finnish_pagan_reformed
+	
+	grant_limit = 9
+	dignity = 0.9
+
+	opinion_effect = 20
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	allow = {
+		religion = finnish_pagan_reformed
+		has_global_flag = acr_pagan_papal
+		finnish_pagan_reformed = {
+			persistent_event_target:religion_title = {
+				has_title_flag = acr_uses_college_of_cardinals
+				NOT = { has_title_flag = acr_uses_autocephaly }
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = acr_holy_order_cardinals }
+			OR = {
+				is_theocracy = yes
+				holy_order = yes
+			}
+		}
+		trigger_else = {
+			is_theocracy = yes
+		}
+		rightful_religious_head_scope = {
+			controls_religion = yes # Not in a realm with an anti-pope
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}
+
+title_aztec_pagan_reformed_cardinal = {
+	can_elect_head = yes
+	message = yes
+	realm_in_name = no
+	show_as_title = yes
+
+	religion = aztec_pagan_reformed
+	
+	grant_limit = 9
+	dignity = 0.9
+
+	opinion_effect = 20
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	allow = {
+		religion = aztec_pagan_reformed
+		has_global_flag = acr_pagan_papal
+		aztec_pagan_reformed = {
+			persistent_event_target:religion_title = {
+				has_title_flag = acr_uses_college_of_cardinals
+				NOT = { has_title_flag = acr_uses_autocephaly }
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = acr_holy_order_cardinals }
+			OR = {
+				is_theocracy = yes
+				holy_order = yes
+			}
+		}
+		trigger_else = {
+			is_theocracy = yes
+		}
+		rightful_religious_head_scope = {
+			controls_religion = yes # Not in a realm with an anti-pope
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}
+
+title_slavic_pagan_reformed_cardinal = {
+	can_elect_head = yes
+	message = yes
+	realm_in_name = no
+	show_as_title = yes
+
+	religion = slavic_pagan_reformed
+	
+	grant_limit = 9
+	dignity = 0.9
+
+	opinion_effect = 20
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	allow = {
+		religion = slavic_pagan_reformed
+		has_global_flag = acr_pagan_papal
+		slavic_pagan_reformed = {
+			persistent_event_target:religion_title = {
+				has_title_flag = acr_uses_college_of_cardinals
+				NOT = { has_title_flag = acr_uses_autocephaly }
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = acr_holy_order_cardinals }
+			OR = {
+				is_theocracy = yes
+				holy_order = yes
+			}
+		}
+		trigger_else = {
+			is_theocracy = yes
+		}
+		rightful_religious_head_scope = {
+			controls_religion = yes # Not in a realm with an anti-pope
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}
+
+title_west_african_pagan_reformed_cardinal = {
+	can_elect_head = yes
+	message = yes
+	realm_in_name = no
+	show_as_title = yes
+
+	religion = west_african_pagan_reformed
+	
+	grant_limit = 9
+	dignity = 0.9
+
+	opinion_effect = 20
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	allow = {
+		religion = west_african_pagan_reformed
+		has_global_flag = acr_pagan_papal
+		west_african_pagan_reformed = {
+			persistent_event_target:religion_title = {
+				has_title_flag = acr_uses_college_of_cardinals
+				NOT = { has_title_flag = acr_uses_autocephaly }
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = acr_holy_order_cardinals }
+			OR = {
+				is_theocracy = yes
+				holy_order = yes
+			}
+		}
+		trigger_else = {
+			is_theocracy = yes
+		}
+		rightful_religious_head_scope = {
+			controls_religion = yes # Not in a realm with an anti-pope
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}
+title_zun_pagan_reformed_cardinal = {
+	can_elect_head = yes
+	message = yes
+	realm_in_name = no
+	show_as_title = yes
+
+	religion = zun_pagan_reformed
+	
+	grant_limit = 9
+	dignity = 0.9
+
+	opinion_effect = 20
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	allow = {
+		religion = zun_pagan_reformed
+		has_global_flag = acr_pagan_papal
+		zun_pagan_reformed = {
+			persistent_event_target:religion_title = {
+				has_title_flag = acr_uses_college_of_cardinals
+				NOT = { has_title_flag = acr_uses_autocephaly }
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = acr_holy_order_cardinals }
+			OR = {
+				is_theocracy = yes
+				holy_order = yes
+			}
+		}
+		trigger_else = {
+			is_theocracy = yes
+		}
+		rightful_religious_head_scope = {
+			controls_religion = yes # Not in a realm with an anti-pope
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}
+
+title_zoroastrian_cardinal = {
+	can_elect_head = yes
+	message = yes
+	realm_in_name = no
+	show_as_title = yes
+
+	religion = zoroastrian
+	
+	grant_limit = 9
+	dignity = 0.9
+
+	opinion_effect = 20
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	allow = {
+		religion = zoroastrian
+		has_global_flag = acr_pagan_papal
+		zoroastrian = {
+			persistent_event_target:religion_title = {
+				has_title_flag = acr_uses_college_of_cardinals
+				NOT = { has_title_flag = acr_uses_autocephaly }
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = acr_holy_order_cardinals }
+			OR = {
+				is_theocracy = yes
+				holy_order = yes
+			}
+		}
+		trigger_else = {
+			is_theocracy = yes
+		}
+		rightful_religious_head_scope = {
+			controls_religion = yes # Not in a realm with an anti-pope
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}
+
+title_jewish_cardinal = {
+	can_elect_head = yes
+	message = yes
+	realm_in_name = no
+	show_as_title = yes
+
+	religion = jewish
+	
+	grant_limit = 9
+	dignity = 0.9
+
+	opinion_effect = 20
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	allow = {
+		religion = jewish
+		has_global_flag = acr_pagan_papal
+		jewish = {
+			persistent_event_target:religion_title = {
+				has_title_flag = acr_uses_college_of_cardinals
+				NOT = { has_title_flag = acr_uses_autocephaly }
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = acr_holy_order_cardinals }
+			OR = {
+				is_theocracy = yes
+				holy_order = yes
+			}
+		}
+		trigger_else = {
+			is_theocracy = yes
+		}
+		rightful_religious_head_scope = {
+			controls_religion = yes # Not in a realm with an anti-pope
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}
+
+title_promethean_pagan_cardinal = {
+	can_elect_head = yes
+	message = yes
+	realm_in_name = no
+	show_as_title = yes
+
+	religion = promethean_pagan
+	
+	grant_limit = 9
+	dignity = 0.9
+
+	opinion_effect = 20
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	allow = {
+		religion = promethean_pagan
+		has_global_flag = acr_pagan_papal
+		promethean_pagan = {
+			persistent_event_target:religion_title = {
+				has_title_flag = acr_uses_college_of_cardinals
+				NOT = { has_title_flag = acr_uses_autocephaly }
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = acr_holy_order_cardinals }
+			OR = {
+				is_theocracy = yes
+				holy_order = yes
+			}
+		}
+		trigger_else = {
+			is_theocracy = yes
+		}
+		rightful_religious_head_scope = {
+			controls_religion = yes # Not in a realm with an anti-pope
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}
+
+title_norse_pagan_reformed_cardinal = {
+	can_elect_head = yes
+	message = yes
+	realm_in_name = no
+	show_as_title = yes
+
+	religion = norse_pagan_reformed
+	
+	grant_limit = 9
+	dignity = 0.9
+
+	opinion_effect = 20
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	allow = {
+		religion = norse_pagan_reformed
+		has_global_flag = acr_pagan_papal
+		norse_pagan_reformed = {
+			persistent_event_target:religion_title = {
+				has_title_flag = acr_uses_college_of_cardinals
+				NOT = { has_title_flag = acr_uses_autocephaly }
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = acr_holy_order_cardinals }
+			OR = {
+				is_theocracy = yes
+				holy_order = yes
+			}
+		}
+		trigger_else = {
+			is_theocracy = yes
+		}
+		rightful_religious_head_scope = {
+			controls_religion = yes # Not in a realm with an anti-pope
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}
+
+title_bon_pagan_reformed_cardinal = {
+	can_elect_head = yes
+	message = yes
+	realm_in_name = no
+	show_as_title = yes
+
+	religion = bon_pagan_reformed
+	
+	grant_limit = 9
+	dignity = 0.9
+
+	opinion_effect = 20
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	allow = {
+		religion = bon_pagan_reformed
+		has_global_flag = acr_pagan_papal
+		bon_pagan_reformed = {
+			persistent_event_target:religion_title = {
+				has_title_flag = acr_uses_college_of_cardinals
+				NOT = { has_title_flag = acr_uses_autocephaly }
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = acr_holy_order_cardinals }
+			OR = {
+				is_theocracy = yes
+				holy_order = yes
+			}
+		}
+		trigger_else = {
+			is_theocracy = yes
+		}
+		rightful_religious_head_scope = {
+			controls_religion = yes # Not in a realm with an anti-pope
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}
+
+title_manichaean_cardinal = {
+	can_elect_head = yes
+	message = yes
+	realm_in_name = no
+	show_as_title = yes
+
+	religion = manichaean
+	
+	grant_limit = 9
+	dignity = 0.9
+
+	opinion_effect = 20
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+
+	allowed_to_grant = {
+		always = no
+	}
+	
+	allow = {
+		religion = manichaean
+		has_global_flag = acr_pagan_papal
+		manichaean = {
+			persistent_event_target:religion_title = {
+				has_title_flag = acr_uses_college_of_cardinals
+				NOT = { has_title_flag = acr_uses_autocephaly }
+			}
+		}
+		trigger_if = {
+			limit = { has_global_flag = acr_holy_order_cardinals }
+			OR = {
+				is_theocracy = yes
+				holy_order = yes
+			}
+		}
+		trigger_else = {
+			is_theocracy = yes
+		}
+		rightful_religious_head_scope = {
+			controls_religion = yes # Not in a realm with an anti-pope
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}

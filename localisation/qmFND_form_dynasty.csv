@@ -1,0 +1,3 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+qmFND_form_dynasty;Form New Dynasty;;;;;;;;;;;;x
+qmFND_form_dynasty_desc;Create a new dynasty for you and your descendants, severing all dynastic ties with House [Root.GetOnlyDynastyName];;;;;;;;;;;;x

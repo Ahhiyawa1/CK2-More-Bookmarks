@@ -1,0 +1,30 @@
+
+musical_artifact_activation_trigger = {
+	is_adult = yes
+	OR = {
+		trait = poet
+		trait = socializer
+		trait = gregarious
+		trait = charismatic_negotiator
+		trait = grey_eminence
+	}
+}
+
+
+aao_is_crowned_trigger = {
+	trigger_if = {
+		limit = { has_global_flag = aao_hip_detected }
+		emf_is_crowned = yes
+	}
+	trigger_else = {
+		custom_tooltip = {
+			text = aao_is_crowned_trigger_tooltip
+			OR = {
+				trait = crowned_by_priest
+				trait = crowned_by_bishop
+				trait = crowned_by_pope
+				trait = crowned_by_myself
+			}
+		}
+	}
+}

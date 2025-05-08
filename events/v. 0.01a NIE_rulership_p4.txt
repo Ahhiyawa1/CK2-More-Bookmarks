@@ -1,0 +1,282 @@
+###########################################
+#                                         #
+# New Immersive Events v. 0.01a           #
+# Rulership Events: Part 4                #
+# ID NIE.127-NIE.128                      #
+# Written and designed by wielkicien      #
+# Bugfixed and edited by Erbkaiser		  #
+#                                         #
+###########################################
+
+namespace = NIE
+
+### The Thief
+#Sister cames to thank you
+character_event = {
+	id = NIE.127
+	title = "EVTNAMENIE.127"
+	desc = EVTDESC_NIE_127
+	picture = GFX_evt_daughter_asking_father
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	trigger = {
+		NOT = { has_character_modifier = sister_was }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		any_character  = {
+			limit = {
+				trait = thief_sister_trait
+			}
+			save_event_target_as = thief_sister_target
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_NIE_127
+		custom_tooltip = { text = sister_lover2 }
+		hidden_tooltip = {
+			character_event = { id = NIE.1301 days = 1 }
+			event_target:thief_sister_target = {
+				move_character = ROOT
+				if = {
+					limit = { same_sex = ROOT }
+					add_trait = homosexual
+				}
+				character_event = { id = WoL.98 }
+				random = {
+					chance = 60
+					add_trait = lustful
+				}
+				#random = {
+				#	chance = 25
+				#	character_event = { id = 6359 days = 15 random = 5 } #Gives lover's pox
+				#}
+			}
+		}
+		tooltip_info = lustful
+		trigger =  {
+			OR = {
+				trait = lustful
+			   	trait = hedonist
+			   	trait = gregarious 
+			}
+			OR = {
+				AND = {
+					is_female = no
+					NOT = { trait = homosexual }
+				}
+				AND = {
+					is_female = yes
+					trait = homosexual
+				}
+				AND = {
+					is_female = yes
+					is_married = no
+					is_betrothed = no
+				}
+			}
+		}
+		event_target:thief_sister_target = {
+			add_lover = ROOT
+			move_character = ROOT
+		}
+		piety = -20
+		prestige = -20
+	}
+	option = {
+		name = EVTOPTB_NIE_127
+		custom_tooltip = { text = sister_courtier }
+		hidden_tooltip = {
+			character_event = { id = NIE.128 days = 50 }
+			add_character_modifier = {
+				modifier = sister_was
+				duration = 100000
+			}
+		}				
+		event_target:thief_sister_target = {
+			move_character = ROOT
+			hidden_tooltip = {
+				character_event = { id = WoL.98 }
+			}
+			random = {
+				chance = 25
+				add_friend = ROOT
+			}
+		}
+		prestige = -20
+	}					
+	option = {
+		name = EVTOPTC_NIE_127
+		custom_tooltip = { text = sister_send_away }
+		hidden_tooltip = {
+			add_character_modifier = {
+				modifier = sister_was
+				duration = 100000
+			}
+		}
+		prestige = 20
+		random = {
+			chance = 35
+			add_trait = proud
+		}
+		event_target:thief_sister_target = {
+			remove_trait = thief_sister_trait
+			diplomatic_immunity = no
+		}
+	}
+}
+
+###
+# Sister courtier is sad at court
+character_event = {
+	id = NIE.128
+	title = "EVTNAMENIE.128"
+	desc = EVTDESC_NIE_128
+	picture = GFX_evt_quarrel
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+
+	immediate = {
+		random_courtier = {
+			limit = {
+				trait = thief_sister_trait
+			}
+			save_event_target_as = thief_sister_target
+			random_list = {
+				33 = { add_trait = depressed }
+				33 = { add_trait = stressed }
+				33 = {}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_128
+		custom_tooltip = { text = sister_courtier_cruel }
+		hidden_tooltip = {
+			random = {
+				chance = 100
+				random_list = {
+					90 = {
+						character_event = { id = NIE.134 days = 25 random = 50 } 
+					}
+					10 = {
+						character_event = { id = NIE.135 days = 25 random = 50 }
+					}
+				}
+			}
+		}
+		event_target:thief_sister_target = {
+			random_list = {	
+				50 = { add_trait = depressed }
+				30 = { add_trait = stressed }
+				20 = {}
+			}
+		}
+		random = {
+			chance = 40
+			add_trait = cruel
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = kind }
+				remove_trait = kind
+			}
+		}
+						
+	}
+	option = {
+		name = EVTOPTB_NIE_128
+		custom_tooltip = { text = sister_courtier_cheerfull }
+		hidden_tooltip = {
+			random = {
+				chance = 100
+				random_list = {
+					30 = {
+						character_event = { id = NIE.134 days = 25 random = 50 } 
+					}
+					70 = {
+						character_event = { id = NIE.135 days = 25 random = 50 }
+					}
+				}
+			}
+		}
+		event_target:thief_sister_target = {
+			random = {
+				chance = 45
+				if = {
+					limit = { trait = depressed }
+					remove_trait = depressed
+				}
+			}
+			random = {
+				chance = 45
+				if = {
+					limit = { trait = stressed }
+					remove_trait = stressed
+				}
+			}
+			random = {
+				chance = 50
+				add_friend = ROOT
+			}
+		}
+		piety = 10							
+	}
+	option = {
+		name = EVTOPTC_NIE_128
+		custom_tooltip = { text = sister_courtier_passionate }
+		trigger =  {
+			OR = {
+				AND = {
+					is_female = no
+					NOT = { trait = homosexual }
+				}
+				AND = {
+					is_female = yes
+					trait = homosexual
+				}
+			}
+		}
+		hidden_tooltip = {
+			character_event = { id = NIE.119 days = 1 }
+			event_target:thief_sister_target = {
+				if = {
+					limit = { same_sex = ROOT }
+					add_trait = homosexual
+				}
+				character_event = { id = WoL.98 }
+				random = {
+					chance = 60
+					add_trait = lustful
+				}
+				#random = {
+				#	chance = 25
+				#	character_event = { id = 6359 days = 15 random = 5 } #Gives lover's pox
+				#}
+				#add_lover = ROOT
+			}
+		}
+		piety = -20
+		prestige = -20
+		random = {
+			chance = 60
+			add_trait = lustful
+		}
+		event_target:thief_sister_target = {
+			add_lover = ROOT
+		}
+	}
+}

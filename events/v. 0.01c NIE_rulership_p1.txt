@@ -1,0 +1,507 @@
+###########################################
+#                                         #
+# New Immersive Events v. 0.01c           #
+# Rulership Events - Trait/opinion        #
+# ID NIE.220-NIE.225					  #
+# Written and designed by wielkicien      #
+# Bugfixed and edited by Erbkaiser		  #
+#                                         #
+###########################################
+
+namespace = NIE
+
+### Solo events
+
+#Justice above all
+character_event = {
+	id = NIE.220
+	title = "EVTNAMENIE.220"
+	desc = EVTDESC_NIE_220
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		trait = just
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_event_opinion }
+		ai = no
+	}
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_just }
+	}
+
+	option = {
+		name = EVTOPTA_NIE_220
+		custom_tooltip = { text = NIE_justice_opinion }
+		prestige = 50
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					trait = just
+					NOT = {
+						is_rival = ROOT
+					}
+				}
+				opinion = {
+					modifier = opinion_approves_justice
+					who = ROOT
+					years = 2
+				}
+		}
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					trait = arbitrary
+					NOT = {
+						is_friend = ROOT
+					}
+				}
+				opinion = {
+					modifier = opinion_disapproves_justice
+					who = ROOT
+					years = 2
+				}
+		}
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					NOT = {
+						trait = just
+					}
+					NOT = {
+						trait = arbitrary
+					}
+					NOT = { 
+						opinion = { 
+							who = ROOT 
+							value = 0 
+						} 
+					}
+				}
+				random = {
+					chance = 20
+					add_trait = just
+				}
+		}
+				
+	}
+}
+###
+#Faith above all
+character_event = {
+	id = NIE.221
+	title = "EVTNAMENIE.221"
+	desc = EVTDESC_NIE_221
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		trait = zealous
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_event_opinion }
+		ai = no
+	}
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_zealous }
+	}
+
+	option = {
+		name = EVTOPTA_NIE_221
+		custom_tooltip = { text = NIE_zealous_opinion }
+		piety = 50
+		any_vassal = {
+				limit = {
+					is_theocracy = yes
+					religion = ROOT
+					NOT = {
+						trait = cynical
+					}
+				}
+				opinion = {
+					modifier = opinion_approves_zeal_temple
+					who = ROOT
+					years = 2
+				}
+		}
+		any_vassal = {
+				limit = {
+					NOT = {
+						religion = ROOT
+					}
+				}
+				opinion = {
+					modifier = opinion_disapproves_zeal_infidel
+					who = ROOT
+					years = 2
+				}
+		}
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					trait = zealous
+					is_theocracy = no
+					NOT = {
+						is_rival = ROOT
+					}
+				}
+				opinion = {
+					modifier = opinion_approves_zeal
+					who = ROOT
+					years = 2
+				}
+		}
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					trait = cynical
+					is_theocracy = no
+					NOT = {
+						is_friend = ROOT
+					}
+				}
+				opinion = {
+					modifier = opinion_disapproves_zeal
+					who = ROOT
+					years = 2
+				}
+		}
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					religion = ROOT
+					is_theocracy = no
+					NOT = {
+						trait = zealous
+					}
+					NOT = {
+						trait = cynical
+					}
+					NOT = { 
+						opinion = { 
+							who = ROOT 
+							value = 0 
+						} 
+					}
+				}
+				random = {
+					chance = 20
+					add_trait = zealous
+				}
+		}
+				
+	}
+}
+###
+#Work above all
+character_event = {
+	id = NIE.222
+	title = "EVTNAMENIE.222"
+	desc = EVTDESC_NIE_222
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		trait = diligent
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_event_opinion }
+		ai = no
+	}
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_diligent }
+	}
+
+	option = {
+		name = EVTOPTA_NIE_220
+		custom_tooltip = { text = NIE_diligence_opinion }
+		prestige = 50
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					trait = diligent
+					NOT = {
+						is_rival = ROOT
+					}
+				}
+				opinion = {
+					modifier = opinion_approves_diligence
+					who = ROOT
+					years = 2
+				}
+		}
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					trait = slothful
+					NOT = {
+						is_friend = ROOT
+					}
+				}
+				opinion = {
+					modifier = opinion_disapproves_diligence
+					who = ROOT
+					years = 2
+				}
+		}
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					NOT = {
+						trait = diligent
+					}
+					NOT = {
+						trait = slothful
+					}
+					NOT = { 
+						opinion = { 
+							who = ROOT 
+							value = 0 
+						} 
+					}
+				}
+				random = {
+					chance = 20
+					add_trait = diligent
+				}
+		}
+				
+	}
+}
+###
+#Bravery above all
+character_event = {
+	id = NIE.223
+	title = "EVTNAMENIE.223"
+	desc = EVTDESC_NIE_223
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		trait = brave
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_event_opinion }
+		ai = no
+	}
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_brave }
+	}
+
+	option = {
+		name = EVTOPTA_NIE_223
+		custom_tooltip = { text = NIE_bravery_opinion }
+		prestige = 50
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					trait = brave
+					NOT = {
+						is_rival = ROOT
+					}
+				}
+				opinion = {
+					modifier = opinion_approves_bravery
+					who = ROOT
+					years = 2
+				}
+		}
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					trait = craven
+					NOT = {
+						is_friend = ROOT
+					}
+				}
+				opinion = {
+					modifier = opinion_disapproves_bravery
+					who = ROOT
+					years = 2
+				}
+		}
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					NOT = {
+						trait = brave
+					}
+					NOT = {
+						trait = craven
+					}
+					NOT = { 
+						opinion = { 
+							who = ROOT 
+							value = 0 
+						} 
+					}
+				}
+				random = {
+					chance = 20
+					add_trait = brave
+				}
+		}
+				
+	}
+}
+###
+#Honesty above all
+character_event = {
+	id = NIE.224
+	title = "EVTNAMENIE.224"
+	desc = EVTDESC_NIE_224
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		trait = honest
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_event_opinion }
+		ai = no
+	}
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_honest }
+	}
+
+	option = {
+		name = EVTOPTA_NIE_224
+		custom_tooltip = { text = NIE_honesty_opinion }
+		prestige = 50
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					trait = honest
+					NOT = {
+						is_rival = ROOT
+					}
+				}
+				opinion = {
+					modifier = opinion_approves_honesty
+					who = ROOT
+					years = 2
+				}
+		}
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					trait = deceitful
+					NOT = {
+						is_friend = ROOT
+					}
+				}
+				opinion = {
+					modifier = opinion_disapproves_honesty
+					who = ROOT
+					years = 2
+				}
+		}
+		any_vassal = {
+				limit = {
+					is_adult = yes
+					NOT = {
+						trait = honest
+					}
+					NOT = {
+						trait = deceitful
+					}
+					NOT = { 
+						opinion = { 
+							who = ROOT 
+							value = 0 
+						} 
+					}
+				}
+				random = {
+					chance = 20
+					add_trait = honest
+				}
+		}
+				
+	}
+}
+#Approval for celibacy
+character_event = {
+	id = NIE.225
+	title = "EVTNAMENIE.225"
+	desc = EVTDESC_NIE_225
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	only_rulers = yes
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		trait = celibate
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_event_opinion }
+		ai = no
+	}
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_celibate }
+	}
+
+	option = {
+		name = EVTOPTA_NIE_225
+		custom_tooltip = { text = NIE_celibate_opinion }
+		piety = 50
+		any_vassal = {
+			any_vassal = {
+				limit = {
+					is_theocracy = yes
+					religion = ROOT
+					NOT = {
+						trait = cynical
+					}
+				}
+				opinion = {
+					modifier = opinion_approves_celibacy
+					who = ROOT
+					years = 2
+				}
+			}
+		}
+	}
+}

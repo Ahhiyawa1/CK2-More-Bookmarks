@@ -1,0 +1,749 @@
+ # Triggers are in Province scope. The From Scope contains the settlement holder (character)
+ # start trigger is in title scope.
+ 
+ #<tag> = {
+ #	desc = description used in the tooltip of the building
+ #	trigger = used for tech requirement of the building, set to 0 if no requirement so it can be build automatically on new games
+ #	gold_cost = cost to build the building
+ #	build_time = time to build, in days
+ #	
+ #	ai_creation_factor = weight that the AI uses to determine what building to build
+ #	extra_tech_building_start = when starting a new game this building will be pre-built if the province has higher tech than the requirement + this + random 0-1
+ #}
+ 
+ # Castle
+castle = {
+	# All cultural buildings follow the same pattern:
+	# tech required is 0, 1, 2, 4 for the levels of the buildings
+	# cost is 200 + 100 per level
+	# 60 maintenance of troops + 20 per level
+	# + 0.15 bonus in either offensive, defensive or morale sometimes split over different units or stats same on all levels
+	
+	# Culture building names MUST start with ca_culture
+	## Gaulish Cultural Buildings
+	ca_culture_gaulish_1 = {
+		desc = ca_culture_gaulish_1_desc
+		potential = {
+			OR = {
+				culture = gaulish
+				has_building = ca_culture_gaulish_1
+			}
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_potential = yes
+			}
+		}
+		is_active_trigger = {
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 0 
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 200
+		build_time = 730
+		knights = 15
+		knights_offensive = 0.15
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_gaulish_2 = {
+		desc = ca_culture_gaulish_1_desc
+		potential = {
+			OR = {
+				culture = gaulish
+				has_building = ca_culture_gaulish_1
+				has_building = ca_culture_gaulish_2
+			}
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_potential = yes
+			}
+		}
+		is_active_trigger = {
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 1 
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		}
+		upgrades_from = ca_culture_gaulish_1
+		gold_cost = 300
+		build_time = 1095
+		knights = 20
+		knights_offensive = 0.15
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_gaulish_3 = {
+		desc = ca_culture_gaulish_1_desc
+		potential = {
+			OR = {
+				culture = gaulish
+				has_building = ca_culture_gaulish_1
+				has_building = ca_culture_gaulish_2
+				has_building = ca_culture_gaulish_3
+			}
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_potential = yes
+			}
+		}
+		is_active_trigger = {
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 2 
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		}
+		upgrades_from = ca_culture_gaulish_2
+		gold_cost = 400
+		build_time = 2190
+		knights = 25
+		knights_offensive = 0.15
+		ai_creation_factor = 99
+		
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_gaulish_4 = {
+		desc = ca_culture_gaulish_1_desc
+		potential = {
+			OR = {
+				culture = gaulish
+				has_building = ca_culture_gaulish_1
+				has_building = ca_culture_gaulish_2
+				has_building = ca_culture_gaulish_3
+				has_building = ca_culture_gaulish_4
+			}
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_potential = yes
+			}
+		}
+		is_active_trigger = {
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 4 
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		}
+		upgrades_from = ca_culture_gaulish_3
+		gold_cost = 500
+		build_time = 2190
+		knights = 30
+		knights_offensive = 0.15
+		ai_creation_factor = 98
+		
+		extra_tech_building_start = 0.8
+	}
+
+	## Coptic Cultural Buildings
+	ca_culture_egyptian_coptic_1 = {
+		desc = ca_culture_egyptian_coptic_1_desc
+		potential = {
+			OR = {
+				culture = egyptian_coptic
+				has_building = ca_culture_egyptian_coptic_1
+			}
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		is_active_trigger = {
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 0 
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 200
+		build_time = 730
+		heavy_infantry = 15
+		heavy_infantry_offensive = 0.15
+		horse_archers = 5
+		horse_archers_offensive = 0.1
+		ai_creation_factor = 101
+	
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_egyptian_coptic_2 = {
+		desc = ca_culture_egyptian_coptic_1_desc
+		potential = {
+			OR = {
+				culture = egyptian_coptic
+				has_building = ca_culture_egyptian_coptic_1
+				has_building = ca_culture_egyptian_coptic_2
+			}
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		is_active_trigger = {
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 1 
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		upgrades_from = ca_culture_egyptian_coptic_1
+		gold_cost = 300
+		build_time = 1095
+		heavy_infantry = 30
+		heavy_infantry_offensive = 0.15
+		horse_archers = 10
+		horse_archers_offensive = 0.1
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_egyptian_coptic_3 = {
+		desc = ca_culture_egyptian_coptic_1_desc
+		potential = {
+			OR = {
+				culture = egyptian_coptic
+				has_building = ca_culture_egyptian_coptic_1
+				has_building = ca_culture_egyptian_coptic_2
+				has_building = ca_culture_egyptian_coptic_3
+			}
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		is_active_trigger = {
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 2
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		upgrades_from = ca_culture_egyptian_coptic_2
+		gold_cost = 400
+		build_time = 2190
+		heavy_infantry = 35
+		heavy_infantry_defensive = 0.15
+		horse_archers = 15
+		horse_archers_offensive = 0.1
+		ai_creation_factor = 99
+		
+		extra_tech_building_start = 0.8
+	}
+	ca_culture_egyptian_coptic_4 = {
+		desc = ca_culture_egyptian_coptic_1_desc
+		potential = {
+			OR = {
+				culture = egyptian_coptic
+				has_building = ca_culture_egyptian_coptic_1
+				has_building = ca_culture_egyptian_coptic_2
+				has_building = ca_culture_egyptian_coptic_3
+				has_building = ca_culture_egyptian_coptic_4
+			}
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		is_active_trigger = {
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 4 
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		upgrades_from = ca_culture_egyptian_coptic_3
+		gold_cost = 500
+		build_time = 2190
+		heavy_infantry = 40
+		heavy_infantry_defensive = 0.15
+		horse_archers = 20
+		horse_archers_offensive = 0.1
+		ai_creation_factor = 98
+		
+		extra_tech_building_start = 0.8
+	}
+	ca_kemetic_pyramid = {
+		potential = {
+			FROM = {
+				higher_tier_than = duke
+				OR = {
+					religion = egyptian_pagan
+					religion = aten_pagan
+				}
+			}
+		}
+		trigger = { always = no }
+		desc = ca_kemetic_pyramid_desc
+		gold_cost = 600
+		build_time = 3650
+
+		culture_techpoints = 0.1
+		liege_piety = 0.5
+		monthly_character_piety = 0.5
+
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 0.0
+	}
+}
+
+city = {
+	ct_kemetic_pyramid = {
+		potential = {
+			FROM = {
+				higher_tier_than = duke
+				OR = {
+					religion = egyptian_pagan
+					religion = aten_pagan
+				}
+			}
+		}
+		trigger = { always = no }
+		desc = ca_kemetic_pyramid_desc
+		gold_cost = 600
+		build_time = 3650
+
+		culture_techpoints = 0.1
+		liege_piety = 0.5
+		monthly_character_piety = 0.5
+
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 0.0
+	}
+}
+
+temple = {
+	tp_kemetic_pyramid = {
+		potential = {
+			FROM = {
+				higher_tier_than = duke
+				OR = {
+					religion = egyptian_pagan
+					religion = aten_pagan
+				}
+			}
+		}
+		trigger = { always = no }
+		desc = ca_kemetic_pyramid_desc
+		gold_cost = 600
+		build_time = 3650
+
+		culture_techpoints = 0.1
+		liege_piety = 0.5
+		monthly_character_piety = 0.5
+
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 0.0
+	}
+}
+
+tribal = {
+	## Gaulish Cultural Buildings
+	tb_culture_gaulish_1 = {
+		desc = ca_culture_gaulish_1_desc
+		potential = {
+			OR = {
+				culture = gaulish
+				has_building = tb_culture_gaulish_1
+			}
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_potential = yes
+			}
+		}
+		is_active_trigger = {
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 0 
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		}
+		gold_cost = 200
+		build_time = 730
+		knights = 7
+		knights_offensive = 0.15
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	tb_culture_gaulish_2 = {
+		desc = ca_culture_gaulish_1_desc
+		potential = {
+			OR = {
+				culture = gaulish
+				has_building = tb_culture_gaulish_1
+				has_building = tb_culture_gaulish_2
+			}
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_potential = yes
+			}
+		}
+		is_active_trigger = {
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 1 
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		}
+		upgrades_from = tb_culture_gaulish_1
+		gold_cost = 300
+		build_time = 1095
+		knights = 10
+		knights_offensive = 0.15
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 0.8
+	}
+	tb_culture_gaulish_3 = {
+		desc = ca_culture_gaulish_1_desc
+		potential = {
+			OR = {
+				culture = gaulish
+				has_building = tb_culture_gaulish_1
+				has_building = tb_culture_gaulish_2
+				has_building = tb_culture_gaulish_3
+			}
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_potential = yes
+			}
+		}
+		is_active_trigger = {
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 2 
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		}
+		upgrades_from = tb_culture_gaulish_2
+		gold_cost = 400
+		build_time = 2190
+		knights = 13
+		knights_offensive = 0.15
+		ai_creation_factor = 99
+		
+		extra_tech_building_start = 0.8
+	}
+	tb_culture_gaulish_4 = {
+		desc = ca_culture_gaulish_1_desc
+		potential = {
+			OR = {
+				culture = gaulish
+				has_building = tb_culture_gaulish_1
+				has_building = tb_culture_gaulish_2
+				has_building = tb_culture_gaulish_3
+				has_building = tb_culture_gaulish_4
+			}
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_potential = yes
+			}
+		}
+		is_active_trigger = {
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 4 
+			ROOT = { culture = gaulish }
+			trigger_if = {
+				limit = { has_global_flag = is_kcb_save }
+				kcb_no_camels_or_elephants_active = yes
+			}
+		}
+		upgrades_from = tb_culture_gaulish_3
+		gold_cost = 500
+		build_time = 2190
+		knights = 15
+		knights_offensive = 0.15
+		ai_creation_factor = 98
+		
+		extra_tech_building_start = 0.8
+	}
+
+	## Coptic Cultural Buildings
+	tb_culture_egyptian_coptic_1 = {
+		desc = ca_culture_egyptian_coptic_1_desc
+		potential = {
+			OR = {
+				culture = egyptian_coptic
+				has_building = tb_culture_egyptian_coptic_1
+			}
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		is_active_trigger = {
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 0 
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		gold_cost = 200
+		build_time = 730
+		heavy_infantry = 7
+		heavy_infantry_offensive = 0.15
+		horse_archers = 2
+		horse_archers_offensive = 0.1
+		ai_creation_factor = 101
+	
+		extra_tech_building_start = 0.8
+	}
+	tb_culture_egyptian_coptic_2 = {
+		desc = ca_culture_egyptian_coptic_1_desc
+		potential = {
+			OR = {
+				culture = egyptian_coptic
+				has_building = tb_culture_egyptian_coptic_1
+				has_building = tb_culture_egyptian_coptic_2
+			}
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		is_active_trigger = {
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 1 
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		upgrades_from = tb_culture_egyptian_coptic_1
+		gold_cost = 300
+		build_time = 1095
+		heavy_infantry = 15
+		heavy_infantry_offensive = 0.15
+		horse_archers = 5
+		horse_archers_offensive = 0.1
+		ai_creation_factor = 100
+		
+		extra_tech_building_start = 0.8
+	}
+	tb_culture_egyptian_coptic_3 = {
+		desc = ca_culture_egyptian_coptic_1_desc
+		potential = {
+			OR = {
+				culture = egyptian_coptic
+				has_building = tb_culture_egyptian_coptic_1
+				has_building = tb_culture_egyptian_coptic_2
+				has_building = tb_culture_egyptian_coptic_3
+			}
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		is_active_trigger = {
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 2
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		upgrades_from = tb_culture_egyptian_coptic_2
+		gold_cost = 400
+		build_time = 2190
+		heavy_infantry = 18
+		heavy_infantry_defensive = 0.15
+		horse_archers = 8
+		horse_archers_offensive = 0.1
+		ai_creation_factor = 99
+		
+		extra_tech_building_start = 0.8
+	}
+	tb_culture_egyptian_coptic_4 = {
+		desc = ca_culture_egyptian_coptic_1_desc
+		potential = {
+			OR = {
+				culture = egyptian_coptic
+				has_building = tb_culture_egyptian_coptic_1
+				has_building = tb_culture_egyptian_coptic_2
+				has_building = tb_culture_egyptian_coptic_3
+				has_building = tb_culture_egyptian_coptic_4
+			}
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		is_active_trigger = {
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		} 
+		trigger = { 
+			TECH_CASTLE_CONSTRUCTION = 4 
+			ROOT = { culture = egyptian_coptic }
+			NOT = { has_global_flag = is_kcb_save }
+		}
+		upgrades_from = tb_culture_egyptian_coptic_3
+		gold_cost = 500
+		build_time = 2190
+		heavy_infantry = 20
+		heavy_infantry_defensive = 0.15
+		horse_archers = 10
+		horse_archers_offensive = 0.1
+		ai_creation_factor = 98
+		
+		extra_tech_building_start = 0.8
+	}
+	tb_kemetic_pyramid = {
+		potential = {
+			FROM = {
+				higher_tier_than = duke
+				OR = {
+					religion = egyptian_pagan
+					religion = aten_pagan
+				}
+			}
+		}
+		trigger = { always = no }
+		desc = ca_kemetic_pyramid_desc
+		gold_cost = 600
+		build_time = 3650
+
+		culture_techpoints = 0.1
+		liege_piety = 0.5
+		monthly_character_piety = 0.5
+
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 0.0
+	}
+	tb_great_pillar_celtic = {
+		desc = tb_great_pillar_celtic_desc
+		potential = {
+			has_province_flag = flag_great_pillar_celtic
+		}
+		is_active_trigger = {
+			FROM = { #Owner and his liege must be of the founding religion, otherwise the building becomes inactive.
+				is_tribal = yes
+				religion = celtic_pagan
+				liege = {
+					is_tribal = yes
+					religion = celtic_pagan
+				}
+			}
+		}
+		gold_cost = 350
+		build_time = 3650
+
+		liege_piety = 0.1
+		levy_reinforce_rate = 0.05
+		land_morale = 0.05
+
+
+		ai_creation_factor = 92
+		add_number_to_name = no
+	}
+	tb_great_pillar_egyptian = {
+		desc = tb_great_pillar_egyptian_desc
+		potential = {
+			has_province_flag = flag_great_pillar_egyptian
+		}
+		is_active_trigger = {
+			FROM = { #Owner and his liege must be of the founding religion, otherwise the building becomes inactive.
+				is_tribal = yes
+				religion = egyptian_pagan
+				liege = {
+					is_tribal = yes
+					religion = egyptian_pagan
+				}
+			}
+		}
+		gold_cost = 350
+		build_time = 3650
+
+		liege_piety = 0.1
+		land_morale = 0.1
+
+
+		ai_creation_factor = 92
+		add_number_to_name = no
+	}
+	tb_great_pillar_titan = {
+		desc = tb_great_pillar_titan_desc
+		potential = {
+			has_province_flag = flag_great_pillar_titan
+		}
+		is_active_trigger = {
+			FROM = { #Owner and his liege must be of the founding religion, otherwise the building becomes inactive.
+				is_tribal = yes
+				religion = titan_pagan
+				liege = {
+					is_tribal = yes
+					religion = titan_pagan
+				}
+			}
+		}
+		gold_cost = 350
+		build_time = 3650
+
+		liege_piety = 0.1
+		culture_techpoints = 0.1
+		land_morale = 0.05
+
+
+		ai_creation_factor = 92
+		add_number_to_name = no
+	}
+}

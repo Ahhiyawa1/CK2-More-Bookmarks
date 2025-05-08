@@ -1,0 +1,427 @@
+###########################################
+#                                         #
+# New Immersive Events v. 0.01a           #
+# Rulership Events: Part 5                #
+# ID NIE.129-NIE.138                      #
+# Written and designed by wielkicien      #
+# Bugfixed and edited by Erbkaiser		  #
+#                                         #
+###########################################
+
+namespace = NIE
+
+### The Thief
+#Sister released from dungeon
+character_event = {
+	id = NIE.129
+	title = "EVTNAMENIE.129"
+	desc = EVTDESC_NIE_129
+	picture = GFX_evt_into_the_dungeon
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		any_character  = {
+			limit = {
+				trait = thief_sister_trait
+			}
+			save_event_target_as = thief_sister_target
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_NIE_129
+		custom_tooltip = { text = sister_is_free }
+		event_target:thief_sister_target = {
+			remove_trait = thief_sister_trait
+			diplomatic_immunity = no
+			if = {
+				limit = { prisoner = yes }
+				prisoner = no
+				banish = yes
+			}
+		}
+	}
+}
+###
+#Sister taken as lover
+character_event = {
+	id = NIE.130
+	title = "EVTNAMENIE.130a"
+	desc = EVTDESC_NIE_130a
+	picture = GFX_evt_lovers
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier  = {
+			limit = {
+				trait = thief_sister_trait
+			}
+			save_event_target_as = thief_sister_target
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_130a
+		custom_tooltip = { text = sister_took_lover }
+		hidden_tooltip = {
+			set_character_flag = thief_sister_lover
+		}
+	}
+}
+###
+#Sister took lover
+character_event = {
+	id = NIE.1301
+	title = "EVTNAMENIE.130b"
+	desc = EVTDESC_NIE_130b
+	picture = GFX_evt_lovers
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier  = {
+			limit = {
+				trait = thief_sister_trait
+			}
+			save_event_target_as = thief_sister_target
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_130b
+		custom_tooltip = { text = sister_took_lover }
+		hidden_tooltip = {
+			set_character_flag = thief_sister_lover
+		}
+	}
+}
+###
+#Peasant girl night forced
+character_event = {
+	id = NIE.131
+	title = "EVTNAMENIE.131"
+	desc = EVTDESC_NIE_131
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	immediate = {
+		any_character  = {
+			limit = {
+				trait = thief_sister_trait
+			}
+			save_event_target_as = thief_sister_target
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_131
+		custom_tooltip = { text = peasant_girl_night2_force }
+		hidden_tooltip = {
+			character_event = { id = NIE.123 days = 5 }
+		}
+	}
+}
+###
+#Thief cut hand
+character_event = {
+	id = NIE.132
+	title = "EVTNAMENIE.132"
+	desc = EVTDESC_NIE_132
+	picture = GFX_evt_noble_in_castle
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier = {
+			limit = {
+				trait = thief_trait
+			}
+			save_event_target_as = thief_event_target
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_NIE_132
+		custom_tooltip = { text = thief_cut_hand }
+		hidden_tooltip = {
+			random_list = {
+				50 = {
+					character_event = { id = NIE.117 days = 75 random = 120 } 
+				}
+				50 = {
+					character_event = { id = NIE.125 days = 75 random = 120 }
+				}
+			}
+		}
+		event_target:thief_event_target = {
+			add_trait = one_handed
+		}
+	}
+}
+###
+#Thief not accepted to serve
+character_event = {
+	id = NIE.133
+	title = "EVTNAMENIE.133"
+	desc = EVTDESC_NIE_133
+	picture = GFX_evt_noble_in_castle
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_tooltip = {
+			any_character  = {
+				limit = {
+					trait = thief_trait
+				}
+				save_event_target_as = thief_event_target
+			}
+			event_target:thief_event_target = {
+				any_sibling = {
+					limit = {
+						trait = thief_sister_trait
+					}
+					save_event_target_as = thief_sister_target
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_133
+		custom_tooltip = { text = Thief_not_accepted }
+		hidden_tooltip = {
+			event_target:thief_event_target = {
+				remove_trait = thief_trait
+				diplomatic_immunity = no
+			}
+			event_target:thief_sister_target = {
+				remove_trait = thief_sister_trait
+				diplomatic_immunity = no
+			}
+		}
+	}
+}
+###
+#Sister leaves your court
+character_event = {
+	id = NIE.134
+	title = "EVTNAMENIE.134"
+	desc = EVTDESC_NIE_134
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	immediate = {
+		any_character  = {
+			limit = {
+				trait = thief_sister_trait
+			}
+			save_event_target_as = thief_sister_target
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_134
+		custom_tooltip = { text = Sister_leaves_court }
+		hidden_tooltip = {
+			event_target:thief_sister_target = {
+				remove_trait = thief_sister_trait
+				diplomatic_immunity = no
+			}
+		}
+		event_target:thief_sister_target = {
+			banish = yes
+		}
+	}
+}
+###
+#Sister is happy at your court
+character_event = {
+	id = NIE.135
+	title = "EVTNAMENIE.135"
+	desc = EVTDESC_NIE_135
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	immediate = {
+		any_character  = {
+			limit = {
+				trait = thief_sister_trait
+			}
+			save_event_target_as = thief_sister_target
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_135
+		custom_tooltip = { text = Sister_happy_court }
+		hidden_tooltip = {
+			event_target:thief_sister_target = {
+				remove_trait = thief_sister_trait
+				diplomatic_immunity = no
+			}
+		}
+	}
+}
+###
+#Sister ends as wife
+character_event = {
+	id = NIE.136
+	title = "EVTNAMENIE.136"
+	desc = EVTDESC_NIE_136
+	picture = GFX_evt_lovers
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_courtier  = {
+			limit = {
+				trait = thief_sister_trait
+			}
+			save_event_target_as = thief_sister_target
+		}
+		#Create a relevant dynasty for her
+		create_character = {
+			culture = ROOT
+			dynasty = actually_culture
+		}
+		new_character = {
+			save_event_target_as = thief_dynasty
+			death = yes
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_136
+		custom_tooltip = { text = Sister_end_marry }
+		hidden_tooltip = {
+			event_target:thief_sister_target = {
+				remove_trait = thief_sister_trait
+				diplomatic_immunity = no
+				dynasty = event_target:thief_dynasty
+				add_spouse = ROOT
+			}
+		}
+	}
+}
+###
+#Sister ends with dynasty
+character_event = {
+	id = NIE.137
+	title = "EVTNAMENIE.137"
+	desc = EVTDESC_NIE_137
+	picture = GFX_evt_lovers
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	immediate = {
+		any_character  = {
+			limit = {
+				trait = thief_sister_trait
+			}
+			save_event_target_as = thief_sister_target
+		}
+		#Create a relevant dynasty for her
+		create_character = {
+			culture = ROOT
+			dynasty = actually_culture
+		}
+		new_character = {
+			save_event_target_as = thief_dynasty
+			death = yes
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_137
+		custom_tooltip = { text = Sister_end_dynasty }
+		hidden_tooltip = {
+			event_target:thief_sister_target = {
+				remove_trait = thief_sister_trait
+				diplomatic_immunity = no
+				dynasty = event_target:thief_dynasty
+			}
+		}
+	}
+}
+###
+#Sister is happy as lover
+character_event = {
+	id = NIE.138
+	title = "EVTNAMENIE.138"
+	desc = EVTDESC_NIE_138
+	picture = GFX_evt_lovers
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	immediate = {
+		any_character  = {
+			limit = {
+				trait = thief_sister_trait
+			}
+			save_event_target_as = thief_sister_target
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_137
+		custom_tooltip = { text = Sister_end_lover }
+		hidden_tooltip = {
+			event_target:thief_sister_target = {
+				remove_trait = thief_sister_trait
+				diplomatic_immunity = no
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+peasants_angry_01;Unhappy peasants;;;;;;;;;;;;;
+peasants_angry_02;Angry peasants;;;;;;;;;;;;;
+peasants_angry_03;Rebellious peasants;;;;;;;;;;;;;
+peasants_angry_04;Peasants riot;;;;;;;;;;;;;
+opinion_approves_justice;Approves just approach;;;;;;;;;;;;;
+opinion_disapproves_justice;Disapproves just approach;;;;;;;;;;;;;
+opinion_approves_zeal;Approves zealous approach;;;;;;;;;;;;;
+opinion_disapproves_zeal;Disapproves zealous approach;;;;;;;;;;;;;
+opinion_approves_zeal_temple;Approves zealous approach;;;;;;;;;;;;;
+opinion_disapproves_zeal_infidel;Disapproves zealous approach;;;;;;;;;;;;;
+opinion_approves_diligence;Approves diligent approach;;;;;;;;;;;;;
+opinion_disapproves_diligence;Disapproves diligent approach;;;;;;;;;;;;;
+opinion_approves_bravery;Approves brave approach;;;;;;;;;;;;;
+opinion_disapproves_bravery;Disapproves brave approach;;;;;;;;;;;;;
+opinion_approves_honesty;Approves honest approach;;;;;;;;;;;;;
+opinion_disapproves_honesty;Disapproves honest approach;;;;;;;;;;;;;
+opinion_approves_wealth;Impressed with your wealth;;;;;;;;;;;;;
+opinion_disapproves_wealth;Not content with your wealth;;;;;;;;;;;;;
+opinion_approves_celibacy;Approves celibacy;;;;;;;;;;;;;
+opinion_approves_thrift;Impressed with stewardship;;;;;;;;;;;;;
+opinion_approves_diplomacy;Impressed with diplomacy;;;;;;;;;;;;;
+opinion_approves_scholarship;Impressed with scholarship;;;;;;;;;;;;;
+opinion_approves_martial;Impressed by martial abilities;;;;;;;;;;;;;
+EVTDESCNIE.309;I remain [From.GetTitledFirstName];Je reste [From.Get_le_Title][From.GetTitledFirstName].;Ich bleibe [From.GetTitledFirstName];;Sigo siendo [From.GetTitledFirstName];;;;;;;;;x
+EVTDESCNIE.311;The baby, [From.GetTitledFirstName], is surely my husband's bastard, though darling [Root.Spouse.GetFirstName] denies it.;Le bébé, [From.Get_le_Title][From.GetTitledFirstName], est sûrement l'enfant illégitime de mon mari, même si ce cher [Root.Spouse.GetFirstName] nie tout.;Das Baby, [From.GetTitledFirstName], ist auf jeden Fall der Bastard meines Gatten, obwohl [Root.Spouse.GetFirstName] es verleugnet.;;El niño, [From.GetTitledFirstName], es sin duda el bastardo de mi marido, aunque el querido [Root.Spouse.GetFirstName] lo niegue.;;;;;;;;;x
+EVTOPTANIE.311;He's but a man;Il pourrait au moins se comporter en homme.;Er ist eben ein Mann;;No es más que un hombre;;;;;;;;;x
+waiting_for_sister;waiting_for_sister;;;;;;;;;;;;;
+sister_was;sister_was;;;;;;;;;;;;;
+sister_torment;sister_torment;;;;;;;;;;;;;
+brother_torment;brother_torment;;;;;;;;;;;;;
+fired_event_chain;fired_event_chain;;;;;;;;;;;;;
+fired_solo_event;fired_solo_event;;;;;;;;;;;;;
+thief_sister_trait;thief_sister_trait;;;;;;;;;;;;;
+thief_sister_trait_desc;thief_sister_trait;;;;;;;;;;;;;
+thief_trait;thief_trait;;;;;;;;;;;;;
+thief_trait_desc;thief_trait;;;;;;;;;;;;;
+NIE_events_launched;Launched NIE events;;;;;;;;;;;;;

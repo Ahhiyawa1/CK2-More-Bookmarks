@@ -1,0 +1,211 @@
+# kcl_cybrixkhan_scarred_flavor_effect
+# kcl_cybrixkhan_maybe_smart_strong_pretty_effect
+# kcl_cybrixkhan_maybe_smart_strong_effect
+# kcl_cybrixkhan_weighted_education_effect
+# kcl_cybrixkhan_personality_archetypes_effect
+# kcl_cybrixkhan_amalfi_traits_effect
+# kcl_cybrixkhan_harranian_spawn_effect
+
+kcl_cybrixkhan_scarred_flavor_effect = {
+	random_list = {
+		90 = { }
+		9 = { add_scarred_tiered_effect = yes }
+		1 = { 
+			trigger = { has_dlc = Reapers }
+			add_trait = one_eyed
+		}
+	}
+}
+
+kcl_cybrixkhan_maybe_smart_strong_pretty_effect = {
+	random_list = {
+		20 = { add_trait = genius }
+		30 = { add_trait = quick }
+		30 = { add_trait = attractive }
+		20 = { add_trait = strong }
+		20 = { add_trait = sturdy }
+		20 = { add_trait = brawny }
+		30 = { add_trait = groomed }
+		30 = { add_trait = shrewd }
+		300 = { }
+	}
+}
+
+kcl_cybrixkhan_maybe_smart_strong_effect = {
+	random_list = {
+		20 = { add_trait = genius }
+		20 = { add_trait = quick }
+		10 = { add_trait = strong }
+		10 = { add_trait = sturdy }
+		10 = { add_trait = brawny }
+		20 = { add_trait = shrewd }
+		300 = { }
+	}
+}
+
+kcl_cybrixkhan_weighted_education_effect = {
+	random_list = {
+		25 = { add_trait = naive_appeaser }
+		25 = { add_trait = underhanded_rogue }
+		25 = { add_trait = misguided_warrior }
+		25 = { add_trait = tough_soldier }
+		25 = { add_trait = indulgent_wastrel }
+		25 = { add_trait = thrifty_clerk }
+		25 = { add_trait = amateurish_plotter }
+		25 = { add_trait = flamboyant_schemer }
+		25 = { add_trait = detached_priest }
+		25 = { add_trait = dutiful_cleric }
+		50 = { add_trait = charismatic_negotiator }
+		50 = { add_trait = grey_eminence }
+		50 = { add_trait = skilled_tactician }
+		50 = { add_trait = brilliant_strategist }
+		50 = { add_trait = fortune_builder }
+		50 = { add_trait = midas_touched }
+		50 = { add_trait = intricate_webweaver }
+		50 = { add_trait = elusive_shadow }
+		50 = { add_trait = scholarly_theologian }
+		50 = { add_trait = mastermind_theologian }
+	}
+}
+
+kcl_cybrixkhan_personality_archetypes_effect = {
+	random_list = {
+		10 = { # Innocent and pure of heart
+			add_trait = attractive
+			add_trait_fully_kind_effect = yes
+			add_trait_fully_trusting_effect = yes
+			add_trait_fully_shy_effect = yes
+			add_trait_fully_chaste_effect = yes
+			add_trait_fully_humble_effect = yes
+		}
+		10 = { # Scared and timid
+			add_trait_fully_craven_effect = yes
+			add_trait_fully_paranoid_effect = yes
+			add_trait_fully_shy_effect = yes
+			add_trait_fully_temperate_effect = yes
+			add_trait_fully_humble_effect = yes
+		}
+		10 = { # an actual asshole
+			add_trait_fully_envious_effect = yes
+			add_trait_fully_cruel_effect = yes
+			add_trait_fully_wroth_effect = yes
+			add_trait = stubborn
+			add_trait_fully_honest_effect = yes
+		}
+		10 = { # promiscuous
+			add_trait = attractive
+			add_trait_fully_lustful_effect = yes
+			add_trait_fully_gregarious_effect = yes
+			add_trait_fully_charitable_effect = yes
+			add_trait_fully_proud_effect = yes
+			add_trait = hedonist
+		}
+		10 = { # tomboy
+			add_trait_fully_brave_effect = yes
+			add_trait_fully_proud_effect = yes
+			add_trait_fully_gregarious_effect = yes
+			add_trait_fully_diligent_effect = yes
+			add_trait = stubborn
+		}
+		10 = { # articulate and refined
+			add_trait = erudite
+			add_trait_fully_patient_effect = yes
+			add_trait_fully_diligent_effect = yes
+			add_trait_fully_proud_effect = yes
+			add_trait_fully_chaste_effect = yes
+		}
+		10 = { # antisocial weirdo
+			add_trait_fully_shy_effect = yes
+			add_trait_fully_content_effect = yes
+			add_trait_fully_slothful_effect = yes
+			add_trait_fully_gluttonous_effect = yes
+			add_trait_fully_chaste_effect = yes
+		}
+	}
+}
+
+kcl_cybrixkhan_amalfi_traits_effect = {
+	random_list = {
+		500 = { } #Nothing
+		50 = { add_scarred_tiered_effect = yes }
+		5 = { 
+			trigger = { has_dlc = Reapers }
+			add_trait = one_eyed
+		}
+		5 = { 
+			trigger = { has_dlc = Reapers }
+			add_trait = one_handed
+		}
+		5 = { 
+			trigger = { has_dlc = Reapers }
+			add_trait = one_legged
+		}
+	}
+	random_list = {
+		400 = { } 
+		30 = { add_trait = brawny }
+		30 = { add_trait = sturdy }
+		10 = { add_trait = strong }
+	}
+	random_list = {
+		300 = { } 
+		40 = { add_trait = groomed }
+		20 = { add_trait = attractive }
+	}
+	random_list = {
+		200 = { }
+		40 = { add_trait = shrewd }
+		20 = { add_trait = quick }
+		10 = { add_trait = genius }
+	}
+}
+
+kcl_cybrixkhan_harranian_spawn_effect = {
+	random_list = {
+		10 = {
+			add_character_modifier = {
+				name = VIET_harran_courtier_former_moneylender
+				duration = -1
+			}
+		}
+		10 = {
+			add_character_modifier = {
+				name = VIET_harran_courtier_prominent_harranian
+				duration = -1
+			}
+		}
+		10 = {
+			add_character_modifier = {
+				name = VIET_harran_courtier_neoplatonic_fanatic
+				duration = -1
+			}
+			if = {
+				limit = { has_global_flag = ancrel }
+				random_list = {
+					10 = { add_trait = stoic }
+					10 = { add_trait = skeptic }
+					10 = { add_trait = epicurean }
+				}
+			}
+		}
+		10 = {
+			add_character_modifier = {
+				name = VIET_harran_courtier_ostracized_harranian
+				duration = -1
+			}
+		}
+		10 = {
+			add_character_modifier = {
+				name = VIET_harran_courtier_devout_planet_worshipper
+				duration = -1
+			}
+		}
+		10 = {
+			add_character_modifier = {
+				name = VIET_tammuz_devotee
+				duration = -1
+			}
+		}
+		50 = { }
+	}
+}

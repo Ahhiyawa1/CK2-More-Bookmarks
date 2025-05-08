@@ -1,0 +1,170 @@
+# Definitions of the dynamically defined modifiers by other elements such as special troops
+
+artifact_protection = {
+	show_as_percent = yes
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+}
+religious_authority_artifact = {
+	show_as_percent = yes
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+}
+
+
+
+
+
+
+
+
+
+
+####Text modifiers
+blacklist_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+special_inheritance_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+iron_crown_of_lombardy_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+priestly_breastplate_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+andvaranaut_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+gungnir_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+odins_eye_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+ashanti_doll_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+axe_of_perun_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+pandoras_box_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+pelt_of_the_nemean_lion_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+brionac_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+durandal_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+joyeuse_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+trident_of_poseidon_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}
+
+girdle_of_aphrodite_modifier = {
+	show_as_percent = no
+	is_good = yes
+	is_monthly = no
+	is_hidden = no
+	max_decimals = 0
+	show_value = no
+}

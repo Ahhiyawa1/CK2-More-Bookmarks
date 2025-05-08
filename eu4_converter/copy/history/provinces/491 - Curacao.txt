@@ -1,0 +1,19 @@
+#491 - Curacao
+
+culture = atlantean
+owner = ATL
+controller = ATL
+add_core = ATL
+is_city = yes
+religion = hellenic_pagan
+capital = "Pseidonia"
+trade_goods = sugar
+hre = no
+base_tax = 3
+base_production = 3
+base_manpower = 3
+discovered_by = CAB
+discovered_by = ARW
+discovered_by = ATL
+extra_cost = 8
+center_of_trade = 1

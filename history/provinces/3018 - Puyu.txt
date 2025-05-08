@@ -1,0 +1,29 @@
+# 3018 - Puyu
+
+# County Title
+title = c_puyu
+
+# Settlements
+max_settlements = 3
+
+b_puyu = tribal
+#b_puyu_kulian = tribal
+#b_puyu_nian = tribal
+#b_puyu_yaci = tribal
+#b_puyu_naiyan = tribal
+#b_puyu_suwen = tribal
+#b_puyu_zhaozhou = tribal
+
+# Misc
+culture = khitan
+religion = tengri_pagan
+
+# History
+907.1.1 = {
+	religion = buddhist
+	b_puyu = castle
+	b_puyu_kulian = city
+}
+1125.3.26 = {
+	culture = jurchen
+}

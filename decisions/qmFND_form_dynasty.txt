@@ -1,0 +1,71 @@
+targeted_decisions = {
+	qmFND_form_dynasty = {
+		filter = self
+		potential = {
+			ai = no
+			NOT = { has_character_flag = qmFND_formed_dynasty }
+			OR {
+				father_even_if_dead {
+					dynasty = ROOT
+				}
+				mother_even_if_dead {
+					dynasty = ROOT
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				# Sets a character flag to prevent the decision from appearing again after it's been used by a character
+				set_character_flag = qmFND_formed_dynasty
+			
+				# Scopes to the player's father if he shares the player's dynasty. Used as a reference for the old dynasty once the player's dynasty is changed
+				father_even_if_dead {
+					if {
+						limit = { dynasty = ROOT }
+						# Scopes back to the player
+						ROOT {
+							# Creates a new dynasty and assigns it to the player
+							dynasty = father_bastard
+							
+							# Scopes to the player's children, and checks if any of them have the player's father's dynasty (essentially checking if they had the player's old dynasty)
+							any_child_even_if_dead	{
+								if {
+									# If any of the player's children have the old dynasty, scopes to all characters with that dynasty
+									limit = { dynasty = PREVPREV }
+									any_dynasty_member_even_if_dead {
+										if {
+											# Narrows the scope to all of the characters from the old dynasty who are descendants of the player, and then assigns them the player's new dynasty
+											limit = { is_descendant_of = ROOT }
+											dynasty = ROOT
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				# Does the exact same thing as the above code block, but if the mother shares the player's dynasty instead of the father
+				mother_even_if_dead {
+					if {
+						limit = { dynasty = ROOT }
+						ROOT {
+							dynasty = father_bastard
+							
+							any_child_even_if_dead	{
+								if {
+									limit = { dynasty = PREVPREV }
+									any_dynasty_member_even_if_dead {
+										if {
+											limit = { is_descendant_of = ROOT }
+											dynasty = ROOT
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

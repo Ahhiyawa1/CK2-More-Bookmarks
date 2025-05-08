@@ -1,0 +1,16 @@
+# County Title
+title = c_beersheb
+# Terrain
+terrain = hills
+# Settlements
+max_settlements = 3
+b_beersheb = castle
+# b_estemon = city
+b_massada = temple
+# Misc
+culture = levantine_arabic
+religion = orthodox
+867.1.1 = { religion = sunni }
+################################################################################
+# 1519 - Beersheb
+################################################################################

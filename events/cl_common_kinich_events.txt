@@ -1,0 +1,1570 @@
+namespace = cl_common_kinich
+
+#[on_startup] maintenance event
+character_event = {
+	id = cl_common_kinich.001
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	religion = catholic
+	
+	trigger = {
+		controls_religion = yes # Let it happen for the Pope. He's always around.
+		NOT = { has_global_flag = cl_common_kinich_startup }
+	}
+
+	immediate = {
+		set_global_flag = cl_common_kinich_startup
+		character_event = { id = cl_common_kinich.002 days = 5 }
+	}
+}
+
+#[on_startup] maintenance event
+character_event = {
+	id = cl_common_kinich.002
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	religion = catholic
+	
+	trigger = {
+		controls_religion = yes # Let it happen for the Pope. He's always around.
+		has_global_flag = cl_common_kinich_startup
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_game_rule = {
+						name = cl_common_kinich_defensive_religions
+						value = jews
+					}
+					has_game_rule = {
+						name = cl_common_kinich_defensive_religions
+						value = jews+nonchalcedonians
+					}
+					has_game_rule = {
+						name = cl_common_kinich_defensive_religions
+						value = jews+minor_muslims
+					}
+					has_game_rule = {
+						name = cl_common_kinich_defensive_religions
+						value = all
+					}
+				}
+			}
+			jewish = {
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = attrition_only
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_defensive_attrition = yes
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							name = cl_common_kinich_hard_to_convert
+							value = on
+						}
+					}
+					set_hard_to_convert = yes
+				}
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.4
+						garrison_size = 0.2
+
+						light_infantry_defensive = 0.4
+						heavy_infantry_defensive = 0.4
+						pikemen_defensive = 0.4
+						light_cavalry_defensive = 0.4
+						knights_defensive = 0.4
+						archers_defensive = 0.4
+						horse_archers_defensive = 0.4
+						camel_cavalry_defensive = 0.4
+						war_elephants_defensive = 0.4
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.8
+						garrison_size = 0.4
+
+						light_infantry_defensive = 0.8
+						heavy_infantry_defensive = 0.8
+						pikemen_defensive = 0.8
+						light_cavalry_defensive = 0.8
+						knights_defensive = 0.8
+						archers_defensive = 0.8
+						horse_archers_defensive = 0.8
+						camel_cavalry_defensive = 0.8
+						war_elephants_defensive = 0.8
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+			}
+			karaite = {
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = attrition_only
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_defensive_attrition = yes
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							name = cl_common_kinich_hard_to_convert
+							value = on
+						}
+					}
+					set_hard_to_convert = yes
+				}
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.4
+						garrison_size = 0.2
+
+						light_infantry_defensive = 0.4
+						heavy_infantry_defensive = 0.4
+						pikemen_defensive = 0.4
+						light_cavalry_defensive = 0.4
+						knights_defensive = 0.4
+						archers_defensive = 0.4
+						horse_archers_defensive = 0.4
+						camel_cavalry_defensive = 0.4
+						war_elephants_defensive = 0.4
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.8
+						garrison_size = 0.4
+
+						light_infantry_defensive = 0.8
+						heavy_infantry_defensive = 0.8
+						pikemen_defensive = 0.8
+						light_cavalry_defensive = 0.8
+						knights_defensive = 0.8
+						archers_defensive = 0.8
+						horse_archers_defensive = 0.8
+						camel_cavalry_defensive = 0.8
+						war_elephants_defensive = 0.8
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+			}
+			samaritan = {
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = attrition_only
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_defensive_attrition = yes
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							name = cl_common_kinich_hard_to_convert
+							value = on
+						}
+					}
+					set_hard_to_convert = yes
+				}
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.4
+						garrison_size = 0.2
+
+						light_infantry_defensive = 0.4
+						heavy_infantry_defensive = 0.4
+						pikemen_defensive = 0.4
+						light_cavalry_defensive = 0.4
+						knights_defensive = 0.4
+						archers_defensive = 0.4
+						horse_archers_defensive = 0.4
+						camel_cavalry_defensive = 0.4
+						war_elephants_defensive = 0.4
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.8
+						garrison_size = 0.4
+
+						light_infantry_defensive = 0.8
+						heavy_infantry_defensive = 0.8
+						pikemen_defensive = 0.8
+						light_cavalry_defensive = 0.8
+						knights_defensive = 0.8
+						archers_defensive = 0.8
+						horse_archers_defensive = 0.8
+						camel_cavalry_defensive = 0.8
+						war_elephants_defensive = 0.8
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = is_kcl_jews_save }
+				chasidish = {
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = attrition_only
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_defensive_attrition = yes
+					}
+					if = {
+						limit = {
+							has_game_rule = {
+								name = cl_common_kinich_hard_to_convert
+								value = on
+							}
+						}
+						set_hard_to_convert = yes
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.4
+							garrison_size = 0.2
+
+							light_infantry_defensive = 0.4
+							heavy_infantry_defensive = 0.4
+							pikemen_defensive = 0.4
+							light_cavalry_defensive = 0.4
+							knights_defensive = 0.4
+							archers_defensive = 0.4
+							horse_archers_defensive = 0.4
+							camel_cavalry_defensive = 0.4
+							war_elephants_defensive = 0.4
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+					else_if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.8
+							garrison_size = 0.4
+
+							light_infantry_defensive = 0.8
+							heavy_infantry_defensive = 0.8
+							pikemen_defensive = 0.8
+							light_cavalry_defensive = 0.8
+							knights_defensive = 0.8
+							archers_defensive = 0.8
+							horse_archers_defensive = 0.8
+							camel_cavalry_defensive = 0.8
+							war_elephants_defensive = 0.8
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_game_rule = {
+						name = cl_common_kinich_defensive_religions
+						value = nonchalcedonians
+					}
+					has_game_rule = {
+						name = cl_common_kinich_defensive_religions
+						value = jews+nonchalcedonians
+					}
+					has_game_rule = {
+						name = cl_common_kinich_defensive_religions
+						value = nonchalcedonians+minor_muslims
+					}
+					has_game_rule = {
+						name = cl_common_kinich_defensive_religions
+						value = all
+					}
+				}
+			}
+			miaphysite = {
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = attrition_only
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_defensive_attrition = yes
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							name = cl_common_kinich_hard_to_convert
+							value = on
+						}
+					}
+					set_hard_to_convert = yes
+				}
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.4
+						garrison_size = 0.2
+
+						light_infantry_defensive = 0.4
+						heavy_infantry_defensive = 0.4
+						pikemen_defensive = 0.4
+						light_cavalry_defensive = 0.4
+						knights_defensive = 0.4
+						archers_defensive = 0.4
+						horse_archers_defensive = 0.4
+						camel_cavalry_defensive = 0.4
+						war_elephants_defensive = 0.4
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.8
+						garrison_size = 0.4
+
+						light_infantry_defensive = 0.8
+						heavy_infantry_defensive = 0.8
+						pikemen_defensive = 0.8
+						light_cavalry_defensive = 0.8
+						knights_defensive = 0.8
+						archers_defensive = 0.8
+						horse_archers_defensive = 0.8
+						camel_cavalry_defensive = 0.8
+						war_elephants_defensive = 0.8
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+			}
+			monophysite = {
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = attrition_only
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_defensive_attrition = yes
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							name = cl_common_kinich_hard_to_convert
+							value = on
+						}
+					}
+					set_hard_to_convert = yes
+				}
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.4
+						garrison_size = 0.2
+
+						light_infantry_defensive = 0.4
+						heavy_infantry_defensive = 0.4
+						pikemen_defensive = 0.4
+						light_cavalry_defensive = 0.4
+						knights_defensive = 0.4
+						archers_defensive = 0.4
+						horse_archers_defensive = 0.4
+						camel_cavalry_defensive = 0.4
+						war_elephants_defensive = 0.4
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.8
+						garrison_size = 0.4
+
+						light_infantry_defensive = 0.8
+						heavy_infantry_defensive = 0.8
+						pikemen_defensive = 0.8
+						light_cavalry_defensive = 0.8
+						knights_defensive = 0.8
+						archers_defensive = 0.8
+						horse_archers_defensive = 0.8
+						camel_cavalry_defensive = 0.8
+						war_elephants_defensive = 0.8
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+			}
+			nestorian = {
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = attrition_only
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_defensive_attrition = yes
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							name = cl_common_kinich_hard_to_convert
+							value = on
+						}
+					}
+					set_hard_to_convert = yes
+				}
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.4
+						garrison_size = 0.2
+
+						light_infantry_defensive = 0.4
+						heavy_infantry_defensive = 0.4
+						pikemen_defensive = 0.4
+						light_cavalry_defensive = 0.4
+						knights_defensive = 0.4
+						archers_defensive = 0.4
+						horse_archers_defensive = 0.4
+						camel_cavalry_defensive = 0.4
+						war_elephants_defensive = 0.4
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.8
+						garrison_size = 0.4
+
+						light_infantry_defensive = 0.8
+						heavy_infantry_defensive = 0.8
+						pikemen_defensive = 0.8
+						light_cavalry_defensive = 0.8
+						knights_defensive = 0.8
+						archers_defensive = 0.8
+						horse_archers_defensive = 0.8
+						camel_cavalry_defensive = 0.8
+						war_elephants_defensive = 0.8
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+			}
+			messalian = {
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = attrition_only
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_defensive_attrition = yes
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							name = cl_common_kinich_hard_to_convert
+							value = on
+						}
+					}
+					set_hard_to_convert = yes
+				}
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.4
+						garrison_size = 0.2
+
+						light_infantry_defensive = 0.4
+						heavy_infantry_defensive = 0.4
+						pikemen_defensive = 0.4
+						light_cavalry_defensive = 0.4
+						knights_defensive = 0.4
+						archers_defensive = 0.4
+						horse_archers_defensive = 0.4
+						camel_cavalry_defensive = 0.4
+						war_elephants_defensive = 0.4
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.8
+						garrison_size = 0.4
+
+						light_infantry_defensive = 0.8
+						heavy_infantry_defensive = 0.8
+						pikemen_defensive = 0.8
+						light_cavalry_defensive = 0.8
+						knights_defensive = 0.8
+						archers_defensive = 0.8
+						horse_archers_defensive = 0.8
+						camel_cavalry_defensive = 0.8
+						war_elephants_defensive = 0.8
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = is_meso_reborn_save }
+				syriac = {
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = attrition_only
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_defensive_attrition = yes
+					}
+					if = {
+						limit = {
+							has_game_rule = {
+								name = cl_common_kinich_hard_to_convert
+								value = on
+							}
+						}
+						set_hard_to_convert = yes
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.4
+							garrison_size = 0.2
+
+							light_infantry_defensive = 0.4
+							heavy_infantry_defensive = 0.4
+							pikemen_defensive = 0.4
+							light_cavalry_defensive = 0.4
+							knights_defensive = 0.4
+							archers_defensive = 0.4
+							horse_archers_defensive = 0.4
+							camel_cavalry_defensive = 0.4
+							war_elephants_defensive = 0.4
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+					else_if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.8
+							garrison_size = 0.4
+
+							light_infantry_defensive = 0.8
+							heavy_infantry_defensive = 0.8
+							pikemen_defensive = 0.8
+							light_cavalry_defensive = 0.8
+							knights_defensive = 0.8
+							archers_defensive = 0.8
+							horse_archers_defensive = 0.8
+							camel_cavalry_defensive = 0.8
+							war_elephants_defensive = 0.8
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = is_kcl_CIML_save }
+				judaizer = {
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = attrition_only
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_defensive_attrition = yes
+					}
+					if = {
+						limit = {
+							has_game_rule = {
+								name = cl_common_kinich_hard_to_convert
+								value = on
+							}
+						}
+						set_hard_to_convert = yes
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.4
+							garrison_size = 0.2
+
+							light_infantry_defensive = 0.4
+							heavy_infantry_defensive = 0.4
+							pikemen_defensive = 0.4
+							light_cavalry_defensive = 0.4
+							knights_defensive = 0.4
+							archers_defensive = 0.4
+							horse_archers_defensive = 0.4
+							camel_cavalry_defensive = 0.4
+							war_elephants_defensive = 0.4
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+					else_if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.8
+							garrison_size = 0.4
+
+							light_infantry_defensive = 0.8
+							heavy_infantry_defensive = 0.8
+							pikemen_defensive = 0.8
+							light_cavalry_defensive = 0.8
+							knights_defensive = 0.8
+							archers_defensive = 0.8
+							horse_archers_defensive = 0.8
+							camel_cavalry_defensive = 0.8
+							war_elephants_defensive = 0.8
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+				}
+				mandean = {
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = attrition_only
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_defensive_attrition = yes
+					}
+					if = {
+						limit = {
+							has_game_rule = {
+								name = cl_common_kinich_hard_to_convert
+								value = on
+							}
+						}
+						set_hard_to_convert = yes
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.4
+							garrison_size = 0.2
+
+							light_infantry_defensive = 0.4
+							heavy_infantry_defensive = 0.4
+							pikemen_defensive = 0.4
+							light_cavalry_defensive = 0.4
+							knights_defensive = 0.4
+							archers_defensive = 0.4
+							horse_archers_defensive = 0.4
+							camel_cavalry_defensive = 0.4
+							war_elephants_defensive = 0.4
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+					else_if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.8
+							garrison_size = 0.4
+
+							light_infantry_defensive = 0.8
+							heavy_infantry_defensive = 0.8
+							pikemen_defensive = 0.8
+							light_cavalry_defensive = 0.8
+							knights_defensive = 0.8
+							archers_defensive = 0.8
+							horse_archers_defensive = 0.8
+							camel_cavalry_defensive = 0.8
+							war_elephants_defensive = 0.8
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+				}
+				chaldean = {
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = attrition_only
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_defensive_attrition = yes
+					}
+					if = {
+						limit = {
+							has_game_rule = {
+								name = cl_common_kinich_hard_to_convert
+								value = on
+							}
+						}
+						set_hard_to_convert = yes
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.4
+							garrison_size = 0.2
+
+							light_infantry_defensive = 0.4
+							heavy_infantry_defensive = 0.4
+							pikemen_defensive = 0.4
+							light_cavalry_defensive = 0.4
+							knights_defensive = 0.4
+							archers_defensive = 0.4
+							horse_archers_defensive = 0.4
+							camel_cavalry_defensive = 0.4
+							war_elephants_defensive = 0.4
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+					else_if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.8
+							garrison_size = 0.4
+
+							light_infantry_defensive = 0.8
+							heavy_infantry_defensive = 0.8
+							pikemen_defensive = 0.8
+							light_cavalry_defensive = 0.8
+							knights_defensive = 0.8
+							archers_defensive = 0.8
+							horse_archers_defensive = 0.8
+							camel_cavalry_defensive = 0.8
+							war_elephants_defensive = 0.8
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+				}
+				apollinarian = {
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = attrition_only
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_defensive_attrition = yes
+					}
+					if = {
+						limit = {
+							has_game_rule = {
+								name = cl_common_kinich_hard_to_convert
+								value = on
+							}
+						}
+						set_hard_to_convert = yes
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.4
+							garrison_size = 0.2
+
+							light_infantry_defensive = 0.4
+							heavy_infantry_defensive = 0.4
+							pikemen_defensive = 0.4
+							light_cavalry_defensive = 0.4
+							knights_defensive = 0.4
+							archers_defensive = 0.4
+							horse_archers_defensive = 0.4
+							camel_cavalry_defensive = 0.4
+							war_elephants_defensive = 0.4
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+					else_if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.8
+							garrison_size = 0.4
+
+							light_infantry_defensive = 0.8
+							heavy_infantry_defensive = 0.8
+							pikemen_defensive = 0.8
+							light_cavalry_defensive = 0.8
+							knights_defensive = 0.8
+							archers_defensive = 0.8
+							horse_archers_defensive = 0.8
+							camel_cavalry_defensive = 0.8
+							war_elephants_defensive = 0.8
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					has_game_rule = {
+						name = cl_common_kinich_defensive_religions
+						value = minor_muslims
+					}
+					has_game_rule = {
+						name = cl_common_kinich_defensive_religions
+						value = jews+minor_muslims
+					}
+					has_game_rule = {
+						name = cl_common_kinich_defensive_religions
+						value = nonchalcedonians+minor_muslims
+					}
+					has_game_rule = {
+						name = cl_common_kinich_defensive_religions
+						value = all
+					}
+				}
+			}
+			yazidi = {
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = attrition_only
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_defensive_attrition = yes
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							name = cl_common_kinich_hard_to_convert
+							value = on
+						}
+					}
+					set_hard_to_convert = yes
+				}
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.4
+						garrison_size = 0.2
+
+						light_infantry_defensive = 0.4
+						heavy_infantry_defensive = 0.4
+						pikemen_defensive = 0.4
+						light_cavalry_defensive = 0.4
+						knights_defensive = 0.4
+						archers_defensive = 0.4
+						horse_archers_defensive = 0.4
+						camel_cavalry_defensive = 0.4
+						war_elephants_defensive = 0.4
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.8
+						garrison_size = 0.4
+
+						light_infantry_defensive = 0.8
+						heavy_infantry_defensive = 0.8
+						pikemen_defensive = 0.8
+						light_cavalry_defensive = 0.8
+						knights_defensive = 0.8
+						archers_defensive = 0.8
+						horse_archers_defensive = 0.8
+						camel_cavalry_defensive = 0.8
+						war_elephants_defensive = 0.8
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+			}
+			druze = {
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = attrition_only
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_defensive_attrition = yes
+				}
+				if = {
+					limit = {
+						has_game_rule = {
+							name = cl_common_kinich_hard_to_convert
+							value = on
+						}
+					}
+					set_hard_to_convert = yes
+				}
+				if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = half_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.4
+						garrison_size = 0.2
+
+						light_infantry_defensive = 0.4
+						heavy_infantry_defensive = 0.4
+						pikemen_defensive = 0.4
+						light_cavalry_defensive = 0.4
+						knights_defensive = 0.4
+						archers_defensive = 0.4
+						horse_archers_defensive = 0.4
+						camel_cavalry_defensive = 0.4
+						war_elephants_defensive = 0.4
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus
+							}
+							has_game_rule = {
+								name = cl_common_kinich_defensive_bonuses
+								value = full_bonus+attrition
+							}
+						}
+					}
+					set_unit_home_modifier = {
+						land_morale = 0.8
+						garrison_size = 0.4
+
+						light_infantry_defensive = 0.8
+						heavy_infantry_defensive = 0.8
+						pikemen_defensive = 0.8
+						light_cavalry_defensive = 0.8
+						knights_defensive = 0.8
+						archers_defensive = 0.8
+						horse_archers_defensive = 0.8
+						camel_cavalry_defensive = 0.8
+						war_elephants_defensive = 0.8
+
+						key = DEF_RELIGION_HOME_TERRITORY
+					}
+				}
+			}
+			if = {
+				limit = { has_global_flag = is_kcl_CIML_save }
+				yarsan = {
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = attrition_only
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_defensive_attrition = yes
+					}
+					if = {
+						limit = {
+							has_game_rule = {
+								name = cl_common_kinich_hard_to_convert
+								value = on
+							}
+						}
+						set_hard_to_convert = yes
+					}
+					if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = half_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.4
+							garrison_size = 0.2
+
+							light_infantry_defensive = 0.4
+							heavy_infantry_defensive = 0.4
+							pikemen_defensive = 0.4
+							light_cavalry_defensive = 0.4
+							knights_defensive = 0.4
+							archers_defensive = 0.4
+							horse_archers_defensive = 0.4
+							camel_cavalry_defensive = 0.4
+							war_elephants_defensive = 0.4
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+					else_if = {
+						limit = {
+							OR = {
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus
+								}
+								has_game_rule = {
+									name = cl_common_kinich_defensive_bonuses
+									value = full_bonus+attrition
+								}
+							}
+						}
+						set_unit_home_modifier = {
+							land_morale = 0.8
+							garrison_size = 0.4
+
+							light_infantry_defensive = 0.8
+							heavy_infantry_defensive = 0.8
+							pikemen_defensive = 0.8
+							light_cavalry_defensive = 0.8
+							knights_defensive = 0.8
+							archers_defensive = 0.8
+							horse_archers_defensive = 0.8
+							camel_cavalry_defensive = 0.8
+							war_elephants_defensive = 0.8
+
+							key = DEF_RELIGION_HOME_TERRITORY
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				has_global_flag = is_meso_reborn_save
+				has_global_flag = is_kcl_CIML_save
+			}
+			set_parent_religion = {
+				religion = mandean
+				parent = syriac
+			}
+		}
+	}
+}

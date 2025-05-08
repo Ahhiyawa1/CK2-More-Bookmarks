@@ -1,0 +1,609 @@
+e_indo_roman_empire = {
+	color={ 185 0 7 }
+	color2={ 185 0 7 }
+	
+	 capital = 1131
+
+	title = "Emperator"
+	title_female = "Emperatrix"
+
+	short_name = yes
+	
+	purple_born_heirs = yes
+	
+	culture = romanoindian
+	#religion = orthodox
+	
+	allow = {
+		always = no # Only created through special event
+	}
+}
+
+e_iaponi = {
+	color={ 255 68 75 }
+	color2={ 113 136 141 }
+
+	
+	purple_born_heirs = yes
+	
+	title = "Dominus"
+	title_female = "Domina"	
+	title_prefix = "dominate_prefix"
+	
+	culture = romanoindian
+	#religion = orthodox
+	
+	monthly_income = 67
+	
+	allow = {
+		always = no # Only created through special event
+	}
+}
+
+e_orientis = {
+	color={ 180 87 116 }
+	color2={ 141 0 43 }
+	
+	capital = 1131
+
+	short_name = yes
+	
+	purple_born_heirs = yes
+	
+	culture = romanoindian
+	#religion = orthodox
+	
+	allow = {
+		always = no # Only created through special event
+	}
+}
+
+
+e_britannica = {
+	color={ 122 49 111 }
+	color2={ 212 175 55 }
+	
+	capital = 1131
+	
+	title = "Khagan Primus"
+	title_female = "Khatun Primus"
+
+	short_name = yes
+	
+	capital = 1457
+	
+	culture = romanoindian
+	#religion = orthodox
+	
+	allow = {
+		always = no # Only created through special event
+	}
+}
+
+d_indo_praetorians = {
+	color={ 99 2 58 }
+	color2={ 99 2 58 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+        capital = 1131
+
+	#graphical_culture = holygfx
+	
+	culture = romanoindian
+	
+	mercenary = yes
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+	title_female = "CAPTAIN_FEMALE"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	replace_captain_on_death = yes
+	
+	strength_growth_per_century = 0.10
+	
+	mercenary_type = Scholae_Palatinae_composition
+}
+
+d_vieti_seniores = {
+	color={ 13 0 0 }
+	color2={ 164 0 5 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+        capital = 1131
+	
+	culture = romanoindian
+	
+	mercenary = yes
+
+	title = "Commander"
+	foa = "CAPTAIN_FOA"
+	title_female = "Commander"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	replace_captain_on_death = yes
+	
+	strength_growth_per_century = 0.04
+	
+	mercenary_type = vieti_seniores
+}
+
+d_celestial_vieti_seniores = {
+	color={ 141 0 43 }
+	color2={ 254 254 254 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+    capital = 1448
+	
+	culture = romanoindian
+	
+	mercenary = yes
+
+	title = "Commander"
+	foa = "CAPTAIN_FOA"
+	title_female = "Commander"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	replace_captain_on_death = yes
+	
+	strength_growth_per_century = 0.04
+	
+	mercenary_type = vieti_seniores
+}
+
+d_thidelepean_iuniores = {
+	color={ 65 68 98 }
+	color2={ 138 40 38 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+    capital = 1448
+	
+	culture = romanoindian
+	
+	mercenary = yes
+
+	title = "Captain"
+	foa = "CAPTAIN_FOA"
+	title_female = "Captain"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	replace_captain_on_death = yes
+	
+	strength_growth_per_century = 0.05
+	
+	mercenary_type = vieti_iuniores
+}
+
+d_hyperborean_amazons = {
+	color={ 153 169 186 }
+	color2={ 227 190 236 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+    capital = 1448
+	
+	culture = romanoindian
+	
+	mercenary = yes
+
+	title = "Captain"
+	foa = "CAPTAIN_FOA"
+	title_female = "Captain"
+
+	# Always exists
+	landless = yes
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	replace_captain_on_death = yes
+	
+	strength_growth_per_century = 0.05
+	
+	mercenary_type = sky_lords_composition
+}
+
+k_walakrios_expedition = {
+	color={ 255 228 197 }
+	color2={ 135 39 90 }
+	short_name = yes
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+	title = "Legatus"
+	foa = "CAPTAIN_FOA"
+
+}
+
+k_western_expedition = {
+	color={ 0 146 179 }
+	color2={ 187 0 7 }
+	short_name = yes
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+	title = "Legatus"
+	foa = "CAPTAIN_FOA"
+
+}
+
+d_latin_praetorians = {
+	color={ 99 2 68 }
+	color2={ 99 2 68 }
+	short_name = yes
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+	title = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+}
+
+d_knights_of_saint_thomas = {
+
+	color={ 130 15 125 }
+	
+	#graphical_culture = holygfx
+	
+	capital = 1131
+
+	title = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+	
+	# Always exists
+	landless = yes
+	
+	holy_order = yes
+	
+	# Parent Religion 
+	religion = vieti_orthodox
+	
+	#culture = bengali
+	culture = romanoindian
+	
+	# Cannot be held as a secondary title
+	primary = yes
+	
+	# Extra income due to donations, etc
+	monthly_income = 2 # (Must be an integer between 1 and 512)
+
+	mercenary_type = holy_sepulchre_composition
+}
+
+d_occiromalus = {
+	color={ 206 101 111 }
+	color2={ 242 208 210 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_solromalus = {
+	color={ 234 192 65 }
+	color2={ 239 208 113 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_cocciromalus = {
+
+	color={ 0 0 0 }
+	color2={ 0 0 0 }
+}
+
+d_csolromalus = {
+
+	color={ 0 0 0 }
+	color2={ 0 0 0 }
+}
+
+k_romala = {
+	color={ 186 68 74 }
+	color2={ 254 254 254 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+k_vietia = {
+	color={ 99 25 29 }
+	color2={ 7 7 7 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+k_arcadi = {
+	color={ 247 211 183 }
+	color2={ 160 116 78 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_arcadi_upper = {
+	color={ 227 201 183 }
+	color2={ 99 34 34 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_arcadi = {
+	color={ 172 178 178 }
+	color2={ 130 13 13 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_kalvarea = {
+	color={ 88 58 31 }
+	color2={ 120 29 35 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_fidellia = {
+	color={ 106 102 153 }
+	color2={ 127 39 102 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_maria = {
+	color={ 57 52 110 }
+	color2={ 134 176 226 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_syrica = {
+	color={ 227 168 110 }
+	color2={ 187 0 7 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_western_dominium = {
+	color={ 89 79 41 }
+	color2={ 58 2 58 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+k_yindu_dominium = {
+	color={ 126 192 219 }
+	color2={ 6 190 75 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_chadican_uprising = {
+	color={ 190 21 26 }
+	color2={ 0 0 0 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	title = "Dominus"
+	title_female = "Domina"
+	foa = "CAPTAIN_FOA"
+
+	culture = romanoindian
+
+}
+
+d_orgallia = {
+	color={ 186 99 8 }
+	color2={ 178 150 122 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_domaria = {
+	color={ 38 63 119 }
+	color2={ 214 167 66 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+k_palatia_magnata = {
+	color={ 185 173 139 }
+	color2={ 197 56 65 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_rheatiania = {
+	color={ 98 32 77 }
+	color2={ 29 29 67 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_gaetica = {
+	color={ 103 66 68 }
+	color2={ 180 180 180 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+k_argilla = {
+	color={ 16 46 51 }
+	color2={ 17 26 66 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+k_indus = {
+	color={ 226 226 226 }
+	color2={ 57 52 110 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_upper_indus = {
+	color={ 16 46 51 }
+	color2={ 47 47 47 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}
+
+d_sericallia = {
+	color={ 150 60 60 }
+	color2={ 73 83 109 }
+
+	
+	# Parent Religion 
+	#religion = orthodox
+
+	culture = romanoindian
+
+}

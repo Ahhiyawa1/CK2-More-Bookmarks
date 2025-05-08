@@ -1,0 +1,28 @@
+d_qizilbash = {
+    color={ 100 100 100 }
+    color2={ 255 255 255 }
+ 
+    graphical_culture = hashshashingfx
+ 
+    capital = 665 # Daylam
+ 
+    title = "GRANDMASTER"
+    foa = "GRANDHEADMASTER_FOA"
+
+    # Always exists
+    landless = yes
+ 
+    holy_order = yes
+    mercenary_type = qizilbash_composition
+ 
+    culture = turkish
+ 
+    # Parent Religion
+    religion = shiite
+ 
+    # Cannot be held as a secondary title
+    primary = yes
+ 
+    # Extra income due to banking, etc
+    monthly_income = 10 # (Must be an integer between 1 and 512)
+}

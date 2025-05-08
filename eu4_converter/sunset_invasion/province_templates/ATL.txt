@@ -1,0 +1,15 @@
+owner = ATL
+controller = ATL
+add_core = ATL
+culture = atlantean
+religion = hellenic_pagan
+discovered_by = mesoamerican
+discovered_by = high_american
+citysize = 1000
+
+1444.11.11 = {
+	owner = ATL
+	controller = ATL
+	culture = atlantean
+	religion = hellenic_pagan
+}

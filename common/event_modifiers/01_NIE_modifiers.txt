@@ -1,0 +1,38 @@
+#custom
+
+
+###Province
+
+peasants_angry_01 = {
+	local_revolt_risk = 0.01
+	icon = 32	
+}
+peasants_angry_02 = {
+	local_revolt_risk = 0.02
+	icon = 32	
+}
+peasants_angry_03 = {
+	local_revolt_risk = 0.03
+	icon = 32	
+}
+peasants_angry_04 = {
+	local_revolt_risk = 0.05
+	icon = 32	
+}
+###Character
+NIE_events_launched = {
+	is_visible = no
+	icon = 10
+}
+sister_was = {
+	is_visible = no
+	icon = 10
+}
+fired_event_chain = {
+	is_visible = no
+	icon = 10
+}
+fired_solo_event = {
+	is_visible = no
+	icon = 10
+}

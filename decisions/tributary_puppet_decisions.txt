@@ -1,0 +1,120 @@
+targeted_decisions={
+
+    replace_colony = {
+		filter = all
+		third_party = FROM
+		third_party_filter = court
+		show_third_party_potential = NO
+		
+		ai_target_filter = vassals
+		
+		from_potential = {
+			is_playable = yes
+			has_regent = no
+			prisoner = no
+			is_adult = yes
+
+		}
+
+		third_party_potential = {
+			FROMFROM = {
+				is_adult = yes
+				is_ruler = no
+				NOT = { trait = eunuch }
+			}
+		}
+
+		potential = {
+			is_ruler = yes
+			NOT = { 
+				trait = incapable 
+			}
+			is_tributary = yes
+			is_tributary = { type = puppet }
+			suzerain = { character = FROM }
+		}
+		
+		allow = {
+			war = no
+			FROM = { war = no }
+			NOT = { has_character_modifier = colony_change }
+		}
+		
+        effect = {
+			ROOT = {
+				abdicate_to = FROMFROM
+			}
+			hidden_tooltip = {
+			FROMFROM = {
+				add_character_modifier = {
+					name = not_legit
+					years = 5
+				}
+			}
+			FROM = {
+				add_character_modifier = {
+					name = colony_change
+					hidden = yes
+					days = 30
+				}
+			}
+			FROMFROM = {
+				opinion = {
+					modifier = beholden
+					who = FROM
+				}
+			}
+			FROM = { 
+				make_tributary = { who = FROMFROM tributary_type = puppet }
+				}
+        		}	
+		}	
+		ai_will_do = {
+            factor = 0
+		}
+	}
+    change_colony_succ = {
+		filter = all
+		
+		ai_target_filter = vassals
+		
+		from_potential = {
+			is_playable = yes
+			has_regent = no
+			prisoner = no
+		}
+
+		potential = {
+			is_ruler = yes
+			NOT = { 
+				trait = incapable 
+			}
+			is_tributary = yes
+			is_tributary = { type = puppet }
+			suzerain = { character = FROM }
+		}
+		
+		allow = {
+			war = no
+			FROM = { war = no }
+			NOT = { has_character_modifier = colony_change }
+		}
+		
+        effect = {
+			FROM = {
+				add_character_modifier = {
+					name = colony_change
+					hidden = yes
+					days = 30
+				}
+			}
+
+			FROM = { 
+				character_event = { id = roy_puppet_events.5 }
+				}
+        		}		
+		ai_will_do = {
+            factor = 0
+		}
+	}
+}

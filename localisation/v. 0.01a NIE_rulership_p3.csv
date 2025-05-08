@@ -1,0 +1,76 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+;;;;;;;;;;;;;;
+NIE.118;Peasant girl wants to break up;;;;;;;;;;;;;x
+EVTNAMENIE.118;Peasant girl wants to break up;;;;;;;;;;;;;x
+EVTDESC_NIE_118;The peasant girl that I took on my court asked to talk to me during my daily walk in the garden. Though she is my lover it's obvious that she is not excited and eager to see me. 'I'm sorry… I… I just can't do this anymore' - she whispers. 'Life here isn't for me. You were very kind person, but I have to ask you to let me go. I would like to return to my home.';;;;;;;;;;;;;x
+EVTOPTA_NIE_118;If that is what she really wants.;;;;;;;;;;;;;x
+EVTOPTB_NIE_118;She will not leave until I let her do so!;;;;;;;;;;;;;x
+EVTOPTC_NIE_118;Surely there is something I could do to persuade her…;;;;;;;;;;;;;x
+EVTOPTD_NIE_118;She will not leave with my child!;;;;;;;;;;;;;x
+break_up_with_her;Story will progress…;;;;;;;;;;;;;x
+force_her_to_stay;Story will progress…;;;;;;;;;;;;;x
+try_to_convince_her;Story will progress…;;;;;;;;;;;;;x
+she_wont_leave_pregnant;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.119;Convincing peasant girl;;;;;;;;;;;;;x
+EVTNAMENIE.119;Convincing peasant girl;;;;;;;;;;;;;x
+EVTDESC_NIE_119;She stares at me, waiting for what I am about to say. I can feel that she is intrigued. She could be persuaded to stay with me for sure, the real question is how to do this?;;;;;;;;;;;;;x
+EVTOPTA_NIE_119;Diamonds are the best friend of every women!;;;;;;;;;;;;;x
+EVTOPTB_NIE_119;I'm going to use my silver tongue on this sweetie.;;;;;;;;;;;;;x
+EVTOPTC_NIE_119;I'll make her want to stay with me…;;;;;;;;;;;;;x
+EVTOPTD_NIE_119;I have to give up and let her go.;;;;;;;;;;;;;x
+offer_her_luxuries;Story will progress…;;;;;;;;;;;;;x
+charm_her;Story will progress…;;;;;;;;;;;;;x
+seduce_her;Story will progress…;;;;;;;;;;;;;x
+give_up;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.120;Visiting peasant girl accept;;;;;;;;;;;;;x
+EVTNAMENIE.120;Night with peasant girl;;;;;;;;;;;;;x
+EVTDESC_NIE_120;This is the night I've been preparing for since some time. I have all the time I want to spend with that sweet peasant girl I seduced. I open the door to her chamber just to see her naked and blushing. Her eyes invite me to join her. I quickly jump on her bed, take my clothes off and give her a night she deserves.;;;;;;;;;;;;;x
+EVTOPTA_NIE_120;I cannot stop thinking about her…;;;;;;;;;;;;;x
+peasant_girl_night1;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.121;Visiting peasant girl refuse;;;;;;;;;;;;;x
+EVTNAMENIE.121;Night with peasant girl;;;;;;;;;;;;;x
+EVTDESC_NIE_121;This is the night I've been preparing for since some time. I have all the time I want to spend with that sweet peasant girl I seduced. I open the door to her chamber just to see her crying in the corner. 'No, no!' - I yell - 'That's not how it was meant to be!' She responds with fear in her voice: 'You cannot, you cannot! Leave me alone!';;;;;;;;;;;;;x
+EVTOPTA_NIE_121;Alone? Fine, I'm done with you!;;;;;;;;;;;;;x
+EVTOPTB_NIE_121;Alone? Oh, no I'm going to enjoy you, whether you agree or not!;;;;;;;;;;;;;x
+peasant_girl_night2_not_force;Story will progress...;;;;;;;;;;;;;x
+peasant_girl_night2_force;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.122;Break up with peasant girl;;;;;;;;;;;;;x
+EVTNAMENIE.122;Peasant girl leaving you;;;;;;;;;;;;;x
+EVTDESC_NIE_122;I'm sorry. That is going to be best for both of us' - you hear her saying, just before she tells you that on this day she will leave your castle. You somehow feel that you failed, you could do more. If only you could change something from your past. Right now you watch her for the last time in your life, before saying farewell.;;;;;;;;;;;;;x
+EVTOPTA_NIE_122;I will miss her…;;;;;;;;;;;;;x
+EVTOPTB_NIE_122;Is that so? I'll never let her leave!;;;;;;;;;;;;;x
+peasant_girl_break_up;Story will end.;;;;;;;;;;;;;x
+peasant_girl_break_imprison;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.123;Imprison peasant girl;;;;;;;;;;;;;x
+EVTNAMENIE.123;Imprison peasant girl;;;;;;;;;;;;;x
+EVTDESC_NIE_123;She was disobedient. She didn't listen to you. She tried to keep you away from her and she wanted to leave. Now she will do no such thing. The peasant girl is yours to do as you please, awaiting you in the dungeon. ;;;;;;;;;;;;;x
+EVTOPTA_NIE_123;I'll have to visit her soon.;;;;;;;;;;;;;x
+peasant_girl_locked_up;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.124;Peasant girl is your true love;;;;;;;;;;;;;x
+EVTNAMENIE.124;Peasant girl is your true love;;;;;;;;;;;;;x
+EVTDESC_NIE_124;You felt it in the moment you first saw her, but now you know it for certain. You've fallen in love with the young peasant girl. And - what's more important - you are happy with her. You stand before her, barely able to speak. You look in her eyes and you tell her that:;;;;;;;;;;;;;x
+EVTOPTA_NIE_124;You will become my noble lover!;;;;;;;;;;;;;x
+EVTOPTB_NIE_124;Our relationship will not change…;;;;;;;;;;;;;x
+EVTOPTC_NIE_124;You will be my wife and lowborn no more!;;;;;;;;;;;;;x
+peasant_girl_is_love_dynasty;You decide to make her a noble woman.;;;;;;;;;;;;;x
+peasant_girl_is_lover;You decide that she should stay as your lowborn lover.;;;;;;;;;;;;;x
+peasant_girl_is_love_dynasty_marriage;You decide to marry her and make her a noble woman.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.125;Thief returns on a good way;;;;;;;;;;;;;x
+EVTNAMENIE.125;Thief returns on a good way;;;;;;;;;;;;;x
+EVTDESC_NIE_125;You decide to spend some time in gardens, near your castle. As you sit there one of the guards approach you and bring to you the thief you once dealt with. 'You stole again?' - you ask him. 'I've decided to thank you instead for showing me the right way' - he responds. He offers you his service.;;;;;;;;;;;;;x
+EVTOPTA_NIE_125;Just don't touch my things!;;;;;;;;;;;;;x
+EVTOPTB_NIE_125;A thief can never be trusted, go away.;;;;;;;;;;;;;x
+thief_good_way_accept;Story will progress…;;;;;;;;;;;;;x
+thief_good_way_refuse;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.126;Prisoner release;;;;;;;;;;;;;x
+EVTNAMENIE.126;not for player;;;;;;;;;;;;;x
+EVTDESC_NIE_126;not for player;;;;;;;;;;;;;x
+EVTOPTA_NIE_126;not for player;;;;;;;;;;;;;x

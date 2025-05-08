@@ -1,0 +1,62 @@
+###########################################
+#                                         #
+# New Immersive Events v. 0.01c           #
+# Rulership Events - event-chain          #
+# ID NIE.241-NIE.242					  #
+# Written and designed by wielkicien      #
+# Bugfixed and edited by Erbkaiser		  #
+#                                         #
+###########################################
+
+namespace = NIE
+
+
+# Wife killed
+character_event = {
+	id = NIE.241
+	title = "EVTNAMENIE.241"
+	desc = EVTDESC_NIE_241
+	picture = GFX_evt_shadowy_cabal
+	border = GFX_event_normal_frame_intrigue
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_NIE_241
+		custom_tooltip = { text = wife_killed }
+		random_list = {
+					80 = { add_trait = depressed }
+					10 = { add_trait = stressed }
+					10 = { add_trait = ambitious }
+		}
+		random_list = {
+					55 = { add_trait = cruel }
+					30 = { add_trait = wroth }
+					15 = { add_trait = depressed }
+		}
+	}
+}
+###
+# Wife kills
+character_event = {
+	id = NIE.242
+	title = "EVTNAMENIE.242"
+	desc = EVTDESC_NIE_242
+	picture = GFX_evt_shadowy_cabal
+	border = GFX_event_normal_frame_intrigue
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_NIE_242
+		custom_tooltip = { text = wife_kills }
+	}
+}

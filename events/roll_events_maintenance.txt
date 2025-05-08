@@ -1,0 +1,50 @@
+namespace = rollevents
+
+narrative_event = {
+	id = rollevents.1
+	   
+	only_playable = yes
+	hide_window = yes
+	
+	mean_time_to_happen = { 
+		days = 12 
+	}
+	   
+	trigger = {
+		OR = {
+			trait = age_2
+			trait = age_5
+			trait = age_10
+			trait = age_15
+			trait = age_25
+			trait = age_50
+			trait = age_100
+			trait = age_2_plus
+			trait = age_5_plus
+			trait = age_10_plus
+			trait = age_15_plus
+			trait = age_25_plus
+			trait = age_50_plus
+			trait = age_100_plus
+			trait = age_1000
+		}
+	}
+	   
+	immediate = {
+		remove_trait = age_2
+		remove_trait = age_5
+		remove_trait = age_10
+		remove_trait = age_15
+		remove_trait = age_25
+		remove_trait = age_50
+		remove_trait = age_100
+		remove_trait = age_2_plus
+		remove_trait = age_5_plus
+		remove_trait = age_10_plus
+		remove_trait = age_15_plus
+		remove_trait = age_25_plus
+		remove_trait = age_50_plus
+		remove_trait = age_100_plus
+		remove_trait = age_1000
+	}
+}

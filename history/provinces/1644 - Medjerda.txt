@@ -1,0 +1,20 @@
+# County Title
+title = c_medjerda
+# Settlements
+max_settlements = 5
+b_medjerda = castle
+b_lekef = city
+b_siliana = temple
+# Misc
+culture = maghreb_arabic
+religion = catholic
+################################################################################
+# 1644 - Medjerda
+################################################################################
+
+################################################################################
+# b_sidimubarak = castle
+# b_qaafur = castle
+# b_dougga = castle
+# b_elkrib = castle
+################################################################################

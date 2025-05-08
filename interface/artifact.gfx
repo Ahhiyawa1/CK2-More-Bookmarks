@@ -1,0 +1,23 @@
+spriteTypes = {
+	spriteType = {
+	name = "GFX_trait_hasartifact"
+	texturefile = "gfx/traits/hasartifact.dds"
+	noOfFrames = 1
+	norefcount = yes
+	effectFile = "gfx/FX/buttonstate.lua"
+}
+spriteType = {
+	name = "GFX_trait_hasartifactrare"
+	texturefile = "gfx/traits/hasartifactrare.dds"
+	noOfFrames = 1
+	norefcount = yes
+	effectFile = "gfx/FX/buttonstate.lua"
+}
+spriteType = {
+	name = "GFX_trait_hasartifactbook"
+	texturefile = "gfx/traits/hasartifactbook.dds"
+	noOfFrames = 1
+	norefcount = yes
+	effectFile = "gfx/FX/buttonstate.lua"
+}
+}

@@ -1,0 +1,678 @@
+# p39 Weapons for the right hand.
+39 = {
+	0 = { # 0 - blank
+		factor = 1
+		modifier = {
+			factor = 100
+			blg_fighting = no
+		}
+
+		modifier = {
+			factor = 100
+			has_character_flag = mock_duel
+			OR = {
+				has_character_flag = weapon_is_hand
+				blg_lefthanded = yes
+			}
+		}
+
+		modifier = {
+			factor = 100
+			OR = {
+				has_game_rule = { name = blg_artifacts value = off }
+				has_game_rule = { name = blg_artifacts value = rare }
+			}
+		}
+	}
+
+	1 = { # a - Staff
+		factor = 100
+		trigger = {
+			blg_righthanded = yes
+			OR = {
+				has_character_flag = weapon_is_staff
+				any_artifact = {
+					is_artifact_equipped = yes
+					blg_weapon_staff = yes
+					NOR = {
+						has_artifact_flag = jewelry
+						has_artifact_flag = offhand
+					}
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			NOT = { has_character_flag = add_duel_xp }
+			has_character_flag = weapon_is_staff
+		}
+	}
+
+	2 = { # b - Polearm
+		factor = 100
+		trigger = {
+			blg_righthanded = yes
+			NOT = { has_character_flag = mock_duel }
+			any_artifact = {
+				is_artifact_equipped = yes
+				blg_weapon_polearm = yes
+			}
+		}
+	}
+
+	3 = { # c - Trident
+		factor = 100
+		trigger = {
+			blg_righthanded = yes
+			NOT = { has_character_flag = mock_duel }
+			any_artifact = {
+				is_artifact_equipped = yes
+				blg_weapon_trident = yes
+			}
+		}
+	}
+
+	4 = { # d - Spear
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				OR = {
+					has_character_flag = weapon_is_spear
+					AND = {
+						NOT = { has_character_flag = mock_duel }
+						any_artifact = {
+							is_artifact_equipped = yes
+							quality == 1
+							OR = {
+								has_artifact_flag = lance
+								has_artifact_flag = spear
+							}
+							NOR = {
+								has_artifact_flag = jewelry
+								has_artifact_flag = offhand
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					quality == 1
+					has_artifact_flag = spear
+					has_artifact_flag = offhand
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			NOT = { has_character_flag = add_duel_xp }
+			has_character_flag = weapon_is_spear
+		}
+	}
+
+	5 = { # e - Spear
+		factor = 100
+		trigger = {
+			NOT = { has_character_flag = mock_duel }
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				any_artifact = {
+					is_artifact_equipped = yes
+					quality == 2
+					OR = {
+						has_artifact_flag = lance
+						has_artifact_flag = spear
+					}
+					NOR = {
+						has_artifact_flag = jewelry
+						has_artifact_flag = offhand
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					quality == 2
+					has_artifact_flag = spear
+					has_artifact_flag = offhand
+				}
+			}
+		}
+	}
+
+	6 = { # f - Spear
+		factor = 100
+		trigger = {
+			NOT = { has_character_flag = mock_duel }
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				any_artifact = {
+					is_artifact_equipped = yes
+					OR = {
+						has_artifact_flag = lance
+						has_artifact_flag = spear
+					}
+					NOR = {
+						has_artifact_flag = jewelry
+						has_artifact_flag = offhand
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					has_artifact_flag = spear
+					has_artifact_flag = offhand
+				}
+			}
+		}
+	}
+
+	7 = { # g - Scimitar
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				OR = {
+					blg_weapon_scimitar_flag = yes
+					AND = {
+						NOT = { has_character_flag = mock_duel }
+						any_artifact = {
+							is_artifact_equipped = yes
+							quality <= 2
+							blg_weapon_scimitar_1 = yes
+							NOR = {
+								has_artifact_flag = jewelry
+								has_artifact_flag = offhand
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					quality <= 2
+					has_artifact_flag = offhand
+					blg_weapon_scimitar_1 = yes
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			blg_weapon_scimitar_flag = yes
+		}
+	}
+
+	8 = { # h - Scimitar
+		factor = 100
+		trigger = {
+			NOT = { has_character_flag = mock_duel }
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				any_artifact = {
+					is_artifact_equipped = yes
+					blg_weapon_scimitar_2 = yes
+					NOR = {
+						has_artifact_flag = jewelry
+						has_artifact_flag = offhand
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					has_artifact_flag = offhand
+					blg_weapon_scimitar_2 = yes
+				}
+			}
+		}
+	}
+
+	9 = { # i - Zweihander
+		factor = 100
+		trigger = {
+			blg_righthanded = yes
+			NOT = { has_character_flag = mock_duel }
+			any_artifact = {
+				is_artifact_equipped = yes
+				blg_weapon_greatsword = yes
+			}
+		}
+	}
+
+	10 = { # j - Sword
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				OR = {
+					has_character_flag = weapon_is_sword
+					any_artifact = {
+						is_artifact_equipped = yes
+						quality == 1
+						has_artifact_flag = sword
+						NOR = {
+							has_artifact_flag = jewelry
+							has_artifact_flag = offhand
+						}
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					quality == 1
+					has_artifact_flag = offhand
+					has_artifact_flag = sword
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			NOT = { has_character_flag = add_duel_xp }
+			has_character_flag = weapon_is_sword
+		}
+	}
+
+	11 = { # k - Sword
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				any_artifact = {
+					is_artifact_equipped = yes
+					quality == 2
+					has_artifact_flag = sword
+					NOR = {
+						has_artifact_flag = jewelry
+						has_artifact_flag = offhand
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					quality == 2
+					has_artifact_flag = offhand
+					has_artifact_flag = sword
+				}
+			}
+		}
+	}
+
+	12 = { # l - Sword
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				any_artifact = {
+					is_artifact_equipped = yes
+					OR = {
+						has_artifact_flag = sword
+						blg_weapon_sword_3 = yes
+					}
+					NOR = {
+						has_artifact_flag = jewelry
+						has_artifact_flag = offhand
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					has_artifact_flag = offhand
+					has_artifact_flag = sword
+				}
+			}
+		}
+	}
+
+	13 = { # m - Axe
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				OR = {
+					has_character_flag = weapon_is_axe
+					any_artifact = {
+						is_artifact_equipped = yes
+						quality == 1
+						has_artifact_flag = axe
+						NOR = {
+							has_artifact_flag = jewelry
+							has_artifact_flag = offhand
+						}
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					quality == 1
+					has_artifact_flag = offhand
+					has_artifact_flag = axe
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			has_character_flag = weapon_is_axe
+		}
+	}
+
+	14 = { # n - Axe
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				any_artifact = {
+					is_artifact_equipped = yes
+					quality == 2
+					OR = {
+						has_artifact_flag = axe
+						blg_weapon_axe_2 = yes
+					}
+					NOR = {
+						has_artifact_flag = jewelry
+						has_artifact_flag = offhand
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					quality == 2
+					has_artifact_flag = offhand
+					has_artifact_flag = axe
+				}
+			}
+		}
+	}
+
+	15 = { # o - Axe
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				any_artifact = {
+					is_artifact_equipped = yes
+					has_artifact_flag = axe
+					NOR = {
+						has_artifact_flag = jewelry
+						has_artifact_flag = offhand
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					has_artifact_flag = offhand
+					has_artifact_flag = axe
+				}
+			}
+		}
+	}
+
+	16 = { # p - Hammer
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				any_artifact = {
+					is_artifact_equipped = yes
+					blg_weapon_hammer = yes
+					NOR = {
+						has_artifact_flag = jewelry
+						has_artifact_flag = offhand
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					has_artifact_flag = offhand
+					has_artifact_flag = hammer
+				}
+			}
+		}
+	}
+
+	17 = { # q - Flail
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				any_artifact = {
+					is_artifact_equipped = yes
+					blg_weapon_flail = yes
+					NOR = {
+						has_artifact_flag = jewelry
+						has_artifact_flag = offhand
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					has_artifact_flag = offhand
+					has_artifact_flag = flail
+				}
+			}
+		}
+	}
+
+	18 = { # r - Mace
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				OR = {
+					has_character_flag = weapon_is_mace
+					any_artifact = {
+						is_artifact_equipped = yes
+						quality == 1
+						has_artifact_flag = mace
+						NOR = {
+							has_artifact_flag = jewelry
+							has_artifact_flag = offhand
+						}
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					quality == 1
+					has_artifact_flag = offhand
+					has_artifact_flag = mace
+				}
+			}
+		}
+
+		modifier = {
+			factor = 0.5
+			has_character_flag = weapon_is_mace
+		}
+	}
+
+	19 = { # s - Mace
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				any_artifact = {
+					is_artifact_equipped = yes
+					quality == 2
+					has_artifact_flag = mace
+					NOR = {
+						has_artifact_flag = jewelry
+						has_artifact_flag = offhand
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					quality == 2
+					has_artifact_flag = offhand
+					has_artifact_flag = mace
+				}
+			}
+		}
+	}
+
+	20 = { # t - Mace
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				any_artifact = {
+					is_artifact_equipped = yes
+					has_artifact_flag = mace
+					NOR = {
+						has_artifact_flag = jewelry
+						has_artifact_flag = offhand
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					has_artifact_flag = offhand
+					has_artifact_flag = mace
+				}
+			}
+		}
+	}
+
+	21 = { # u - Bow
+		factor = 100
+		trigger = {
+			blg_righthanded = yes
+			NOT = { has_character_flag = add_duel_xp }
+			any_artifact = {
+				is_artifact_equipped = yes
+				quality == 1
+				has_artifact_flag = bow
+			}
+		}
+	}
+
+	22 = { # v - Bow
+		factor = 100
+		trigger = {
+			blg_righthanded = yes
+			NOT = { has_character_flag = add_duel_xp }
+			any_artifact = {
+				is_artifact_equipped = yes
+				quality == 2
+				has_artifact_flag = bow
+			}
+		}
+	}
+
+	23 = { # w - Bow
+		factor = 100
+		trigger = {
+			blg_righthanded = yes
+			NOT = { has_character_flag = add_duel_xp }
+			any_artifact = {
+				is_artifact_equipped = yes
+				has_artifact_flag = bow
+			}
+		}
+	}
+
+	24 = { # x - Crossbow
+		factor = 100
+		trigger = {
+			blg_righthanded = yes
+			NOT = { has_character_flag = add_duel_xp }
+			any_artifact = {
+				is_artifact_equipped = yes
+				has_artifact_flag = crossbow
+			}
+		}
+	}
+
+	25 = { # y - Handgun
+		factor = 100
+		trigger = {
+			blg_righthanded = yes
+			NOT = { has_character_flag = add_duel_xp }
+			any_artifact = {
+				is_artifact_equipped = yes
+				has_artifact_flag = gun
+			}
+		}
+	}
+
+	26 = { # z - Dagger
+		factor = 100
+		trigger = {
+			trigger_if = {
+				limit = {
+					blg_righthanded = yes
+				}
+				OR = {
+					blg_weapon_dagger_flag = yes
+					any_artifact = {
+						is_artifact_equipped = yes
+						blg_weapon_dagger = yes
+						NOR = {
+							has_artifact_flag = jewelry
+							has_artifact_flag = offhand
+						}
+					}
+				}
+			}
+			trigger_else = {
+				any_artifact = {
+					is_artifact_equipped = yes
+					blg_weapon_dagger = yes
+					has_artifact_flag = offhand
+				}
+			}
+		}
+	}
+}

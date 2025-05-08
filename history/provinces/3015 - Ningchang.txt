@@ -1,0 +1,27 @@
+# 3015 - Ningchang
+
+# County Title
+title = c_ningchang
+
+# Settlements
+max_settlements = 3
+
+b_ningchang_fengzhou = tribal
+b_ningchang_wuzhou = temple
+#b_ningchang_fuzhou = tribal
+#b_ningchang_weizhou = tribal
+#b_ningchang_juezhou = tribal
+#b_ningchang_zhuerhadai = tribal
+#b_ningchang_shehucher = tribal
+
+# Misc
+culture = khitan
+religion = tengri_pagan
+
+# History
+907.1.1 = {
+	religion = buddhist
+	b_ningchang_fengzhou = castle
+	b_ningchang_wuzhou = city
+	b_ningchang_fuzhou = temple
+}

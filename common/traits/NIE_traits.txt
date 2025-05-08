@@ -1,0 +1,14 @@
+thief_sister_trait = {
+	customizer = no
+	cannot_marry = yes
+	random = no
+	hidden = yes
+	cached = yes
+}
+thief_trait = {
+	customizer = no
+	cannot_marry = yes
+	random = no
+	hidden = yes
+	cached = yes
+}

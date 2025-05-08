@@ -1,0 +1,663 @@
+####ID Ranges####
+#General 0-199
+#Christian 200-399
+#Muslim 400-599
+#Jewish 600-799
+#Zoroastrian 800-999
+#Germanic 1000-1199
+#West African 1200-1399
+#Finnish/Soume 1400-1599
+#Slavic 1600-1799
+#Baltic/Romuvan 1800-1999
+#Tengri 2000-2199
+#Zunist 2200-2399
+#Indian 2400-2599
+#Cultural 2600-2799
+#Holy Weapons 2800-2999
+
+
+
+namespace = aaoa
+
+
+
+#############################
+###### Christian ######
+#############################
+
+####emperor give crown
+character_event = {
+	id = aaoa.200
+	desc = EVTDESAaaoa.200
+	picture = GFX_evt_holy_emperor
+	
+	is_triggered_only = yes
+
+	#yes
+	option = {
+		name = EVTOPTAaaoa.200
+		random_artifact = {
+			limit = { artifact_type = iron_crown_of_lombardy }
+			transfer_artifact = {
+				from = ROOT
+				to = FROM
+			}
+		}
+		random = {
+			chance = 50
+			add_trait = just
+		}
+		reverse_opinion = { modifier = opinion_grateful who = FROM years = 10 }
+		FROM = { character_event = {id = aaoa.201}}
+		ai_chance = { factor = 50 }
+	}
+	#no
+	option = {
+		name = EVTOPTBaaoa.200
+		prestige = -250
+		reverse_opinion = { modifier = opinion_hate who = FROM years = 10 }
+		add_character_modifier = { name = denied_crown years = 5 }
+		set_character_flag = denied_crown
+		FROM = { character_event = { id = aaoa.201 } }
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 2
+				trait = proud
+			}
+			modifier = {
+				factor = 0
+				trait = just
+			}
+			modifier = {
+				factor = 0.50
+				trait = charitable
+			}
+			modifier = {
+				factor = 0.75
+				trait = kind
+			}
+			modifier = {
+				factor = 0.50
+				dynasty = FROM
+			}
+		}
+	}
+}
+####notification for italy
+character_event = {
+	id = aaoa.201
+	desc = {
+		text = EVTDESAaaoa.201
+		trigger = { has_opinion_modifier = { who = FROM modifier = opinion_grateful } }
+	}
+	desc = {
+		text = EVTDESBaaoa.201
+		trigger = { has_opinion_modifier = { who = FROM modifier = opinion_hate } }
+	}	
+	picture = GFX_evt_holy_emperor
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = {
+			text = EVTOPTAaaoa.201
+			trigger = { has_opinion_modifier = {who = FROM modifier = opinion_grateful}}
+		}
+		name = {
+			text = EVTOPTBaaoa.201
+			trigger = { has_opinion_modifier = {who = FROM modifier = opinion_hate}}
+		}
+	}
+}
+
+
+
+
+#############################
+###### Muslim ######
+#############################
+
+#############################
+###### Jewish ######
+#############################
+
+####priestly breastplate spawn
+character_event = {
+	id = aaoa.600
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	has_global_flag = third_temple_built
+	religion = jewish
+	
+	trigger = { 
+		NOT = { has_global_flag = priestly_breastplate_found }
+		FROM = { title = d_jewish }
+	}
+	immediate = {
+		set_global_flag = priestly_breastplate_found
+		add_artifact = priestly_breastplate
+	}
+}
+
+####breastplate debuff for non rel head
+character_event = {
+	id = aaoa.601
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	has_global_flag = priestly_breastplate_found
+	only_playable = yes
+	min_age = 16
+	
+	trigger = {
+		religion = jewish
+		OR = {
+			AND = {
+				has_artifact = priestly_breastplate
+				NOT = { has_landed_title = d_jewish }
+			}
+			AND = {
+				NOT = { has_artifact = priestly_breastplate }
+				has_character_modifier = priestly_breastplate_debuff
+			}
+		} 
+	}
+	immediate = {
+		if = {
+			limit = {
+				has_artifact = priestly_breastplate
+				NOT = { has_landed_title = d_jewish }
+				NOT = { has_character_modifier = priestly_breastplate_debuff }
+			}
+			add_character_modifier = { name = priestly_breastplate_debuff duration = -1 }
+		}
+		if = {
+			limit = {
+				NOT = { has_artifact = priestly_breastplate }
+				has_character_modifier = priestly_breastplate_debuff
+			}
+			remove_character_modifier = priestly_breastplate_debuff
+		}
+	}
+}
+
+####rel head asks for breastplate
+character_event = {
+	id = aaoa.602
+	
+	hide_window = yes
+	
+	has_global_flag = jewish_priesthood_founded
+	religion = jewish
+	
+	trigger = { 
+		controls_religion = yes 
+		NOT = {has_artifact = priestly_breastplate}
+	}
+	
+	mean_time_to_happen = {
+		months = 120
+		modifier = {
+			factor = 0.2
+			NOT = {has_character_flag = asked_breastplate}
+		}
+		modifier = {
+			factor = 2
+			has_character_flag = asked_breastplate
+		}
+	}
+	
+	immediate = {
+		set_character_flag = asked_breastplate
+		random_character = {
+			limit = { has_artifact = priestly_breastplate }
+			character_event = { id = aaoa.603 days = 5 }
+		}
+	}
+}
+####thief response
+character_event = {
+	id = aaoa.603
+	desc = EVTDESAaaoa.603
+	picture = GFX_evt_accused
+	
+	is_triggered_only = yes
+	
+	#return it
+	option = {
+		name = EVTOPTAaaoa.603
+		random_artifact = {
+			limit = {artifact_type = priestly_breastplate}
+			transfer_artifact = {
+				from = ROOT
+				to = FROM
+			}
+		}
+		reverse_opinion = { modifier = opinion_grateful who = FROM }
+		remove_character_modifier = priestly_breastplate_debuff
+		
+		ai_chance = {
+			factor = 70
+			modifier = {
+				factor = 2
+				trait = just
+			}
+			modifier = {
+				factor = 0.75
+				trait = kind
+			}
+		}
+	}
+	#keep it 
+	option = {
+		name = EVTOPTBaaoa.603
+		reverse_opinion = { modifier = opinion_hate who = FROM }
+		piety = -200
+		if = {
+			limit = {trait = zealous}
+			remove_trait = zealous
+		}
+		
+		ai_chance = {
+			factor = 30
+			modifier = {
+				factor = 2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.2
+				trait = envious
+			}
+			modifier = {
+				factor = 1.2
+				trait = greedy
+			}
+		}
+	}
+}
+####hezekiah's hammer on creation of israel
+character_event = {
+	id = aaoa.604
+	desc = EVTDESAaaoa.604
+	picture = GFX_evt_battle_indo_aryan_group
+	
+	is_triggered_only = yes
+	
+	religion = jewish
+	
+	trigger = {
+		FROM = { title = k_israel }
+		NOT = { has_global_flag = hezekiahs_hammer_found }
+	}
+	option = {
+		name = EVTOPTAaaoa.604
+		add_artifact = hezekiahs_hammer
+		set_global_flag = hezekiahs_hammer_found
+	}
+}
+####maccabean shield after 3rd temple, moved to vanilla rumors
+#character_event = {
+#	id = aaoa.605
+#	desc = EVTDESAaaoa.605
+#	picture = GFX_evt_construction_site
+#	
+#	has_global_flag = third_temple_built
+#	only_playable = yes
+#	
+#	trigger = {
+#		religion = jewish
+#		NOT = { has_global_flag = maccabean_shield_found }
+#		completely_controls = d_jerusalem
+#		is_adult = yes	
+#	}
+#	mean_time_to_happen = {
+#		months = 300
+#	}
+#	option = {
+#		name = EVTOPTAaaoa.605
+#		add_artifact = maccabean_shield
+#		set_global_flag = maccabean_shield_found
+#	}
+#}
+####opening jerusalem
+character_event = {
+	id = aaoa.606
+	desc = EVTDESAaaoa.606
+	picture = GFX_evt_jerusalem_captured_jews
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_character_modifier = christian_pilgrims
+		remove_character_modifier = muslim_pilgrims
+		remove_character_modifier = both_pilgrims
+	}
+	#christians
+	option = {
+		name = EVTOPTAaaoa.606
+		add_character_modifier = { name = christian_pilgrims duration = -1 }
+		
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 100
+				trait = sympathy_christendom
+			}
+		}
+	}
+	#muslims
+	option = {
+		name = EVTOPTBaaoa.606
+		add_character_modifier = { name = muslim_pilgrims duration = -1 }
+		
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 100
+				trait = sympathy_islam
+			}
+		}
+	}
+	#both
+	option = {
+		name = EVTOPTCaaoa.606
+		add_character_modifier = { name = both_pilgrims duration = -1 }
+		
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.5
+				trait = kind
+			}
+			modifier = {
+				factor = 1.5
+				trait = charitable
+			}
+		}
+	}
+}
+####jerusalem pilgrims maintenance
+character_event = {
+	id = aaoa.607
+	desc = {
+		text = EVTDESAaaoa.607
+		trigger = { has_character_flag = close_jerusalem_zealous }
+	}
+	desc = {
+		text = EVTDESBaaoa.607
+		trigger = { NOT = { has_character_flag = close_jerusalem_zealous } }
+	}
+	picture = GFX_evt_jerusalem_captured_jews
+	is_triggered_only = yes
+	
+	religion = jewish
+	has_character_flag = opened_jerusalem
+	
+	trigger = {
+		OR = {
+			trait = zealous
+			any_war = { 
+				using_cb = crusade
+				ROOT = { is_primary_war_defender = yes }
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				trait = zealous 
+				war = no
+			}
+			set_character_flag = close_jerusalem_zealous
+		}
+	}
+	option = {
+		name = EVTOPTAaaoa.607
+		remove_character_modifier = christian_pilgrims
+		remove_character_modifier = muslim_pilgrims
+		remove_character_modifier = both_pilgrims
+		clr_character_flag = opened_jerusalem
+	}
+}
+####pilgrims gives menorah
+character_event = {
+	id = aaoa.608
+	desc = EVTDESAaaoa.608
+	picture = GFX_evt_emissary
+	
+	has_character_flag = opened_jerusalem
+	min_age = 16
+	
+	trigger = {
+		NOR = { 
+			has_global_flag = menorah_found
+			trait = zealous 
+		}
+		in_seclusion = no
+		war = no
+	}
+	mean_time_to_happen = { months = 240 }
+	option = {
+		name = EVTOPTAaaoa.608
+		add_artifact = menorah
+		set_global_flag = menorah_found
+	}
+}
+####menorah authority maintenance 
+character_event = {
+	id = aaoa.609
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	has_global_flag = menorah_found
+	only_playable = yes
+	
+	trigger = { has_artifact = menorah }
+	
+	immediate = {
+		if = {
+			limit = {
+				any_artifact = {
+					artifact_type = menorah
+					is_artifact_active = yes
+				}
+			}
+			religion_authority = { modifier = menorah_authority }
+		}
+	}
+}
+#############################
+###### Zoroastrian ######
+#############################
+
+
+
+
+
+
+
+
+
+#############################
+###### Cultural and Misc ######
+#############################
+
+###numean pelt gives robust
+character_event = {
+	id = aaoa.2605
+	desc = EVTDESAaaoa.2605
+	picture = GFX_evt_powerful_ruler
+
+	only_playable = yes
+	only_capable = yes
+	min_age = 16
+	culture = greek
+	
+	trigger = {
+		has_artifact = pelt_of_the_nemean_lion
+		culture = greek
+		NOR = {
+			trait = robust
+			trait = strong	
+			martial = 25
+			age = 40
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 360
+		modifier = {
+			factor = 1.5
+			ai = yes
+		}
+		modifier = {
+			factor = 0.9
+			martial = 10
+		}
+		modifier = {
+			factor = 0.8
+			martial = 16
+		}
+		modifier = {
+			factor = 0.8
+			martial = 20
+		}
+		modifier = {
+			factor = 0.9
+			NOT = { age = 30 }
+		}
+	}
+	
+	
+	option = {
+		name = EVTOPTAaaoa.2605
+		add_trait = robust
+	}	
+}
+
+##brionac combat effect
+character_event = {
+	id = aaoa.2606
+	desc = EVTDESAaaoa.2606
+	picture = GFX_evt_melee
+	
+	is_triggered_only = yes
+	
+	culture_group = celtic
+	only_capable = yes
+	min_age = 16
+	
+	trigger = {
+    	is_alive = yes
+    	OR = {
+    		FROM = { always = yes }
+    		FROMFROM = { always = yes }
+		}
+		has_artifact = brionac
+		any_artifact = {
+			artifact_type = brionac
+			is_artifact_equipped = yes
+		}
+    }
+
+	weight_multiplier = {
+		factor = 1
+		modifier = {
+			factor = 1.1
+			martial = 8
+		}
+		modifier = {
+			factor = 1.1
+			martial = 14
+		}
+		modifier = {
+			factor = 1.2
+			martial = 20
+		}
+		modifier = {
+			factor = 1.3
+			leader_traits = 1
+		}
+		modifier = {
+			factor = 1.5
+			leader_traits = 2
+		}
+		modifier = {
+			is_strong_trigger = yes
+			factor = 1.3
+		}
+		modifier = {
+			factor = 0.5
+			trait = craven
+		}
+		modifier = {
+			is_weak_trigger = yes
+			factor = 0.5
+		}
+		
+		##reduce chance if opponent is player
+	}
+
+	option = {
+		name = EVTOPTAaaoa.2606
+		any_current_enemy = {
+			random_realm_character = {
+				limit = {
+					at_location = ROOT
+					in_command = yes
+					prisoner = no	
+				}
+				death = { death_reason = death_battle killer = ROOT }
+			}
+		}
+	}
+}
+###durandal roland spawn
+character_event = {
+	id = aaoa.2608
+	
+	hide_window = yes
+
+	has_global_flag = roland_spawned
+	capable_only = yes
+	min_age = 16
+	only_playable = yes
+	prisoner = no
+	only_independent = yes
+	religion_group = christian
+	has_character_flag = is_charlemagne
+
+	trigger = { NOT = { has_character_flag = durandal_found } }
+	
+	mean_time_to_happen = { months = 30 }
+	
+	immediate = {
+		any_courtier_or_vassal = {
+			limit = { has_character_flag = is_roland }
+			add_artifact = durandal
+		}
+		set_character_flag = durandal_found
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

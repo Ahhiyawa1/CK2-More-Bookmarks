@@ -1,0 +1,11 @@
+ckrpg_converted_by_force = {
+    cannot_inherit = yes
+    random = no
+    religious = yes
+    monthly_piety = -0.2
+    same_religion_opinion = -10
+    infidel_opinion = -10
+    opposites = {
+        trait = zealous
+    }
+}

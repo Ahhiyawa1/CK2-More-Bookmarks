@@ -1,0 +1,17 @@
+#489 - Tortuga
+
+culture = atlantean
+owner = ATL
+controller = ATL
+add_core = ATL
+is_city = yes
+religion = hellenic_pagan
+capital = "Laodicus"
+trade_goods = naval_supplies 
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+discovered_by = CAB
+discovered_by = ARW
+discovered_by = ATL

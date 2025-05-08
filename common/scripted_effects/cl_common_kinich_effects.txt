@@ -1,0 +1,256 @@
+# remove_education_effect
+# devestate_province_effect
+# kinich_decrease_prosperity_effect
+# kinich_pagan_reformation_flags_effect
+
+remove_education_effect = {
+	remove_trait = naive_appeaser
+	remove_trait = underhanded_rogue
+	remove_trait = charismatic_negotiator
+	remove_trait = grey_eminence
+	remove_trait = misguided_warrior
+	remove_trait = tough_soldier
+	remove_trait = skilled_tactician
+	remove_trait = brilliant_strategist
+	remove_trait = indulgent_wastrel
+	remove_trait = thrifty_clerk
+	remove_trait = fortune_builder
+	remove_trait = midas_touched
+	remove_trait = amateurish_plotter
+	remove_trait = flamboyant_schemer
+	remove_trait = intricate_webweaver
+	remove_trait = elusive_shadow
+	remove_trait = detached_priest
+	remove_trait = dutiful_cleric
+	remove_trait = scholarly_theologian
+	remove_trait = mastermind_theologian
+}
+
+devestate_province_effect = {
+	hidden_effect = {
+		kinich_decrease_prosperity_effect = yes
+		kinich_decrease_prosperity_effect = yes
+		kinich_decrease_prosperity_effect = yes
+	}
+}
+
+kinich_decrease_prosperity_effect = {
+	if = {
+		limit = {
+			NOR = {
+				cl_kinich_is_prosperous_trigger = yes
+				cl_kinich_is_depopulated_trigger = yes
+			}
+		}
+		add_province_modifier = {
+			name = depopulated_1
+			duration = -1
+		}
+
+		set_flag = recent_depopulation_1
+	}
+	else = {
+		trigger_switch = {
+			on_trigger = has_province_modifier
+
+			prosperity_modifier_3 = {
+				remove_province_modifier = prosperity_modifier_3
+
+				set_variable = {
+					which = prosperity_value
+					value = 250
+				}
+
+				add_province_modifier = {
+					name = prosperity_modifier_2
+					duration = -1
+				}
+			}
+			prosperity_modifier_2 = {
+				remove_province_modifier = prosperity_modifier_2
+
+				set_variable = {
+					which = prosperity_value
+					value = 100
+				}
+
+				add_province_modifier = {
+					name = prosperity_modifier_1
+					duration = -1
+				}
+			}
+			prosperity_modifier_1 = {
+				remove_province_modifier = prosperity_modifier_1
+
+				set_variable = {
+					which = prosperity_value
+					value = 0
+				}
+			}
+			depopulated_1 = {
+				remove_province_modifier = depopulated_1
+
+				add_province_modifier = {
+					name = depopulated_2
+					duration = -1
+				}
+
+				clr_flag = recent_depopulation_1
+				set_flag = recent_depopulation_2
+			}
+			depopulated_2 = {
+				remove_province_modifier = depopulated_2
+
+				add_province_modifier = {
+					name = depopulated_3
+					duration = -1
+				}
+
+				clr_flag = recent_depopulation_2
+				set_flag = recent_depopulation_3
+			}
+		}
+	}
+}
+
+kinich_pagan_reformation_flags_effect = {
+	religion_scope = {
+		persistent_event_target:religion_title = { set_title_flag = kcc_has_set_religion_flags }
+		if = {
+			limit = {
+				has_dlc = "Holy Fury"
+				has_religion_feature = religion_proselytizing
+			}
+			persistent_event_target:religion_title = { set_title_flag = kcc_is_proselytizing_religion }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_dlc = "Holy Fury" }
+				OR = {
+					religion = norse_pagan_reformed
+					religion = tengri_pagan_reformed
+					religion = aztec_pagan_reformed
+					religion = zun_pagan_reformed
+					religion = hellenic_pagan_reformed
+					religion = celtic_pagan_reformed
+				}
+			}
+			persistent_event_target:religion_title = { set_title_flag = kcc_is_proselytizing_religion }
+		}
+		if = {
+			limit = {
+				OR = {
+					has_religion_feature = religion_peaceful
+					has_religion_feature = religion_cosmopolitan
+					has_religion_feature = religion_syncretic
+					has_religion_feature = religion_feature_hellenic
+				}
+			}
+			persistent_event_target:religion_title = { set_title_flag = kcc_is_tolerant_religion }
+		}
+		if = {
+			limit = {
+				OR = {
+					has_religion_feature = religion_jizya
+					has_religion_feature = religion_feature_west_african
+				}
+			}
+			persistent_event_target:religion_title = { set_title_flag = kcc_is_jizya_religion }
+		}
+		if = {
+			limit = {
+				has_dlc = "Holy Fury"
+				OR = {
+					has_religion_feature = religion_monastic
+					has_religion_feature = religion_feature_west_african
+					has_religion_feature = religion_feature_celtic
+				}
+			}
+			persistent_event_target:religion_title = { set_title_flag = kcc_is_monastic_religion }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_dlc = "Holy Fury" }
+				OR = {
+					religion = hellenic_pagan_reformed
+					religion = bon_pagan_reformed
+					religion = celtic_pagan_reformed
+				}
+			}
+			persistent_event_target:religion_title = { set_title_flag = kcc_is_monastic_religion }
+		}
+		if = {
+			limit = {
+				has_dlc = "Holy Fury"
+				NOR = {
+					has_religion_feature = religion_warlike
+					has_religion_feature = religion_ritual_sacrifice
+					has_religion_feature = religion_relentless
+					has_religion_feature = religion_adventuring
+					has_religion_feature = religion_feature_norse
+					has_religion_feature = religion_feature_tengri
+					has_religion_feature = religion_feature_aztec
+				}
+			}
+			persistent_event_target:religion_title = { set_title_flag = kcc_is_chinese_compatible_religion }
+		}
+		else_if = {
+			limit = {
+				NOR = {
+					has_dlc = "Holy Fury"
+					religion = norse_pagan_reformed
+					religion = tengri_pagan_reformed
+					religion = aztec_pagan_reformed
+					religion = hellenic_pagan_reformed
+					religion = celtic_pagan_reformed
+				}
+			}
+			persistent_event_target:religion_title = { set_title_flag = kcc_is_chinese_compatible_religion }
+		}
+		if = {
+			limit = { has_religion_feature = religion_matriarchal }
+			persistent_event_target:religion_title = { set_title_flag = kcc_is_matriarchal_religion }
+		}
+		if = {
+			limit = {
+				has_dlc = "Holy Fury"
+				OR = {
+					has_religion_feature = religion_equal
+					has_religion_feature = religion_matriarchal
+					has_religion_feature = religion_feature_bon
+					has_religion_feature = religion_feature_celtic
+					has_religion_feature = religion_feature_egyptian
+				}
+			}
+			persistent_event_target:religion_title = { set_title_flag = kcc_is_feminist_religion }
+		}
+		else_if = {
+			limit = {
+				NOT = { has_dlc = "Holy Fury" }
+				OR = {
+					religion = bon_pagan_reformed
+					religion = celtic_pagan_reformed
+					religion = egyptian_pagan_reformed
+				}
+			}
+			persistent_event_target:religion_title = { set_title_flag = kcc_is_feminist_religion }
+		}
+		if = {
+			limit = {
+				OR = {
+					has_religion_feature = religion_stable
+					has_religion_feature = religion_syncretic
+					has_religion_feature = religion_feature_slavic
+					has_religion_feature = religion_feature_finnish
+					has_religion_feature = religion_feature_hellenic
+					has_religion_feature = religion_feature_egyptian
+				}
+			}
+			persistent_event_target:religion_title = { set_title_flag = kcc_is_stable_syncretic_religion }
+		}
+		if = {
+			limit = { has_religion_feature = religion_autocephaly }
+			persistent_event_target:religion_title = { set_title_flag = kcc_uses_autocephaly }
+		}
+	}
+}

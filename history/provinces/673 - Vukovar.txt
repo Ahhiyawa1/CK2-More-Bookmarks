@@ -1,0 +1,19 @@
+# County Title
+title = c_vukovar
+# Settlements
+max_settlements = 3
+b_vukovar = tribal
+# Misc
+culture = croatian
+religion = slavic_pagan
+600.1.1 = { religion = catholic culture = illyro_roman }
+################################################################################
+# History
+################################################################################
+800.1.1 = { religion = catholic b_vukovar = castle b_ilko = city } 
+920.1.1 = { religion = orthodox culture = croatian }
+930.1.1 = { b_vukovar = tribal } 
+950.1.1 = { b_vukovar = castle } 
+################################################################################
+# 673 - Vukovar
+################################################################################

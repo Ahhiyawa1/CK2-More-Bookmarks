@@ -1,0 +1,18 @@
+# County Title
+title = c_imotski
+# Settlements
+max_settlements = 3
+b_topana = tribal
+# Misc
+culture = croatian
+religion = slavic_pagan
+600.1.1 = { religion = catholic culture = illyro_roman }
+################################################################################
+# History
+################################################################################
+800.1.1 = { religion = orthodox b_topana = castle b_imotski = city } 
+920.1.1 = { religion = orthodox culture = croatian }
+1000.1.1 = { culture = bosnian } 
+################################################################################
+# 678 - Imotski
+################################################################################

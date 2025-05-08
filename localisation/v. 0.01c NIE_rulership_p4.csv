@@ -1,0 +1,13 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+;;;;;;;;;;;;;;
+NIE.241;Spouse  killed;;;;;;;;;;;;;x
+EVTNAMENIE.241;You managed to stop your spouse;;;;;;;;;;;;;x
+EVTDESC_NIE_241;You have never thought that it would end like this. To kill your own spouse in order to protect what's left from your realm. You clearly see now that your actions have caused great damage not only to your family but to the whole country as well. Standing in the blood, spilled on your bedroom floor, that comes from your former love veins you can only feel pain.;;;;;;;;;;;;;x
+EVTOPTA_NIE_241;My life has changed…;;;;;;;;;;;;;x
+wife_killed;Story will end.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.242;Spouse kills;;;;;;;;;;;;;x
+EVTNAMENIE.242;You were killed by your spouse;;;;;;;;;;;;;x
+EVTDESC_NIE_242;In your last breath you can only think of one thing. How could this happen? How could you just hand away your realm into your spouse hands? And, most importantly, how could you fail to stop your 'beloved one' from killing you…;;;;;;;;;;;;;x
+EVTOPTA_NIE_242;My life has ended!;;;;;;;;;;;;;x
+wife_kills;Story will end.;;;;;;;;;;;;;x

@@ -1,0 +1,17 @@
+#500 - St. Vincent
+
+culture = atlantean
+owner = ATL
+controller = ATL
+add_core = ATL
+is_city = yes
+religion = hellenic_pagan
+capital = "Metoria"
+trade_goods = naval_supplies
+hre = no
+base_tax = 4 
+base_production = 5
+base_manpower = 3
+discovered_by = CAB
+discovered_by = ARW
+discovered_by = ATL

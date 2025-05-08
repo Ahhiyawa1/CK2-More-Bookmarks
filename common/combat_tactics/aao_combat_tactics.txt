@@ -1,0 +1,68 @@
+### At the moment we have a pretty basic icon system for combat tactics showing
+### the uniticon which has the biggest bonus value in the tactic.
+### This is the sprite number for each unit:
+### 1=LI 2=HI 3=PIKE 4=LC 5=KNIGHTS 6=ARCHERS 7=HORSE ARCH.
+
+durandal_tactic = {
+	days = 18
+	sprite = 2
+	group = defensive
+
+	trigger = {
+		phase = melee
+		flank_has_leader = yes
+		leader = {
+			has_artifact = durandal
+			any_artifact = {
+				artifact_type = durandal
+				is_artifact_equipped = yes
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 3
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = {
+				martial = 10
+			}
+		}
+		modifier = {
+			factor = 1.5
+			flank_has_leader = yes
+			leader = {
+				martial = 20
+			}
+		}
+		modifier = {
+			factor = 3
+			flank_has_leader = yes
+			leader = {
+				martial = 14
+				trait = defensive_leader
+			}
+		}
+	}
+
+	
+	knights_defensive = 1.4
+	heavy_infantry_defensive = 2.2
+	light_infantry_defensive = 2.2
+	pikemen_defensive = 2.2
+	
+	knights_offensive = 0.7
+	heavy_infantry_offensive = 1.1
+	light_infantry_offensive = 1.1
+	pikemen_offensive = 1.1
+	
+	enemy = {
+		group = charge
+		factor = 1.5
+	}
+	enemy = {
+		group = advance
+		factor = 1.2
+	}
+}

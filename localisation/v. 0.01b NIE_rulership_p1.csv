@@ -1,0 +1,58 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.200;Lazy ruling;;;;;;;;;;;;;x
+EVTNAMENIE.200;Vassal not happy with your slothfulness;;;;;;;;;;;;;x
+EVTDESC_NIE_200;Everyone knows that you are pretty lazy ruler. One of your vassals, [lazy_ruling_event_target.GetTitledName], known for his diligence, approached you while you were heading to the throne room. [lazy_ruling_event_target.GetSheHeCap] pardoned for the interruption and asked for a minute of your time. [lazy_ruling_event_target.GetSheHeCap] expressed [lazy_ruling_event_target.GetHerHis] anxiety about how your realm is goverened. [lazy_ruling_event_target.GetSheHeCap] states that your rule is know for its laziness and that you should change your attitude.;;;;;;;;;;;;;x
+EVTOPTA_NIE_200;Maybe it's you who should change attitude?;;;;;;;;;;;;;x
+EVTOPTB_NIE_200;You are right, I have to change!;;;;;;;;;;;;;x
+EVTOPTC_NIE_200;Ignore the talk of the fool.;;;;;;;;;;;;;x
+EVTOPTD_NIE_200;For that advice you are going to jail!;;;;;;;;;;;;;x
+Try_to_convince;Try to make him as lazy as you are.;;;;;;;;;;;;;x
+Try_to_be_better;Try to become a better ruler.;;;;;;;;;;;;;x
+Ignore_advice;Don't listen to him.;;;;;;;;;;;;;x
+Lock_him_down;Lock him down.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.201;Noble on wrong way;;;;;;;;;;;;;x
+EVTNAMENIE.201;Your vassal listens to you;;;;;;;;;;;;;x
+EVTDESC_NIE_201;By all means, you are right!' - [lazy_ruling_event_target.GetTitledName] responds after carefully listening to your answear. [lazy_ruling_event_target.GetSheHeCap] apologises for his previous action and promises that he will try to emulate your kind of attitude. [lazy_ruling_event_target.GetSheHeCap] quickly leaves your sight and you are left with only satisfaction that you were able to convince this soul to your easy way of living.;;;;;;;;;;;;;x
+EVTOPTA_NIE_201;I could visit him sometime, if I only had a time…;;;;;;;;;;;;;x
+noble_on_wrong_way;You managed to persuade your vassal to be more lazy.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.202;Noble not on wrong way;;;;;;;;;;;;;x
+EVTNAMENIE.202;Your vassal cannot be persuaded to change;;;;;;;;;;;;;x
+EVTDESC_NIE_202;[lazy_ruling_event_target.GetTitledName] looks upon you with reluctance in his eyes. 'No - [lazy_ruling_event_target.GetSheHe] says - I will not let my flaws take over me' - [lazy_ruling_event_target.GetSheHe] talks about how he thought you as of a better person, how you could change your ways, how you could influence the whole realm to be a better place. You only yawn a few times and order [lazy_ruling_event_target.GetHerHim] to leave.;;;;;;;;;;;;;x
+EVTOPTA_NIE_202;I shouldn't care about it any longer.;;;;;;;;;;;;;x
+noble_not_on_wrong_way;You didn't manage to persuade your vassal to be more lazy.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.203;Get rid of depressed;;;;;;;;;;;;;x
+EVTNAMENIE.203;Depression is slowly killing you…;;;;;;;;;;;;;x
+EVTDESC_NIE_203;It's been some time since you had a really good fun. Since you cared about anything. Since you wanted to live longer on this world. Now it all seems so unimportant, so irrelevant, so misleading. You only wish that you could end everything painlessly, quickly and with dignity. Or maybe it's not the right time to kill yourself, maybe you should try to carry on?;;;;;;;;;;;;;x
+EVTOPTA_NIE_203;I will do everything to live!;;;;;;;;;;;;;x
+EVTOPTB_NIE_203;I could try to find amusement somewhere…;;;;;;;;;;;;;x
+EVTOPTC_NIE_203;I don't want to live anymore…;;;;;;;;;;;;;x
+EVTOPTD_NIE_203;My faith will guide me through!;;;;;;;;;;;;;x
+EVTOPTE_NIE_203;It's all hopeless…;;;;;;;;;;;;;x
+force_yourself_through;Try to beat it with your strong will.;;;;;;;;;;;;;x
+try_to_find_joy;Try to beat it with amusement.;;;;;;;;;;;;;x
+NIE_commit_suicide;There is only one solution to it.;;;;;;;;;;;;;x
+try_faith;Try to find relief in faith.;;;;;;;;;;;;;x
+give_up_trying;Do nothing.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.204;Get rid of stressed;;;;;;;;;;;;;x
+EVTNAMENIE.204;Stress is slowly killing you….;;;;;;;;;;;;;x
+EVTDESC_NIE_204;It's been some time since you had a really good fun. Since you cared about anything. Since you had some free time for yourself. Now, due to amount of work you have, it all seems so unimportant, so irrelevant, so misleading. You only wish that you could abandon your duties and live on without them.;;;;;;;;;;;;;x
+EVTOPTA_NIE_204;My strong will should help me with it…;;;;;;;;;;;;;x
+EVTOPTB_NIE_204;Maybe some relaxation will help?;;;;;;;;;;;;;x
+EVTOPTC_NIE_204;I don't care, I want to die…;;;;;;;;;;;;;x
+EVTOPTD_NIE_204;Only faith can help me!;;;;;;;;;;;;;x
+EVTOPTE_NIE_204;It's all hopeless…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.205;Craven ruler;;;;;;;;;;;;;x
+EVTNAMENIE.205;Spouse worries about you being craven;;;;;;;;;;;;;x
+EVTDESC_NIE_205;Your [spouse_craven_ruler.GetHusbandWife] [spouse_craven_ruler.GetFirstName] came to your bedchamber while you were preparing to sleep. [spouse_craven_ruler.GetSheHeCap] sits on your lap and kiss you gently on the cheek. 'My love…' - [spouse_craven_ruler.GetSheHe] says - 'I'm worried. Everyone in the court can see that you are afraid of every shadow there, everything can scare you. Please let me help you, we could find a solution together to your problem.';;;;;;;;;;;;;x
+EVTOPTA_NIE_205;But EVERYTHING can hurt me!;;;;;;;;;;;;;x
+EVTOPTB_NIE_205;I trust you, my love…;;;;;;;;;;;;;x
+EVTOPTC_NIE_205;I won't listen to this, just go!;;;;;;;;;;;;;x
+everything_can_hurt;You refuse to change.;;;;;;;;;;;;;x
+trust_spouse;You try to change.;;;;;;;;;;;;;x
+reject_help_spouse;You refuse to change.;;;;;;;;;;;;;x

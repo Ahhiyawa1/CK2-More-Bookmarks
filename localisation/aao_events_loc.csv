@@ -1,0 +1,363 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+
+
+
+##Vanilla rumors
+EVTDESAmnm.9600;[relic_hunter.GetTitledFirstName] has returned and brought with [relic_hunter.GetHerHim] a beautiful shield. [relic_hunter.GetSheHeCap] has proof that it originates from the Maccabean Revolt from ages past that purged the Hellenic influences on the Jewish people.;;;;;;;;;;;;;x
+EVTDESAmnm.9601;[relic_hunter.GetJobTitle] [relic_hunter.GetFirstName] has finally returned from [relic_hunter.GetHerHis] travels, and has brought with [relic_hunter.GetHerHim] a small snake figurine. [relic_hunter.GetSheHeCap] tells me that this is a remnant of the old pagan ways of Judea.;;;;;;;;;;;;;x
+EVTDESAmnm.9602;[relic_hunter.GetTitledFirstName] has returned and brought with [relic_hunter.GetHerHim] a pair of golden scales. [relic_hunter.GetSheHeCap] says that these are the Goddess Laima's Scales of Fate, and with them you can control fate itself!;;;;;;;;;;;;;x
+EVTDESAmnm.9603;Returning from [relic_hunter.GetHerHis] travels, [relic_hunter.GetTitledFirstName] has brought with [relic_hunter.GetHerHim] some metal chains. [relic_hunter.GetSheHeCap] claims that these were chains that bound Alpamysh, who was imprisoned by his foes. Alpamysh was later able to escape imprisonment with the aid a shepard who was later installed as Khan by the freed Alpamysh.;;;;;;;;;;;;;x
+
+
+
+
+
+####artifact events
+
+#Christian
+
+EVTDESAaaoa.200;Your vassal [From.GetFullName] the current [From.GetKingQueen] of Italy has come to you with a request. [From.GetSheHeCap] asks for the Iron Crown of Lombardy to be returned to [From.GetHerHim] as [From.GetSheHe] is the rightful [From.GetKingQueen] of the Lombards.;;;;;;;;;;;;;x
+EVTOPTAaaoa.200; It is [From.GetHerHis] right;;;;;;;;;;;;;x
+EVTOPTBaaoa.200; The crown shall stay with the Emperor;;;;;;;;;;;;;x
+EVTDESAaaoa.201; Your liege has accepted your request, The Iron Crown of Lombardy is now in your possession.;;;;;;;;;;;;;x
+EVTDESBaaoa.201; Your liege has refused you the Iron Crown. An insult that shall not be forgotten!;;;;;;;;;;;;;x
+EVTOPTAaaoa.201; I am thankful;;;;;;;;;;;;;x
+EVTOPTBaaoa.201; Curse [From.GetHerHim]!;;;;;;;;;;;;;x
+
+#Muslim
+
+#Jewish
+
+EVTDESAaaoa.603;[From.GetTitledName] has accused you of the unrightful possession of the Priestly Breastplate. According to the Jewish faith only he has the right to wear it, how will you respond?;;;;;;;;;;;;;x
+EVTOPTAaaoa.603;I shall return it at once;;;;;;;;;;;;;x
+EVTOPTBaaoa.603;But it looks so good on me;;;;;;;;;;;;;x
+EVTDESAaaoa.604;With the declaration of the Kingdom of Israel, Jews from all over the world flock to your realm. One of them hands you Hezekiah's Hammer for granting him and his family a safe haven.;;;;;;;;;;;;;x
+EVTOPTAaaoa.604;Thank you, my friend;;;;;;;;;;;;;x
+EVTDESAaaoa.605;Years have passed since the Third Temple has been built. As you survey the building you notice some workers clearing away all the junk from the construction site. A rusty shield catches your eye as the men load it into the cart.;;;;;;;;;;;;;x 
+EVTOPTAaaoa.605;Wait, Let me have a look at that;;;;;;;;;;;;;x 
+EVTDESAaaoa.606;With the Holy Land under your control, you can allow foreign pilgrims to freely enter Jerusalem. This will surely please them, until the inevitable Jihad or Crusade is called against you.;;;;;;;;;;;;;x 
+EVTOPTAaaoa.606;Let the Christians in;;;;;;;;;;;;;x 
+EVTOPTBaaoa.606;Let the Muslims in;;;;;;;;;;;;;x 
+EVTOPTCaaoa.606;Let them both in;;;;;;;;;;;;;x 
+EVTDESAaaoa.607;"Why are these infidels entering my lands?!" you yell at your council. Since becoming zealous, you no longer have the patience for these people.;;;;;;;;;;;;;x 
+EVTDESBaaoa.607;With Jerusalem under attack, getting the pilgrims killed will likely make you the most hates ruler around.;;;;;;;;;;;;;x 
+EVTOPTAaaoa.607;Stop the pilgrims from entering;;;;;;;;;;;;;x 
+EVTDESAaaoa.608;One of the pilgrims asks for an audience, he claims to have a great gift for you.\n He enters and says "Benevolent [Root.GetRulerTitle], thank you for allowing us to visit the holy land. We have brought you The Menorah as thanks. We realise it has great meaning to your faith and since there was no established Jewish realm it was just gathering dust in our vault.".;;;;;;;;;;;;;x 
+EVTOPTAaaoa.608;Thank you for returning it to us.;;;;;;;;;;;;;x
+
+#Zoroastrian
+
+
+
+
+
+
+
+
+
+
+#Indian
+
+
+#Cultural/Misc
+
+EVTDESAaaoa.2605;Years ago you tried to wear the Pelt of the Nemean Lion, but it proved too heavy for you. That was then, now over the years your body has grown stronger. Wearing is now a trivial matter.;;;;;;;;;;;;;x 
+EVTOPTAaaoa.2605;I feel stronger!;;;;;;;;;;;;;x
+EVTDESAaaoa.2606;You spot the enemy commander in the midst of battle, reaching him won't be easy. But with the Brionac you won't need to, you hurl over an impressive distance and strike your foe straight in the chest.;;;;;;;;;;;;;x
+EVTOPTAaaoa.2606;Like hunting wild boar;;;;;;;;;;;;;x 
+
+
+
+##############################################Pagan Events##############################################
+
+#Germanic
+
+EVTTITLEAaaop.000;The Birds of Odin;;;;;;;;;;;;;x
+EVTDESAaaop.000;The Germanic faith has been able to withstand the Christians so far, but for how much longer you wonder. You spot two ravens flying above, all the doubt has been purged from your mind as the Gods have shown you a sign!\n The birds of Odin have appeared, and with them the strength and wisdom to destroy your enemies. You rush home to spread the word of what you have witnessed.;;;;;;;;;;;;;x
+EVTDESBaaop.000;Word has reached you that [From.GetTitledName] has spotted Odin's two ravens in the sky. This is surely a sign from the Gods that will strengthen the Germanic people against the Christian onslaught.;;;;;;;;;;;;;x
+EVTOPTAaaop.000;All must hear of this!;;;;;;;;;;;;;x
+EVTOPTBaaop.000;For Odin!;;;;;;;;;;;;;x
+EVTTOOLTIPAaaop.000;The Ravens' feathers are found throughout Germanic realms;;;;;;;;;;;;;x
+
+EVTDESAaaop.002;The cursed ring of Andvari has created gold from nothing, but with a price.;;;;;;;;;;;;;x
+EVTOPTAaaop.002;I'll probably be fine.;;;;;;;;;;;;;x
+EVTOPTBaaop.002;I'll probably be fine, and don't worry me about this anymore;;;;;;;;;;;;;x
+EVTTOOLTIPAaaop.002;You will be cursed;;;;;;;;;;;;;x
+EVTTOOLTIPBaaop.002;you will not be notified when this happens anymore but you might still get cursed;;;;;;;;;;;;;x
+EVTDESAaaop.003;That rock just insulted you, you are sure of it. At least, thats what Andvaranaut told you. You order your guards to throw it in the dungeon, when they look at you in confusion you throw them into the dungeon as well. ;;;;;;;;;;;;;x
+EVTDESBaaop.003;"Can you not see that I am descended from the Gods?!" you yell at your court. Nobody believes it, but you're sure it's true.;;;;;;;;;;;;;x
+EVTDESCaaop.003;Your body is turning pale, and your face appears old and malformed. Slowly you are losing your body.;;;;;;;;;;;;;x
+EVTDESDaaop.003;Speaking has become more difficult of late. You are not sure why, but you have started to stutter.;;;;;;;;;;;;;x
+EVTDESEaaop.003;All the strength has left your body, you have become a shadow of what you once were. Lethargy and weakness is all you feel now.;;;;;;;;;;;;;x
+EVTDESFaaop.003;Gold has become all you care about. You shall surely become the wealthiest [Root.GetManWoman] alive.;;;;;;;;;;;;;x
+EVTDESGaaop.003;You no longer care about what happens around you, why should you when you possess a ring that gives you all the riches in the world?;;;;;;;;;;;;;x
+EVTDESHaaop.003;What was that? Who's there? The continued use of Andvaranaut has made you distrust everyone around you.;;;;;;;;;;;;;x
+EVTDESIaaop.003;You feel tired, a moment later you fall down. You wonder how much longer your body can handle the effects of the ring.;;;;;;;;;;;;;x
+EVTOPTAaaop.003;My word is law!;;;;;;;;;;;;;x
+EVTOPTBaaop.003;How else would I have this ring then?;;;;;;;;;;;;;x
+EVTOPTCaaop.003;Perhaps I should take off the ring;;;;;;;;;;;;;x
+EVTOPTDaaop.003;Is it because of the ring?;;;;;;;;;;;;;x
+EVTOPTEaaop.003;I'll have to rely on my vast amount of gold now;;;;;;;;;;;;;x
+EVTOPTFaaop.003;More, I must have more;;;;;;;;;;;;;x
+EVTOPTGaaop.003;I don't care anymore;;;;;;;;;;;;;x
+EVTOPTHaaop.003;My precious;;;;;;;;;;;;;x
+EVTOPTIaaop.003;I feel death approaching;;;;;;;;;;;;;x
+EVTTITLEAaaop.004;The Cursed Dragon;;;;;;;;;;;;;x
+EVTDESAaaop.004;Your skin has turned pale, your height has increased, so has your weight. An acidic substance wells up in your chest as scales start covering your body. Sharp pain overwhelms your body as you fall unconcious.\n Hours later you awaken, but no longer a [Root.GetManWoman].;;;;;;;;;;;;;x
+EVTDESBaaop.004;As you were growing up you heard tales of Dragons and other mythical creatures. Mere stories you thought, yet word has reached you that such a creature has been spotted.\n Great treasures await the person that can slay the beast, for it was originally a [From.GetManWoman] that got too greedy.;;;;;;;;;;;;;x
+EVTOPTAaaop.004;What has happened to me?;;;;;;;;;;;;;x
+EVTOPTBaaop.004;Finally a task worthy of me;;;;;;;;;;;;;x
+EVTTITLEAaaop.006;A Human Approaches;;;;;;;;;;;;;x
+EVTDESAaaop.006;Perhaps it was your vast treasure hoard that attracted [From.GetHerHim], or dreams of glory, or perhaps just foolishness. Whatever the case, [From.GetTitledFirstName] approaches you with [From.GetHerHis] weapon drawn in an attempt to slay you.;;;;;;;;;;;;;x
+EVTOPTAaaop.006;Foolish human;;;;;;;;;;;;;x
+EVTTITLEAaaop.007;Fafnir, the Cursed Dragon;;;;;;;;;;;;;x
+EVTDESAaaop.007;You come upon the creature's lair. The place is littered with the bones of the dead, perhaps those that tried to do what you now attempt.\n A menacing growl echos around you. The beast knows you are here.\n Finally you spot it, a large malformed dragon. Scars cover it's body, and the creature seems weak. Perhaps it's not that menacing after all.;;;;;;;;;;;;;x
+EVTDESBaaop.007;You come upon the creature's lair. The place is littered with the bones of the dead, perhaps those that tried to do what you now attempt.\n A menacing growl echos around you. The beast knows you are here.\n Finally you spot it, a large malformed dragon. The dragon looks up at you for a moment before it lunges toward you.;;;;;;;;;;;;;x
+EVTDESCaaop.007;You come upon the creature's lair. The place is littered with the bones of the dead, perhaps those that tried to do what you now attempt.\n A menacing growl echos around you. The beast knows you are here.\n Finally you spot it, a large malformed dragon. Just the sight of this hulking monstrosity fills you with dread. This beast is not to be taken lightly.;;;;;;;;;;;;;x
+EVTOPTAaaop.007;Fall to me Dragon!;;;;;;;;;;;;;x
+EVTTOOLTIPAaaop.007;You charge at Fafnir;;;;;;;;;;;;;x
+EVTOPTBaaop.007;This was foolish, I must flee!;;;;;;;;;;;;;x
+EVTTITLEAaaop.008;The Cowardly Human;;;;;;;;;;;;;x
+EVTDESAaaop.008;As you lunge towards the human, [From.GetSheHe] drops [From.GetHerHis] weapon and flees! You manage to wound [From.GetHerHim] as [From.GetSheHe] runs, but otherwise nothing worthwhile came from this encounter.;;;;;;;;;;;;;x
+EVTDESBaaop.008;As you lunge towards the human, [From.GetSheHe] drops [From.GetHerHis] weapon and flees! You easily catch up and capture your prey.;;;;;;;;;;;;;x
+EVTOPTAaaop.008;I woke up for this coward?;;;;;;;;;;;;;x
+EVTOPTBaaop.008;One more skull for the pile;;;;;;;;;;;;;x
+EVTTITLEAaaop.009;A Deadly Battle;;;;;;;;;;;;;x
+EVTDESAaaop.009;You roar ferociously as you try to kill the invader, but [From.GetFirstName]'s skills far outmatch yours. One mistake is all [From.GetSheHe] needed to pierce your heart, unfortunately you just made one.;;;;;;;;;;;;;x
+EVTDESBaaop.009;You slash and swipe relentlessly at your opponent, giving [From.GetHerHim] no time to retaliate. In mere moments you have crushed the foolish invader and can now return to your slumber.;;;;;;;;;;;;;x
+EVTOPTAaaop.009;Free from this curse at last...;;;;;;;;;;;;;x
+EVTOPTBaaop.009;One more skull for the pile;;;;;;;;;;;;;x
+EVTTITLEAaaop.010;A Deadly Battle;;;;;;;;;;;;;x
+EVTDESAaaop.010;Fafnir roars as [From.GetSheHe] charges at you, but you skillfully evade [From.GetHerHim]. Again and again this happens for what seems like hours, each attack deadlier than the last.\n The beast grows restless and starts thrashing about wildly, desperately trying to kill you. In it's blind rage it leaves an opening, this was it's last mistake. You thrust your blade directly into it's heart.\n With Fafnir dead, you make your way towards the treasures it was guarding. Among the gold and baubles you spy an earie looking ring, it feels heavy as if cursed. You wonder if this is what lead to the existence of Fafnir, and will it lead you to the same fate? Only time will tell.;;;;;;;;;;;;;x
+EVTDESBaaop.010;Fafnir roars as [From.GetSheHe] charges forward, you try to evade [From.GetHerHim] but are too slow. Again and again this happens for what seems like hours, each attack deadlier than the last.\n The beast grows restless and starts thrashing about wildly, desperately trying to kill you. In the end you could not keep up with it and Fafnir manages to kill you.;;;;;;;;;;;;;x
+EVTOPTAaaop.010;Not even dragons can defeat me!;;;;;;;;;;;;;x
+EVTOPTBaaop.010;I have failed...;;;;;;;;;;;;;x
+EVTTITLEAaaop.011;The Death of Fafnir;;;;;;;;;;;;;x
+EVTDESAaaop.011;Word has reached you that [From.GetTitledName] has managed to slay Fafnir. [FromFrom.GetTitledName] has been freed from [FromFrom.GetHerHis] curse at last.\n Now [From.GetFirstName] has claimed all of Fafnir's wealth and treasures, only time will tell if [From.GetSheHe] will succumb to the same fate.;;;;;;;;;;;;;x
+EVTOPTAaaop.011;Interesting;;;;;;;;;;;;;x
+
+EVTTITLEAaaop.012;Shackles of Fenrir;;;;;;;;;;;;;x
+EVTDESAaaop.012;The mighty wolf Fenrir will one day break free from his chains and devour Odin. That's what the myths say at least. Yet before you lies some silken chains, and they are shredded.\n A coincidence or perhaps something more ominious? Only time will tell...;;;;;;;;;;;;;x
+EVTDESBaaop.012;Word has reached you that [From.GetTitledName] has found the broken shackles of Fenrir. Dark times are ahead...;;;;;;;;;;;;;x
+EVTOPTAaaop.012;May the Gods have mercy on us all;;;;;;;;;;;;;x
+EVTOPTBaaop.012;May the Gods have mercy on us all;;;;;;;;;;;;;x
+
+EVTDESAaaop.013;One day as you are returning to your great hall, you notice on old man hunched over on a tree stump, curious you move towards him.\n You look at him and notice he looks crestfallen, he gazes at you with his one eye in sadness and says "Stranger, have you forgotten the old ways as well? All these Jarls and Kings and not one of them honors the gods of old, one day we will all be punished for it.";;;;;;;;;;;;;x 
+EVTTITLEAaaop.013;The Old Man;;;;;;;;;;;;;x 
+EVTOPTAaaop.013;That is not true, for I still follow the old ways!;;;;;;;;;;;;;x 
+EVTTOOLTIPAaaop.013;You set out to honor the gods.;;;;;;;;;;;;;x 
+EVTOPTBaaop.013;Times are changing, old one;;;;;;;;;;;;;x 
+EVTDESAaaop.014;You have organized a giant brawl with your men, a simple contest of strength. The crowd cheers as the men fight to prove themselves in vicious combat.;;;;;;;;;;;;;x 
+EVTOPTAaaop.014;Thor, lend me strength!;;;;;;;;;;;;;x
+EVTOPTBaaop.014;I'll just watch them go at it;;;;;;;;;;;;;x 
+EVTOPTCaaop.014;On second thought, I have other matters;;;;;;;;;;;;;x 
+EVTDESAaaop.015;As you leave the fighting pit, you spot a skald explaining the tale of Ragnarok to some children. "When Ragnarok comes, the Giant Surt shall slay Thor, Jormungandr shall swallow Odin whole, and the dreaded Fenrir shall devour Heimdall..." This Skald is spewing nonsense, you decide to correct him.;;;;;;;;;;;;;x 
+EVTOPTAaaop.015;Surt kills Odin, Jormungandr kills Loki, Fenrir kills Tyr;;;;;;;;;;;;;x 
+EVTOPTBaaop.015;Surt kills Loki, Jormungandr kills Freyr, Fenrir kills Heimdall;;;;;;;;;;;;;x
+EVTOPTCaaop.015;Surt kills Freyr, Jormungandr kills Thor, Fenrir kills Odin;;;;;;;;;;;;;x
+EVTOPTDaaop.015;Surt kills Tyr, Jormungandr kills Heimdall, Fenrir kills Thor;;;;;;;;;;;;;x
+EVTDESAaaop.016;Legends say that Odin sacrificed his eye for knowledge. What value is your eye compared to wisdom?;;;;;;;;;;;;;x
+EVTOPTAaaop.016;In the Allfather's steps I follow;;;;;;;;;;;;;x
+EVTOPTBaaop.016;I've already lost an eye, where's the harm in taking the other?;;;;;;;;;;;;;x
+EVTOPTCaaop.016;Forgive me Allfather, for I have no more eyes to give;;;;;;;;;;;;;x
+EVTOPTDaaop.016;Superstitious nonsense, my eye is far too valuable;;;;;;;;;;;;;x
+EVTDESAaaop.017;Theres nothing vikings love more than raiding. So what better way to honor the gods than killing helpless fools in their names?;;;;;;;;;;;;;x
+EVTOPTAaaop.017;For treasure and glory!;;;;;;;;;;;;;x
+EVTTOOLTIPAaaop.017;To continue the quest you must personally raid holdings, the tougher the holding the better;;;;;;;;;;;;;x
+EVTOPTBaaop.017;This is for the AI, if you see this please report it.;;;;;;;;;;;;;x
+EVTDESAaaop.019;You have done all you can think of to honor the gods. Now to find the old man again and see what he thinks now.;;;;;;;;;;;;;x
+EVTOPTAaaop.019;Surely this is more than enough;;;;;;;;;;;;;x
+EVTTITLEAaaop.020;Journey's End;;;;;;;;;;;;;x
+EVTDESAaaop.020;After hours of searching the area you finally find the old man. Eager to tell him of your deeds you begin speaking yet he raises his hand and says "I already know all that you have done."\n [odins_quest_stage1] [odins_quest_stage2] [odins_quest_stage3] [odins_quest_stage4] [odins_quest_result];;;;;;;;;;;;;x
+odins_quest_stage1A;"You fought against your fellow warriors, a brave thing to do.;;;;;;;;;;;;;x
+odins_quest_stage1B;"You organized a contest of strength, yet merely watched it unfold.;;;;;;;;;;;;;x
+odins_quest_stage1C;"You organized a contest of strength, yet did not care about the outcome. Did you think that would be enough?;;;;;;;;;;;;;x
+odins_quest_stage2A;You have shown your knowledge of the gods by correcting the foolish skald.;;;;;;;;;;;;;x
+odins_quest_stage2B;You could not even correct a foolish man attempting to teach children about the gods, making you the bigger fool.;;;;;;;;;;;;;x
+odins_quest_stage3A;You have removed your eye in an imitation of Odin, an act worthy of praise.;;;;;;;;;;;;;x
+odins_quest_stage3B;Although you already were missing an eye, you chose to remove the other one in honor of Odin. This goes beyond merely honoring the gods.;;;;;;;;;;;;;x
+odins_quest_stage3C;You are already blind my friend, and thus cannot judge you for what you could not do.;;;;;;;;;;;;;x
+odins_quest_stage3D;You considered removing an eye in honor of Odin, but cowardly banished the thought later.;;;;;;;;;;;;;x
+odins_quest_stage4A;You raided villages, churches,  and peasants, wheres the glory in taking from those who can barely defend themselves?";;;;;;;;;;;;;x
+odins_quest_stage4B;You raided castles and lords, taking their earnings by force. A commendable feat.";;;;;;;;;;;;;x
+odins_quest_fail;The old man looks away from you and sighs "I should not have expected anything from these mortal fools." He barely finished talking and just disappeared. You look around but can no longer find him.;;;;;;;;;;;;;x
+odins_quest_success;The old man grins and stands up. "You have proven me wrong my friend. Your courage and fervor I admire, truly the gods smile upon you. For I already do." He shoves a small object wrapped in a cloth into your hands."Here mortal, a gift." You look up at him confused, but you are met with more confusion as the old man has completely disappeared.;;;;;;;;;;;;;x
+EVTOPTAaaop.020;What? What nonsense is this?;;;;;;;;;;;;;x
+EVTTOOLTIPAaaop.020;You failed to impress the old man;;;;;;;;;;;;;x
+EVTOPTBaaop.020;What? I..what?;;;;;;;;;;;;;x
+EVTDESAaaop.021;Gazing into the eye you spot nobles conspiring, thieves skulking, and assassins waiting. The eye has revealed a sinister plot.;;;;;;;;;;;;;x
+EVTOPTAaaop.021;Interesting;;;;;;;;;;;;;x
+EVTDESAaaop.022;Infinite knowledge lies in the palm of your hand, you need only grasp and understand it.;;;;;;;;;;;;;x
+EVTOPTAaaop.022;Knowledge benefits us all;;;;;;;;;;;;;x
+EVTDESAaaop.023;You see through the eyes of the heroes of old, facing the challenges brought upon them by the gods. Through their hardships, you learn to adapt and improve.;;;;;;;;;;;;;x
+EVTOPTAaaop.023;I have become a greater [Root.GetManWoman];;;;;;;;;;;;;x
+EVTDESAaaop.025;Your son [From.GetFirstName] has been showing signs of a strange illness recently. Neither you or anyone close to you recognizes the disease. He has a very high fever, and it's possible that he may not survive.;;;;;;;;;;;;;x
+
+EVTTITLEAaaop.025;Dark Days;;;;;;;;;;;;;x
+EVTOPTAaaop.025;Call the physician at once!;;;;;;;;;;;;;x
+EVTTOOLTIPAaaop.025;The Court Physician is summoned;;;;;;;;;;;;;x
+EVTOPTBaaop.025;Doesn't anyone know anything?;;;;;;;;;;;;;x
+EVTTOOLTIPBaaop.025;Without a physician all you have left is hope;;;;;;;;;;;;;x
+EVTDESAaaop.026;Your lord's son is suffering from a strange illness. He has summoned you to attempt to cure him.;;;;;;;;;;;;;x
+EVTOPTAaaop.026;I will try;;;;;;;;;;;;;x
+EVTTITLEAaaop.027;Dark Days;;;;;;;;;;;;;x
+EVTDESAaaop.027;Your son gets worse. He starts to shiver and sweat uncontrolably. Your physician is franticly trying everything he can but will it be enough?;;;;;;;;;;;;;x
+EVTDESBaaop.027;Your son gets worse. He starts to shiver and sweat uncontrolably. You feel helpless as you have no idea what to do, looking for a physician now would be too late.;;;;;;;;;;;;;x
+EVTOPTAaaop.027;May the gods show mercy;;;;;;;;;;;;;x
+EVTTOOLTIPAaaop.027;You pray to the gods;;;;;;;;;;;;;x
+EVTTITLEAaaop.028;Dark Days;;;;;;;;;;;;;x
+EVTDESAaaop.028;A few moments pass, then a few more, yet nothing happens. Your son is still alive, his fever gone, his strength returned. The disease disappeared as mysteriously as it appeared. Out the window a lone raven has perched.;;;;;;;;;;;;;x
+EVTDESBaaop.028;A few moments pass, then a few more, yet nothing happens. Your son is still alive, but weak. The worse has passed and he will surely recover in time.;;;;;;;;;;;;;x
+EVTDESCaaop.028;A few moments pass, then a few more, your son keeps shaking violently until he shakes no more. He is dead, a victim of this strange illness.;;;;;;;;;;;;;x
+EVTOPTAaaop.028;I shall sacrifice a ram to the Allfather!;;;;;;;;;;;;;x
+EVTOPTBaaop.028;Thank the gods!;;;;;;;;;;;;;x
+EVTOPTCaaop.028;My poor boy...;;;;;;;;;;;;;x
+EVTDESAaaop.029;As you face your enemy's army you realize that you've been seperated from your forces. You stand alone, surrounded by men eager to end your life. Slowly they close in on you. One of them gets eager and rushes forward, you manage to impale him on your spear but have now lost your only weapon. Death draws near...\n You grab a nearby stick, trying to poke your enemies away in a futile attempt at survival. The blunt stick has impaled a soldier...how? You pull it out and stand aghast as the stick now has an elaborate spearhead on the tip. You know not how a stick transformed into a spear, and you do not care as now your enemies bewildered by what they saw flee from you.;;;;;;;;;;;;;x
+EVTDESBaaop.029;[From.GetFullName] is rumored to have been saved by the Allfather from a deadly illness at infancy. Rumors have turned to reality as he now weilds the mighty spear Gungnir into battle. His foes now tremble at his approach, and the Germanic people rally behind him.;;;;;;;;;;;;;x
+EVTTITLEAaaop.029;Alone and Surrounded;;;;;;;;;;;;;x
+EVTOPTAaaop.029;With this spear I shall stand atop the world;;;;;;;;;;;;;x
+EVTOPTBaaop.029;A great man indeed;;;;;;;;;;;;;x
+EVTDESAaaop.030;You have surrounded [From.GetBestName]. His spear is broken and shield sundered. Yet despite all this he charges towards his enemies with a broken stick. The faces of his foes turn from laughter to fear, as his stick has changed into an ornate spear which easily peirces their thick armor.;;;;;;;;;;;;;x
+EVTOPTAaaop.030;No, stay away demon!;;;;;;;;;;;;;x
+EVTDESAaaop.031;War has come. Germanic Warriors from across the lands rally towards you, the wielder of Gungnir. Sate their desire for bloodlust quickly, as they will surely leave when the war is over.;;;;;;;;;;;;;x
+EVTOPTAaaop.031;To battle!;;;;;;;;;;;;;x
+
+
+#West African
+
+EVTDESAaaop.201;The High Priest thinks that perhaps you should make some attempt at following the teachings of The Legends before making such ridiculous requests.;;;;;;;;;;;;;x  
+EVTDESBaaop.201;The High Priest is pleased with your actions and thus decided to bless your rule.;;;;;;;;;;;;;x 
+EVTDESCaaop.201;The High Priest is impressed with you, and has decided to bestow upon you the greatest gift he has.;;;;;;;;;;;;;x 
+EVTOPTAaaop.201;Well, I don't like [From.GetHerHim] either;;;;;;;;;;;;;x 
+EVTOPTBaaop.201;This will surely help;;;;;;;;;;;;;x 
+EVTOPTCaaop.201;I am humbled by [From.GetHerHis] generosity;;;;;;;;;;;;;x 
+
+
+#Finnish/Soume
+
+EVTTITLEAaaop.400;Kalevanmiekka;;;;;;;;;;;;;x
+EVTDESAaaop.400;As you sit in your court, a shifty man asks for an audience. He tells you that he has something you may want, the sword of Kalevi. Kalevi was reputed to be a legendary hero and ruler, surely having his sword would be a powerful boon to you and your family. The shifty man offers to give it to you, for the right price of course.;;;;;;;;;;;;;x
+EVTOPTAaaop.400;He shall have his money;;;;;;;;;;;;;x
+EVTOPTBaaop.400;That's not worth the price;;;;;;;;;;;;;x
+EVTDESAaaop.401;The Sampo lies broken, and most of it's pieces are lost. With such a daunting task ahead, you depart on your journey.;;;;;;;;;;;;;x
+EVTOPTAaaop.401;May fortune be with me;;;;;;;;;;;;;x
+EVTDESAaaop.403;After a year of chasing rumors and whispers, you have managed to locate a fragment.;;;;;;;;;;;;;x
+EVTOPTAaaop.403;One step closer;;;;;;;;;;;;;x
+EVTDESAaaop.404;Searching everywhere and following every rumor for the past year has left you exhausted. The fragment could be anywhere and who knows how long this would take.;;;;;;;;;;;;;x
+EVTOPTAaaop.404;Perhaps it was not meant to be;;;;;;;;;;;;;x
+EVTTITLEAaaop.405;The Sampo Rebuilt;;;;;;;;;;;;;x
+EVTDESAaaop.405;The craftsmen bring before you a large box. As your men proceed to break it open, a single gold coin rolls falls to the floor through one of the box's widening cracks, you pick it up. In the opened box you see a very well-made quern. The craftsmen speak "This is not the first time we have found coins near the Sampo on our way back here. Flour and salt, too... It seems one's fortunes increase just by being near it." Rolling the coin on your knuckles you ponder the importance of this. You may have found the means to create wealth from nothingness itself.;;;;;;;;;;;;;x
+EVTOPTAaaop.405;Eternal wealth shall be mine!;;;;;;;;;;;;;x
+EVTDESAaaop.406;A very loud merchant is desperately trying to sell a scroll. He claims that a strange man sold it to him, but he is unable to make sense of the words on it. You take a look at the scroll and recognize the old Finnish Runes, but you can't make any sense of it either.;;;;;;;;;;;;;x
+EVTOPTAaaop.406;I shall buy it and study it further;;;;;;;;;;;;;x
+EVTOPTBaaop.406;What rubbish;;;;;;;;;;;;;x
+EVTDESAaaop.407;You gather all your books on Finnish myths and history, and prepare to unravel the meaning of the strange scroll.;;;;;;;;;;;;;x
+EVTOPTAaaop.407;Time to find the truth behind this;;;;;;;;;;;;;x
+EVTDESAaaop.408;After months of hard work, you have finally deciphered the scroll. This is the magic scroll of Antero Vipunen, a great giant said to possess incredible magical knowledge. While some may question the existence of such magic, you have no doubt that it will be of some use to you.;;;;;;;;;;;;;x
+EVTOPTAaaop.408;A treasure trove of knowledge!;;;;;;;;;;;;;x
+EVTDESAaaop.409;Months have passed, and you are still no closer to discovering the meaning of this scroll. You tell one of your servants to get rid of the scroll as you leave in frustration.;;;;;;;;;;;;;x
+EVTOPTAaaop.409;What a waste of time!;;;;;;;;;;;;;x
+
+
+#Slavic
+
+EVTDESAaaop.600;On Kupala day, young people jump over the flames of bonfires in a ritual test of bravery and faith. The failure of a couple in love to complete the jump while holding hands is a sign of their destined separation.;;;;;;;;;;;;;x
+EVTOPTAaaop.600;I shall prove my worth;;;;;;;;;;;;;x
+EVTOPTBaaop.600;Let us jump, my love;;;;;;;;;;;;;x
+EVTOPTCaaop.600;I don't want to participate;;;;;;;;;;;;;x
+EVTDESAaaop.601;After the rituals are complete, everyone has gone off to search for the fabled Fern Flowers said to bloom only on the day of the Kupala Festival. Prosperity and luck await those who find one.;;;;;;;;;;;;;x
+EVTOPTAaaop.601;Join the search;;;;;;;;;;;;;x
+EVTDESAaaop.602;You manage to find a few rare herbs and such but no Fern Flower. Yet you still had a wonderful time today.;;;;;;;;;;;;;x
+EVTDESBaaop.602;As you look around the bushes you spy a pretty unique looking herb, could this be it? Is it the fabled Fern Flower?;;;;;;;;;;;;;x
+EVTOPTAaaop.602;There's always next time;;;;;;;;;;;;;x
+EVTOPTBaaop.602;It sure is;;;;;;;;;;;;;x
+
+EVTTITLEAaaop.603;The Hidden Blade;;;;;;;;;;;;;x
+EVTDESAaaop.603;As you return to your castle you decide to take a shortcut through the nearby woods. You spot a great oak tree overlooking a small pond, but something about the tree strikes you as odd. As you move closer you see a small hole beneath the tree, and theres something shining inside. You reach inside and pull out a large sword which you immediately recognize from the old legends. This is Kladenets, the Hidden Blade, the Self Swinging Sword and the Sword of Steel.;;;;;;;;;;;;;x
+EVTOPTAaaop.603;It shall serve me well;;;;;;;;;;;;;x
+
+EVTDESAaaop.605;You have inherited the Axe of Perun from your predecessor, but are too young to face the Slavic challengers. Be ready for them when you come of age.;;;;;;;;;;;;;x
+EVTOPTAaaop.605;I hope I'll be strong enough by then;;;;;;;;;;;;;x
+EVTDESAaaop.607;You have inherited the Axe of Perun from your predecessor, the strongest Slavic warriors shall fight for their right to challenge you for it. Until you prove yourself worthy, you may not wield the Thunder God's axe.;;;;;;;;;;;;;x
+EVTDESBaaop.607;You have finally come of age and now the strongest Slavic warriors shall fight for their right to challenge you for the Axe of Perun. Until you prove yourself worthy, you may not wield the Thunder God's axe.;;;;;;;;;;;;;x
+EVTOPTAaaop.607;Let them come!;;;;;;;;;;;;;x
+EVTDESAaaop.608;I [From.GetTitledName] await all those who would challenge me for the Thunder God's axe, come and face me if you think yourself worthy!;;;;;;;;;;;;;x
+EVTOPTAaaop.608;The axe shall be mine!;;;;;;;;;;;;;x
+EVTOPTBaaop.608;I don't think I'm strong enough;;;;;;;;;;;;;x
+EVTDESAaaop.609;The lords have finally decided on the location of the challenge grounds, and so you prepare to depart.;;;;;;;;;;;;;x
+EVTOPTAaaop.609;To glory!;;;;;;;;;;;;;x
+EVTDESAaaop.610;As you arrive you notice that three other great warriors have gathered to challenge [From.GetTitledName] for the axe. Yet only the strongest has the honor to face [From.GetHerHim].;;;;;;;;;;;;;x
+EVTOPTAaaop.610;I shall prevail!;;;;;;;;;;;;;x
+EVTTOOLTIPAaaop.610;You enter the melee;;;;;;;;;;;;;x
+EVTDESAaaop.613;You have emerged victorious! Now for the final challenge against [From.GetTitledName].;;;;;;;;;;;;;x
+EVTOPTAaaop.613;I shall destroy [From.GetHerHim]!;;;;;;;;;;;;;x
+EVTDESAaaop.614;You were no match for the other challengers. Defeated and shamed, you start the journey home.;;;;;;;;;;;;;x
+EVTOPTAaaop.614;If only I was stronger;;;;;;;;;;;;;x
+EVTDESAaaop.615;At last the challengers have faced eachother in a brawl and the winner stands before you eager to take his prize. The final duel is about to begin.;;;;;;;;;;;;;x
+EVTOPTAaaop.615;The axe belongs to the strong!;;;;;;;;;;;;;x
+EVTDESAaaop.616;Your opponent lies broken before you, there can be no doubt to your strength among the Slavic people. As you walk away, you hear a crack of thunder in the distance, the Thunder God gives his approval.;;;;;;;;;;;;;x
+EVTOPTAaaop.616;I am Perun's Champion!;;;;;;;;;;;;;x
+EVTDESAaaop.617;You lie on the cold hard ground as your opponent grins, you have lost. Has Perun forsaken you, or are you simply too weak?;;;;;;;;;;;;;x
+EVTOPTAaaop.617;God of Thunder, why?;;;;;;;;;;;;;x
+EVTDESAaaop.618;[From.GetTitledName] is utterly defeated, and you emerge victorious with your new prize. You are truly the strongest among the Slavic people.;;;;;;;;;;;;;x
+EVTDESBaaop.618;[From.GetTitledName] has defeated while skillfully evading all your attacks, the crowd is confused on how you got this far. The axe has slipped further beyond your reach.;;;;;;;;;;;;;x
+EVTOPTAaaop.618;I am Perun's Champion!;;;;;;;;;;;;;x
+EVTTOOLTIPAaaop.618;You take the axe with you;;;;;;;;;;;;;x
+EVTOPTBaaop.618;Why has the God of Thunder forsaken me?;;;;;;;;;;;;;x
+EVTwinning;of winning;;;;;;;;;;;;;x
+EVTlosing;of losing;;;;;;;;;;;;;x
+
+
+#Baltic/Romuvan
+
+EVTDESAaaop.800;Alone at night in your room, a sense of dread fills you. Slowly the form of a man materializes in front of you. "Greetings impious wretch, I am Velnias." The devil himself has appeared before you, and offers you an item of great power, for a price.;;;;;;;;;;;;;x
+EVTOPTAaaop.800;A few lives mean nothing to me!;;;;;;;;;;;;;x
+EVTOPTBaaop.800;My children? Never!;;;;;;;;;;;;;x
+EVTDESAaaop.801;With the new scriptures and traditions in place, the newly appointed head of the Romuvan faith presents you with a branch he claims to come from the World Tree itself. For you have ensured the survival of your pagan faith.;;;;;;;;;;;;;x
+EVTOPTAaaop.801;For the Romuvan faith!;;;;;;;;;;;;;x
+
+#Tengri
+
+EVTDESAaaop.1000;One of your oldest guards comes up to you with his spear, he says "My Khan, I will soon pass from this world, and with no sons im afraid my familys legacy will fade into nothingness. You are strong and fearless, you should be the one holding his spear not some old man.".;;;;;;;;;;;;;x
+EVTOPTAaaop.1000;I am honored my friend.;;;;;;;;;;;;;x
+EVTDESAaaop.1001;As you ride around the battlefield, a strange looking stone crashes mere feet in front of you. You decide to quickly take it and return to battle.;;;;;;;;;;;;;x
+EVTOPTAaaop.1001;This might be useful;;;;;;;;;;;;;x
+EVTDESAaaop.1002;With the help of your smiths, you have forged a powerful blade that will inspire awe in all those who see it.;;;;;;;;;;;;;x
+EVTOPTAaaop.1002;I shall name it Skai Unav, the Sword of the Sky;;;;;;;;;;;;;x 
+
+
+#Zunist
+
+EVTDESAaaop.1203;Your son [From.GetFirstName] has finally returned from his service at the Knights of the Sun, and he brings with him all the knowledge and experience he gained by serving mighty Zun. Now he stands ready to serve his dynasty once more.;;;;;;;;;;;;;x 
+EVTOPTAaaop.1203;[From.GetSheHe] has returned a better man;;;;;;;;;;;;;x 
+EVTDESAaaop.1204;You now stand more akin a god than a man, such prominence requires a fitting symbol. The royal smith smiles as he presents to you his masterpiece, a majestic crown unlike any made before.;;;;;;;;;;;;;x 
+EVTOPTAaaop.1204;I am the greatest;;;;;;;;;;;;;x 
+EVTTITLEAaaop.1207;The Eternal Flame;;;;;;;;;;;;;x 
+EVTDESAaaop.1207;As you and your men go around desecrating the heathens' temples, you find an odd reliquary hidden away in one of them. It's locked and a note is wrapped around the handle, it reads "Beware to who find this, turn back and forget it's existence. This flame cannot be extinguished. It has burned all who touch it to ash, let it be locked away and forgotten, lest it claim more lives." You give your men a shrug and break the lock, inside rests a flail burning with such intensity that your men scamper away, but you feel nothing. You reach in and claim the flail as your own.;;;;;;;;;;;;;x 
+EVTOPTAaaop.1207;May it burn the heathens in the Fires of Zun;;;;;;;;;;;;;x 
+EVTDESAaaop.1208;Enough is enough, your vassals constantly scheme to undermine your authority. Your courtiers are useless, and nothing gets done. Perhaps they need something to remind them what happens to those who fail to produce results. You order your blacksmith to fashion a mask that should get the job done. He is hesitant at first, but decides its best to follow your orders and gets to work. He then presents you with the mask.;;;;;;;;;;;;;x 
+EVTOPTAaaop.1208;This should do it!;;;;;;;;;;;;;x 
+
+#Hellenic
+EVTDESAaaop.1400;The Box lies open before you, darkness engulfs the room then light shines. One moment you hear birds singing the other people screaming. You feel weak, then strong. Nothing makes sense. After closing the box, you feel different somehow.;;;;;;;;;;;;;x 
+EVTOPTAaaop.1400;I feel odd...;;;;;;;;;;;;;x 
+EVTDESAaaop.1401;Against the wishes of your entire council you have decided to open Pandora's Box. A wave of dread washes over the room as soon as you open it, followed by warmth. You feel sick, then well. Your court laughs then cries. Nothing makes sense. The fate of the realm is unknown.;;;;;;;;;;;;;x
+EVTOPTAaaop.1401;Quick, check on everything!;;;;;;;;;;;;;x 
+EVTTOOLTIPAaaop.1401;Up to three of your demesne provinces will suffer random effects;;;;;;;;;;;;;x 
+EVTDESAaaop.1402;You may have opened the box before, or perhaps you didn't, you're not so sure anymore. It matters not as you decide to open Pandora's Box. As soon as you open it images of [pandoras_child.GetFirstName] flood your mind. As the images fade, you wonder what they mean.;;;;;;;;;;;;;x
+EVTOPTAaaop.1402;What has happened to [pandoras_child.GetFirstName]?;;;;;;;;;;;;;x 
+EVTDESAaaop.1403;Whatever change happened to [pandoras_child.GetFirstName] seems to have disappeared. Fate is indeed cruel.;;;;;;;;;;;;;x 
+EVTOPTAaaop.1403;But..but why?;;;;;;;;;;;;;x 
+EVTDESAaaop.1404;You peer into the open box, nothing. You look harder, nothing. With a sigh you step back and look up, nothing.;;;;;;;;;;;;;x
+EVTOPTAaaop.1404;Only darkness...;;;;;;;;;;;;;x 
+
+
+
+
+
+
+
+
+
+
+

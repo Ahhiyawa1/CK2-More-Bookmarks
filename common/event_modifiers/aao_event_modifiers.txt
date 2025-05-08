@@ -1,0 +1,157 @@
+
+
+#############################
+###### Character ######
+#############################
+
+denied_crown = {
+	icon = 28
+	vassal_opinion = -20
+}	
+
+perun_champion = {
+	icon = 48
+	martial = 2
+	same_religion_opinion = 20
+}
+
+african_blessing_modifier = {
+	icon = 48
+	health = 1
+	same_religion_opinion = 10
+}
+
+priestly_breastplate_debuff = {
+	icon = 26
+	temple_vassal_tax_modifier = -0.1
+	church_opinion = -25
+}
+
+christian_pilgrims = {
+	icon = 17
+	christian_opinion = 10
+	monthly_character_wealth = 2.5
+}
+muslim_pilgrims = {
+	icon = 2
+	muslim_opinion = 10
+	monthly_character_wealth = 2.5
+}
+both_pilgrims = {
+	icon = 63
+	christian_opinion = 5
+	muslim_opinion = 5
+	monthly_character_wealth = 5
+}
+
+fafnir_curse = {
+	icon = 110
+	
+	general_opinion = -10
+	health = 2
+	fertility = -10
+	diplomacy = -2
+	martial = 5
+	stewardship = -2
+	intrigue = -2
+	learning = -2
+}
+odins_intervention = {
+	icon = 48
+	
+	health = 1
+	monthly_character_piety = 0.5
+	same_religion_opinion = 5
+}
+
+
+
+
+
+#############################
+###### Province ######
+#############################
+
+##Pandora
+pandoras_box_province_pos1 = {
+	icon = 52
+	
+	local_tax_modifier = 0.2
+}
+pandoras_box_province_pos2 = {
+	icon = 52
+	
+	levy_size = 0.25
+	levy_reinforce_rate = 0.50
+}
+pandoras_box_province_pos3 = {
+	icon = 52
+	
+	local_build_cost_modifier = -0.30
+	local_build_time_modifier = -0.30
+}
+pandoras_box_province_pos4 = {
+	icon = 52
+	
+	local_revolt_risk = -0.05
+}
+pandoras_box_province_pos5 = {
+	icon = 52
+	
+	tradevalue = 15
+}
+
+pandoras_box_province_neg1 = {
+	icon = 53
+	
+	local_tax_modifier = -0.2
+}
+pandoras_box_province_neg2 = {
+	icon = 53
+	
+	levy_size = -0.25
+	levy_reinforce_rate = -0.50
+}
+pandoras_box_province_neg3 = {
+	icon = 53
+	
+	local_build_cost_modifier = 0.30
+	local_build_time_modifier = 0.30
+}
+pandoras_box_province_neg4 = {
+	icon = 53
+	
+	local_revolt_risk = 0.05
+}
+pandoras_box_province_neg5 = {
+	icon = 53
+	
+	tradevalue = -15
+}
+
+poseidon_blessing = {
+	icon = 77
+	
+	local_tax_modifier = 0.25
+	local_revolt_risk = -0.05
+	disease_defence = 0.2
+	tradevalue = 5
+}
+
+
+
+
+
+###CDS and Timers
+gaze_into_eye_timer = { icon = 1 }
+open_pandoras_box_timer = { icon = 1 }
+
+
+
+
+
+
+
+
+
+

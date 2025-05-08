@@ -1,0 +1,20 @@
+# County Title
+title = c_aracena
+# Settlements
+max_settlements = 4
+b_aracena = castle
+b_almonasterlareal = city
+b_italica = temple
+# Misc
+culture = romano_hispanic
+religion = catholic
+800.1.1 = { culture = visigothic }
+################################################################################
+# History
+################################################################################
+929.1.1 = { culture = andalusian_arabic religion = sunni } 
+1246.1.1 = { culture = portuguese religion = catholic } 
+1255.1.1 = { culture = castilian } 
+################################################################################
+# 405 - Aracena
+################################################################################

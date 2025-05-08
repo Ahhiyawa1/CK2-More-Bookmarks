@@ -1,0 +1,40 @@
+spriteTypes = {
+
+    spriteType = {
+		name = "GFX_evt_atlantis_ship"
+		texturefile = "gfx\\event_pictures\atlantis_ship.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_atlantean_landing"
+		texturefile = "gfx\\event_pictures\atlantean_landing.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_atlantean_victory"
+		texturefile = "gfx\\event_pictures\atlantean_victory.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_atlantean_hoplites"
+		texturefile = "gfx\\event_pictures\atlantean_hoplites.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_atlantis_battle"
+		texturefile = "gfx\\event_pictures\atlantis_battle.tga"
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_evt_atlantean_defeat"
+		texturefile = "gfx\\event_pictures\atlantean_defeat.tga"
+		allwaystransparent = yes
+	}
+
+
+}

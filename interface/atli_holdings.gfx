@@ -1,0 +1,165 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_settlement_castle_atlanteangfx"
+		texturefile = "gfx\\interface\\placeholder_castle_byzantine.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_city_atlanteangfx"
+		texturefile = "gfx\\interface\\placeholder_city_byzantine.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_westerngfx"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+    
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_hellenicgfx"
+		texturefile = "gfx\\interface\\placeholder_temple_hellenic_byzantine.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_mongolgfx"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_mesoamericangfx"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_persiangfx"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_westafricangfx"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_indiangfx"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_muslimgfx"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_norsegfx"
+		texturefile = "gfx\\interface\\placeholder_temple_hellenic_byzantine.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	#Looted
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_norsegfx_looted"
+		texturefile = "gfx\\interface\\placeholder_temple_hellenic_byzantine_looted.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_castle_atlanteangfx_looted"
+		texturefile = "gfx\\interface\\placeholder_castle_byzantine_looted.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_city_atlanteangfx_looted"
+		texturefile = "gfx\\interface\\placeholder_city_byzantine_looted.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_westerngfx_looted"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine_looted.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+    
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_hellenicgfx_looted"
+		texturefile = "gfx\\interface\\placeholder_temple_hellenic_byzantine_looted.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_norsegfx_looted"
+		texturefile = "gfx\\interface\\placeholder_temple_hellenic_byzantine_looted.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_mongolgfx_looted"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine_looted.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_mesoamericangfx_looted"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine_looted.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_persiangfx_looted"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine_looted.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_westafricangfx_looted"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine_looted.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_indiangfx_looted"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine_looted.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+	
+	spriteType = {
+		name = "GFX_settlement_temple_atlanteangfx_muslimgfx_looted"
+		texturefile = "gfx\\interface\\placeholder_temple_byzantine_looted.tga"
+		noOfFrames = 1
+		norefcount = yes
+	}
+
+}

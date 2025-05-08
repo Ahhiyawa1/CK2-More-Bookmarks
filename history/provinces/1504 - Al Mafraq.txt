@@ -1,0 +1,18 @@
+# County Title
+title = c_al_mafraq
+# Settlements
+max_settlements = 3
+b_mafraq = castle
+b_thughra = city
+b_jarash = temple
+# Misc
+culture = levantine_arabic
+religion = nestorian
+867.1.1 = { religion = sunni }
+################################################################################
+# History
+################################################################################
+1110.1.1 = { max_settlements = 4 b_buwayda = castle } 
+################################################################################
+# 1504 - Al Mafraq
+################################################################################

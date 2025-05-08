@@ -1,0 +1,118 @@
+#
+# List of options showing in the Game Rules screen
+#
+# format is:
+# rule_token = {
+#	name = "TEXT_KEY_FOR_NAME"
+#	desc = "TEXT_KEY_FOR_LONG_DESC"
+#	option = {										# please note that the first option is always the default option
+#		name = option_token
+#		text = "TEXT_KEY_FOR_OPTION_NAME"
+#		achievements = no							# by default achievements = yes, allows or disallows achievements
+#	}
+# }
+
+acr_ai_revival = {
+	name = ancrel.ai_revival_rule
+	dlc = "The Old Gods"
+	group = "RULE_GROUP_RELIGION"
+	group = "RULE_GROUP_CL_KINICH"
+
+	option = {
+		name = on
+		text = ancrel.ai_revival_rule.on
+		desc = ancrel.ai_revival_rule.on.desc
+	}
+	option = {
+		name = reduced
+		text = ancrel.ai_revival_rule.reduced
+		desc = ancrel.ai_revival_rule.reduced.desc
+	}
+	option = {
+		name = off
+		text = ancrel.ai_revival_rule.off
+		desc = ancrel.ai_revival_rule.off.desc
+	}
+}
+
+acr_unfit_king_beta = {
+	name = ancrel.unfit_king_beta
+	dlc = "The Old Gods"
+	group = "RULE_GROUP_RELIGION"
+	group = "RULE_GROUP_CL_KINICH"
+
+	option = {
+		name = off
+		text = ancrel.unfit_king_rule.off
+		desc = ancrel.unfit_king_rule.off.desc
+	}
+	option = {
+		name = on
+		text = ancrel.unfit_king_rule.on
+		desc = ancrel.unfit_king_rule.on.desc
+	}
+}
+
+acr_pagan_papal = {
+	name = acr_pagan_papal_rule
+	dlc = "The Old Gods"
+	group = "RULE_GROUP_RELIGION"
+	group = "RULE_GROUP_CL_KINICH"
+
+	option = {
+		name = off
+		text = acr_pagan_papal_rule.off
+		desc = acr_pagan_papal_rule.off.desc
+	}
+	option = {
+		name = cardinals
+		text = acr_pagan_papal_rule.cardinals
+		desc = acr_pagan_papal_rule.cardinals.desc
+	}
+	option = {
+		name = antipopes
+		text = acr_pagan_papal_rule.antipopes
+		desc = acr_pagan_papal_rule.antipopes.desc
+	}
+	option = {
+		name = both
+		text = acr_pagan_papal_rule.both
+		desc = acr_pagan_papal_rule.both.desc
+	}
+}
+
+acr_holy_order_cardinals = {
+	name = acr_holy_order_cardinals_rule
+	dlc = "The Old Gods"
+	group = "RULE_GROUP_RELIGION"
+	group = "RULE_GROUP_CL_KINICH"
+
+	option = {
+		name = off
+		text = acr_holy_order_cardinals_rule.off
+		desc = acr_holy_order_cardinals_rule.off.desc
+	}
+	option = {
+		name = on
+		text = acr_holy_order_cardinals_rule.on
+		desc = acr_holy_order_cardinals_rule.on.desc
+	}
+}
+
+acr_mpb = {
+	name = acr_mpb_rule
+	dlc = "The Old Gods"
+	group = "RULE_GROUP_RELIGION"
+	group = "RULE_GROUP_CL_KINICH"
+
+	option = {
+		name = off
+		text = acr_mpb_rule.off
+		desc = acr_mpb_rule.off.desc
+	}
+	option = {
+		name = on
+		text = acr_mpb_rule.on
+		desc = acr_mpb_rule.on.desc
+	}
+}

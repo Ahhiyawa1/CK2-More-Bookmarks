@@ -1,0 +1,140 @@
+
+colada = { # Count Rodrigo of Valencia
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+	}
+    
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = c_valencia
+			}
+			religion_group = christian
+			year = 1094
+		}
+	}
+    artifacts = {
+        colada = {
+            value = 1
+        }
+    }
+}
+
+tizona = { # Count Rodrigo of Valencia
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+	}
+    
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = c_valencia
+			}
+			religion_group = christian
+			year = 1094
+		}
+	}
+    artifacts = {
+        tizona = {
+            value = 1
+        }
+    }
+}
+
+joyeuse = { # Charlemagne's Sword
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			NOT = { has_dlc = "Mystics" }
+		}
+	}
+    
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = k_france
+			}
+			year = 769
+		}
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = e_karling
+			}
+			year = 867
+		}
+	}
+    artifacts = {
+        joyeuse = {
+            value = 1
+        }
+    }
+}
+
+legbiter = { # King Magnus of Norway's Sword
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = k_norway
+			}
+			year = 1099
+		}
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = k_norway
+			}
+			year = 1103
+		}
+	}
+    artifacts = {
+        legbiter = {
+            value = 1
+        }
+    }
+}
+
+zulfiqar = { # zulfiqar
+	max_amount = 1
+	spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 20
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_group = muslim
+			is_landed = yes
+		}
+	}
+
+	artifacts = {
+		zulfiqar = {
+			value = 1
+		}
+	}
+}

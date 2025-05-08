@@ -1,0 +1,30 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+###### Overridden vanilla keys have to be loaded last since patch 2.5;;;;;;;;;;;;;;x
+###### Non-Catholic specific text for College of Cardinals;;;;;;;;;;;;;;x
+SHOW_COLLEGE_OF_CARDINALS;[Root.GetReligiousHeadElectionBody];[Root.GetReligiousHeadElectionBody];;;;;;;;;;;;x
+POPE_VOTE_SCORE;YReligious head suitability: $SCORE$?!;YPertinence du chef religieux : $SCORE$?!;;;;;;;;;;;;x
+CANDIDATE_SCORE;YCandidate appointment score?!;YScore de nomination du candidat ?!;;;;;;;;;;;;x
+SUCCESSOR;Current Successor;Successeur actuel;;;;;;;;;;;;x
+SUCCESSOR_TOOLTIP;This is the current expected successor of the [Root.GetReligiousHeadTitle].;Ceci est le successeur actuel du [Root.GetReligiousHeadTitle].;;;;;;;;;;;;x
+TITLE_GAINED_RELIGIOUS_SETUP;New [Root.GetReligiousHeadElectorTitle] appointed.;Nouveau [Root.GetReligiousHeadElectorTitle] nommé.;;;;;;;;;;;;x
+TITLE_GAINED_RELIGIOUS_LETTER;$NEWHOLDER$ was given a seat in the [Root.GetReligiousHeadElectionBody].;$NEWHOLDER$ s'est vu attribuer une place dans le [Root.GetReligiousHeadElectionBody].;;;;;;;;;;;;x
+TITLE_GAINED_RELIGIOUS_LOG;$NEWHOLDER$ was given a seat in the [Root.GetReligiousHeadElectionBody].;$NEWHOLDER$ s'est vu attribuer une place dans le [Root.GetReligiousHeadElectionBody].;;;;;;;;;;;;x
+###### Map;;;;;;;;;;;;;;x
+b_meir;Akhetaten;Akhetaten;;;;;;;;;;;;x
+###### Vanilla religions;;;;;;;;;;;;;;x
+job_spiritual_hellenic_pagan;Augur;Augure;;;;;;;;;;;;x
+finnish_pagan_reformed;Suomenusko;suomenusko;;;;;;;;;;;;x
+norse_pagan_reformed;Asatru;asatru;;;;;;;;;;;;x
+baltic_pagan_reformed;Romuva;romuva;;;;;;;;;;;;x
+slavic_pagan_reformed;Rodnovery;rodnovery;;;;;;;;;;;;x
+west_african_pagan_reformed;Akan;akan;;;;;;;;;;;;x
+finnish_pagan;Finnic;finnois;;;;;;;;;;;;x
+baltic_pagan;Baltic;balte;;;;;;;;;;;;x
+###### Vanilla events;;;;;;;;;;;;;;x
+###### Not overriden yet, but I want to flavor this for Neoplatonists;;;;;;;;;;;;;;x
+#EVTDESC_4402_DIALOGUE;[Root.GetMOGreeting], [Root.GetSocietyRank] [Root.GetFirstName]\n\nThe hectic life of a ruler rarely allows for sufficient time for contemplation. I ask of you to seclude yourself and think about your life and your actions in order to reach a better understanding of the world.\n\n[Root.GetMOFarewell],\nSigned, [From.GetSocietyRank] [From.GetFirstName];[Root.GetMOGreeting], [Root.GetSocietyRank] [Root.GetFirstName]\n\nLa vie trépidante d'un dirigeant laisse rarement suffisamment de temps pour la contemplation. Je vous demande de vous isoler et de penser à votre vie et à vos actions afin de parvenir à une meilleure compréhension du monde.\n\n[Root.GetMOFarewell],\nSigné, [From.GetSocietyRank] [From.GetFirstName];[Root.GetMOGreeting], [Root.GetSocietyRank] [Root.GetFirstName]\n\nDas hektische Leben eines Herrschers lässt selten genügend Zeit um Nachzudenken. Ich bitte euch daher euch zurückzuziehen und über Leben und Handlungen nachzudenken, um ein besseres Verständnis der Welt zu erlangen.\n\n[Root.GetMOFarewell],\nGezeichnet, [From.GetSocietyRank] [From.GetFirstName];;[Root.GetMOGreeting],[Root.GetSocietyRank][Root.GetFirstName]\n\nLa vida agitada de un gobernante raramente permite tiempo suficiente para la contemplación. Te pido aislarte, reflexionar sobre tu vida y acciones para alcanzar un mejor entendimiento del mundo.\n\n[Root.GetMOFarewell],\nFirmado, [From.GetSocietyRank] [From.GetFirstName];;;;;;;;x
+EVTTITLEHF23123;Neoplatonism Resurgent;Néoplatonisme renaissant;;;;;;;;;;;;x
+EVTDESCHF23123;[From.GetTitledFirstName] has decided to restore the three ancient Schools of Neoplatonism. Based upon the pursuit of reason and moderation, Neoplatonists believe in shunning all excesses and passions in favor of a balanced and rational approach to life, centered around the virtues of Wisdom, Courage, Temperance, and Justice.\nAlthough membership is not excluded to other religions, these philosophies have always been closely related to Hellenism.;[From.GetTitledFirstName] a décidé de restaurer les trois anciennes écoles de néoplatonisme. Basés sur la poursuite de la raison et de la modération, les néo-platoniciens croient qu'il faut fuir tous les excès et toutes les passions au profit d'une approche équilibrée et rationnelle de la vie, centrée sur les vertus de la sagesse, du courage, de la tempérance et de la justice.\nMême si l'appartenance n'est pas exclue pour d'autres religions, ces philosophies ont toujours été étroitement liées à l’hellénisme.;;;;;;;;;;;;x
+EVTOPTAHF23123;The Stoics shall be a bulwark for civilized society!;Les stoïciens seront un rempart pour la société civilisée !;;;;;;;x
+EVTOPTCHF23123;The Skeptics shall be a voice of reason!;Les sceptiques seront une voix de la raison !;;;;;;;x
+EVTOPTDHF23123;The Epicureans will spread enlightenment!;Les épicuriens répandront l'illumination !;;;;;;;x

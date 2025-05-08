@@ -1,0 +1,232 @@
+###########################################
+#                                         #
+# New Immersive Events	                  #
+# Event check		                  #
+# ID NIE.5-NIE.14			  #
+# Written and designed by wielkicien      #
+# Bugfixed by Erbkaiser			  #
+#                                         #
+###########################################
+
+namespace = NIE
+
+#Event checkers
+
+#Thief event chain checker
+character_event = {
+	id = NIE.5
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		has_character_flag = NIE_thief
+		NOT = { has_character_flag = waiting_for_sister }
+	}
+	
+	mean_time_to_happen = {
+		days = 9200
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				had_character_flag = { flag = NIE_thief days = 9000 }
+			}
+			clr_character_flag = NIE_thief
+		}
+	}
+}
+
+#Lazy ruler event checker
+character_event = {
+	id = NIE.6
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		has_character_flag = NIE_lazy_ruling
+	}
+	
+	mean_time_to_happen = {
+		days = 1800
+	}
+	
+	immediate = {
+		clr_character_flag = NIE_lazy_ruling
+	}
+}
+#Depressed ruler event checker
+character_event = {
+	id = NIE.7
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		has_character_flag = NIE_depressed_ruling
+	}
+	
+	mean_time_to_happen = {
+		days = 900
+	}
+	
+	immediate = {
+		clr_character_flag = NIE_depressed_ruling
+	}
+}
+#Stressed ruler event checker
+character_event = {
+	id = NIE.8
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		has_character_flag = NIE_stressed_ruling
+	}
+	
+	mean_time_to_happen = {
+		days = 900
+	}
+	
+	immediate = {
+		clr_character_flag = NIE_stressed_ruling
+	}
+}
+#Craven ruler event checker
+character_event = {
+	id = NIE.9
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		has_character_flag = NIE_craven_ruling
+	}
+	
+	mean_time_to_happen = {
+		days = 900
+	}
+	
+	immediate = {
+		clr_character_flag = NIE_craven_ruling
+	}
+}
+#Weak ruler event checker
+character_event = {
+	id = NIE.10
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		has_character_flag = NIE_weak_ruling
+	}
+	
+	mean_time_to_happen = {
+		days = 900
+	}
+	
+	immediate = {
+		clr_character_flag = NIE_weak_ruling
+	}
+}
+#Lunatic ruler event checker
+character_event = {
+	id = NIE.11
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		has_character_flag = NIE_lunatic_ruling
+	}
+	
+	mean_time_to_happen = {
+		days = 900
+	}
+	
+	immediate = {
+		clr_character_flag = NIE_lunatic_ruling
+	}
+}
+#Possessed ruler event checker
+character_event = {
+	id = NIE.12
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		has_character_flag = NIE_possessed_ruling
+	}
+	
+	mean_time_to_happen = {
+		days = 900
+	}
+	
+	immediate = {
+		clr_character_flag = NIE_possessed_ruling
+	}
+}
+#Opinion event checker
+character_event = {
+	id = NIE.13
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		has_character_flag = NIE_event_opinion
+	}
+	
+	mean_time_to_happen = {
+		days = 550
+	}
+	
+	immediate = {
+		clr_character_flag = NIE_event_opinion
+	}
+}
+
+#Small event-chain checker
+character_event = {
+	id = NIE.14
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		has_character_flag = NIE_eventchainsmall
+	}
+	
+	mean_time_to_happen = {
+		days = 1500
+	}
+	
+	immediate = {
+		clr_character_flag = NIE_eventchainsmall
+	}
+}

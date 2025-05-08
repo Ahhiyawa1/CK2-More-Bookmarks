@@ -1,0 +1,14 @@
+PDP_play_as_rule = {
+	name = "PDP_play_as_rule"
+	group = "PDP_RULE_GROUP"
+	option = {
+		name = off
+		text = "PDP_play_as_off"
+		desc = "PDP_play_as_off_desc"
+	}
+    option = {
+        name = on
+        text = "PDP_play_as_on"
+        desc = "PDP_play_as_on_desc"
+    }
+}

@@ -1,0 +1,6 @@
+on_yearly_pulse = {
+    events = {
+        ART.4321
+        ART.4322
+    }
+}

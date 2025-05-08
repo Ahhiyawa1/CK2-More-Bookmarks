@@ -1,0 +1,17 @@
+# No previous file for Marien
+
+culture = atlantean
+owner = ATL
+controller = ATL
+add_core = ATL
+is_city = yes
+religion = hellenic_pagan
+capital = "Salontos"
+trade_goods = cocoa 
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 1
+discovered_by = CAB
+discovered_by = ARW
+discovered_by = ATL

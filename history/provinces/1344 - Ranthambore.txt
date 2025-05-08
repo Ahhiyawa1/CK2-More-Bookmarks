@@ -1,0 +1,19 @@
+# County Title
+title = c_ranthambore
+# Settlements
+max_settlements = 5
+b_ranthambore = castle
+b_gangapur = city
+b_tonkra = temple
+# Misc
+culture = rajput
+religion = hindu
+################################################################################
+# 1344 - Ranthambore
+################################################################################
+
+################################################################################
+# b_utgir = castle
+# b_mandrael = castle
+# b_sheopur = castle
+################################################################################

@@ -1,0 +1,42 @@
+#VIET Events Rules;;;;;;;;;;;;;;x
+RULE_HARRANIAN;§BHarranian Destruction§!;xxxxx;;;;;;;;;;;;x
+RULE_GROUP_MONOGATARI;CYBRXKHAN'S IMMERSION PACKS;xxxxx;;;;;;;;;;;;x
+RULE_HARRANIAN_ON;On (Default);xxxxx;;;;;;;;;;;;x
+RULE_HARRANIAN_ON_DESC;The Neoplatonic Academy can decline, and the Temple to the Moon destroyed, as happened historically.;xxxxx;;;;;;;;;;;;x
+RULE_HARRANIAN_OFF;Off;xxxxx;;;;;;;;;;;;x
+RULE_HARRANIAN_OFF_DESC;The Neoplatonic Academy will not decline, and the Temple of the Moon cannot be destroyed. They will also be present in later start dates.;xxxxx;;;;;;;;;;;;x
+kcl_cybrixkhan_dunhaung_rule;§WCybrixkhan Immersion:§! Dunhaung;;;;;;;;;;;;;x
+kcl_cybrixkhan_dunhaung.on;On;;;;;;;;;;;;;x
+kcl_cybrixkhan_dunhaung.on.desc;All content from the Dunhaung: Gateway of China Immersion Pack will be §Genabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_dunhaung.music;Music Only;;;;;;;;;;;;;x
+kcl_cybrixkhan_dunhaung.music.desc;Only the music from the Dunhaung: Gateway of China Immersion Pack will be §Genabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_dunhaung.off;Off;;;;;;;;;;;;;x
+kcl_cybrixkhan_dunhaung.off.desc;All content from the Dunhaung: Gateway of China Immersion Pack will be §Kdisabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_pamir_rule;§WCybrixkhan Immersion:§! Pamir;;;;;;;;;;;;;x
+kcl_cybrixkhan_pamir.on;On;;;;;;;;;;;;;x
+kcl_cybrixkhan_pamir.on.desc;All content from the Pamir: The Roof of the World Immersion Pack will be §Genabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_pamir.music;Music Only;;;;;;;;;;;;;x
+kcl_cybrixkhan_pamir.music.desc;Only the music from the Pamir: The Roof of the World Immersion Pack will be §Genabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_pamir.off;Off;;;;;;;;;;;;;x
+kcl_cybrixkhan_pamir.off.desc;All content from the Pamir: The Roof of the World Immersion Pack will be §Kdisabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_amalfi_rule;§WCybrixkhan Immersion:§! Amalfi;;;;;;;;;;;;;x
+kcl_cybrixkhan_amalfi.on;On;;;;;;;;;;;;;x
+kcl_cybrixkhan_amalfi.on.desc;All content from the Amalfi: The Forgotten Republic Immersion Pack will be §Genabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_amalfi.music;Music Only;;;;;;;;;;;;;x
+kcl_cybrixkhan_amalfi.music.desc;Only the music from the Amalfi: The Forgotten Republic Immersion Pack will be §Genabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_amalfi.off;Off;;;;;;;;;;;;;x
+kcl_cybrixkhan_amalfi.off.desc;All content from the Amalfi: The Forgotten Republic Immersion Pack will be §Kdisabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_harranian_rule;§WCybrixkhan Immersion:§! Harranians;;;;;;;;;;;;;x
+kcl_cybrixkhan_harranian.on;On;;;;;;;;;;;;;x
+kcl_cybrixkhan_harranian.on.desc;All content from the Harranian: The Last Hellenic Pagans Immersion Pack will be §Genabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_harranian.music;Music Only;;;;;;;;;;;;;x
+kcl_cybrixkhan_harranian.music.desc;Only the music from the Harranian: The Last Hellenic Pagans Immersion Pack will be §Genabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_harranian.off;Off;;;;;;;;;;;;;x
+kcl_cybrixkhan_harranian.off.desc;All content from the Harranian: The Last Hellenic Pagans Immersion Pack will be §Kdisabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_sparta_rule;§WCybrixkhan Immersion:§! Peloponnesian;;;;;;;;;;;;;x
+kcl_cybrixkhan_sparta.on;On;;;;;;;;;;;;;x
+kcl_cybrixkhan_sparta.on.desc;All content from the Peloponnesian: Sparta's Legacy Immersion Pack will be §Genabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_sparta.music;Music Only;;;;;;;;;;;;;x
+kcl_cybrixkhan_sparta.music.desc;Only the music from the Peloponnesian: Sparta's Legacy Immersion Pack will be §Genabled§!;;;;;;;;;;;;;x
+kcl_cybrixkhan_sparta.off;Off;;;;;;;;;;;;;x
+kcl_cybrixkhan_sparta.off.desc;All content from the Peloponnesian: Sparta's Legacy Immersion Pack will be §Kdisabled§!;;;;;;;;;;;;;x

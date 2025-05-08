@@ -1,0 +1,6 @@
+andamangfx = {
+	skin_tone = 3
+}
+hmongmiengfx = {
+	skin_tone = 1
+}

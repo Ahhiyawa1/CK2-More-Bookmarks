@@ -1,0 +1,3 @@
+atlanteangfx = {
+	skin_tone = 0
+}

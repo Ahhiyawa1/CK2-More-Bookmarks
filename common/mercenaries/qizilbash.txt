@@ -1,0 +1,5 @@
+qizilbash_composition = {
+    levy_size = 4
+	light_cavalry = 600
+	horse_archers = 300
+}

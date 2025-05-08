@@ -1,0 +1,136 @@
+vieti_divus = {
+	vieti_orthodox_opinion = 2
+	hereclemasculist_pagan_opinion = 10
+	vieti_mithras_pagan_opinion = 10
+	romist_pagan_opinion = 12
+	britannic_hyperborean_pagan_opinion = 10
+	vieti_krioticism_opinion = 10
+	global_revolt_risk = -0.02
+	land_morale = 0.10
+	monthly_character_prestige = 0.10
+	defensive_plot_power_modifier = 0.1
+	plot_discovery_chance = 0.1
+	learning = 1
+	icon = 111
+}
+
+britannican_taxation_methods = {
+	icon = 6
+	global_tax_modifier = 0.06
+	demesne_size = 4
+}
+
+madman_of_deccan = {
+	icon = 47
+	demesne_size = 5
+	defensive_plot_power_modifier = 0.1
+	global_revolt_risk = -0.02
+	plot_discovery_chance = 0.1
+}
+
+ire_charge_the_west = {
+	icon = 111
+	demesne_size = 40
+	global_movement_speed = 0.1
+	siege_speed = 0.20
+	global_revolt_risk = -0.04
+	command_modifier = {
+		morale_offence = 0.15
+		morale_defence = 0.15
+	}
+}
+
+vieti_seniores_massacred = {
+	icon = 42
+	romanoindian_opinion = -20
+}
+
+voice_of_pippa = {
+	monthly_character_piety = -0.03
+	church_opinion = -10
+	icon = 35
+}
+
+hrithik_roshan_bodyguard = {
+	combat_rating = 10
+	defensive_plot_power_modifier = 0.3
+	icon = 115
+}
+
+wala_eyepatch = {
+	sex_appeal_opinion = 5
+	pagan_group_opinion = 10
+	
+	combat_rating = -5 #old value: -1
+	icon = 81
+}
+
+
+# elder males
+debug_elder_hmasc_caste = {
+	icon = 41
+	martial = 1
+	stewardship = 1
+	combat_rating = 5
+	monthly_character_prestige = 0.05
+	hereclemasculist_pagan_opinion = 5
+}
+
+# males and amazons
+debug_first_hmasc_caste = {
+	martial = 1
+	combat_rating = 8
+	hereclemasculist_pagan_opinion = 3
+	icon = 117
+}
+
+# women
+debug_second_hmasc_caste = {
+	fertility = 0.05
+	icon = 113
+}
+
+# effeminate males
+debug_third_hmasc_caste = {
+	monthly_character_prestige = -0.05
+	hereclemasculist_pagan_opinion = -3
+	icon = 40
+}
+
+# eunuchs
+debug_fourth_hmasc_caste = {
+	general_opinion = -3
+	hereclemasculist_pagan_opinion = -10
+	icon = 25
+}
+
+
+vieti_witch = {
+	combat_rating = 12 # Vieti Witches bite. Hard.
+	defensive_plot_power_modifier = 0.05
+	plot_discovery_chance = 0.05
+	plot_power_modifier = 0.05
+	monthly_character_piety = -0.10
+	monthly_character_prestige = 0.05
+	global_revolt_risk = 0.01
+	general_opinion = -20
+	global_revolt_risk = 0.02
+	intrigue = 6
+	martial = 1
+	diplomacy = 1
+	icon = 26
+}
+
+stalked_by_vieti_witchboy = {
+	combat_rating = 10 # Vieti Witches bite. Hard.
+	general_opinion = -5
+	martial = 1
+	plot_discovery_chance = 0.1
+	icon = 39
+}
+
+parvus = {
+	icon = 111
+	martial = 2
+	siege_speed = 0.070
+}

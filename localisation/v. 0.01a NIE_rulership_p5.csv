@@ -1,0 +1,58 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+NIE.130a;Sister took lover;;;;;;;;;;;;;x
+EVTNAMENIE.130a;Peasant girl is your lover;;;;;;;;;;;;;x
+EVTDESC_NIE_130a;You have managed to convice peasant girl to abandon her family and join your court as your lover instead. Without a doubt she will quickly see that this was the best for her. In exchange for her service you made free her brother. You order the thief to say his last farewell to sister and he leaves her forever.;;;;;;;;;;;;;x
+EVTOPTA_NIE_130a;She will do fine with me!;;;;;;;;;;;;;x
+sister_took_lover;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.130b;Sister took lover;;;;;;;;;;;;;x
+EVTNAMENIE.130b;Peasant girl is your lover;;;;;;;;;;;;;x
+EVTDESC_NIE_130b;You have managed to convice peasant girl to abandon her family and join your court as your lover. Without a doubt she will quickly see that this was the best for her.;;;;;;;;;;;;;x
+EVTOPTA_NIE_130b;She will do fine with me!;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.131;Peasant girl night forced;;;;;;;;;;;;;x
+EVTNAMENIE.131;Night with peasant girl;;;;;;;;;;;;;x
+EVTDESC_NIE_131;Please, don't…' - she begs you. But the time for begging is over. You force the girl to kneel with her face to the ground. She turns her head to be more comfortable and keep an eye on her defiler. Tears are dropping from her eyes. And that view is giving you the best kind of excitement. You take your time with her, she has to accept your dominance.;;;;;;;;;;;;;x
+EVTOPTA_NIE_131;Better learn to be obedient, girl.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.132;Thief cut hand;;;;;;;;;;;;;x
+EVTNAMENIE.132;Thief looses hand;;;;;;;;;;;;;x
+EVTDESC_NIE_132;As a ruler of the people you are sworn to deliver justice and to protect your realm from any danger. With this words you turn to the thief your guardsman have captured. He says nothing, not even a word. You give an order and in a blink of an eye the thief looses his hand. His scream is heard everywhere around.;;;;;;;;;;;;;x
+EVTOPTA_NIE_132;Now he should stop stealing…;;;;;;;;;;;;;x
+thief_cut_hand;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.133;Thief not accepted to serve;;;;;;;;;;;;;x
+EVTNAMENIE.133;You refused thief's service;;;;;;;;;;;;;x
+EVTDESC_NIE_133;Your decision seems to anger him a little. He nods and then leaves you forever.;;;;;;;;;;;;;x
+EVTOPTA_NIE_133;My court is far better without him.;;;;;;;;;;;;;x
+Thief_not_accepted;Story will end.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.134;Sister leaves your court;;;;;;;;;;;;;x
+EVTNAMENIE.134;Peasant girl leaves your court;;;;;;;;;;;;;x
+EVTDESC_NIE_134;You didn't manage to stop peasant girl from leaving secretly your court. It seems that she was too unhappy and lonely here. You wonder if there was anything you could do earlier to stop her?;;;;;;;;;;;;;x
+EVTOPTA_NIE_134;I already miss her…;;;;;;;;;;;;;x
+Sister_leaves_court;Story will end.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.135;Peasant girl is happy as your courtier;;;;;;;;;;;;;x
+EVTNAMENIE.135;Peasant girl is happy as your courtier;;;;;;;;;;;;;x
+EVTDESC_NIE_135;As days and weeks pass you can clearly see that her life has changed much. She was for sure worried if not too much but it seems that you managed to persuade her. She enjoys life as your courtier and she even found a group of friendly handmaidens. She really is happy right now.;;;;;;;;;;;;;x
+EVTOPTA_NIE_135;She got better life.;;;;;;;;;;;;;x
+Sister_happy_court;Story will end.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.136;Sister ends as wife;;;;;;;;;;;;;x
+EVTNAMENIE.136;Peasant girl ends as your wife;;;;;;;;;;;;;x
+EVTDESC_NIE_136;It is a strange feeling - to love someone you were prohibited to. It is even stranger when you take that person as your spouse. Right beside you stand the most beautiful woman you have ever seen. You've fallen deeply in love with her, as she did with you. You say the words and you are proclaimed husband and wife. Quickly after ceremony you write a decree granting your wife ennoblement.;;;;;;;;;;;;;x
+EVTOPTA_NIE_136;Now I finally feel happy.;;;;;;;;;;;;;x
+Sister_end_marry;Story will end.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.137;Sister ends with dynasty;;;;;;;;;;;;;x
+EVTNAMENIE.137;Peasant girl is granted ennoblement;;;;;;;;;;;;;x
+EVTDESC_NIE_137;The time has come to formalize a little your relationship with your lowborn lover. The longer your relationship lasts the more controversial it becomes. Highborn lord shouldn't have a lowborn mistress - many whispers. So you have taken steps to change current situation. Signing decree of ennoblement will surely shut their mouts and make your lover happy.;;;;;;;;;;;;;x
+EVTOPTA_NIE_137;You are lowborn no more!;;;;;;;;;;;;;x
+Sister_end_dynasty;Story will end.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.138;Sister is happy as lover;;;;;;;;;;;;;x
+EVTNAMENIE.138;Sister is happy as lover;;;;;;;;;;;;;x
+EVTDESC_NIE_138;Such a beautiful girl, such innocence, such passion. And yet you cannot allow yourself to have any higher feelings than simple desire. You inform her that in your best interest is to leave your current situation as it is. Girl standing in front of you surely is a little disappointed, but in the same time she is grateful that you didn't leave her.;;;;;;;;;;;;;x
+EVTOPTA_NIE_138;And she should be.;;;;;;;;;;;;;x
+Sister_end_lover;Story will end.;;;;;;;;;;;;;x

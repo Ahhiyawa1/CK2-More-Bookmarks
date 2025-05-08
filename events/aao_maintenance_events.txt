@@ -1,0 +1,774 @@
+####ID Ranges####
+#Initialization and General 0-199
+#Artifacts 200-399
+
+namespace = aaom
+
+####artifact count initialization
+character_event = {
+	id = aaom.000
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		OR = {
+			has_landed_title = k_papal_state
+			AND = {
+				is_alternate_start = yes
+				OR = {
+					multiplayer = no
+					is_multiplayer_host_character = yes
+				}
+			}
+		}
+		NOR = {
+			has_global_flag = aao_initializing
+			has_global_flag = aao_initialized 
+		}
+	}
+	
+	immediate = {
+		set_global_flag = aao_initializing
+		
+		###check hip/ck2+
+		##ck2+
+		if = {
+			limit = { e_placeholder = { has_title_flag = secondary_startup } }
+			set_global_flag = aao_plus_detected
+		}
+		
+		##HIP
+		else_if = {
+			limit = { e_hip = { has_holder = yes } }
+			set_global_flag = aao_hip_detected
+		}
+		
+		
+		###set global variables for all possible artifacts from rumors
+		#Christian
+		set_variable = { which = global_bones_of_st_peter value = 1 } #guarenteed spawn
+		set_variable = { which = global_seamless_robe_of_jesus value = 1 } #guarenteed spawn
+		set_variable = { which = global_fragment_of_true_cross value = 1 } #guarenteed spawn
+		set_variable = { which = global_holy_foreskin value = 3 } #guarenteed spawn
+		set_variable = { which = global_image_of_edessa value = 0 } #no spawns
+		set_variable = { which = global_chains_of_st_peter value = 0 } #chance spawn
+		set_variable = { which = global_right_hand_st_demetrius value = 0 } #chance spawn
+		set_variable = { which = global_veil_of_veronica value = 0 } #no spawns 
+		set_variable = { which = global_remains_of_st_cessianus value = 0 } #no spawns
+		set_variable = { which = global_weeping_statue value = 0 } #chance spawn
+		
+		#Jewish
+		set_variable = { which = global_staff_of_moses value = 0 } #no spawns
+		set_variable = { which = global_davids_harp value = 0 }	#no spawns
+		set_variable = { which = global_tabernacle value = 0 } #no spawns
+		set_variable = { which = global_maccabean_shield value = 0 } #no spawns
+		set_variable = { which = global_brass_snake value = 2 } #guarenteed spawn
+		set_variable = { which = global_davids_sling value = 0 } #no spawns
+		
+		#Muslim
+		set_variable = { which = global_holy_banner_of_mohammad value = 0 } #chance spawn
+		set_variable = { which = global_sword_of_mohammad value = 5 } #guarenteed spawns
+		set_variable = { which = global_letter_of_mohammad value = 0 } #chance spawn
+		set_variable = { which = global_blessed_sandals value = 0 } #no spawns
+		set_variable = { which = global_cloak_of_mohammad value = 1 } #guarenteed spawn
+		set_variable = { which = global_mohammads_beard value = 4 } #guarenteed spawn
+		set_variable = { which = global_mohammads_bowl value = 0 } #no spawns
+		set_variable = { which = global_tooth_of_mohammad value = 0 } #no spawns
+		
+		#Zoroastrian
+		set_variable = { which = global_cup_of_jamshid value = 0 } #no spawns
+		set_variable = { which = global_babr_e_bayan value = 0 } #no spawns
+		set_variable = { which = global_derafsh_kaviani value = 0 } #chance spawn
+		set_variable = { which = global_cyrus_cylinder value = 0 } #no spawns
+		set_variable = { which = global_keshmar_cypress_branch value = 3 } #guarenteed spawn
+		
+		#Pagan
+		set_variable = { which = global_laimas_scales value = 0 } #no spawns
+		set_variable = { which = global_alpamyshs_chains value = 0 } #no spawns
+		
+		#Indian
+		set_variable = { which = global_mountain_of_light_diamond value = 0 } #no spawns
+		set_variable = { which = global_elaborate_danda value = 0 } #chance spawn
+		set_variable = { which = global_sarira value = 1 } #guarenteed spawn
+		set_variable = { which = global_sariraka_actual_body_part value = 0 } #chance spawn
+		
+		set_variable = { which = global_sampo_fragment value = 4} #guarenteed spawn
+		
+		#calculate how many rumor artifacts already spawned
+		any_character = {
+			limit = { num_of_artifacts = 1 }
+			any_artifact = {
+				trigger_switch = {
+					on_trigger = artifact_type
+					
+					chains_of_st_peter = { change_variable = { which = global_chains_of_st_peter value = 1 } }
+					right_hand_st_demetrius = { change_variable = { which = global_right_hand_st_demetrius value = 1 } }
+					weeping_statue = { change_variable = { which = global_weeping_statue value = 1 } }
+					
+					holy_banner_of_mohammad = { change_variable = { which = global_holy_banner_of_mohammad value = 1 } }
+					letter_of_mohammad = { change_variable = { which = global_letter_of_mohammad value = 1 } }
+					
+					derafsh_kaviani = { change_variable = { which = global_derafsh_kaviani value = 1 } }
+					
+					elaborate_danda = { change_variable = { which = global_elaborate_danda value = 1 } }
+					sariraka_actual_body_part = { change_variable = { which = global_sariraka_actual_body_part value = 1 } }
+					
+					#let the original owner of the axe use it
+					axe_of_perun = { owner = { set_character_flag = peruns_wrath } }
+				}
+			}
+		}
+	
+		set_global_flag = aao_initialized
+		clr_global_flag = aao_initialized
+	}
+}
+
+
+
+
+
+
+####artifact destruction events
+character_event = {
+	id = aaom.001
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = { 
+			OR = {
+				artifact_type = sunlight_medallion 
+				artifact_type = herbal_medicine
+				artifact_type = ashanti_doll
+				artifact_type = slayers_skull
+			}
+		}
+		
+	}
+	immediate = { FROM = { destroy_artifact = yes } }
+}
+
+
+####artifact inheritance events
+character_event = {
+	id = aaom.002
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = { FROM = { has_artifact_flag = special_inheritance } }
+	
+	immediate = {
+		FROM = { save_event_target_as = inherited_artifact }
+		
+		event_target:inherited_artifact = {
+			trigger_switch = {
+				on_trigger = artifact_type
+				
+				#lombardy crown
+				iron_crown_of_lombardy = {
+					#italy empire first
+					if = {
+						limit = {
+							e_italy = { has_holder = yes }
+							ROOT = { NOT = { has_landed_title = e_italy } }
+						}
+						e_italy = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+					#italy kingdom next
+					else_if = {
+						limit = { k_italy = { has_holder = yes } }
+						if = {
+							limit = {
+								k_italy = {
+									holder_scope = {
+										independent = no
+										top_liege = { has_landed_title = e_hre }
+									}
+								}
+							}
+							e_hre = {
+								holder_scope = {
+									event_target:inherited_artifact = {
+										transfer_artifact = {
+											from = ROOT
+											to = PREV
+										}
+									}
+								}
+							}
+						}
+						else_if = {
+							limit = { ROOT = { NOT = { has_landed_title = k_italy } } }
+							k_italy = {
+								holder_scope = {
+									event_target:inherited_artifact = {
+										transfer_artifact = {
+											from = ROOT
+											to = PREV
+										}
+									}
+								}
+							}
+						}
+					}
+					#hre next
+					else_if = {
+						limit = {
+							e_hre = { has_holder = yes }
+							ROOT = { NOT = { has_landed_title = e_hre } }
+						}
+						e_hre = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+					#pope last
+					else_if = {
+						limit = { ROOT = { NOT = { has_landed_title = k_papal_state } } }
+						k_papal_state = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				#hre
+				crown_hre = {
+					if = {
+						limit = { ROOT = { NOT = { has_landed_title = e_hre } } }
+						if = {
+							limit = { e_hre = { has_holder = yes } }
+							e_hre = {
+								holder_scope = {
+									event_target:inherited_artifact = {
+										transfer_artifact = {
+											from = ROOT
+											to = PREV
+										}
+									}
+								}
+							}
+						}
+						else = {
+							k_papal_state = {
+								holder_scope = {
+									event_target:inherited_artifact = {
+										transfer_artifact = {
+											from = ROOT
+											to = PREV
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				#byzantine/roman
+				crown_byzantine = {
+					if = {
+						limit = { 
+							ROOT = { 
+								NOR = { 
+									has_landed_title = e_byzantium 
+									has_landed_title = e_roman_empire
+								} 
+							} 
+						}
+						if = {
+							limit = { e_roman_empire = { has_holder = yes } }
+							e_roman_empire = {
+								holder_scope = {
+									event_target:inherited_artifact = {
+										transfer_artifact = {
+											from = ROOT
+											to = PREV
+										}
+									}
+								}
+							}
+						}
+						else_if = {
+							limit = { e_byzantium = { has_holder = yes } }
+							e_byzantium = {
+								holder_scope = {
+									event_target:inherited_artifact = {
+										transfer_artifact = {
+											from = ROOT
+											to = PREV
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+				#persia
+				crown_pahlavi = {
+					if = {
+						limit = { 
+							ROOT = { 
+								NOT = { has_landed_title = e_persia } 
+								e_persia = { has_holder = yes }
+							}
+						}
+						e_persia = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+			
+			
+				#germanic fylkir
+				crown_fylkir = {
+					if = {
+						limit = { 
+							ROOT = { 
+								NOT = { has_landed_title = d_norse_pagan_reformed } 
+								d_norse_pagan_reformed = { has_holder = yes }
+							}
+						}
+						d_norse_pagan_reformed = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				#tengri fylkir
+				crown_tengri_fylkir = {
+					if = {
+						limit = { 
+							ROOT = { 
+								NOT = { has_landed_title = d_tengri_pagan_reformed } 
+								d_tengri_pagan_reformed = { has_holder = yes }
+							}
+						}
+						d_tengri_pagan_reformed = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				#finnish fylkir
+				crown_finnish_fylkir = {
+					if = {
+						limit = { 
+							ROOT = { 
+								NOT = { has_landed_title = d_finnish_pagan_reformed } 
+								d_finnish_pagan_reformed = { has_holder = yes }
+							}
+						}
+						d_finnish_pagan_reformed = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				#african fylkir
+				crown_west_african_fylkir = {
+					if = {
+						limit = { 
+							ROOT = { 
+								NOT = { has_landed_title = d_west_african_pagan_reformed } 
+								d_west_african_pagan_reformed = { has_holder = yes }
+							}
+						}
+						d_west_african_pagan_reformed = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				#zun fylkir
+				crown_zun_fylkir = {
+					if = {
+						limit = { 
+							ROOT = { 
+								NOT = { has_landed_title = d_zun_pagan_reformed } 
+								d_zun_pagan_reformed = { has_holder = yes }
+							}
+						}
+						d_zun_pagan_reformed = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				#slavic fylkir
+				crown_slavic_fylkir = {
+					if = {
+						limit = { 
+							ROOT = { 
+								NOT = { has_landed_title = d_slavic_pagan_reformed } 
+								d_slavic_pagan_reformed = { has_holder = yes }
+							}
+						}
+						d_slavic_pagan_reformed = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				#romuva fylkir
+				crown_romuva_fylkir = {
+					if = {
+						limit = { 
+							ROOT = { 
+								NOT = { has_landed_title = d_baltic_pagan_reformed } 
+								d_baltic_pagan_reformed = { has_holder = yes }
+							}
+						}
+						d_baltic_pagan_reformed = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				#aztec fylkir
+				crown_aztec_fylkir = {
+					if = {
+						limit = { 
+							ROOT = { 
+								NOT = { has_landed_title = d_aztec_reformed } 
+								d_aztec_reformed = { has_holder = yes }
+							}
+						}
+						d_aztec_reformed = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				#bon fylkir
+				scepter_bon_fylkir = {
+					if = {
+						limit = { 
+							ROOT = { 
+								NOT = { has_landed_title = d_bon_reformed } 
+								d_bon_reformed = { has_holder = yes }
+							}
+						}
+						d_bon_reformed = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				#hellenic fylkir
+				scepter_hellenic_fylkir = {
+					if = {
+						limit = { 
+							ROOT = { 
+								NOT = { has_landed_title = k_hellenic_pagan } 
+								k_hellenic_pagan = { has_holder = yes }
+							}
+						}
+						k_hellenic_pagan = {
+							holder_scope = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+			
+				###dynasty
+				sampo = {
+					if = {
+						limit = {
+							NOR = {
+								ROOT = { dynasty_head = { character = ROOT } }
+								original_owner = { ROOT = { dynasty = PREV } }
+							}
+							original_owner = { any_dynasty_member = { is_alive = yes } }
+						}
+						original_owner = {
+							dynasty_head = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				gungnir = {
+					if = {
+						limit = {
+							NOR = {
+								ROOT = { dynasty_head = { character = ROOT } }
+								original_owner = { ROOT = { dynasty = PREV } }
+							}
+							original_owner = { any_dynasty_member = { is_alive = yes } }
+						}
+						original_owner = {
+							dynasty_head = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				blazing_crown = {
+					if = {
+						limit = {
+							NOR = {
+								ROOT = { dynasty_head = { character = ROOT } }
+								original_owner = { ROOT = { dynasty = PREV } }
+							}
+							original_owner = { any_dynasty_member = { is_alive = yes } }
+						}
+						original_owner = {
+							dynasty_head = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				#to make sure its not on an unlanded character
+				joyeuse = {
+					if = {
+						limit = { 
+							ROOT = { 
+								OR = {
+									is_landed = no
+									mercenary = yes
+									holy_order = yes
+								}
+							}
+						}
+					}
+					random_playable_ruler = {
+						limit = {
+							OR = {
+								culture = german
+								culture = old_frankish
+								culture = dutch
+								culture = frankish
+								culture = occitan
+								dynasty = 25061
+								#is_bloodline_member_of = carolingian
+							}
+						}
+						preferred_limit = {
+							higher_tier_than = duke
+							dynasty = 25061
+							#is_bloodline_member_of = carolingian
+						}
+						preferred_limit = {
+							dynasty = 25061
+							#is_bloodline_member_of = carolingian
+						}
+						preferred_limit = { higher_tier_than = count }
+						event_target:inherited_artifact = {
+							transfer_artifact = {
+								from = ROOT
+								to = PREV
+							}
+						}
+					}
+				}
+				
+				joyeuse_ceromonial = {
+					if = {
+						limit = {
+							NOR = {
+								ROOT = { dynasty_head = { character = ROOT } }
+								original_owner = { ROOT = { dynasty = PREV } }
+							}
+							original_owner = { any_dynasty_member = { is_alive = yes } }
+						}
+						original_owner = {
+							dynasty_head = {
+								event_target:inherited_artifact = {
+									transfer_artifact = {
+										from = ROOT
+										to = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+####event chain character deaths failsafe for pagans
+character_event = {
+	id = aaom.020
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	religion_group = pagan_group
+
+	trigger = {
+		religion_openly_norse_or_reformed_trigger = yes
+	}
+	
+	immediate = { 
+		if = {
+			limit = { has_character_flag = fafnir }
+			clr_global_flag = fafnir_alive 
+		}
+		if = {
+			limit = { has_character_flag = odins_quest }
+			clr_global_flag = odins_quest_active 
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

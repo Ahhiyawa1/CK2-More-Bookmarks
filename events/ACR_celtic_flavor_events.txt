@@ -1,0 +1,731 @@
+###################################
+#
+# ANCIENT RELIGIONS
+# - Celtic Flavor Events
+#
+# Event IDs celtic.150 - 0151 
+#			celtic.1252 - 1253
+#			celtic.208 - 0210
+#			celtic.256
+#
+###################################
+
+# Written by Patrick Marchand
+
+namespace = celtic
+
+# Meeting a Bard
+character_event = {
+	id = celtic.150
+	desc = celtic.150.desc
+	picture = GFX_evt_thebard
+	border = GFX_event_normal_frame_religion
+	
+	only_rulers = yes
+	
+	trigger = {
+		true_religion_in_celtic_subgroup_trigger = yes
+		is_landed = yes
+		is_abroad = no
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+		mult_modifier = {
+			factor = 0.5
+			trait = zealous
+		}
+		mult_modifier = {
+			factor = 2.0
+			trait = cynical
+		}
+		mult_modifier = {
+			factor = 0.5
+			trait = paranoid
+		}
+		mult_modifier = {
+			factor = 0.5
+			trait = mystic
+		}
+		mult_modifier = {
+			factor = 0.5
+			trait = ambitious
+		}
+		mult_modifier = {
+			factor = 1.5
+			trait = content
+		}
+	}
+	
+	option = {
+		name = celtic.150.a
+		piety = 25
+
+		random_list = {
+			10 = {
+				change_learning = 1
+			}
+			90 = {}
+		}
+	}
+	
+	option = {
+		name = celtic.150.b
+		trigger = {
+			trait = poet
+		}
+		tooltip_info = poet
+		custom_tooltip = {
+			text = sing_poetry
+			piety = 25
+			prestige = 25
+			random_list = {
+				50 = {
+					change_learning = 2
+				}
+				50 = {}
+			}
+		}
+	}
+}
+
+# The Afanc
+character_event = {
+	id = celtic.151
+	desc = celtic.151.desc
+	picture = GFX_evt_lakeside
+	border = GFX_event_normal_frame_religion
+	
+	only_rulers = yes
+	
+	trigger = {
+		true_religion_in_celtic_subgroup_trigger = yes
+		is_abroad = no
+		trigger_if = {
+			limit = { has_character_flag = acr_had_afanc_event }
+			had_character_flag = {
+				flag = acr_had_afanc_event
+				years >= 5
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = { has_character_flag = acr_had_afanc_event }
+			clr_character_flag = acr_had_afanc_event
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 1000
+
+		mult_modifier = {
+			factor = 0.4
+			trait = zealous
+		}
+		mult_modifier = {
+			factor = 2.0
+			trait = cynical
+		}
+		mult_modifier = {
+			factor = 0.3
+			trait = paranoid
+		}
+		mult_modifier = {
+			factor = 0.6
+			trait = brave
+		}
+		mult_modifier = {
+			factor = 0.5
+			trait = proud
+		}
+		mult_modifier = {
+			factor = 1.8
+			trait = content
+		}
+		mult_modifier = {
+			factor = 0.5
+			is_sick_or_injured_trigger = yes
+		}
+		mult_modifier = {
+			factor = 1.5
+			has_character_flag = acr_had_afanc_event
+		}
+	}
+	
+	option = {
+		name = celtic.151.a
+		piety = 20
+		prestige = 20
+		random_list = {
+			20 = { add_trait_partially_brave_effect = yes }
+			20 = {
+				if = {
+					limit = { has_dlc = "Reapers" }
+					add_trait_severely_injured_effect = yes
+				}
+				else = { add_trait_wounded_effect = yes }
+			}
+			5 = { add_maimed_trait_effect = yes }
+			5 = {
+				death = {
+					death_reason = death_accident
+				}
+			}
+			50 = { prestige = 20 }
+		}
+	}
+	option = {
+		name = celtic.151.b
+		piety = 20
+		prestige = -25
+		add_trait_partially_craven_effect = yes
+	}
+	
+	after = { set_character_flag = acr_had_afanc_event }
+}
+
+# The banshee
+character_event = {
+	id = celtic.1252
+	desc = celtic.1252.desc
+	picture = GFX_evt_banshee
+	border = GFX_event_normal_frame_religion
+	
+	only_rulers = yes
+	
+	trigger = {
+		true_religion_in_celtic_subgroup_trigger = yes
+		is_landed = yes
+		is_abroad = no
+		trigger_if = {
+			limit = { has_character_flag = acr_had_banshee_event }
+			had_character_flag = {
+				flag = acr_had_banshee_event
+				years >= 2
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = { has_character_flag = acr_had_banshee_event }
+			clr_character_flag = acr_had_banshee_event
+		}
+		health = -1
+	}
+	
+	mean_time_to_happen = {
+		months = 1000
+
+		mult_modifier = {
+			factor = 0.5
+			trait = zealous
+		}
+		mult_modifier = {
+			factor = 2.0
+			trait = cynical
+		}
+		mult_modifier = {
+			factor = 0.5
+			trait = paranoid
+		}
+		mult_modifier = {
+			factor = 0.5
+			trait = brave
+		}
+		mult_modifier = {
+			factor = 0.5
+			trait = humble
+		}
+		mult_modifier = {
+			factor = 1.5
+			trait = content
+		}
+		mult_modifier = {
+			factor = 0.4
+			has_injury_trigger = yes
+		}
+		mult_modifier = {
+			factor = 0.4
+			is_sick_or_injured_trigger = yes
+		}
+		mult_modifier = {
+			factor = 1.5
+			has_character_flag = acr_had_banshee_event
+		}
+	}
+	
+	option = {
+		name = celtic.1252.a
+		piety = 75
+		random_list = {
+			10 = {
+				trigger = { NOT = { trait = depressed } }
+				add_trait = depressed
+			}
+			10 = {
+				trigger = { NOT = { trait = stressed } }
+				add_trait = stressed
+			}
+			10 = {
+				trigger = { NOT = { trait = zealous } }
+				add_trait_partially_zealous_effect = yes
+			}
+			70 = {}
+		}
+	}
+	option = {
+		name = celtic.1252.b
+		prestige = 50
+		random_list = {
+			20 = {
+				trigger = { NOT = { trait = cynical } }
+				add_trait_partially_cynical_effect = yes
+			}
+			80 = {}
+		}
+	}
+	
+	after = { set_character_flag = acr_had_banshee_event }
+}
+
+# Bran's Voyage
+character_event = {
+	id = celtic.1253
+	desc = celtic.1253.desc
+	picture = GFX_evt_boatcoast
+	border = GFX_event_normal_frame_religion
+	
+	only_rulers = yes
+	
+	trigger = {
+		true_religion_in_celtic_subgroup_trigger = yes
+		is_landed = yes
+		is_abroad = no
+		trigger_if = {
+			limit = { has_character_flag = acr_had_bran_event }
+			had_character_flag = {
+				flag = acr_had_bran_event
+				years >= 8
+			}
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = { has_character_flag = acr_had_bran_event }
+			clr_character_flag = acr_had_bran_event
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 750
+		mult_modifier = {
+			factor = 0.5
+			trait = zealous
+		}
+		mult_modifier = {
+			factor = 2.0
+			trait = cynical
+		}
+		mult_modifier = {
+			factor = 0.5
+			trait = paranoid
+		}
+		mult_modifier = {
+			factor = 0.5
+			trait = mystic
+		}
+		mult_modifier = {
+			factor = 0.5
+			trait = ambitious
+		}
+		mult_modifier = {
+			factor = 1.5
+			trait = content
+		}
+		mult_modifier = {
+			factor = 2
+			has_character_flag = acr_had_bran_event
+		}
+	}
+	
+	option = {
+		name = celtic.1253.a
+		piety = 20
+		prestige = 25
+		random_list = {
+			10 = { change_learning = 1 }
+			90 = {}
+		}
+	}
+	
+	after = { set_character_flag = acr_had_bran_event }
+}
+
+#######################################
+#
+# - Journey to St Kilda
+#
+#######################################
+
+# Written by Jacob Hodge
+
+#Character Sick, Rumor of Celts on St Kilda
+
+character_event = {
+	id = celtic.208
+	desc = celtic.208.desc
+	picture = GFX_evt_Whispering_in_ear
+	border = GFX_event_normal_frame_religion
+
+	min_age = 16
+	prisoner = no
+	only_rulers = yes
+	has_dlc = "The Old Gods"
+	culture_group = celtic
+
+	trigger = {
+		is_ill = yes
+		completely_controls = c_innse_gall
+		NOT = { religion_group = pagan_group }
+		NOT = { has_global_flag = celtic_reformation }
+		OR = {
+			has_game_rule = {
+				name = acr_ai_revival
+				value = on
+			}
+			ai = no
+		}
+	}
+
+	mean_time_to_happen = {
+		months = 12 # Short as minor illness go away fast, and severe illness are deadly.
+		mult_modifier = {
+			factor = 0.5
+			has_landed_title = c_innse_gall
+		}
+		mult_modifier = {
+			factor = 2.0
+			trait = cynical
+		}
+		mult_modifier = {
+			factor = 2.0
+			trait = zealous
+		}
+		mult_modifier = {
+			factor = 0.7
+			trait = sympathy_pagans
+		}
+		mult_modifier = {
+			factor = 10
+			has_game_rule = {
+				name = acr_ai_revival
+				value = reduced
+			}
+			ai = yes
+		}
+	}
+
+	option = {
+		name = celtic.208.a
+		ai_chance = {
+			factor = 50
+		}
+		custom_tooltip = {
+			text = travel_island
+			hidden_tooltip = {
+				character_event = { id = celtic.209 days = 5 }
+			}
+		}
+	}
+	option = {
+		name = celtic.208.b
+		ai_chance = {
+			factor = 50
+		}
+		custom_tooltip = {
+			text = ignore_rumors
+		}
+	}	
+}
+
+# Arrival at St Kilda
+character_event = {
+	id = celtic.209
+	desc = celtic.209.desc
+	picture = GFX_evt_merchant_ship_at_sea_republic
+
+	is_triggered_only = yes
+
+	option = {	 #Accept the healing/conversion
+		name = celtic.209.a
+		ai_chance = {
+			factor = 50
+		}
+		hidden_tooltip = {
+			character_event = { id = celtic.210 days = 10 }
+		}
+	}
+	option = {
+		name = celtic.209.b
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				NOR = {
+					trait = zealous
+					trait = cynical
+				}
+			}
+			add_trait = zealous 
+		}
+	}
+}
+
+# Accept their faith
+character_event = {
+	id = celtic.210
+	desc = celtic.210.desc
+	picture = GFX_evt_Pagan_dolmen
+
+	is_triggered_only = yes
+
+	option = { #Character healed/converted
+		name = celtic.210.a
+		
+		if = {
+			limit = { religion_group = christian }
+			add_trait = sympathy_christendom
+		}
+		if = {
+			limit = { religion_group = muslim }
+			add_trait = sympathy_islam
+		}
+		if = {
+			limit = { religion_group = zoroastrian_group }
+			add_trait = sympathy_zoroastrianism
+		}
+		if = {
+			limit = { religion_group = indian_group }
+			add_trait = sympathy_indian
+		}
+		if = {
+			limit = { religion_group = jewish_group }
+			add_trait = sympathy_judaism
+		}
+		
+		religion = celtic_pagan
+		
+		custom_tooltip = {
+			text = MIRACLE_STKILDA
+			remove_disease_trait_effect = yes
+			remove_disease_flags_effect = yes
+			remove_symptoms_effect = yes
+			hidden_tooltip = {
+				any_vassal = {
+					character_event = { id = celtic.300 days = 2 }
+				}
+				any_courtier = {
+					limit = {
+						is_landed = no # don't want to get landed councilors twice!
+						liege = {
+							character = ROOT # or prisoners
+						}
+					}
+					character_event = { id = celtic.300 days = 2 }
+				}
+			}
+		}
+	}
+}
+
+########################################
+#
+# - First Celtic Emperor
+#
+########################################
+
+# Y Mab Darogan
+# on_create_title
+# on_new_holder
+# ROOT is character, FROM is title
+narrative_event = {
+	id = celtic.256
+	title = celtic.256.title
+	desc = celtic.256.desc
+	picture = GFX_evt_y_mab_darogan
+	sound = bloodline_added
+
+	major = yes
+	hide_from = yes
+	
+	only_playable = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_global_flag = ancrel_pendragon }
+		religion_openly_in_celtic_subgroup_trigger = yes
+		OR = {
+			culture = welsh
+			culture = breton
+			culture = pictish
+		}
+		e_britannia = {
+			title = FROM
+		}
+	}
+
+	immediate = {
+	}
+	
+	weight_multiplier = {
+		factor = 1
+	}
+
+	option = { #Ok
+		name = celtic.256.a
+		trigger = {
+			has_landed_title = e_britannia
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+		
+		give_nickname = nick_pendragon
+		set_global_flag = ancrel_pendragon
+		prestige = 200
+		piety = 100
+
+		if = {
+			limit = {
+				is_female = no
+				has_dlc = "Holy Fury"
+			}
+			create_bloodline = {
+				type = arthur_pendragon
+			}		
+		}
+		else_if = {
+			limit = {
+				is_female = yes
+				has_dlc = "Holy Fury"
+			}
+			create_bloodline = {
+				type = arthur_pendragon
+				inheritance = matrilineal
+			}		
+		}
+	}
+	
+	option = { #Ok
+		name = celtic.256.a
+		trigger = {
+			NOT = { has_landed_title = e_britannia }
+			religion_openly_in_celtic_subgroup_trigger = yes
+		}
+	}
+
+	option = {
+		name = celtic.256.b
+		trigger = {
+			OR = {
+				religion_group = christian
+				religion_group = muslim
+				religion_group = zoroastrian_group
+				AND = {
+					religion_group = pagan_group
+					religion_openly_in_celtic_subgroup_trigger = no
+				}
+			}
+		}
+	}
+
+	option = {
+		name = celtic.256.c
+		trigger = {
+			religion_group = indian_group
+		}
+	}
+}
+
+########################################
+#
+# - Unfit King
+#
+########################################
+
+# A Celtic King is maimed and thus unfit for rule!
+# [on_yearly_pulse]
+character_event = {
+	id = celtic.1000
+	desc = celtic.1000.desc
+	picture = GFX_evt_nuada_mag_tuired
+
+	is_triggered_only = yes
+
+	only_playable = yes
+
+	trigger = {
+		religion_openly_celtic_or_reformed_trigger = yes
+		has_game_rule = {
+			name = acr_unfit_king_beta
+			value = on
+		}
+		NOT = { has_character_modifier = unfit_gaelic_king }
+		is_maimed_trigger = yes
+	}
+
+	option = {
+		name = ancrel.troublesome
+		add_character_modifier = { name = unfit_gaelic_king duration = -1 }
+	}
+}
+
+# merida and the bear
+
+#Celtic Warrior Lodge has been recreated.
+#Players notified.
+narrative_event = {
+	id = celtic.303
+	title = celtic.303.title
+	desc = celtic.303.desc
+	hide_from = yes
+	hide_new = yes
+
+	picture = GFX_evt_celtic_warriors
+	
+	only_playable = yes
+	is_triggered_only = yes
+	
+	option = {
+		name = celtic.303.a
+		trigger = {
+			OR = { 
+				society_member_of = warrior_lodge_celtic
+				religion_openly_celtic_or_reformed_trigger = yes
+				religion_secretly_celtic_or_reformed_trigger = yes
+				can_join_society = warrior_lodge_celtic
+			}
+		}
+		if = {
+			limit = { 
+				NOT = { society_member_of = warrior_lodge_celtic }
+				can_join_society = warrior_lodge_celtic
+			}
+			join_society = warrior_lodge_celtic
+		}
+	}
+	option = {
+		name = celtic.303.b
+		trigger = {
+			NOR = { 
+				society_member_of = warrior_lodge_celtic
+				religion_openly_celtic_or_reformed_trigger = yes
+				religion_secretly_celtic_or_reformed_trigger = yes
+			}
+		}
+	}
+}

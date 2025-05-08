@@ -1,0 +1,33 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+;;;;;;;;;;;;;;x
+launch_NIE_events;Manually launch NIE;;;;;;;;;;;;;x
+launch_NIE_events_desc;Manually launch NIE;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.139;Decision to launch events;;;;;;;;;;;;;x
+EVTNAMENIE.139;Launching New Immersive Events;;;;;;;;;;;;;x
+EVTDESC_NIE_139;Hello and thank you for using NIE! Due to popular request, I've added an option to manually launch all of my events. From this window you can decide whether you want to launch event-chain or just solo event. If you decide to do so please be careful with important saves. I give you no guarantee that manually launching events one by one won't give you any trouble. As long as you will launch them one at time you should be OK. So, for example, please do not launch the same event-chain, unless the previous has already ended. Other than that you shouldn't have any trouble, have fun!;;;;;;;;;;;;;x
+EVTOPTA_NIE_139;Launch event-chain;;;;;;;;;;;;;x
+EVTOPTB_NIE_139;Launch solo event;;;;;;;;;;;;;x
+EVTOPTC_NIE_139;Close window;;;;;;;;;;;;;x
+launch_event_chain;Launch event-chain;;;;;;;;;;;;;x
+launch_event;Launch solo event;;;;;;;;;;;;;x
+close_decision;Close window;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.140;Decision to launch event-chain;;;;;;;;;;;;;x
+EVTNAMENIE.140;Launching event-chains;;;;;;;;;;;;;x
+EVTDESC_NIE_140;Currently there are two event-chains to launch. First (from initial release) - 'A thief and a lovely girl', has 38 events and 14 endings. Second, from version 0.01c is 'Wife ambitions', has 12 events and 5 endings. List of all possible endings is in the game files in the changelog file. Remember that you can easily send me your ideas of events and even REQUEST some events via Steam!;;;;;;;;;;;;;x
+EVTOPTA_NIE_140;Launch Thief event-chain;;;;;;;;;;;;;x
+EVTOPTB_NIE_140;Launch Wife ambitions event-chain;;;;;;;;;;;;;x
+EVTOPTC_NIE_140;Return to previous screen;;;;;;;;;;;;;x
+EVTOPTD_NIE_140;Close window;;;;;;;;;;;;;x
+launch_thief_event_chain;Launch Thief event-chain;;;;;;;;;;;;;x
+launch_my_wife_event_chain;Launch Wife Ambitions event-chain;;;;;;;;;;;;;x
+return_to_previous;Return to previous screen;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.141;Decision to launch solo events;;;;;;;;;;;;;x
+EVTNAMENIE.141;Launching solo events;;;;;;;;;;;;;x
+EVTDESC_NIE_141;Due to amount of solo events it is impossible to set up option to launch it from event. The easiest way, both for me and for you, will be to display event names and codes, that you can use in console to launch them. In order to do this just open your console and type 'event NIE.XXX'. To see the list of possible events move a mouse on the first option. Also some events might not have an effect (or might not event fire) if you do not meet certain conditions (like traits that normally trigger event). Remember that you can easily send me your ideas of events and even REQUEST some events via Steam!;;;;;;;;;;;;;x
+EVTOPTA_NIE_141;See tooltip;;;;;;;;;;;;;x
+EVTOPTB_NIE_141;Return to previous screen;;;;;;;;;;;;;x
+EVTOPTC_NIE_141;Close window;;;;;;;;;;;;;x
+launch_solo_events;"Get rid of slothful trait - event NIE.200// Get rid of depressed trait - event NIE.203//  get rid of craven trait - event NIE.205// get rid of weak trait - event NIE.206// get ""rid"" of lunatic trait - event.NIE 207// get rid of possessed trait - event NIE.208//  approval for justice - event NIE.220// approval for faith - event NIE.221// approval for diligence - event NIE.222// approval for bravery - event NIE.223// approval for honesty - event NIE.224// approval for celibacy - event NIE.225// approval for thrift - event NIE.226// approval for scholarship - event NIE.227// approval for diplomacy - event NIE.228//  approval for martial  - event NIE.229// approval for wealth - event NIE.230// ";;;;;;;;;;;;;x

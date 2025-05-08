@@ -1,0 +1,35 @@
+# No previous file for Baracoa
+
+culture = atlantean
+owner = ATL
+controller = ATL
+add_core = ATL
+is_city = yes
+religion = hellenic_pagan
+capital = "Dioscapezus" 
+trade_goods = sugar
+hre = no
+base_tax = 2 
+base_production = 2
+base_manpower = 2
+discovered_by = CAB
+discovered_by = ARW
+discovered_by = ATL
+
+#1511.8.15 = {
+#	owner = CAS
+#	controller = CAS
+#	add_core = CAS
+#	culture = castillian
+#	religion = catholic
+#	is_city = yes
+#	trade_goods = sugar
+#} # Founded by Diego Velázquez
+#1516.1.23 = {
+#	discovered_by = SPA
+#	owner = SPA
+#	controller = SPA
+#	add_core = SPA
+#	remove_core = CAS
+#}
+#1517.1.1 = { } # The Taíno ( Arawak ) culture was nearly destroyed

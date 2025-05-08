@@ -1,0 +1,14 @@
+# County Title
+title = c_al_jawf
+# Settlements
+max_settlements = 3
+b_al_jawf = castle
+b_sakakah = city
+b_aladan = temple
+# Misc
+culture = bedouin_arabic
+religion = nestorian
+867.1.1 = { religion = sunni }
+################################################################################
+# 1524 - Al Jawf
+################################################################################

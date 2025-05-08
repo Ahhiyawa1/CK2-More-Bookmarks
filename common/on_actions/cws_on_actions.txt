@@ -1,0 +1,13 @@
+#character
+on_startup = {
+	effect = {
+		if = {
+			limit = {
+				controls_religion = yes
+				religion = catholic
+				NOT = { has_global_flag = is_cl_cws_save }
+			}
+			set_global_flag = is_cl_cws_save
+		}
+	}
+}

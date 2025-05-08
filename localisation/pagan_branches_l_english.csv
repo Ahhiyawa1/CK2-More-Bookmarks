@@ -1,0 +1,39 @@
+﻿pagan_branch_31_stupid;Completely Retarded;;;;;;;;;x
+pagan_branch_5_animist;Totemist;;;;;;;;;x
+pagan_branch_5_animist_desc;This character believes [Root.GetHerHis] religion spiritually bounds [Root.GetHerHim] with a particular animal - totem. Characters sharing a religious totem feel stronger connection with each other.;;;;;;;;;x
+pagan_branch_6_theist;Ritualist;;;;;;;;;x
+pagan_branch_6_theist_desc;This character believes that worship of [Root.GetHerHis] Gods must be perfected through strict adherence to rituals and proper worship, as well as cultivation of self-discipline. The most Orthodox (contrast to Orthopractic) branch of [Root.Religion.GetName] faith.;;;;;;;;;x
+pagan_branch_7_intellect;Mischievous;;;;;;;;;x
+pagan_branch_7_intellect_desc;This character sees [Root.GetHerHis] faith as Orthopractic, and therefore has chosen to model [Root.GetHerselfHimself] after intelligent and witty tricksters, such as, in many European cultures, the Fox.;;;;;;;;;x
+pagan_branch_8_might;Hardy;;;;;;;;;x
+pagan_branch_8_might_desc;This character sees [Root.GetHerHis] faith as Orthopractic, and therefore has chosen to model [Root.GetHerselfHimself] after tough and brutish beasts, such as the Bear.;;;;;;;;;x
+pagan_branch_9_egoist;Egoist;;;;;;;;;x
+pagan_branch_9_egoist_desc;This character holds a belief that [Root.GetHerHis] religion instructs [Root.GetHerHim] to pursue individual growth and personal gain.;;;;;;;;;x
+pagan_branch_10_altruist;Altruist;;;;;;;;;x
+pagan_branch_10_altruist_desc;This character believes [Root.GetHerHis] religion dictates first and foremost care for people around [Root.GetHerHim] and encourages selfless lifestyle, similar to Wolves in packs.;;;;;;;;;x
+EVTOPTXHF23016;I am interested in other branches...;;;;;;;;;x
+EVTOPTXHF23017;I am interested in other branches...;;;;;;;;;x
+PB.100;Choosing a Branch;;;;;;;;;x
+EVTDESCPB100;Upon delving deeper into religious studies, I have come with a greater understanding of [Root.Religion.GetName] and [Root.Religion.GetHighGodName].;;;;;;;;;x
+EVTOPTDPB100;Nothing matters more than family.;;;;;;;;;x
+EVTOPTFPB100;There is only one way to please the Gods.;;;;;;;;;x
+EVTOPTGPB100;These guidelines will help me develop a sharp mind.;;;;;;;;;x
+EVTOPTXPB100;I must study more...;;;;;;;;;x
+PB.110;Choosing a Branch;;;;;;;;;x
+EVTDESCPB110;To have greater understanding of [Root.Religion.GetName], I have decided to Consult with Shamans and other Religious Scholars that seem to know more about [Root.Religion.GetRandomGodName] than how to communicate with their [Root.GetTitle] in a way that will let me understand at least half of what they are preaching about. Regardless, I have come to a final conclusion of my beliefs.;;;;;;;;;x
+EVTOPTHPB110;I now understand that I must achieve strength and fortitude.;;;;;;;;;x
+EVTOPTIPB110;Unlike Cross-Worshippers, my faith empowers an Individual.;;;;;;;;;x
+EVTOPTJPB110;I must seek to protect and strengthen my people.;;;;;;;;;x
+EVTOPTXPB110;[Root.Religion.GetHighGodName] has granted us a guardian spirit.;;;;;;;;;x
+PB.101;Choosing a Branch;;;;;;;;;x
+EVTDESCPB101;Upon delving deeper into religious studies, I have come with a greater understanding of [Root.Religion.GetName] and [Root.Religion.GetHighGodName].;;;;;;;;;x
+EVTOPTAHF101;Nothing matters more than family.;;;;;;;;;x
+EVTOPTBHF101;There is only one way to please the Gods.;;;;;;;;;x
+EVTOPTCHF101;Unlike Cross-Worshippers, my faith empowers an Individual.;;;;;;;;;x
+EVTOPTXHF101;I must study more...;;;;;;;;;x
+PB.102;Choosing a Branch;;;;;;;;;x
+EVTDESCPB102;To have greater understanding of [Root.Religion.GetName], I have decided to Consult with Shamans and other Religious Scholars that seem to know more about [Root.Religion.GetRandomGodName] than how to communicate with their [Root.GetTitle] in a way that will let me understand at least half of what they are preaching about. Regardless, I have come to a final conclusion of my beliefs.;;;;;;;;;x
+EVTOPTAHF102;I must seek to protect and strengthen my people.;;;;;;;;;x
+EVTOPTBHF102;[Root.Religion.GetHighGodName] has granted us a guardian spirit.;;;;;;;;;x
+EVTOPTCHF102;I now understand that I must develop a sharp mind.;;;;;;;;;x
+EVTOPTXHF102;I now understand that I must achieve strength and fortitude.;;;;;;;;;x

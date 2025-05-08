@@ -1,0 +1,102 @@
+base_1;Bright;;;;;;;;;;;;;x
+base_2;Smart;;;;;;;;;;;;;x
+quick_1;Astute;;;;;;;;;;;;;x
+genius_1;Prodigy;;;;;;;;;;;;;x
+minus_1;Dim;;;;;;;;;;;;;x
+minus_2;Foolish;;;;;;;;;;;;;x
+minus_4;Dense;;;;;;;;;;;;;x
+minus_6;Ignorant;;;;;;;;;;;;;x
+numberphile;Numberphile;;;;;;;;;;;;;x
+machiavellian;Machiavellian;;;;;;;;;;;;;x
+tactician;Tactician;;;;;;;;;;;;;x
+conciliatory;Conciliatory;;;;;;;;;;;;;x
+savant;Savant;;;;;;;;;;;;;x
+sagacious;Sagacious;;;;;;;;;;;;;x
+aberrant;Aberrant;;;;;;;;;;;;;x
+exalted;Exalted;;;;;;;;;;;;;x
+preternatural;Preternatural;;;;;;;;;;;;;x
+messianic;Messianic;;;;;;;;;;;;;x
+fertile;Fertile;;;;;;;;;;;;;x
+fertile_1;Bountiful;;;;;;;;;;;;;x
+fertile_2;Prolific;;;;;;;;;;;;;x
+infertile;Unfruitful;;;;;;;;;;;;;x
+infertile_1;Sparse;;;;;;;;;;;;;x
+infertile_2;Barren;;;;;;;;;;;;;x
+base_fair_1;Appealing;;;;;;;;;;;;;x
+base_fair_2;Charming;;;;;;;;;;;;;x
+negative_fair_1;Plain;;;;;;;;;;;;;x
+negative_fair_2;Unsightly;;;;;;;;;;;;;x
+strong_1;Powerful;;;;;;;;;;;;;x
+weak_1;Puny;;;;;;;;;;;;;x
+tall;Tall;;;;;;;;;;;;;x
+short;Short;;;;;;;;;;;;;x
+silver_tongue;Silver Tongue;;;;;;;;;;;;;x
+booming_voice;Booming Voice;;;;;;;;;;;;;x
+mute;Mute;;;;;;;;;;;;;x
+age_2;Minus 2 Age;;;;;;;;;;;;;x
+age_5;Minus 5 Age;;;;;;;;;;;;;x
+age_10;Minus 10 Age;;;;;;;;;;;;;x
+age_15;Minus 15 Age;;;;;;;;;;;;;x
+age_25;Minus 25 Age;;;;;;;;;;;;;x
+age_50;Minus 50 Age;;;;;;;;;;;;;x
+age_100;Minus 100 Age;;;;;;;;;;;;;x
+age_1000;Minus 1000 Age;;;;;;;;;;;;;x
+age_2_plus;Plus 2 Age;;;;;;;;;;;;;x
+age_5_plus;Plus 5 Age;;;;;;;;;;;;;x
+age_10_plus;Plus 10 Age;;;;;;;;;;;;;x
+age_15_plus;Plus 15 Age;;;;;;;;;;;;;x
+age_25_plus;Plus 25 Age;;;;;;;;;;;;;x
+age_50_plus;Plus 50 Age;;;;;;;;;;;;;x
+age_100_plus;Plus 100 Age;;;;;;;;;;;;;x
+
+base_1_desc;This character is a cut above average.;;;;;;;;;;;;;x
+base_2_desc;This character is naturally gifted.;;;;;;;;;;;;;x
+quick_1_desc;This character is exceptionally smart.;;;;;;;;;;;;;x
+genius_1_desc;This character has an unrivaled intellect.;;;;;;;;;;;;;x
+minus_1_desc;The character is slightly challenged.;;;;;;;;;;;;;x
+minus_2_desc;This character frequently misunderstands.;;;;;;;;;;;;;x
+minus_4_desc;This character is far below the normal intelligence.;;;;;;;;;;;;;x
+minus_6_desc;This character is exceptionally stupid.;;;;;;;;;;;;;x
+numberphile_desc;This character is extremely gifted with numbers, but lacks skills elsewhere.;;;;;;;;;;;;;x
+machiavellian_desc;This character is extremely gifted with manipulation, but lacks skills elsewhere.;;;;;;;;;;;;;x
+tactician_desc;This character is extremely gifted with strategy and tactics, but lacks skills elsewhere.;;;;;;;;;;;;;x
+conciliatory_desc;This character is extremely gifted with people, but lacks skills elsewhere.;;;;;;;;;;;;;x
+savant_desc;This character is extremely gifted with science and theology, but lacks skills elsewhere.;;;;;;;;;;;;;x
+sagacious_desc;This character has a unique aptitude for all matters of education, learning, and knowledge.;;;;;;;;;;;;;x
+aberrant_desc;This character exists only to fight personally on the front lines, but has no love for formal military matters.;;;;;;;;;;;;;x
+exalted_desc;This character is seemingly blessed and glows with religious fervour..;;;;;;;;;;;;;x
+preternatural_desc;This character is uniquely blessed in all areas, rarely will someone like them be seen again.;;;;;;;;;;;;;x
+messianic_desc;This character is so naturally gifted that many believe them to have been touched by the heavens. Their enemies wait in fear.;;;;;;;;;;;;;x
+fertile_desc;This character has an easier time with procreation.;;;;;;;;;;;;;x
+fertile_1_desc;This character has a natural gift for having children.;;;;;;;;;;;;;x
+fertile_2_desc;This character is blessed with the capacity for many children.;;;;;;;;;;;;;x
+infertile_desc;This character is genetically predisposed to have less children.;;;;;;;;;;;;;x
+infertile_1_desc;This character will struggle to have children.;;;;;;;;;;;;;x
+infertile_2_desc;This character will find it a difficult to have a child.;;;;;;;;;;;;;x
+base_fair_1_desc;This character has a pleasing appearance.;;;;;;;;;;;;;x
+base_fair_2_desc;This character is decently attractive.;;;;;;;;;;;;;x
+negative_fair_1_desc;This character has a fairly unremarkable appearance;;;;;;;;;;;;;x
+negative_fair_2_desc;This character is offensive to all five senses.;;;;;;;;;;;;;x
+strong_1_desc;This character is extremely mighty.;;;;;;;;;;;;;x
+weak_1_desc;This character is suited more to matters of the mind.;;;;;;;;;;;;;x
+tall_desc;This character is larger than most.;;;;;;;;;;;;;x
+short_desc;This character is shorter than average.;;;;;;;;;;;;;x
+silver_tongue_desc;This character has a pleasing voice.;;;;;;;;;;;;;x
+booming_voice_desc;This character has an intimidating voice.;;;;;;;;;;;;;x
+mute_desc;This character has no ability to speak.;;;;;;;;;;;;;x
+
+age_2_desc;Minus 2 Age;;;;;;;;;;;;;x
+age_5_desc;Minus 5 Age;;;;;;;;;;;;;x
+age_10_desc;Minus 10 Age;;;;;;;;;;;;;x
+age_15_desc;Minus 15 Age;;;;;;;;;;;;;x
+age_25_desc;Minus 25 Age;;;;;;;;;;;;;x
+age_50_desc;Minus 50 Age;;;;;;;;;;;;;x
+age_100_desc;Minus 100 Age;;;;;;;;;;;;;x
+age_1000_desc;Why not, right?;;;;;;;;;;;;;x
+age_2_plus_desc;Plus 2 Age;;;;;;;;;;;;;x
+age_5_plus_desc;Plus 5 Age;;;;;;;;;;;;;x
+age_10_plus_desc;Plus 10 Age;;;;;;;;;;;;;x
+age_15_plus_desc;Plus 15 Age;;;;;;;;;;;;;x
+age_25_plus_desc;Plus 25 Age;;;;;;;;;;;;;x
+age_50_plus_desc;Plus 50 Age;;;;;;;;;;;;;x
+age_100_plus_desc;Plus 100 Age;;;;;;;;;;;;;x

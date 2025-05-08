@@ -1,0 +1,23 @@
+# County Title
+title = c_toledo
+# Settlements
+max_settlements = 5
+b_toledo = castle
+# b_orgaz = temple
+b_madrid = city
+# b_tolemora = temple
+b_talavera = temple
+# b_consuegra = castle
+# b_fuensalida = castle
+b_illescas = castle
+# Misc
+culture = romano_hispanic
+religion = catholic
+800.1.1 = { culture = visigothic }
+################################################################################
+# History
+################################################################################
+955.1.1 = { culture = castilian } 
+################################################################################
+# 410 - Toledo
+################################################################################

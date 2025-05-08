@@ -1,0 +1,9 @@
+# County Title
+title = c_dariya
+# Settlements
+max_settlements = 2
+b_dariya = tribal
+# Misc
+culture = bedouin_arabic
+religion = nestorian
+867.1.1 = { religion = sunni } 

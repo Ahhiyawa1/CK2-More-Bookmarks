@@ -1,0 +1,23 @@
+# is_pamir_mountain_trigger
+# pamir_music_trigger
+
+is_pamir_mountain_trigger = {
+	OR = {
+		province_id = 1097
+		province_id = 1096
+		province_id = 1092
+		province_id = 1091
+		province_id = 1099
+		province_id = 1098
+	}
+}
+
+pamir_music_trigger = {
+	OR = {
+		culture_group = iranian
+		culture_group = altaic
+		culture_group = serindian
+		culture_group = tibetan_group
+		culture_group = chinese_group
+	}
+}

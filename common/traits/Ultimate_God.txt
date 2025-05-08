@@ -1,0 +1,17 @@
+Ultimate_God = {
+	agnatic = yes
+	egnatic = yes
+	random = no
+	ruler_designer_cost = -9999
+	
+	stewardship = 9999
+	diplomacy = 9999
+	martial = 9999
+	intrigue = 9999
+	learning = 9999
+	health = 99999
+	
+	general_opinion = 90000
+}
+
+	

@@ -1,0 +1,8 @@
+opinion_requested_crown = {
+	opinion = -25
+	years = 5
+}
+opinion_axe_challenger = {
+	opinion = -25
+	years = 5
+}

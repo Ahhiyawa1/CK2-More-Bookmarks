@@ -1,0 +1,845 @@
+### Positive Traits ###
+#
+#base_1
+#base_2
+#quick_1
+#genius_1
+#fertile
+#fertile_1
+#fertile_2
+#base_fair_1
+#base_fair_2
+#strong_1
+#tall
+#booming_voice
+#silver_tongue
+#
+### Negative Traits ###
+#
+#minus_1
+#minus_2
+#minus_4
+#minus_6
+#infertile
+#infertile_1
+#infertile_2
+#negative_fair_1
+#negative_fair_2
+#weak_1
+#short
+#mute
+#
+### Positive Intellect ###
+
+base_1 = {	#+1 to all stats
+	birth = 120
+	inherit_chance = 30
+	diplomacy = 1
+	intrigue = 1
+	stewardship = 1
+	martial = 1
+	learning = 1
+	combat_rating = 3
+	ruler_designer_cost = 5
+	opposites =  {
+		base_2
+		quick
+		quick_1
+		genius_1
+		genius
+		minus_1
+		minus_2
+		slow
+		minus_4
+		imbecile
+		minus_6
+		shrewd
+		dull
+	}
+}
+
+base_2 = {	#+2 to all stats
+	birth = 90
+	inherit_chance = 25
+	diplomacy = 2
+	intrigue = 2
+	stewardship = 2
+	martial = 2
+	learning = 2
+	combat_rating = 5
+	ruler_designer_cost = 10
+	opposites =  {
+		base_1
+		quick
+		quick_1
+		genius_1
+		genius
+		minus_1
+		minus_2
+		slow
+		minus_4
+		imbecile
+		minus_6
+		shrewd
+		dull
+	}
+}
+
+quick_1 = {	#+4 to all stats
+	birth = 60
+	inherit_chance = 20
+	diplomacy = 4
+	intrigue = 4
+	stewardship = 4
+	martial = 4
+	learning = 4
+	combat_rating = 7
+	ruler_designer_cost = 20
+	ai_rationality = 10
+	opposites =  {
+		base_1
+		base_2
+		quick
+		genius_1
+		genius
+		minus_1
+		minus_2
+		slow
+		minus_4
+		imbecile
+		minus_6
+		shrewd
+		dull
+	}
+}
+
+genius_1 = {	#+6 to all stats
+	birth = 30
+	inherit_chance = 10
+	diplomacy = 6
+	intrigue = 6
+	stewardship = 6
+	martial = 6
+	learning = 6
+	combat_rating = 20
+	ai_rationality = 55
+	ruler_designer_cost = 35
+	vassal_opinion = 5
+	male_compliment = COMPL_GENIUS
+	female_compliment = COMPL_GENIUS
+	opposites =  {
+		base_1
+		base_2
+		quick
+		quick_1
+		genius
+		minus_1
+		minus_2
+		slow
+		minus_4
+		imbecile
+		minus_6
+		shrewd
+		dull
+	}
+}
+
+### Negative Intellect ###
+
+minus_1 = {	#-1 to all stats
+	birth = 120
+	inherit_chance = 30
+	diplomacy = -1
+	intrigue = -1
+	stewardship = -1
+	martial = -1
+	learning = -1
+	combat_rating = -3
+	ruler_designer_cost = -5
+	opposites =  {
+		minus_2
+		slow
+		minus_4
+		imbecile
+		minus_6
+		base_1
+		base_2
+		quick
+		quick_1
+		genius_1
+		genius
+		shrewd
+		dull
+	}
+}
+
+minus_2 = {	#-2 to all stats
+	birth = 90
+	inherit_chance = 25
+	diplomacy = -2
+	intrigue = -2
+	stewardship = -2
+	martial = -2
+	learning = -2
+	combat_rating = -5
+	ruler_designer_cost = -10
+	opposites =  {
+		minus_1
+		slow
+		minus_4
+		imbecile
+		minus_6
+		base_1
+		base_2
+		quick
+		quick_1
+		genius_1
+		genius
+		shrewd
+		dull
+	}
+}
+
+minus_4 = {	#-4 to all stats
+	birth = 60
+	inherit_chance = 20
+	diplomacy = -4
+	intrigue = -4
+	stewardship = -4
+	martial = -4
+	learning = -4
+	combat_rating = -7
+	ai_rationality = -10
+	ruler_designer_cost = -24
+	opposites =  {
+		minus_1
+		slow
+		minus_2
+		imbecile
+		minus_6
+		base_1
+		base_2
+		quick
+		quick_1
+		genius_1
+		genius
+		shrewd
+		dull
+	}
+}
+
+minus_6 = {	#-6 to all stats
+	birth = 30
+	inherit_chance = 10
+	diplomacy = -6
+	intrigue = -6
+	stewardship = -6
+	martial = -6
+	learning = -6
+	combat_rating = -20
+	ai_rationality = -55
+	ruler_designer_cost = -40
+	opposites =  {
+		minus_1
+		slow
+		minus_2
+		minus_4
+		imbecile
+		base_1
+		base_2
+		quick
+		quick_1
+		genius_1
+		genius
+		shrewd
+		dull
+	}
+}
+
+### specialised traits ###
+
+numberphile = {	
+	birth = 20
+	inherit_chance = 15
+	diplomacy = -2
+	intrigue = -2
+	stewardship = 6
+	martial = -2
+	learning = -2
+	combat_rating = -5
+	ai_rationality = 10
+	ruler_designer_cost = 5
+	opposites =  {
+		shrewd
+		base_1
+		base_2
+		quick
+		quick_1
+		genius_1
+		genius
+		tactician
+		machiavellian
+		conciliatory
+		savant
+	}
+}
+
+machiavellian = {	
+	birth = 20
+	inherit_chance = 15
+	diplomacy = -2
+	intrigue = 6
+	stewardship = -2
+	martial = -2
+	learning = -2
+	combat_rating = -5
+	ai_rationality = 10
+	ruler_designer_cost = 5
+	opposites =  {
+		shrewd
+		base_1
+		base_2
+		quick
+		quick_1
+		genius_1
+		genius
+		numberphile
+		tactician
+		conciliatory
+		savant
+	}
+}
+
+tactician = {	
+	birth = 20
+	inherit_chance = 15
+	diplomacy = -2
+	intrigue = -2
+	stewardship = -2
+	martial = 6
+	learning = -2
+	combat_rating = -5
+	ai_rationality = 10
+	ruler_designer_cost = 5
+	opposites =  {
+		shrewd
+		base_1
+		base_2
+		quick
+		quick_1
+		genius_1
+		genius
+		numberphile
+		machiavellian
+		conciliatory
+		savant
+	}
+}
+
+conciliatory = {	
+	birth = 20
+	inherit_chance = 15
+	diplomacy = 6
+	intrigue = -2
+	stewardship = -2
+	martial = -2
+	learning = -2
+	combat_rating = -5
+	ai_rationality = 10
+	ruler_designer_cost = 5
+	opposites =  {
+		shrewd
+		base_1
+		base_2
+		quick
+		quick_1
+		genius_1
+		genius
+		numberphile
+		tactician
+		machiavellian
+		savant
+	}
+}
+
+savant = {	
+	birth = 20
+	inherit_chance = 15
+	diplomacy = -2
+	intrigue = -2
+	stewardship = -2
+	martial = -2
+	learning = 6
+	combat_rating = -5
+	ai_rationality = 10
+	ruler_designer_cost = 5
+	opposites =  {
+		shrewd
+		base_1
+		base_2
+		quick
+		quick_1
+		genius_1
+		genius
+		numberphile
+		tactician
+		machiavellian
+		conciliatory
+	}
+}
+
+### Unique Gameplay based ###
+
+sagacious = {	
+	birth = 100
+	inherit_chance = 10
+	tech_growth_modifier = 0.50
+	economy_techpoints = 0.05
+	culture_techpoints = 0.05
+	military_techpoints = 0.05
+	ai_rationality = 10
+	ruler_designer_cost = 10
+	is_visible = {
+		FROM = { is_adult = yes }
+	}
+}
+
+aberrant = {	
+	birth = 100
+	inherit_chance = 10
+	combat_rating = 80
+	health = 5
+	prestige = 2
+	diplomacy = -2
+	intrigue = -2
+	stewardship = -2
+	martial = -2
+	learning = -2
+	ruler_designer_cost = 20
+	is_visible = {
+		FROM = { is_adult = yes }
+	}
+}
+
+exalted = {	
+	birth = 100
+	inherit_chance = 10
+	combat_rating = 25
+	same_religion_opinion = 5
+	monthly_character_piety = 0.5
+	same_opinion = 5
+	ruler_designer_cost = 15
+	ai_zeal = 30	
+	is_visible = {
+		FROM = { is_adult = yes }
+	}
+}
+
+### Super Rare, non inheritable ###
+
+preternatural = {	
+	birth = 3	#3 in 10000 characters
+	combat_rating = 100
+	diplomacy = 10
+	intrigue = 10
+	stewardship = 10
+	martial = 10
+	learning = 10
+	health = 10
+	same_religion_opinion = 10
+	monthly_character_piety = 2
+	monthly_character_prestige = 2
+	ai_rationality = 30
+	ai_zeal = 30	
+	ruler_designer_cost = 100
+	is_visible = {
+		FROM = { is_adult = yes }
+	}
+}
+
+messianic = {	
+	birth = 1	#1 in 10000 characters
+	diplomacy = 15
+	intrigue = 15
+	stewardship = 15
+	martial = 15
+	learning = 15
+	health = 15
+	same_religion_opinion = 55	#cancel out general opinion and a bonus
+	general_opinion = -40	#people be spooked
+	combat_rating = 200
+	ai_rationality = 40
+	ai_zeal = 40	
+	ruler_designer_cost = 150
+	is_visible = {
+		FROM = { is_adult = yes }
+	}
+}
+
+### Physical Traits ###
+
+### Fertility ###
+
+fertile = {
+	birth = 100
+	inherit_chance = 25
+
+	fertility = 0.10
+	ruler_designer_cost = 7
+	
+	opposites =  {
+		fertile_1
+		fertile_2
+		infertile
+		infertile_1
+		infertile_2
+	}
+}
+
+fertile_1 = {
+	birth = 75
+	inherit_chance = 20
+	ruler_designer_cost = 9
+
+	fertility = 0.35
+	
+	opposites =  {
+		fertile
+		fertile_2
+		infertile
+		infertile_1
+		infertile_2
+	}
+}
+
+fertile_2 = {
+	birth = 50
+	inherit_chance = 15
+
+	fertility = 0.5
+	ruler_designer_cost = 12
+	
+	opposites =  {
+		fertile
+		fertile_1
+		infertile
+		infertile_1
+		infertile_2
+	}
+}
+
+infertile = {
+	birth = 100
+	inherit_chance = 25
+
+	fertility = -0.10
+	ruler_designer_cost = -4
+	
+	opposites =  {
+		fertile_1
+		fertile_2
+		infertile
+		infertile_1
+		infertile_2
+	}
+}
+
+infertile_1 = {
+	birth = 75
+	inherit_chance = 20
+
+	fertility = -0.25
+	ruler_designer_cost = -7
+	
+	opposites =  {
+		fertile
+		fertile_2
+		infertile
+		infertile_1
+		infertile_2
+	}
+}
+
+infertile_2 = {
+	birth = 50
+	inherit_chance = 15
+
+	fertility = -0.4
+	ruler_designer_cost = -10
+	
+	opposites =  {
+		fertile
+		fertile_1
+		infertile
+		infertile_1
+		infertile_2
+	}
+}
+
+### Attractiveness  ###
+
+base_fair_1 = {	
+	birth = 120
+	inherit_chance = 30
+	sex_appeal_opinion = 10
+	ruler_designer_cost = 8
+
+	opposites =  {
+		base_fair_2	
+		fair
+		negative_fair_1
+		negative_fair_2
+		ugly
+	}
+}
+
+base_fair_2 = {
+	birth = 90
+	inherit_chance = 22
+	sex_appeal_opinion = 20
+	ruler_designer_cost = 12
+	opposites =  {
+		base_fair_1	
+		fair
+		negative_fair_1
+		negative_fair_2
+		ugly
+	}
+}
+
+negative_fair_1 = {
+	birth = 120
+	inherit_chance = 20
+	sex_appeal_opinion = -5
+	ruler_designer_cost = -3
+
+	opposites =  {
+		base_fair_1	
+		base_fair_2	
+		fair
+		negative_fair_2
+		ugly
+	}
+}
+
+negative_fair_2 = {
+	birth = 90
+	inherit_chance = 15
+	sex_appeal_opinion = -10
+	ruler_designer_cost = -5
+	opposites =  {
+		base_fair_1	
+		base_fair_2	
+		fair
+		negative_fair_1
+		ugly
+	}
+}
+
+### strength ###
+
+strong_1 = {
+	birth = 100
+	inherit_chance = 10
+	
+	opposites =  {
+		weak
+		weak_1
+		strong
+	}
+	
+	diplomacy = 2
+	martial = 3
+	
+	health = 2
+	fertility = 0.3
+	
+	combat_rating = 25
+	
+	sex_appeal_opinion = 15
+	vassal_opinion = 10
+	tribal_opinion = 15
+	ruler_designer_cost = 35
+	
+	male_compliment_adj = COMPL_STRONG
+}
+
+weak_1 = {
+	birth = 50
+	inherit_chance = 10
+	
+	opposites =  {
+		weak
+		strong_1
+		strong
+	}
+	
+	diplomacy = -2
+	martial = -3
+	
+	health = -0.5
+	fertility = -0.1
+	
+	
+	combat_rating = -20
+	
+	sex_appeal_opinion = -5
+	vassal_opinion = -5
+	tribal_opinion = -10
+	ruler_designer_cost = -25
+	
+}
+
+### height ###
+
+tall = {
+	birth = 50
+	inherit_chance = 15
+	
+	opposites =  {
+		dwarf
+		giant
+		short
+	}
+	
+	combat_rating = 15
+	
+	vassal_opinion = 3
+	tribal_opinion = 8
+	sex_appeal_opinion = 5
+	ruler_designer_cost = 5
+	
+	male_insult = INSULT_ABOMINATION
+	female_insult = INSULT_FREAK
+	child_insult = INSULT_TROLL
+	male_insult_adj = INSULT_MONSTROUS
+}
+
+short = {
+	birth = 50
+	inherit_chance = 15
+	
+	opposites =  {
+		dwarf
+		giant
+		tall
+	}
+	
+	combat_rating = -5
+	
+	vassal_opinion = -3
+	tribal_opinion = -8
+	sex_appeal_opinion = -5
+	ruler_designer_cost = -8
+	
+	male_insult_adj = INSULT_LITTLE
+	female_insult_adj = INSULT_LITTLE
+}
+
+### voice ###
+
+silver_tongue = {
+	birth = 100
+	inherit_chance = 10
+	diplomacy = 1
+	sex_appeal_opinion = 5
+	vassal_opinion = 5
+	ruler_designer_cost = 8
+	opposites =  {
+		booming_voice
+		mute
+		lisp
+		stutter
+	}
+}
+
+booming_voice = {
+	birth = 100
+	inherit_chance = 10
+	martial = 1
+	combat_rating = 5 #
+	ruler_designer_cost = 3
+	opposites =  {
+		silver_tongue
+		mute
+		lisp
+		stutter
+	}
+}
+
+mute = {
+	birth = 100
+	inherit_chance = 10
+	diplomacy = -3
+	intrigue = 3
+	martial = -2
+	vassal_opinion = -3
+	ruler_designer_cost = -10
+	opposites =  {
+		silver_tongue
+		booming_voice
+		lisp
+		stutter
+	}
+}
+
+### Age Traits ###
+
+age_2 = {
+	ruler_designer_cost = -2
+}
+
+age_5 = {
+	ruler_designer_cost = -5
+}
+
+age_10 = {
+	ruler_designer_cost = -10
+}
+
+age_15 = {
+	ruler_designer_cost = -15
+}
+
+age_25 = {
+	ruler_designer_cost = -25
+}
+
+age_50 = {
+	ruler_designer_cost = -50
+}
+
+age_100 = {
+	ruler_designer_cost = -100
+}
+age_1000 = {
+	ruler_designer_cost = -1000
+}
+
+age_2_plus = {
+	ruler_designer_cost = 2
+}
+
+age_5_plus = {
+	ruler_designer_cost = 5
+}
+
+age_10_plus = {
+	ruler_designer_cost = 10
+}
+
+age_15_plus = {
+	ruler_designer_cost = 15
+}
+
+age_25_plus = {
+	ruler_designer_cost = 25
+}
+
+age_50_plus = {
+	ruler_designer_cost = 50
+}
+
+age_100_plus = {
+	ruler_designer_cost = 100
+}

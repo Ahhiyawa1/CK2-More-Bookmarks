@@ -1,0 +1,1386 @@
+#############################
+###### Christian ######
+#############################
+
+#############################
+###### Muslim ######
+#############################
+
+
+#############################
+###### Jewish ######
+#############################
+
+himyarite_mask = {
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+			#OR = {
+			#	has_alternate_start_parameter = {
+			#		key = culture        
+			#		value = animal_kingdoms                 
+			#	}
+			#	has_alternate_start_parameter = {
+			#		key = culture        
+			#		value = animal_world                 
+			#	}
+			#}
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			OR = {
+				religion_group = jewish_group
+				culture = bedouin_arabic
+			}
+			is_playable = yes
+		}
+		additive_modifier = {
+			value = 1000
+			OR = {
+				religion_group = jewish_group
+				culture = bedouin_arabic
+			}
+			has_landed_title = k_yemen
+		}
+		additive_modifier = {
+			value = 100
+			OR = {
+				religion_group = jewish_group
+				culture = bedouin_arabic
+			}
+			OR = {
+				has_landed_title = d_sanaa
+				has_landed_title = d_taizz
+				has_landed_title = d_hadramut
+			}
+		}
+	}
+    artifacts = {
+        himyarite_mask = {
+            value = 1
+        }
+    }
+}
+
+brass_snake = {
+    max_amount = 2
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_group = jewish_group
+		}
+		additive_modifier = {
+			value = 50
+			religion_group = jewish_group
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        brass_snake = {
+            value = 1
+        }
+    }
+}
+#############################
+###### Zoroastrian ######
+#############################
+
+#############################
+###### Germanic ######
+#############################
+
+jarngreipr = {
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+   weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_norse_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			religion_openly_norse_or_reformed_trigger = yes
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        jarngreipr = {
+            value = 1
+        }
+    }
+}
+braggis_harp = {
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			is_female = no
+			religion_openly_norse_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			trait = fair
+			is_female = no
+			religion_openly_norse_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			trait = poet
+			is_female = no
+			religion_openly_norse_or_reformed_trigger = yes
+		}
+	}
+    artifacts = {
+        braggis_harp = {
+            value = 1
+        }
+    }
+}
+brisingamen = {
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_norse_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			religion_openly_norse_or_reformed_trigger = yes
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        brisingamen = {
+            value = 1
+        }
+    }
+}
+tarnkappe = {
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_norse_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			religion_openly_norse_or_reformed_trigger = yes
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        tarnkappe = {
+            value = 1
+        }
+    }
+}
+#############################
+###### West African Pagan ######
+#############################
+jaguar_spear = {
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_west_african_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			religion_openly_west_african_or_reformed_trigger = yes
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        jaguar_spear = {
+            value = 1
+        }
+    }
+}
+
+djembe = {
+    max_amount = 3
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_west_african_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			religion_openly_west_african_or_reformed_trigger = yes
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        djembe = {
+            value = 1
+        }
+    }
+}
+
+dan_mask = {
+    max_amount = 4
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_west_african_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			religion_openly_west_african_or_reformed_trigger = yes
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        dan_mask = {
+            value = 1
+        }
+    }
+}
+
+#############################
+###### Finnish/Soume ######
+#############################
+
+sampo_fragment = {
+    max_amount = 4
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_finnish_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			religion_openly_finnish_or_reformed_trigger = yes
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        sampo_fragment = {
+            value = 1
+        }
+    }
+}
+ukonvasara = {
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_finnish_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 250
+			religion_openly_finnish_or_reformed_trigger = yes
+			is_playable = yes
+		}
+		additive_modifier = {
+			value = 1000
+			religion_openly_finnish_or_reformed_trigger = yes
+			is_playable = yes
+			higher_tier_than = count
+		}
+	}
+    artifacts = {
+        ukonvasara = {
+            value = 1
+        }
+    }
+}
+vainamoinens_harp = {
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			is_female = no
+			religion_openly_finnish_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			trait = fair
+			is_female = no
+			religion_openly_finnish_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			trait = poet
+			is_female = no
+			religion_openly_finnish_or_reformed_trigger = yes
+		}
+	}
+    artifacts = {
+        vainamoinens_harp = {
+            value = 1
+        }
+    }
+}
+
+
+beard_of_moss = {
+    max_amount = 3
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_finnish_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			learning = 10
+			religion_openly_finnish_or_reformed_trigger = yes
+		}
+	}
+    artifacts = {
+        beard_of_moss = {
+            value = 1
+        }
+    }
+}
+
+axe_pendant = {
+    max_amount = 5
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_finnish_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			is_priest = yes
+			religion_openly_finnish_or_reformed_trigger = yes
+		}
+	}
+    artifacts = {
+        axe_pendant = {
+            value = 1
+        }
+    }
+}
+
+#############################
+###### Slavic ######
+#############################
+
+svarogs_hammer = {
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_slavic_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 500
+			is_playable = yes
+			higher_tier_than = COUNT
+			religion_openly_slavic_or_reformed_trigger = yes
+		}
+	}
+    artifacts = {
+        svarogs_hammer = {
+            value = 1
+        }
+    }
+}
+
+raskovnik = {
+    max_amount = 2
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = { name = supernatural_artifacts value = off }
+		}
+	}
+    
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_slavic_or_reformed_trigger = yes
+		}
+	}
+    artifacts = {
+        raskovnik = {
+            value = 1
+        }
+    }
+}
+
+peruns_stones = {
+    max_amount = 5
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_slavic_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			is_priest = yes
+			religion_openly_slavic_or_reformed_trigger = yes
+		}
+	}
+    artifacts = {
+        peruns_stones = {
+            value = 1
+        }
+    }
+}
+
+#############################
+###### Baltic/Romuvan ######
+#############################
+
+evening_star_mark = {
+    max_amount = 3
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = { name = supernatural_artifacts value = off }
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_baltic_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			is_priest = yes
+			religion_openly_baltic_or_reformed_trigger = yes
+		}
+	}
+    artifacts = {
+        evening_star_mark = {
+            value = 1
+        }
+    }
+}
+
+morning_star_mark = {
+    max_amount = 3
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = { name = supernatural_artifacts value = off }
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_baltic_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 50
+			is_priest = yes
+			religion_openly_baltic_or_reformed_trigger = yes
+		}
+	}
+    artifacts = {
+        morning_star_mark = {
+            value = 1
+        }
+    }
+}
+
+#############################
+###### Tengri ######
+#############################
+
+asenas_paw = {
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = { name = supernatural_artifacts value = off }
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_tengri_or_reformed_trigger = yes
+			NOR = {
+				culture = hungarian
+				culture = avar
+			}
+		}
+		additive_modifier = {
+			value = 500
+			religion_openly_tengri_or_reformed_trigger = yes
+			NOR = {
+				culture = hungarian
+				culture = avar
+			}
+			is_playable = yes
+			higher_tier_than = duke
+		}
+	}
+    artifacts = {
+        asenas_paw = {
+            value = 1
+        }
+    }
+}
+
+tengris_favor = {
+    max_amount = 5
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			religion_openly_tengri_or_reformed_trigger = yes
+			NOR = {
+				culture = hungarian
+				culture = avar
+			}
+		}
+		additive_modifier = {
+			value = 50
+			is_priest = yes
+			religion_openly_tengri_or_reformed_trigger = yes
+			NOR = {
+				culture = hungarian
+				culture = avar
+			}
+		}
+	}
+    artifacts = {
+        tengris_favor = {
+            value = 1
+        }
+    }
+}
+
+#############################
+###### Zunist ######
+#############################
+
+sun_scepter = {
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			has_landed_title = c_bost
+		}
+	}
+    artifacts = {
+        sun_scepter = {
+            value = 1
+        }
+    }
+}
+
+#############################
+###### Hellenic ######
+#############################
+pandoras_box = {
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = { name = supernatural_artifacts value = off }
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			culture = greek
+		}
+		additive_modifier = {
+			value = 100
+			religion = hellenic_pagan
+		}
+		additive_modifier = {
+			value = 150
+			culture = greek
+			OR = {
+				trait = mystic
+				trait = lunatic
+				trait = possessed
+				learning = 20
+			}
+		}
+	}
+    artifacts = {
+        pandoras_box = {
+            value = 1
+        }
+    }
+}
+
+trident_of_poseidon = {
+	max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			OR = {
+				religion_openly_hellenic_or_reformed_trigger = yes
+				culture = greek
+			}
+		}
+		additive_modifier = {
+			value = 100
+			culture = greek
+			religion_openly_hellenic_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 400
+			culture = greek
+			religion_openly_hellenic_or_reformed_trigger = yes
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        trident_of_poseidon = {
+            value = 1
+        }
+    }
+}
+
+bow_of_artemis = {
+	max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			OR = {
+				religion_openly_hellenic_or_reformed_trigger = yes
+				culture = greek
+			}
+		}
+		additive_modifier = {
+			value = 100
+			culture = greek
+			religion_openly_hellenic_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 400
+			culture = greek
+			religion_openly_hellenic_or_reformed_trigger = yes
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        bow_of_artemis = {
+            value = 1
+        }
+    }
+}
+
+girdle_of_aphrodite = {
+	max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			is_female = yes
+			OR = {
+				religion_openly_hellenic_or_reformed_trigger = yes
+				culture = greek
+			}
+		}
+		additive_modifier = {
+			value = 100
+			is_female = yes
+			culture = greek
+			religion_openly_hellenic_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 400
+			is_female = yes
+			culture = greek
+			religion_openly_hellenic_or_reformed_trigger = yes
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        girdle_of_aphrodite = {
+            value = 1
+        }
+    }
+}
+
+sandals_of_hermes = {
+	max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			OR = {
+				religion_openly_hellenic_or_reformed_trigger = yes
+				culture = greek
+			}
+		}
+		additive_modifier = {
+			value = 100
+			culture = greek
+			religion_openly_hellenic_or_reformed_trigger = yes
+		}
+		additive_modifier = {
+			value = 400
+			culture = greek
+			religion_openly_hellenic_or_reformed_trigger = yes
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        sandals_of_hermes = {
+            value = 1
+        }
+    }
+}
+
+#############################
+###### Indian ######
+#############################
+
+
+#############################
+###### Cultural/Misc ######
+#############################
+
+
+armor_of_achilles = {
+	max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			culture = greek
+		}
+		additive_modifier = {
+			value = 150
+			culture = greek
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        armor_of_achilles = {
+            value = 1
+        }
+    }
+}
+
+shield_of_achilles = {
+	max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			culture = greek
+		}
+		additive_modifier = {
+			value = 150
+			culture = greek
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        shield_of_achilles = {
+            value = 1
+        }
+    }
+}
+
+pelt_of_the_nemean_lion = {
+	max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = { name = supernatural_artifacts value = off }
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			culture = greek
+		}
+		additive_modifier = {
+			value = 5000
+			culture = greek
+			OR = {
+				trait = robust
+				trait = strong
+			}
+		}
+		additive_modifier = {
+			value = 1000000
+			culture = greek
+			is_playable = yes
+			OR = {
+				trait = robust
+				trait = strong
+			}
+		}
+	}
+    artifacts = {
+        pelt_of_the_nemean_lion = {
+            value = 1
+        }
+    }
+}
+
+alberichs_ring = {
+    max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+		modifier = {
+			factor = 0
+			has_game_rule = { name = supernatural_artifacts value = off }
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			culture_group = central_germanic
+		}
+		additive_modifier = {
+			value = 50
+			culture_group = central_germanic
+			is_playable = yes
+		}
+		additive_modifier = {
+			value = 1000
+			culture = german
+			is_playable = yes
+		}
+		additive_modifier = {
+			value = 10000000
+			culture_group = central_germanic
+			OR = {
+				has_landed_title = c_breda
+				has_landed_title = c_loon
+				has_landed_title = c_julich
+				has_landed_title = c_trier
+				has_landed_title = c_mainz
+				has_landed_title = c_koln
+				has_landed_title = c_kleve
+				has_landed_title = c_sticht
+				has_landed_title = c_holland
+			}
+		}
+	}
+    artifacts = {
+        alberichs_ring = {
+            value = 1
+        }
+    }
+}
+
+nagelring = {
+	max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			culture_group = central_germanic
+			is_playable = yes
+		}
+		additive_modifier = {
+			value = 150
+			culture_group = central_germanic
+			has_landed_title = c_bern
+		}
+		additive_modifier = {
+			value = 500
+			culture = german
+			has_landed_title = c_bern
+		}
+	}
+    artifacts = {
+        nagelring = {
+            value = 1
+        }
+    }
+}
+
+brionac = {
+	max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 50
+			culture_group = celtic
+			is_playable = yes
+		}
+		additive_modifier = {
+			value = 150
+			culture = irish
+		}
+		additive_modifier = {
+			value = 500
+			culture = irish
+			is_playable = yes
+		}
+	}
+    artifacts = {
+        brionac = {
+            value = 1
+        }
+    }
+}
+
+curtana = {
+	max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 500
+			OR = {
+				has_landed_title = d_northumberland
+				has_landed_title = d_lancaster
+				has_landed_title = d_york
+				has_landed_title = d_norfolk
+				has_landed_title = d_bedford
+				has_landed_title = d_hereford
+				has_landed_title = d_gloucester
+				has_landed_title = d_canterbury
+				has_landed_title = d_somerset
+			}
+			culture = saxon
+			independent = yes 
+			NOT = { year = 1066 }
+		}
+		additive_modifier = {
+			value = 5000
+			has_landed_title = k_england
+			year = 1066
+		}
+	}
+    artifacts = {
+        curtana = {
+            value = 1
+        }
+    }
+}
+
+durandal = {
+	max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+		modifier = {
+			factor = 0
+			year = 769
+			NOT = { year = 867 }
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			value = 150
+			dynasty = 726 #de Bretagne
+		}
+		additive_modifier = {
+			value = 5000
+			dynasty = 726 #de Bretagne
+			is_playable = yes
+		}
+		additive_modifier = {
+			value = 1000
+			OR = {
+				culture = breton
+				culture = old_frankish
+				culture = frankish
+			}
+			is_playable = yes
+			is_theocracy = no
+		}
+	}
+    artifacts = {
+        durandal = {
+            value = 1
+        }
+    }
+}
+
+joyeuse = {
+	max_amount = 1
+    spawn_date = -1.1.1
+	
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			is_alternate_start = yes
+		}
+	}
+	
+    weight = {
+		value = 0
+		additive_modifier = {
+			year = 769
+			NOT = { year = 867 }
+			value = 10000
+			character = 6392 #charlemagne
+		}
+		additive_modifier = {
+			value = 50000
+			year = 867
+			NOT = { year = 1066 }
+			dynasty = 25061 #Karling
+			OR = {
+				has_landed_title = k_frisia
+				has_landed_title = k_lotharingia
+				has_landed_title = k_bavaria
+				has_landed_title = k_germany
+				has_landed_title = k_france
+				has_landed_title = k_aquitaine
+				has_landed_title = k_burgundy
+				has_landed_title = k_italy
+			}
+		}
+		additive_modifier = {
+			value = 50000
+			year = 1066
+			dynasty = 25061 #Karling
+			is_playable = yes
+		}
+		additive_modifier = {
+			value = 100
+			year = 1066
+			OR = {
+				culture = german
+				culture = old_frankish
+				culture = frisian
+				culture = dutch
+				culture = frankish
+				culture = occitan
+			}
+			is_playable = yes
+			independent = yes
+		}
+	}
+    artifacts = {
+        joyeuse = {
+            value = 1
+        }
+    }
+}
+
+

@@ -1,0 +1,131 @@
+namespace = roy_puppet_events
+
+#What to do with new Puppet
+character_event = {
+	id = roy_puppet_events.4
+	desc = "EVTDESCroy_puppet_events.4"
+	picture = GFX_roy_liberate
+	border = GFX_event_normal_frame_war
+
+
+	is_triggered_only = yes
+
+
+	option = {
+		name = EVTOPTAroy_puppet_events.4
+		ai_chance = {
+			factor = 50
+		}
+		custom_tooltip = { text = dcolon1 }
+		event_target:target_loser = {
+			any_realm_province = {
+				add_province_modifier = { name = political_instab years = 3 }
+				}
+			}
+		event_target:target_loser = { imprison = ROOT }
+		event_target:target_loser = { 
+			abdicate_to = target_depose
+		}
+		ROOT = { 
+			make_tributary = { who = event_target:target_depose tributary_type = puppet }
+			}
+		event_target:target_depose = {
+			opinion = {
+				modifier = beholden
+				who = ROOT
+				years = 15
+			}
+		}
+		clear_event_target = target_loser
+		clear_event_target = target_depose
+	}
+	option = {
+		name = EVTOPTBroy_puppet_events.4
+		ai_chance = {
+			factor = 50
+		}
+		trigger = {
+			AND = {
+				ROOT = { higher_tier_than = DUKE }
+				event_target:target_loser = { lower_tier_than = KING }
+			}
+		}
+		custom_tooltip = { text = dcolon2 }
+		ROOT = { 
+			make_tributary = { who = event_target:target_loser tributary_type = puppet }
+			}
+		clear_event_target = target_loser
+		clear_event_target = target_depose
+	}
+}
+character_event = {
+	id = roy_puppet_events.5
+	desc = "EVTDESCroy_puppet_events.5"
+	is_triggered_only = yes
+	option = {
+		name = EVTOPTAroy_puppet_events.5
+		FROM = {
+			primary_title = {
+			add_law = succ_gavelkind 
+			}
+			recalc_succession = yes
+		}
+	}
+	option = {
+		name = EVTOPTBroy_puppet_events.5
+		FROM = {
+			primary_title = {
+			add_law = succ_primogeniture 
+			}
+			recalc_succession = yes
+		}
+	}
+	option = {
+		name = EVTOPTCroy_puppet_events.5
+		FROM = {
+			primary_title = {
+			add_law = succ_feudal_elective 
+			}
+			recalc_succession = yes
+		}
+	}
+	option = {
+		name = EVTOPTDroy_puppet_events.5
+		character_event = { id = roy_puppet_events.6 days = 0 }
+	}
+}
+character_event = {
+	id = roy_puppet_events.6
+	desc = "EVTDESCroy_puppet_events.5"
+	is_triggered_only = yes
+	option = {
+		name = EVTOPTAroy_puppet_events.6
+		FROMFROM = {
+			primary_title = {
+			add_law = succ_ultimogeniture 
+			}
+			recalc_succession = yes
+		}
+	}
+	option = {
+		name = EVTOPTBroy_puppet_events.6
+		FROMFROM = {
+			primary_title = {
+			add_law = succ_elective_gavelkind 
+			}
+			recalc_succession = yes
+		}
+	}
+	option = {
+		name = EVTOPTCroy_puppet_events.6
+		FROMFROM = {
+			primary_title = {
+			add_law = succ_eldership 
+			}
+			recalc_succession = yes
+		}
+	}
+	option = {
+		name = Cancel
+	}
+}

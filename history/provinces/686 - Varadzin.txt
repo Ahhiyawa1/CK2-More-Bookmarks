@@ -1,0 +1,31 @@
+# County Title
+title = c_varadzin
+# Settlements
+max_settlements = 4
+b_varazdin = tribal
+# Misc
+culture = croatian
+religion = slavic_pagan
+600.1.1 = { religion = catholic culture = illyro_roman }
+################################################################################
+# History
+################################################################################
+800.1.1 = { 
+    religion = catholic
+    b_varazdin = castle
+    b_cakovec = city
+    b_ludbreg = temple
+}
+
+920.1.1 = { religion = orthodox culture = croatian }
+################################################################################
+# 686 - Varadzin
+################################################################################
+
+################################################################################
+# b_lepoglava = castle
+# b_toplice = castle
+# b_donjastubica = castle
+# b_krapina = castle
+# b_oroslavje = castle
+################################################################################

@@ -1,0 +1,25 @@
+# Character scope
+on_startup = {
+	events = {
+		cl_common_kinich.001
+	}
+	effect = {
+		if = {
+			limit = {
+				is_reformed_religion = yes
+				religion_scope = {
+					persistent_event_target:religion_title = { NOT = { has_title_flag = kcc_has_set_religion_flags } }
+				}
+			}
+			kinich_pagan_reformation_flags_effect = yes
+		}
+	}
+}
+
+# When a pagan religion is reformed
+# ROOT is reformer
+on_reform_religion = {
+	effect = {
+		kinich_pagan_reformation_flags_effect = yes
+	}
+}

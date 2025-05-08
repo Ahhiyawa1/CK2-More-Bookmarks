@@ -1,0 +1,19 @@
+# County Title
+title = c_cuenca
+# Settlements
+max_settlements = 4
+b_cuenca = castle
+b_tarancon = city
+b_sisante = temple
+# Misc
+culture = romano_hispanic
+religion = catholic
+terrain = hills
+800.1.1 = { culture = visigothic }
+################################################################################
+# History
+################################################################################
+955.1.1 = { culture = castilian } 
+################################################################################
+# 413 - Cuenca
+################################################################################

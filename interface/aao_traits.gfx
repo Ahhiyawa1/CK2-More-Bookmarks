@@ -1,0 +1,24 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_trait_herald_of_zun"
+		texturefile = "gfx/traits/herald_of_zun.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_herald_of_zun_descendant"
+		texturefile = "gfx/traits/herald_of_zun_descendant.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_odin_child_sickness"
+		texturefile = "gfx/traits/sickly.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+}

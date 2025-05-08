@@ -1,0 +1,423 @@
+#p31 Frankish Culture Overlayer - Male
+31 = {
+	0 = { # 0 - blank
+		factor = 1
+
+		trigger = {
+			OR = {
+				is_variable_equal = { which = ca_overlayer value = 0 }
+				is_variable_equal = { which = ca_overlayer value = 1 }
+				has_portrait_property = { layer = 5 index = 10 }
+				has_portrait_property = { layer = 5 index = 12 }
+				has_portrait_property = { layer = 5 index = 13 }
+			}
+		}
+
+		modifier = {
+			factor = 100
+			OR = {
+				NOT = { has_dlc = "Holy Fury" }
+				is_female = yes
+				blg_priest = yes
+				blg_prisoner = yes
+				blg_saint = yes
+			}
+		}
+
+		modifier = {
+			factor = 100
+			OR = {
+				blg_headgear_overlayer = no
+				blg_merchant_headgear = yes
+				has_portrait_property = { layer = 5 index = 9 }
+			}
+			NOT = { check_variable = { which = ca_overlayer value = 2 } }
+		}
+	}
+
+	1 = { # a - Military Helm 01
+		factor = 100
+		hide_layers = { 43 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = {
+					OR = {
+						is_variable_equal = { which = ca_overlayer value = 0 }
+						check_variable = { which = ca_overlayer value = 6 }
+					}
+				}
+				blg_style_late = yes
+				has_portrait_property = { layer = 5 index = 10 }
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 2 }
+			}
+		}
+	}
+
+	2 = { # b - Military Helm 02
+		factor = 99
+		hide_layers = { 43 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = {
+					OR = {
+						is_variable_equal = { which = ca_overlayer value = 0 }
+						check_variable = { which = ca_overlayer value = 6 }
+					}
+				}
+				blg_style_mid = yes
+				OR = {
+					has_portrait_property = { layer = 5 index = 12 }
+					has_portrait_property = { layer = 5 index = 13 }
+				}
+				NOR = {
+					has_portrait_property = { layer = 31 index = 3 }
+					has_portrait_property = { layer = 31 index = 4 }
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 3 }
+			}
+		}
+	}
+
+	3 = { # c - Military Helm 03
+		factor = 99
+		hide_layers = { 43 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = {
+					OR = {
+						is_variable_equal = { which = ca_overlayer value = 0 }
+						check_variable = { which = ca_overlayer value = 6 }
+					}
+				}
+				blg_style_mid = yes
+				OR = {
+					has_portrait_property = { layer = 5 index = 12 }
+					has_portrait_property = { layer = 5 index = 13 }
+				}
+				NOR = {
+					has_portrait_property = { layer = 31 index = 2 }
+					has_portrait_property = { layer = 31 index = 4 }
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 4 }
+			}
+		}
+	}
+
+	4 = { # d - Military Helm 04
+		factor = 99
+		hide_layers = { 43 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = {
+					OR = {
+						is_variable_equal = { which = ca_overlayer value = 0 }
+						check_variable = { which = ca_overlayer value = 6 }
+					}
+				}
+				blg_style_late = yes
+				OR = {
+					has_portrait_property = { layer = 5 index = 12 }
+					has_portrait_property = { layer = 5 index = 13 }
+				}
+				NOR = {
+					has_portrait_property = { layer = 31 index = 2 }
+					has_portrait_property = { layer = 31 index = 3 }
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 5 }
+			}
+		}
+	}
+
+	5 = { # e - Count Accessories
+		factor = 1
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_overlayer value = 0 } }
+				OR = {
+					is_landed = yes
+					spouse_even_if_dead = { is_landed = yes }
+					blg_prince_title = yes
+				}
+				lower_real_tier_than = duke
+				spouse_even_if_dead = { lower_real_tier_than = duke }
+				blg_peasant = no
+
+				NOR = {
+					has_portrait_property = { layer = 5 index = 10 }
+					has_portrait_property = { layer = 31 index = 6 }
+					has_portrait_property = { layer = 31 index = 7 }
+					has_portrait_property = { layer = 31 index = 8 }
+					has_portrait_property = { layer = 31 index = 9 }
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 6 }
+			}
+		}
+	}
+
+	6 = { # f - Count Accessories
+		factor = 1
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_overlayer value = 0 } }
+				OR = {
+					is_landed = yes
+					spouse_even_if_dead = { is_landed = yes }
+					blg_prince_title = yes
+				}
+				lower_real_tier_than = duke
+				spouse_even_if_dead = { lower_real_tier_than = duke }
+				blg_peasant = no
+
+				NOR = {
+					has_portrait_property = { layer = 5 index = 10 }
+					has_portrait_property = { layer = 31 index = 5 }
+					has_portrait_property = { layer = 31 index = 7 }
+					has_portrait_property = { layer = 31 index = 8 }
+					has_portrait_property = { layer = 31 index = 9 }
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 7 }
+			}
+		}
+	}
+
+	7 = { # g - Count Accessories
+		factor = 1
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_overlayer value = 0 } }
+				OR = {
+					is_landed = yes
+					spouse_even_if_dead = { is_landed = yes }
+					blg_prince_title = yes
+				}
+				lower_real_tier_than = duke
+				spouse_even_if_dead = { lower_real_tier_than = duke }
+				blg_peasant = no
+
+				NOR = {
+					has_portrait_property = { layer = 5 index = 10 }
+					has_portrait_property = { layer = 31 index = 5 }
+					has_portrait_property = { layer = 31 index = 6 }
+					has_portrait_property = { layer = 31 index = 8 }
+					has_portrait_property = { layer = 31 index = 9 }
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 8 }
+			}
+		}
+	}
+
+	8 = { # h - Count Accessories
+		factor = 1
+		hide_layers = { 1 = {} }
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_overlayer value = 0 } }
+				OR = {
+					is_landed = yes
+					spouse_even_if_dead = { is_landed = yes }
+					blg_prince_title = yes
+				}
+				lower_real_tier_than = duke
+				spouse_even_if_dead = { lower_real_tier_than = duke }
+				blg_peasant = no
+
+				NOR = {
+					has_portrait_property = { layer = 5 index = 10 }
+					has_portrait_property = { layer = 31 index = 5 }
+					has_portrait_property = { layer = 31 index = 6 }
+					has_portrait_property = { layer = 31 index = 7 }
+					has_portrait_property = { layer = 31 index = 9 }
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 9 }
+			}
+		}
+	}
+
+	9 = { # i - Count Accessories
+		factor = 1
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_overlayer value = 0 } }
+				OR = {
+					is_landed = yes
+					spouse_even_if_dead = { is_landed = yes }
+					blg_prince_title = yes
+				}
+				lower_real_tier_than = duke
+				spouse_even_if_dead = { lower_real_tier_than = duke }
+				blg_peasant = no
+
+				NOR = {
+					has_portrait_property = { layer = 5 index = 10 }
+					has_portrait_property = { layer = 31 index = 5 }
+					has_portrait_property = { layer = 31 index = 6 }
+					has_portrait_property = { layer = 31 index = 7 }
+					has_portrait_property = { layer = 31 index = 8 }
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 10 }
+			}
+		}
+	}
+
+	10 = { # j - Duke Accessories
+		factor = 2
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_overlayer value = 0 } }
+				has_portrait_property = { layer = 5 index = 4 }
+				OR = {
+					real_tier = duke
+					spouse_even_if_dead = { real_tier = duke }
+				}
+
+				NOR = {
+					has_portrait_property = { layer = 31 index = 11 }
+					has_portrait_property = { layer = 31 index = 12 }
+					has_portrait_property = { layer = 31 index = 13 }
+					has_portrait_property = { layer = 31 index = 14 }
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 11 }
+			}
+		}
+	}
+
+	11 = { # k - Duke Accessories
+		factor = 2
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_overlayer value = 0 } }
+				OR = {
+					AND = {
+						has_portrait_property = { layer = 5 index = 4 }
+						OR = {
+							real_tier = duke
+							spouse_even_if_dead = { real_tier = duke }
+						}
+
+						NOR = {
+							has_portrait_property = { layer = 31 index = 10 }
+							has_portrait_property = { layer = 31 index = 12 }
+							has_portrait_property = { layer = 31 index = 13 }
+							has_portrait_property = { layer = 31 index = 14 }
+						}
+					}
+					has_portrait_property = { layer = 5 index = 12 }
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 12 }
+			}
+		}
+
+		modifier = {
+			factor = 100
+			has_portrait_property = { layer = 5 index = 12 }
+		}
+	}
+
+	12 = { # l - Duke Accessories
+		factor = 2
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_overlayer value = 0 } }
+				has_portrait_property = { layer = 5 index = 4 }
+				OR = {
+					real_tier = duke
+					spouse_even_if_dead = { real_tier = duke }
+				}
+
+				NOR = {
+					has_portrait_property = { layer = 31 index = 10 }
+					has_portrait_property = { layer = 31 index = 11 }
+					has_portrait_property = { layer = 31 index = 13 }
+					has_portrait_property = { layer = 31 index = 14 }
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 13 }
+			}
+		}
+	}
+
+	13 = { # m - Duke Accessories
+		factor = 2
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_overlayer value = 0 } }
+				has_portrait_property = { layer = 5 index = 4 }
+				OR = {
+					real_tier = duke
+					spouse_even_if_dead = { real_tier = duke }
+				}
+
+				NOR = {
+					has_portrait_property = { layer = 31 index = 10 }
+					has_portrait_property = { layer = 31 index = 11 }
+					has_portrait_property = { layer = 31 index = 12 }
+					has_portrait_property = { layer = 31 index = 14 }
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 14 }
+			}
+		}
+	}
+
+	14 = { # n - Duke Accessories
+		factor = 2
+
+		trigger = {
+			trigger_if = {
+				limit = { is_variable_equal = { which = ca_overlayer value = 0 } }
+				has_portrait_property = { layer = 5 index = 4 }
+				OR = {
+					real_tier = duke
+					spouse_even_if_dead = { real_tier = duke }
+				}
+
+				NOR = {
+					has_portrait_property = { layer = 31 index = 10 }
+					has_portrait_property = { layer = 31 index = 11 }
+					has_portrait_property = { layer = 31 index = 12 }
+					has_portrait_property = { layer = 31 index = 13 }
+				}
+			}
+			trigger_else = {
+				is_variable_equal = { which = ca_overlayer value = 15 }
+			}
+		}
+	}
+}

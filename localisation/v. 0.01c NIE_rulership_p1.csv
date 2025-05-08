@@ -1,0 +1,37 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+;;;;;;;;;;;;;;
+NIE.220;Vassals react to your justice;;;;;;;;;;;;;x
+EVTNAMENIE.220;Vassals react to your justice;;;;;;;;;;;;;x
+EVTDESC_NIE_220;You are very well known as a just ruler. Some vassals like it, while some do not. You know, that those, who share your just approach will be more loyal servants, than those, who prefer to be more arbitrary in their life.;;;;;;;;;;;;;x
+EVTOPTA_NIE_220;They should be happy to have me!;;;;;;;;;;;;;x
+NIE_justice_opinion;Your vassals opinion on you will change.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.221;Vassals react to your zeal;;;;;;;;;;;;;x
+EVTNAMENIE.221;Vassals react to your zeal;;;;;;;;;;;;;x
+EVTDESC_NIE_221;You are very well known as a faithful and zealous ruler. Some vassals like it, while some do not. You know, that those, who share your approach will be more loyal servants, than those, who prefer to be more cynical in their life.;;;;;;;;;;;;;x
+EVTOPTA_NIE_221;They should be happy to have me!;;;;;;;;;;;;;x
+NIE_zealous_opinion;Your vassals opinion on you will change.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.222;Vassals react to your diligence;;;;;;;;;;;;;x
+EVTNAMENIE.222;Vassals react to your diligence;;;;;;;;;;;;;x
+EVTDESC_NIE_222;You are very well known as a diligent ruler. Some vassals like it, while some do not. You know, that those, who share your active approach will be more loyal servants, than those, who prefer to be more slothful in their life.;;;;;;;;;;;;;x
+EVTOPTA_NIE_222;They should be happy to have me!;;;;;;;;;;;;;x
+NIE_diligence_opinion;Your vassals opinion on you will change.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.223;Vassals react to your bravery;;;;;;;;;;;;;x
+EVTNAMENIE.223;Vassals react to your bravery;;;;;;;;;;;;;x
+EVTDESC_NIE_223;You are very well known as a brave ruler. Some vassals like it, while some do not. You know, that those, who share your just approach will be more loyal servants, than those, who prefer to hide and seek shelter when danger comes.;;;;;;;;;;;;;x
+EVTOPTA_NIE_223;They should be happy to have me!;;;;;;;;;;;;;x
+NIE_bravery_opinion;Your vassals opinion on you will change.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.224;Vassals react to your honesty;;;;;;;;;;;;;x
+EVTNAMENIE.224;Vassals react to your honesty;;;;;;;;;;;;;x
+EVTDESC_NIE_224;You are very well known as a honest ruler. Some vassals like it, while some do not. You know, that those, who share your just approach will be more loyal servants, than those, who prefer to be more deceitful in their life.;;;;;;;;;;;;;x
+EVTOPTA_NIE_224;They should be happy to have me!;;;;;;;;;;;;;x
+NIE_honesty_opinion;Your vassals opinion on you will change.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.225;Vassals react to your celibacy;;;;;;;;;;;;;x
+EVTNAMENIE.225;Vassals react to your celibacy;;;;;;;;;;;;;x
+EVTDESC_NIE_225;Your celibacy is a popular topic in many conversations throughout the realm. The clergy of course is happy from your decision, as well as most of your zealous vassals, but others don't understand your decision to remain pure so well.;;;;;;;;;;;;;x
+EVTOPTA_NIE_225;They should be happy to have me!;;;;;;;;;;;;;x
+NIE_celibate_opinion;Your vassals opinion on you will change.;;;;;;;;;;;;;x

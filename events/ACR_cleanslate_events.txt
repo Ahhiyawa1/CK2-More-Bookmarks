@@ -1,0 +1,91 @@
+namespace = ancrel_cleanslate
+
+# Egyptian Coptic Culture Revived!
+narrative_event = {
+	id = ancrel_cleanslate.1
+	title = ancrel_cleanslate.1.title
+	desc = ancrel_cleanslate.1.desc
+	picture = GFX_evt_tuscan_Country_egyptian_pagan
+	
+	is_triggered_only = yes
+	
+	has_global_flag = egyptian_coptic_revived
+	
+	option = {
+		name = ancrel_cleanslate.1.a
+		trigger = {
+			religion_openly_in_egyptian_subgroup_trigger = yes
+			OR = {
+				culture = egyptian_arabic
+				culture = coptic
+			}
+		}
+	}
+
+	option = {
+		name = ancrel_cleanslate.1.b
+		trigger = {
+			religion_openly_in_egyptian_subgroup_trigger = yes
+			NOR = {
+				culture = egyptian_arabic
+				culture = coptic
+			}
+		}
+	}
+
+	option = {
+		name = ancrel_cleanslate.1.c
+		trigger = { religion_openly_in_egyptian_subgroup_trigger = no }
+	}
+}
+
+# Gaulish Culture Revived!
+narrative_event = {
+	id = ancrel_cleanslate.2
+	title = ancrel_cleanslate.2.title
+	desc = ancrel_cleanslate.1.desc
+	picture = GFX_evt_lakeside
+	
+	is_triggered_only = yes
+	
+	has_global_flag = gaulish_revived
+	
+	option = {
+		name = ancrel_cleanslate.1.a
+		trigger = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+			OR = {
+				culture = breton
+				culture = frankish
+				culture = visigothic
+				culture = french
+				culture = norman
+				culture = occitan
+				culture = frisian
+				culture = dutch
+			}
+		}
+	}
+
+	option = {
+		name = ancrel_cleanslate.1.b
+		trigger = {
+			religion_openly_in_celtic_subgroup_trigger = yes
+			NOR = {
+				culture = breton
+				culture = frankish
+				culture = visigothic
+				culture = french
+				culture = norman
+				culture = occitan
+				culture = frisian
+				culture = dutch
+			}
+		}
+	}
+
+	option = {
+		name = ancrel_cleanslate.1.c
+		trigger = { religion_openly_in_celtic_subgroup_trigger = no }
+	}
+}

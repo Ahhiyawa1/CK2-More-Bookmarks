@@ -1,0 +1,26 @@
+god = {
+	birth = 0
+	inherit_chance = 0
+	
+	diplomacy = 1000
+	intrigue = 1000
+	stewardship = 1000
+	martial = 1000
+	learning = 1000
+	combat_rating = 1000
+	health = 1000
+	fertility = 10
+	random = no
+	immortal = yes
+	
+	ruler_designer_cost = 0
+	
+	ai_rationality = 1000
+	
+	male_compliment = COMPL_GENIUS
+	male_compliment_adj = COMPL_BRILLIANT
+	female_compliment = COMPL_GENIUS
+	female_compliment_adj = COMPL_BRILLIANT
+	child_compliment = COMPL_SMARTY
+	child_compliment_adj = COMPL_CLEVER
+}

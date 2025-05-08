@@ -1,0 +1,36 @@
+# 3075 - Argos
+
+# County Title
+title = c_argos
+
+# Settlements
+max_settlements = 11
+
+b_argos = castle
+b_andricos = city
+b_cyrares = city
+b_tomarina = city
+b_midea = castle
+b_thyrousa = castle
+b_lerna = castle
+b_temenion = city
+b_castavala = temple 
+b_argos_kosaea = temple
+b_argos_saronicus = temple
+
+# Misc
+culture = greek
+religion = hellenic_pagan
+terrain = hills
+
+# History
+890.1.1 = { religion = orthodox }
+1137.1.1 = { trade_post = b_morosini }
+
+# 4th crusade
+
+#1205.1.1 = { culture = frankish }
+#1205.1.1 = { religion = catholic }
+
+
+

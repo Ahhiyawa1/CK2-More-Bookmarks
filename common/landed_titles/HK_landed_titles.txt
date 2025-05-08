@@ -1,0 +1,31 @@
+e_hindukush = {
+	color={ 255 210 77 }
+	color2={ 255 255 255 }
+		
+		capital = 1185 # Kabul
+		
+		short_name = yes
+		
+		title = "Emperor"
+		title_female = "Empress"
+		
+		duchy_revokation = yes
+
+		allow = {
+			OR = {
+				ai = no
+				culture = panjabi
+				culture = afghan
+				culture = sogdian
+				culture = saka
+			}
+			OR = {
+				religion = hindu
+				religion = buddhist
+				religion = zoroastrian
+				is_heresy_of = zoroastrian
+			}
+				has_landed_title = k_punjab
+				has_landed_title = k_afghanistan
+		}
+}

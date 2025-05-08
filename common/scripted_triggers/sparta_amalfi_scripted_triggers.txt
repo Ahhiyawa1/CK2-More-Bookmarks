@@ -1,0 +1,57 @@
+# is_amalfi_content_trigger
+# is_sparta_content_trigger
+# amalfi_music_trigger
+# sparta_music_trigger
+# harranian_music_trigger
+
+is_amalfi_content_trigger = {
+	OR = {
+		has_landed_title = c_amalfi
+		has_landed_title = d_amalfi
+		has_landed_title = k_amalfi
+		trigger_if = {
+			limit = { is_patrician = yes }
+			any_liege = {
+				OR = {
+					has_landed_title = c_amalfi
+					has_landed_title = d_amalfi
+					has_landed_title = k_amalfi
+				}
+			}
+		}
+	}
+}
+
+is_sparta_content_trigger = {
+	OR = {
+		province_id = 502
+		province_id = 503
+		province_id = 504
+		province_id = 505
+	}
+}
+
+amalfi_music_trigger = {
+	OR = {
+		culture_group = byzantine
+		culture_group = latin
+		culture = lombard
+		culture = greco_arabic
+	}
+}
+
+sparta_music_trigger = {
+	OR = {
+		culture_group = byzantine
+		culture = roman
+		culture = greco_arabic
+	}
+}
+
+harranian_music_trigger = {
+	OR = {
+		culture_group = byzantine
+		culture_group = iranian
+		culture_group = arabic
+	}
+}

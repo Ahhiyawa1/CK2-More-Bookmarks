@@ -1,0 +1,1587 @@
+slots = {
+	#head = 1
+	shield = 1
+}
+
+
+
+
+#############################
+###### Societies ######
+#############################
+
+#############################
+###### Misc ######
+#############################
+
+
+
+
+
+
+
+
+
+#############################
+###### Christian ######
+#############################
+
+#############################
+###### Jewish ######
+#############################
+
+hezekiahs_hammer = { #creating israel
+
+	martial = 3
+	combat_rating = 18
+	same_religion_opinion = 5
+	
+	active = {
+		religion_group = jewish_group
+		is_adult = yes
+	}
+	allowed_gift = { religion_group = jewish_group }
+	
+	quality = 5
+	flags = { religious jewish_group very_rare hammer combat_weapon }
+	stacking = no
+	picture = "GFX_hezekiahs_hammer"
+	slot = weapon
+}
+menorah  = { #given by pilgrim 
+	
+	monthly_character_piety = 0.75
+	learning = 2
+	same_religion_opinion = 5
+	religious_authority_artifact = 0.05
+	
+	active = { religion_group = jewish_group }
+	allowed_gift = { religion_group = jewish_group }
+	
+	quality = 4
+	flags = { religious jewish_group very_rare candelbra  }
+	stacking = no
+	picture = "GFX_menorah"
+}
+maccabean_shield = { #vanilla rumors
+
+	martial = 2
+	combat_rating = 10
+	command_modifier = {
+		defence = 0.15
+	}
+	
+	active = {
+		religion_group = jewish_group
+		is_adult = yes
+	}
+	allowed_gift = { religion_group = jewish_group }
+	
+	quality = 4
+	flags = { religious jewish_group very_rare shield }
+	stacking = no
+	picture = "GFX_maccabean_shield"
+	slot = shield
+}
+himyarite_mask = { #regular spawn
+	
+	diplomacy = 2
+	vassal_opinion = 5
+	same_religion_opinion = 15
+	general_opinion = -10
+
+	active = {
+		OR = {
+			religion_group = jewish_group
+			culture = bedouin_arabic
+		}	
+		is_adult = yes
+	}
+	allowed_gift = {
+		religion_group = jewish_group
+		culture = bedouin_arabic
+	}
+	
+	quality = 4
+	flags = { religious jewish_group bedouin_arabic mask very_rare  }
+	stacking = no
+	picture = "GFX_himyarite_mask"
+	slot = mask
+}
+
+
+priestly_breastplate = { #religious head, gives negatives when worn by someone else
+
+	learning = 3
+	same_religion_opinion = 5
+	
+	priestly_breastplate_modifier = 1
+	#debuffs for non religious head
+	
+	active = {
+		religion_group = jewish_group
+		is_adult = yes
+	}
+	allowed_gift = { religion_group = jewish_group }
+	
+	quality = 3
+	flags = { religious jewish_group very_rare temple }
+	indestructible = yes
+	stacking = no
+	picture = "GFX_priestly_breastplate"
+}
+
+brass_snake = { #regular spawn + vanilla rumors
+
+	health = 0.5
+	defensive_plot_power_modifier = 0.05
+	monthly_character_piety = -0.20
+
+	active = { religion_group = jewish_group }
+	allowed_gift = { religion_group = jewish_group }
+	
+	quality = 2
+	flags = { religious jewish_group rare statue }
+	stacking = no
+	picture = "GFX_brass_snake"
+}
+
+
+
+#############################
+###### Muslim ######
+#############################
+
+#############################
+###### Zoroastrian ######
+#############################
+
+
+#############################
+###### Germanic ######
+#############################
+
+gungnir = { #event spawn
+	
+	martial = 3
+	combat_rating = 18
+	command_modifier = {
+		phase_melee_attack = 0.10
+		phase_melee_defense = 0.10
+	}
+	
+	gungnir_modifier = 1
+	special_inheritance_modifier = 1
+	
+	active = {
+		religion_openly_norse_or_reformed_trigger = yes
+		is_adult = yes
+		dynasty = FROMFROM
+	}
+	allowed_gift = { always = no }
+	
+	quality = 5
+	flags = { religious norse_pagan very_rare odin spear ragnarok combat_weapon blacklist special_inheritance }
+	stacking = no
+	picture = "GFX_gungnir"
+	slot = weapon
+}
+odins_eye = { #event spawn
+	
+	intrigue = 2
+	monthly_character_piety = 0.75
+	
+	odins_eye_modifier = 1
+	
+	active = {
+		religion_openly_norse_or_reformed_trigger = yes
+		is_adult = yes
+		OR = {
+			trait = one_eyed
+			trait = blinded
+		}	
+	}
+	allowed_gift = { religion_openly_norse_or_reformed_trigger = yes }
+	
+	quality = 5
+	flags = { religious norse_pagan very_rare odin }
+	stacking = no
+	picture = "GFX_odins_eye"
+}
+gleipnir = { #event spawn
+	
+	arrest_chance_modifier = 0.30
+	learning = 2
+	threat_decay_speed = 0.15
+	same_religion_opinion = 5
+	
+	active = {
+		religion_openly_norse_or_reformed_trigger = yes
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_norse_or_reformed_trigger = yes }
+	
+	quality = 5
+	flags = { religious norse_pagan very_rare fenrir ragnarok }
+	stacking = no
+	picture = "GFX_relic_box_simple"
+}
+jarngreipr = { #regular spawn
+	
+	martial = 2
+	combat_rating = 8
+	command_modifier = {
+		defence = 0.05
+	}
+	same_religion_opinion = 5
+	
+	active = {
+		religion_openly_norse_or_reformed_trigger = yes
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_norse_or_reformed_trigger = yes }
+	
+	quality = 4
+	flags = { religious norse_pagan very_rare thor armor gauntlets ragnarok }
+	stacking = no
+	picture = "GFX_jarngreipr"
+	slot = wrist
+}
+fafnirs_scale = { #reward for killing fafnir
+
+	monthly_character_prestige = 0.5
+	global_revolt_risk = -0.05
+	martial = 1
+	health = 0.5
+	
+	blacklist_modifier = 1
+	
+	active = {
+		religion_openly_norse_or_reformed_trigger = yes
+		is_adult = yes
+	}
+	allowed_gift = { always = no }
+	
+	quality = 4
+	flags = { religious norse_pagan very_rare dragon scale blacklist }
+	stacking = no
+	picture = "GFX_fafnirs_scale"
+}
+braggis_harp = { #regular spawn
+	
+	diplomacy = 3
+	sex_appeal_opinion = 15
+	same_religion_opinion = 10
+	
+	active = {
+		religion_openly_norse_or_reformed_trigger = yes
+		musical_artifact_activation_trigger = yes
+	}
+	allowed_gift = { religion_openly_norse_or_reformed_trigger = yes }
+	
+	quality = 4
+	flags = { religious norse_pagan very_rare music harp }
+	stacking = no
+	picture = "GFX_king_davids_harp"
+}
+brisingamen = { #regular spawn
+	
+	fertility = 0.20
+	church_opinion = 5
+	sex_appeal_opinion = 10
+	
+	active = {
+		religion_openly_norse_or_reformed_trigger = yes
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_norse_or_reformed_trigger = yes }
+	
+	quality = 3
+	flags = { religious norse_pagan rare necklace }
+	stacking = no
+	picture = "GFX_pearl_necklace"
+	slot = neck
+}
+tarnkappe = { #regular spawn 
+	
+	murder_plot_power_modifier = 0.10
+	intrigue = 1
+	defensive_plot_power_modifier = 0.15
+	
+	active = {
+		religion_openly_norse_or_reformed_trigger = yes
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_norse_or_reformed_trigger = yes }
+	
+	quality = 3
+	flags = { religious norse_pagan rare cloak }
+	stacking = no
+	picture = "GFX_tarnkappe"
+	slot = ceremonial_torso
+}
+huginns_feather = { #event spawn 4 after odin's ravens spotted
+	
+	monthly_character_piety = 0.25
+	learning = 1
+	health = 0.5
+	
+	active = {
+		religion_openly_norse_or_reformed_trigger = yes
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_norse_or_reformed_trigger = yes }
+	
+	quality = 3
+	flags = { religious norse_pagan rare odin ragnarok }
+	stacking = no
+	picture = "GFX_huginns_feather"
+}
+muninns_feather = { #event spawn 4 after odin's ravens spotted
+	
+	monthly_character_piety = 0.25
+	intrigue = 1
+	plot_discovery_chance = 0.10
+	
+	active = {
+		religion_openly_norse_or_reformed_trigger = yes
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_norse_or_reformed_trigger = yes }
+	
+	quality = 3
+	flags = { religious norse_pagan rare odin ragnarok }
+	stacking = no
+	picture = "GFX_muninns_feather"
+}
+slayers_skull = { #for fafnir, destroyed on it's death
+	
+	monthly_character_prestige = 0.25
+	monthly_character_wealth = 2
+	
+	blacklist_modifier = 1
+	
+	allowed_gift = { always = no }
+	
+	quality = 1
+	flags = { trophy skull fafnir_trophy blacklist curse }
+	picture = "GFX_saints_skull"
+}
+
+#############################
+###### West African ######
+#############################
+
+jaguar_spear = { ####event spawn
+
+	monthly_character_prestige = 0.5
+	martial = 3
+	combat_rating = 15
+	command_modifier = {
+		morale_offence = 0.15
+		morale_defence = 0.15
+	}
+
+	active = {
+		religion_openly_west_african_or_reformed_trigger = yes
+		is_adult = yes
+	}
+	
+	allowed_gift = { religion_openly_west_african_or_reformed_trigger = yes }
+	
+	quality = 5
+	flags = { religious west_african_pagan very_rare spear combat_weapon }
+	stacking = no
+	picture = "GFX_jaguar_spear"
+	slot = weapon
+}
+
+djembe = { ####regular spawn
+
+	diplomacy = 2
+	learning = 1
+	same_religion_opinion = 5
+
+	active = {
+		religion_openly_west_african_or_reformed_trigger = yes	
+		musical_artifact_activation_trigger = yes
+	}
+	allowed_gift = { religion_openly_west_african_or_reformed_trigger = yes }
+	
+	quality = 4
+	flags = { religious west_african_pagan very_rare drums music }
+	stacking = no
+	picture = "GFX_relic_box"
+}
+
+dan_mask = { ####regular spawn
+
+	monthly_character_prestige = 0.25
+	monthly_character_piety = 0.25
+	learning = 2
+	same_religion_opinion = 15
+	general_opinion = -10
+
+
+	active = {
+		religion_openly_west_african_or_reformed_trigger = yes
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_west_african_or_reformed_trigger = yes }
+	
+	quality = 4
+	flags = { religious west_african_pagan very_rare mask }
+	stacking = no
+	picture = "GFX_dan_mask"
+	slot = mask
+}
+
+ashanti_doll = { ####event spawn
+
+	fertility = 0.15
+	sex_appeal_opinion = 10
+	
+	ashanti_doll_modifier = 1
+	blacklist_modifier = 1
+	
+	active = {
+		religion_openly_west_african_or_reformed_trigger = yes
+		is_adult = yes
+	}
+	allowed_gift = { always = no }
+	
+	quality = 4
+	flags = { religious west_african_pagan very_rare doll created curse blacklist }
+	stacking = no
+	picture = "GFX_ashanti_doll"
+}
+
+herbal_medicine = { ####event spawn
+
+	health = 0.5
+	learning = 1
+	
+	blacklist_modifier = 1
+	
+	active = {
+		religion_openly_west_african_or_reformed_trigger = yes	
+		is_adult = yes
+	}
+	allowed_gift = { always = no }
+	
+	quality = 3
+	flags = { religious west_african_pagan rare medicine created curse blacklist }
+	stacking = no
+	picture = "GFX_pouch"
+}
+
+#############################
+###### Finnish/Suomenusko####
+#############################
+
+
+ukonvasara = { ####regular spawn
+
+	monthly_character_prestige = 0.5
+	martial = 2
+	combat_rating = 18
+	same_religion_opinion = 5
+	
+	active = {
+		religion_openly_finnish_or_reformed_trigger = yes
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_finnish_or_reformed_trigger = yes }
+	
+	quality = 5
+	flags = { religious finnish_pagan very_rare hammer combat_weapon }
+	stacking = no
+	picture = "GFX_ukonvasara"
+	slot = weapon
+}
+
+sampo_fragment = { ####regular spawn 4, event spawn 5
+	
+	monthly_character_prestige = 0.1
+	
+	#can be reconstructed into sampo
+	
+	active = {
+		religion_openly_finnish_or_reformed_trigger = yes
+	}
+	allowed_gift = { religion_openly_finnish_or_reformed_trigger = yes }
+	
+	quality = 5
+	flags = { religious finnish_pagan very_rare fragment curse }
+	stacking = yes
+	picture = "GFX_sampo_fragment"
+}
+vipunens_magic_scroll = { ###event spawn
+	
+	learning = 3
+	diplomacy = -1
+	tech_growth_modifier = 0.1
+	
+	active = {
+		religion_openly_finnish_or_reformed_trigger = yes
+		OR = {
+			trait = scholar
+			trait = mystic
+			learning = 15
+		}
+	}
+	allowed_gift = { religion_openly_finnish_or_reformed_trigger = yes }
+	
+	quality = 4
+	flags = { religious finnish_pagan very_rare magic }
+	stacking = no
+	picture = "GFX_vipunens_magic_scroll"
+}
+vainamoinens_harp = {  ###regular spawn
+	
+	diplomacy = 3
+	sex_appeal_opinion = 15
+	same_religion_opinion = 5 
+	
+	active = {
+		religion_openly_finnish_or_reformed_trigger = yes
+		musical_artifact_activation_trigger = yes
+	}
+	allowed_gift = { religion_openly_finnish_or_reformed_trigger = yes }
+	
+	quality = 4
+	flags = { religious finnish_pagan very_rare music harp }
+	stacking = no
+	picture = "GFX_vainamoinens_harp"
+}
+kalevanmiekka = { ###event spawn
+
+	martial = 3
+	combat_rating = 12
+	monthly_character_prestige = 1
+	command_modifier = {
+		morale_offence = 0.1
+	}
+
+	active = {
+		OR = {
+			religion_openly_finnish_or_reformed_trigger = yes
+			culture_group = finno_ugric
+		}	
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_finnish_or_reformed_trigger = yes }
+	
+	quality = 4
+	flags = { religious very_rare finnish_pagan finno_ugric sword combat_weapon }
+	stacking = no
+	picture = "GFX_kalevanmiekka"
+	slot = weapon
+}
+beard_of_moss = {   ####regular spawn 3
+
+	diplomacy = 2
+	health = 0.25
+	monthly_character_prestige = 0.50
+
+	active = { religion_openly_finnish_or_reformed_trigger = yes }
+	allowed_gift = { religion_openly_finnish_or_reformed_trigger = yes }
+	
+	quality = 3
+	flags = { religious finnish_pagan rare herb }
+	stacking = no
+	picture = "GFX_beard_of_moss"
+}
+axe_pendant = { ###regular spawn 5
+	
+	monthly_character_prestige = 0.25
+	monthly_character_piety = 0.25
+	learning = 1
+	
+	
+	active = { 
+		religion_openly_finnish_or_reformed_trigger = yes 
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_finnish_or_reformed_trigger = yes }
+	
+	quality = 2
+	flags = { religious finnish_pagan pendant }
+	stacking = no
+	picture = "GFX_axe_pendant"
+	slot = neck
+}
+
+#############################
+###### Slavic ######
+#############################
+
+svarogs_hammer = {  ###regular spawn
+
+	stewardship = 2
+	command_modifier = {
+		siege = 0.3
+	}
+	build_cost_modifier = -0.15
+	build_time_modifier = -0.15
+	
+	active = {
+		religion_openly_slavic_or_reformed_trigger = yes	
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_slavic_or_reformed_trigger = yes }
+	
+	quality = 5
+	flags = { religious slavic_pagan very_rare hammer ceremonial }
+	stacking = no
+	picture = "GFX_svarogs_hammer"
+	slot = ceremonial_weapon
+}
+
+kladenets = { ###event spawn
+	
+	martial = 3
+	combat_rating = 15
+	command_modifier = {
+		morale_offence = 0.1
+	}
+	monthly_character_prestige = 0.75
+	
+	active = {
+		OR = {
+			religion_openly_slavic_or_reformed_trigger = yes
+			culture_group = east_slavic
+		}	
+		is_adult = yes
+	}
+	allowed_gift = {
+		OR = {
+			religion_openly_slavic_or_reformed_trigger = yes
+			culture_group = east_slavic
+		}
+	}
+	
+	quality = 4
+	flags = { religious slavic_pagan east_slavic very_rare sword combat_weapon }
+	stacking = no
+	picture = "GFX_kladenets"
+	slot = weapon
+}
+
+raskovnik = { ###regular spawn 2
+
+	intrigue = 2
+	plot_power_modifier = 0.25
+	monthly_character_prestige = 0.25
+	
+	active = { religion_openly_slavic_or_reformed_trigger = yes }
+	allowed_gift = { religion_openly_slavic_or_reformed_trigger = yes }
+	
+	quality = 4
+	flags = { religious slavic_pagan herb very_rare }
+	stacking = no
+	picture = "GFX_raskovnik"
+
+}
+fern_flower = { ###event spawn
+	
+	stewardship = 1
+	global_tax_modifier = 0.1
+	monthly_character_prestige = 0.5
+	
+	active = { religion_openly_slavic_or_reformed_trigger = yes }
+	allowed_gift = { always = no }
+	
+	quality = 3
+	flags = { religious slavic_pagan herb very_rare created curse }
+	stacking = no
+	picture = "GFX_fern_flower"
+}
+
+peruns_stones = {	###regular spawn 5
+	
+	plot_discovery_chance = 0.05
+	defensive_plot_power_modifier = 0.10
+	health = 0.25
+	
+	active = { religion_openly_slavic_or_reformed_trigger = yes }
+	allowed_gift = { religion_openly_slavic_or_reformed_trigger = yes }
+	
+	quality = 3
+	flags = { religious slavic_pagan perun rare }
+	stacking = no
+	picture = "GFX_peruns_stones"
+}
+
+#############################
+###### Romuvan/Baltic ######
+#############################
+ 
+world_tree_branch = { #event spawn
+
+	learning = 2
+	retinue_maintenence_cost = -0.15
+	same_religion_opinion = 10
+	monthly_character_piety = 1
+	monthly_character_prestige = 0.5
+
+	active = { religion_openly_baltic_or_reformed_trigger = yes }
+	allowed_gift = { religion_openly_baltic_or_reformed_trigger = yes }
+	
+	quality = 5
+	flags = { religious baltic_pagan branch very_rare }
+	stacking = no
+	picture = "GFX_haoma_sapling"
+}
+
+
+velnias_bow = { #event spawn
+	martial = 3
+	combat_rating = 8
+	command_modifier = {
+		phase_skirmish_attack = 0.20
+	}
+	monthly_character_prestige = 0.75
+
+	active = { 
+		religion_openly_baltic_or_reformed_trigger = yes 
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_baltic_or_reformed_trigger = yes }
+	
+	quality = 4
+	flags = { religious baltic_pagan very_rare bow combat_weapon }
+	stacking = no
+	picture = "GFX_velnias_bow"
+	slot = weapon
+}
+
+laimas_scales = { #vanilla rumors
+
+	stewardship = 2
+	global_tax_modifier = 0.10
+	plot_discovery_chance = 0.05
+
+	active = { religion_openly_baltic_or_reformed_trigger = yes }
+	allowed_gift = { religion_openly_baltic_or_reformed_trigger = yes }
+	
+	quality = 4
+	flags = { religious baltic_pagan scales very_rare }
+	stacking = no
+	picture = "GFX_laimas_scales"
+
+}
+
+
+evening_star_mark = { #regular spawn 3
+	
+	intrigue = 1
+	sex_appeal_opinion = 5
+	plot_power_modifier = 0.05
+
+	active = { religion_openly_baltic_or_reformed_trigger = yes }
+	allowed_gift = { religion_openly_baltic_or_reformed_trigger = yes }
+	
+	quality = 3
+	flags = { religious baltic_pagan mark rare }
+	stacking = no
+	picture = "GFX_evening_star_mark"
+
+}
+
+morning_star_mark = {  #regular spawn 3
+
+	diplomacy = 1
+	sex_appeal_opinion = 5
+	fertility = 0.10
+
+	active = { religion_openly_baltic_or_reformed_trigger = yes }
+	allowed_gift = { religion_openly_baltic_or_reformed_trigger = yes }
+	
+	quality = 3
+	flags = { religious baltic_pagan mark rare }
+	stacking = no
+	picture = "GFX_morning_star_mark"
+
+}
+
+#############################
+###### Tengri ######
+#############################
+
+aram = {  #event spawn
+
+	monthly_character_prestige = 1
+	martial = 3
+	combat_rating = 15
+	command_modifier = {
+		cavalry = 0.3
+	}
+	horde_maintenence_cost = -0.1
+
+	active = {
+		OR = {
+			religion_openly_tengri_or_reformed_trigger = yes
+			culture_group = altaic
+		}
+		is_adult = yes
+	}
+	allowed_gift = {
+		OR = {
+			religion_openly_tengri_or_reformed_trigger = yes
+			culture_group = altaic
+		}
+	}
+	
+	quality = 5
+	flags = { religious tengri_pagan altaic very_rare spear combat_weapon }
+	stacking = no
+	picture = "GFX_spear_of_destiny"
+	slot = weapon
+
+}
+
+skai_unav = {  #event spawn
+
+	martial = 2
+	combat_rating = 18
+	command_modifier = {
+		morale_offence = 0.5
+	}
+	monthly_character_prestige = 1
+	
+	
+	active = {
+		OR = {
+			religion_openly_tengri_or_reformed_trigger = yes
+			culture_group = altaic
+		}	
+		is_adult = yes
+	}
+	allowed_gift = {
+		OR = {
+			religion_openly_tengri_or_reformed_trigger = yes
+			culture_group = altaic
+		}
+	}
+	
+	quality = 5
+	flags = { religious tengri_pagan altaic very_rare sword combat_weapon }
+	stacking = no
+	picture = "GFX_skai_unav"
+	slot = weapon
+}
+
+asenas_paw = {  #regular spawn
+
+	fertility = 0.10
+	nomad_tax_modifier = 0.10
+	population_growth = 0.03
+	
+	
+	active = {
+		OR = {
+			religion_openly_tengri_or_reformed_trigger = yes
+			culture_group = altaic
+		}	
+	}
+	allowed_gift = {
+		OR = {
+			religion_openly_tengri_or_reformed_trigger = yes
+			culture_group = altaic
+		}
+	}
+	
+	quality = 4
+	flags = { religious tengri_pagan altaic very_rare  }
+	stacking = no
+	picture = "GFX_asenas_paw"
+
+}
+
+
+
+alpamyshs_chains = {  #vanilla rumors
+
+	intrigue = 1
+	plot_power_modifier = 0.1
+	arrest_chance_modifier = 0.1
+	
+	
+	active = {
+		OR = {
+			religion_openly_tengri_or_reformed_trigger = yes
+			culture_group = altaic
+		}	
+	}
+	allowed_gift = {
+		OR = {
+			religion_openly_tengri_or_reformed_trigger = yes
+			culture_group = altaic
+		}
+	}
+	
+	quality = 3
+	flags = { religious tengri_pagan altaic very_rare }
+	stacking = no
+	picture = "GFX_alpamyshs_chains"
+	
+}
+
+tengris_favor = {  #regular spawn 5
+
+	monthly_character_prestige = 0.25
+	monthly_character_piety = 0.25
+	learning = 1
+	
+	
+	active = {
+		OR = {
+			religion_openly_tengri_or_reformed_trigger = yes
+			culture_group = altaic
+		}
+		is_adult = yes
+	}
+	allowed_gift = {
+		OR = {
+			religion_openly_tengri_or_reformed_trigger = yes
+			culture_group = altaic
+		}
+	}
+	
+	quality = 2
+	flags = { religious tengri_pagan altaic very_rare pendant }
+	stacking = no
+	picture = "GFX_tengris_favor"
+	slot = neck
+}
+
+meteorite = {  #special event spawn
+	
+	blacklist_modifier = 1
+	#reforge into skai unav
+	
+	active = {
+		OR = {
+			religion_openly_tengri_or_reformed_trigger = yes
+			culture_group = altaic
+		}	
+	}
+	allowed_gift = { always = no }
+	
+	quality = 5
+	flags = { religious tengri_pagan altaic very_rare blacklist  }
+	stacking = no
+	picture = "GFX_strange_chest"
+}
+
+
+#############################
+###### Zunist ######
+#############################
+
+blazing_crown = { ####event spawn
+
+	monthly_character_prestige = 1
+	monthly_character_piety = 0.5
+	diplomacy = 3
+	global_levy_size = 0.05
+	same_religion_opinion = 10
+
+	special_inheritance_modifier = 1
+	
+	active = {
+		religion_openly_zun_or_reformed_trigger = yes	
+		is_adult = yes
+		dynasty = FROMFROM
+	}
+	allowed_gift = { always = no }
+	
+	quality = 5
+	flags = { religious zun_pagan very_rare crown blacklist special_inheritance }
+	stacking = no
+	picture = "GFX_blazing_crown"
+	slot = crown
+}
+
+ashrune = { ####event spawn
+	
+	martial = 3
+	combat_rating = 18
+	command_modifier = {
+		phase_melee_attack = 0.05
+		phase_melee_defense = 0.05
+	}
+	
+	active = {
+		religion_openly_zun_or_reformed_trigger = yes	
+		is_adult = yes
+		OR = {
+			trait = zealous
+			trait = herald_of_zun
+			trait = herald_of_zun_descendant
+			trait = holy_warrior
+		}
+	}
+	allowed_gift = { religion_openly_zun_or_reformed_trigger = yes }
+	
+	quality = 5
+	flags = { religious zun_pagan very_rare flail combat_weapon }
+	stacking = no
+	picture = "GFX_ashrune"
+	slot = weapon
+}
+
+
+sun_scepter = { ####regular spawn
+	
+	monthly_character_prestige = 0.5
+	stewardship = 2
+	global_tax_modifier = 0.1
+
+	active = {
+		religion_openly_zun_or_reformed_trigger = yes
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_zun_or_reformed_trigger = yes }
+	
+	quality = 4
+	flags = { religious zun_pagan very_rare scepter }
+	stacking = no
+	picture = "GFX_sceptre_ruby"
+	slot = scepter
+}
+
+mask_of_terror = { ####event spawn
+	
+	diplomacy = 2
+	short_reign_length = -5
+	global_revolt_risk = -0.05
+	general_opinion = -10
+	vassal_opinion = 20
+
+	active = {
+		religion_openly_zun_or_reformed_trigger = yes	
+		OR = {
+			trait = zealous
+			trait = lunatic
+			trait = possessed
+		}
+		is_adult = yes
+	}
+	allowed_gift = { religion_openly_zun_or_reformed_trigger = yes }
+	
+	quality = 4
+	flags = { religious zun_pagan very_rare mask }
+	stacking = no
+	picture = "GFX_mask_of_terror"
+	slot = mask
+}
+
+cylinder_of_secrets = { ####event spawn
+	
+	learning = 1
+	intrigue = 1
+	tech_growth_modifier = 0.1
+	health = 0.5
+
+	active = {
+		religion_openly_zun_or_reformed_trigger = yes
+		is_adult = yes
+		learning = 20
+	}
+	allowed_gift = { religion_openly_zun_or_reformed_trigger = yes }
+	
+	quality = 4
+	flags = { religious zun_pagan very_rare relic }
+	stacking = no
+	picture = "GFX_relic_box_simple"
+}
+
+sunlight_medallion = { ####holy order spawn
+	
+	martial = 2
+	command_modifier = {
+		morale_offence = 0.05
+		morale_defence = 0.05
+	}
+	same_religion_opinion = 5
+
+	blacklist_modifier = 1
+	
+	active = {
+		religion_openly_zun_or_reformed_trigger = yes
+		is_adult = yes		
+		OR = {
+			has_landed_title = d_zun_warriors
+			AND = {
+				has_minor_title = title_commander
+				liege = { has_landed_title = d_zun_warriors }
+			}
+			custom_tooltip = {
+				text = sunlight_medallion_activation
+				has_character_flag = former_sun_knight
+			}
+		}
+	}
+	allowed_gift = { always = no }
+	
+	quality = 3
+	flags = { religious zun_pagan rare medallion holy_order created curse blacklist }
+	stacking = no
+	picture = "GFX_sunlight_medallion"
+}
+
+#############################
+###### Hellenic ######
+#############################
+pandoras_box = {
+	intrigue = 1 
+	church_opinion = -10
+	
+	pandoras_box_modifier = 1
+	
+	active = {
+		is_adult = yes
+		OR = {
+			religion_openly_hellenic_or_reformed_trigger = yes
+			culture = greek
+			culture = roman
+			trait = mystic
+			trait = lunatic
+			trait = possessed
+			learning = 20
+		}
+	}
+	allowed_gift = { 
+		OR = {
+			religion_openly_hellenic_or_reformed_trigger = yes
+			culture = greek
+			culture = roman
+		}
+	}
+	
+	quality = 5
+	flags = { very_rare hellenic greek roman generic box magic }
+	indestructible = yes
+	stacking = no
+	picture = "GFX_relicbox_iron"
+}
+
+trident_of_poseidon = {
+	stewardship = 1
+	monthly_character_prestige = 1
+	monthly_character_piety = 0.5
+	days_of_supply = 30
+	
+	trident_of_poseidon_modifier = 1
+	
+	active = {
+		is_adult = yes
+		OR = {
+			religion_openly_hellenic_or_reformed_trigger = yes
+			culture = greek
+			culture = roman
+		}
+	}
+	allowed_gift = { 
+		OR = {
+			religion_openly_hellenic_or_reformed_trigger = yes
+			culture = greek
+			culture = roman
+		}
+	}
+	
+	quality = 5
+	flags = { very_rare hellenic greek roman trident poseidon }
+	indestructible = yes
+	stacking = no
+	picture = "GFX_trident_of_poseidon"
+	slot = ceremonial_weapon
+}
+
+bow_of_artemis = {
+	martial = 2
+	combat_rating = 15
+	monthly_character_prestige = 0.75
+	monthly_character_piety = 0.5
+	command_modifier = {
+		phase_skirmish_attack = 0.2
+	}
+	
+	active = {
+		is_adult = yes
+		OR = {
+			religion_openly_hellenic_or_reformed_trigger = yes
+			culture = greek
+			culture = roman
+		}
+	}
+	allowed_gift = { 
+		OR = {
+			religion_openly_hellenic_or_reformed_trigger = yes
+			culture = greek
+			culture = roman
+		}
+	}
+	
+	quality = 4
+	flags = { very_rare hellenic greek roman bow artemis }
+	indestructible = yes
+	stacking = no
+	picture = "GFX_velnias_bow"
+	slot = weapon
+}
+
+girdle_of_aphrodite = {
+	intrigue = 2
+	sex_appeal_opinion = 20
+	
+	girdle_of_aphrodite_modifier = 1
+	
+	active = {
+		is_adult = yes
+		is_female = yes
+		OR = {
+			religion_openly_hellenic_or_reformed_trigger = yes
+			culture = greek
+			culture = roman
+		}
+	}
+	allowed_gift = {
+		is_female = yes
+		OR = {
+			religion_openly_hellenic_or_reformed_trigger = yes
+			culture = greek
+			culture = roman
+		}
+	}
+	
+	quality = 4
+	flags = { very_rare hellenic greek roman girdle aphrodite female_only }
+	indestructible = yes
+	stacking = no
+	picture = "GFX_girdle_of_aphrodite"
+}
+
+
+#Talaria
+sandals_of_hermes = {
+	global_tax_modifier = 0.1
+	monthly_character_prestige = 0.75
+	command_modifier = {
+		speed = 0.25
+	}
+	
+	active = {
+		is_adult = yes
+		OR = {
+			religion_openly_hellenic_or_reformed_trigger = yes
+			culture = greek
+			culture = roman
+		}
+	}
+	allowed_gift = { 
+		OR = {
+			religion_openly_hellenic_or_reformed_trigger = yes
+			culture = greek
+			culture = roman
+		}
+	}
+	
+	quality = 4
+	flags = { very_rare hellenic greek roman sandals feet hermes }
+	indestructible = yes
+	stacking = no
+	picture = "GFX_relic_box"
+}
+
+
+
+
+
+#############################
+###### Indian ######
+#############################
+
+
+#############################
+###### Cultural ######
+#############################
+
+armor_of_achilles = {
+	martial = 2
+	combat_rating = 15
+	monthly_character_prestige = 1
+	brave_opinion = 5
+	command_modifier = { 
+		defence = 0.2 
+	}
+	
+	active = {
+		is_adult = yes
+		culture = greek
+	}
+	allowed_gift = { culture = greek }
+	
+	quality = 4
+	flags = { very_rare greek achilles armor }
+	stacking = no
+	picture = "GFX_warden_armor"
+	slot = torso
+}
+
+shield_of_achilles = {
+	
+	martial = 1
+	combat_rating = 10
+	command_modifier = {
+		center = 0.25
+	}
+	
+	active = {
+		is_adult = yes
+		culture = greek
+	}
+	allowed_gift = { culture = greek }
+	
+	quality = 4
+	flags = { very_rare greek achilles shield }
+	stacking = no
+	picture = "GFX_shield_of_achilles"
+	slot = shield
+}
+
+pelt_of_the_nemean_lion = {
+
+	health = 1
+	combat_rating = 8
+	defensive_plot_power_modifier = 0.20
+
+	command_modifier = {
+		defence = 0.10
+	}
+	
+	pelt_of_the_nemean_lion_modifier = 1
+	
+	active = {
+		is_adult = yes
+		culture = greek
+		OR = {
+			trait = strong
+			trait = robust
+			martial = 25
+		}
+	}
+	allowed_gift = { culture = greek }
+	
+	quality = 5
+	flags = { very_rare greek cloak }
+	indestructible = yes
+	stacking = no
+	picture = "GFX_pelt_of_the_nemean_lion"
+	slot = ceremonial_torso
+}
+
+alberichs_ring = {
+
+	diplomacy = 1
+	stewardship = 1
+	intrigue = 1
+	general_opinion = 5
+	
+	active = {
+		is_adult = yes
+		culture_group = central_germanic
+	}
+	allowed_gift = { culture_group = central_germanic }
+	
+	quality = 4
+	flags = { very_rare central_germanic ring magic }
+	stacking = no
+	picture = "GFX_alberichs_ring"
+}
+
+nagelring = {
+	
+	monthly_character_prestige = 0.5
+	martial = 3
+	combat_rating = 15
+	
+	command_modifier = {
+		morale_offence = 0.1
+		terrain = hills
+		terrain = mountain
+	}
+	
+	
+	active = {
+		is_adult = yes
+		culture_group = central_germanic
+	}
+	allowed_gift = { culture_group = central_germanic }
+	
+	quality = 5
+	flags = { very_rare central_germanic magic sword combat_weapon  }
+	indestructible = yes
+	stacking = no
+	picture = "GFX_nagelring"
+	slot = weapon
+}
+
+brionac = {
+	
+	martial = 2
+	combat_rating = 12
+	
+	command_modifier = {
+		phase_skirmish_attack = 0.15
+		phase_pursue_attack = 0.15
+	}
+	
+	brionac_modifier = 1
+	
+	active = {
+		is_adult = yes
+		culture_group = celtic
+	}
+	allowed_gift = { culture_group = celtic }
+	
+	quality = 5
+	flags = { religious very_rare celtic magic spear combat_weapon }
+	stacking = no
+	picture = "GFX_brionac"
+	slot = weapon
+}
+
+curtana = {
+
+	monthly_character_prestige = 0.25
+	short_reign_length = -5
+	global_revolt_risk = -0.03
+	vassal_opinion = 5
+	
+	active = {
+		is_adult = yes
+		OR = {
+			has_landed_title = k_england
+			has_landed_title = e_britannia
+			culture = saxon
+			culture = english
+		}
+	}
+	allowed_gift = { 
+		OR = {
+			culture = saxon
+			culture = english
+		}
+	}
+	
+	quality = 4
+	flags = { very_rare saxon english coronation sword }
+	stacking = no
+	picture = "GFX_curtana"
+	slot = ceremonial_weapon
+}
+
+durandal = {
+
+	monthly_character_prestige = 0.5
+	martial = 3
+	combat_rating = 12
+	general_opinion = 5
+	
+	durandal_modifier = 1
+	
+	active = {
+		is_adult = yes
+		OR = {
+			culture = breton
+			culture = old_frankish
+			culture = frankish
+			culture = occitan
+			culture = norman
+		}
+	}
+	allowed_gift = { 
+		OR = {
+			culture = breton
+			culture = old_frankish
+			culture = frankish
+			culture = occitan
+			culture = norman
+		}
+	}
+	
+	quality = 5
+	flags = { very_rare breton old_frankish frankish occitan norman sword combat_weapon }
+	indestructible = yes
+	stacking = no
+	picture = "GFX_durandal"
+	slot = weapon
+}
+
+joyeuse = {
+	
+	monthly_character_prestige = 3
+	martial = 3
+	combat_rating = 12
+	vassal_opinion = 10
+	general_opinion = -10
+	
+	#enables carolingian cb
+	blacklist_modifier = 1
+	joyeuse_modifier = 1
+	
+	active = {
+		is_adult = yes
+		OR = {
+			culture = german
+			culture = old_frankish
+			culture = dutch
+			culture = frankish
+			culture = occitan
+			dynasty = 25061
+			
+			#until i find a way to make this work without it being stupid
+			#any_owned_bloodline = {
+				#show_scope_change = no
+				#has_bloodline_flag = bloodline_heroes
+				#bloodline_is_active_for = PREV
+			#}
+			#is_bloodline_member_of = carolingian
+		}
+	}
+	allowed_gift = { always = no }
+	
+	quality = 5
+	flags = { legendary charlemagne sword combat_weapon blacklist special_inheritance }
+	indestructible = yes
+	stacking = no
+	picture = "GFX_joyeuse"
+	slot = weapon
+}
+
+joyeuse_ceromonial = {
+
+	monthly_character_prestige = 1.5
+	short_reign_length = -10
+	global_revolt_risk = -0.05
+	vassal_opinion = 10
+	demesne_size = 1
+	
+	special_inheritance_modifier = 1
+	
+	active = {
+		is_adult = yes
+		dynasty = FROMFROM
+	}
+	allowed_gift = { always = no }
+	
+	quality = 5
+	flags = { legendary charlemagne sword ceremonial blacklist special_inheritance }
+	indestructible = yes
+	stacking = no
+	picture = "GFX_joyeuse_ceromonial"
+	slot = ceremonial_weapon
+}

@@ -1,0 +1,15 @@
+#1881 - St. Martin
+
+culture = atlantean
+owner = ATL
+controller = ATL
+add_core = ATL
+is_city = yes
+religion = hellenic_pagan
+capital = "Psystus"
+trade_goods = cocoa
+hre = no
+base_tax = 4 
+base_production = 5
+base_manpower = 3
+discovered_by = ATL

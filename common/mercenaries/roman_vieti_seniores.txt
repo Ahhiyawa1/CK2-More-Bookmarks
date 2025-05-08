@@ -1,0 +1,13 @@
+vieti_seniores = {
+	levy_size = 4
+	knights = 50
+	heavy_infantry = 950
+	archers = 150
+}
+
+vieti_iuniores = {
+	levy_size = 5
+	pikemen = 500
+	knights = 100
+	heavy_infantry = 300
+}

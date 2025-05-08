@@ -1,0 +1,31 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+;;;;;;;;;;;;;;
+NIE.226;Vassals react to your talents;;;;;;;;;;;;;x
+EVTNAMENIE.226;Vassals react to your talents;;;;;;;;;;;;;x
+EVTDESC_NIE_226;You are well known as a ruler, who can almost tutn everything into gold. A group of merchants came before you, who - wanting to flatter you, no doubt - brought a lot of shiny gifts with them.;;;;;;;;;;;;;x
+EVTOPTA_NIE_226;They should be happy to have me!;;;;;;;;;;;;;x
+NIE_thrift_opinion;Your vassals opinion on you will change.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.227;Vassals react to your talents;;;;;;;;;;;;;x
+EVTNAMENIE.227;Vassals react to your talents;;;;;;;;;;;;;x
+EVTDESC_NIE_227;You are well known as a ruler, who first thinks then acts. Your learning and scholarship talents impress many of your most educated vassals.;;;;;;;;;;;;;x
+EVTOPTA_NIE_227;They should be happy to have me!;;;;;;;;;;;;;x
+NIE_scholarship_opinion;Your vassals opinion on you will change.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.228;Vassals react to your talents;;;;;;;;;;;;;x
+EVTNAMENIE.228;Vassals react to your talents;;;;;;;;;;;;;x
+EVTDESC_NIE_228;You are well known as a ruler, who can find a peaceful solution to every conflict. It obviously impresses many of them, who find your talents useful.;;;;;;;;;;;;;x
+EVTOPTA_NIE_228;They should be happy to have me!;;;;;;;;;;;;;x
+NIE_diplomacy_opinion;Your vassals opinion on you will change.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.229;Vassals react to your talents;;;;;;;;;;;;;x
+EVTNAMENIE.229;Vassals react to your talents;;;;;;;;;;;;;x
+EVTDESC_NIE_229;You are well known as a talented military leader - those of your vassals, wise enough to see the greatness of your skills, are surely impressed by your talents.;;;;;;;;;;;;;x
+EVTOPTA_NIE_229;They should be happy to have me!;;;;;;;;;;;;;x
+NIE_martial_opinion;Your vassals opinion on you will change.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.230;Vassals react to your wealth;;;;;;;;;;;;;x
+EVTNAMENIE.230;Vassals react to your wealth;;;;;;;;;;;;;x
+EVTDESC_NIE_230;Thanks to your many skills you have managed to fill up your treasury with gold. As you were thinking on how to spend all the money you have saved you were approached by the group of vassals who admire your extraordinary talents. They came to assure you of their loyalty and everlasting support.;;;;;;;;;;;;;x
+EVTOPTA_NIE_230;They should be happy to have me!;;;;;;;;;;;;;x
+NIE_wealth_opinion;Your vassals opinion on you will change.;;;;;;;;;;;;;x

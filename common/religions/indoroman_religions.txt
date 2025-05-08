@@ -1,0 +1,445 @@
+christian = {
+
+vieti_orthodox = {
+		graphical_culture = westerngfx
+
+		icon = 2
+		heresy_icon = 7
+		
+		color = { 158 23 72 }
+		
+		crusade_name = CRUSADE
+		scripture_name = THE_LATINI
+		priest_title = PRIEST
+		
+		high_god_name = GOD_GOD
+		
+		god_names = {
+			GOD_GOD GOD_THE_LORD GOD_JESUS GOD_THE_BLESSED_VIRGIN
+		}
+		
+		evil_god_names = {
+			SATAN LUCIFER THE_DEVIL GOD_THE_TEMPTATIONS
+		}
+		
+		autocephaly = yes
+		can_excommunicate = yes
+		can_grant_divorce = yes
+		can_grant_invasion_cb = invasion
+		can_call_crusade = no
+		priests_can_inherit = no
+		allow_viking_invasion = yes
+		raised_vassal_opinion_loss = no
+		can_demand_religious_conversion = no
+		allow_looting = yes
+		feminist = yes
+		peace_piety_gain = 0.5 # Gains 1 piety each month while at peace
+		allow_rivermovement = yes
+		#priests_can_marry = yes # 1 Corinthians 7:32, the Vieti still would still oppose the marriage of priests
+		
+		unit_modifier = {
+			land_morale = 0.3
+			heavy_infantry_offensive = 0.2
+			heavy_infantry_defensive = 0.2
+
+			key = "OFF_RELIGION"
+		}
+		
+		character_modifier = {
+			martial = 1
+			hereclemasculist_pagan_opinion = 6
+			vieti_mithras_pagan_opinion = 6
+			romist_pagan_opinion = 6
+			britannic_hyperborean_pagan_opinion = 6
+		}
+		
+		can_retire_to_monastery = yes
+		
+		religious_clothing_head = 12
+		religious_clothing_priest = 12
+		
+		intermarry = catholic
+		intermarry = orthodox
+		intermarry = miaphysite
+		intermarry = nestorian
+
+		intermarry = cathar
+		intermarry = fraticelli
+		intermarry = waldensian
+		intermarry = lollard
+		intermarry = monophysite
+		intermarry = bogomilist
+		intermarry = monothelite
+		intermarry = iconoclast
+		intermarry = paulician
+		intermarry = messalian
+		
+		intermarry = taoist
+		intermarry = bon
+		intermarry = bon_reformed
+		intermarry = buddhist
+		intermarry = zoroastrian_group
+		
+		
+		intermarry = hereclemasculist_pagan
+		intermarry = vieti_mithras_pagan
+		intermarry = romist_pagan
+	}
+	
+	vieti_krioticism = {
+		graphical_culture = westerngfx
+
+		icon = 2
+		heresy_icon = 7
+		
+		ai_convert_other_group = 2 # always try to convert
+		
+		color = { 157 155 63 }
+		
+		crusade_name = CRUSADE
+		scripture_name = WALAKRIOTIC_BIBLE
+		priest_title = PRIEST
+		
+		high_god_name = GOD_GOD
+		
+		god_names = {
+			GOD_WALAKRIOS GOD_THE_LORD GOD_JESUS GOD_THE_BLESSED_VIRGIN GOD_HERECLEMASCULUS GOD_SOL GOD_CHRIST_THE_MAN GOD_JUPITER GOD_NEPTUNE GOD_MINERVA GOD_MARS GOD_VULCAN GOD_SATURN GOD_BACCHUS GOD_PLUTO GOD_TYPHON GOD_VENUS GOD_MITHRAS_VIETI GOD_SOL GOD_THE_SON_OF_THE_SUN GOD_THE_SUN GOD_THE_GIVER_OF_JUSTICE GOD_THE_ALMIGHTY_GIVER_OF_ALL_LIFE GOD_FATHER_ROME GOD_MOTHER_ROME GOD_THE_LIGHT_OF_ROME GOD_THE_SPIRITS GOD_THE_ANCESTORS GOD_WOLF_MILKIES GOD_BURNING_SUN
+		}
+		
+		evil_god_names = {
+			SATAN LUCIFER THE_DEVIL GOD_THE_TEMPTATIONS THE_DARKNESS THE_DARK_SPIRITS GOD_BLACK_SUN GOD_THE_LIGHT_EATERS
+		}
+		
+		autocephaly = yes
+		can_excommunicate = yes
+		can_grant_divorce = yes
+		can_grant_invasion_cb = invasion
+		can_call_crusade = no
+		priests_can_inherit = no
+		allow_viking_invasion = yes
+		raised_vassal_opinion_loss = no
+		can_demand_religious_conversion = no
+		allow_looting = yes
+		feminist = yes
+		peace_piety_gain = 0.5 # Gains 1 piety each month while at peace
+		allow_rivermovement = yes
+		priests_can_marry = yes
+		priests_can_inherit = yes
+		female_temple_holders = yes
+		max_wives = 4
+		max_consorts = 1
+		women_can_take_consorts = yes
+		men_can_take_consorts = no
+		
+		#parent = vieti_orthodox
+		
+		unit_modifier = {
+			land_morale = 0.3
+			heavy_infantry_offensive = 0.2
+			heavy_infantry_defensive = 0.2
+
+			key = "OFF_RELIGION"
+		}
+		
+		character_modifier = {
+			martial = 1
+			stewardship = 1
+			hereclemasculist_pagan_opinion = 5
+			vieti_mithras_pagan_opinion = 5
+			romist_pagan_opinion = 5
+			britannic_hyperborean_pagan_opinion = 5
+		}
+		
+		can_retire_to_monastery = yes
+		
+		religious_clothing_head = 12
+		religious_clothing_priest = 12
+		
+		intermarry = catholic
+		intermarry = orthodox
+		intermarry = miaphysite
+		intermarry = nestorian
+
+		intermarry = cathar
+		intermarry = fraticelli
+		intermarry = waldensian
+		intermarry = lollard
+		intermarry = monophysite
+		intermarry = bogomilist
+		intermarry = monothelite
+		intermarry = iconoclast
+		intermarry = paulician
+		intermarry = messalian
+		
+		intermarry = taoist
+		intermarry = bon
+		intermarry = bon_reformed
+		intermarry = buddhist
+		intermarry = zoroastrian_group
+		
+		
+		intermarry = hereclemasculist_pagan
+		intermarry = vieti_mithras_pagan
+		intermarry = romist_pagan
+	}
+}
+
+pagan_group = {
+hereclemasculist_pagan = {
+		graphical_culture = hellenicgfx
+		alternate_start = { has_alternate_start_parameter = { key = religion value = full_random } }
+		interface_skin = { hellenic_interface }
+		
+		#pre_reformed = yes
+		#reformed = hellenic_pagan_reformed
+
+		icon = 37
+		heresy_icon = 14
+		
+		color = { 140 129 129 }
+		
+		high_god_name = GOD_HERECLEMASCULUS
+		
+		god_names = {
+			GOD_HERECLEMASCULUS GOD_SOL GOD_CHRIST_THE_MAN GOD_JUPITER GOD_NEPTUNE GOD_MINERVA GOD_MARS GOD_VULCAN
+		}
+		evil_god_names = {
+			GOD_SATURN GOD_BACCHUS GOD_PLUTO GOD_TYPHON GOD_VENUS GOD_THE_TEMPTATIONS
+		}
+		
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = THE_LATINI
+		priest_title = AUGUR
+		
+		priests_can_marry = no
+		priests_can_inherit = no
+		allow_looting = yes
+		defensive_attrition = yes
+		peace_prestige_loss = yes # Lose Prestige while at peace
+		allow_viking_invasion = yes
+		raised_vassal_opinion_loss = no
+		aggression = 1.5 # AI aggression factor
+		max_consorts = 3
+		allow_rivermovement = yes
+		
+		unit_modifier = {
+			land_morale = 0.3
+			heavy_infantry_offensive = 0.2
+			heavy_infantry_defensive = 0.2
+
+			key = "OFF_RELIGION"
+		}
+		
+		character_modifier = {
+			martial = 1
+			vieti_orthodox_opinion = 6
+			vieti_mithras_pagan_opinion = 5
+			romist_pagan_opinion = 5
+			britannic_hyperborean_pagan_opinion = 5
+		}
+		
+		religious_clothing_head = 12
+		religious_clothing_priest = 11
+		
+		can_demand_religious_conversion = no
+		
+		intermarry = vieti_orthodox
+		intermarry = orthodox
+		intermarry = vieti_mithras_pagan
+		intermarry = romist_pagan
+		
+		
+	}
+	
+	vieti_mithras_pagan = {
+		alternate_start = {
+			OR = {
+				year < 1100
+				has_alternate_start_parameter = { key = religion value = full_random }
+			}
+		}
+		graphical_culture = hellenicgfx
+		interface_skin = { zun_interface zoroastrian_interface muslim_interface }
+
+		icon = 48
+		heresy_icon = 50
+		
+		color = { 191 161 105 }
+		
+		high_god_name = GOD_MITHRAS_VIETI
+		
+		god_names = {
+			GOD_MITHRAS_VIETI GOD_SOL GOD_THE_SON_OF_THE_SUN GOD_THE_SUN GOD_THE_GIVER_OF_JUSTICE GOD_THE_ALMIGHTY_GIVER_OF_ALL_LIFE
+		}
+		evil_god_names = {
+			THE_DARKNESS GOD_THE_TEMPTATIONS GOD_THE_LIGHT_EATERS
+		}
+
+		unit_modifier = {
+			levy_size = 0.3
+			
+			heavy_infantry_offensive = 0.2
+			heavy_infantry_defensive = 0.2
+			
+			key = "OFF_RELIGION"
+		}
+		
+		character_modifier = {
+			martial = 1
+			vieti_orthodox_opinion = 6
+			hereclemasculist_pagan_opinion = 5
+			romist_pagan_opinion = 5
+			britannic_hyperborean_pagan_opinion = 7
+		}
+
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = THE_LATINI
+		priest_title = PRIEST
+
+		priests_can_marry = yes
+		defensive_attrition = yes
+		max_consorts = 3
+		
+		religious_clothing_head = 12
+		religious_clothing_priest = 11
+
+		intermarry = indian_group
+		intermarry = zoroastrian_group
+		intermarry = vieti_orthodox
+		intermarry = hereclemasculist_pagan
+		intermarry = romist_pagan
+		
+
+		can_demand_religious_conversion = no
+	}
+	
+	britannic_hyperborean_pagan = {
+		alternate_start = {
+			OR = {
+				year < 1100
+				has_alternate_start_parameter = { key = religion value = full_random }
+			}
+		}
+		graphical_culture = hellenicgfx
+		interface_skin = { zun_interface zoroastrian_interface muslim_interface }
+
+		icon = 29
+		heresy_icon = 30
+		
+		color = { 212 189 149 }
+		
+		high_god_name = GOD_SOL
+		
+		god_names = {
+		GOD_SOL GOD_THE_SON_OF_THE_SUN GOD_THE_SUN GOD_TERRA GOD_TENGRIUS GOD_CHRIST_THE_MAN GOD_MITHRAS_VIETI GOD_THE_GIVER_OF_JUSTICE GOD_THE_ALMIGHTY_GIVER_OF_ALL_LIFE
+		}
+		evil_god_names = {
+			THE_DARKNESS GOD_THE_TEMPTATIONS
+		}
+
+		unit_modifier = {
+			levy_size = 0.3
+			
+			light_cavalry_offensive = 0.3
+			light_cavalry_defensive = 0.3
+			
+			key = "OFF_RELIGION"
+		}
+		
+		character_modifier = {
+			martial = 2
+			vieti_orthodox_opinion = 6
+			hereclemasculist_pagan_opinion = 5
+			romist_pagan_opinion = 5
+			vieti_mithras_pagan_opinion = 7
+		}
+
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = THE_LATINI
+		priest_title = SHAMAN
+
+		priests_can_marry = yes
+		defensive_attrition = yes
+		max_consorts = 3
+		feminist = yes
+		allow_looting = yes
+		
+		religious_clothing_head = 12
+		religious_clothing_priest = 11
+
+		intermarry = indian_group
+		intermarry = zoroastrian_group
+		intermarry = vieti_orthodox
+		intermarry = hereclemasculist_pagan
+		intermarry = romist_pagan
+		
+		aggression = 2.0 # AI aggression factor
+		
+		can_demand_religious_conversion = no
+	}
+	
+	romist_pagan = {
+		alternate_start = {
+			OR = {
+				year < 1100
+				has_alternate_start_parameter = { key = religion value = full_random }
+			}
+		}
+		icon = 58
+		heresy_icon = 59
+		
+		interface_skin = { pagan_interface }
+		
+		color = { 116 50 69 }
+		
+		high_god_name = GOD_THE_LIGHT_OF_ROME
+		
+		god_names = {
+			GOD_FATHER_ROME GOD_MOTHER_ROME GOD_THE_LIGHT_OF_ROME GOD_THE_SPIRITS GOD_THE_ANCESTORS GOD_WOLF_MILKIES GOD_BURNING_SUN
+		}
+		evil_god_names = {
+			THE_DARKNESS THE_DARK_SPIRITS GOD_BLACK_SUN GOD_THE_LIGHT_EATERS
+		}
+
+		unit_modifier = {
+			land_morale = 0.4
+
+			key = "OFF_RELIGION"
+		}
+		
+		character_modifier = {
+			martial = 1
+			vieti_orthodox_opinion = 6
+			hereclemasculist_pagan_opinion = 5
+			vieti_mithras_pagan_opinion = 5
+			britannic_hyperborean_pagan_opinion = 5
+		}
+		
+		priests_can_marry = yes
+		priests_can_inherit = yes
+		female_temple_holders = yes
+		allow_looting = yes
+
+		crusade_name = GREAT_HOLY_WAR
+		scripture_name = THE_LATINI
+		priest_title = AUGUR
+
+		priests_can_marry = yes
+		defensive_attrition = yes
+		max_consorts = 3
+		women_can_take_consorts = yes
+		
+		religious_clothing_head = 5
+		religious_clothing_priest = 4
+
+		intermarry = indian_group
+		intermarry = zoroastrian_group
+		intermarry = vieti_orthodox
+		intermarry = hereclemasculist_pagan
+		intermarry = vieti_mithras_pagan
+		
+		dislike_tribal_organization = yes
+		can_demand_religious_conversion = no
+	}
+	
+}

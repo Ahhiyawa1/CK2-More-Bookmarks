@@ -1,0 +1,46 @@
+atlantis_ideas = {
+	start = {
+		naval_morale = 0.20
+		galley_power = 0.15
+		may_perform_slave_raid
+	}
+
+	bonus = {
+		navy_tradition = 1
+	}
+	
+	trigger = {
+		tag = ATL
+		technology_group = high_american
+	}
+	free = yes
+	
+	atlantean_explorers = {
+		naval_attrition = -0.10
+		may_explore = yes
+		sea_repair = yes
+		naval_forcelimit_modifier = 0.25
+	}
+	atlantean_colonists = {
+		global_colonial_growth = 20
+		colonists = 1
+	}
+	atlantean_traders = {
+		global_tariffs = 0.15
+	}
+	atlantean_natural_philosophy = {
+		technology_cost = -0.05
+	}
+	atlantean_hoplites = {
+		discipline = 0.10
+		allowed_marine_fraction = 0.10
+	}
+	atlantean_hellenization = {
+		culture_conversion_cost = -0.25
+		native_assimilation = 0.25
+	}
+	hegemony_of_atlantis = {
+		reduced_liberty_desire = 10
+		diplomatic_reputation = 1
+	}
+}

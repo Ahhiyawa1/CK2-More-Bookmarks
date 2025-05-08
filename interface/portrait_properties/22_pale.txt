@@ -1,0 +1,20 @@
+#p22 Pale or Malnourished.
+22 = {
+	0 = { # 0 - blank
+		factor = 1
+	}
+
+	1 = { # a - Pale
+		factor = 100
+		trigger = {
+			OR = {
+				AND = {
+					blg_pale = yes
+					blg_disease_rule = yes
+				}
+
+				blg_vampire = yes
+			}
+		}
+	}
+}

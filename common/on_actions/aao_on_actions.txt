@@ -1,0 +1,98 @@
+on_startup = {
+	events = {
+		aaom.000 #initialization
+	}
+}
+
+on_yearly_pulse ={
+	events = {
+		aaop.1200 #sunlight medallion maintenance
+		aaoa.601 #priestly breastplate debuff
+		aaoa.607 #jerusalem pilgrim maintenance
+	}
+}
+on_bi_yearly_pulse = {
+	events = {
+		aaop.001 #andvaranaut wealth
+		aaop.1405 #trident of poseidon blessing
+	}
+}
+on_five_year_pulse = {
+	events = {
+		aaoa.609 #menorah religion authority
+	}
+}
+on_birth = {
+	events = {
+		aaop.1205 #herald of zun descendants
+		aaop.202 #ashanti doll attractive birth
+		aaop.024 #odin child chain
+	}
+}
+on_death = {
+	events = {
+		aaom.020 #generic pagan death failsafe
+	}
+}
+on_artifact_inheritance = {
+	events = {
+		aaom.001 #artifact destruction
+		aaom.002 #special artifact inheritance
+		aaop.604 #perun axe challenge
+	}
+}
+
+on_reform_religion = {
+	events = {
+		aaop.801 #world tree branch
+		aaop.1206 #cylinder of secrets
+	}
+}
+on_new_holder = {
+	events = {
+		aaoa.604 #hezekiah's hammer
+		aaoa.600 #priestly breastplate spawn
+	}
+}
+on_crusade_success = {
+	events = {
+		aaop.1207 #ashrune
+	}
+}
+on_combat_pulse = {
+	random_events = {
+		1000 = aaop.029 #odin child gungnir
+		100 = aaoa.2606 #brionac effect
+	}
+}
+on_war_started = {
+	events = {
+		aaop.031 #gungnir effect
+	}
+}
+
+
+on_loot_settlement = {
+	events = {
+		aaop.018 #odins eye raid progress
+	}
+}
+
+
+
+#on_war_ended_victory = {
+#	events = {
+#	}
+#}
+#on_war_ended_invalid = {
+#	events = {
+#	}
+#}
+#on_war_ended_whitepeace = {
+#	events = {
+#	}
+#}
+#on_war_ended_defeat = {
+#	events = {
+#	}
+#}

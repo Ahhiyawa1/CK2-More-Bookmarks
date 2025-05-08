@@ -1,0 +1,1872 @@
+###########################################
+#                                         #
+# New Immersive Events v. 0.01c           #
+# Rulership Events - event-chain          #
+# ID NIE.231-NIE.240					  #
+# Written and designed by wielkicien      #
+# Bugfixed and edited by Erbkaiser		  #
+#                                         #
+###########################################
+
+namespace = NIE
+
+### Event-chain
+
+#Vassals advising
+narrative_event = {
+	id = NIE.231
+	title = "EVTNAMENIE.231"
+	desc = EVTDESC_NIE_231
+	picture = GFX_evt_noble_in_castle
+	border = GFX_event_narrative_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		any_vassal = {
+				trait = just				
+		}
+		any_vassal = {
+				trait = arbitrary
+		}
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_eventchainsmall }
+		NOT = { trait = arbitrary }
+		NOT = { trait = just }
+		spouse = {
+			is_alive = yes
+			ai = yes
+		}
+		ai = no
+	}	
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_eventchainsmall }
+		any_spouse = {
+				limit = {
+					is_alive = yes
+					ai = yes
+				}
+		save_event_target_as = spouse_one
+		set_character_flag = spouse_one
+		}
+		any_vassal = {
+				limit = {
+					trait = just
+				}
+		save_event_target_as = advise_one
+		set_character_flag = advise_one
+		}
+		any_vassal = {
+				limit = {
+					trait = arbitrary
+				}
+		save_event_target_as = advise_two
+		set_character_flag = advise_two
+		}
+	}
+
+	option = {
+		name = EVTOPTA_NIE_231
+		custom_tooltip = { text = listen_to_first }	
+		hidden_tooltip = {
+				character_event = { id = NIE.232 days = 2 }
+				event_target:advise_two = {
+					clr_character_flag = advise_two
+				}
+		}
+		if = {
+			limit = {
+				spouse = {
+					NOT = {
+						trait = just
+					}
+				}
+			}
+			random = {
+				chance = 30
+				add_trait = just
+			}
+		}
+		event_target:advise_one = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+					random = {
+						chance = 10
+						add_friend = ROOT
+					}
+		}
+		event_target:advise_two = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 2
+					}
+					random = {
+						chance = 10
+						add_rival = ROOT
+					}
+		}
+		if = {
+			limit = {
+				spouse = {
+					trait = just
+				}
+			}
+			random = {
+				chance = 60
+				add_trait = just
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+			}
+			
+		}
+		if = {
+			limit = {
+				spouse = {
+					trait = arbitrary
+				}
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 2
+					}
+			}
+			
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_231
+		custom_tooltip = { text = listen_to_second }
+		hidden_tooltip = {
+				character_event = { id = NIE.232 days = 2 }
+				event_target:advise_one = {
+					clr_character_flag = advise_one
+				}
+		}
+		if = {
+			limit = {
+				spouse = {
+					NOT = {
+						trait = arbitrary
+					}
+				}
+			}
+			random = {
+				chance = 30
+				add_trait = arbitrary
+			}
+		}
+		event_target:advise_one = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 2
+					}
+					random = {
+						chance = 10
+						add_rival = ROOT
+					}
+		}
+		event_target:advise_two = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+					random = {
+						chance = 10
+						add_friend = ROOT
+					}
+		}
+		if = {
+			limit = {
+				spouse = {
+					trait = arbitrary
+				}
+			}
+			random = {
+				chance = 60
+				add_trait = arbitrary
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+			}
+		}
+		if = {
+			limit = {
+				spouse = {
+					trait = just
+				}
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 2
+					}
+			}
+			
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_231
+		custom_tooltip = { text = listen_to_wife_only }
+		hidden_tooltip = {
+				character_event = { id = NIE.232 days = 2 }
+		}
+		if = {
+			limit = {
+				spouse = {
+					trait = arbitrary
+				}
+			}
+			random = {
+				chance = 60
+				add_trait = arbitrary
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+			}
+		}
+		if = {
+			limit = {
+				spouse = {
+					trait = just
+				}
+			}
+			random = {
+				chance = 60
+				add_trait = just
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+			}
+		}
+		if = {
+			limit = {
+				spouse = {
+					NAND = {
+						trait = arbitrary
+						trait = just
+					}
+				}
+			}
+			event_target:spouse_one = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 2
+					}
+			}
+		}
+	}
+	
+}
+###
+# Wife happy to help
+character_event = {
+	id = NIE.232
+	title = "EVTNAMENIE.232"
+	desc = EVTDESC_NIE_232
+	picture = GFX_evt_daughter_asking_father
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	immediate = {
+		any_character = {
+				limit = {
+					has_character_flag = spouse_one
+				}
+				save_event_target_as = spouse_happy
+		}
+	}	
+	option = {
+		name = EVTOPTA_NIE_232
+		custom_tooltip = { text = wife_happy }
+		hidden_tooltip = {
+				random_list = {
+						50 = { character_event = { id = NIE.233 days = 30 } }
+						50 = { character_event = { id = NIE.240 days = 30 } }
+				}
+		}
+		random = {
+			chance = 80
+			add_trait = trusting
+		}
+	}
+}
+
+###
+# Wife demand's more power
+character_event = {
+	id = NIE.233
+	title = "EVTNAMENIE.233"
+	desc = EVTDESC_NIE_233
+	picture = GFX_evt_daughter_asking_father
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+
+	immediate = {
+		any_character = {
+				limit = {
+					has_character_flag = spouse_one
+				}
+				save_event_target_as = spouse_regency
+		}
+		event_target:spouse_regency = {
+						add_trait = ambitious
+						add_trait = deceitful
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_233
+		custom_tooltip = { text = wife_power }
+		hidden_tooltip = {
+				character_event = { id = NIE.234 days = 50 }
+		}
+		if = {
+			limit = {
+				NOT = {
+					trait = trusting
+				}
+			}
+			random = {
+				chance = 70
+				add_trait = trusting
+			}
+		}
+		change_learning = 1
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+								NAND = {
+									diplomacy = 10
+									martial = 10
+									stewardship = 10
+									intrigue = 10
+									learning = 10
+								}
+				}
+			}
+			random_list = {
+					20 = { change_diplomacy = 1 }
+					20 = { change_martial = 1 }
+					20 = { change_stewardship = 1 }
+					20 = { change_intrigue = 1 }
+					20 = { change_learning = 1 }
+			}
+		}	
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							diplomacy = 10
+				}
+			}
+			change_diplomacy = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							martial = 10
+				}
+			}
+			change_martial = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							stewardship = 10
+				}
+			}
+			change_stewardship = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							intrigue = 10
+				}
+			}
+			change_intrigue = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							learning = 10
+				}
+			}
+			change_learning = 1
+		}
+		prestige = -100
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 5
+					}
+					change_intrigue = 2
+					prestige = 100
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_233
+		custom_tooltip = { text = wife_stop_her }
+		trigger = {
+			NOT = {
+				trait = trusting
+			}
+		}
+		hidden_tooltip = {
+				random_list = {
+						30 = { character_event = { id = NIE.238 days = 10 } }
+						70 = { character_event = { id = NIE.239 days = 10 } }
+				}
+		}
+		change_learning = -1
+		random_list = {
+					20 = { change_diplomacy = -1 }
+					20 = { change_martial = -1 }
+					20 = { change_stewardship = -1 }
+					20 = { change_intrigue = -1 }
+					20 = { change_learning = -1 }
+		}
+		prestige = 100
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 5
+					}
+					prestige = -100
+					random = {
+						chance = 40
+						add_rival = ROOT
+					}
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_233
+		custom_tooltip = { text = wife_accept_with_haste }
+		hidden_tooltip = {
+				character_event = { id = NIE.234 days = 70 }
+				any_character = {
+						limit = {
+							is_vassal_or_below = ROOT
+							tier = COUNT
+							NOT = {
+								tier = KING
+							}
+						}
+				add_friend = event_target:spouse_regency
+				}
+		}
+		trigger = {
+			trait = trusting
+		}
+		random = {
+			chance = 33
+			add_trait = craven
+		}
+		if = {
+			limit = {
+				NOT = {
+					trait = trusting
+				}
+			}
+			random = {
+				chance = 70
+				add_trait = trusting
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+								NAND = {
+									diplomacy = 10
+									martial = 10
+									stewardship = 10
+									intrigue = 10
+									learning = 10
+								}
+				}
+			}
+			random_list = {
+					20 = { change_diplomacy = 1 }
+					20 = { change_martial = 1 }
+					20 = { change_stewardship = 1 }
+					20 = { change_intrigue = 1 }
+					20 = { change_learning = 1 }
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							diplomacy = 10
+				}
+			}
+			change_diplomacy = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							martial = 10
+				}
+			}
+			change_martial = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							stewardship = 10
+				}
+			}
+			change_stewardship = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							intrigue = 10
+				}
+			}
+			change_intrigue = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							learning = 10
+				}
+			}
+			change_learning = 1
+		}
+		prestige = -100
+		if = {
+			limit = {
+				trait = trusting
+			}
+			random = {
+				chance = 75
+				remove_trait = trusting
+			}
+		}
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 5
+					}
+					change_intrigue = 1
+					prestige = 100
+		}
+	}
+}
+###
+# Wife demand's more power 2
+character_event = {
+	id = NIE.234
+	title = "EVTNAMENIE.234"
+	desc = EVTDESC_NIE_234
+	picture = GFX_evt_daughter_asking_father
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+
+	immediate = {
+		any_character = {
+				limit = {
+					has_character_flag = spouse_one
+				}
+				save_event_target_as = spouse_regency
+		}
+	}
+
+	option = {
+		name = EVTOPTA_NIE_234
+		custom_tooltip = { text = wife_power }
+		hidden_tooltip = {
+				character_event = { id = NIE.235 days = 50 }
+				any_character = {
+						limit = {
+							is_vassal_or_below = ROOT
+							tier = COUNT
+							NOT = {
+								tier = KING
+							}
+						}
+				add_friend = event_target:spouse_regency
+				}
+		}
+		culture_techpoints = 50
+		if = {
+			limit = {
+				NOT = {
+					trait = trusting
+				}
+			}
+			random = {
+				chance = 70
+				add_trait = trusting
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+								NAND = {
+									diplomacy = 10
+									martial = 10
+									stewardship = 10
+									intrigue = 10
+									learning = 10
+								}
+				}
+			}
+			random_list = {
+					20 = { change_diplomacy = 1 }
+					20 = { change_martial = 1 }
+					20 = { change_stewardship = 1 }
+					20 = { change_intrigue = 1 }
+					20 = { change_learning = 1 }
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					trait = trusting
+				}
+			}
+			random = {
+				chance = 70
+				add_trait = trusting
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							diplomacy = 10
+				}
+			}
+			change_diplomacy = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							martial = 10
+				}
+			}
+			change_martial = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							stewardship = 10
+				}
+			}
+			change_stewardship = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							intrigue = 10
+				}
+			}
+			change_intrigue = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							learning = 10
+				}
+			}
+			change_learning = 1
+		}
+		prestige = -100
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 5
+					}
+					change_intrigue = 2
+					prestige = 100
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_234
+		custom_tooltip = { text = wife_stop_her }
+		hidden_tooltip = {
+				random_list = {
+						50 = { character_event = { id = NIE.238 days = 10 } }
+						50 = { character_event = { id = NIE.239 days = 10 } }
+				}
+		}
+		trigger = {
+			NOT = {
+				trait = trusting
+			}
+		}
+		culture_techpoints = -50
+		random_list = {
+					20 = { change_diplomacy = -1 }
+					20 = { change_martial = -1 }
+					20 = { change_stewardship = -1 }
+					20 = { change_intrigue = -1 }
+					20 = { change_learning = -1 }
+		}
+		prestige = 100
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 5
+					}
+					prestige = -100
+					random = {
+						chance = 40
+						add_rival = ROOT
+					}
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_234
+		custom_tooltip = { text = wife_accept_with_haste }
+		hidden_tooltip = {
+				character_event = { id = NIE.235 days = 70 }
+				any_character = {
+						limit = {
+							is_vassal_or_below = ROOT
+							tier = COUNT
+							NOT = {
+								tier = KING
+							}
+						}
+				add_friend = event_target:spouse_regency
+				}
+		}
+		trigger = {
+			trait = trusting
+		}
+		if = {
+			limit = {
+				NOT = {
+					trait = trusting
+				}
+			}
+			random = {
+				chance = 70
+				add_trait = trusting
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+								NAND = {
+									diplomacy = 10
+									martial = 10
+									stewardship = 10
+									intrigue = 10
+									learning = 10
+								}
+				}
+			}
+			random_list = {
+					20 = { change_diplomacy = 1 }
+					20 = { change_martial = 1 }
+					20 = { change_stewardship = 1 }
+					20 = { change_intrigue = 1 }
+					20 = { change_learning = 1 }
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							diplomacy = 10
+				}
+			}
+			change_diplomacy = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							martial = 10
+				}
+			}
+			change_martial = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							stewardship = 10
+				}
+			}
+			change_stewardship = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							intrigue = 10
+				}
+			}
+			change_intrigue = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							learning = 10
+				}
+			}
+			change_learning = 1
+		}
+		prestige = -100
+		if = {
+			limit = {
+				trait = trusting
+			}
+			random = {
+				chance = 65
+				remove_trait = trusting
+			}
+		}
+		random = {
+			chance = 20
+			add_trait = craven
+		}
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 5
+					}
+					change_intrigue = 1
+					prestige = 100
+		}
+	}
+}
+###
+# Wife demand's more power 3
+character_event = {
+	id = NIE.235
+	title = "EVTNAMENIE.235"
+	desc = EVTDESC_NIE_235
+	picture = GFX_evt_daughter_asking_father
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+
+	immediate = {
+		any_character = {
+				limit = {
+					has_character_flag = spouse_one
+				}
+				save_event_target_as = spouse_regency
+		}
+	}
+
+	option = {
+		name = EVTOPTA_NIE_235
+		custom_tooltip = { text = wife_power }
+		hidden_tooltip = {
+				character_event = { id = NIE.236 days = 50 }
+				any_character = {
+						limit = {
+							is_vassal_or_below = ROOT
+							tier = COUNT
+							NOT = {
+								tier = KING
+							}
+						}
+				add_friend = event_target:spouse_regency
+				}
+		}
+		random = {
+			chance = 10
+			add_trait = gluttonous
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+								NAND = {
+									diplomacy = 10
+									martial = 10
+									stewardship = 10
+									intrigue = 10
+									learning = 10
+								}
+				}
+			}
+			random_list = {
+					20 = { change_diplomacy = 1 }
+					20 = { change_martial = 1 }
+					20 = { change_stewardship = 1 }
+					20 = { change_intrigue = 1 }
+					20 = { change_learning = 1 }
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					trait = trusting
+				}
+			}
+			random = {
+				chance = 70
+				add_trait = trusting
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					trait = trusting
+				}
+			}
+			random = {
+				chance = 70
+				add_trait = trusting
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							diplomacy = 10
+				}
+			}
+			change_diplomacy = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							martial = 10
+				}
+			}
+			change_martial = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							stewardship = 10
+				}
+			}
+			change_stewardship = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							intrigue = 10
+				}
+			}
+			change_intrigue = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							learning = 10
+				}
+			}
+			change_learning = 1
+		}
+		prestige = -100
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 5
+					}
+					change_intrigue = 2
+					prestige = 100
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_235
+		custom_tooltip = { text = wife_stop_her }
+		hidden_tooltip = {
+				random_list = {
+						30 = { character_event = { id = NIE.238 days = 10 } }
+						70 = { character_event = { id = NIE.239 days = 10 } }
+				}
+		}
+		prestige = 100
+		trigger = {
+			NOT = {
+				trait = trusting
+			}
+		}
+		random_list = {
+					20 = { change_diplomacy = -2 }
+					20 = { change_martial = -2 }
+					20 = { change_stewardship = -2 }
+					20 = { change_intrigue = -2 }
+					20 = { change_learning = -2 }
+		}
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 5
+					}
+					prestige = -100
+					random = {
+						chance = 40
+						add_rival = ROOT
+					}
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_235
+		custom_tooltip = { text = wife_accept_with_haste }
+		hidden_tooltip = {
+				character_event = { id = NIE.236 days = 70 }
+				any_character = {
+						limit = {
+							is_vassal_or_below = ROOT
+							tier = COUNT
+							NOT = {
+								tier = KING
+							}
+						}
+				add_friend = event_target:spouse_regency
+				}
+		}
+		trigger = {
+			trait = trusting
+		}
+		if = {
+			limit = {
+				NOT = {
+					trait = trusting
+				}
+			}
+			random = {
+				chance = 70
+				add_trait = trusting
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+								NAND = {
+									diplomacy = 10
+									martial = 10
+									stewardship = 10
+									intrigue = 10
+									learning = 10
+								}
+				}
+			}
+			random_list = {
+					20 = { change_diplomacy = 1 }
+					20 = { change_martial = 1 }
+					20 = { change_stewardship = 1 }
+					20 = { change_intrigue = 1 }
+					20 = { change_learning = 1 }
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							diplomacy = 10
+				}
+			}
+			change_diplomacy = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							martial = 10
+				}
+			}
+			change_martial = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							stewardship = 10
+				}
+			}
+			change_stewardship = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							intrigue = 10
+				}
+			}
+			change_intrigue = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							learning = 10
+				}
+			}
+			change_learning = 1
+		}
+		prestige = -100
+		if = {
+			limit = {
+				trait = trusting
+			}
+			random = {
+				chance = 45
+				remove_trait = trusting
+			}
+		}
+		random = {
+			chance = 20
+			add_trait = craven
+		}
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 5
+					}
+					change_intrigue = 1
+					prestige = 100
+		}
+	}
+}
+###
+# Wife demand's more power 4
+character_event = {
+	id = NIE.236
+	title = "EVTNAMENIE.236"
+	desc = EVTDESC_NIE_236
+	picture = GFX_evt_daughter_asking_father
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+
+	immediate = {
+		any_character = {
+				limit = {
+					has_character_flag = spouse_one
+				}
+				save_event_target_as = spouse_regency
+		}
+	}
+
+	option = {
+		name = EVTOPTA_NIE_236
+		custom_tooltip = { text = wife_power }
+		hidden_tooltip = {
+				character_event = { id = NIE.237 days = 50 }
+				any_character = {
+						limit = {
+							is_vassal_or_below = ROOT
+							tier = COUNT
+							NOT = {
+								tier = KING
+							}
+						}
+				add_friend = event_target:spouse_regency
+				}
+		}
+		if = {
+			limit = {
+				NOT = {
+					trait = trusting
+				}
+			}
+			random = {
+				chance = 70
+				add_trait = trusting
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+								NAND = {
+									diplomacy = 10
+									martial = 10
+									stewardship = 10
+									intrigue = 10
+									learning = 10
+								}
+				}
+			}
+			random_list = {
+					20 = { change_diplomacy = 1 }
+					20 = { change_martial = 1 }
+					20 = { change_stewardship = 1 }
+					20 = { change_intrigue = 1 }
+					20 = { change_learning = 1 }
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							diplomacy = 10
+				}
+			}
+			change_diplomacy = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							martial = 10
+				}
+			}
+			change_martial = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							stewardship = 10
+				}
+			}
+			change_stewardship = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							intrigue = 10
+				}
+			}
+			change_intrigue = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							learning = 10
+				}
+			}
+			change_learning = 1
+		}
+		prestige = -100
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 5
+					}
+					change_intrigue = 2
+					prestige = 100
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_236
+		custom_tooltip = { text = wife_stop_her }
+		hidden_tooltip = {
+				random_list = {
+						85 = { character_event = { id = NIE.238 days = 10 } }
+						15 = { character_event = { id = NIE.239 days = 10 } }
+				}
+		}
+		trigger = {
+			NOT = {
+				trait = trusting
+			}
+		}
+		prestige = 100
+		random_list = {
+					20 = { change_diplomacy = -3 }
+					20 = { change_martial = -3 }
+					20 = { change_stewardship = -3 }
+					20 = { change_intrigue = -3 }
+					20 = { change_learning = -3 }
+		}
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 5
+					}
+					prestige = -100
+					random = {
+						chance = 40
+						add_rival = ROOT
+					}
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_236
+		custom_tooltip = { text = wife_accept_with_haste }
+		hidden_tooltip = {
+				character_event = { id = NIE.237 days = 70 }
+				any_character = {
+						limit = {
+							is_vassal_or_below = ROOT
+							tier = COUNT
+							NOT = {
+								tier = KING
+							}
+						}
+				add_friend = event_target:spouse_regency
+				}
+		}
+		trigger = {
+			trait = trusting
+		}
+		if = {
+			limit = {
+				NOT = {
+					trait = trusting
+				}
+			}
+			random = {
+				chance = 70
+				add_trait = trusting
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+								NAND = {
+									diplomacy = 10
+									martial = 10
+									stewardship = 10
+									intrigue = 10
+									learning = 10
+								}
+				}
+			}
+			random_list = {
+					20 = { change_diplomacy = 1 }
+					20 = { change_martial = 1 }
+					20 = { change_stewardship = 1 }
+					20 = { change_intrigue = 1 }
+					20 = { change_learning = 1 }
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							diplomacy = 10
+				}
+			}
+			change_diplomacy = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							martial = 10
+				}
+			}
+			change_martial = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							stewardship = 10
+				}
+			}
+			change_stewardship = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							intrigue = 10
+				}
+			}
+			change_intrigue = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							learning = 10
+				}
+			}
+			change_learning = 1
+		}
+		prestige = -100
+		if = {
+			limit = {
+				trait = trusting
+			}
+			random = {
+				chance = 25
+				remove_trait = trusting
+			}
+		}
+		random = {
+			chance = 20
+			add_trait = craven
+		}
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 5
+					}
+					change_intrigue = 1
+					prestige = 100
+		}
+	}
+}
+###
+# Wife demand's more power 5
+character_event = {
+	id = NIE.237
+	title = "EVTNAMENIE.237"
+	desc = EVTDESC_NIE_237
+	picture = GFX_evt_daughter_asking_father
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+
+	immediate = {
+		any_character = {
+				limit = {
+					has_character_flag = spouse_one
+				}
+				save_event_target_as = spouse_regency
+		}
+	}
+
+	option = {
+		name = EVTOPTA_NIE_237
+		custom_tooltip = { text = wife_power }
+		hidden_tooltip = {
+				character_event = { id = NIE.238 days = 15 }
+				any_character = {
+						limit = {
+							is_vassal_or_below = ROOT
+							tier = COUNT
+							NOT = {
+								tier = KING
+							}
+						}
+				add_friend = event_target:spouse_regency
+				}
+		}
+		if = {
+			limit = {
+				NOT = {
+					trait = trusting
+				}
+			}
+			random = {
+				chance = 70
+				add_trait = trusting
+			}
+		}
+		if = {
+			limit = {
+				NOT = {
+					trait = trusting
+				}
+			}
+			random = {
+				chance = 70
+				add_trait = trusting
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+								NAND = {
+									diplomacy = 10
+									martial = 10
+									stewardship = 10
+									intrigue = 10
+									learning = 10
+								}
+				}
+			}
+			random_list = {
+					20 = { change_diplomacy = 1 }
+					20 = { change_martial = 1 }
+					20 = { change_stewardship = 1 }
+					20 = { change_intrigue = 1 }
+					20 = { change_learning = 1 }
+			}
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							diplomacy = 10
+				}
+			}
+			change_diplomacy = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							martial = 10
+				}
+			}
+			change_martial = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							stewardship = 10
+				}
+			}
+			change_stewardship = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							intrigue = 10
+				}
+			}
+			change_intrigue = 1
+		}
+		if = {
+			limit = {
+				event_target:spouse_regency = {
+							learning = 10
+				}
+			}
+			change_learning = 1
+		}
+		prestige = -100
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_happy
+						who = ROOT
+						years = 5
+					}
+					change_intrigue = 2
+					prestige = 100
+		}
+		abdicate_to = event_target:spouse_regency
+	}
+	option = {
+		name = EVTOPTB_NIE_237
+		custom_tooltip = { text = wife_stop_her }
+		hidden_tooltip = {
+				random_list = {
+						95 = { character_event = { id = NIE.238 days = 15 } }
+						5 = { character_event = { id = NIE.239 days = 10 } }
+				}
+		}
+		remove_trait = trusting
+		random_list = {
+					20 = { change_diplomacy = -4 }
+					20 = { change_martial = -4 }
+					20 = { change_stewardship = -4 }
+					20 = { change_intrigue = -4 }
+					20 = { change_learning = -4 }
+		}
+		prestige = 100
+		event_target:spouse_regency = {
+					opinion = {
+						modifier = opinion_angry
+						who = ROOT
+						years = 5
+					}
+					prestige = -100
+					random = {
+						chance = 60
+						add_rival = ROOT
+					}
+		}
+	}
+}
+###
+# Wife assumes power
+character_event = {
+	id = NIE.238
+	title = "EVTNAMENIE.238"
+	desc = EVTDESC_NIE_238
+	picture = GFX_evt_shadowy_cabal
+	border = GFX_event_normal_frame_intrigue
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+
+	immediate = {
+		any_character = {
+				limit = {
+					has_character_flag = spouse_one
+				}
+				save_event_target_as = spouse_regency
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_238
+		custom_tooltip = { text = wife_assumes_power }
+		hidden_tooltip = {
+				event_target:spouse_regency = {
+							clr_character_flag = spouse_one
+				}
+		}
+		if = {
+			limit = {
+				primary_title = { higher_tier_than = COUNT }
+				any_demesne_title = {
+  					NOT = { higher_tier_than = DUKE } 
+				}
+			}
+			random_demesne_title = { 
+					limit = {
+						tier = DUKE
+					}
+					gain_title = event_target:spouse_regency
+			}
+		}
+		if = {
+			limit = {
+				primary_title = { higher_tier_than = DUKE }
+				any_demesne_title = {
+  					NOT = { higher_tier_than = KING } 
+				}
+			}
+			random_demesne_title = { 
+					limit = {
+						tier = KING
+					}
+					gain_title = event_target:spouse_regency
+			}
+		}
+		if = {
+			limit = {
+				primary_title = { higher_tier_than = KING }
+			}
+			random_demesne_title = { 
+					limit = {
+						tier = EMPEROR
+					}
+					gain_title = event_target:spouse_regency
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_238
+		custom_tooltip = { text = try_to_stop }
+		hidden_tooltip = {
+				event_target:spouse_regency = {
+							clr_character_flag = spouse_one
+				}
+		}
+		random_list = {
+				65 = { event_target:spouse_regency = {
+									death = {
+
+										death_reason = death_execution	
+										killer = ROOT
+		
+									}
+									character_event = { id = NIE.241 }
+					}
+				modifier = {
+					martial = 10
+					factor = 1.2
+				}
+				modifier = {
+					martial = 15
+					factor = 1.5
+				}
+				modifier = {
+					martial = 20
+					factor = 2
+				}
+				}
+				35 = { 	death = {
+
+						death_reason = death_execution	
+						killer = event_target:spouse_regency
+		
+					}
+						abdicate_to = event_target:spouse_regency
+						character_event = { id = NIE.242 }
+				}
+		}
+	}
+}
+###
+# Wife backs down
+character_event = {
+	id = NIE.239
+	title = "EVTNAMENIE.239"
+	desc = EVTDESC_NIE_239
+	picture = GFX_evt_shadowy_cabal
+	border = GFX_event_normal_frame_intrigue
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+
+	immediate = {
+		any_character = {
+				limit = {
+					has_character_flag = spouse_one
+				}
+				save_event_target_as = spouse_regency
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_239
+		custom_tooltip = { text = wife_backs_down }
+		hidden_tooltip = {
+				event_target:spouse_regency = {
+							clr_character_flag = spouse_one
+				}
+		}
+		prestige = 300
+		event_target:spouse_regency = {
+					prestige = -300
+					change_intrigue = -3
+					random = {
+						chance = 60
+						add_trait = deceitful
+					}
+					random = {
+						chance = 60
+						add_trait = envious
+					}
+					random = {
+						chance = 40
+						add_rival = ROOT
+					}
+		}
+	}
+}
+###
+# Wife happy to help
+character_event = {
+	id = NIE.240
+	title = "EVTNAMENIE.240"
+	desc = EVTDESC_NIE_240
+	picture = GFX_evt_lovers
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+
+	immediate = {
+		any_character = {
+				limit = {
+					has_character_flag = spouse_one
+				}
+				save_event_target_as = spouse_happy
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_240
+		custom_tooltip = { text = wife_happy_to_help }
+		hidden_tooltip = {
+				event_target:spouse_happy = {
+							clr_character_flag = spouse_one
+				}
+		}		
+		if = {
+			limit = {
+				event_target:spouse_happy = {
+							diplomacy = 10
+				}
+			}
+			change_diplomacy = 3
+		}
+		if = {
+			limit = {
+				event_target:spouse_happy = {
+							martial = 10
+				}
+			}
+			change_martial = 3
+		}
+		if = {
+			limit = {
+				event_target:spouse_happy = {
+							stewardship = 10
+				}
+			}
+			change_stewardship = 3
+		}
+		if = {
+			limit = {
+				event_target:spouse_happy = {
+							intrigue = 10
+				}
+			}
+			change_intrigue = 3
+		}
+		if = {
+			limit = {
+				event_target:spouse_happy = {
+							learning = 10
+				}
+			}
+			change_learning = 3
+		}
+		if = {
+			limit = {
+				event_target:spouse_happy = {
+								NAND = {
+									diplomacy = 10
+									martial = 10
+									stewardship = 10
+									intrigue = 10
+									learning = 10
+								}
+				}
+			}
+			random_list = {
+					20 = { change_diplomacy = 2 }
+					20 = { change_martial = 2 }
+					20 = { change_stewardship = 2 }
+					20 = { change_intrigue = 2 }
+					20 = { change_learning = 2 }
+			}
+		}	
+		event_target:spouse_happy = { 
+						opinion = {
+							modifier = opinion_seduced_lustful_worship
+							who = ROOT
+							years = 5
+						}
+		}
+	}
+}	

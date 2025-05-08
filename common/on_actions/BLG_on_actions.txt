@@ -1,0 +1,62 @@
+on_host_change = {
+	events = {
+		blg.1 # New spawn ethnic diversity.
+	}
+}
+
+on_new_holder = {
+	events = {
+		blg.1 # New spawn ethnic diversity.
+	}
+}
+
+on_new_holder_inheritance = {
+	events = {
+		blg.1 # New spawn ethnic diversity.
+	}
+}
+
+on_birth = {
+	events = {
+		blg.2 # Set graphical culture from parents.
+	}
+}
+
+on_society_bi_yearly_pulse = {
+	events = {
+		blg.3 # Toggle society clothing when quests start.
+	}
+}
+
+on_quest_success = {
+	effect = {
+		remove_trait = blgquesting
+	}
+}
+
+on_quest_failure = {
+	effect = {
+		remove_trait = blgquesting
+	}
+}
+
+on_chronicle_start = {
+	effect = {
+		add_trait = i_used_to_be_a_player
+		remove_trait = blgspawn
+		character_event = { id = blg.5 }
+		character_event = { id = blg.5 days = 1 }
+	}
+}
+
+on_chronicle_owner_change = {
+	effect = {
+		add_trait = i_used_to_be_a_player
+	}
+}
+
+on_combat_starting = {
+	effect = {
+		set_dueling_weapon_effect = yes
+	}
+}

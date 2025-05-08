@@ -1,0 +1,7 @@
+kinich_protectshiacaliph = {
+	plot_discovery_chance = 0.5
+	defensive_plot_power_modifier = 1.0
+	same_religion_opinion = 25
+	health_penalty = 4
+	icon = 81
+}

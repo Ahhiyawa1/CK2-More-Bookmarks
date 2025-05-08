@@ -1,0 +1,5446 @@
+####ID Ranges####
+#Germanic 0-199
+#West African 200-399
+#Finnish/Soume 400-599
+#Slavic 600-799
+#Baltic/Romuvan 800-999
+#Tengri 1000-1199
+#Zunist 1200-1399
+#Hellenic 1400-1599
+
+
+namespace = aaop
+
+
+
+
+
+#############################
+###### Germanic ######
+#############################
+
+
+###feathers appear on high religious authority
+narrative_event = {
+	id = aaop.000
+	desc = {
+		text = EVTDESAaaop.000
+		trigger = {
+			character = ROOT
+		}
+	}
+	desc = {
+		text = EVTDESBaaop.000
+		trigger = {
+			NOT = { character = ROOT }
+		}
+	}
+	picture = GFX_evt_comet
+	title = EVTTITLEAaaop.000
+	
+	major = yes
+	
+	only_playable = yes
+	only_capable = yes
+	war = no
+	
+	trigger = {
+		NOT = { has_game_rule = { name = supernatural_artifacts value = off } }
+		NOT = { has_global_flag = feathers_found }
+		religion_openly_norse_or_reformed_trigger = yes
+		religion_authority = 0.70
+	}
+	major_trigger = { religion_openly_norse_or_reformed_trigger = yes }
+	
+	mean_time_to_happen = {
+		months = 240
+		modifier = {
+			factor = 0.8
+			trait = zealous
+		}
+		modifier = {
+			factor = 0.8
+			independent = yes
+		}
+		modifier = {
+			factor = 3
+			ai = yes
+		}
+	}
+	
+	immediate = { set_global_flag = feathers_found }
+	
+	option = {
+		name = EVTOPTAaaop.000
+		trigger = { character = ROOT }
+		add_artifact = huginns_feather
+		add_artifact = muninns_feather
+		custom_tooltip = {
+			text = EVTTOOLTIPAaaop.000
+			set_variable = { which = huginn_counter value = 0 }
+			set_variable = { which = muninn_counter value = 0 }
+			while = {
+				limit = {
+					check_variable = { which = huginn_counter value <= 2 }
+				}
+				change_variable = { which = huginn_counter value = 1}
+				random_character = {
+					limit = {
+						religion_openly_norse_or_reformed_trigger = yes
+						is_landed = yes
+						NOR = {
+							has_artifact = huginns_feather
+							has_artifact = muninns_feather
+						}
+					}
+					add_artifact = huginns_feather
+				}
+			}
+		}	
+		hidden_tooltip = {
+			while = {
+				limit = {
+					check_variable = { which = muninn_counter value <= 2 }
+				}
+				change_variable = { which = muninn_counter value = 1}
+				random_character = {
+					limit = {
+						religion_openly_norse_or_reformed_trigger = yes
+						is_landed = yes
+						NOR = {
+							has_artifact = huginns_feather
+							has_artifact = muninns_feather
+						}
+					}
+					add_artifact = muninns_feather
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTBaaop.000
+		trigger = { NOT = { character = ROOT } }
+		custom_tooltip = { text = EVTTOOLTIPAaaop.000 }
+	}
+}
+
+###andvaranaut wealth
+character_event = {
+	id = aaop.001
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	religion_group = pagan_group
+	min_age = 16
+	only_capable = yes
+	
+	trigger = {
+		has_artifact = andvaranaut
+		religion_openly_norse_or_reformed_trigger = yes
+		any_artifact = {
+			artifact_type = andvaranaut
+			is_artifact_equipped = yes
+		}
+	}
+
+	immediate = {
+	
+		#do the effects here for ai and hidden
+		if = {
+			limit = {
+				OR = {
+					ai = yes
+					has_character_flag = andvaranaut_hidden 
+				}
+			}
+			scaled_wealth = { value = 0.40 min = 20 }
+			if = {
+				limit = { NOT = { has_character_modifier = fafnir_curse } }
+				random = {
+					chance = 15
+					modifier = {
+						factor = 0
+						has_character_flag = fafnir			
+					}
+					modifier = {
+						factor = 1.2
+						age > 20			
+					}
+					modifier = {
+						factor = 1.2
+						age > 30			
+					}
+					modifier = {
+						factor = 1.5
+						age > 40			
+					}
+					modifier = {
+						factor = 1.5
+						age > 50			
+					}
+					modifier = {
+						factor = 1.3
+						check_variable = { which = fafnir_proggress value = 3 }		
+					}
+					modifier = {
+						factor = 1.3
+						check_variable = { which = fafnir_proggress value = 5 }				
+					}
+					character_event = { id = aaop.003 days = 5 }
+				}
+			}
+		}
+		
+		else = { character_event = { id = aaop.002 } }
+	}
+}
+
+
+###show the wealth event
+character_event = {
+	id = aaop.002
+	desc = EVTDESAaaop.002
+	picture = GFX_evt_relaxed_ruler
+	
+	is_triggered_only = yes
+	
+	religion_group = pagan_group
+	min_age = 16
+	only_capable = yes
+	
+	trigger = {
+		religion_openly_norse_or_reformed_trigger = yes
+		any_artifact = {
+			artifact_type = andvaranaut
+			is_artifact_equipped = yes
+		}
+	}
+	
+	option = {
+		name = EVTOPTAaaop.002
+		scaled_wealth = { value = 0.40 min = 20 }
+		if = {	
+			limit = { NOT = { has_character_modifier = fafnir_curse } }
+			random = {
+				chance = 15
+				modifier = {
+					factor = 0
+					has_character_flag = fafnir			
+				}
+				modifier = {
+					factor = 1.2
+					age > 20			
+				}
+				modifier = {
+					factor = 1.2
+					age > 30			
+				}
+				modifier = {
+					factor = 1.5
+					age > 40			
+				}
+				modifier = {
+					factor = 1.5
+					age > 50			
+				}
+				modifier = {
+					factor = 1.3
+					check_variable = { which = fafnir_proggress value = 3 }		
+				}
+				modifier = {
+					factor = 1.3
+					check_variable = { which = fafnir_proggress value = 5 }				
+				}
+				custom_tooltip = {	
+					text = EVTTOOLTIPAaaop.002
+					character_event = { id = aaop.003 days = 5 }
+				}
+			}
+		}	
+	}
+	
+	
+	#hide future notifications
+	option = {
+		name = EVTOPTBaaop.002
+		scaled_wealth = { value = 0.40 min = 20 }
+		if = {	
+			limit = { NOT = { has_character_modifier = fafnir_curse } }
+			random = {
+				chance = 15
+				modifier = {
+					factor = 0
+					has_character_flag = fafnir			
+				}
+				modifier = {
+					factor = 1.2
+					age > 20			
+				}
+				modifier = {
+					factor = 1.2
+					age > 30			
+				}
+				modifier = {
+					factor = 1.5
+					age > 40			
+				}
+				modifier = {
+					factor = 1.5
+					age > 50			
+				}
+				modifier = {
+					factor = 1.3
+					check_variable = { which = fafnir_proggress value = 3 }		
+				}
+				modifier = {
+					factor = 1.3
+					check_variable = { which = fafnir_proggress value = 5 }				
+				}
+				custom_tooltip = {	
+					text = EVTTOOLTIPAaaop.002
+					character_event = { id = aaop.003 days = 5 }
+				}
+			}
+		}	
+		custom_tooltip = {
+			text = EVTTOOLTIPBaaop.002
+			set_character_flag = andvaranaut_hidden
+		}
+	}
+}
+
+###andvaranaut curse
+character_event = {
+	id = aaop.003
+	desc = {
+		text = EVTDESAaaop.003
+		trigger = { has_character_flag = andvaranaut_lunatic }
+	}
+	desc = {
+		text = EVTDESBaaop.003
+		trigger = { has_character_flag = andvaranaut_possessed }
+	}
+	desc = {
+		text = EVTDESCaaop.003
+		trigger = { has_character_flag = andvaranaut_disfigured }
+	}
+	desc = {
+		text = EVTDESDaaop.003
+		trigger = { has_character_flag = andvaranaut_stutter }
+	}
+	desc = {
+		text = EVTDESEaaop.003
+		trigger = { has_character_flag = andvaranaut_frail }
+	}
+	desc = {
+		text = EVTDESFaaop.003
+		trigger = { has_character_flag = andvaranaut_greedy }
+	}
+	desc = {
+		text = EVTDESGaaop.003
+		trigger = { has_character_flag = andvaranaut_arbitrary }
+	}
+	desc = {
+		text = EVTDESHaaop.003
+		trigger = { has_character_flag = andvaranaut_paranoid }
+	}
+	desc = {
+		text = EVTDESIaaop.003
+		trigger = { has_character_flag = andvaranaut_health }
+	}
+	picture = GFX_evt_lunatic
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = { NOT = { has_game_rule = { name = supernatural_artifacts value = off } } }
+			change_variable = { which = fafnir_proggress value = 1 }
+		}
+		random_list = {
+			#lunatic
+			10 = {
+				modifier = {
+					factor = 0
+					trait = lunatic
+				}
+				set_character_flag = andvaranaut_lunatic
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					trait = possessed
+				}
+				set_character_flag = andvaranaut_possessed
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					trait = disfigured
+				}
+				set_character_flag = andvaranaut_disfigured
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					trait = stutter
+				}
+				set_character_flag = andvaranaut_stutter
+			}
+			5 = {
+				modifier = {
+					factor = 0
+					trait = feeble
+				}
+				set_character_flag = andvaranaut_frail
+			}
+			15 = {
+				modifier = {
+					factor = 0
+					trait = greedy
+				}
+				set_character_flag = andvaranaut_greedy
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					trait = arbitrary
+				}
+				set_character_flag = andvaranaut_arbitrary
+			}
+			10 = {
+				modifier = {
+					factor = 0
+					trait = paranoid
+				}
+				set_character_flag = andvaranaut_paranoid
+			}
+			15 = {
+				set_character_flag = andvaranaut_health
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTAaaop.003
+		trigger = { has_character_flag = andvaranaut_lunatic }
+		add_trait = lunatic
+	}
+	option = {
+		name = EVTOPTBaaop.003
+		trigger = { has_character_flag = andvaranaut_possessed }
+		add_trait = possessed
+	}
+	option = {
+		name = EVTOPTCaaop.003
+		trigger = { has_character_flag = andvaranaut_disfigured }
+		add_trait = disfigured
+	}
+	option = {
+		name = EVTOPTDaaop.003
+		trigger = { has_character_flag = andvaranaut_stutter }
+		add_trait = stutter
+	}
+	option = {
+		name = EVTOPTEaaop.003
+		trigger = { has_character_flag = andvaranaut_frail }
+		if = {
+			limit = {trait = robust}
+			remove_trait = robust
+		}
+		else = { add_trait = feeble }
+	}
+	option = {
+		name = EVTOPTFaaop.003
+		trigger = { has_character_flag = andvaranaut_greedy }
+		if = {
+			limit = {trait = charitable}
+			remove_trait = charitable
+		}
+		else = { add_trait = greedy }
+	}
+	option = {
+		name = EVTOPTGaaop.003
+		trigger = { has_character_flag = andvaranaut_arbitrary }
+		if = {
+			limit = {trait = just}
+			remove_trait = just
+		}
+		else = { add_trait = arbitrary }
+	}
+	option = {
+		name = EVTOPTHaaop.003
+		trigger = { has_character_flag = andvaranaut_paranoid }
+		if = {
+			limit = {trait = trusting}
+			remove_trait = trusting
+		}
+		else = { add_trait = paranoid }
+	}
+	option = {
+		name = EVTOPTIaaop.003
+		trigger = { has_character_flag = andvaranaut_health }
+		health = -0.2
+	}
+	
+	after = {
+		clr_character_flag = andvaranaut_lunatic
+		clr_character_flag = andvaranaut_possessed
+		clr_character_flag = andvaranaut_disfigured
+		clr_character_flag = andvaranaut_stutter
+		clr_character_flag = andvaranaut_frail
+		clr_character_flag = andvaranaut_greedy
+		clr_character_flag = andvaranaut_arbitrary
+		clr_character_flag = andvaranaut_paranoid
+		clr_character_flag = andvaranaut_health
+		if = {
+			limit = { check_variable = { which = fafnir_proggress value = 7 } }
+			narrative_event = { id = aaop.004 days = 3 }
+		}
+	}
+}
+
+
+###change into fafnir
+narrative_event = {
+	id = aaop.004
+	desc = {
+		text = EVTDESAaaop.004
+		trigger = { character = ROOT }
+	}
+	desc = {
+		text = EVTDESBaaop.004
+		trigger = { NOT = { character = ROOT } }
+	}
+	picture = GFX_evt_depopulated_town
+	title = EVTTITLEAaaop.004
+	
+	is_triggered_only = yes
+	major = yes
+
+	major_trigger = { religion_openly_norse_or_reformed_trigger = yes }
+	
+	immediate = {
+		#remove diseases
+		remove_disease_flags_effect = yes
+		remove_disease_trait_effect = yes
+	}
+	
+	option = {
+		name = EVTOPTAaaop.004
+		trigger = { character = ROOT }
+		add_character_modifier = { name = fafnir_curse duration = -1 }
+		if = {
+			limit = { trait = feeble }
+			remove_trait = feeble
+		}
+		add_trait = robust
+		hidden_tooltip = {
+			add_trait = fafnir_regent
+			set_character_flag = fafnir
+			set_global_flag = fafnir_alive
+		}
+	}
+	option = {
+		name = EVTOPTBaaop.004
+		trigger = { NOT = { character = ROOT } }
+	}
+}
+###fight fafnir, triggered by decision, ping to fafnir and calc slayer
+character_event = {
+	id = aaop.005
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		###slayer calcs
+		set_variable = { which = global_slayer_strength value = 0 }
+		if = {
+			limit = { martial = 8 }
+			change_variable = { which = global_slayer_strength value = 1 }
+		}
+		if = {
+			limit = { martial = 12 }
+			change_variable = { which = global_slayer_strength value = 1 }
+		}
+		if = {
+			limit = { martial = 16 }
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { martial = 20 }
+			change_variable = { which = global_slayer_strength value = 3 }
+		}
+		if = {
+			limit = { martial = 24 }
+			change_variable = { which = global_slayer_strength value = 3 }
+		}
+		if = {
+			limit = { martial = 28 }
+			change_variable = { which = global_slayer_strength value = 3 }
+		}
+		if = {
+			limit = { martial = 32 }
+			change_variable = { which = global_slayer_strength value = 4 }
+		}
+		if = {
+			limit = { combat_rating = 10 }
+			change_variable = { which = global_slayer_strength value = 1 }
+		}
+		if = {
+			limit = { combat_rating = 20 }
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { combat_rating = 30 }
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { combat_rating = 40 }
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { combat_rating = 50 }
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { combat_rating = 60 }
+			change_variable = { which = global_slayer_strength value = 1 }
+		}
+		if = {
+			limit = { trait = genius }
+			change_variable = { which = global_slayer_strength value = 5 }
+		}
+		if = {
+			limit = { trait = quick }
+			change_variable = { which = global_slayer_strength value = 3 }
+		}
+		if = {
+			limit = { trait = strong }
+			change_variable = { which = global_slayer_strength value = 5 }
+		}
+		if = {
+			limit = { trait = shrewd }
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { trait = robust }
+			change_variable = { which = global_slayer_strength value = 5 }
+		}
+		if = {
+			limit = { 
+				OR = {
+					trait = impaler
+					trait = duelist
+					trait = hunter
+				} 
+			}
+			change_variable = { which = global_slayer_strength value = 4 }
+		}
+		if = {
+			limit = { 
+				OR = {
+					trait = wroth 
+					trait = patient
+				}
+			}	
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { trait = diligent }
+			change_variable = { which = global_slayer_strength value = 3 }
+		}
+		if = {
+			limit = { trait = brave }
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { trait = ambitious }
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { trait = varangian }
+			change_variable = { which = global_slayer_strength value = 3 }
+		}
+		if = {
+			limit = { trait = berserker }
+			change_variable = { which = global_slayer_strength value = 5 }
+		}
+		if = {
+			limit = { trait = viking }
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { trait = ravager }
+			change_variable = { which = global_slayer_strength value = 4 }
+		}
+		if = {
+			limit = { 
+				OR = {
+					trait = seaking
+					trait = sea_queen
+				} 
+			}
+			change_variable = { which = global_slayer_strength value = 6 }
+		}
+		if = {
+			limit = { trait = cruel }
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { ai = yes }
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		##artifact buffs
+		if = {
+			limit = { 
+				any_artifact = {
+					has_artifact_flag = combat_weapon
+					is_artifact_equipped = yes
+					quality = 1
+				}
+			}
+			change_variable = { which = global_slayer_strength value = 1 }
+		}
+		if = {
+			limit = { 
+				any_artifact = {
+					has_artifact_flag = combat_weapon
+					is_artifact_equipped = yes
+					quality = 2
+				}
+			}
+			change_variable = { which = global_slayer_strength value = 1 }
+		}
+		if = {
+			limit = { 
+				any_artifact = {
+					has_artifact_flag = combat_weapon
+					is_artifact_equipped = yes
+					quality = 3
+				}
+			}
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { 
+				any_artifact = {
+					has_artifact_flag = combat_weapon
+					is_artifact_equipped = yes
+					quality = 4
+				}
+			}
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { 
+				any_artifact = {
+					has_artifact_flag = combat_weapon
+					is_artifact_equipped = yes
+					quality = 5
+				}
+			}
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { 
+				any_artifact = {
+					has_artifact_flag = holy_weapon
+					is_artifact_equipped = yes
+				}
+			}
+			change_variable = { which = global_slayer_strength value = 3 }
+		}
+		if = {
+			limit = { 
+				any_artifact = {
+					has_artifact_flag = armor
+					is_artifact_equipped = yes
+					quality = 1
+				}
+			}
+			change_variable = { which = global_slayer_strength value = 1 }
+		}
+		if = {
+			limit = { 
+				any_artifact = {
+					has_artifact_flag = armor
+					is_artifact_equipped = yes
+					quality = 2
+				}
+			}
+			change_variable = { which = global_slayer_strength value = 1 }
+		}
+		if = {
+			limit = { 
+				any_artifact = {
+					has_artifact_flag = armor
+					is_artifact_equipped = yes
+					quality = 3
+				}
+			}
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { 
+				any_artifact = {
+					has_artifact_flag = armor
+					is_artifact_equipped = yes
+					quality = 4
+				}
+			}
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		if = {
+			limit = { 
+				any_artifact = {
+					has_artifact_flag = armor
+					is_artifact_equipped = yes
+					quality = 5
+				}
+			}
+			change_variable = { which = global_slayer_strength value = 2 }
+		}
+		##negatives
+		if = {
+			limit = { combat_rating = -20 }
+			change_variable = { which = global_slayer_strength value = -4 }
+		}
+		if = {
+			limit = { combat_rating = 0 }
+			change_variable = { which = global_slayer_strength value = -2 }
+		}
+		if = {
+			limit = { trait = hunchback }
+			change_variable = { which = global_slayer_strength value = -3 }
+		}
+		if = {
+			limit = { trait = dwarf }
+			change_variable = { which = global_slayer_strength value = -3 }
+		}
+		if = {
+			limit = { trait = slow }
+			change_variable = { which = global_slayer_strength value = -3 }
+		}
+		if = {
+			limit = { trait = imbecile }
+			change_variable = { which = global_slayer_strength value = -5 }
+		}
+		if = {
+			limit = { trait = inbred }
+			change_variable = { which = global_slayer_strength value = -5 }
+		}
+		if = {
+			limit = { trait = weak }
+			change_variable = { which = global_slayer_strength value = -5 }
+		}
+		if = {
+			limit = { trait = lunatic }
+			change_variable = { which = global_slayer_strength value = -2 }
+		}
+		if = {
+			limit = { trait = possessed }
+			change_variable = { which = global_slayer_strength value = -2 }
+		}
+		if = {
+			limit = { trait = drunkard }
+			change_variable = { which = global_slayer_strength value = -4 }
+		}
+		if = {
+			limit = { trait = one_handed }
+			change_variable = { which = global_slayer_strength value = -3 }
+		}
+		if = {
+			limit = { trait = one_legged }
+			change_variable = { which = global_slayer_strength value = -4 }
+		}
+		if = {
+			limit = { trait = feeble }
+			change_variable = { which = global_slayer_strength value = -5 }
+		}
+		if = {
+			limit = { trait = craven }
+			change_variable = { which = global_slayer_strength value = -5 }
+		}
+		if = {
+			limit = { trait = honest }
+			change_variable = { which = global_slayer_strength value = -2 }
+		}
+		if = {
+			limit = { trait = blinded }
+			change_variable = { which = global_slayer_strength value = -10 }
+		}
+		if = {
+			limit = { is_ill = yes }
+			change_variable = { which = global_slayer_strength value = -5 }
+		}
+		###ping to fafnir
+		any_character = {
+			limit = { has_character_flag = fafnir }
+			narrative_event = { id = aaop.006 }
+		}
+	}
+}
+###calc fafnir strength, bounce back to slayer, inform fafnir slayer is here
+narrative_event = {
+	id = aaop.006
+	desc = EVTDESAaaop.006
+	title = EVTTITLEAaaop.006
+	picture = GFX_evt_rider_adventure
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_variable = { which = fafnir_strength value = 0 }
+		if = {
+			limit = { martial < 4 }
+			change_variable = { which = fafnir_strength value = -5 }
+		}
+		if = {
+			limit = { martial < 6 }
+			change_variable = { which = fafnir_strength value = -3 }
+		}
+		if = {
+			limit = { martial < 8 }
+			change_variable = { which = fafnir_strength value = -1 }
+		}
+		if = {
+			limit = { martial = 8 }
+			change_variable = { which = fafnir_strength value = 1 }
+		}
+		if = {
+			limit = { martial = 12 }
+			change_variable = { which = fafnir_strength value = 1 }
+		}
+		if = {
+			limit = { martial = 16 }
+			change_variable = { which = fafnir_strength value = 2 }
+		}
+		if = {
+			limit = { martial = 20 }
+			change_variable = { which = fafnir_strength value = 3 }
+		}
+		if = {
+			limit = { martial = 24 }
+			change_variable = { which = fafnir_strength value = 3 }
+		}
+		if = {
+			limit = { martial = 28 }
+			change_variable = { which = fafnir_strength value = 3 }
+		}
+		if = {
+			limit = { martial = 32 }
+			change_variable = { which = fafnir_strength value = 4 }
+		}
+		if = {
+			limit = { combat_rating = 10 }
+			change_variable = { which = fafnir_strength value = 1 }
+		}
+		if = {
+			limit = { combat_rating = 20 }
+			change_variable = { which = fafnir_strength value = 2 }
+		}
+		if = {
+			limit = { combat_rating = 30 }
+			change_variable = { which = fafnir_strength value = 2 }
+		}
+		if = {
+			limit = { combat_rating = 40 }
+			change_variable = { which = fafnir_strength value = 2 }
+		}
+		if = {
+			limit = { combat_rating = 50 }
+			change_variable = { which = fafnir_strength value = 2 }
+		}
+		if = {
+			limit = { combat_rating = 60 }
+			change_variable = { which = fafnir_strength value = 1 }
+		}
+		if = {
+			limit = { trait = genius }
+			change_variable = { which = fafnir_strength value = 5 }
+		}
+		if = {
+			limit = { trait = quick }
+			change_variable = { which = fafnir_strength value = 3 }
+		}
+		if = {
+			limit = { trait = strong }
+			change_variable = { which = fafnir_strength value = 5 }
+		}
+		if = {
+			limit = { trait = shrewd }
+			change_variable = { which = fafnir_strength value = 2 }
+		}
+		if = {
+			limit = { 
+				OR = {
+					trait = impaler
+					trait = duelist
+					trait = hunter
+				} 
+			}
+			change_variable = { which = fafnir_strength value = 4 }
+		}
+		if = {
+			limit = { trait = wroth }
+			change_variable = { which = fafnir_strength value = 2 }
+		}
+		if = {
+			limit = { trait = lunatic }
+			change_variable = { which = fafnir_strength value = 2 }
+		}
+		if = {
+			limit = { trait = brave }
+			change_variable = { which = fafnir_strength value = 2 }
+		}
+		if = {
+			limit = { trait = varangian }
+			change_variable = { which = fafnir_strength value = 3 }
+		}
+		if = {
+			limit = { trait = berserker }
+			change_variable = { which = fafnir_strength value = 5 }
+		}
+		if = {
+			limit = { trait = viking }
+			change_variable = { which = fafnir_strength value = 2 }
+		}
+		if = {
+			limit = { trait = ravager }
+			change_variable = { which = fafnir_strength value = 4 }
+		}
+		if = {
+			limit = { 
+				OR = {
+					trait = seaking
+					trait = sea_queen
+				} 
+			}
+			change_variable = { which = fafnir_strength value = 6 }
+		}
+		if = {
+			limit = { trait = cruel }
+			change_variable = { which = fafnir_strength value = 2 }
+		}
+		##negatives
+		if = {
+			limit = { combat_rating = -20 }
+			change_variable = { which = fafnir_strength value = -4 }
+		}
+		if = {
+			limit = { combat_rating = 0 }
+			change_variable = { which = fafnir_strength value = -2 }
+		}
+		if = {
+			limit = { trait = hunchback }
+			change_variable = { which = fafnir_strength value = -3 }
+		}
+		if = {
+			limit = { trait = dwarf }
+			change_variable = { which = fafnir_strength value = -3 }
+		}
+		if = {
+			limit = { trait = slow }
+			change_variable = { which = fafnir_strength value = -3 }
+		}
+		if = {
+			limit = { trait = imbecile }
+			change_variable = { which = fafnir_strength value = -5 }
+		}
+		if = {
+			limit = { trait = inbred }
+			change_variable = { which = fafnir_strength value = -5 }
+		}
+		if = {
+			limit = { trait = weak }
+			change_variable = { which = fafnir_strength value = -5 }
+		}
+		if = {
+			limit = { trait = dull }
+			change_variable = { which = fafnir_strength value = -2 }
+		}
+		if = {
+			limit = { trait = gluttonous }
+			change_variable = { which = fafnir_strength value = -2 }
+		}
+		if = {
+			limit = { trait = craven }
+			change_variable = { which = fafnir_strength value = -5 }
+		}
+		if = {
+			limit = { trait = shy }
+			change_variable = { which = fafnir_strength value = -2 }
+		}
+		if = {
+			limit = { trait = honest }
+			change_variable = { which = fafnir_strength value = -2 }
+		}
+		if = {
+			limit = { trait = blinded }
+			change_variable = { which = fafnir_strength value = -10 }
+		}
+		if = {
+			limit = { is_ill = yes }
+			change_variable = { which = fafnir_strength value = -5 }
+		}
+	}
+	option = {
+		name = EVTOPTAaaop.006
+		hidden_tooltip = { FROM = { narrative_event = { id = aaop.007 days = 5 } } }
+	}
+}
+###slayer decides to battle or flee, fafnir is FROM
+narrative_event = {
+	id = aaop.007
+	desc = {
+		text = EVTDESAaaop.007
+		trigger = {
+			FROM = { check_variable = { which = fafnir_strength value <= 10 } }
+		}
+	}
+	desc = {
+		text = EVTDESBaaop.007
+		trigger = {
+			FROM = { 
+				check_variable = { which = fafnir_strength value >= 11 } 
+				check_variable = { which = fafnir_strength value < 20 } 
+			}
+		}
+	}
+	desc = {
+		text = EVTDESCaaop.007
+		trigger = {
+			FROM = { check_variable = { which = fafnir_strength value >= 20 } }
+		}
+	}
+	title = EVTTITLEAaaop.007
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	is_triggered_only = yes
+	
+	#fight
+	option = {
+		name = EVTOPTAaaop.007
+		custom_tooltip = {
+			text = EVTTOOLTIPAaaop.007
+			FROM = { narrative_event = { id = aaop.009 days = 1 } }
+		}
+		ai_chance = {
+			factor = 75
+		}
+	}
+	#flee
+	option = {
+		name = EVTOPTBaaop.007
+		random_list = {
+			60 = { add_maimed_trait_effect = yes }
+			25 = { death = { death_reason = death_fafnir killer = FROM } }
+			15 = { add_trait_wounded_effect = yes }
+		}
+		hidden_tooltip = {
+			FROM = { narrative_event = { id = aaop.008 days = 1 } }
+			clr_character_flag = facing_fafnir
+		}
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 1.3
+				trait = craven
+			}
+			modifier = {
+				factor = 1.3
+				check_variable = { which = global_slayer_strength value < 6 }
+			}
+			modifier = {
+				factor = 1.2
+				check_variable = { which = global_slayer_strength value < 10 }
+			}
+			modifier = {
+				factor = 1.1
+				check_variable = { which = global_slayer_strength value < 15 }
+			}
+		}
+	}
+}
+###slayer ran away, inform fafnir
+narrative_event = {
+	id = aaop.008
+	desc = {
+		text = EVTDESAaaop.008
+		trigger = { 
+			FROM = { 
+				OR = {	
+					trait = wounded
+					trait = severely_injured
+				}
+			}
+		}
+	}
+	desc = {
+		text = EVTDESBaaop.008
+		trigger = { FROM = { is_alive = no } } 
+	}
+	title = EVTTITLEAaaop.008
+	picture = GFX_evt_lunatic
+	
+	is_triggered_only = yes
+
+	#slayer wounded
+	option = {
+		name = EVTOPTAaaop.008
+		trigger = { 
+			FROM = { 
+				OR = {	
+					trait = wounded
+					trait = severely_injured
+				}
+			}
+		}
+	}
+	#slayer died
+	option = {
+		name = EVTOPTBaaop.008
+		trigger = { FROM = { is_alive = no } } 
+		add_artifact = slayers_skull
+		new_artifact = { set_original_owner = FROM }
+	}
+	after = { clr_global_flag = fafnir_busy }
+}
+###fafnir gets result, Slayer is FROM
+narrative_event = {
+	id = aaop.009
+	desc = {
+		text = EVTDESAaaop.009
+		trigger = { has_character_flag = fafnir_lost }
+	}
+	desc = {
+		text = EVTDESBaaop.009
+		trigger = { has_character_flag = fafnir_won }
+	}
+	title = EVTTITLEAaaop.009
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = { check_variable = { which = global_slayer_strength which = fafnir_strength } }
+			set_character_flag = fafnir_lost
+		}
+		else = { set_character_flag = fafnir_won }	
+	}
+	option = {
+		name = EVTOPTAaaop.009
+		trigger = { has_character_flag = fafnir_lost }
+		hidden_tooltip = { FROM = { narrative_event = { id = aaop.010 } } }
+	}
+	option = {
+		name = EVTOPTBaaop.009
+		trigger = { has_character_flag = fafnir_won }
+		hidden_tooltip = { FROM = { narrative_event = { id = aaop.010 } } }
+		prestige = 250
+		#weaken fafnir
+		random = {
+			chance = 20
+			change_martial = -1
+		}
+	}
+}
+###slayer gets result, do all effects here, fafnir is FROM
+narrative_event = {
+	id = aaop.010
+	desc = {
+		text = EVTDESAaaop.010
+		trigger = { FROM = { has_character_flag = fafnir_lost } }
+	}
+	desc = {
+		text = EVTDESBaaop.010
+		trigger = { FROM = { has_character_flag = fafnir_won } }
+	}
+	title = EVTTITLEAaaop.010
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		FROM = {
+			if = {
+				limit = { has_character_flag = fafnir_lost }
+				any_artifact = {
+					limit = { artifact_type = slayers_skull }
+					destroy_artifact = yes
+				}
+				any_artifact = {
+					limit = { artifact_type = andvaranaut }
+					unsafe_destroy_artifact = yes
+				}
+			}
+		}
+	}
+	
+	
+	#slayer won
+	option = {
+		name = EVTOPTAaaop.010
+		trigger = { FROM = { has_character_flag = fafnir_lost } }
+		FROM = { death = { death_reason = death_duel killer = ROOT } }
+		add_artifact = andvaranaut
+		add_artifact = fafnirs_scale
+		prestige = 500
+		wealth = FROM
+		clr_global_flag = fafnir_alive
+		clr_character_flag = facing_fafnir
+		###inform other germanics
+		hidden_tooltip = {
+			any_character = {
+				limit = { 
+					religion_openly_norse_or_reformed_trigger = yes 
+					NOT = { character = ROOT } 
+				}
+				narrative_event = { id = aaop.011 days = 2 }
+			}
+		}
+	}
+	#slayer died
+	option = {
+		name = EVTOPTBaaop.010
+		trigger = { FROM = { has_character_flag = fafnir_won } }
+		hidden_tooltip = {
+			FROM = {
+				add_artifact = slayers_skull
+				new_artifact = { set_original_owner = ROOT }
+				clr_character_flag = fafnir_won
+			}
+		}	
+		death = { death_reason = death_fafnir killer = FROM }
+	}
+	after = { clr_global_flag = fafnir_busy }
+}
+###fafnir killed, informing others. slayer is FROM, fafnir is FROMFROM
+narrative_event = {
+	id = aaop.011
+	desc = EVTDESAaaop.011
+	title = EVTTITLEAaaop.011
+	picture = GFX_evt_viking_funeral_oldgods
+	
+	is_triggered_only = yes
+	
+	immediate = { clr_character_flag = facing_fafnir }
+	option = { name = EVTOPTAaaop.011 }
+}
+###gleipnir
+narrative_event = {
+	id = aaop.012
+	desc = {
+		text = EVTDESAaaop.012
+		trigger = { character = ROOT }
+	}
+	desc = {
+		text = EVTDESBaaop.012
+		trigger = { NOT = { character = ROOT } }
+	}
+	title = EVTTITLEAaaop.012
+	picture = GFX_evt_runestone_raising_oldgods
+	
+	major = yes
+	only_playable = yes
+	min_age = 16
+	only_capable = yes
+	prisoner = no
+	war = no
+	
+	trigger = {
+		NOT = { has_global_flag = gleipnir_found }
+		total_years_played = 100
+		religion_openly_norse_or_reformed_trigger = yes	
+	}
+	major_trigger = { religion_openly_norse_or_reformed_trigger = yes }
+	
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 1.5
+			ai = yes
+		}
+		modifier = {
+			factor = 0.9
+			piety = 250
+		}
+		modifier = {
+			factor = 0.9
+			piety = 500
+		}
+	}
+	
+	immediate = { set_global_flag = gleipnir_found }
+	
+	option = {
+		name = EVTOPTAaaop.012
+		trigger = { character = ROOT }
+		add_artifact = gleipnir
+	}
+	option = {
+		name = EVTOPTBaaop.012
+		trigger = { NOT = { character = ROOT } }
+	}
+}
+###odin's eye quest
+narrative_event = {
+	id = aaop.013
+	desc = EVTDESAaaop.013
+	picture = GFX_evt_bandits
+	title = EVTTITLEAaaop.013
+
+	only_playable = yes
+	only_capable = yes
+	min_age = 16
+	war = no
+	
+	trigger = {
+		has_game_rule = { name = supernatural_artifacts value = all }
+		NOR = { 
+			has_global_flag = odins_eye_found
+			has_global_flag = odins_quest_active 
+		}
+		religion_openly_norse_or_reformed_trigger = yes
+		religion_authority = 0.50
+		OR = {
+			learning = 12
+			trait = mystic
+			controls_religion = yes
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.9
+			piety = 500
+		}
+		modifier = {
+			factor = 0.9
+			piety = 750
+		}
+		modifier = {
+			factor = 0.9
+			piety = 1000
+		}
+		modifier = {
+			factor = 0.9
+			any_artifact = {
+				count = 1
+				has_artifact_flag = odin
+			}
+		}
+		modifier = {
+			factor = 0.9
+			any_artifact = {
+				count = 2
+				has_artifact_flag = odin
+			}
+		}
+		modifier = {
+			factor = 5
+			ai = yes
+		}
+	}
+	immediate = { 
+		set_global_flag = odins_quest_active
+		set_variable = { which = odins_quest_counter value = 0 } 
+		set_variable = { which = raiding_progress value = 0 }
+		set_variable = { which = raiding_score value = 0 }
+	
+	}
+	
+	option = {
+		name = EVTOPTAaaop.013
+		if = {
+			limit = { trait = cynical }
+			remove_trait = cynical
+		}
+		custom_tooltip = {
+			text = EVTTOOLTIPAaaop.013
+			set_character_flag = odins_quest	
+			character_event = { id = aaop.014 days = 100 random = 50 }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 1.2
+				trait = diligent
+			}
+			modifier = {
+				factor = 1.2
+				trait = kind
+			}
+		}
+	}
+	option = {
+		name = EVTOPTBaaop.013
+		clr_global_flag = odins_quest_active
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 1.5
+				trait = cynical
+			}
+			modifier = {
+				factor = 1.2
+				trait = slothful
+			}
+			modifier = {
+				factor = 5
+				society_member_of = the_trollcrafters
+			}
+		}
+	}
+}
+###quest stage 1, fighting pit
+character_event = {
+	id = aaop.014
+	desc = EVTDESAaaop.014
+	picture = GFX_evt_family_feud_republic
+	
+	is_triggered_only = yes
+	
+	#fight
+	option = {
+		name = EVTOPTAaaop.014
+		random_list = { 
+			50 = {
+				modifier = {
+					factor = 1.2
+					martial = 8
+				}
+				modifier = {
+					factor = 1.2
+					martial = 12
+				}
+				modifier = {
+					factor = 1.2
+					martial = 16
+				}
+				modifier = {
+					factor = 1.2
+					martial = 20
+				}
+				prestige = 100
+				scaled_wealth = 0.10
+			}
+			50 = {
+				prestige = -100
+				add_trait_wounded_effect = yes
+			}
+		}
+		hidden_tooltip = { 
+			change_variable = { which = odins_quest_counter value = 2 } 
+			set_character_flag = odins_quest_fought_in_pit
+		}
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 1.5
+				trait = brave
+			}
+			modifier = {
+				factor = 1.5
+				martial = 10
+			}
+			modifier = {
+				factor = 1.5
+				martial = 16
+			}
+		}
+	}
+	#watch
+	option = {
+		name = EVTOPTBaaop.014
+		add_character_modifier = { name = good_times years = 2 }
+		hidden_tooltip = { 
+			change_variable = { which = odins_quest_counter value = 1 } 
+			set_character_flag = odins_quest_watched_pit
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.5
+				trait = craven
+			}
+		}
+	}
+	#leave
+	option = {
+		name = EVTOPTCaaop.014
+		ai_chance = { factor = 0 }
+	}
+	after = { character_event = { id = aaop.015 days = 1 } }
+}
+###quest stage 2, ragnarok question
+character_event = {
+	id = aaop.015
+	desc = EVTDESAaaop.015
+	picture = GFX_evt_child_talking
+	
+	is_triggered_only = yes
+	
+	option = { 
+		name = EVTOPTAaaop.015 
+		ai_chance = { factor = 25 }
+	}
+	option = { 
+		name = EVTOPTBaaop.015 
+		ai_chance = { factor = 25 }
+	}
+	option = {
+		name = EVTOPTCaaop.015
+		hidden_tooltip = { 
+			change_variable = { which = odins_quest_counter value = 1 } 
+			set_character_flag = odins_quest_correct_answer
+		}
+		ai_chance = { 
+			factor = 25 
+			modifier = {
+				factor = 1.2
+				learning = 12
+			}
+			modifier = {
+				factor = 1.2
+				learning = 14
+			}
+			modifier = {
+				factor = 1.4
+				learning = 16
+			}
+			modifier = {
+				factor = 5
+				learning = 20
+			}
+		}
+	}
+	option = { 
+		ai_chance = { factor = 25 }
+		name = EVTOPTDaaop.015 
+	}
+
+	after = { character_event = { id = aaop.016 days = 90 random = 20 } }
+}
+###quest stage 3, remove eye
+character_event = {
+	id = aaop.016
+	desc = EVTDESAaaop.016
+	picture = GFX_evt_religious_exultation
+	
+	is_triggered_only = yes
+	
+	#remove eye
+	option = {
+		name = EVTOPTAaaop.016
+		trigger = { 
+			NOR = {
+				trait = one_eyed
+				trait = blinded
+			}
+		}
+		add_trait = one_eyed
+		add_trait_severely_injured_effect = yes
+		hidden_tooltip = { 
+			change_variable = { which = odins_quest_counter value = 1 } 
+			set_character_flag = odins_quest_removed_eye
+		}
+		ai_chance = { 
+			factor = 80
+			modifier = {
+				factor = 100
+				trait = brave
+			}
+		}
+	}
+	#already missing an eye
+	option = {
+		name = EVTOPTBaaop.016
+		trigger = { trait = one_eyed }
+		remove_trait = one_eyed
+		add_trait = blinded
+		add_trait_severely_injured_effect = yes
+		hidden_tooltip = { 
+			change_variable = { which = odins_quest_counter value = 2 } 
+			set_character_flag = odins_quest_removed_other_eye
+		}
+		ai_chance = { 
+			factor = 80
+			modifier = {
+				factor = 100
+				trait = brave
+			}
+		}
+	}
+	#already blind
+	option = {
+		name = EVTOPTCaaop.016
+		trigger = { trait = blinded }
+		hidden_tooltip = { 
+			change_variable = { which = odins_quest_counter value = 1 } 
+			set_character_flag = odins_quest_already_blind
+		}
+		ai_chance = { 
+			factor = 80
+			modifier = {
+				factor = 100
+				trait = brave
+			}
+		}
+	}
+	#no
+	option = {
+		name = EVTOPTDaaop.016 
+		trigger = { NOT = { trait = blinded } }
+		ai_chance = { 
+			factor = 20
+			modifier = {
+				factor = 100
+				trait = craven
+			}
+		}
+	}
+
+
+	after = { character_event = { id = aaop.017 days = 90 random = 20 } }
+}
+###quest stage 4, raid if player, pay money if ai
+character_event = {
+	id = aaop.017
+	desc = EVTDESAaaop.017
+	picture = GFX_evt_vikings_arriving_oldgods
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.017
+		trigger = { ai = no }
+		custom_tooltip = {
+			text = EVTTOOLTIPAaaop.017
+			set_character_flag = odins_quest_active_raiding
+		}
+	}
+	option = {
+		name = EVTOPTBaaop.017
+		trigger = { ai = yes }
+		scaled_wealth = -0.20
+		prestige = -250
+		change_variable = { which = odins_quest_counter value = 1 }
+		character_event = { id = aaop.019 days = 2 }
+	}
+}
+###raid progress, triggered on raid holding
+character_event = {
+	id = aaop.018
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	has_global_flag = odins_quest_active
+	only_playable = yes
+	only_capable = yes
+	has_character_flag = odins_quest_active_raiding
+	war = no
+
+	immediate = {
+		change_variable = { which = raiding_progress value = 1 }
+		if = { 
+			limit = { FROM = { holding_type = temple } }
+			change_variable = { which = raiding_score value = 1 }
+		}
+		if = { 
+			limit = { FROM = { holding_type = tribal } }
+			change_variable = { which = raiding_score value = 1 }
+		}
+		if = { 
+			limit = { FROM = { holding_type = city } }
+			change_variable = { which = raiding_score value = 2 }
+		}
+		if = { 
+			limit = { FROM = { holding_type = castle } }
+			change_variable = { which = raiding_score value = 3 }
+		}
+		
+		if = {
+			limit = { check_variable = { which = raiding_progress value = 5 } }
+			clr_character_flag = odins_quest_active_raiding
+			if = {
+				limit = { check_variable = { which = raiding_score value <= 9 } }
+				change_variable = { which = odins_quest_counter value = 1 } 
+			}
+			else_if = {
+				limit = { check_variable = { which = raiding_score value > 9 } }
+				change_variable = { which = odins_quest_counter value = 2 } 
+			}
+			character_event = { id = aaop.019 days = 20 }
+		}
+	}
+}
+
+
+###quest end
+character_event = {
+	id = aaop.019
+	desc = EVTDESAaaop.019	
+	picture = GFX_evt_religious_exultation
+	
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.019
+		hidden_tooltip = { narrative_event = { id = aaop.020 } }
+	}
+}
+###tell results all, and ending
+narrative_event = {
+	id = aaop.020
+	desc = EVTDESAaaop.020
+	picture = GFX_evt_garden
+	title = EVTTITLEAaaop.020
+	
+	is_triggered_only = yes
+	
+	#fail
+	option = {
+		name = EVTOPTAaaop.020
+		trigger = { check_variable = { which = odins_quest_counter value < 5 } }
+		custom_tooltip = { text = EVTTOOLTIPAaaop.020 }
+		piety = -100
+		prestige = -250
+	}
+	#success
+	option = {
+		name = EVTOPTBaaop.020
+		trigger = { check_variable = { which = odins_quest_counter value >= 5 } }
+		add_artifact = odins_eye
+		add_character_modifier = { name = respected_by_the_people years = 5 }
+		hidden_tooltip = { set_global_flag = odins_eye_found } 
+	}
+
+	#clear all flags 
+	after = {
+		clr_character_flag = odins_quest_fought_in_pit
+		clr_character_flag = odins_quest_watched_pit
+		clr_character_flag = odins_quest_correct_answer
+		clr_character_flag = odins_quest_removed_eye
+		clr_character_flag = odins_quest_removed_other_eye
+		clr_character_flag = odins_quest_already_blind
+		clr_character_flag = odins_quest
+		clr_global_flag = odins_quest_active
+	}
+}
+###odins eye discover plot
+character_event = {
+	id = aaop.021
+	desc = EVTDESAaaop.021
+	picture = GFX_evt_suspicious_noble
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_realm_character = {
+			if = {
+				limit = { 
+					has_plot = yes
+					NOT = { plot_is_known_by = ROOT }
+					plot_target_char = { character = ROOT }
+				}
+				save_event_target_as = odins_eye_plotter
+			}
+			else_if = {
+				limit = {
+					has_plot = yes
+					NOT = { plot_is_known_by = ROOT }
+					plot_target_char = { is_close_relative = ROOT }
+				}
+				save_event_target_as = odins_eye_plotter
+			}
+			else_if = {
+				limit = {
+					liege = { character = ROOT }
+					has_plot = yes
+					NOT = { plot_is_known_by = ROOT }
+				}
+				save_event_target_as = odins_eye_plotter
+			}
+			else_if = {
+				limit = {
+					has_plot = yes
+					NOT = { plot_is_known_by = ROOT }
+				}
+				save_event_target_as = odins_eye_plotter
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTAaaop.021
+		event_target:odins_eye_plotter = { reveal_plot = ROOT }
+	}
+}
+###odins eye give tech
+character_event = {
+	id = aaop.022
+	desc = EVTDESAaaop.022
+	picture = GFX_evt_scientist
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTAaaop.022
+		if = {
+			limit = { learning < 8 }
+			random_list = {
+				33 = { culture_techpoints = 50 }
+				33 = { economy_techpoints = 50 }
+				33 = { military_techpoints = 50 }
+			}
+		}
+		else_if = {
+			limit = { learning = 8 }
+			random_list = {
+				33 = { culture_techpoints = 100 }
+				33 = { economy_techpoints = 100 }
+				33 = { military_techpoints = 100 }
+			}
+		}
+		else_if = {
+			limit = { learning = 14 }
+			random_list = {
+				33 = { culture_techpoints = 150 }
+				33 = { economy_techpoints = 150 }
+				33 = { military_techpoints = 150 }
+			}
+		}	
+		else_if = {	
+			limit = { learning = 20 }
+			random_list = {
+				33 = { culture_techpoints = 250 }
+				33 = { economy_techpoints = 250 }
+				33 = { military_techpoints = 250 }
+			}
+		}	
+	}
+}
+###odins eye increase stats
+character_event = {
+	id = aaop.023
+	desc = EVTDESAaaop.023
+	picture = GFX_evt_religious_exultation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.023
+		random = { chance = 25 change_diplomacy = 1 }
+		random = { chance = 25 change_martial = 1 }
+		random = { chance = 25 change_stewardship = 1 }
+		random = { chance = 25 change_intrigue = 1 }
+		random = { chance = 25 change_learning = 1 }
+	}
+}
+###son is strangely sick, triggered on birth
+character_event = {
+	id = aaop.024
+
+	hide_window = yes
+	is_triggered_only = yes
+	
+	religion_group = pagan_group
+	
+	trigger = {
+		NOT = { has_game_rule = { name = supernatural_artifacts value = off } }
+		is_female = no
+		religion_openly_norse_or_reformed_trigger = yes
+		NOR = { 
+			trait = sickly 
+			trait = bastard
+			trait = legit_bastard
+		}
+		father = {
+			is_alive = yes
+			religion_openly_norse_or_reformed_trigger = yes
+			is_playable = yes
+			num_of_children > 1
+		}	
+		any_close_relative = { 
+			NOR = {
+				trait = odin_child_sickness
+				has_character_modifier = odins_intervention 
+			}
+		}
+	}
+	weight_multiplier = {
+		factor = 1
+		modifier = {
+			factor = 0.5
+			father = { ai = yes }
+		}
+		modifier = {
+			factor = 0.5
+			has_global_flag = gungnir_found
+		}
+	}
+	immediate = {
+		random = {
+			chance = 5
+			save_event_target_as = odin_child
+			add_trait = odin_child_sickness
+			father = { narrative_event = { id = aaop.025 days = 30 } }
+		}
+	}
+}
+###inform father
+narrative_event = {
+	id = aaop.025
+	desc = EVTDESAaaop.025
+	picture = GFX_evt_court_physician
+	title = EVTTITLEAaaop.025
+
+	is_triggered_only = yes
+	
+	immediate = {
+		any_courtier_or_vassal = {
+			limit = {
+				has_minor_title = title_court_physician 
+				liege = { character = ROOT }
+			}
+			save_event_target_as = court_physician
+		}
+	}
+	
+	
+	option = {
+		name = EVTOPTAaaop.025
+		trigger = { event_target:court_physician = { always = yes } }
+		custom_tooltip = { 
+			text = EVTTOOLTIPAaaop.025 
+			set_character_flag = odin_child_has_physician
+			event_target:court_physician = { character_event = { id = aaop.026 } }
+		}
+		
+	}
+	#no physician
+	option = {
+		name = EVTOPTBaaop.025
+		trigger = { event_target:court_physician = { always = no } }
+		custom_tooltip = {
+			text = EVTTOOLTIPBaaop.025
+			narrative_event = { id = aaop.027 days = 10 }
+		}
+	}
+}
+###ping physician if exists
+character_event = {
+	id = aaop.026
+	desc = EVTDESAaaop.026
+	picture = GFX_evt_court_physician
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTAaaop.026
+		hidden_tooltip = { FROM = { narrative_event = { id = aaop.027 days = 10 } } }
+	}
+}
+###continue
+narrative_event = {	
+	id = aaop.027
+	desc = {
+		text = EVTDESAaaop.027
+		trigger = { has_character_flag = odin_child_has_physician }
+	}
+	desc = {
+		text = EVTDESBaaop.027
+		trigger = { NOT = { has_character_flag = odin_child_has_physician } } 
+	}
+	title = EVTTITLEAaaop.027
+	picture = GFX_evt_court_physician
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.027
+		custom_tooltip = {
+			text = EVTTOOLTIPAaaop.027
+			random_list = {
+				#odin saves son
+				10 = { 
+					modifier = {
+						factor = 0.8
+						ai = yes
+					}
+					modifier = {
+						factor = 1.1
+						piety = 100
+					}
+					modifier = {
+						factor = 1.2
+						piety = 200
+					}
+					modifier = {
+						factor = 1.2
+						piety = 300
+					}
+					modifier = {
+						factor = 1.2
+						trait = zealous
+					}
+					modifier = {
+						factor = 1.5
+						trait = viking
+					}
+					modifier = {
+						factor = 2.5
+						trait = ravager
+					}
+					modifier = {
+						factor = 5
+						trait = seaking
+					}
+					modifier = {
+						factor = 1.1
+						learning = 8
+					}
+					modifier = {
+						factor = 1.1
+						learning = 12
+					}
+					modifier = {
+						factor = 1.3
+						learning = 18
+					}
+					set_character_flag = odin_child_saved
+					narrative_event = { id = aaop.028 days = 30 }
+				}
+				#son survives
+				45 = { 
+					set_character_flag = odin_child_survives
+					narrative_event = { id = aaop.028 days = 30 } 
+				}
+				#son dies
+				45 = { 
+					modifier = {
+						factor = 0.9
+						event_target:court_physician = { learning = 10 }
+					}
+					modifier = {
+						factor = 0.9
+						event_target:court_physician = { learning = 15 }
+					}
+					modifier = {
+						factor = 0.9
+						event_target:court_physician = { learning = 20 }
+					}
+					modifier = {
+						factor = 0.5
+						event_target:court_physician = { trait = physician }
+					}
+					modifier = {
+						factor = 0.8
+						event_target:court_physician = { trait = mystic }
+					}
+					narrative_event = { id = aaop.028 days = 30 } 
+				}
+			}
+		}
+	}
+}
+###result
+narrative_event = {
+	id = aaop.028
+	desc = {
+		text = EVTDESAaaop.028
+		trigger = { has_character_flag = odin_child_saved }
+	}
+	desc = {
+		text = EVTDESBaaop.028
+		trigger = { has_character_flag = odin_child_survives }
+	}
+	desc = {
+		text = EVTDESCaaop.028
+		trigger = { 
+			NOR = { 
+				has_character_flag = odin_child_saved
+				has_character_flag = odin_child_survives 
+			} 
+		} 
+	}
+	title = EVTTITLEAaaop.028
+	picture = GFX_evt_court_physician
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTAaaop.028
+		trigger = { has_character_flag = odin_child_saved }
+		event_target:odin_child = {
+			remove_trait = odin_child_sickness
+			add_character_modifier = { modifier = odins_intervention duration = -1 }
+			give_nickname = nick_the_son_of_odin
+			hidden_tooltip = { set_character_flag = odin_child_success }
+		}
+	}
+	option = {
+		name = EVTOPTBaaop.028
+		trigger = { has_character_flag = odin_child_survives } 
+		event_target:odin_child = {
+			remove_trait = odin_child_sickness 
+			change_martial = 1
+		}
+	}
+	option = {
+		name = EVTOPTCaaop.028
+		trigger = { 
+			NOR = { 
+				has_character_flag = odin_child_saved
+				has_character_flag = odin_child_survives 
+			} 
+		} 
+		event_target:odin_child = { death = { death_reason = death_poor_health } }
+		add_trait = depressed 
+		if = {
+			limit = { has_character_flag = odin_child_has_physician }
+			opinion = { modifier = opinion_outraged who = event_target:court_physician years = 5 }
+		}
+	}
+	after = { 
+		clr_character_flag = odin_child_has_physician 
+		clr_character_flag = odin_child_saved
+		clr_character_flag = odin_child_survives
+	}
+}
+###Odins child gets gungnir
+narrative_event = {
+	id = aaop.029
+	desc = {
+		text = EVTDESAaaop.029
+		trigger = { character = ROOT }
+	}
+	desc = {
+		text = EVTDESBaaop.029
+		trigger = { NOT = { character = ROOT } }
+	}
+	title = EVTTITLEAaaop.029
+	picture = GFX_evt_viking_battle_oldgods
+	
+	major = yes
+	is_triggered_only = yes
+
+	religion_group = pagan_group
+	only_capable = yes
+	min_age = 16
+	has_character_flag = odin_child_success
+	
+	trigger = {
+		NOT = { has_global_flag = gungnir_found }
+		religion_openly_norse_or_reformed_trigger = yes
+		martial >= 14
+	}
+	major_trigger = { religion_openly_norse_or_reformed_trigger = yes }
+	
+	immediate = { set_global_flag = gungnir_found }
+	
+	option = {
+		name = EVTOPTAaaop.029
+		trigger = { character = ROOT }
+		add_artifact = gungnir
+		if = {
+			limit = { independent = yes }
+			any_current_enemy = {
+				any_realm_character = {
+					limit = { 
+						at_location = ROOT
+						in_command = yes
+						prisoner = no	
+					}
+					morale = -1
+					hidden_tooltip = { character_event = { id = aaop.030 } }
+				}
+			}
+		}
+		else = {
+			liege = {
+				any_current_enemy = {
+					any_realm_character = {
+						limit = { 
+							at_location = ROOT
+							in_command = yes
+							prisoner = no	
+						}
+						hidden_tooltip = { character_event = { id = aaop.030 } }
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = EVTOPTBaaop.029
+		trigger = { NOT = { character = ROOT } }
+		opinion = { who = ROOT modifier = opinion_gained_respect years = 5 }
+	}
+}
+###inform enemy 
+character_event = {
+	id = aaop.030
+	desc = EVTDESAaaop.030
+	picture = GFX_evt_viking_battle_oldgods
+
+	is_triggered_only = yes
+	
+	option = { 
+		name = EVTOPTAaaop.030 
+		morale = -1
+	}
+}
+
+###gungnir effect
+character_event = {
+	id = aaop.031
+	desc = EVTDESAaaop.031
+	picture = GFX_evt_vikings_arriving_oldgods
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		FROM = {
+			religion_openly_norse_or_reformed_trigger = yes
+			has_artifact = gungnir
+			any_artifact = {
+				artifact_type = gungnir
+				is_artifact_active = yes
+				is_artifact_equipped = yes
+			}
+		}
+		ROOT = { NOT = { religion = FROM } }
+	}
+	
+	option = {
+		name = EVTOPTAaaop.031
+		if = {
+			limit = { prestige < 250 }
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = THIS
+						troops = {
+							archers = { 250 250 }
+							light_infantry = { 750 750 }
+						}
+						attrition = 1.0
+						disband_on_peace = yes
+						can_toggle_looting = no
+						maintenance_multiplier = 0.5
+					}
+				}	
+			}
+		}
+		else_if = {
+			limit = { 
+				prestige >= 250 
+				NOT = { prestige >= 500 }
+			}
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = THIS
+						troops = {
+							archers = { 500 500 }
+							light_infantry = { 1250 1250 }
+						}
+						attrition = 1.0
+						disband_on_peace = yes
+						can_toggle_looting = no
+						maintenance_multiplier = 0.5
+					}
+				}	
+			}
+		}
+		else_if = {
+			limit = { 
+				prestige >= 500 
+				NOT = { prestige >= 1000 }
+			}
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = THIS
+						troops = {
+							archers = { 750 750 }
+							light_infantry = { 1250 1250 }
+							heavy_infantry = { 250 250 }
+						}
+						attrition = 1.0
+						disband_on_peace = yes
+						can_toggle_looting = no
+						maintenance_multiplier = 0.5
+					}
+				}	
+			}
+		}
+		else_if = {
+			limit = { 
+				prestige >= 1000 
+				NOT = { prestige >= 2000 }
+			}
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = THIS
+						troops = {
+							archers = { 1000 1000 }
+							light_infantry = { 2000 2000 }
+							heavy_infantry = { 500 500 }
+						}
+						attrition = 1.0
+						disband_on_peace = yes
+						can_toggle_looting = no
+						maintenance_multiplier = 0.5
+					}
+				}	
+			}
+		}
+		else_if = {
+			limit = { 
+				prestige >= 2000 
+				NOT = { prestige >= 5000 }
+			}
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = THIS
+						troops = {
+							archers = { 1500 1500 }
+							light_infantry = { 3000 3000 }
+							heavy_infantry = { 750 750 }
+						}
+						attrition = 1.0
+						disband_on_peace = yes
+						can_toggle_looting = no
+						maintenance_multiplier = 0.5
+					}
+				}	
+			}
+		}
+		else_if = {
+			limit = { prestige >= 5000 }
+			capital_scope = {
+				ROOT = {
+					spawn_unit = {
+						province = PREV
+						home = PREV
+						owner = THIS
+						troops = {
+							archers = { 2500 2500 }
+							light_infantry = { 4000 4000 }
+							heavy_infantry = { 1250 1250 }
+						}
+						attrition = 1.0
+						disband_on_peace = yes
+						can_toggle_looting = no
+						maintenance_multiplier = 0.5
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+#############################
+###### West African Pagan ######
+#############################
+
+##religious head decides blessing
+character_event = {
+	id = aaop.200
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		random_list = {
+			#no
+			65 = {
+				FROM = {
+					set_character_flag = no_blessing
+					character_event = {id = aaop.201 days = 10 } 
+				}
+			}
+			#blessing
+			30 = {
+				modifier = {
+					factor = 1.1
+					FROM = {piety = 100}
+				}
+				modifier = {
+					factor = 1.1
+					FROM = {piety = 200}
+				}
+				modifier = {
+					factor = 1.1
+					FROM = {piety = 300}
+				}
+				modifier = {
+					factor = 1.4
+					FROM = {piety = 500}
+				}
+				modifier = {
+					factor = 1.1
+					opinion = {who = FROM value = 20}
+				}
+				modifier = {
+					factor = 1.1
+					opinion = {who = FROM value = 40}
+				}
+				modifier = {
+					factor = 1.1
+					opinion = {who = FROM value = 60}
+				}
+				modifier = {
+					factor = 1.1
+					opinion = {who = FROM value = 80}
+				}
+				modifier = {
+					factor = 1.4
+					opinion = {who = FROM value = 100}
+				}
+				modifier = {
+					factor = 1.4
+					FROM = {has_virtue_trigger = yes}
+				}
+				modifier = {
+					factor = 1.8
+					FROM = {is_pious_trigger = yes}
+				}
+				FROM = {
+					set_character_flag = given_african_blessing
+					character_event = {id = aaop.201 days = 10}
+				}
+			}
+			#doll
+			10 = {
+				modifier = {
+					factor = 0
+					has_game_rule = { name = supernatural_artifacts value = off }
+				}
+				modifier = {
+					factor = 1.1
+					FROM = {piety = 100}
+				}
+				modifier = {
+					factor = 1.1
+					FROM = {piety = 200}
+				}
+				modifier = {
+					factor = 1.1
+					FROM = {piety = 300}
+				}
+				modifier = {
+					factor = 1.2
+					FROM = {piety = 500}
+				}
+				modifier = {
+					factor = 1.1
+					opinion = {who = FROM value = 20}
+				}
+				modifier = {
+					factor = 1.1
+					opinion = {who = FROM value = 40}
+				}
+				modifier = {
+					factor = 1.1
+					opinion = {who = FROM value = 60}
+				}
+				modifier = {
+					factor = 1.1
+					opinion = {who = FROM value = 80}
+				}
+				modifier = {
+					factor = 1.3
+					opinion = {who = FROM value = 100}
+				}
+				modifier = {
+					factor = 1.3
+					FROM = {has_virtue_trigger = yes}
+				}
+				modifier = {
+					factor = 1.5
+					FROM = {is_pious_trigger = yes}
+				}
+				FROM = {
+					set_character_flag = given_ashanti_doll
+					character_event = {id = aaop.201 days = 10}
+				}
+			}
+		}
+	}
+}
+
+##blessing result
+character_event = {
+	id = aaop.201
+	desc = {
+		trigger = { has_character_flag = no_blessing }
+		text = EVTDESAaaop.201
+	}
+	desc = {
+		trigger = { has_character_flag = given_african_blessing }
+		text = EVTDESBaaop.201
+	}
+	desc = {
+		trigger = { has_character_flag = given_ashanti_doll }
+		text = EVTDESCaaop.201
+	}
+	picture = GFX_evt_tribal_shrine
+	
+	is_triggered_only = yes
+	
+	option = {
+		trigger = { has_character_flag = no_blessing }
+		name = EVTOPTAaaop.201
+	}
+	option = {
+		trigger = { has_character_flag = given_african_blessing }
+		name = EVTOPTBaaop.201
+		add_character_modifier = { name = african_blessing_modifier years = 10 }
+	}
+	option = {
+		trigger = { has_character_flag = given_ashanti_doll }
+		name = EVTOPTCaaop.201
+		add_artifact = ashanti_doll
+	}
+	after = {
+		clr_character_flag = no_blessing
+		clr_character_flag = given_african_blessing
+		clr_character_flag = given_ashanti_doll
+	}
+}
+##ashanti_doll attractive birth, triggered on birth
+character_event = {
+	id = aaop.202
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	religion = west_african_pagan_reformed
+	
+	trigger = {
+		OR = {
+			father = {
+				religion = west_african_pagan_reformed
+				has_artifact = ashanti_doll
+			}
+			mother = {
+				religion = west_african_pagan_reformed
+				has_artifact = ashanti_doll
+			}
+		}
+	}
+	immediate = {
+		random = {
+			chance = 15
+			add_trait = fair
+		}
+	}
+}
+
+
+
+
+#############################
+###### Finnish/Soume ######
+#############################
+
+####kalevanmiekka
+narrative_event = {
+	id = aaop.400
+	desc = EVTDESAaaop.400
+	picture = GFX_evt_emissary
+	title = EVTTITLEAaaop.400
+	
+	only_playable = yes
+	only_capable = yes
+	min_age = 18
+	prisoner = no
+	
+	
+	trigger = {
+		NOT ={ has_global_flag = kalevanmiekka_found }
+		OR = {
+			religion_openly_finnish_or_reformed_trigger = yes
+			culture_group = finno_ugric
+		}
+		martial = 8
+	}
+	
+	
+	mean_time_to_happen = {
+		months = 2400
+		modifier = {
+			factor = 0.80
+			monthly_income = 20
+		}
+		modifier = {
+			factor = 5
+			ai = yes
+		}
+	}
+	
+	option = {
+		name = EVTOPTAaaop.400
+		scaled_wealth = -0.40
+		add_artifact = kalevanmiekka
+		set_global_flag = kalevanmiekka_found
+		
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.2
+				trait = greedy
+			}			
+		}
+	}
+	option = {
+		name = EVTOPTBaaop.400
+		ai_chance = { factor = 1 }
+	}
+}
+
+####sampo fragments prep for journey
+character_event = {
+	id = aaop.401
+	desc = EVTDESAaaop.401
+	picture = GFX_evt_merchant_caravan
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.401
+		hidden_tooltip = { character_event = { id = aaop.402 months = 6} }
+	}
+}
+####decide if success or fail
+character_event = {
+	id = aaop.402
+	
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		random_list = {
+			40 = {
+				modifier = {
+					factor = 1.1
+					OR = {
+						diplomacy = 8
+						martial = 8
+						stewardship = 8
+						intrigue = 8
+						learning = 8
+					}
+				}
+				modifier = {
+					factor = 1.1
+					OR = {
+						diplomacy = 12
+						martial = 12
+						stewardship = 12
+						intrigue = 12
+						learning = 12
+					}
+				}
+				modifier = {
+					factor = 1.1
+					OR = {
+						diplomacy = 16
+						martial = 16
+						stewardship = 16
+						intrigue = 16
+						learning = 16
+					}
+				}
+				modifier = {
+					factor = 1.1
+					trait = diligent
+				}
+				modifier = {
+					factor = 1.1
+					trait = ambitious
+				}
+				modifier = {
+					factor = 1.2
+					trait = quick
+				}
+				modifier = {
+					factor = 1.2
+					trait = shrewd
+				}
+				modifier = {
+					factor = 1.5
+					trait = genius
+				}
+				hidden_tooltip = {character_event = { id = aaop.403 months = 6} }
+			}
+			60 = {
+				modifier = {
+					factor = 1.1
+					trait = slothful
+				}
+				modifier = {
+					factor = 1.1
+					trait = stubborn
+				}
+				modifier = {
+					factor = 1.1
+					trait = content
+				}
+				modifier = {
+					factor = 1.2
+					trait = slow
+				}
+				modifier = {
+					factor = 1.2
+					trait = dull
+				}
+				modifier = {
+					factor = 1.5
+					trait = imbecile
+				}
+				hidden_tooltip = {character_event = { id = aaop.404 months = 6} }
+			}
+		}
+	}
+}
+####success 
+character_event = {
+	id = aaop.403
+	desc = EVTDESAaaop.403
+	picture = GFX_evt_religious_exultation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.403
+		add_artifact = sampo_fragment
+	}
+}
+####failure
+character_event = {
+	id = aaop.404
+	desc = EVTDESAaaop.404
+	picture = GFX_evt_suspicious_noble
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.404
+		random = {
+			chance = 20
+			add_trait = depressed
+		}
+	}
+}
+####Sampo rebuilt
+narrative_event = {
+	id = aaop.405
+	desc = EVTDESAaaop.405
+	picture = GFX_evt_relic_box
+	title = EVTTITLEAaaop.405
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.405
+		add_artifact = sampo
+	}
+	after = {
+		any_character = {
+			limit = { has_artifact = sampo_fragment }
+			destroy_artifact = sampo_fragment
+		}
+	}
+}
+####magic scroll
+character_event = {
+	id = aaop.406
+	desc = EVTDESAaaop.406
+	picture = GFX_evt_market
+	
+	only_playable = yes
+	min_age = 18
+	only_capable = yes
+	
+	trigger = {
+		NOT = { has_game_rule = { name = supernatural_artifacts value = off } }
+		NOT = {has_global_flag = vipunens_scroll}
+		religion_openly_finnish_or_reformed_trigger = yes
+		OR = {
+			learning = 12
+			trait = mystic		
+		}
+	}
+	
+	
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.75
+			trait = mystic
+		}
+		modifier = {
+			factor = 2
+			ai = yes
+		}		
+	}
+	
+	option = {
+		name = EVTOPTAaaop.406
+		scaled_wealth = -0.10
+		hidden_tooltip = {character_event = { id = aaop.407 months = 2 } }
+		
+	}
+	option = { name = EVTOPTBaaop.406 }
+}
+####decipher scroll
+character_event = {
+	id = aaop.407
+	desc = EVTDESAaaop.407
+	picture = GFX_evt_ritual_scroll
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.407
+		hidden_tooltip = {
+			random_list = {
+				20 = {
+					modifier = {
+						factor = 1.2
+						learning = 12
+					}
+					modifier = {
+						factor = 1.2
+						learning = 16
+					}
+					modifier = {
+						factor = 1.2
+						learning = 20
+					}
+					modifier = {
+						factor = 1.2
+						learning = 24
+					}
+					modifier = {
+						factor = 2.0
+						trait = mystic
+					}
+					character_event = { id = aaop.408 months = 2 }
+				}
+				80 = { character_event = {id = aaop.409 months = 2} }
+			}
+		}
+	}
+}
+####success
+character_event = {
+	id = aaop.408 
+	desc = EVTDESAaaop.408
+	picture = GFX_evt_relaxed_ruler
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.408
+		add_artifact = vipunens_magic_scroll
+		set_global_flag = vipunens_scroll
+		culture_techpoints = 50
+		economy_techpoints = 50
+		military_techpoints = 50
+	}
+}
+####fail
+character_event = {
+	id = aaop.409
+	desc = EVTDESAaaop.409
+	picture = GFX_evt_experiments_failed
+	
+	is_triggered_only = yes
+	
+	option = { name = EVTOPTAaaop.409 }
+}
+
+
+
+
+
+#############################
+###### Slavic ######
+#############################
+
+####Fern flower festival
+character_event = {
+	id = aaop.600
+	desc = EVTDESAaaop.600
+	picture = GFX_evt_tribal_shrine
+	
+	only_playable = yes
+	only_capable = yes
+	min_age = 18
+	prisoner = no
+	war = no
+	
+	trigger = { religion_openly_slavic_or_reformed_trigger = yes }
+	mean_time_to_happen = {
+		months = 180
+		modifier = {
+			factor = 0.80
+			ai = no
+			NOT = {has_artifact = fern_flower}
+		}
+		modifier = {
+			factor = 2.00
+			ai = yes
+		}
+	}
+	
+	#jump alone
+	option = {
+		name = EVTOPTAaaop.600
+		random = {
+			chance = 30
+			modifier = {
+				factor = 0.5
+				trait = feeble
+			}
+			change_martial = 1
+		}
+		hidden_tooltip = {character_event = {id = aaop.601 days = 10}}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.2
+				num_of_children = 4
+			}	
+		}
+	}
+	#jump with spouse
+	option = {
+		name = EVTOPTBaaop.600
+		trigger = {is_married = yes}
+		random = {
+			chance = 50
+			modifier = {
+				factor = 0.5
+				trait = chaste
+			}
+			if = {
+				limit = {is_female = no}
+				spouse = {fertility = 0.10}
+			}
+			if = {
+				limit = {is_female = yes}
+				fertility = 0.10
+			}
+		}
+		hidden_tooltip = {character_event = {id = aaop.601 days = 10}}
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.2
+				NOT = {num_of_children = 4}
+			}	
+		}
+	}
+	#no
+	option = {
+		name = EVTOPTCaaop.600
+	}
+}
+####festival part 2
+character_event = {
+	id = aaop.601
+	desc = EVTDESAaaop.601
+	picture = GFX_evt_bandits
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.601
+		
+		hidden_tooltip = {
+			if = {
+				limit = {NOT = {has_artifact = fern_flower}}
+				random = {
+					chance = 15
+					modifier = {
+						factor = 1.5
+						trait = diligent
+					}
+					modifier = {
+						factor = 1.5
+						trait = ambitious
+					}
+					modifier = {
+						factor = 0.1
+						ai = yes
+					}
+					set_character_flag = found_fern_flower
+				}
+			}
+			character_event = {id = aaop.602 days = 10}
+		}
+	}
+}
+####festival end
+character_event = {
+	id = aaop.602
+	desc = {
+		text = EVTDESAaaop.602
+		trigger = {NOT = {has_character_flag = found_fern_flower}}
+	}
+	desc = {
+		text = EVTDESBaaop.602
+		trigger = {has_character_flag = found_fern_flower}
+	}
+	picture = GFX_evt_bandits
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.602
+		trigger = {NOT = {has_character_flag = found_fern_flower}}
+		add_character_modifier = {name = good_times years = 2}
+	}
+	option = {
+		name = EVTOPTBaaop.602
+		trigger = {has_character_flag = found_fern_flower}
+		add_artifact = fern_flower
+		clr_character_flag = found_fern_flower
+	}
+}
+####kladenets
+narrative_event = {
+	id = aaop.603
+	desc = EVTDESAaaop.603
+	picture = GFX_evt_rider_adventure
+	title = EVTTITLEAaaop.603
+	
+	only_playable = yes
+	only_capable = yes
+	min_age = 18
+	prisoner = no
+	
+	trigger = {
+		NOT ={ has_global_flag = kladenets_found}
+		OR = {
+			religion_openly_slavic_or_reformed_trigger = yes
+			culture_group = east_slavic
+		}
+	}
+	mean_time_to_happen = {
+		months = 2400
+		modifier = {
+			factor = 0.8
+			trait = ambitious
+		}
+		modifier = {
+			factor = 5
+			ai = yes
+		}
+	}
+	option = {
+		name = EVTOPTAaaop.603
+		add_artifact = kladenets
+		set_global_flag = kladenets_found
+	}
+}
+####axe of perun challenge
+character_event = {
+	id = aaop.604
+	
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		FROM = { artifact_type = axe_of_perun }
+		ROOT = { religion_openly_slavic_or_reformed_trigger = yes }
+	}
+	immediate = {
+		ROOT = {
+			if = {
+				limit = { NOT = { age = 16 } }
+				character_event = { id = aaop.605 days = 15 }
+			}
+			if = {
+				limit = { age = 16 }
+				character_event = { id = aaop.607 days = 15 }
+			}
+		}
+	}
+}
+####too young
+character_event = {
+	id = aaop.605
+	desc = EVTDESAaaop.605
+	picture = GFX_evt_child_sword
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.605
+		hidden_tooltip = {
+			set_character_flag = peruns_challenge_child
+			character_event = {id = aaop.606 years = 1}
+		}
+	}
+}
+####too young check
+character_event = {
+	id = aaop.606
+	
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		if = {
+			limit = { NOT = { age = 16 } }
+			character_event = { id = aaop.606 years = 1 }
+		}
+		if = {
+			limit = { age = 16}
+			character_event = { id = aaop.607 days = 15 }
+		}
+	}
+}
+####inform and invite challengers
+character_event = {
+	id = aaop.607
+	desc = {
+		text = EVTDESAaaop.607
+		trigger = {NOT = {has_character_flag = peruns_challenge_child}}
+	}
+	desc = {
+		text = EVTDESBaaop.607
+		trigger = {has_character_flag = peruns_challenge_child}
+	}
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	immediate = { 
+		save_event_target_as = perun_champion 
+		set_variable = { which = global_axe_challengers value = 0 }
+		set_variable = { which = global_challenger1 value = 0 }
+		set_variable = { which = global_challenger2 value = 0 }
+		set_variable = { which = global_challenger3 value = 0 }
+		set_variable = { which = global_challenger4 value = 0 }
+	}
+	
+	
+	option = {
+		name = EVTOPTAaaop.607
+		hidden_tooltip = {
+			####make sure player is always invited
+			clr_character_flag = peruns_challenge_child
+			if = {
+				limit = {ai = yes}
+				any_player = {
+					limit = {
+						is_adult = yes
+						prisoner = no
+						is_incapable = no
+						is_within_diplo_range = ROOT
+						religion_openly_slavic_or_reformed_trigger = yes
+						any_realm_province = {
+							ROOT = {
+								any_realm_province = {
+									NOT = { distance = { where = PREVPREV value = 350 } }
+								}
+							}
+						}
+					}
+					letter_event = {id = aaop.608 days = 5}	
+				}
+				any_character = {
+					limit = {
+						ai = yes
+						is_ruler = yes
+						religion_openly_slavic_or_reformed_trigger = yes
+						is_adult = yes
+						is_theocracy = no
+						prisoner = no
+						is_incapable = no
+						NOT = {
+							character = ROOT
+							age = 50
+						}
+						is_within_diplo_range = ROOT
+						any_realm_province = {
+							ROOT = {
+								any_realm_province = {
+									NOT = { distance = { where = PREVPREV value = 350 } }
+								}
+							}
+						}	
+					}
+					letter_event = {id = aaop.608 days = 7}
+				}	
+			}
+			####if the player is the inheritor
+			else_if = {
+				limit = {ai = no}
+				any_character = {
+					limit = {
+						ai = yes
+						is_ruler = yes
+						religion_openly_slavic_or_reformed_trigger = yes
+						is_adult = yes
+						is_theocracy = no
+						prisoner = no
+						is_incapable = no
+						NOT = {
+							character = ROOT
+							age = 50
+						}
+						is_within_diplo_range = ROOT
+						any_realm_province = {
+							ROOT = {
+								any_realm_province = {
+									NOT = { distance = { where = PREVPREV value = 350 } }
+								}
+							}
+						}	
+					}
+					letter_event = {id = aaop.608 days = 7}
+				}
+			}
+		}
+	}
+}
+####invites
+letter_event = {
+	id = aaop.608
+	desc = EVTDESAaaop.608
+	
+	is_triggered_only = yes
+	
+	
+	#override for player, otherwise first challenger
+	option = {
+		name = EVTOPTAaaop.608
+		trigger = {
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					check_variable = {which = global_axe_challengers value == 0}
+				}
+			}
+		}	
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				martial < 8
+			}
+			modifier = {
+				factor = 1.2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.2
+				martial = 10
+			}
+			modifier = {
+				factor = 1.2
+				martial = 12
+			}
+			modifier = {
+				factor = 1.4
+				martial = 14
+			}
+			modifier = {
+				factor = 1.2
+				combat_rating = 20
+			}
+			modifier = {
+				factor = 1.4
+				combat_rating = 40
+			}
+			modifier = {
+				factor = 1.4
+				trait = strong
+			}
+			modifier = {
+				factor = 1.4
+				trait = brave
+			}
+			modifier = {
+				factor = 1.4
+				trait = robust
+			}
+		}
+		hidden_tooltip = {
+			change_variable = {which = global_axe_challengers value = 1}
+			set_character_flag = axe_challenger
+		}	
+	}
+	#second
+	option = {
+		trigger = {	
+			ai = yes 
+			check_variable = { which = global_axe_challengers value == 1 }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				martial < 8
+			}
+			modifier = {
+				factor = 1.2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.2
+				martial = 10
+			}
+			modifier = {
+				factor = 1.2
+				martial = 12
+			}
+			modifier = {
+				factor = 1.4
+				martial = 14
+			}
+			modifier = {
+				factor = 1.2
+				combat_rating = 20
+			}
+			modifier = {
+				factor = 1.4
+				combat_rating = 40
+			}
+			modifier = {
+				factor = 1.4
+				trait = strong
+			}
+			modifier = {
+				factor = 1.4
+				trait = brave
+			}
+			modifier = {
+				factor = 1.4
+				trait = robust
+			}
+		}
+		change_variable = {which = global_axe_challengers value = 1}
+		set_character_flag = axe_challenger
+	}
+	#third
+	option = {
+		trigger = {	
+			ai = yes 
+			check_variable = { which = global_axe_challengers value == 2 }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				martial < 8
+			}
+			modifier = {
+				factor = 1.2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.2
+				martial = 10
+			}
+			modifier = {
+				factor = 1.2
+				martial = 12
+			}
+			modifier = {
+				factor = 1.4
+				martial = 14
+			}
+			modifier = {
+				factor = 1.2
+				combat_rating = 20
+			}
+			modifier = {
+				factor = 1.4
+				combat_rating = 40
+			}
+			modifier = {
+				factor = 1.4
+				trait = strong
+			}
+			modifier = {
+				factor = 1.4
+				trait = brave
+			}
+			modifier = {
+				factor = 1.4
+				trait = robust
+			}
+		}
+		change_variable = {which = global_axe_challengers value = 1}
+		set_character_flag = axe_challenger
+	}
+	#fourth
+	option = {
+		trigger = {	
+			ai = yes 
+			check_variable = { which = global_axe_challengers value == 3 }
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				martial < 8
+			}
+			modifier = {
+				factor = 1.2
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.2
+				martial = 10
+			}
+			modifier = {
+				factor = 1.2
+				martial = 12
+			}
+			modifier = {
+				factor = 1.4
+				martial = 14
+			}
+			modifier = {
+				factor = 1.2
+				combat_rating = 20
+			}
+			modifier = {
+				factor = 1.4
+				combat_rating = 40
+			}
+			modifier = {
+				factor = 1.4
+				trait = strong
+			}
+			modifier = {
+				factor = 1.4
+				trait = brave
+			}
+			modifier = {
+				factor = 1.4
+				trait = robust
+			}
+		}
+		change_variable = {which = global_axe_challengers value = 1}
+		set_character_flag = axe_challenger
+		FROM = { character_event = { id = aaop.609 days = 10 } }
+	}
+	#no
+	option = {
+		name = EVTOPTBaaop.608
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 100
+				check_variable = {which = global_axe_challengers value = 4}
+			}
+			modifier = {
+				factor = 3
+				trait = craven
+			}
+		}
+	}
+}
+####flavor and strength calculations/event target setting
+character_event = {
+	id = aaop.609
+	desc = EVTDESAaaop.609
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		any_character = {
+			limit = {
+				religion_group = pagan_group
+				has_character_flag = axe_challenger
+				OR = {
+					ai = no
+					AND = {
+						ai = yes
+						event_target:perun_champion = {ai = no}
+					}
+					AND = {
+						ai = yes
+						event_target:perun_champion = {ai = yes}
+						any_player = { NOT = {has_character_flag = axe_challenger} }
+					}
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						event_target:challenger1 = {always = yes}
+						event_target:challenger2 = {always = yes}
+						event_target:challenger3 = {always = yes}
+						event_target:challenger4 = {always = yes}
+					}	
+				}
+				save_global_event_target_as = challenger1
+			}
+		}
+		any_character = {
+			limit = {
+				religion_group = pagan_group
+				has_character_flag = axe_challenger
+				NOT = {
+					character = event_target:challenger1
+				}
+				ai = yes
+			}
+			if = {
+				limit = {
+					NOT = {
+						event_target:challenger2 = {always = yes}
+						event_target:challenger3 = {always = yes}
+						event_target:challenger4 = {always = yes}
+					}	
+				}
+				save_global_event_target_as = challenger2
+			}
+		}
+		any_character = {
+			limit = {
+				religion_group = pagan_group
+				has_character_flag = axe_challenger
+				NOT = {
+					character = event_target:challenger1
+					character = event_target:challenger2
+				}
+				ai = yes
+			}
+			if = {
+				limit = {
+					NOT = {
+						event_target:challenger3 = {always = yes}
+						event_target:challenger4 = {always = yes}
+					}	
+				}
+				save_global_event_target_as = challenger3
+			}
+		}
+		FROM = { save_global_event_target_as = challenger4 }
+	}
+
+	
+	option = {
+		name = EVTOPTAaaop.609
+		hidden_tooltip = {
+			event_target:challenger1 = {
+				if = {
+					limit = { martial = 6 NOT = { martial = 8 } }
+					change_variable = { which = global_challenger1 value = 1 }
+				}
+				if = {
+					limit = { martial = 8 NOT = { martial = 12 } }
+					change_variable = { which = global_challenger1 value = 2 }
+				}
+				if = {
+					limit = { martial = 12 NOT = { martial = 16 } }
+					change_variable = { which = global_challenger1 value = 3 }
+				}
+				if = {
+					limit = { martial = 16 NOT = { martial = 20 } }
+					change_variable = { which = global_challenger1 value = 4 }
+				}
+				if = {
+					limit = { martial = 20 }
+					change_variable = { which = global_challenger1 value = 5 }
+				}
+				if = {
+					limit = { combat_rating = -20 NOT = { combat_rating = 0 } }
+					change_variable = { which = global_challenger1 value = -1 }
+				}
+				if = {
+					limit = { combat_rating = 0 NOT = { combat_rating = 10 } }
+					change_variable = { which = global_challenger1 value = 1 }
+				}
+				if = {
+					limit = { combat_rating = 10 NOT = { combat_rating = 20 } }
+					change_variable = { which = global_challenger1 value = 2 }
+				}
+				if = {
+					limit = { combat_rating = 20 NOT = { combat_rating = 40 } }
+					change_variable = { which = global_challenger1 value = 3 }
+				}
+				if = {
+					limit = { combat_rating = 40 }
+					change_variable = { which = global_challenger1 value = 6 }
+				}
+				if = {
+					limit = { trait = weak }
+					change_variable = { which = global_challenger1 value = -1 }
+				}
+				if = {
+					limit = { trait = feeble }
+					change_variable = { which = global_challenger1 value = -1 }
+				}
+				if = {
+					limit = { trait = strong }
+					change_variable = { which = global_challenger1 value = 1 }
+				}
+				if = {
+					limit = { trait = robust }
+					change_variable = { which = global_challenger1 value = 1 }
+				}
+				if = {
+					limit = { trait = craven }
+					change_variable = { which = global_challenger1 value = -1 }
+				}
+				if = {
+					limit = { trait = brave }
+					change_variable = { which = global_challenger1 value = 1 }
+				}
+			}
+			event_target:challenger2 = {
+				if = {
+					limit = { martial = 6 NOT = { martial = 8 } }
+					change_variable = { which = global_challenger2 value = 1 }
+				}
+				if = {
+					limit = { martial = 8 NOT = { martial = 12 } }
+					change_variable = { which = global_challenger2 value = 2 }
+				}
+				if = {
+					limit = { martial = 12 NOT = { martial = 16 } }
+					change_variable = { which = global_challenger2 value = 3 }
+				}
+				if = {
+					limit = { martial = 16 NOT = { martial = 20 } }
+					change_variable = { which = global_challenger2 value = 4 }
+				}
+				if = {
+					limit = { martial = 20 }
+					change_variable = { which = global_challenger2 value = 5 }
+				}
+				if = {
+					limit = { combat_rating = -20 NOT = { combat_rating = 0 } }
+					change_variable = { which = global_challenger2 value = -1 }
+				}
+				if = {
+					limit = { combat_rating = 0 NOT = { combat_rating = 10 } }
+					change_variable = { which = global_challenger2 value = 1 }
+				}
+				if = {
+					limit = { combat_rating = 10 NOT = { combat_rating = 20 } }
+					change_variable = { which = global_challenger2 value = 2 }
+				}
+				if = {
+					limit = { combat_rating = 20 NOT = { combat_rating = 40 } }
+					change_variable = { which = global_challenger2 value = 3 }
+				}
+				if = {
+					limit = { combat_rating = 40 }
+					change_variable = { which = global_challenger2 value = 6 }
+				}
+				if = {
+					limit = { trait = weak }
+					change_variable = { which = global_challenger2 value = -1 }
+				}
+				if = {
+					limit = { trait = feeble }
+					change_variable = { which = global_challenger2 value = -1 }
+				}
+				if = {
+					limit = { trait = strong }
+					change_variable = { which = global_challenger2 value = 1 }
+				}
+				if = {
+					limit = { trait = robust }
+					change_variable = { which = global_challenger2 value = 1 }
+				}
+				if = {
+					limit = { trait = craven }
+					change_variable = { which = global_challenger2 value = -1 }
+				}
+				if = {
+					limit = { trait = brave }
+					change_variable = { which = global_challenger2 value = 1 }
+				}
+			}
+			event_target:challenger3 = {
+				if = {
+					limit = { martial = 6 NOT = { martial = 8 } }
+					change_variable = { which = global_challenger3 value = 1 }
+				}
+				if = {
+					limit = { martial = 8 NOT = { martial = 12 } }
+					change_variable = { which = global_challenger3 value = 2 }
+				}
+				if = {
+					limit = { martial = 12 NOT = { martial = 16 } }
+					change_variable = { which = global_challenger3 value = 3 }
+				}
+				if = {
+					limit = { martial = 16 NOT = { martial = 20 } }
+					change_variable = { which = global_challenger3 value = 4 }
+				}
+				if = {
+					limit = { martial = 20 }
+					change_variable = { which = global_challenger3 value = 5 }
+				}
+				if = {
+					limit = { combat_rating = -20 NOT = { combat_rating = 0 } }
+					change_variable = { which = global_challenger3 value = -1 }
+				}
+				if = {
+					limit = { combat_rating = 0 NOT = { combat_rating = 10 } }
+					change_variable = { which = global_challenger3 value = 1 }
+				}
+				if = {
+					limit = { combat_rating = 10 NOT = { combat_rating = 20 } }
+					change_variable = { which = global_challenger3 value = 2 }
+				}
+				if = {
+					limit = { combat_rating = 20 NOT = { combat_rating = 40 } }
+					change_variable = { which = global_challenger3 value = 3 }
+				}
+				if = {
+					limit = { combat_rating = 40 }
+					change_variable = { which = global_challenger3 value = 6 }
+				}
+				if = {
+					limit = { trait = weak }
+					change_variable = { which = global_challenger3 value = -1 }
+				}
+				if = {
+					limit = { trait = feeble }
+					change_variable = { which = global_challenger3 value = -1 }
+				}
+				if = {
+					limit = { trait = strong }
+					change_variable = { which = global_challenger3 value = 1 }
+				}
+				if = {
+					limit = { trait = robust }
+					change_variable = { which = global_challenger3 value = 1 }
+				}
+				if = {
+					limit = { trait = craven }
+					change_variable = { which = global_challenger3 value = -1 }
+				}
+				if = {
+					limit = { trait = brave }
+					change_variable = { which = global_challenger3 value = 1 }
+				}
+			}
+			event_target:challenger4 = {
+				if = {
+					limit = { martial = 6 NOT = { martial = 8 } }
+					change_variable = { which = global_challenger4 value = 1 }
+				}
+				if = {
+					limit = { martial = 8 NOT = { martial = 12 } }
+					change_variable = { which = global_challenger4 value = 2 }
+				}
+				if = {
+					limit = { martial = 12 NOT = { martial = 16 } }
+					change_variable = { which = global_challenger4 value = 3 }
+				}
+				if = {
+					limit = { martial = 16 NOT = { martial = 20 } }
+					change_variable = { which = global_challenger4 value = 4 }
+				}
+				if = {
+					limit = { martial = 20 }
+					change_variable = { which = global_challenger4 value = 5 }
+				}
+				if = {
+					limit = { combat_rating = -20 NOT = { combat_rating = 0 } }
+					change_variable = { which = global_challenger4 value = -1 }
+				}
+				if = {
+					limit = { combat_rating = 0 NOT = { combat_rating = 10 } }
+					change_variable = { which = global_challenger4 value = 1 }
+				}
+				if = {
+					limit = { combat_rating = 10 NOT = { combat_rating = 20 } }
+					change_variable = { which = global_challenger4 value = 2 }
+				}
+				if = {
+					limit = { combat_rating = 20 NOT = { combat_rating = 40 } }
+					change_variable = { which = global_challenger4 value = 3 }
+				}
+				if = {
+					limit = { combat_rating = 40 }
+					change_variable = { which = global_challenger4 value = 6 }
+				}
+				if = {
+					limit = { trait = weak }
+					change_variable = { which = global_challenger4 value = -1 }
+				}
+				if = {
+					limit = { trait = feeble }
+					change_variable = { which = global_challenger4 value = -1 }
+				}
+				if = {
+					limit = { trait = strong }
+					change_variable = { which = global_challenger4 value = 1 }
+				}
+				if = {
+					limit = { trait = robust }
+					change_variable = { which = global_challenger4 value = 1 }
+				}
+				if = {
+					limit = { trait = craven }
+					change_variable = { which = global_challenger4 value = -1 }
+				}
+				if = {
+					limit = { trait = brave }
+					change_variable = { which = global_challenger4 value = 1 }
+				}
+			}
+			event_target:challenger1 = { character_event = { id = aaop.610 days = 3 } }
+		}	
+	}
+}
+
+####flavor for challenger 1
+character_event = {
+	id = aaop.610
+	desc = EVTDESAaaop.610
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.610
+		custom_tooltip = {   
+			text = EVTTOOLTIPAaaop.610
+			hidden_tooltip = {
+				event_target:challenger2 = {opinion = {modifier = opinion_cautious who = PREV years = 2}}
+				event_target:challenger3 = {opinion = {modifier = opinion_cautious who = PREV years = 2}}
+				event_target:challenger4 = {opinion = {modifier = opinion_cautious who = PREV years = 2}}
+			}
+		}
+		hidden_tooltip = {event_target:perun_champion = {character_event = {id = aaop.611 days = 3} } }
+	}	
+}
+
+
+####first fight
+character_event = {
+	id = aaop.611
+
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		if = {
+			limit = {
+				check_variable = {which = global_challenger1 which = global_challenger2}
+			}
+			event_target:challenger1 = {
+				set_character_flag = axe_semifinal
+				clr_character_flag = axe_challenger
+			}
+			event_target:challenger2 = { clr_character_flag = axe_challenger }	
+			
+		}
+		if = {
+			limit = {
+				NOT = {check_variable = {which = global_challenger1 which = global_challenger2}}
+			}	
+			event_target:challenger2 = {
+				set_character_flag = axe_semifinal
+				clr_character_flag = axe_challenger
+			}
+			event_target:challenger1 = { clr_character_flag = axe_challenger }	
+			
+		}
+		if = {
+			limit = {
+				check_variable = {which = global_challenger3 which = global_challenger4}
+			}
+			event_target:challenger3 = {
+				set_character_flag = axe_semifinal
+				clr_character_flag = axe_challenger
+			}
+			event_target:challenger4 = { clr_character_flag = axe_challenger }	
+		}
+		if = {
+			limit = {
+				NOT = {check_variable = {which = global_challenger3 which = global_challenger4}}
+			}	
+			event_target:challenger4 = {
+				set_character_flag = axe_semifinal
+				clr_character_flag = axe_challenger
+			}
+			event_target:challenger3 = { clr_character_flag = axe_challenger }	
+		}
+		character_event = {id = aaop.612 days = 3 }
+	}
+}
+####2nd fight
+character_event = {
+	id = aaop.612
+	
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		event_target:challenger1 = {
+			if = {
+				limit = {has_character_flag = axe_semifinal}
+				if = {
+					limit = {
+						event_target:challenger3 = {has_character_flag = axe_semifinal}
+						check_variable = {which = global_challenger1 which = global_challenger3}
+					}
+					clr_character_flag = axe_semifinal
+					set_character_flag = axe_final
+					event_target:challenger3 = {clr_character_flag = axe_semifinal}
+				}
+				if = {
+					limit = {
+						event_target:challenger4 = {has_character_flag = axe_semifinal}
+						check_variable = {which = global_challenger1 which = global_challenger4}
+					}
+					clr_character_flag = axe_semifinal
+					set_character_flag = axe_final
+					event_target:challenger4 = {clr_character_flag = axe_semifinal}
+				}	
+			}	
+		}
+		event_target:challenger2 = {
+			if = {
+				limit = {has_character_flag = axe_semifinal}
+				if = {
+					limit = {
+						event_target:challenger3 = {has_character_flag = axe_semifinal}
+						check_variable = {which = global_challenger2 which = global_challenger3}
+					}
+					clr_character_flag = axe_semifinal
+					set_character_flag = axe_final
+					event_target:challenger3 = {clr_character_flag = axe_semifinal}
+				}
+				if = {
+					limit = {
+						event_target:challenger4 = {has_character_flag = axe_semifinal}
+						check_variable = {which = global_challenger2 which = global_challenger4}
+					}
+					clr_character_flag = axe_semifinal
+					set_character_flag = axe_final
+					event_target:challenger4 = {clr_character_flag = axe_semifinal}
+				}
+			}	
+		}
+		event_target:challenger3 = {
+			if = {
+				limit = {has_character_flag = axe_semifinal}
+				if = {
+					limit = {
+						event_target:challenger1 = {has_character_flag = axe_semifinal}
+						check_variable = {which = global_challenger3 which = global_challenger1}
+					}
+					clr_character_flag = axe_semifinal
+					set_character_flag = axe_final
+					event_target:challenger1 = {clr_character_flag = axe_semifinal}
+				}
+				if = {
+					limit = {
+						event_target:challenger2 = {has_character_flag = axe_semifinal}
+						check_variable = {which = global_challenger3 which = global_challenger2}
+					}
+					clr_character_flag = axe_semifinal
+					set_character_flag = axe_final
+					event_target:challenger2 = {clr_character_flag = axe_semifinal}
+				}	
+			}	
+		}
+		event_target:challenger4 = {
+			if = {
+				limit = {has_character_flag = axe_semifinal}
+				if = {
+					limit = {
+						event_target:challenger1 = {has_character_flag = axe_semifinal}
+						check_variable = {which = global_challenger4 which = global_challenger1}
+					}
+					clr_character_flag = axe_semifinal
+					set_character_flag = axe_final
+					event_target:challenger1 = {clr_character_flag = axe_semifinal}
+				}
+				if = {
+					limit = {
+						event_target:challenger2 = {has_character_flag = axe_semifinal}
+						check_variable = {which = global_challenger4 which = global_challenger2}
+					}
+					clr_character_flag = axe_semifinal
+					set_character_flag = axe_final
+					event_target:challenger2 = {clr_character_flag = axe_semifinal}
+				}	
+			}	
+		}
+	}
+	
+	option = {
+		hidden_tooltip = {
+			any_character = {
+				limit = {
+					religion_openly_slavic_or_reformed_trigger = yes
+					has_character_flag = axe_final
+				}
+				character_event = {id = aaop.613 days = 7}
+			}
+		}	
+	}
+}
+####finalist sends challenge to champion 
+character_event = {
+	id = aaop.613
+	desc = EVTDESAaaop.613
+	picture = GFX_evt_viking_battle_oldgods
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		#inform player if lost
+		if = {
+			limit = {ai = yes}
+			event_target:challenger1 = {character_event = {id = aaop.614 days = 1} }
+		}
+	}
+	option = {
+		name = EVTOPTAaaop.613
+		hidden_tooltip = {
+			prestige = 1
+			event_target:perun_champion = { character_event = { id = aaop.615 days = 7 } } 
+		}
+	}
+}
+####player lost
+character_event = {
+	id = aaop.614
+	desc = EVTDESAaaop.614
+	picture = GFX_evt_bloody_man
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.614
+	}
+}
+####final fight for axe, champion is ROOT
+character_event = {
+	id = aaop.615
+	desc = EVTDESAaaop.615
+	picture = GFX_evt_melee_arabic
+	
+	is_triggered_only = yes
+
+	option = {
+		name =  EVTOPTAaaop.615
+		
+		random_list = {
+			#win
+			50 = {
+				modifier = {
+					factor = 1.2
+					martial = 10
+				}
+				modifier = {
+					factor = 1.2
+					martial = 12
+				}
+				modifier = {
+					factor = 1.4
+					martial = 14
+				}
+				modifier = {
+					factor = 1.6
+					martial = 16
+				}
+				modifier = {
+					factor = 1.6
+					martial = 20
+				}
+				modifier = {
+					factor = 1.2
+					combat_rating = 10
+				}
+				modifier = {
+					factor = 1.4
+					combat_rating = 20
+				}
+				modifier = {
+					factor = 1.6
+					combat_rating = 30
+				}
+				modifier = {
+					factor = 1.6
+					combat_rating = 40
+				}
+				modifier = {
+					factor = 1.6
+					combat_rating = 50
+				}
+				modifier = {
+					factor = 1.4
+					trait = strong
+				}
+				modifier = {
+					factor = 1.4
+					trait = robust
+				}
+				modifier = {
+					factor = 1.4
+					trait = brave
+				}
+				modifier = {
+					factor = 0.6
+					NOT = {martial = 4}
+				}
+				modifier = {
+					factor = 0.6
+					NOT = {martial = 8}
+				}
+				modifier = {
+					factor = 0.6
+					combat_rating = -20
+				}
+				modifier = {
+					factor = 0.8
+					combat_rating = -10
+				}
+				modifier = {
+					factor = 0.8
+					combat_rating = 0
+				}
+				modifier = {
+					factor = 0.8
+					trait = weak
+				}
+				modifier = {
+					factor = 0.8
+					trait = feeble
+				}
+				modifier = {
+					factor = 0.8
+					trait = craven
+				}
+				custom_tooltip = {
+					text = EVTwinning
+					character_event = {id = aaop.616 days = 5}
+				}
+			}
+			#lose
+			50 = {
+				modifier = {
+					factor = 1.2
+					FROM = { martial = 10 }
+				}
+				modifier = {
+					factor = 1.2
+					FROM = { martial = 12 }
+				}
+				modifier = {
+					factor = 1.4
+					FROM = { martial = 14 }
+				}
+				modifier = {
+					factor = 1.6
+					FROM = { martial = 16 }
+				}
+				modifier = {
+					factor = 1.6
+					FROM = { martial = 20 }
+				}
+				modifier = {
+					factor = 1.2
+					FROM = { combat_rating = 10 }
+				}
+				modifier = {
+					factor = 1.4
+					FROM = { combat_rating = 20 }
+				}
+				modifier = {
+					factor = 1.6
+					FROM = { combat_rating = 30 }
+				}
+				modifier = {
+					factor = 1.6
+					FROM = { combat_rating = 40 }
+				}
+				modifier = {
+					factor = 1.6
+					FROM = { combat_rating = 50 }
+				}
+				modifier = {
+					factor = 1.4
+					FROM = { trait = strong }
+				}
+				modifier = {
+					factor = 1.4
+					FROM = { trait = robust }
+				}
+				modifier = {
+					factor = 1.4
+					FROM = { trait = brave }
+				}
+				modifier = {
+					factor = 0.6
+					FROM = { NOT = {martial = 4} }
+				}
+				modifier = {
+					factor = 0.6
+					FROM = { NOT = {martial = 8} }
+				}
+				modifier = {
+					factor = 0.6
+					FROM = { combat_rating = -20 }
+				}
+				modifier = {
+					factor = 0.8
+					FROM = { combat_rating = -10 }
+				}
+				modifier = {
+					factor = 0.8
+					FROM = { combat_rating = 0 }
+				}
+				modifier = {
+					factor = 0.8
+					FROM = { trait = weak }
+				}
+				modifier = {
+					factor = 0.8
+					FROM = { trait = feeble }
+				}
+				modifier = {
+					factor = 0.8
+					FROM = { trait = craven }
+				}
+				
+				custom_tooltip = {
+					text = EVTlosing
+					character_event = {id = aaop.617 days = 5 }
+				}
+			}
+		}
+	}
+}
+####Champion keeps axe
+character_event = {
+	id = aaop.616
+	desc = EVTDESAaaop.616
+	picture = GFX_evt_religious_exultation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.616
+		prestige = 250
+		add_character_modifier = {name = perun_champion years = 5}
+		hidden_tooltip = {
+			set_character_flag = peruns_wrath
+			give_nickname = nick_the_wrath_of_perun
+			FROMFROM = {character_event = { id = aaop.617 days = 5 } } 
+		}
+	}
+	after = {
+		hidden_tooltip = {
+			clear_event_target = perun_champion
+			clear_global_event_target = challenger1
+			clear_global_event_target = challenger2
+			clear_global_event_target = challenger3
+			clear_global_event_target = challenger4
+			set_variable = {which = global_axe_challengers value = 0}
+			set_variable = {which = global_challenger1 value = 0}
+			set_variable = {which = global_challenger2 value = 0}
+			set_variable = {which = global_challenger3 value = 0}
+			set_variable = {which = global_challenger4 value = 0}
+		}	
+	}
+	
+}
+####Champion loses axe
+character_event = {
+	id = aaop.617
+	desc = EVTDESAaaop.617
+	picture = GFX_evt_bloody_man
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.617
+		prestige = -250
+		random_artifact = {
+			limit = {artifact_type = axe_of_perun}
+			transfer_artifact = {
+				from = ROOT
+				to = FROMFROM
+			}
+		}
+		hidden_tooltip = {
+			FROMFROM = {
+				set_character_flag = peruns_wrath
+				character_event = {id = aaop.618 days = 5} 
+			} 
+		}
+	}
+	after = {
+		hidden_tooltip = {
+			clear_event_target = perun_champion
+			clear_global_event_target = challenger1
+			clear_global_event_target = challenger2
+			clear_global_event_target = challenger3
+			clear_global_event_target = challenger4
+			set_variable = {which = global_axe_challengers value = 0}
+			set_variable = {which = global_challenger1 value = 0}
+			set_variable = {which = global_challenger2 value = 0}
+			set_variable = {which = global_challenger3 value = 0}
+			set_variable = {which = global_challenger4 value = 0}
+		}
+	}
+}
+####Inform Challenger
+character_event = {
+	id = aaop.618
+	desc = {
+		text = EVTDESAaaop.618
+		trigger = { has_character_flag = peruns_wrath }
+		picture = GFX_evt_religious_exultation
+	}
+	desc = {
+		trigger = { NOT = { has_character_flag = peruns_wrath } }
+		text = EVTDESBaaop.618
+		picture = GFX_evt_bloody_man
+	}
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = {
+			text = EVTOPTAaaop.618
+			trigger = {has_character_flag = peruns_wrath}
+		}
+		name = {
+			text = EVTOPTBaaop.618
+			trigger = { NOT = {has_character_flag = peruns_wrath} }
+		}
+		if = {
+			limit = {has_character_flag = peruns_wrath}
+			prestige = 250
+			add_character_modifier = {name = perun_champion years = 5}
+			give_nickname = nick_the_wrath_of_perun
+			custom_tooltip = {
+				text = EVTTOOLTIPAaaop.618
+				hidden_tooltip = { clr_character_flag = axe_final }
+			}
+		}
+		if = {
+			limit = { NOT = {has_character_flag = peruns_wrath} }
+			prestige = -250
+			hidden_tooltip = {clr_character_flag = axe_final}
+		}
+	}
+}
+
+
+
+#############################
+###### Baltic/Romuvan ######
+#############################
+
+#velnias bow
+character_event = {
+	id = aaop.800
+	desc = EVTDESAaaop.800
+	picture = GFX_evt_dark_prayer
+	
+	religion_group = pagan_group
+	min_age = 18
+	only_capable = yes
+	
+	
+	trigger = {
+		has_game_rule = { name = supernatural_artifacts value = all }
+		NOT = {has_global_flag = velnias_bow_found}
+		religion_openly_baltic_or_reformed_trigger = yes
+		OR = {
+			society_member_of = the_cold_ones
+			has_character_modifier = demon_child_non_pagan
+			has_character_modifier = suspected_demon_spawn
+			is_impious_trigger = yes
+		}
+		has_living_children = yes
+	}
+	
+	
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 0.75
+			trait = mystic
+		}	
+		modifier = {
+			factor = 3
+			ai = yes
+		}
+	}
+	
+	option = {
+		name = EVTOPTAaaop.800
+		random_child = {
+			limit = {is_alive = yes}
+			death = { death_reason = death_missing }
+		}
+		random_child = {
+			limit = {is_alive = yes}
+			death = { death_reason = death_missing }
+		}
+		random_child = {
+			limit = {is_alive = yes}
+			death = { death_reason = death_missing }
+		}
+		add_artifact = velnias_bow
+		set_global_flag = velnias_bow_found
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 1.2
+				trait = ambitious			
+			}
+			modifier = {
+				factor = 1.2
+				trait = cruel			
+			}
+			modifier = {
+				factor = 1.2
+				trait = impaler			
+			}
+			modifier = {
+				factor = 0
+				trait = kind			
+			}
+		}
+	}
+	option = {
+		name = EVTOPTBaaop.800
+		piety = 100
+		ai_chance = { factor = 1 }
+	}
+}
+###world tree branch
+character_event = {
+	id = aaop.801
+	desc = EVTDESAaaop.801
+	picture = GFX_evt_tribal_shrine
+	
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { has_game_rule = { name = supernatural_artifacts value = off } }
+		religion_openly_baltic_or_reformed_trigger = yes
+	}
+	option = {
+		name = EVTOPTAaaop.801
+		add_artifact = world_tree_branch
+	}
+}
+
+
+
+
+
+
+
+
+
+#############################
+###### Tengri ######
+#############################
+
+###aram
+character_event = {
+	id = aaop.1000
+	desc = EVTDESAaaop.1000
+	picture = GFX_evt_tengri_throneroom_oldgods
+	
+	only_playable = yes
+	min_age = 20
+	only_capable = yes
+
+	trigger = {
+		NOT = {has_global_flag = aram_found}
+		religion_openly_tengri_or_reformed_trigger = yes
+		martial = 16
+		prestige = 500
+		independent = yes
+	}
+	mean_time_to_happen = {
+		months = 1200
+		modifier = {
+			factor = 4
+			ai = yes
+		}
+	}
+	option = {
+		name = EVTOPTAaaop.1000
+		add_artifact = aram
+		set_global_flag = aram_found	
+	}
+}
+###meteorite
+character_event = {
+	id = aaop.1001
+	desc = EVTDESAaaop.1001
+	picture = GFX_evt_mongols
+
+	only_playable = yes
+	min_age = 20
+	only_capable = yes
+	war = yes
+	
+	trigger = {
+		NOT = { has_game_rule = { name = supernatural_artifacts value = off } }
+		NOT = { has_global_flag = skai_unav_found }
+		religion_openly_tengri_or_reformed_trigger = yes
+		in_command = yes
+	}
+	mean_time_to_happen = {
+		months = 500
+		modifier = {
+			factor = 5
+			ai = yes
+		}
+	}
+	option = {
+		name = EVTOPTAaaop.1001
+		add_artifact = meteorite
+	}
+}
+###reforged meteorite
+character_event = {
+	id = aaop.1002
+	desc = EVTDESAaaop.1002
+	picture = GFX_evt_relic_box
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.1002
+		add_artifact = skai_unav
+	}
+}
+
+
+
+
+#############################
+###### Zunist ######
+#############################
+
+##sunlight medallion maintenance
+character_event = {
+	id = aaop.1200
+	
+	hide_window = yes
+	is_triggered_only = yes
+
+	has_global_flag = zun_reformation
+	religion = zun_pagan_reformed
+	min_age = 16
+	
+	trigger = {
+		has_landed_title = d_zun_warriors
+	}
+	
+	
+	immediate = {
+		if = {
+			limit = { NOT = { has_artifact = sunlight_medallion } }
+			add_artifact = sunlight_medallion
+		}
+		any_courtier_or_vassal = {
+			limit = {
+				has_minor_title = title_commander	
+				liege = { character = ROOT }
+			}
+			if = {
+				limit = { NOT = { has_artifact = sunlight_medallion } }
+				add_artifact = sunlight_medallion
+			}
+		}
+		ROOT = {
+			job_marshal = {
+				if = {
+					limit = { NOT = { has_artifact = sunlight_medallion } }
+					add_artifact = sunlight_medallion 
+				}
+			}
+		}	
+	}
+	option = {
+		any_courtier_or_vassal = {
+			limit = {
+				NOR = { 
+					has_minor_title = title_commander 
+					has_character_flag = sent_to_sunlight
+				}
+				liege = { character = ROOT }
+			}
+			if = {
+				limit = { has_artifact = sunlight_medallion } 
+				destroy_artifact = sunlight_medallion
+			}
+		}
+	}
+}
+##moving son to warriors of sun
+character_event = {
+	id = aaop.1201
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		d_zun_warriors = {
+			holder_scope = {
+				save_event_target_as = grandmaster
+			}
+		}
+		father = {save_event_target_as = sunlight_father}
+		mother = {save_event_target_as = sunlight_mother}
+	}
+	option = {
+		if = {
+			limit = {
+				has_minor_title = title_commander
+			}
+			remove_title = title_commander
+			}
+		if = {
+			limit = {
+				has_minor_title = title_appointed_regent
+			}
+			remove_title = title_appointed_regent
+		}
+		if = {
+			limit = {
+				has_minor_title = title_patrician_heir
+			}
+			remove_title = title_patrician_heir
+		}
+		spouse = {
+			remove_spouse = spouse
+		}
+		move_character = event_target:grandmaster
+		end_inaccessibility_effect = yes #removes in_hiding or in_seclusion
+		set_character_flag = sent_to_sunlight
+		character_event = { id = aaop.1202 years = 10 }	
+	}
+	after = { clear_event_target = grandmaster }
+}
+##son returns after 10 years
+character_event = {
+	id = aaop.1202
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		if = {
+			limit = { event_target:sunlight_father = { is_alive = yes } }
+			if = {
+				limit = {has_minor_title = title_commander}
+				remove_title = title_commander
+			}
+			if = {
+				limit = {has_minor_title = title_appointed_regent}
+				remove_title = title_appointed_regent
+			}
+			move_character = event_target:sunlight_father
+			end_inaccessibility_effect = yes
+			clr_character_flag = sent_to_sunlight
+			set_character_flag = former_sun_knight
+			event_target:sunlight_father = { character_event = {id = aaop.1203 } }
+		}
+		else_if = {
+			limit = { 
+				event_target:sunlight_father = { is_alive = no }
+				event_target:sunlight_mother = { is_alive = yes } 
+			}
+			if = {
+				limit = {has_minor_title = title_commander}
+				remove_title = title_commander
+			}
+			if = {
+				limit = {has_minor_title = title_appointed_regent}
+				remove_title = title_appointed_regent
+			}
+			move_character = event_target:sunlight_mother
+			end_inaccessibility_effect = yes
+			clr_character_flag = sent_to_sunlight
+			set_character_flag = former_sun_knight
+			event_target:sunlight_mother = { character_event = {id = aaop.1203 } }
+		}
+	}
+}
+##parent notification 
+character_event = {
+	id = aaop.1203
+	desc = EVTDESAaaop.1203
+	picture = GFX_evt_rider_adventure
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.1203
+		FROM = {prestige = 250}
+		clear_event_target = sunlight_father
+		clear_event_target = sunlight_mother
+	}
+}
+
+##blazing crown for herald
+character_event = {
+	id = aaop.1204
+	desc = EVTDESAaaop.1204
+	picture = GFX_evt_coronation
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.1204
+		add_artifact = blazing_crown
+	}
+}
+##herald descendant trait maintenance
+character_event = {
+	id = aaop.1205
+	hide_window = yes
+	
+	is_triggered_only = yes
+	
+	has_global_flag = herald_of_zun_declared
+	religion_group = pagan_group
+	
+	trigger = {
+		OR = {
+			mother = { 
+				trait = herald_of_zun 
+				ROOT = { dynasty = PREV }
+			}
+			father = { trait = herald_of_zun }
+			mother = { 
+				trait = herald_of_zun_descendant 
+				ROOT = { dynasty = PREV }
+			}
+			father = { trait = herald_of_zun_descendant } 
+		}
+		NOT = { trait = herald_of_zun_descendant }
+	}
+	
+	immediate = {
+		add_trait = herald_of_zun_descendant
+		any_child = {
+			character_event = { id = aaop.1205 }
+		}
+	}
+}
+##cylinder given to religious head
+character_event = {
+	id = aaop.1206
+	
+	hide_window = yes
+	is_triggered_only = yes
+	
+	has_global_flag = zun_reformation
+	
+	trigger = {
+		religion_openly_zun_or_reformed_trigger = yes
+		has_game_rule = { name = supernatural_artifacts value = all }
+	}
+	immediate = {
+		any_character = {
+			limit = {
+				religion = zun_pagan_reformed
+				has_landed_title = d_zun_pagan_reformed
+			}
+			add_artifact = cylinder_of_secrets
+		}
+	}
+}
+
+##ashrune found in crusade
+narrative_event = {
+	id = aaop.1207
+	title = EVTTITLEAaaop.1207
+	desc = EVTDESAaaop.1207
+	picture = GFX_evt_siege
+	
+	is_triggered_only = yes
+	
+	has_global_flag = zun_reformation
+	
+	immediate = { set_global_flag = ashrune_found }
+	
+	trigger = {
+		has_game_rule = { name = supernatural_artifacts value = all }
+		NOT = { has_global_flag = ashrune_found }
+		FROM = {
+			religion = zun_pagan_reformed 
+			OR = {
+				trait = zealous
+				trait = herald_of_zun
+				trait = herald_of_zun_descendant
+				trait = holy_warrior
+				piety = 500
+			}
+		}
+	}	
+	option = {
+		name = EVTOPTAaaop.1207
+		FROM = { add_artifact = ashrune } 
+	}
+}
+##mask of terror
+character_event = {
+	id = aaop.1208
+	desc = EVTDESAaaop.1208
+	picture = GFX_evt_lunatic
+	
+	has_global_flag = zun_reformation
+	religion = zun_pagan_reformed
+	only_capable = yes
+	min_age = 18
+	
+	trigger = {
+		NOT = { has_global_flag = mask_of_terror_found }
+		is_playable = yes
+		OR = {
+			trait = zealous
+			trait = lunatic
+			trait = possessed
+		}
+	}
+	mean_time_to_happen = {
+		months = 600
+		modifier = {
+			factor = 3
+			ai = yes
+		}
+	}
+	option = {
+		name = EVTOPTAaaop.1208
+		set_global_flag = mask_of_terror_found
+		add_artifact = mask_of_terror
+	}
+}
+
+
+
+
+
+#############################
+###### Hellenic ######
+#############################
+
+###pandoras box traits
+character_event = {
+	id = aaop.1400
+	desc = EVTDESAaaop.1400
+	picture = GFX_evt_lunatic
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.1400
+		random_list = {
+			10 = {
+				trigger = { NOT = { trait = lunatic } }
+				add_trait = lunatic
+			}
+			10 = {
+				trigger = { NOT = { trait = possessed } }
+				add_trait = possessed
+			}
+			10 = {
+				trigger = { NOT = { trait = fair } }
+				add_trait = fair
+			}
+			10 = {
+				trigger = { NOT = { trait = strong } }
+				add_trait = strong
+			}
+			10 = {
+				trigger = { NOT = { trait = robust } }
+				add_trait = robust
+			}
+			10 = {
+				trigger = { NOT = { trait = feeble } }
+				add_trait = feeble
+			}
+			10 = {
+				trigger = { NOT = { trait = shrewd } }
+				add_trait = shrewd
+			}
+			10 = {
+				trigger = { NOT = { trait = dull } }
+				add_trait = dull
+			}
+			10 = {
+				trigger = { NOT = { trait = hedonist } }
+				add_trait = hedonist
+			}
+			10 = {
+				trigger = { NOT = { trait = arbitrary } }
+				add_trait = arbitrary
+			}
+			10 = {
+				trigger = { NOT = { trait = paranoid } }
+				add_trait = paranoid
+			}
+			10 = {
+				trigger = { NOT = { trait = shy } }
+				add_trait = shy
+			}
+			10 = {
+				trigger = { NOT = { trait = cruel } }
+				add_trait = cruel
+			}
+			10 = {
+				trigger = { NOT = { trait = stutter } }
+				add_trait = stutter
+			}
+			10 = {
+				trigger = { NOT = { trait = ugly } }
+				add_trait = ugly
+			}
+		}
+	}
+}
+###pandoras box demesne
+character_event = {
+	id = aaop.1401
+	desc = EVTDESAaaop.1401
+	picture = GFX_evt_lunatic
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_demesne_province = { save_event_target_as = pandora_province1 }
+		random_demesne_province = { 
+			limit = { NOT = { province = event_target:pandora_province1 } }
+			save_event_target_as = pandora_province2 
+		}
+		random_demesne_province = { 
+			limit = { 
+				NOR = { 
+					province = event_target:pandora_province1 
+					province = event_target:pandora_province2
+				} 
+			}
+			save_event_target_as = pandora_province3 
+		}
+	}
+	
+	
+	option = {
+		name = EVTOPTAaaop.1401
+		custom_tooltip = {
+			text = EVTTOOLTIPAaaop.1401
+			event_target:pandora_province1 = {
+				random_list = {
+					20 = { add_province_modifier = { modifier = pandoras_box_province_pos1 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_pos2 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_pos3 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_pos4 years = 3 } }
+					20 = {
+						trigger = {
+							OR = {
+								ROOT = { government = merchant_republic_government }
+								trade_route = silk_road
+							}
+						}
+						add_province_modifier = { modifier = pandoras_box_province_pos5 years = 3 } 
+					}
+					
+					20 = { add_province_modifier = { modifier = pandoras_box_province_neg1 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_neg2 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_neg3 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_neg4 years = 3 } }				
+					20 = { 
+						trigger = {
+							OR = {
+								ROOT = { government = merchant_republic_government }
+								trade_route = silk_road
+							}
+						}
+						add_province_modifier = { modifier = pandoras_box_province_neg5 years = 3 } 
+					}
+		
+					10 = { 
+						trigger = {
+							NOT = {
+								ROOT = {
+									any_demesne_province = { has_disease = yes }
+								}
+							}
+						}
+						random_list = {
+							20 = { spawn_disease = tuberculosis }
+							20 = { spawn_disease = measles }
+							20 = { spawn_disease = small_pox }
+						}
+					}
+				}
+			}
+			event_target:pandora_province2 = {
+				random_list = {
+					20 = { add_province_modifier = { modifier = pandoras_box_province_pos1 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_pos2 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_pos3 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_pos4 years = 3 } }
+					20 = {
+						trigger = {
+							OR = {
+								ROOT = { government = merchant_republic_government }
+								trade_route = silk_road
+							}
+						}
+						add_province_modifier = { modifier = pandoras_box_province_pos5 years = 3 } 
+					}
+					
+					20 = { add_province_modifier = { modifier = pandoras_box_province_neg1 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_neg2 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_neg3 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_neg4 years = 3 } }				
+					20 = { 
+						trigger = {
+							OR = {
+								ROOT = { government = merchant_republic_government }
+								trade_route = silk_road
+							}
+						}
+						add_province_modifier = { modifier = pandoras_box_province_neg5 years = 3 } 
+					}
+		
+					10 = { 
+						trigger = {
+							NOT = {
+								ROOT = {
+									any_demesne_province = { has_disease = yes }
+								}
+							}
+						}
+						random_list = {
+							20 = { spawn_disease = tuberculosis }
+							20 = { spawn_disease = measles }
+							20 = { spawn_disease = small_pox }
+						}
+					}
+				}
+			}
+			event_target:pandora_province3 = {
+				random_list = {
+					20 = { add_province_modifier = { modifier = pandoras_box_province_pos1 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_pos2 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_pos3 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_pos4 years = 3 } }
+					20 = {
+						trigger = {
+							OR = {
+								ROOT = { government = merchant_republic_government }
+								trade_route = silk_road
+							}
+						}
+						add_province_modifier = { modifier = pandoras_box_province_pos5 years = 3 } 
+					}
+					
+					20 = { add_province_modifier = { modifier = pandoras_box_province_neg1 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_neg2 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_neg3 years = 3 } }
+					20 = { add_province_modifier = { modifier = pandoras_box_province_neg4 years = 3 } }				
+					20 = { 
+						trigger = {
+							OR = {
+								ROOT = { government = merchant_republic_government }
+								trade_route = silk_road
+							}
+						}
+						add_province_modifier = { modifier = pandoras_box_province_neg5 years = 3 } 
+					}
+		
+					10 = { 
+						trigger = {
+							NOT = {
+								ROOT = {
+									any_demesne_province = { has_disease = yes }
+								}
+							}
+						}
+						random_list = {
+							20 = { spawn_disease = tuberculosis }
+							20 = { spawn_disease = measles }
+							20 = { spawn_disease = small_pox }
+						}
+					}
+				}
+			}
+		}	
+	}
+}
+
+###Pandora child changes
+character_event = {
+	id = aaop.1402
+	desc = EVTDESAaaop.1402
+	picture = GFX_evt_lunatic
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_child = {
+			limit = {
+				is_alive = yes
+				age < 12
+				OR = {
+					is_female = no
+					AND = {
+						is_female = yes
+						ROOT = { 
+							OR = {
+								has_law = cognatic_succession
+								has_law = true_cognatic_succession
+							}
+						}
+					}
+				}
+			}
+			save_event_target_as = pandoras_child
+		}
+	}
+	
+	option = {
+		name = EVTOPTAaaop.1402
+		event_target:pandoras_child = {
+			random_list = {
+				20 = { health = 0.5 }
+				20 = {
+					change_diplomacy = 1
+					change_martial = 1
+					change_stewardship = 1
+					change_intrigue = 1
+					change_learning = 1
+				}
+				
+				20 = { health = -0.5 }
+				20 = {
+					change_diplomacy = -1
+					change_martial = -1
+					change_stewardship = -1
+					change_intrigue = -1
+					change_learning = -1
+				}
+			
+				10 = { 
+					add_trait = weak 
+					hidden_tooltip = {
+						random = {
+							chance = 40
+							set_character_flag = pandoras_box_remove_weak
+							ROOT = { character_event = { id = aaop.1403 days = 300 random = 100 } }
+						}
+					}
+				}
+				10 = { 
+					add_trait = strong 
+					hidden_tooltip = {
+						random = {
+							chance = 30
+							set_character_flag = pandoras_box_remove_strong
+							ROOT = { character_event = { id = aaop.1403 days = 300 random = 100 } }
+						}
+					}
+				}
+				10 = { 
+					add_trait = slow 
+					hidden_tooltip = {
+						random = {
+							chance = 40
+							set_character_flag = pandoras_box_remove_slow
+							ROOT = { character_event = { id = aaop.1403 days = 300 random = 100 } }
+						}
+					}
+				}
+				5 = {
+					add_trait = genius 
+					hidden_tooltip = {
+						random = {
+							chance = 20
+							set_character_flag = pandoras_box_remove_genius
+							ROOT = { character_event = { id = aaop.1403 days = 300 random = 100 } }
+						}
+					}
+				}
+			}
+		}
+	}
+}
+###remove child trait if troll event
+character_event = {
+	id = aaop.1403
+	desc = EVTDESAaaop.1403
+	picture = GFX_evt_lunatic
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.1403
+		event_target:pandoras_child = {
+			if = {
+				limit = { has_character_flag = pandoras_box_remove_weak }
+				remove_trait = weak
+			}
+			else_if = {
+				limit = { has_character_flag = pandoras_box_remove_strong }
+				remove_trait = strong
+			}
+			else_if = {
+				limit = { has_character_flag = pandoras_box_remove_slow }
+				remove_trait = slow
+			}
+			else_if = {
+				limit = { has_character_flag = pandoras_box_remove_genius }
+				remove_trait = genius
+			}
+		}
+	}
+
+	after = {
+		event_target:pandoras_child = {
+			clr_character_flag = pandoras_box_remove_weak
+			clr_character_flag = pandoras_box_remove_strong
+			clr_character_flag = pandoras_box_remove_slow
+			clr_character_flag = pandoras_box_remove_genius
+		}
+	}
+}
+###incapable / death
+character_event = {
+	id = aaop.1404
+	desc = EVTDESAaaop.1404
+	picture = GFX_evt_lunatic
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTAaaop.1404
+		random_list = {
+			50 = { add_trait = incapable }
+			50 = { death = { death_reason = death_murder_unknown_fear } }
+		}
+	}
+}
+
+
+
+###trident of posiedon effect
+character_event = {
+	id = aaop.1405
+
+	is_triggered_only = yes
+	hide_window = yes
+	
+	only_playable = yes
+	min_age = 16
+	
+	trigger = {
+		OR = {
+			religion_openly_hellenic_or_reformed_trigger = yes
+			culture = greek
+			culture = roman
+		}
+		has_artifact = trident_of_poseidon
+		any_artifact = {
+			artifact_type = trident_of_poseidon
+			is_artifact_equipped = yes
+		}
+		any_demesne_province = {
+			port = yes
+			NOT = { has_province_modifier = poseidon_blessing }
+		}
+	}
+	
+	immediate = {
+		random = {
+			chance = 25
+			modifier = {
+				factor = 0.8
+				trait = cynical
+			}
+			modifier = {
+				factor = 1.2
+				piety = 250
+			}
+			modifier = {
+				factor = 2
+				has_character_modifier = dedicated_to_poseidon
+			}
+			random_demesne_province = {
+				limit = {
+					port = yes
+					NOT = { has_province_modifier = poseidon_blessing }
+				}
+				preferred_limit = { ROOT = { capital_scope = { province = PREVPREV } } }
+				add_province_modifier = { modifier = poseidon_blessing years = 5 }
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+

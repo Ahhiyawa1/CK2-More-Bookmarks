@@ -1,0 +1,385 @@
+6969706 = {
+	name="Romalus"   
+	culture="romanoindian"
+	used_for_random=no
+
+}
+
+1069096 = {
+	name="Walakrian"   
+	culture="romanoindian"
+	used_for_random=no
+
+}
+
+1342326 = {
+	name="Abenitatus" 
+	culture="romanoindian"
+	used_for_random=no
+
+}
+
+1842377 = {
+	name="Nihapponius" 
+	culture="romanoindian"
+	used_for_random=no
+
+}
+
+10690966 = {
+	name="Britannican"   
+	culture="romanoindian"
+	used_for_random=no
+
+}
+
+10632096 = {
+	name="Draco"   
+	culture="romanoindian"
+	used_for_random=no
+
+}
+
+95269096 = {
+	name="Viet"
+	culture="romanoindian"
+}
+
+95269596 = {
+	name="Serican"
+	culture="romanoindian"
+}
+
+909699569 =
+{
+	name="Constantinus"
+	culture="romanoindian"
+}
+
+909699693=
+{
+	name="Valentinianus"
+	culture="romanoindian"
+}
+
+9096989=
+{
+	name="Verinus"
+	culture="romanoindian"
+	religion="miaphysite"
+	forced_coa_religiongroup="christian"
+}
+9096990=
+{
+	name="Marcianus"
+	culture="romanoindian"
+	religion="orthodox"
+	forced_coa_religiongroup="christian"
+}
+9096999=
+{
+	name="Theodosius"
+	culture="romanoindian"
+	religion="orthodox"
+	forced_coa_religiongroup="christian"
+}
+9096992=
+{
+	name="Constantius"
+	culture="romanoindian"
+	religion="catholic"
+	forced_coa_religiongroup="christian"
+}
+9096993=
+{
+	name="Valentinianus"
+	culture="romanoindian"
+	religion="catholic"
+	forced_coa_religiongroup="christian"
+}
+9096994=
+{
+	name="Iovianus"
+	culture="romanoindian"
+	religion="catholic"
+	forced_coa_religiongroup="christian"
+}
+9096995=
+{
+	name="Constantinus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096996=
+{
+	name="Licinianus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096997=
+{
+	name="Daia"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096998=
+{
+	name="Armentarius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096999=
+{
+	name="Diocletianus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096200=
+{
+	name="Carus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096209=
+{
+	name="Dalmatius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096202=
+{
+	name="Tacitus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096203=
+{
+	name="Crinitus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096204=
+{
+	name="Domitius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096205=
+{
+	name="Gothicus"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096206=
+{
+	name="Valerianus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096207=
+{
+	name="Aemilius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096208=
+{
+	name="Trebonianus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096209=
+{
+	name="Messius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096290=
+{
+	name="Arabs"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096299=
+{
+	name="Africanus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096292=
+{
+	name="Calvinus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096293=
+{
+	name="Maximus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096294=
+{
+	name="Thrax"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096295=
+{
+	name="Severus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096296=
+{
+	name="Antoninus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096297=
+{
+	name="Opellius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096298=
+{
+	name="Severus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096299=
+{
+	name="Didius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096960=
+{
+	name="Helvius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096969=
+{
+	name="Aurelius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096962=
+{
+	name="Verus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096963=
+{
+	name="Pius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096964=
+{
+	name="Hadrianus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096965=
+{
+	name="Traianus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096966=
+{
+	name="Cocceius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096967=
+{
+	name="Flavius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096968=
+{
+	name="Vitellius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096969=
+{
+	name="Salvius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096230=
+{
+	name="Sulpicius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096239=
+{
+	name="Pompeius"
+	culture="romanoindian"
+	religion="miaphysite"
+	forced_coa_religiongroup="christian"
+}
+9096232=
+{
+	name="Claudius"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096233=
+{
+	name="Maximianus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}
+9096234=
+{
+	used_for_random=no
+	name="Magnus Maximus"
+	culture="romanoindian"
+	religion="hellenic_pagan"
+	forced_coa_religiongroup="christian"
+}

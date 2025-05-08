@@ -1,0 +1,124 @@
+# Egyptian
+acr_greater_egypt_bloodline = {
+	monthly_character_prestige = 0.2
+	bloodline_effect_loyal_councilors = 1
+	bloodline_effect_less_factions = 1
+	egyptian_pagan_opinion = 5
+	egyptian_pagan_reformed_opinion = 5
+	aten_pagan = 5
+	inheritance = patrilineal
+	matrilineal_override = no
+	allow_bastards = no
+	flags = { bloodline_female_marshal bloodline_loyalist bloodline_less_factions bloodline_aai_kemet }
+	picture = GFX_bloodlines_symbol_greater_egypt
+	active = {
+		religion_openly_in_egyptian_subgroup_trigger = yes
+	}
+}
+
+saintly_bloodline_egyptian_01 = {
+	monthly_character_prestige = 0.2
+	combat_rating = 3
+	command_modifier = {
+		speed = 0.05
+		retreat = 0.05
+	}
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline defender_of_the_faith }
+	picture = GFX_bloodlines_symbol_zun_sun
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+saintly_bloodline_egyptian_03 = {
+	monthly_character_piety = 0.3
+	saintly_cultural_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline cultural_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_zun_sun
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_culture_TT
+			FROM = {
+				founder = {
+					culture = ROOT
+				}
+			}
+		}
+	}
+}
+
+saintly_bloodline_egyptian_04 = {
+	command_modifier = {
+		religious_enemy = 0.10
+	}	
+	church_opinion = 5
+	saintly_inquisitional_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline inquisitional_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_zun_sun
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+saintly_bloodline_egyptian_05 = {
+	monthly_character_piety = 0.2
+	christian_opinion = 3
+	muslim_opinion = 3
+	indian_group_opinion = 3
+	jewish_group_opinion = 3
+	zoroastrian_group_opinion = 3
+	saintly_jewish_bloodline = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline jewish_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_zun_sun
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}
+
+saintly_bloodline_egyptian_06 = {
+	saintly_theologians_bloodline = 1
+	monthly_character_piety = 0.2
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { ancestor_worship_bloodline theologian_saintly_bloodline }
+	picture = GFX_bloodlines_symbol_zun_sun
+	active = {
+		custom_tooltip = {
+			text = saintly_bloodline_same_religion_TT
+			FROM = {
+				founder = {
+					religion = ROOT
+				}
+			}
+		}
+	}
+}

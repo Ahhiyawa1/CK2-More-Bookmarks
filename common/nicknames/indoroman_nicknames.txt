@@ -1,0 +1,4 @@
+nick_dogdays = {}
+nick_lion_of_the_west = {}
+nick_dragonbreaker = {}
+nick_of_daqin = {}

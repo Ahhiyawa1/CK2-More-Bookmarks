@@ -1,0 +1,18 @@
+# County Title
+title = c_alcala
+# Settlements
+max_settlements = 3
+b_alcala = castle
+b_siguenza = city
+# Misc
+culture = romano_hispanic
+religion = catholic
+terrain = hills
+800.1.1 = { culture = visigothic }
+################################################################################
+# History
+################################################################################
+955.1.1 = { culture = castilian } 
+################################################################################
+# 411 - Alcalá
+################################################################################

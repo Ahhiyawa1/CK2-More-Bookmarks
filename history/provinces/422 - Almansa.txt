@@ -1,0 +1,21 @@
+# County Title
+title = c_almansa
+# Settlements
+max_settlements = 4
+b_almansa = castle
+b_albacete = city
+b_hellin = temple
+# Misc
+culture = romano_hispanic
+religion = catholic
+terrain = hills
+800.1.1 = { culture = visigothic }
+################################################################################
+# History
+################################################################################
+812.1.1 = { religion = sunni } 
+939.1.1 = { culture = andalusian_arabic } 
+1280.1.1 = { culture = castilian religion = catholic } 
+################################################################################
+# 422 - Almansa
+################################################################################

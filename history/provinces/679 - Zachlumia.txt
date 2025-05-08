@@ -1,0 +1,25 @@
+# County Title
+title = c_zachlumia
+# Settlements
+max_settlements = 4
+b_stolac = tribal
+# Misc
+culture = croatian
+religion = slavic_pagan
+600.1.1 = { religion = catholic culture = illyro_roman }
+################################################################################
+# History
+################################################################################
+800.1.1 = { 
+    religion = orthodox
+    b_stolac = castle
+    b_ston = city
+    b_korcula = temple
+}
+
+920.1.1 = { religion = orthodox culture = croatian }
+1000.1.1 = { culture = bosnian } 
+1075.1.1 = { trade_post = b_dandolo } 
+################################################################################
+# 679 - Zachlumia
+################################################################################

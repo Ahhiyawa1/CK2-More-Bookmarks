@@ -1,0 +1,28 @@
+# County Title
+title = c_lleida
+# Settlements
+max_settlements = 4
+b_lleida = castle
+b_cervera = city
+b_solsona = temple
+# Misc
+culture = romano_hispanic
+religion = catholic
+800.1.1 = { culture = visigothic }
+################################################################################
+# History
+################################################################################
+952.1.1 = { culture = catalan } 
+1164.1.1 = { culture = catalan } 
+1164.1.1 = { religion = catholic } 
+################################################################################
+# 364 - Lleida
+################################################################################
+
+################################################################################
+# b_agramunt = castle
+# b_tarrega = castle
+# b_borgesblanques = castle
+# b_balaguer = city
+# b_verdu = castle
+################################################################################

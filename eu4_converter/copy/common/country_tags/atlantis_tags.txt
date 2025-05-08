@@ -1,0 +1,4 @@
+ATL = countries/Atlantis.txt
+NSP = countries/NewLakedemon.txt
+NTH = countries/NewAthens.txt
+AMZ = countries/Amazonia.txt

@@ -1,0 +1,57 @@
+opinion_approves_justice = {
+			opinion = 15
+}
+opinion_disapproves_justice = {
+			opinion = -10
+}
+opinion_approves_zeal = {
+			opinion = 15
+}
+opinion_approves_zeal_temple = {
+			opinion = 25
+}
+opinion_disapproves_zeal = {
+			opinion = -10
+}
+opinion_disapproves_zeal_infidel = {
+			opinion = -20
+}
+opinion_approves_diligence = {
+			opinion = 15
+}
+opinion_disapproves_diligence = {
+			opinion = -10
+}
+opinion_approves_bravery = {
+			opinion = 15
+}
+opinion_disapproves_bravery = {
+			opinion = -10
+}
+opinion_approves_honesty = {
+			opinion = 15
+}
+opinion_disapproves_honesty = {
+			opinion = -10
+}
+opinion_approves_celibacy = {
+			opinion = 25
+}
+opinion_approves_thrift = {
+			opinion = 15
+}
+opinion_approves_scholarship = {
+			opinion = 15
+}
+opinion_approves_diplomacy = {
+			opinion = 15
+}
+opinion_approves_martial = {
+			opinion = 15
+}
+opinion_approves_wealth = {
+			opinion = 15
+}
+opinion_disapproves_wealth = {
+			opinion = -10
+}

@@ -1,0 +1,6 @@
+on_startup = {
+	events = {
+		indoromans.365328
+	}
+}
+

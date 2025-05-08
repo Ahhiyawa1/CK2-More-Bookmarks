@@ -1,0 +1,75 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+;;;;;;;;;;;;;;
+NIE.231;Spouse ambitions starter;;;;;;;;;;;;;x
+EVTNAMENIE.231;Justice or arbitrariness?;;;;;;;;;;;;;x
+EVTDESC_NIE_231;A new day and a new problem has emerged. Your vassals have started a fierce quarrel over some judicary matter. [advise_one.GetTitledName] claims that your court judge made a huge mistake, during latest hearing. [advise_one.GetSheHeCap] says, that his verdict wasn't just, it was only good for the realm and for the treasury. [advise_two.GetTitledName] disagrees though - [advise_two.GetSheHe] thinks that only what is good for realm is just. You try to calm them, but they don't seem to listen to you. Your [spouse_one.GetHusbandWife] comes to your aid and proposes simple solution: 'Let me take care of this mess, my love' - [spouse_one.GetSheHe] says. 'I'll deal with them, while you can return to your duties'. You can either listen tou your [spouse_one.GetHusbandWife] or try to side with one of the vassals.;;;;;;;;;;;;;x
+EVTOPTA_NIE_231;[advise_one.GetTitledName] is right!;;;;;;;;;;;;;x
+EVTOPTB_NIE_231;[advise_two.GetTitledName] is right!;;;;;;;;;;;;;x
+EVTOPTC_NIE_231;[spouse_one.GetFirstName] will deal with you!;;;;;;;;;;;;;x
+listen_to_first;Story will progress...;;;;;;;;;;;;;x
+listen_to_second;Story will progress...;;;;;;;;;;;;;x
+listen_to_wife_only;Story will progress...;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.232;Spouse after decision;;;;;;;;;;;;;x
+EVTNAMENIE.232;Your [spouse_happy.GetHusbandWife] reacts to your decision;;;;;;;;;;;;;x
+EVTDESC_NIE_232;After all quarrelsome persons left your presence, [spouse_happy.GetTitledName] came to see you. 'My love' - [spouse_happy.GetSheHe] says. 'Your decision was right, no doubt about that. I hope that I could be of more help to you later on as well.';;;;;;;;;;;;;x
+EVTOPTA_NIE_232;It's good to have [spouse_happy.GetHerHim] with me.;;;;;;;;;;;;;x
+wife_happy;Is it really? Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.233;Spouse power 1;;;;;;;;;;;;;x
+EVTNAMENIE.233;Your spouse offers [spouse_regency.GetHerHis] help;;;;;;;;;;;;;x
+EVTDESC_NIE_233;New problem has emerged in your castle. It seems that library is far too neglected, the books rot and there seems to be noone willing to take responsibility for this. A group of courtiers argue to find the best solution to your problem. You can't make a sense from what they say. But then your [spouse_regency.GetHusbandWife] comes with a solution - 'let me oversee our library from now...' -  [spouse_regency.GetSheHe] says.;;;;;;;;;;;;;x
+EVTOPTA_NIE_233;Let [spouse_regency.GetHerHim] do what [spouse_regency.GetSheHe] wants.;;;;;;;;;;;;;x
+EVTOPTB_NIE_233;Try to stop [spouse_regency.GetHerHis] ambitions!;;;;;;;;;;;;;x
+EVTOPTC_NIE_233;Accept [spouse_regency.GetHerHim] guidance but with haste.;;;;;;;;;;;;;x
+wife_power;Story will progress...;;;;;;;;;;;;;x
+wife_stop_her;Story will progress…;;;;;;;;;;;;;x
+wife_accept_with_haste;Story will progress...;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.234;Spouse power 2;;;;;;;;;;;;;x
+EVTNAMENIE.234;Your spouse offers [spouse_regency.GetHerHis] help;;;;;;;;;;;;;x
+EVTDESC_NIE_234;After [spouse_regency.GetHerHis] first successes with castle library your [spouse_regency.GetHusbandWife], [spouse_regency.GetTitledName] came with a proposition to you. 'We should prevent that kind of situation from ever happening again, my love' - [spouse_regency.GetSheHe] says. 'I think that I could help you govern book keeping in your realm. If we don't act we might loose very important manuscripts, that have survived for generations.';;;;;;;;;;;;;x
+EVTOPTA_NIE_234;Let [spouse_regency.GetHerHim] do what [spouse_regency.GetSheHe] wants.;;;;;;;;;;;;;x
+EVTOPTB_NIE_234;Try to stop [spouse_regency.GetHerHis] ambitions!;;;;;;;;;;;;;x
+EVTOPTC_NIE_234;Accept [spouse_regency.GetHerHim] guidance but with haste.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.235;Spouse power 3;;;;;;;;;;;;;x
+EVTNAMENIE.235;Your spouse offers [spouse_regency.GetHerHis] help;;;;;;;;;;;;;x
+EVTDESC_NIE_235;You were eating lunch, when guard came to inform you about important guest from local monastery, who came here to seek help with the bandits problem. In the same moment you hear your [spouse_regency.GetHusbandWife] proposition - 'Maybe I could deal with this matter? And you could stay here, finishing your meal?' Simultaneously [spouse_regency.GetSheHe] orders the guard to leave.;;;;;;;;;;;;;x
+EVTOPTA_NIE_235;Let [spouse_regency.GetHerHim] do what [spouse_regency.GetSheHe] wants. And I'll finish my meal…;;;;;;;;;;;;;x
+EVTOPTB_NIE_235;Try to stop [spouse_regency.GetHerHis] ambitions!;;;;;;;;;;;;;x
+EVTOPTC_NIE_235;Accept [spouse_regency.GetHerHim] guidance but with haste.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.236;Spouse power 4;;;;;;;;;;;;;x
+EVTNAMENIE.236;Living under your [spouse_regency.GetHusbandWife] cloak;;;;;;;;;;;;;x
+EVTDESC_NIE_236;As boring, as the day can only get, you spend the whole time, since early morning hours, signing various documents, orders, etcetera. There would be nothing extraordinary with that, if it weren't your [spouse_regency.GetHusbandWife], who made you do this. As if it weren't your scribe's work... While you do your 'duty' [spouse_regency.GetSheHe] is meeting with some of your vassals.;;;;;;;;;;;;;x
+EVTOPTA_NIE_236;Let [spouse_regency.GetHerHim] do what [spouse_regency.GetSheHe] wants.;;;;;;;;;;;;;x
+EVTOPTB_NIE_236;It went too far!;;;;;;;;;;;;;x
+EVTOPTC_NIE_236;Accept [spouse_regency.GetHerHim] guidance but with haste.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.237;Spouse power 5;;;;;;;;;;;;;x
+EVTNAMENIE.237;Powerless;;;;;;;;;;;;;x
+EVTDESC_NIE_237;Almost every night is sleepless. Almost every day is boring and tedious. You can't remember when you made some decision of your own. Your 'beloved' spouse, [spouse_regency.GetFirstName], is slowly moving you out of your own court! Even your most faithful vassals have stopped talking with you. Maybe it's not too late to stand up against your spouse? ;;;;;;;;;;;;;x
+EVTOPTA_NIE_237;Let [spouse_regency.GetHerHim] do what [spouse_regency.GetSheHe] wants.;;;;;;;;;;;;;x
+EVTOPTB_NIE_237;It's time to stop [spouse_regency.GetHerHis] ambitions!;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.238;Spouse assumes power;;;;;;;;;;;;;x
+EVTNAMENIE.238;Your [spouse_regency.GetHusbandWife] tries to assume power;;;;;;;;;;;;;x
+EVTDESC_NIE_238;So it has come to this. After all the power you gave to [spouse_regency.GetFullName] [spouse_regency.GetSheHe] wants even more! All your attempts to stop this madness have failed. Now it is not the matter of prestige, nor some privilege around the court. [spouse_regency.GetSheHe] wants your title! Your abdication! [spouse_regency.GetSheHe] assures you: 'It will be for the best, my love...'.;;;;;;;;;;;;;x
+EVTOPTA_NIE_238;Maybe it will be for the best…;;;;;;;;;;;;;x
+EVTOPTB_NIE_238;I cannot let that happen!;;;;;;;;;;;;;x
+wife_assumes_power;You will abdicate to your spouse.;;;;;;;;;;;;;x
+try_to_stop;You try to prevent [spouse_regency.GetHerHim] from succeeding.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.239;Spouse backs down;;;;;;;;;;;;;x
+EVTNAMENIE.239;[spouse_regency.GetHusbandWifeCap] backs down;;;;;;;;;;;;;x
+EVTDESC_NIE_239;Of course, my love' - [spouse_regency.GetFullName] says. 'It's your realm, you are… ruler here.' After saying that [spouse_regency.GetSheHe] sends you a goodbay kiss and leaves your presence.;;;;;;;;;;;;;x
+EVTOPTA_NIE_239;So, did I… won?;;;;;;;;;;;;;x
+wife_backs_down;Story will end.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.240;Spouse happy to help;;;;;;;;;;;;;x
+EVTNAMENIE.240;[spouse_happy.GetHusbandWifeCap] is happy to help you ruling;;;;;;;;;;;;;x
+EVTDESC_NIE_240;You have thought that ruling the whole realm would be a real challenge, but with [spouse_happy.GetTitledName] everything seems easier and you even find joy in doing your duties. Together with [spouse_happy.GetHerHim] you feel that you can beat every obstacle one could ever imagine.;;;;;;;;;;;;;x
+EVTOPTA_NIE_240;It's good to have [spouse_happy.GetHerHim] with me.;;;;;;;;;;;;;x
+wife_happy_to_help;Story will end.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x

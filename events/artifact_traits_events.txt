@@ -1,0 +1,67 @@
+namespace = ART
+
+character_event = {
+	id = ART.4321
+	hide_window = yes
+
+	trigger = {
+	OR = {
+		any_artifact = { count = 1 }
+		}
+	}
+
+    immediate = {
+		if = {
+			limit = {
+				OR = {
+				AND = {
+				any_artifact = { has_artifact_flag = religious }
+				NOT = {any_artifact = { has_artifact_flag = bodypart } }
+				}
+				any_artifact = { has_artifact_flag = invention }
+				any_artifact = { has_artifact_flag = very_rare }
+				any_artifact = { has_artifact_flag = rare }
+				any_artifact = { has_artifact_flag = unique }
+				}
+			}
+		add_trait = hasartifactrare
+		}
+		if = {
+			limit = {
+				any_artifact = { has_artifact_flag = book }
+			}
+		add_trait = hasartifactbook
+		}
+		if = {
+			limit = {
+				NOR = {
+				any_artifact = { has_artifact_flag = religious }
+				any_artifact = { has_artifact_flag = invention }
+				any_artifact = { has_artifact_flag = book }
+				any_artifact = { has_artifact_flag = very_rare }
+				any_artifact = { has_artifact_flag = rare }
+				any_artifact = { has_artifact_flag = ingredients }
+				any_artifact = { has_artifact_flag = unique }
+				}
+			}
+		add_trait = hasartifact
+		}
+    }
+}
+
+character_event = {
+	id = ART.4322
+	hide_window = yes
+
+	trigger = {
+	NOR = {
+		any_artifact = { count = 1 }
+		}
+	}
+
+    immediate = {
+    		remove_trait = hasartifact
+		remove_trait = hasartifactrare
+		remove_trait = hasartifactbook
+    }
+}

@@ -1,0 +1,27 @@
+# County Title
+title = c_alcacer_do_sal
+# Settlements
+max_settlements = 4
+b_alcacerdosal = castle
+b_santiagodocacem = castle
+# b_aljustrel = temple
+# b_castroverde = castle
+b_ourique = city
+# Misc
+culture = romano_hispanic
+religion = catholic
+800.1.1 = { culture = visigothic }
+################################################################################
+# History
+################################################################################
+939.1.1 = { culture = andalusian_arabic religion = sunni } 
+1211.1.1 = { trade_post = b_fieschi } 
+1233.1.1 = { culture = portuguese religion = catholic } 
+################################################################################
+# 397 - Alcácer do Sal
+################################################################################
+
+################################################################################
+# b_odemira = castle
+# b_alvalade = castle
+################################################################################

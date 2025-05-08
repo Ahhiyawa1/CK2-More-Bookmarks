@@ -1,0 +1,18 @@
+decisions = {
+
+	add_holding = {
+		is_high_prio = yes # Will show an alert once decision is enabled
+		ai = no
+		
+		potential = {
+		}
+		allow = {
+			ai = no
+		}
+		effect = {
+			any_province = {
+				add_holding_slot = 15
+			}
+		}
+	}
+}

@@ -1,0 +1,126 @@
+###########################################
+#                                         #
+# New Immersive Events v. 0.01b           #
+# Decision Events:	                  #
+# ID NIE.139-NIE.141			  #
+# Written and designed by wielkicien      #
+# Bugfixed by Erbkaiser			  #
+#                                         #
+###########################################
+
+namespace = NIE
+
+### Decision to launch events
+
+# Decision to launch events
+narrative_event = {
+	id = NIE.139
+	title = "EVTNAMENIE.139"
+	desc = EVTDESC_NIE_139
+	picture = GFX_evt_throne
+	border = GFX_event_narrative_frame_economy
+	
+	min_age = 16
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTA_NIE_139
+		custom_tooltip = { text = launch_event_chain }
+		hidden_tooltip = {
+			narrative_event = { id = NIE.140 }
+		}
+	}
+		
+	option = {
+		name = EVTOPTB_NIE_139
+		custom_tooltip = { text = launch_event }
+		hidden_tooltip = {
+			narrative_event = { id = NIE.141 }
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_139
+		custom_tooltip = { text = close_decision }
+	}
+}
+
+# Decision to launch event-chain
+narrative_event = {
+	id = NIE.140
+	title = "EVTNAMENIE.140"
+	desc = EVTDESC_NIE_140
+	picture = GFX_evt_throne
+	border = GFX_event_narrative_frame_economy
+	
+	min_age = 16
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTA_NIE_140
+		custom_tooltip = { text = launch_thief_event_chain }
+		hidden_tooltip = {
+			narrative_event = { id = NIEc.100 days = 2 }
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_140
+		custom_tooltip = { text = launch_my_wife_event_chain }
+		hidden_tooltip = {
+			narrative_event = { id = NIEc.231 days = 2 }
+		}
+	}	
+	option = {
+		name = EVTOPTC_NIE_140
+		custom_tooltip = { text = return_to_previous }
+		hidden_tooltip = {
+			narrative_event = { id = NIE.139 }
+		}
+	}
+	option = {
+		name = EVTOPTD_NIE_140
+		custom_tooltip = { text = close_decision }
+	}
+}
+# Decision to launch solo events
+narrative_event = {
+	id = NIE.141
+	title = "EVTNAMENIE.141"
+	desc = EVTDESC_NIE_141
+	picture = GFX_evt_throne
+	border = GFX_event_narrative_frame_economy
+	
+	min_age = 16
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	is_triggered_only = yes
+	
+	
+	option = {
+		name = EVTOPTA_NIE_141
+		custom_tooltip = { text = launch_solo_events }
+	}
+		
+	option = {
+		name = EVTOPTB_NIE_141
+		custom_tooltip = { text = return_to_previous }
+		hidden_tooltip = {
+			narrative_event = { id = NIE.139 }
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_141
+		custom_tooltip = { text = close_decision }
+	}
+}

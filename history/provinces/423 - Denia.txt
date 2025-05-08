@@ -1,0 +1,29 @@
+# County Title
+title = c_denia
+# Settlements
+max_settlements = 4
+b_denia = castle
+b_alicante = city
+b_elche = temple
+# Misc
+culture = romano_hispanic
+religion = catholic
+800.1.1 = { culture = visigothic }
+################################################################################
+# History
+################################################################################
+812.1.1 = { religion = sunni } 
+944.1.1 = { culture = andalusian_arabic } 
+1118.1.1 = { trade_post = b_fieschi } 
+1259.1.1 = { culture = catalan religion = catholic } 
+################################################################################
+# 423 - Denia
+################################################################################
+
+################################################################################
+# b_villena = castle
+# b_castalla = castle
+# b_albatera = castle
+# b_benissa = castle
+# b_orihuela = city
+################################################################################

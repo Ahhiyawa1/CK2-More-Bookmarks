@@ -1,0 +1,288 @@
+# Samudran placeholders 1000008000-1000008099
+# First unused index: 1000008019
+
+# Sigli dynasty
+
+1000008000 = {
+	name = "Buana"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	740.1.1 = {
+		birth = yes
+	}
+	801.1.1 = {
+		death = yes
+	}
+}
+
+1000008001 = {
+	name = "Putera"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008000
+	768.1.1 = {
+		birth = yes
+	}
+	822.1.1 = {
+		death = yes
+	}
+}
+
+1000008002 = {
+	name = "Krisna"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008001
+	795.1.1 = {
+		birth = yes
+	}
+	859.1.1 = {
+		death = yes
+	}
+}
+
+1000008003 = {
+	name = "Bima"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008002
+	821.1.1 = {
+		birth = yes
+	}
+	883.1.1 = {
+		death = yes
+	}
+}
+
+1000008004 = {
+	name = "Bagus"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008003
+	849.1.1 = {
+		birth = yes
+	}
+	912.1.1 = {
+		death = yes
+	}
+}
+
+1000008005 = {
+	name = "Kusuma"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008004
+	868.1.1 = {
+		birth = yes
+	}
+	937.1.1 = {
+		death = yes
+	}
+}
+
+1000008006 = {
+	name = "Putra"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008005
+	900.1.1 = {
+		birth = yes
+	}
+	974.1.1 = {
+		death = yes
+	}
+}
+
+1000008007 = {
+	name = "Surya"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008006
+	927.1.1 = {
+		birth = yes
+	}
+	993.1.1 = {
+		death = yes
+	}
+}
+
+1000008008 = {
+	name = "Wahyu"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008007
+	956.1.1 = {
+		birth = yes
+	}
+	1021.1.1 = {
+		death = yes
+	}
+}
+
+1000008009 = {
+	name = "Eka"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008008
+	984.1.1 = {
+		birth = yes
+	}
+	1044.1.1 = {
+		death = yes
+	}
+}
+
+1000008010 = {
+	name = "Agung"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008009
+	1013.1.1 = {
+		birth = yes
+	}
+	1085.1.1 = {
+		death = yes
+	}
+}
+
+1000008011 = {
+	name = "Adityu"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008010
+	1042.1.1 = {
+		birth = yes
+	}
+	1109.1.1 = {
+		death = yes
+	}
+}
+
+1000008012 = {
+	name = "Dwi"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008011
+	1069.1.1 = {
+		birth = yes
+	}
+	1132.1.1 = {
+		death = yes
+	}
+}
+
+1000008013 = {
+	name = "Darma"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008012
+	1097.1.1 = {
+		birth = yes
+	}
+	1166.1.1 = {
+		death = yes
+	}
+}
+
+1000008014 = {
+	name = "Putra"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008013
+	1125.1.1 = {
+		birth = yes
+	}
+	1186.1.1 = {
+		death = yes
+	}
+}
+
+1000008015 = {
+	name = "Tri"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008014
+	1153.1.1 = {
+		birth = yes
+	}
+	1212.1.1 = {
+		death = yes
+	}
+}
+
+1000008016 = {
+	name = "Sri"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008015
+	1181.1.1 = {
+		birth = yes
+	}
+	1243.1.1 = {
+		death = yes
+	}
+}
+
+1000008017 = {
+	name = "Surya"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008016
+	1204.1.1 = {
+		birth = yes
+	}
+	1267.1.1 = {
+		death = yes
+	}
+}
+
+1000008018 = {
+	name = "Eka"
+	dynasty = 1000027469 # Sigli
+	religion = hindu
+	culture = samudran
+	trait = kshatriya
+	father = 1000008017
+	1233.1.1 = {
+		birth = yes
+	}
+	1267.1.1 = {
+		death = yes
+	}
+}

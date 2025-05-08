@@ -1,0 +1,725 @@
+## BRITISH ISLES/CELTIC
+
+# EXCALIBURS 5 11
+excalibur = { # Sword - Mythical Artifact
+	monthly_character_prestige = 1.5
+	diplomacy = 3
+	martial = 3
+	vassal_opinion = 15
+	combat_rating = 20
+	global_revolt_risk = -0.25
+	active = { OR = {
+				culture_group = celtic
+				culture_group = west_germanic
+			}
+	}
+	quality = 5
+	flags = { celtic very_rare fantasy }
+	stacking = no
+	picture = "GFX_excalibur"
+	slot = weapon
+}
+
+caledfwlch = { # Sword - Excalibur, Welsh edition
+	monthly_character_prestige = 1.5
+	diplomacy = 3
+	martial = 3
+	vassal_opinion = 15
+	combat_rating = 20
+	global_revolt_risk = -0.25
+	active = { OR = {
+				culture_group = celtic
+				culture_group = west_germanic
+			}
+	}
+	quality = 5
+	flags = { celtic very_rare fantasy }
+	stacking = no
+	picture = "GFX_excalibur"
+	slot = weapon
+}
+
+calesvol = { # Sword - Excalibur, Cornish Edition
+	monthly_character_prestige = 1.5
+	diplomacy = 3
+	martial = 3
+	vassal_opinion = 15
+	combat_rating = 20
+	global_revolt_risk = -0.25
+	active = { OR = {
+				culture_group = celtic
+				culture_group = west_germanic
+			}
+	}
+	quality = 5
+	flags = { celtic very_rare fantasy }
+	stacking = no
+	picture = "GFX_excalibur"
+	slot = weapon
+}
+
+kaledvoulch = { # Sword - Excalibur, Breton edition
+	monthly_character_prestige = 1.5
+	diplomacy = 3
+	martial = 3
+	vassal_opinion = 15
+	combat_rating = 20
+	global_revolt_risk = -0.25
+	active = { OR = {
+				culture_group = celtic
+				culture_group = west_germanic
+			}
+	}
+	quality = 5
+	flags = { celtic very_rare fantasy }
+	stacking = no
+	picture = "GFX_excalibur"
+	slot = weapon
+}
+
+caladbolg = { # Sword - Excalibur, Irish edition
+	monthly_character_prestige = 1.5
+	diplomacy = 3
+	martial = 3
+	vassal_opinion = 15
+	combat_rating = 20
+	global_revolt_risk = -0.25
+	active = { OR = {
+				culture_group = celtic
+				culture_group = west_germanic
+			}
+	}
+	quality = 5
+	flags = { celtic very_rare fantasy }
+	stacking = no
+	picture = "GFX_excalibur"
+	slot = weapon
+}
+
+# SWORDS
+spear_of_lugh = { #91000 Sword - Fantasy, Celtic god Lugh's Spear
+	monthly_character_prestige = 0.75
+	monthly_character_piety = 0.75
+	martial = 3
+	combat_rating = 3
+	combat_rating = 10
+	same_religion_opinion = 5
+	active = {
+		OR = {
+			religion = celtic_pagan
+			religion = celtic_pagan_reformed
+		}
+	}
+	quality = 4
+	flags = { religious very_rare celtic_pagan}
+	stacking = no
+	picture = "GFX_spear_of_lugh"
+	slot = weapon
+}
+
+claidheamh_soluis = { #91001 Sword - "Sword of Light", Irish Mythology
+	monthly_character_prestige = 0.25
+	monthly_character_piety = 1
+	martial = 2
+	combat_rating = 3
+	combat_rating = 15
+	command_modifier = {
+		religious_enemy = 0.20
+	}
+	same_religion_opinion = 5
+	quality = 4
+	flags = { religious very_rare celtic }
+	stacking = no
+	picture = "GFX_claidheamh_soluis"
+	slot = weapon
+}
+
+cruadh_chosgarach = { #91003 Sword - "Hard Destroying One", Irish Mythology, sword of Cailte mac Ronain
+	monthly_character_prestige = 0.5
+	martial = 2
+	combat_rating = 20
+	active = {
+		OR = {
+			religion = celtic_pagan
+			religion = celtic_pagan_reformed
+		}
+	}
+	quality = 3
+	flags = { religious very_rare celtic_pagan}
+	stacking = no
+	picture = "GFX_cosgarach_mhor"
+	slot = weapon
+}
+
+cosgarach_mhor = { #91002 Sword - "Great Triumphant One", Irish Mythology, sword of Oscar
+	monthly_character_prestige = 0.5
+	diplomacy = 1
+	martial = 1
+	combat_rating = 10
+	quality = 3
+	flags = { very_rare celtic }
+	stacking = no
+	picture = "GFX_cosgarach_mhor"
+	slot = weapon
+}
+
+drynwyn = { # Sword - Fantasy. "White-Hilt", Irish Mythology, sword of Rhydderch Hael. When drawn by a worthy/well-born man, sword will blaze with fire.
+	monthly_character_prestige = 1.0
+	monthly_character_piety = 0.5
+	martial = 5
+	combat_rating = 22
+	same_religion_opinion = 5
+	active = {
+		OR = {
+			AND = {
+				trait = just
+				trait = kind
+			}
+			prestige = 5000
+			piety = 3000
+		}
+	}
+	quality = 5
+	flags = { religious very_rare celtic_pagan}
+	stacking = no
+	picture = "GFX_drynwyn"
+	slot = weapon
+}
+
+singing_sword = { #91004 Poet Sword - of Conaire Mor, would sing in battle
+	monthly_character_prestige = 0.5
+	monthly_character_piety = 0.5
+	martial = 1
+	diplomacy = 2
+	combat_rating = 10
+	active = {
+		trait = poet
+	}
+	quality = 4
+	flags = { religious very_rare celtic }
+	stacking = no
+	picture = "GFX_singing_sword"
+	slot = weapon
+}
+
+egeking = { #91005 Sword - Scottish, from the poem Greysteil.
+	monthly_character_prestige = 0.5
+	martial = 3
+	combat_rating = 2
+	combat_rating = 10
+	quality = 3
+	flags = { very_rare celtic }
+	stacking = no
+	picture = "GFX_egeking"
+	slot = weapon
+}
+
+hrunting = { #91006 Sword - anglo-saxon, beowulf magical sword
+	monthly_character_prestige = 1
+	martial = 3
+	combat_rating = 15
+	quality = 3
+	flags = { very_rare celtic }
+	stacking = no
+	picture = "GFX_hrunting"
+	slot = weapon
+}
+
+arondight = { # Sword - Lancelot's sword
+	monthly_character_prestige = 0.5
+	martial = 2
+	combat_rating = 15
+	quality = 3
+	flags = { very_rare celtic }
+	stacking = no
+	picture = "GFX_arondight"
+	slot = weapon
+}
+
+grail_sword = { #91007 Sword - Christian cracked holy sword, bonded back together by Sir Percival , arthurian
+	monthly_character_piety = 1
+	martial = 2
+	learning = 1
+	combat_rating = 15
+	command_modifier = {
+		religious_enemy = 0.25
+	}
+	church_opinion = 5
+	active = {
+		religion_group = christian
+	}
+	quality = 4
+	flags = { religious very_rare celtic }
+	stacking = no
+	picture = "GFX_grail_sword"
+	slot = weapon
+}
+
+gae_bulg = { #91008 Sword - Spear of Mortal Pain. Spear of Cuchulainn
+	monthly_character_prestige = 0.5
+	monthly_character_piety = -0.1
+	martial = 4
+	command_modifier = {
+	damage = 0.1
+	}
+	combat_rating = 20
+	quality = 3
+	flags = { very_rare celtic }
+	stacking = no
+	picture = "GFX_gae_bulg"
+	slot = weapon
+}
+
+# CEREMONIAL SWORDS 15
+clarent = { #91009 Ceremonial Sword - Meant for knighting and ceremonies, not battle. Stolen and used to kill Arthur by Mordred.
+	monthly_character_prestige = 0.5
+	diplomacy = 1
+	vassal_opinion = 2
+	quality = 3
+	flags = { very_rare }
+	stacking = no
+	picture = "GFX_clarent"
+	slot = ceremonial_weapon
+}
+
+naegling = { #91010 Ceremonial Sword - anglo-saxon, beowulf
+	monthly_character_prestige = 0.5
+	martial = 1
+	combat_rating = 10
+	quality = 3
+	flags = { very_rare }
+	stacking = no
+	picture = "GFX_naegling"
+	slot = ceremonial_weapon
+}
+
+fragarach = { #91011 Ceremonial Sword - "The Answerer", Irish Mythology, no one could tell a lie or move with Fragarach at his or her throat.
+	monthly_character_prestige = 1
+	intrigue = 2
+	defensive_plot_power_modifier = 0.1
+	quality = 3
+	flags = { religious very_rare celtic_pagan }
+	stacking = no
+	picture = "GFX_fragarach"
+	slot = ceremonial_weapon
+}
+
+ceard_nan_gallan = { #91012 Ceremonial Sword - is "the Smith of the Branches". This was the sword of Oisín, greatest poet of Ireland, warrior of the Fianna.
+	monthly_character_prestige = 0.5
+	monthly_character_piety = 0.5
+	martial = 1
+	diplomacy = 2
+	combat_rating = 10
+	same_religion_opinion = 5
+	active = {
+		OR = {
+			religion = celtic_pagan
+			religion = celtic_pagan_reformed
+		}
+	}
+	quality = 4
+	flags = { religious very_rare celtic_pagan}
+	stacking = no
+	picture = "GFX_ceard_nan_gallan"
+	slot = ceremonial_weapon
+}
+
+curtana = { # Ceremonial Sword - Coronation of English Kings
+	monthly_character_prestige = 0.4
+	tribal_opinion = 7
+	castle_opinion = 4
+	town_opinion = 3
+	active = { culture_group = celtic }
+	quality = 4
+	flags = { rare celtic sword jewelry crown_jewel created }
+	stacking = no
+	picture = "GFX_curtana"
+	slot = ceremonial_weapon
+}
+
+magic_wand = { # scepter - For Changelings, fantasy
+	monthly_character_prestige = 0.5
+	monthly_character_piety = 0.5
+	diplomacy = 1
+	martial = 1
+	stewardship = 1
+	intrigue = 1
+	learning = 1
+	combat_rating = 20
+	same_religion_opinion = 5
+	active = {
+		OR = {
+			religion = celtic_pagan
+			religion = celtic_pagan_reformed
+		}
+		trait = changeling
+	}
+	quality = 5
+	flags = { religious very_rare celtic_pagan}
+	stacking = no
+	picture = "GFX_magic_wand"
+	slot = scepter
+}
+
+cohuleen_druith = { # Crown - special hat from a mermaid (merrow) that allows them to dive beneath the waves. If the hat is lost, they can no longer return to the waves. Fantasy
+	monthly_character_prestige = 0.5
+	diplomacy = 2
+	stewardship = 1
+	active = {
+		OR = {
+			religion = celtic_pagan
+			religion = celtic_pagan_reformed
+		}
+	}
+	quality = 4
+	flags = { religious very_rare celtic_pagan}
+	stacking = no
+	picture = "GFX_cohuleen_druith"
+	slot = crown
+}
+
+ring_of_dispel = { # Wrist - from Lady of the Lake, can dispel any enchantment (will cure disease once)
+	monthly_character_prestige = 0.5
+	quality = 4
+	flags = { very_rare celtic }
+	stacking = no
+	picture = "GFX_ring_of_dispel"
+	slot = wrist
+}
+
+necklace_lady_of_the_lake = { # neck - wearer would be unfathomably loved. Fantasy
+	monthly_character_prestige = 1
+	general_opinion = 10
+	quality = 5
+	flags = { very_rare celtic }
+	stacking = no
+	picture = "GFX_necklace_lady_of_the_lake"
+	slot = neck
+}
+
+mantle_of_arthur = { # Torso - whoever is under cannot be seen, and he could see everyone. Arthurian legend
+	intrigue = 3
+	plot_power_modifier = 0.1
+	defensive_plot_power_modifier = 0.1
+	quality = 4
+	flags = { very_rare celtic }
+	stacking = no
+	picture = "GFX_mantle_of_arthur"
+	slot = torso
+}
+
+mantle_of_tegau_gold_breast = { #91016 Torso - female only, welsh mythology
+	monthly_character_piety = 1
+	diplomacy = 2
+	sex_appeal_opinion = 5
+	active = {
+		is_female = yes
+		NOT = { trait = lustful }
+	}
+	quality = 4
+	flags = { religious very_rare celtic_pagan}
+	stacking = no
+	picture = "GFX_mantle_of_tegau_gold_breast"
+	slot = torso
+}
+
+stone_and_ring_of_eluned_the_fortunate = { # Torso - cloak of invisibility, arthurian, fantasy
+	intrigue = 4
+	plot_power_modifier = 0.25
+	defensive_plot_power_modifier = 0.25
+	quality = 5
+	flags = { very_rare celtic }
+	stacking = no
+	picture = "GFX_stone_and_ring_of_eluned_the_fortunate"
+	slot = torso
+}
+
+hamper_of_gwyddno_garanhir = { #91013 Artifact - multiply food, fantasy
+	monthly_character_prestige = 0.2
+	monthly_character_piety = 0.2
+	global_revolt_risk = -0.1
+	stewardship = 3
+	quality = 4
+	flags = { very_rare celtic }
+	stacking = no
+	picture = "GFX_hamper_of_gwyddno_garanhir"
+}
+
+whetstone_of_tudwal_tudglyd = { #91014 Artifact - Sharpens sword but only for brave. 
+	combat_rating = 10
+	active = {
+		trait = brave
+	}
+	quality = 3
+	flags = { very_rare }
+	stacking = no
+	picture = "GFX_whetstone_of_tudwal_tudglyd"
+}
+
+adder_stone = { #91015 Artifact - protects against many things and diseases. Search
+	health = 2
+	intrigue = 1
+	active = {
+		OR = {
+			religion = celtic_pagan
+			religion = celtic_pagan_reformed
+		}
+	}
+	quality = 3
+	flags = { religious very_rare celtic_pagan}
+	stacking = no
+	picture = "GFX_adder_stone"
+}
+
+## OTHER 18
+
+sword_of_attila = { # event found, tengri
+	monthly_character_prestige = 0.5
+	monthly_character_piety = 0.5
+	martial = 3
+	combat_rating = 20
+	same_religion_opinion = 10
+	active = {
+		OR = {
+			religion = tengri_pagan
+			religion = tengri_pagan_reformed
+		}
+	}
+	quality = 4
+	flags = { religious tengri_pagan very_rare combat attila }
+	stacking = no
+	picture = "GFX_sword_of_attila"
+	slot = weapon
+}
+
+gramr = { # used to slay dragon, event, norse, fantasy
+	monthly_character_prestige = 1.5
+	martial = 4
+	combat_rating = 20
+	active = {
+		OR = {
+			religion = norse_pagan
+			religion = norse_pagan_reformed
+			religion = german_pagan
+			religion = german_pagan_reformed
+		}
+	}
+	quality = 4
+	flags = { religious norse_pagan very_rare fantasy }
+	stacking = no
+	picture = "GFX_gramr"
+	slot = weapon
+}
+
+eckesachs = { # Germanic, belonged to giant, event slay, fantasy
+	monthly_character_prestige = 1.5
+	martial = 4
+	combat_rating = 20
+	active = {
+		OR = {
+			religion = german_pagan
+			religion = german_pagan_reformed
+		}
+	}
+	quality = 4
+	flags = { religious german_pagan very_rare combat fantasy }
+	stacking = no
+	picture = "GFX_gramr"
+	slot = weapon
+}
+
+colada = { # Count Rodrigo, Valencia, 1094.
+	monthly_character_prestige = 0.1
+	monthly_character_piety = 0.5
+	martial = 2
+	combat_rating = 15
+	active = {
+		OR = {
+			culture = castillan
+			dynasty = 407
+		}
+	}
+	quality = 4
+	flags = { very_rare el_cid castillan }
+	stacking = no
+	picture = "GFX_colada"
+	slot = weapon
+}
+
+tizona = { # Count Rodrigo, Valencia, 1094. Christian 
+	monthly_character_prestige = 0.75
+	martial = 3
+	combat_rating = 10
+	active = { religion_group = christian }
+	quality = 4
+	flags = { religious christian el_cid very_rare }
+	stacking = no
+	picture = "GFX_tizona"
+	slot = weapon
+}
+
+durendal = { # Charlemagne's paladin Roland. Belongs to Roland if early start. 
+	monthly_character_prestige = 0.25
+	monthly_character_piety = 0.5
+	same_religion_opinion = 5
+	martial = 2
+	combat_rating = 10
+	active = { religion_group = christian }
+	quality = 4
+	flags = { religious christian very_rare }
+	stacking = no
+	picture = "GFX_durendal"
+	slot = weapon
+}
+
+joyeuse = { #charlemagne sword
+	monthly_character_prestige = 0.5
+	diplomacy = 2
+	vassal_opinion = 5
+	active = {
+		OR = {
+			culture = frankish
+			culture = old_frankish
+			culture = frisian
+			culture = dutch
+		}
+	}
+	quality = 4
+	flags = { very_rare frankish old_frankish charlemagne}
+	stacking = no
+	picture = "GFX_joyeuse"
+	slot = weapon
+}
+
+legbiter = { #King Magnus of Norway, 1099
+	monthly_character_prestige = 0.5
+	martial = 3
+	combat_rating = 10
+	active = { culture_group = north_germanic }
+	quality = 4
+	flags = { very_rare nordic}
+	stacking = no
+	picture = "GFX_legbiter"
+	slot = weapon
+}
+
+skofnung = { #ancient danish king Hrolf Kraki
+	monthly_character_prestige = 0.5
+	martial = 3
+	combat_rating = 10
+	active = { culture_group = north_germanic }
+	quality = 4
+	flags = { very_rare denmark}
+	stacking = no
+	picture = "GFX_legbiter"
+	slot = weapon
+}
+
+zulfiqar = { # legendary sword of Ali, given by Muhammad
+	monthly_character_prestige = 0.25
+	monthly_character_piety = 0.5
+	martial = 2
+	combat_rating = 10
+	same_religion_opinion = 5
+	active = { religion_group = muslim }
+	quality = 4
+	flags = { religious very_rare muslim}
+	stacking = no
+	picture = "GFX_zulfiqar"
+	slot = weapon
+}
+
+szczerbiec = { # Ceremonial Sword - Coronation of Polish kings
+	monthly_character_prestige = 0.4
+	tribal_opinion = 7
+	castle_opinion = 4
+	town_opinion = 3
+	active = { culture_group = west_slavic }
+	quality = 4
+	flags = { rare polish }
+	stacking = no
+	picture = "GFX_szczerbiec"
+	slot = ceremonial_weapon
+}
+
+tutankhamun_death_mask = { #90000 King Tut's death mask
+	monthly_character_prestige = 1.0
+	diplomacy = 2
+	vassal_opinion = 5
+	same_religion_opinion = 5
+	active = { religion = egyptian_pagan }
+	quality = 4
+	flags = { religious egyptian_pagan very_rare }
+	stacking = no
+	picture = "GFX_tutankhamun_death_mask"
+	slot = crown
+}
+
+mask_of_agamemnon = { #90005 mask found in Mycenae, Hellenic Pagan
+	monthly_character_prestige = 1.0
+	diplomacy = 2
+	vassal_opinion = 10
+	same_religion_opinion = 5
+	active = { religion = hellenic_pagan }
+	quality = 4
+	flags = { religious hellenic_pagan very_rare }
+	stacking = no
+	picture = "GFX_mask_of_agamemnon"
+	slot = crown
+}
+
+holy_crown_of_hungary = { # Coronation crown of Hungary
+	quality = 4
+	monthly_character_prestige = 0.5
+	castle_opinion = 4
+	tribal_opinion = 3
+	town_opinion = 3
+	active = { culture_group = magyar }
+	quality = 4
+	flags = { coronation rare magyar }
+	stacking = no
+	picture = "GFX_holy_crown_of_hungary"
+	slot = crown
+}
+
+dead_sea_scrolls = { #90001
+	monthly_character_prestige = 0.5
+	stewardship = 2
+	learning = 2
+	quality = 5
+	flags = { very_rare }
+	stacking = no
+	picture = "GFX_dead_sea_scrolls"
+}
+
+rosetta_stone = { #90002 was found in Rosetta, port city of Nile Delta
+	monthly_character_prestige = 0.5
+	learning = 3
+	active = { learning = 10 }
+	quality = 4
+	flags = { egyptian very_rare language translation }
+	stacking = no
+	picture = "GFX_rosetta_stone"
+}
+
+nefertiti_bust = { #90003 bust of egyptian queen
+	monthly_character_prestige = 1.0
+	quality = 4
+	flags = { egpytian very_rare }
+	stacking = no
+	picture = "GFX_nefertiti_bust"
+}
+
+grail_of_baal_hammon = { #90004 Baal Hammon was the cannonite god of fertility and renewal, fantasy
+	monthly_character_prestige = 0.75
+	fertility = 0.25
+	health = 2
+	same_religion_opinion = 5
+	active = { religion = jewish_pagan }
+	quality = 4
+	flags = { religious jewish_pagan very_rare fantasy }
+	stacking = no
+	picture = "GFX_cup_fancy"
+}
+
+# END

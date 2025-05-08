@@ -1,0 +1,17 @@
+# No previous file for Camaguey
+
+culture = atlantean
+owner = ATL
+controller = ATL
+add_core = ATL
+is_city = yes
+religion = hellenic_pagan
+capital = "Neapeion"
+trade_goods = sugar
+hre = no
+base_tax = 2
+base_production = 2
+base_manpower = 2
+discovered_by = CAB
+discovered_by = ARW
+discovered_by = ATL

@@ -1,0 +1,26 @@
+# County Title
+title = c_serdica
+# Settlements
+max_settlements = 4
+b_serdica = castle
+b_velbazhd = city
+b_rila = temple
+# Misc
+culture = thraco_roman
+religion = orthodox
+################################################################################
+# History
+################################################################################
+752.1.1 = { religion = paulician } # many Paulicians were deported to here
+1082.1.1 = { religion = orthodox culture = bulgarian } 
+################################################################################
+# 528 - Serdica
+################################################################################
+
+################################################################################
+# b_etropole = castle
+# b_pernik = castle
+# b_pravets = castle
+# b_breznik = castle
+# b_samundzhievo = castle
+################################################################################

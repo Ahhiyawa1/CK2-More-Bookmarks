@@ -1,0 +1,81 @@
+###########################################
+#                                         #
+# New Immersive Events	                  #
+# Starting event-chains	                  #
+# ID NIE.1				  #
+# Written and designed by wielkicien      #
+# Bugfixed by Erbkaiser			  #
+#                                         #
+###########################################
+
+namespace = NIE
+
+#Firing event-chain
+
+#Starting event-chain
+character_event = {
+	id = NIE.1
+	hide_window = yes
+	
+	min_age = 16
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+	
+	trigger = {
+		has_focus = focus_rulership
+		NOT = { has_character_flag = NIE_fired_event_chain }
+		NAND = { 
+			has_character_flag = NIE_thief
+			has_character_flag = NIE_eventchainsmall
+		}
+		NOT = { has_character_flag = do_not_disturb }
+		NOT = { has_character_flag = in_seclusion }
+		war = no
+	}
+	
+	mean_time_to_happen = {
+		years = 5
+	}
+	
+	immediate = {
+		ROOT = { set_character_flag = NIE_fired_event_chain }
+		random_list = {
+			50 = {
+				modifier = {
+					has_character_flag = NIE_thief
+					factor = 0
+				}
+				narrative_event = { id = NIE.100 }
+			}
+			50 = {
+				modifier = {
+					has_character_flag = NIE_eventchainsmall
+					factor = 0
+				}
+				narrative_event = { id = NIE.231 }
+			}
+		}
+	}
+}
+#Starting event-chains 2
+character_event = {
+	id = NIE.3
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		has_character_flag = NIE_fired_event_chain
+	}
+	
+	mean_time_to_happen = {
+		days = 1100
+	}
+	
+	immediate = {
+		clr_character_flag = NIE_fired_event_chain
+	}
+}

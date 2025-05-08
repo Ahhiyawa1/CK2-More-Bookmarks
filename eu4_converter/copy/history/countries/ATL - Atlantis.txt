@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 3
+mercantilism = 0.1
+primary_culture = atlantean
+religion = hellenic_pagan
+technology_group = high_american
+unit_type = eastern
+capital = 490	# Barahonas
+historical_rival = AZT
+
+1444.11.11 = {
+	monarch = {
+		name = Alexander
+		dynasty = Atlantid
+		adm = 4
+		dip = 6
+		mil = 4
+	}
+}

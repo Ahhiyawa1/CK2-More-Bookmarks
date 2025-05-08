@@ -1,0 +1,56 @@
+expected_next_title_BALTIC_cardinal;Expected next Snake-Tongued;;;;;;;;;;;;;x
+expected_next_title_TENGRI_cardinal;Expected next Khan-Shaman;;;;;;;;;;;;;x
+expected_next_title_FINNISH_cardinal;Expected next Speaker-To-Animals;;;;;;;;;;;;;x
+expected_next_title_AZTEC_cardinal;Expected next Heart-Ripper;;;;;;;;;;;;;x
+expected_next_title_SLAVIC_cardinal;Expected next Clear-Sighted;;;;;;;;;;;;;x
+expected_next_title_WEST_AFRICAN_cardinal;Expected next Live-Lightning;;;;;;;;;;;;;x
+expected_next_title_ZUN_cardinal;Expected next Sunbathers;;;;;;;;;;;;;x
+expected_next_title_NORSE_cardinal;Expected next Allsherjargothi;;;;;;;;;;;;;x
+expected_next_title_BON_cardinal;Expected next High Lama;;;;;;;;;;;;;x
+expected_next_title_PROMETHEAN_cardinal;Expected next Provost;;;;;;;;;;;;;x
+expected_next_title_ZOROASTRIAN_cardinal;Expected next Magus;;;;;;;;;;;;;x
+expected_next_title_JEWISH_cardinal;Expected next Pretty-Prophet;;;;;;;;;;;;;x
+expected_next_title_MANICHAEAN_cardinal;Expected next Lantern-Bearer;;;;;;;;;;;;;x
+expected_next_title_PAGAN_PAPAL_cardinal_tooltip;This [Root.Religion.GetPriestTitleCap] is probably going to be appointed to the [Root.GetReligiousHeadElectionBody] by the [Root.RelHead.GetTitle].;;;;;;;;;;;;;x
+best_candidate_BALTIC_cardinal;My Best Snake-Tongued Candidate;;;;;;;;;;;;;x
+best_candidate_TENGRI_cardinal;My Best Khan-Shaman Candidate;;;;;;;;;;;;;x
+best_candidate_FINNISH_cardinal;My Best Speaker-To-Animals Candidate;;;;;;;;;;;;;x
+best_candidate_AZTEC_cardinal;My Best Heart-Ripper Candidate;;;;;;;;;;;;;x
+best_candidate_SLAVIC_cardinal;My Best Clear-Sighted Candidate;;;;;;;;;;;;;x
+best_candidate_WEST_AFRICAN_cardinal;My Best Live-Lightning Candidate;;;;;;;;;;;;;x
+best_candidate_ZUN_cardinal;My Best Sunbather Candidate;;;;;;;;;;;;;x
+best_candidate_NORSE_cardinal;My Best Allsherjargothi Candidate;;;;;;;;;;;;;x
+best_candidate_BON_cardinal;My Best High Lama Candidate;;;;;;;;;;;;;x
+best_candidate_PROMETHEAN_cardinal;My Best Provost Candidate;;;;;;;;;;;;;x
+best_candidate_ZOROASTRIAN_cardinal;My Best Magus Candidate;;;;;;;;;;;;;x
+best_candidate_JEWISH_cardinal;My Best Pretty-Prophet Candidate;;;;;;;;;;;;;x
+best_candidate_MANICHAEAN_cardinal;My Best Lantern-Bearer Candidate;;;;;;;;;;;;;x
+best_candidate_title_PAGAN_PAPAL_cardinal_tooltip;Of all the [Root.Religion.GetPriestTitleCap]s in my realm, this one is the likeliest to become a [Root.GetReligiousHeadElectorTitle].;;;;;;;;;;;;;x
+title_baltic_pagan_reformed_cardinal;Snake-Tongued;;;;;;;;;;;;;x
+title_tengri_pagan_reformed_cardinal;Khan-Shaman;;;;;;;;;;;;;x
+title_finnish_pagan_reformed_cardinal;Speaker-To-Animals;;;;;;;;;;;;;x
+title_aztec_pagan_reformed_cardinal;Heart-Ripper;;;;;;;;;;;;;x
+title_slavic_pagan_reformed_cardinal;Clear-Sighted;;;;;;;;;;;;;x
+title_west_african_pagan_reformed_cardinal;Live-Lightning;;;;;;;;;;;;;x
+title_zun_pagan_reformed_cardinal;Sunbather;;;;;;;;;;;;;x
+title_zoroastrian_cardinal;Magus;;;;;;;;;;;;;x
+title_jewish_cardinal;Pretty-Prophet;;;;;;;;;;;;;x
+COLLEGE_OF_BALTIC_CARDINALS;Circle of Snake-Tongueds;;;;;;;;;;;;;x
+COLLEGE_OF_TENGRI_CARDINALS;Conclave of Khan-Shamans;;;;;;;;;;;;;x
+COLLEGE_OF_FINNISH_CARDINALS;Circle of Speakers-To-Animals;;;;;;;;;;;;;x
+##COLLEGE_OF_AZTEC_CARDINALS;Circle of Heart-Rippers;;;;;;;;;;;;;x
+COLLEGE_OF_AZTEC_CARDINALS;Appeasers of [Root.Religion.GetHighGodNameCap];;;;;;;;;;;;;x
+COLLEGE_OF_SLAVIC_CARDINALS;Circle of Clear-Sighteds;;;;;;;;;;;;;x
+COLLEGE_OF_WEST_AFRICAN_CARDINALS;Conclave of Live-Lightnings;;;;;;;;;;;;;x
+COLLEGE_OF_ZUN_CARDINALS;Conclave of Sunbathers;;;;;;;;;;;;;x
+COLLEGE_OF_ZOROASTRIAN_CARDINALS;Guardians of Fire;;;;;;;;;;;;;x
+COLLEGE_OF_JEWISH_CARDINALS;College of Pretty-Prophets;;;;;;;;;;;;;x
+###
+title_promethean_pagan_cardinal;Provost;;;;;;;;;;;;;x
+title_norse_pagan_reformed_cardinal;Allsherjargothi;;;;;;;;;;;;;x
+title_bon_pagan_reformed_cardinal;High Lama;;;;;;;;;;;;;x
+title_manichaean_cardinal;Lantern-Bearer;;;;;;;;;;;;;x
+COLLEGE_OF_PROMETHEAN_CARDINALS;Board of Provosts;;;;;;;;;;;;;x
+COLLEGE_OF_NORSE_CARDINALS;Circle of the Allsherjargothar;;;;;;;;;;;;;x
+COLLEGE_OF_BON_CARDINALS;Conclave of High Lamas;;;;;;;;;;;;;x
+COLLEGE_OF_MANICHAEAN_CARDINALS;Bringers of Light;;;;;;;;;;;;;x

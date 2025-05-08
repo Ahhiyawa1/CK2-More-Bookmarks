@@ -1,0 +1,119 @@
+# p42 Artifacts and items - indoor furniture layer.
+42 = {
+	0 = { # 0 - blank
+		factor = 1
+		modifier = {
+			factor = 100
+			has_game_rule = { name = blg_artifacts value = off }
+		}
+	}
+
+	1 = { # a - Big Relic
+		factor = 100
+		trigger = {
+			blg_artifact_relic_chest = yes
+		}
+	}
+
+	2 = { # b - Harp
+		factor = 10
+		trigger = {
+			blg_artifact_harp = yes
+		}
+	}
+
+	3 = { # c - Sampo
+		factor = 100
+		trigger = {
+			blg_artifact_sampo = yes
+		}
+	}
+
+	4 = { # d - Small Relic
+		factor = 2
+		trigger = {
+			blg_artifact_relic_case = yes
+		}
+	}
+
+	5 = { # e - Holy Grail
+		factor = 100
+		trigger = {
+			blg_artifact_grail = yes
+		}
+	}
+
+	6 = { # f - Bowl
+		factor = 10
+		trigger = {
+			blg_artifact_bowl = yes
+		}
+	}
+
+	7 = { # g - Horn
+		factor = 10
+		trigger = {
+			blg_artifact_horn = yes
+		}
+	}
+
+	8 = { # h - Hunting Trophy
+		factor = 100
+		trigger = {
+			has_character_flag = achievement_great_hunter
+			has_character_flag = white_stag
+		}
+	}
+
+	9 = { # i - Hunting Trophy
+		factor = 100
+		trigger = {
+			has_character_flag = achievement_great_hunter
+			has_character_flag = white_bear
+		}
+	}
+
+	10 = { # j - Hunting Trophy
+		factor = 100
+		trigger = {
+			has_character_flag = achievement_great_hunter
+			has_character_flag = white_tiger
+		}
+	}
+
+	11 = { # k - Hunting Trophy
+		factor = 100
+		trigger = {
+			has_character_flag = achievement_great_hunter
+			has_character_flag = white_lion
+		}
+	}
+
+	12 = { # l - Tablet
+		factor = 10
+		trigger = {
+			blg_artifact_tablet = yes
+		}
+	}
+
+	13 = { # m - Jade Dragon
+		factor = 10
+		trigger = {
+			blg_artifact_jadedragon = yes
+		}
+	}
+
+	14 = { # n - Water clock
+		factor = 10
+		trigger = {
+			blg_artifact_waterclock = yes
+		}
+	}
+
+	15 = { # o - Glass candle
+		factor = 50
+		trigger = {
+			blg_artifact_candle = yes
+		}
+	}
+}

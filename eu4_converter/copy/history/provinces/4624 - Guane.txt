@@ -1,0 +1,17 @@
+# No previous file for Guane
+
+culture = atlantean
+owner = ATL
+controller = ATL
+add_core = ATL
+is_city = yes
+religion = hellenic_pagan
+capital = "Artopeion"
+trade_goods = tobacco 
+hre = no
+base_tax = 2
+base_production = 3
+base_manpower = 1
+discovered_by = CAB
+discovered_by = ARW
+discovered_by = ATL

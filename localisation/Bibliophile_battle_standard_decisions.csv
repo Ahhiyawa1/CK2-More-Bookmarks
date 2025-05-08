@@ -1,0 +1,93 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+#
+#
+################### RESET FUNCTION
+standard_coachange_reset;Restore the pre-existing Arms of your Title;;;;;;;;;;;;;x
+#
+#
+#### COACHANGE HEADINGS
+standard_coachange_aegean;Adopt Arms of the Duchy of the Aegean;;;;;;;;;;;;;x
+standard_coachange_aegean_inverted;Adopt Arms of the Duchy of the Aegean - Inverted;;;;;;;;;;;;;x
+standard_coachange_georgia;Adopt Arms of the Kingdom of Georgia;;;;;;;;;;;;;x
+standard_coachange_brittany;Adopt Arms of the Kingdom of Brittany;;;;;;;;;;;;;x
+standard_coachange_ulster;Adopt Arms of the Duchy of Ulster;;;;;;;;;;;;;x
+standard_coachange_ulster_inverted;Adopt Arms of the Duchy of Ulster - Inverted;;;;;;;;;;;;;x
+standard_coachange_denmark;Adopt Arms of the Kingdom of Denmark;;;;;;;;;;;;;x
+standard_coachange_aquila;Adopt Arms inpsired by the Roman Aquila - Red;;;;;;;;;;;;;x
+standard_coachange_aquila_black;Adopt Arms inpsired by the Roman Aquila - Black;;;;;;;;;;;;;x
+standard_coachange_labarum;Adopt Arms inpsired by the Roman Labarum - Red;;;;;;;;;;;;;x
+standard_coachange_labarum_purple;Adopt Arms inpsired by the Roman Labarum - Purple;;;;;;;;;;;;;x
+standard_coachange_wales;Adopt Arms of the Kingdom of Wales;;;;;;;;;;;;;x
+standard_coachange_wales_two;Adopt Arms of the Kingdom of Wales - Alternate;;;;;;;;;;;;;x
+standard_coachange_cornwall;Adopt Arms of the County of Cornwall;;;;;;;;;;;;;x
+standard_coachange_motley;Adopt Arms inspired by the Battle Standard in Motley;;;;;;;;;;;;;x
+standard_coachange_oriflamme;Adopt Arms inspired by the Oriflamme;;;;;;;;;;;;;x
+standard_coachange_oriflamme_two;Adopt Arms inspired by the Oriflamme - Green Shield;;;;;;;;;;;;;x
+standard_coachange_mongolia;Adopt Arms inspired by the Mongol Kingdom;;;;;;;;;;;;;x
+standard_coachange_mongolia2;Adopt Arms inspired by the Mongol Battle Standard;;;;;;;;;;;;;x
+standard_coachange_king_henry_with_big_ears;Adopt Arms inspired by King Henry II;;;;;;;;;;;;;x
+standard_coachange_king_henry_with_bisection;Adopt Arms inspired by King Henry II - Bisected;;;;;;;;;;;;;x
+standard_coachange_king_henry_with_inversity;Adopt Arms inspired by King Henry II - Inverted;;;;;;;;;;;;;x
+standard_coachange_white_dragon;Adopt Arms inspired by the White Dragon;;;;;;;;;;;;;x
+standard_coachange_white_dragon2;Adopt Arms inspired by the White Dragon;;;;;;;;;;;;;x
+standard_coachange_moorish;Adopt Arms inspired by the Moorish Battle Standard;;;;;;;;;;;;;x
+standard_coachange_mierce;Adopt Arms of the Kingdom of Mercia;;;;;;;;;;;;;x
+standard_coachange_connacht;Adopt Arms of the County of Connacht;;;;;;;;;;;;;x
+standard_coachange_connacht_inverse;Adopt Arms of the County of Connacht - Inverted;;;;;;;;;;;;;x
+standard_coachange_connacht_bisected;Adopt Arms of the County of Connacht - Bisected;;;;;;;;;;;;;x
+standard_coachange_connacht_green;Adopt Arms of the County of Connacht - Green;;;;;;;;;;;;;x
+standard_coachange_desmond;Adopt Arms of the County of Desmond;;;;;;;;;;;;;x
+standard_coachange_desmond_brown;Adopt Arms of the County of Desmond - Brown;;;;;;;;;;;;;x
+standard_coachange_gwynedd;Adopt Arms of the County of Gwynedd;;;;;;;;;;;;;x
+standard_coachange_athens;Adopt Arms of the Duchy of Athens;;;;;;;;;;;;;x
+standard_coachange_megenzer;Adopt Arms of House Megenzer;;;;;;;;;;;;;x
+standard_coachange_megenzer_decorative;Adopt Arms of House Megenzer - Decorative Shield;;;;;;;;;;;;;x
+standard_coachange_megenzer_shield;Adopt Arms of House Megenzer - Shield;;;;;;;;;;;;;x
+standard_coachange_scotland;Adopt Arms of the Kingdom of Scotland;;;;;;;;;;;;;x
+standard_coachange_scotland_shield;Adopt Arms of the Kingdom of Scotland - Shield;;;;;;;;;;;;;x
+standard_coachange_scotland_inverse;Adopt Arms of the Kingdom of Scotland - Inverted;;;;;;;;;;;;;x
+#
+#
+#### COACHANGE TOOLTIPS
+standard_coachange_reset_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_aegean_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_aegean_inverted_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_georgia_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_brittany_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_ulster_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_ulster_inverted_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_denmark_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_aquila_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_aquila_black_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_labarum_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_labarum_purple_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_wales_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_wales_two_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_cornwall_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_motley_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_oriflamme_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_oriflamme_two_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_mongolia_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_mongolia2_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_king_henry_with_big_ears_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_king_henry_with_bisection_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_king_henry_with_inversity_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_white_dragon_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_white_dragon2_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_moorish_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_mierce_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_connacht_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_connacht_inverse_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_connacht_bisected_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_connacht_green_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_desmond_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_desmond_brown_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_gwynedd_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_athens_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_megenzer_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_megenzer_decorative_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_megenzer_shield_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_scotland_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_scotland_shield_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+standard_coachange_scotland_inverse_desc;Change the Coat of Arms of your Primary Title;;;;;;;;;;;;;x
+

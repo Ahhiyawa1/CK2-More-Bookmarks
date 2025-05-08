@@ -1,0 +1,50 @@
+
+#####################################################
+##### WS Warrior Lodge #####
+#####################################################
+
+is_member_of_non_pagan_warrior_lodge_trigger = {
+	custom_tooltip = {
+		text = is_member_of_non_pagan_warrior_lodge_tt
+		OR = {
+			society_member_of = warrior_lodge_cws_christian
+			society_member_of = warrior_lodge_ws_mazdan
+			society_member_of = warrior_lodge_ws_eastern
+			society_member_of = warrior_lodge_ws_muslim
+			society_member_of = warrior_lodge_ws_jewish
+		}
+	}
+}
+
+clws_uses_christian_pikeman = {
+	OR = {
+		culture = roman
+		culture = italian
+		culture = dalmatian
+		culture = sardinian
+		culture = scottish
+		culture = dutch
+		culture = suebi
+		culture = coptic
+		culture_group = chinese_group
+		culture_group = tibetan_group
+	}
+}
+
+clws_uses_eastern_elephants = {
+	trigger_if = {
+		limit = { has_global_flag = is_kcb_save }
+		capital_scope = { kcb_uses_elephants = yes }
+	}
+	trigger_else = {
+		OR = {
+			culture_group = indo_aryan_group
+			culture_group = dravidian_group
+			culture_group = iranian
+			culture_group = east_african
+			culture_group = central_african
+			culture_group = west_african
+			culture = coptic
+		}
+	}
+}

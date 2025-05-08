@@ -1,0 +1,439 @@
+decisions = {
+	
+
+	###build sampo for finnish pagans
+	rebuild_sampo = {
+		
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			religion_openly_finnish_or_reformed_trigger = yes
+			NOT = { has_global_flag = sampo_rebuilt }
+		}
+		allow = {
+			wealth = 1000
+			prestige = 500
+			piety = 250
+			custom_tooltip = {
+				text = rebuild_sampo_allow
+				any_artifact = {
+					artifact_type = sampo_fragment
+					count = 9
+				}
+			}	
+		}
+		effect = {
+			wealth = -1000
+			hidden_tooltip = {
+				set_global_flag = sampo_rebuilt
+				narrative_event = {id = aaop.405 months = 6 } 
+				any_artifact = {
+					limit = { artifact_type = sampo_fragment }
+					destroy_artifact = yes
+				}
+			}
+		}
+		ai_will_do = {factor = 1}
+		ai_check_interval = 24
+	}
+	
+	
+	###meteorite reforging
+	forge_meteorite = {
+		
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			NOT = { has_game_rule = { name = supernatural_artifacts value = off } }
+			NOT = { has_global_flag = skai_unav_found }
+			OR = {
+				religion_openly_tengri_or_reformed_trigger = yes
+				culture_group = altaic
+			}
+			has_artifact = meteorite
+		}
+		allow = {
+			prestige = 500
+			wealth = 300
+			learning = 8
+			martial = 18
+			has_artifact = meteorite		
+		}
+		effect = {
+			wealth = -300
+			hidden_tooltip = {
+				set_global_flag = skai_unav_found
+				character_event = { id = aaop.1002 days = 10 }
+			}
+			random_artifact = {
+				limit = { artifact_type = meteorite }
+				destroy_artifact = yes
+			}
+		}
+		ai_will_do = {factor = 1}
+		ai_check_interval = 24
+	}
+	
+	###remove eye for odins eye
+	carve_out_eye = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			has_artifact = odins_eye
+			NOT = { trait = one_eyed } 
+		}
+		allow = {
+			is_adult = yes
+			NOR = {
+				trait = wounded
+				trait = severely_injured
+			}
+		}
+		effect = { 
+			add_trait = one_eyed
+			add_trait_severely_injured_effect = yes
+		}
+		ai_will_do = { factor = 1 }
+		ai_check_interval = 24
+	}
+	###use odins eye
+	gaze_into_eye = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = { has_artifact = odins_eye }
+		allow = {
+			custom_tooltip = {
+				text = gaze_into_eye_allow1
+				any_artifact = {
+					artifact_type = odins_eye
+					is_artifact_active = yes
+				}
+			}	
+			war = no 
+			is_incapable = no
+			custom_tooltip = {
+				text = gaze_into_eye_allow2
+				NOT = { has_character_modifier = gaze_into_eye_timer }
+			}
+		}
+		effect = {
+			custom_tooltip = { 
+				text = gaze_into_eye_effect
+				add_character_modifier = { modifier = gaze_into_eye_timer years = 8 hidden = yes }
+				random_list = {
+					#plot
+					33 = { 
+						trigger = { any_realm_character = { has_plot = yes } }
+						character_event = { id = aaop.021 days = 3 } 
+					}	
+					#tech
+					33 = { character_event = { id = aaop.022 days = 3 } }	
+					#stats
+					33 = { character_event = { id = aaop.023 days = 3 } }		
+				}
+			}
+		}
+		ai_will_do = { factor = 0.5 } 
+		ai_check_interval = 24
+	}
+	
+	##pandora
+	open_pandoras_box = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = { has_artifact = pandoras_box }
+		allow = {
+			custom_tooltip = {
+				text = open_pandoras_box_allow1
+				any_artifact = {
+					artifact_type = pandoras_box
+					is_artifact_active = yes
+				}
+			}	
+			war = no
+			is_incapable = no
+			custom_tooltip = {
+				text = open_pandoras_box_allow2
+				NOT = { has_character_modifier = open_pandoras_box_timer }
+			}
+		}
+		effect = {
+			custom_tooltip = { 
+				text = open_pandoras_box_effect
+				add_character_modifier = { modifier = open_pandoras_box_timer years = 5 hidden = yes }
+				random_list = {
+					##random trait changes
+					20 = { character_event = { id = aaop.1400 days = 3 } }
+					##random demesne changes
+					20 = {
+						trigger = { demesne_size >= 3 }
+						character_event = { id = aaop.1401 days = 3 } 
+					}
+					##random children effects
+					20 = { 
+						trigger = {
+							any_child = { 
+								is_alive = yes 
+								age < 12 
+								OR = {
+									is_female = no
+									AND = {
+										is_female = yes
+										ROOT = { 
+											OR = {
+												has_law = cognatic_succession
+												has_law = true_cognatic_succession
+											}
+										}
+									}
+								}
+							}
+						}
+						character_event = { id = aaop.1402 days = 3 }
+					}
+					5 = { character_event = { id = aaop.1404 days = 3 } }	##incapable/death
+				}
+			}
+		}
+		
+		ai_will_do = { 
+			factor = 0.5 
+			modifier = { 
+				factor = 0.5
+				tier = king
+			}
+			modifier = { 
+				factor = 0.25
+				tier = emperor
+			}
+		}
+		ai_check_interval = 24
+	}
+	
+	joyeuse_restore_carolingian_empire = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = { has_artifact = joyeuse }
+		
+		allow = {
+			tier = emperor
+			
+			completely_controls_region = custom_frisia
+			#francia
+			custom_tooltip = {
+				text = joyeuse_restore_carolingian_empire_allow
+				completely_controls = d_normandy
+				completely_controls = d_picardie
+				completely_controls = d_anjou
+				completely_controls = d_orleans #blois
+				completely_controls = d_valois #paris
+				completely_controls = d_champagne
+				completely_controls = d_poitou
+				completely_controls = d_berry
+				completely_controls = d_bourbon
+				completely_controls = d_burgundy
+				completely_controls = d_franche_comte
+				completely_controls = d_aquitaine
+				completely_controls = d_gascogne
+				completely_controls = d_toulouse
+				completely_controls = d_auvergne
+				completely_controls = d_dauphine
+				completely_controls = d_provence
+			}
+			
+			#germania
+			custom_tooltip = {
+				text = joyeuse_restore_carolingian_empire_allow3
+				completely_controls = d_savoie
+				completely_controls = d_upper_burgundy
+				completely_controls = d_thurgau
+				completely_controls = d_raetia
+				completely_controls = d_tyrol
+				completely_controls = d_salzburg
+				completely_controls = d_styria
+				completely_controls = d_osterreich
+				completely_controls = d_bavaria
+				completely_controls = d_swabia
+				completely_controls = d_baden
+				completely_controls = d_alsace
+				completely_controls = d_upper_lorraine
+				completely_controls = d_trier
+				completely_controls = d_rhine
+				completely_controls = d_franconia
+				completely_controls = d_nordgau
+				completely_controls = d_meissen
+				completely_controls = d_lausitz
+				completely_controls = d_thuringia
+				completely_controls = d_hesse
+				completely_controls = d_koln
+				completely_controls = d_lower_lorraine
+				completely_controls = d_munster_germany
+				completely_controls = d_angria
+				completely_controls = d_bremen
+				completely_controls = d_saxony
+				completely_controls = d_brandenburg
+			}
+			
+			#italy
+			custom_tooltip = {
+				text = joyeuse_restore_carolingian_empire_allow4
+				completely_controls = d_susa
+				completely_controls = d_genoa
+				completely_controls = d_lombardia
+				completely_controls = d_verona
+				completely_controls = d_friuli
+				completely_controls = d_carinthia
+				completely_controls = d_carniola
+				completely_controls = d_modena
+				completely_controls = d_ferrara
+				completely_controls = d_toscana
+				completely_controls = d_pisa
+				completely_controls = d_ancona
+				completely_controls = d_spoleto
+			}
+
+			completely_controls = d_corsica #sardina
+			completely_controls = d_barcelona #iberia
+			completely_controls = d_holstein #denmark
+		}
+		effect = {
+			custom_tooltip = {
+				text = joyeuse_restore_carolingian_empire_effect1
+				primary_title = {
+					holder_scope = {
+						#these are being screwy
+						k_germany = {
+							d_saxony = { de_jure_liege = PREV }
+							d_holstein = { de_jure_liege = PREV }
+							d_brandenburg = { de_jure_liege = PREV }
+							d_lausitz = { de_jure_liege = PREV }
+							d_meissen = { de_jure_liege = PREV }
+						}
+						k_italy = { 
+							d_corsica = { de_jure_liege = PREV }
+						}
+						k_aquitaine = { 
+							d_barcelona = { de_jure_liege = PREV }
+						}
+						any_landed_title = {
+							limit = {
+								tier = KING
+								OR = {
+									capital_scope = { region = custom_frisia }
+									AND = { 
+										capital_scope = { region = world_europe_west_germania }
+										NOR = {
+											title = k_pomerania
+											title = k_bohemia
+										}
+									}
+									AND = {
+										capital_scope = { region = world_europe_west_francia }		
+										NOT = { title = k_brittany }
+									}
+									title = k_italy
+									title = k_carinthia
+									AND = {
+										title = k_romagna
+										is_titular = no
+									}
+								}
+								OR = {
+									title = k_italy
+									title = k_carinthia
+									AND = {
+										title = k_romagna
+										is_titular = no
+									}
+									ROOT = { completely_controls = PREV }
+								}
+							}
+							de_jure_liege = PREVPREV
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				text = joyeuse_restore_carolingian_empire_effect2
+				random_artifact = {
+					limit = { artifact_type = joyeuse }
+					unsafe_destroy_artifact = yes
+				}
+				add_artifact = joyeuse_ceromonial
+				set_global_flag = joyeuse_done
+			}
+			give_nickname = nick_the_glorious
+			prestige = 5000
+		}
+	}
+}	
+
+targeted_decisions = {
+	
+	##girdle of aphrodite lover power
+	girdle_of_aphrodite_power = {
+		only_playable = yes
+		
+		filter = all
+		ai_target_filter = realm
+		
+		from_potential = {
+			OR = {
+				religion_openly_hellenic_or_reformed_trigger = yes
+				culture = greek
+				culture = roman
+			}
+			has_artifact = girdle_of_aphrodite
+		}
+		
+		potential = {
+			is_female = no
+			is_lover = no
+		}
+	
+		allow = {
+			ROOT = {
+				num_of_lovers < 3
+				is_adult = yes
+				is_female = no
+				is_incapable = no
+				in_seclusion = no
+			}
+			FROM = {
+				num_of_lovers < 3
+				piety = 50
+				any_artifact = {
+					artifact_type = girdle_of_aphrodite
+					is_artifact_active = yes
+				}
+			}
+		}
+		effect = {
+			FROM = { piety = -50 }
+			ROOT = { show_scope_change = no add_lover = FROM }
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 2
+				higher_tier_than = count
+			}
+			modifier = {
+				factor = 2
+				FROM = { trait = lustful }
+			}
+			modifier = {
+				factor = 2
+				FROM = { age < 40 }
+			}
+		}
+		ai_check_interval = 24
+	}
+	
+}

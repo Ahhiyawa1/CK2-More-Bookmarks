@@ -1,0 +1,133 @@
+objectTypes = {
+
+###EASTERN FEMALE###
+
+	##### Chancellor --------------------------------------------------------------------------
+	pdxmesh = {
+		name = "easterngfx_job_chancellor_female"
+		file = "gfx/models/Mapindicators/efc_eastern_chancellor_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_chancellor_female_idle_animation" }
+		scale = 0.8
+	}
+	pdxmesh = {
+		name = "orthodox_dlc_job_chancellor_female"
+		file = "gfx/models/Mapindicators/efc_eastern_chancellor_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_chancellor_female_idle_animation" }
+		scale = 0.8
+	}
+
+	##### Steward	--------------------------------------------------------------------------
+	pdxmesh = {
+		name = "easterngfx_job_treasurer_female"
+		file = "gfx/models/Mapindicators/efc_eastern_stewardess_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_stewardess_female_idle_animation" }
+		scale = 0.8
+	}
+	pdxmesh = {
+		name = "orthodox_dlc_job_treasurer_female"
+		file = "gfx/models/Mapindicators/efc_eastern_stewardess_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_stewardess_female_idle_animation" }
+		scale = 0.8
+	}
+
+	##### Spymaster	--------------------------------------------------------------------------
+	pdxmesh = {
+		name = "easterngfx_job_spymaster_female"
+		file = "gfx/models/Mapindicators/efc_eastern_spymaster_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_spymaster_female_idle_animation" }
+		scale = 0.8
+	}
+	pdxmesh = {
+		name = "orthodox_dlc_job_spymaster_female"
+		file = "gfx/models/Mapindicators/efc_eastern_spymaster_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_spymaster_female_idle_animation" }
+		scale = 0.8
+	}
+
+	##### Marshal	--------------------------------------------------------------------------
+	pdxmesh = {
+		name = "easterngfx_job_marshal_female"
+		file = "gfx/models/Mapindicators/efc_eastern_marshal_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_marshal_female_idle_animation" }
+		scale = 0.8
+	}
+	pdxmesh = {
+		name = "orthodox_dlc_job_marshal_female"
+		file = "gfx/models/Mapindicators/efc_eastern_marshal_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_marshal_female_idle_animation" }
+		scale = 0.8
+	}
+
+##### Spiritual ####
+	pdxmesh = {
+		name = "orthodox_dlc_job_spiritual_female"
+		file = "gfx/models/Mapindicators/efc_eastern_spiritual_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_spiritual_female_idle_animation" }
+		scale = 0.8
+	}
+
+	pdxmesh = {
+		name = "orthodoxgfx_job_spiritual_female"
+		file = "gfx/models/Mapindicators/efc_eastern_spiritual_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_spiritual_female_idle_animation" }
+		scale = 0.8
+	}
+
+	pdxmesh = {
+		name = "orthodoxholygfx_job_spiritual_female"
+		file = "gfx/models/Mapindicators/efc_eastern_spiritual_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_spiritual_female_idle_animation" }
+		scale = 0.8
+	}
+
+	pdxmesh = {
+		name = "miaphysitegfx_job_spiritual_female"
+		file = "gfx/models/Mapindicators/afc_eastern_spiritual_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_spiritual_female_idle_animation" }
+		scale = 0.8
+	}
+
+	pdxmesh = {
+		name = "nestoriangfx_job_spiritual_female"
+		file = "gfx/models/Mapindicators/efc_eastern_spiritual_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_spiritual_female_idle_animation" }
+		scale = 0.8
+	}
+
+###BYZANTINE FEMALE###
+
+	pdxmesh = {
+		name = "byzantinegfx_job_chancellor_female"
+		file = "gfx/models/Mapindicators/efc_eastern_chancellor_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_chancellor_female_idle_animation" }
+		scale = 0.8
+	}
+
+	pdxmesh = {
+		name = "byzantinegfx_job_treasurer_female"
+		file = "gfx/models/Mapindicators/efc_eastern_stewardess_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_stewardess_female_idle_animation" }
+		scale = 0.8
+	}
+
+	pdxmesh = {
+		name = "byzantinegfx_job_spymaster_female"
+		file = "gfx/models/Mapindicators/efc_eastern_spymaster_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_spymaster_female_idle_animation" }
+		scale = 0.8
+	}
+
+	pdxmesh = {
+		name = "byzantinegfx_job_marshal_female"
+		file = "gfx/models/Mapindicators/efc_eastern_marshal_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_marshal_female_idle_animation" }
+		scale = 0.8
+	}
+
+	pdxmesh = {
+		name = "ugricgfx_job_marshal_female"
+		file = "gfx/models/Mapindicators/efc_eastern_marshal_female.mesh"
+		animation = { id = "idle"		type = "efc_eastern_marshal_female_idle_animation" }
+		scale = 0.8
+	}
+}

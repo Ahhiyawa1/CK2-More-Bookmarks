@@ -1,0 +1,20 @@
+supernatural_artifacts = {
+	name = "RULE_SUPERNATURAL_ARTIFACTS"
+	group = "RULE_GROUP_AAO"
+	option = {
+		name = all
+		text = "RULE_OPTION_ALL"
+		desc = "RULE_SUPERNATURAL_ARTIFACTS_ALL_DESC"
+	}
+	option = {
+		name = historic_mythological
+		text = "RULE_OPTION_HISTORIC_MYTHOLOGICAL"
+		desc = "RULE_SUPERNATURAL_ARTIFACTS_HISTORIC_MYTHOLOGICAL_DESC"
+	}
+	option = {
+		name = off
+		text = "RULE_OPTION_OFF"
+		desc = "RULE_SUPERNATURAL_ARTIFACTS_OFF_DESC"
+	}
+}
+

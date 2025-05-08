@@ -1,0 +1,1439 @@
+decisions = {
+
+	#################################### NULL
+	standard_coachange_reset  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			any_artifact = {
+				has_artifact_flag = blazon 
+			}
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			any_artifact = {
+				has_artifact_flag = blazon 
+			}			
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+		
+	}
+
+
+
+	#################################### GEORGIA
+	standard_coachange_georgia  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = georgian_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = georgian_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = k_georgia
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+		
+	}
+
+	#################################### BRITTANY
+	standard_coachange_brittany  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = breton_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = breton_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = k_brittany
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+		
+	}
+	
+	#################################### ULSTER
+	standard_coachange_ulster  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = ulster_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = ulster_standard
+		}
+
+		effect = {
+			primary_title = {
+				set_coa = d_ulster
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+		
+	}	
+	
+	standard_coachange_ulster_inverted  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = ulster_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = ulster_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_ulster_inverse
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+		
+	}	
+		
+	
+	#################################### AEGEAN
+	standard_coachange_aegean  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = aegean_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = aegean_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_aegean_islands
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+		
+	}		
+	
+	standard_coachange_aegean_inverted  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = aegean_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = aegean_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_aegean_islands_inverse
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+		
+	}	
+
+	#################################### DENMARK
+	standard_coachange_denmark  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = denmark_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = denmark_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = k_denmark
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+		
+	}	
+	
+	#################################### AQUILA
+	standard_coachange_aquila  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = roman_aquila
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = roman_aquila
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_roman_aquila
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+	
+	standard_coachange_aquila_black  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = roman_aquila
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = roman_aquila
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_roman_aquila_black
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+	
+	
+	#################################### LABARUM
+	standard_coachange_labarum  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = roman_labarum
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = roman_labarum
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_labarum
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}		
+
+	standard_coachange_labarum_purple  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = roman_labarum
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = roman_labarum
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_labarum_purple
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}
+
+	#################################### WALES
+	standard_coachange_wales  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = welsh_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = welsh_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = k_wales
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}		
+
+	standard_coachange_wales_two  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = welsh_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = welsh_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_wales_jazz_hands
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+	
+	#################################### CORNWALL
+	standard_coachange_cornwall  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = cornwall_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = cornwall_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = c_cornwall
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+
+	#################################### MOTLEY
+	standard_coachange_motley  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = motley_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = motley_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_motley
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}		
+	
+	#################################### ORIFLAMME
+	standard_coachange_oriflamme  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = oriflamme_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = oriflamme_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_french_oriflamme_basic
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}
+
+	standard_coachange_oriflamme_two  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = oriflamme_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = oriflamme_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_french_oriflamme
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+
+
+	#################################### MONGOL
+	standard_coachange_mongolia  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = mongol_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = mongol_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = k_mongolia
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}
+	
+	standard_coachange_mongolia2  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = mongol_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = mongol_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_mongolian_flag
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+
+	#################################### HENRY II
+	standard_coachange_king_henry_with_big_ears  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = henry_ii_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = henry_ii_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_henry_the_second
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+	
+
+	standard_coachange_king_henry_with_bisection  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = henry_ii_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = henry_ii_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_henry_the_second_inverse_bisected
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+	
+
+	standard_coachange_king_henry_with_inversity  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = henry_ii_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = henry_ii_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_henry_the_second_inverse
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+	
+
+	#################################### WHITE DRAGON OF ENGLELAND
+	standard_coachange_white_dragon  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = dragon_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = dragon_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_white_dragon
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}		
+	
+	standard_coachange_white_dragon2  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = dragon_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = dragon_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_white_dragon2
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}
+
+	#################################### MOOOOOOORE!
+	standard_coachange_moorish  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = moorish_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = moorish_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_moorish_moors_from_moorland
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}			
+	
+	#################################### MERCIA
+	standard_coachange_mierce  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = mierce_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = mierce_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_hereford
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+
+	#################################### CONNACHT
+	standard_coachange_connacht  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = connacht_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = connacht_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = c_connacht
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}		
+		
+		
+	standard_coachange_connacht_inverse  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = connacht_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = connacht_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = c_connacht_inverse
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}			
+		
+	standard_coachange_connacht_bisected  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = connacht_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = connacht_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = c_connacht_bisected
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}			
+		
+	standard_coachange_connacht_green  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = connacht_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = connacht_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = c_connacht_green
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}			
+		
+	#################################### CONNACHT
+	standard_coachange_desmond  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = desmond_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = desmond_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = c_desmond
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}			
+		
+	standard_coachange_desmond_brown  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = desmond_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = desmond_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = c_desmond_brown
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}
+
+	#################################### GWYNEDD
+	standard_coachange_gwynedd  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = gwynedd_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = gwynedd_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = c_gwynedd
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+
+	#################################### ATHENS
+	standard_coachange_athens  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = athens_crusader_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = athens_crusader_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = d_athens
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}		
+	
+	
+	
+	#################################### MEGENZER
+	standard_coachange_megenzer  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = megenzer_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = megenzer_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = c_megenzer
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+	
+	
+	standard_coachange_megenzer_decorative  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = megenzer_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = megenzer_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = c_megenzer_anchor_shield
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+
+	standard_coachange_megenzer_shield  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = megenzer_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = megenzer_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = c_megenzer_shield
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+	
+	#################################### SCOTLAND
+	standard_coachange_scotland  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = scotland_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = scotland_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = k_scotland
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+	
+	standard_coachange_scotland_shield  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = scotland_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = scotland_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = k_scotland_shield
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}	
+
+	standard_coachange_scotland_inverse  = {
+		ai = no
+		is_playable = yes
+		
+		potential = {
+			is_playable = yes
+			is_landed = yes
+			
+			has_artifact = scotland_standard
+		}
+
+		allow = {
+			war = no
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			has_artifact = scotland_standard
+		}
+
+		effect = {
+			primary_title = {
+				reset_coa = THIS
+				set_coa = k_scotland_inverse
+			}
+
+		}
+		
+		ai_will_do = {
+			factor = 0
+			modifier = {
+				factor = 0
+			}
+		}		
+	}			
+}
+

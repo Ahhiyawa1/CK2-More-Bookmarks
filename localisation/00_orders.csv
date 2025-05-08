@@ -1,0 +1,8 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+PDP_play_as_rule;Playable Holy Orders;;;;;;;;;;;;;x
+PDP_play_as_on;On;;;;;;;;;;;;;x
+PDP_play_as_on_desc;Enables a decision you can use to switch your character to a Holy Order's Leader.;;;;;;;;;;;;;x
+PDP_play_as_off;Off;;;;;;;;;;;;;x
+PDP_play_as_off_desc;Disables a decision you can use to switch your character to a Holy Order's Leader.;;;;;;;;;;;;;x
+PDP_play_as;Play As [Root.GetHerHimCap];;;;;;;;;;;;;x
+PDP_play_as_desc;Play as [Root.GetFirstName]. Disable this interaction via gamerule. If you already started a game, you can disable it by editing the uncompressed savegame.;;;;;;;;;;;;;x

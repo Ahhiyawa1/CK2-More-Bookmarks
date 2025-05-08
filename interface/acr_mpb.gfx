@@ -1,0 +1,44 @@
+spriteTypes = {	
+	spriteType = {
+		name = "GFX_trait_pagan_branch_5_animist"
+		texturefile = "gfx/traits/pagan_branch_5_animist.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_pagan_branch_6_theist"
+		texturefile = "gfx/traits/pagan_branch_6_theist.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_pagan_branch_7_intellect"
+		texturefile = "gfx/traits/pagan_branch_7_intellect.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_pagan_branch_8_might"
+		texturefile = "gfx/traits/pagan_branch_8_might.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_pagan_branch_9_egoist"
+		texturefile = "gfx/traits/pagan_branch_9_egoist.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+	spriteType = {
+		name = "GFX_trait_pagan_branch_10_altruist"
+		texturefile = "gfx/traits/pagan_branch_10_altruist.tga"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate.lua"
+	}
+}

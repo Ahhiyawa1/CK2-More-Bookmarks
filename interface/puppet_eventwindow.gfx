@@ -1,0 +1,11 @@
+spriteTypes = 
+{
+	
+	spriteType = {
+		name = "GFX_roy_liberate"
+		texturefile = "gfx/event_pictures/roy_liberate.dds"
+		allwaystransparent = yes
+	}
+}
+
+

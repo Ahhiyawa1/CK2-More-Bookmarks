@@ -1,0 +1,21 @@
+# County Title
+title = c_mathura
+# Settlements
+max_settlements = 6
+b_mathura = castle
+b_krishnajanmabhoomi = temple # Hindu Holy Site
+b_govardhan = city
+b_vrindavan = temple
+b_mankameshwar = temple
+# Misc
+culture = hindustani
+religion = hindu
+################################################################################
+# 1341 - Mathura
+################################################################################
+
+################################################################################
+# b_agra = castle
+# b_khanwa = city
+# b_dhanauli = city
+################################################################################

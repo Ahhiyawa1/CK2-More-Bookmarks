@@ -1,0 +1,21 @@
+# County Title
+title = c_tadjoura
+# Settlements
+max_settlements = 3
+b_tadjoura = castle
+b_berenice = city
+# Misc
+culture = somali
+religion = miaphysite
+################################################################################
+# 1564 - Tadjoura
+################################################################################
+
+################################################################################
+# b_obock = temple
+# b_djibouti = city
+# b_galafi = castle
+# b_dikhil = castle
+# b_holhol = castle
+# b_randa = castle
+################################################################################

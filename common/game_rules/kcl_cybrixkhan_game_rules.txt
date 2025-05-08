@@ -1,0 +1,123 @@
+#
+# List of options showing in the Game Rules screen
+#
+# format is:
+# rule_token = {
+#	name = "TEXT_KEY_FOR_NAME"
+#	desc = "TEXT_KEY_FOR_LONG_DESC"
+#	option = {										# please note that the first option is always the default option
+#		name = option_token
+#		text = "TEXT_KEY_FOR_OPTION_NAME"
+#		achievements = no							# by default achievements = yes, allows or disallows achievements
+#	}
+# }
+
+kcl_cybrixkhan_dunhaung = {
+	name = kcl_cybrixkhan_dunhaung_rule
+	group = "RULE_GROUP_MONOGATARI"
+	group = "RULE_GROUP_CL_KINICH"
+
+	option = {
+		name = on
+		text = kcl_cybrixkhan_dunhaung.on
+		desc = kcl_cybrixkhan_dunhaung.on.desc
+	}
+	option = {
+		name = music
+		text = kcl_cybrixkhan_dunhaung.music
+		desc = kcl_cybrixkhan_dunhaung.music.desc
+	}
+	option = {
+		name = off
+		text = kcl_cybrixkhan_dunhaung.off
+		desc = kcl_cybrixkhan_dunhaung.off.desc
+	}
+}
+
+kcl_cybrixkhan_pamir = {
+	name = kcl_cybrixkhan_pamir_rule
+	group = "RULE_GROUP_MONOGATARI"
+	group = "RULE_GROUP_CL_KINICH"
+
+	option = {
+		name = on
+		text = kcl_cybrixkhan_pamir.on
+		desc = kcl_cybrixkhan_pamir.on.desc
+	}
+	option = {
+		name = music
+		text = kcl_cybrixkhan_pamir.music
+		desc = kcl_cybrixkhan_pamir.music.desc
+	}
+	option = {
+		name = off
+		text = kcl_cybrixkhan_pamir.off
+		desc = kcl_cybrixkhan_pamir.off.desc
+	}
+}
+
+kcl_cybrixkhan_amalfi = {
+	name = kcl_cybrixkhan_amalfi_rule
+	group = "RULE_GROUP_MONOGATARI"
+	group = "RULE_GROUP_CL_KINICH"
+
+	option = {
+		name = on
+		text = kcl_cybrixkhan_amalfi.on
+		desc = kcl_cybrixkhan_amalfi.on.desc
+	}
+	option = {
+		name = music
+		text = kcl_cybrixkhan_amalfi.music
+		desc = kcl_cybrixkhan_amalfi.music.desc
+	}
+	option = {
+		name = off
+		text = kcl_cybrixkhan_amalfi.off
+		desc = kcl_cybrixkhan_amalfi.off.desc
+	}
+}
+
+kcl_cybrixkhan_harranian = {
+	name = kcl_cybrixkhan_harranian_rule
+	group = "RULE_GROUP_MONOGATARI"
+	group = "RULE_GROUP_CL_KINICH"
+
+	option = {
+		name = on
+		text = kcl_cybrixkhan_harranian.on
+		desc = kcl_cybrixkhan_harranian.on.desc
+	}
+	option = {
+		name = music
+		text = kcl_cybrixkhan_harranian.music
+		desc = kcl_cybrixkhan_harranian.music.desc
+	}
+	option = {
+		name = off
+		text = kcl_cybrixkhan_harranian.off
+		desc = kcl_cybrixkhan_harranian.off.desc
+	}
+}
+
+kcl_cybrixkhan_sparta = {
+	name = kcl_cybrixkhan_sparta_rule
+	group = "RULE_GROUP_MONOGATARI"
+	group = "RULE_GROUP_CL_KINICH"
+
+	option = {
+		name = on
+		text = kcl_cybrixkhan_sparta.on
+		desc = kcl_cybrixkhan_sparta.on.desc
+	}
+	option = {
+		name = music
+		text = kcl_cybrixkhan_sparta.music
+		desc = kcl_cybrixkhan_sparta.music.desc
+	}
+	option = {
+		name = off
+		text = kcl_cybrixkhan_sparta.off
+		desc = kcl_cybrixkhan_sparta.off.desc
+	}
+}

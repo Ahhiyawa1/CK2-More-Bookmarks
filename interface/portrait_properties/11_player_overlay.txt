@@ -1,0 +1,40 @@
+# p11 Player overlay
+11 = {
+	0 = { # 0 - blank
+		factor = 1
+	}
+
+	1 = { # a - player
+		factor = 100
+		trigger = {
+			OR = {
+				AND = {
+					ai = no
+					multiplayer = yes
+				}
+				AND = {
+					is_alive = no
+					trait = i_used_to_be_a_player
+					has_game_rule = { name = blg_fadedead value = off }
+				}
+			}
+		}
+	}
+
+	2 = { # b - dead player
+		factor = 100
+		trigger = {
+			is_alive = no
+			trait = i_used_to_be_a_player
+			NOT = { has_game_rule = { name = blg_fadedead value = off } }
+		}
+	}
+
+	3 = { # c - dead ai
+		factor = 100
+		trigger = {
+			is_alive = no
+			NOT = { has_game_rule = { name = blg_fadedead value = off } }
+		}
+	}
+}

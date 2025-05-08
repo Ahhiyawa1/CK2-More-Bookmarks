@@ -1,0 +1,26 @@
+# County Title
+title = c_soria
+# Settlements
+max_settlements = 4
+b_soria = castle
+b_almazan = city
+b_gormaz = castle
+# Misc
+culture = romano_hispanic
+religion = catholic
+800.1.1 = { culture = visigothic }
+################################################################################
+# History
+################################################################################
+867.1.1 = { 
+    b_soria = ca_keep_1
+    b_soria = ca_stable_1
+    b_soria = ca_militia_barracks_1
+    b_soria = ca_wall_1
+    b_soria = ca_wall_2
+}
+
+950.1.1 = { culture = castilian } 
+################################################################################
+# 376 - Soria
+################################################################################

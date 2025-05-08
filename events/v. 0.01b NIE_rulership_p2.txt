@@ -1,0 +1,511 @@
+###########################################
+#                                         #
+# New Immersive Events v. 0.01b           #
+# Rulership Events						  #
+# ID NIE.205-NIE.210					  #
+# Written and designed by wielkicien      #
+# Bugfixed and edited by Erbkaiser		  #
+#                                         #
+###########################################
+
+namespace = NIE
+
+### Solo events
+# Craven ruler
+character_event = {
+	id = NIE.205
+	title = "EVTNAMENIE.205"
+	desc = EVTDESC_NIE_205
+	picture = GFX_evt_daughter_asking_father
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		trait = craven
+		has_focus = focus_rulership
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_craven_ruling }
+		ai = no
+		any_spouse = { is_alive = yes 
+			       NOT = {
+					trait = craven
+				}
+		}
+	}
+	immediate = {
+		ROOT = { set_character_flag = NIE_craven }
+		random_spouse = { save_event_target_as = spouse_craven_ruler }
+	}
+	
+	option = {
+		name = EVTOPTA_NIE_205
+		custom_tooltip = { text = everything_can_hurt }
+		event_target:spouse_craven_ruler = {
+						opinion = {
+							modifier = opinion_irritated
+							who = ROOT
+							years = 5
+						}
+		}						
+		add_trait = paranoid
+		random = {
+			chance = 55
+			if = {
+				limit = { trait = ambitious }
+				remove_trait = ambitious
+			}
+		}
+		random = {
+			chance = 55
+			if = {
+				limit = { trait = diligent }
+				remove_trait = diligent
+			}
+		}
+		random = {
+			chance = 55
+			if = {
+				limit = { trait = proud }
+				remove_trait = proud
+			}
+		}
+		prestige = -20
+	}
+	option = {
+		name = EVTOPTB_NIE_205
+		custom_tooltip = { text = trust_spouse }
+		event_target:spouse_craven_ruler = {
+						opinion = {
+							modifier = opinion_happy
+							who = ROOT
+							years = 5
+						}
+						prestige = 10
+						random = {
+							chance = 30
+							add_trait = diligent
+						}
+		}
+		add_trait = trusting
+		random = {
+			chance = 55
+			if = {
+				limit = { trait = craven }
+				remove_trait = craven
+			}
+		}
+		random = {
+			chance = 20
+			add_trait = brave
+		}				
+	}
+	option = {
+		name = EVTOPTC_NIE_205
+		custom_tooltip = { text = reject_help_spouse }
+		event_target:spouse_craven_ruler = {
+						opinion = {
+							modifier = opinion_angry
+							who = ROOT
+							years = 5
+						}
+		}
+		random_list = {	
+				50 = 	{ add_trait = proud } 
+				20 =	{ remove_trait = craven }
+				15 = 	{ add_trait = brave }
+				10 =    { event_target:spouse_craven_ruler = {
+										add_rival = ROOT
+					}
+				}
+				5 = {}
+		}
+	}
+}
+###
+# Weak ruler
+character_event = {
+	id = NIE.206
+	title = "EVTNAMENIE.206"
+	desc = EVTDESC_NIE_206
+	picture = GFX_evt_recovery
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_dlc = "Reapers"
+		trait = weak
+		has_focus = focus_rulership
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_weak_ruling }
+		ai = no
+		any_courtier_or_vassal = {
+			liege = { character = ROOT }
+			has_minor_title = title_court_physician
+			OR = {
+				has_character_flag = is_court_physician
+				trait = physician
+			}
+		}
+	}
+	immediate = {
+		ROOT = { set_character_flag = NIE_weak }
+		random_courtier_or_vassal = {
+			limit = {
+				liege = { character = ROOT }
+				has_minor_title = title_court_physician
+				OR = {
+					has_character_flag = is_court_physician
+					trait = physician
+				}
+			}
+			save_event_target_as = physician_target_weak_ruler
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_206
+		custom_tooltip = { text = accept_help }
+		wealth = -50
+		event_target:physician_target_weak_ruler = {
+						opinion = {
+							modifier = opinion_happy
+							who = ROOT
+							years = 5
+						}
+						prestige = -50
+						wealth = 50
+		}
+		random = {
+			chance = 15
+			add_trait = brave
+		}
+		random = {
+			chance = 45
+			if = {
+				limit = { trait = weak }
+				remove_trait = weak
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTB_NIE_206
+		custom_tooltip = { text = reject_help_physician }
+		event_target:physician_target_weak_ruler = {
+						opinion = {
+							modifier = opinion_angry
+							who = ROOT
+							years = 5
+						}
+						prestige = -50
+		}
+		prestige = 15
+		random = {
+			chance = 25
+			add_trait = stubborn
+		}
+		random = {
+			chance = 25
+			add_trait = craven
+		}
+		random = {
+			chance = 35
+			if = {
+				limit = { trait = brave }
+				remove_trait = brave
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_206
+		custom_tooltip = { text = reject_help_zealous }
+		tooltip_info =  zealous
+		trigger = {
+			trait = zealous
+		}
+		event_target:physician_target_weak_ruler = {
+						opinion = {
+							modifier = opinion_angry
+							who = ROOT
+							years = 5
+						}
+						prestige = -50
+		}
+		piety = 25
+		random = {
+			chance = 15
+			add_trait = stubborn
+		}
+	}
+	option = {
+		name = EVTOPTD_NIE_206
+		custom_tooltip = { text = propose_another }
+		tooltip_info = learning
+		trigger = {
+			learning = 15
+		}
+		event_target:physician_target_weak_ruler = {
+						opinion = {
+							modifier = opinion_happy
+							who = ROOT
+							years = 5
+						}
+						prestige = -50
+						wealth = 50
+		}
+		wealth = -50
+		random_list = {	
+				65 = 	{ remove_trait = weak } 
+				25 =	{ add_trait = strong }
+				10 = 	{ death = { death_reason = death_poor_health } }
+		}
+	}
+}
+# Lunatic ruler
+character_event = {
+	id = NIE.207
+	title = "EVTNAMENIE.207"
+	desc = EVTDESC_NIE_207
+	picture = GFX_evt_lunatic
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		trait = lunatic
+		has_focus = focus_rulership
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_lunatic_ruling }
+		ai = no
+	}
+	immediate = {
+		ROOT = { set_character_flag = NIE_lunatic }
+	}
+
+	option = {
+		name = EVTOPTA_NIE_207
+		custom_tooltip = { text = hahaha_ha }
+		tooltip_info = lunatic
+		trigger = {
+			trait = lunatic
+		}
+		hidden_tooltip = {
+				character_event = { id = NIE.207 }
+		}
+		random_list = {	
+				85 = 	{} 
+				10 = 	{ death = { death_reason = death_poor_health } }
+				5 =	{ remove_trait = lunatic }
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_207
+		custom_tooltip = { text = hehehe_he }
+		tooltip_info = lunatic
+		trigger = {
+			trait = lunatic
+		}
+		hidden_tooltip = {
+				character_event = { id = NIE.207 }
+		}
+		random_list = {	
+				85 = 	{} 
+				10 = 	{ death = { death_reason = death_poor_health } }
+				5 =	{ remove_trait = lunatic }
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_207
+		custom_tooltip = { text = hohoho_ho }
+		tooltip_info = lunatic
+		trigger = {
+			trait = lunatic
+		}
+		hidden_tooltip = {
+				character_event = { id = NIE.207 }
+		}
+		random_list = {	
+				85 = 	{} 
+				10 = 	{ death = { death_reason = death_poor_health } }
+				5 =	{ remove_trait = lunatic }
+		}
+	}
+	option = {
+		name = EVTOPTD_NIE_207
+		custom_tooltip = { text = stop_this_madness }
+	}
+}
+# Possessed ruler
+character_event = {
+	id = NIE.208
+	title = "EVTNAMENIE.208"
+	desc = EVTDESC_NIE_208
+	picture = GFX_evt_whispers
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		trait = possessed
+		has_focus = focus_rulership
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_possessed_ruling }
+		ai = no
+		any_courtier = {
+                            has_job_title = job_spiritual
+                        }
+	}
+	immediate = {
+		ROOT = { set_character_flag = NIE_possessed }
+		random_courtier = {
+			limit = {
+				has_job_title = job_spiritual
+				ai = yes
+			}
+			save_event_target_as = possessed_ruling_event_target
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_NIE_208
+		custom_tooltip = { text = let_exorcism }
+		random_list = {	
+				50 = 	{ remove_trait = possessed 
+					  piety = 20
+			 		  event_target:possessed_ruling_event_target = {
+											opinion = {
+												modifier = opinion_happy
+												who = ROOT
+												years = 5
+											}
+											add_trait = zealous
+					  }
+				} 
+				50 = 	{ hidden_tooltip = {
+							character_event = {id = NIE.210 days = 2 }
+					  }
+				}
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_208
+		custom_tooltip = { text = dont_let_exorcism }
+		event_target:possessed_ruling_event_target = {
+								opinion = {
+									modifier = opinion_angry
+									who = ROOT
+									years = 5
+								}
+								random = {
+									chance = 50
+									add_rival = ROOT
+								}
+		}
+		prestige = -50
+		random = {
+			chance = 33
+			add_trait = craven
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_208
+		custom_tooltip = { text = kill_him }
+		hidden_tooltip = {
+				if = {
+					limit = {
+						religion = catholic
+					}
+				}
+				character_event = { id = NIE.209 days = 30 }
+		}
+		event_target:possessed_ruling_event_target = {
+							death = { death_reason = death_execution	
+							killer = ROOT
+
+							} 
+		}
+		piety = -200
+		any_realm_character = {
+					limit = {
+						is_adult = yes
+						NOT = { character = ROOT }
+						NOT = { trait = possessed }
+					}
+					opinion = {
+						modifier = opinion_furious
+						who = ROOT
+						years = 10
+					}
+		}
+	}
+}
+
+# Excommunication
+character_event = {
+	id = NIE.209
+	title = "EVTNAMENIE.209"
+	desc = EVTDESC_NIE_209
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_NIE_209
+		custom_tooltip = { text = get_excommunicated }
+		add_trait = excommunicated
+	}
+}
+
+# Exorcism failed
+character_event = {
+	id = NIE.210
+	title = "EVTNAMENIE.210"
+	desc = EVTDESC_NIE_210
+	picture = GFX_evt_whispers
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_NIE_210
+		custom_tooltip = { text = exorcism_failed }
+		piety = -100
+		event_target:possessed_ruling_event_target = {
+								opinion = {
+									modifier = opinion_angry
+									who = ROOT
+									years = 5
+								}
+								random = {
+									chance = 50
+									add_rival = ROOT
+								}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+# 3014 - Xianping
+
+# County Title
+title = c_xianping
+
+# Settlements
+max_settlements = 4
+
+b_xianping = tribal
+#b_xianping_tongyuan = tribal
+#b_xianping_liufe = tribal
+#b_xianping_hanzhou = tribal
+#b_xianping_rongzhou = tribal
+#b_xianping_anzhou = tribal
+#b_xianping_guirenxian = tribal
+
+# Misc
+culture = khitan
+religion = tengri_pagan
+
+# History
+907.1.1 = {
+	religion = buddhist
+	b_xianping = castle
+	b_xianping_tongyuan = city
+	b_xianping_liufe = temple
+}
+1125.3.26 = {
+	culture = jurchen
+}

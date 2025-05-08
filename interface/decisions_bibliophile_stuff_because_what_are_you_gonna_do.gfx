@@ -1,0 +1,230 @@
+spriteTypes = {
+	
+	
+	########AEGEAN
+	spriteType = {
+		name = "GFX_standard_coachange_aegean"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_aegean.dds"
+	}
+
+	spriteType = {
+		name = "GFX_standard_coachange_aegean_inverted"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_aegean_inverted.dds"
+	}
+
+	########ULSTER	
+	spriteType = {
+		name = "GFX_standard_coachange_ulster"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_ulster.dds"
+	}
+
+	spriteType = {
+		name = "GFX_standard_coachange_ulster_inverted"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_ulster_inverted.dds"
+	}	
+	
+	########DENMARK
+	spriteType = {
+		name = "GFX_standard_coachange_denmark"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_denmark.dds"
+	}
+
+	########BRITTANY
+	spriteType = {
+		name = "GFX_standard_coachange_brittany"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_brittany.dds"
+	}
+	
+	########GEORGIA
+	spriteType = {
+		name = "GFX_standard_coachange_georgia"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_georgia.dds"
+	}
+
+	########AQUILA
+	spriteType = {
+		name = "GFX_standard_coachange_aquila"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_aquila.dds"
+	}		
+
+	spriteType = {
+		name = "GFX_standard_coachange_aquila_black"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_aquila_black.dds"
+	}	
+
+	########LABARUM
+	spriteType = {
+		name = "GFX_standard_coachange_labarum"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_labarum.dds"
+	}		
+
+	spriteType = {
+		name = "GFX_standard_coachange_labarum_purple"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_labarum_purple.dds"
+	}	
+	
+	########WALES
+	spriteType = {
+		name = "GFX_standard_coachange_wales"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_wales.dds"
+	}
+
+	spriteType = {
+		name = "GFX_standard_coachange_wales_two"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_wales_two.dds"
+	}	
+	
+	########CORNWALL
+	spriteType = {
+		name = "GFX_standard_coachange_cornwall"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_cornwall.dds"
+	}	
+	
+	########IN MOTLEY
+	spriteType = {
+		name = "GFX_standard_coachange_motley"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_motley.dds"
+	}
+
+	########RESET <----------------------------------------------------------------
+	spriteType = {
+		name = "GFX_standard_coachange_reset"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_reset.dds"
+	}	
+	
+	########ORIFLAMME
+	spriteType = {
+		name = "GFX_standard_coachange_oriflamme"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_oriflamme.dds"
+	}
+
+	spriteType = {
+		name = "GFX_standard_coachange_oriflamme_two"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_oriflamme_two.dds"
+	}	
+
+	########MONGOL
+	spriteType = {
+		name = "GFX_standard_coachange_mongolia"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_mongolia.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_standard_coachange_mongolia2"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_mongolia2.dds"
+	}		
+	
+	########HENRY II
+	spriteType = {
+		name = "GFX_standard_coachange_king_henry_with_big_ears"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_king_henry_with_big_ears.dds"
+	}		
+	
+	spriteType = {
+		name = "GFX_standard_coachange_king_henry_with_bisection"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_king_henry_with_bisection.dds"
+	}
+
+	spriteType = {
+		name = "GFX_standard_coachange_king_henry_with_inversity"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_king_henry_with_inversity.dds"
+	}	
+	
+	########WHITE DRAGON
+	spriteType = {
+		name = "GFX_standard_coachange_white_dragon"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_white_dragon.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_standard_coachange_white_dragon2"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_white_dragon2.dds"
+	}	
+
+	#######MOORISH
+	spriteType = {
+		name = "GFX_standard_coachange_moorish"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_moorish.dds"
+	}		
+
+	#######MERCIA
+	spriteType = {
+		name = "GFX_standard_coachange_mierce"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_mierce.dds"
+	}		
+	
+	#######CONNACHT
+	spriteType = {
+		name = "GFX_standard_coachange_connacht"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_connacht.dds"
+	}
+
+	spriteType = {
+		name = "GFX_standard_coachange_connacht_inverse"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_connacht_inverse.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_standard_coachange_connacht_bisected"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_connacht_bisected.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_standard_coachange_connacht_green"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_connacht_green.dds"
+	}	
+
+	#######DESMOND
+	spriteType = {
+		name = "GFX_standard_coachange_desmond"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_desmond.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_standard_coachange_desmond_brown"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_desmond_brown.dds"
+	}	
+	
+	#######GWYNEDD
+	spriteType = {
+		name = "GFX_standard_coachange_gwynedd"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_gwynedd.dds"
+	}	
+	
+	#######CRUSADER ATHENS
+	spriteType = {
+		name = "GFX_standard_coachange_athens"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_athens.dds"
+	}	
+
+	#######MEGENZER
+	spriteType = {
+		name = "GFX_standard_coachange_megenzer"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_megenzer.dds"
+	}	
+	
+	spriteType = {
+		name = "GFX_standard_coachange_megenzer_decorative"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_megenzer_decorative.dds"
+	}	
+	spriteType = {
+		name = "GFX_standard_coachange_megenzer_shield"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_megenzer_shield.dds"
+	}	
+
+	#######SCOTLAND
+	spriteType = {
+		name = "GFX_standard_coachange_scotland"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_scotland.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_standard_coachange_scotland_inverse"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_scotland_inverse.dds"
+	}	
+
+	spriteType = {
+		name = "GFX_standard_coachange_scotland_shield"
+		texturefile = "gfx\\interface\\decision_icon_standard_coachange_scotland_shield.dds"
+	}		
+}

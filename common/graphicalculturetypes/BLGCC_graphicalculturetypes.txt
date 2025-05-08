@@ -1,0 +1,169 @@
+# Skin tones are 0 (light), 1 (tan), 2 (dark) and 3 (black)
+afghangfx = {
+	skin_tone = 1
+}
+ainugfx = {
+	skin_tone = 1
+}
+alangfx = {
+	skin_tone = 1
+}
+ashkenazigfx = {
+	skin_tone = 1
+}
+assamesegfx = {
+	skin_tone = 2
+}
+avargfx = {
+	skin_tone = 1
+}
+balticgfx = {
+	skin_tone = 0
+}
+basquegfx = {
+	skin_tone = 1
+}
+blackbeargfx = {
+	skin_tone = 2
+}
+bohemiangfx = {
+	skin_tone = 0
+}
+bretongfx = {
+	skin_tone = 0
+}
+celtiberiangfx = {
+	skin_tone = 1
+}
+centralafricangfx = {
+	skin_tone = 3
+}
+centralasiangfx = {
+	skin_tone = 1
+}
+centralindiangfx = {
+	skin_tone = 3
+}
+copticgfx = {
+	skin_tone = 2
+}
+cumangfx = {
+	skin_tone = 1
+}
+dutchgfx = {
+	skin_tone = 0
+}
+finnishgfx = {
+	skin_tone = 0
+}
+gallicgfx = {
+	skin_tone = 0
+}
+georgiangfx = {
+	skin_tone = 1
+}
+hunnicgfx = {
+	skin_tone = 1
+}
+indusgfx = {
+	skin_tone = 2
+}
+inuitgfx = {
+	skin_tone = 2
+}
+japanesegfx = {
+	skin_tone = 1
+}
+khitangfx = {
+	skin_tone = 1
+}
+khmergfx = {
+	skin_tone = 2
+}
+koreangfx = {
+	skin_tone = 1
+}
+kurdishgfx = {
+	skin_tone = 1
+}
+lombardgfx = {
+	skin_tone = 0
+}
+nativeamericangfx = {
+	skin_tone = 2
+}
+norsegaelgfx = {
+	skin_tone = 0
+}
+nubiangfx = {
+	skin_tone = 3
+}
+oldfrankishgfx = {
+	skin_tone = 0
+}
+pecheneggfx = {
+	skin_tone = 1
+}
+persiangfx = {
+	skin_tone = 1
+}
+philippinegfx = {
+	skin_tone = 2
+}
+polarbeargfx = {
+	skin_tone = 0
+}
+pomeraniangfx = {
+	skin_tone = 0
+}
+romanobalkangfx = {
+	skin_tone = 1
+}
+romanobritishgfx = {
+	skin_tone = 0
+}
+sardiniangfx = {
+	skin_tone = 1
+}
+scandinaviangfx = {
+	skin_tone = 0
+}
+semitegfx = {
+	skin_tone = 2
+}
+siberiangfx = {
+	skin_tone = 1
+}
+siciliangfx = {
+	skin_tone = 1
+}
+sogdiangfx = {
+	skin_tone = 1
+}
+somaligfx = {
+	skin_tone = 3
+}
+southasiangfx = {
+	skin_tone = 2
+}
+steppegfx = {
+	skin_tone = 1
+}
+tangutgfx = {
+	skin_tone = 2
+}
+tochariangfx = {
+	skin_tone = 1
+}
+turkishgfx = {
+	skin_tone = 1
+}
+vietgfx = {
+	skin_tone = 2
+}
+visigothgfx = {
+	skin_tone = 0
+}
+vlachgfx = {
+	skin_tone = 1
+}

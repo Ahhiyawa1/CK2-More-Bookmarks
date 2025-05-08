@@ -1,0 +1,66 @@
+bloodofwalakrios= {
+	inheritance = patrilineal
+        romanoindian_opinion = 5
+        #greek_opinion = 5
+	vieti_krioticism_opinion = 5
+        plot_power_modifier = 0.10
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_bloodthirsty
+	flags = { bloodline_heroes bloodline_faster_roman }
+}
+
+bloodofbritanon= {
+	inheritance = patrilineal
+	learning = 2
+	intrigue = 1
+	monthly_character_prestige = 0.15
+	health = 0.2
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_stoics
+	flags = { bloodline_heroes }
+}
+
+bloodofsheogorath= {
+	inheritance = patrilineal
+        romanoindian_opinion = 8
+	bloodline_effect_great_heroes_appear = 1
+	combat_rating = 4
+	health = 0.1
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_roman
+	flags = { bloodline_heroes bloodline_faster_roman }
+}
+
+bloodofarvidhektorios= {
+	inheritance = patrilineal
+	bloodline_effect_great_heroes_appear = 1
+	combat_rating = 10
+	martial = 1
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_roman
+	flags = { bloodline_heroes bloodline_faster_roman }
+}
+
+indoroman_ultimus_romanorum = {
+	monthly_character_prestige = 0.25
+	bloodline_effect_one_invasion = 1
+	bloodline_effect_drill = 1
+    romanoindian_opinion = 10
+	hellenic_pagan_opinion = 5
+	hellenic_pagan_reformed_opinion = 5
+	hereclemasculist_pagan_opinion = 5
+	vieti_mithras_pagan_opinion = 5
+	romist_pagan_opinion = 5
+	vieti_krioticism_opinion = 5
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { founder_invasions bloodline_drill created_bloodline }
+	picture = GFX_bloodlines_symbol_roman
+	active = {
+		OR = {
+			religion_group = christian
+			religion_group = indian_group
+			religion_openly_hellenic_or_reformed_trigger = yes
+		}
+	}
+}

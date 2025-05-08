@@ -1,0 +1,90 @@
+# p10 Diseases - blinded_eyes
+10 = {
+	0 = { # 0 - blank
+		factor = 1
+	}
+
+	1 = { # a - Leper
+		factor = 100
+		trigger = {
+			blg_leper = yes
+			blg_disease_rule = yes
+		}
+	}
+
+	2 = { # b - Syphilitic
+		factor = 100
+		trigger = {
+			blg_pox = yes
+
+			blg_disease_rule = yes
+		}
+	}
+
+	3 = { # c - Pnuemonia
+		factor = 100
+		trigger = {
+			blg_pneumonic = yes
+			blg_adult = yes
+
+			blg_disease_rule = yes
+		}
+	}
+
+	4 = { # d - Fever
+		factor = 100
+		trigger = {
+			blg_fever = yes
+
+			blg_disease_rule = yes
+		}
+	}
+
+	5 = { # e - Flu
+		factor = 100
+		trigger = {
+			blg_flu = yes
+
+			blg_disease_rule = yes
+		}
+	}
+
+	6 = { # f - Drunkard
+		factor = 100
+		trigger = {
+			trait = drunkard
+
+			OR = {
+				blg_disease_alive = yes
+				has_nickname = nick_the_drunkard
+			}
+			blg_traits_rule = yes
+		}
+	}
+
+	7 = { # g - Vomit
+		factor = 100
+		trigger = {
+			blg_vomit = yes
+
+			blg_disease_rule = yes
+		}
+	}
+
+	8 = { # h - Drooling
+		factor = 100
+		trigger = {
+			OR = {
+				AND = {
+					trait = imbecile
+					blg_traits_rule = yes
+				}
+
+				AND = {
+					blg_drooling = yes
+					blg_disease_rule = yes
+				}
+			}
+		}
+	}
+}

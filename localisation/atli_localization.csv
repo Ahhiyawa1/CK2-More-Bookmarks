@@ -1,0 +1,101 @@
+atlantean;Atlantean;;;;;;;;;;;;;x
+e_atlantis;Atlantis;;;;;;;;;;;;;x
+e_atlantis_adj;Atlantean;;;;;;;;;;;;;x
+e_atlantis_landed;Atlantis;;;;;;;;;;;;;x
+e_atlantis_landed_adj;Atlantean;;;;;;;;;;;;;x
+EVTNAME_ATLI_001;A Strange Galley;;;;;;;;;;;;;x
+EVTDESC_ATLI_001;Odd looking strangers in strange galley came ashore today, requesting an audience. They spoke an very archaic form of greek language, but it seems that they wanted to buy land to found a colony!;;;;;;;;;;;;;x
+EVTOPTA_ATLI_001;I have a bad feeling about this...;;;;;;;;;;;;;x
+EVTNAME_ATLI_002;Strangers from Western Seas;;;;;;;;;;;;;x
+EVTDESC_ATLI_002;There are rumours of exotic strangers in weird galleys making landfall all along the Atlantic coast, speaking on archaic form of greek language, trying to buy land to establish a colony. After refusing their offers, local rulers were apparently threatened with the might of mighty king beyond the Atlantic Ocean and a might of kingdom of Atlantis.;;;;;;;;;;;;;x
+EVTOPTA_ATLI_002;Atlantis? Hasn't it drowned ages ago?;;;;;;;;;;;;;x
+EVTDESC_ATLI_003;Thousands of menacing galleys have arrived off the shores of [From.SeaZone.GetName], spilling out numberless legions of warriors in a strangely familiar armor which could be seen on the ancient ruins of temples and cities. Atlantis has begun its invasion!;;;;;;;;;;;;;x
+EVTOPTA_ATLI_003;It's the End of Days!;;;;;;;;;;;;;x
+EVTNAME_ATLI_004;Atlantis Invasion;;;;;;;;;;;;;x
+EVTDESC_ATLI_004;Thousands of menacing galleys have arrived off the shores of [From.SeaZone.GetName], spilling out numberless legions of warriors in a strangely familiar armor which could be seen on the ancient ruins of temples and cities. They speak archaic greek language and worship forgotten gods - Zeus, Poseidon, Athena and Ares. Atlantis has begun its invasion!;;;;;;;;;;;;;x
+EVTOPTA_ATLI_004;[This.Religion.GetRandomGodNameCap] have Mercy!;;;;;;;;;;;;;x
+EVTDESC_ATLI_005;A forest of sails has appeared on the horizon - the fleet of Atlantis has reached our shores!;;;;;;;;;;;;;x
+EVTOPTA_ATLI_005;Saddle my Horse!;;;;;;;;;;;;;x
+EVTNAME_ATLI_006;Atlantis Invasion;;;;;;;;;;;;;x
+EVTDESC_ATLI_006;Another huge fleet of the atlanteans has been sighted in [From.SeaZone.GetName]. The leader of the invaders vowed that the banner of Atlantis would fly over all the shores of all seas.;;;;;;;;;;;;;x
+EVTOPTA_ATLI_006;[This.Religion.GetRandomGodNameCap] have Mercy!;;;;;;;;;;;;;x
+EVTOPTB_ATLI_006;More reinforcements? Good.;;;;;;;;;;;;;x
+EVTNAME_ATLI_035;Delicacies From the Far West;Les Plaisirs de l'Ouest;Delikatessen aus dem fernen Westen;;Exquisiteces del Extremo Oriente;;;;;;;;;x
+EVTDESC_ATLI_035;Not only war the atlantean have brought with them from Atlantis and far western land beyond. Their diet includes not only already known food, but also several strange plants that are supposedly edible, and many of these are now enjoyed as exotic delicacies in courts across Europe and the Middle East.\n\nAfter trading with atlantians merchants, enterprising farmers have sowed their fields with the seeds of a plant called "overseas truffles", while others experiment with "golden apples" (which are, in fact, red) and zea. Many nobles, however, have become enamored with a sweet drink called 'Theobroma', made of the beans of the Theobroma tree.;;;;;;;;;;;;;x
+EVTOPTA_ATLI_035;A passing fad. It will never catch on.;;;;;;;;;;;;;x
+EVTOPTB_ATLI_035_B;How did they lived without all this delisious food?;;;;;;;;;;;;;x
+EVTNAME_ATLI_105;The Atlanteans Meet With Defeat;;;;;;;;;;;;;x
+EVTDESC_ATLI_105;The great army of Atlantis that crossed the ocean in search of its ancestral home and new colonies was thrown back into the sea. Their colonies have been lost and their armies vanquished. The pitiful remnants of their invasion force has set sail back towards their islands of Atlantis to lick their wounds and inform the Basileus of their defeat.\n\nPerhaps in the future Atlantis will drown as in legends, or it will be destroyed by a retaliatory strike from the kingdoms of Europe. Time will tell.;;;;;;;;;;;;;x
+EVTNAME_ATLI_042;The Lost Homeland;;;;;;;;;;;;;x
+EVTDESC_ATLI_042;The Atlantean army completed the conquest of Greece. All cities now have atlantean garrisons, and restoration work is underway to restore ancient temples and buildings, and the atlantean commanders ordered to urgently send ships to distant Atlantis with the news that they have finally reached their homeland.;;;;;;;;;;;;;x
+EVTOPTA_ATLI_042;Maybe they will finally calm down?;;;;;;;;;;;;;x
+EVTOPTB_ATLI_042;At last! Our homeland!.;;;;;;;;;;;;;x
+EVTNAME_ATLI_043;The Fall of Athens;;;;;;;;;;;;;x
+EVTDESC_ATLI_043;The ancient city of Athens was occupied by the Atlanteans. Heard in carefully preserved legends about the glory and might of Athens, the Atlanteans were disappointed with the current state of the city. Nevertheless, the commanders of the Atlanteans made a celebratory speech on the Acropolis and promised to restore Athens to its former glory, starting with the restoration of the Parthenon, from where all Christian relics were immediately thrown away and a statue of Athena was installed.;;;;;;;;;;;;;x
+EVTOPTA_ATLI_043;Athens? Never heard of it.;;;;;;;;;;;;;x
+EVTOPTB_ATLI_043;Praise Athena!;;;;;;;;;;;;;x
+EVTNAME_ATLI_044;The Fall of Alexandria;;;;;;;;;;;;;x
+EVTDESC_ATLI_044;The glorious city of Alexandria was taken after fierce battles at sea and on land. The Atlanteans who occupied the city immediately began searching for the lost tomb of Alexander the Great, in order to pay tribute to this illustrious conqueror. During a festive speech in the port of Alexandria, the commander of the invaders announced that the conquests of the Atlanteans would overshadow the conquests of Alexander the Great himself, and that the whole world will submit to Atlantis.;;;;;;;;;;;;;x
+EVTOPTA_ATLI_044;When will the Atlanteans be stopped?;;;;;;;;;;;;;x
+EVTOPTB_ATLI_044;Glory to Alexander! Glory to Atlantis!;;;;;;;;;;;;;x
+EVTNAME_ATLI_045;The Fall of Rome;;;;;;;;;;;;;x
+EVTDESC_ATLI_045;After a long siege, the Atlanteans finally broke into the ancient city of Rome. Crushing the resistance of the papal guards, the invaders quickly captured the city and set the Apostolic Palace on fire. However, the ancient buildings and ruins has been spared - for example, recognizing a former pagan temple in the Pantheon, the Atlanteans quickly threw out Christian relics from there and installed statues of their gods. Disappointed by the current state of the city, which once ruled the entire Mediterranean, the Atlanteans swore to restore Rome to its ancient glory - not as the center of an empire, but as a pearl in the crown of Atlantis.;;;;;;;;;;;;;x
+EVTOPTA_ATLI_045;The Pope will definitely have to move elsewhere...;;;;;;;;;;;;;x
+EVTOPTB_ATLI_045;Glory to Atlantis!;;;;;;;;;;;;;x
+EVTNAME_ATLI_075;The Foothold of Atlantis;;;;;;;;;;;;;x
+EVTDESC_ATLI_075;The Atlanteans captured the first kingdom in their path, quickly crushing all possible resistance with the might of their fleet and army. And although they temporarily stopped their advance in order to establish their power in the conquered lands, it is clear that they will continue their expansion. The first ships with loot and slaves set off for the distant islands of Atlantis, just as new ships with reinforcements set out from there. In the near future, the Atlanteans will again set out on a campaign.;;;;;;;;;;;;;x
+EVTOPTA_ATLI_075_A;We need to stop them!;;;;;;;;;;;;;x
+EVTOPTA_ATLI_075_B;If only I had such power...;;;;;;;;;;;;;x
+player_character_invasion_leader;Start playing as Atlantean Basileus;;;;;;;;;;;;;x
+emperor_atlantean;Basileus;;;;;;;;;;;;;x
+emperor_female_atlantean;Basilissa;;;;;;;;;;;;;x
+king_atlantean;Archon;;;;;;;;;;;;;x
+king_female_atlantean;Archontissa;;;;;;;;;;;;;;x
+duke_atlantean;Nomarch;;;;;;;;;;;;;;x
+duke_female_atlantean;Nomarch;;;;;;;;;;;;;x
+count_atlantean;Toparch;;;;;;;;;;;;;;x
+count_female_atlantean;Toparch;;;;;;;;;;;;;;x
+baron_atlantean;Komarch;;;;;;;;;;;;;;x
+baron_female_atlantean;Komarch;;;;;;;;;;;;;;x
+job_chancellor_atlantean;Epistatos;;;;;;;;;;;;;x
+job_marshal_atlantean;Strategos;;;;;;;;;;;;;x
+job_treasurer_atlantean;Loghistos;;;;;;;;;;;;;x
+job_spymaster_atlantean;Sykophantos;;;;;;;;;;;;;x
+job_spiritual_atlantean;Hierophantos;;;;;;;;;;;;;x
+EVTNAME_SSI_002_ATLANTIS;A War In A Far West;;;;;;;;;;;;;x
+EVTDESC_SSI_002_ATLANTIS;Rumors spread that the mighty Atlantis has found a worthy opponent in the far west. A powerful empire of bloodthirsty barbarians on the western continent attacked the coastal colonies of Atlantis and completely destroyed them, sacrificing their entire population to their demonic gods. Moreover, these "Aztecs" managed to build a huge fleet in order to challenge the authority of Atlantis over the sea, and have already tried several times to land on the Atlantean islands. Rumor has it that the Aztecs also sent a large fleet to the shores of Europe, and many have already seen their reconnaissance ships...;;;;;;;;;;;;;x
+EVTOPTA_SSI_002_ATLANTIS;Bloodthirsty barbarians? Demonic gods? What?;;;;;;;;;;;;;x
+EVTOPTA_SSI_002_ATLANTIS_B;How dare these barbarians attack Atlantis?;;;;;;;;;;;;;x
+EVTOPTA_SSI_003_ATLANTIS;Let them come. We'll kill them all.;;;;;;;;;;;;;x
+EVTDESC_ATLI_002_AZTEC;Rumor has it that a worthy opponent has finally been found for the bloodthirsty Aztecs. The huge fleets of the powerful kingdom, located on an archipelago in the Atlantic Ocean, regularly repel nahua invasions from the sea. According to rumors, they even managed to land several times in the lands of Cemanahuac and inflict several defeats on them, and even sent a major expedition to Europe to defeat the Aztecs there. A few rumors suggest that these are white-skinned, bearded people, almost indistinguishable from Europeans. They call themselves "Atlanteans"...;;;;;;;;;;;;;x
+EVTOPTA_ATLI_002_AZTEC;Atlanteans? Hasn't they drowned ages ago?;;;;;;;;;;;;;x
+RETTYPE_CUL_ATL;Atlantean Hoplites;;;;;;;;;;;;;x
+ca_culture_atlantean_1;Hoplite Barracks;;;;;;;;;;;;;x
+ca_culture_atlantean_2;Hoplite Barracks;;;;;;;;;;;;;x
+ca_culture_atlantean_3;Hoplite Barracks;;;;;;;;;;;;;x
+ca_culture_atlantean_4;Hoplite Barracks;;;;;;;;;;;;;x
+ct_culture_atlantean_1;Hoplite Barracks;;;;;;;;;;;;;x
+ct_culture_atlantean_2;Hoplite Barracks;;;;;;;;;;;;;x
+ct_culture_atlantean_3;Hoplite Barracks;;;;;;;;;;;;;x
+ct_culture_atlantean_4;Hoplite Barracks;;;;;;;;;;;;;x
+ca_culture_atlantean_1_desc;Here the famous Atlantean Hoplites learn to fight with a spear and a shield.;;;;;;;;;;;;;x
+ca_culture_atlantean_2_desc;Here the famous Atlantean Hoplites learn to fight with a spear and a shield.;;;;;;;;;;;;;x
+ca_culture_atlantean_3_desc;Here the famous Atlantean Hoplites learn to fight with a spear and a shield.;;;;;;;;;;;;;x
+ca_culture_atlantean_4_desc;Here the famous Atlantean Hoplites learn to fight with a spear and a shield.;;;;;;;;;;;;;x
+ct_culture_atlantean_1_desc;Here the famous Atlantean Hoplites learn to fight with a spear and a shield.;;;;;;;;;;;;;x
+ct_culture_atlantean_2_desc;Here the famous Atlantean Hoplites learn to fight with a spear and a shield.;;;;;;;;;;;;;x
+ct_culture_atlantean_3_desc;Here the famous Atlantean Hoplites learn to fight with a spear and a shield.;;;;;;;;;;;;;x
+ct_culture_atlantean_4_desc;Here the famous Atlantean Hoplites learn to fight with a spear and a shield.;;;;;;;;;;;;;x
+RULE_ATLANTIS_INVASION;Atlantis Invasion;;;;;;;;;;;;;x
+RULE_ATLANTIS_12TH;Historical;;;;;;;;;;;;;x
+RULE_ATLANTIS_INVASION_HISTORICAL_DESC;The Atlanteans will invade in XII century.;;;;;;;;;;;;;x
+RULE_OPTION_RANDOM;Random;;;;;;;;;;;;;x
+RULE_ATLANTIS_INVASION_RANDOM_DESC;The Atlanteans will invade at a random date, though at the earliest 50 years after the game is started.;;;;;;;;;;;;;x
+RULE_OPTION_DELAYED_RANDOM;Delayed Random;;;;;;;;;;;;;x
+RULE_ATLANTIS_INVASION_DELAYED_RANDOM_DESC;The Atlanteans will invade at a random date, though after the year 1000, and 50 years after the game has started.;;;;;;;;;;;;;x
+RULE_OPTION_OFF;Off;;;;;;;;;;;;;x
+RULE_ATLANTIS_INVASION_OFF_DESC;The Atlamtean Invasion will not occur.;;;;;;;;;;;;;x
+RULE_OPTION_IMMEDIATLY;True Random;;;;;;;;;;;;;x
+RULE_ATLANTIS_INVASION_IMMEDIATLY_DESC;The Atlanteans will invade at a random date - they may invade immediatly, or may invade 300 years after the game started.;;;;;;;;;;;;;x
+atlantean_invasion;Atlantean Invasion
+atlantean_invasion_desc;Atlantis needs more colonies! If local barbarians will not give us land peacefully, then we will take it by force!

@@ -1,0 +1,50 @@
+#p27 Blood and mud splatter.
+27 = {
+	0 = { # 0 - blank
+		factor = 1
+		modifier = {
+			factor = 100
+			has_game_rule = { name = blood_splatter_rule value = off }
+		}
+	}
+
+	1 = { # a - Some blood
+		factor = 100
+		trigger = {
+			has_character_modifier = blood_splatter_1
+		}
+	}
+
+	2 = { # b - A lot of blood
+		factor = 100
+		trigger = {
+			has_character_modifier = blood_splatter_2
+		}
+	}
+
+	3 = { # c - Bathory of blood
+		factor = 100
+		trigger = {
+			has_character_modifier = blood_splatter_3
+		}
+	}
+
+	4 = { # d - Mud splatter
+		factor = 100
+		trigger = {
+			blg_mudsplatter = yes
+		}
+	}
+
+	5 = { # e - Grime
+		factor = 100
+		trigger = {
+			blg_dirty = yes
+
+			NOR = {
+				has_game_rule = { name = blg_traits value = notraits }
+				has_game_rule = { name = blg_traits value = off }
+			}
+		}
+	}
+}

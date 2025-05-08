@@ -1,0 +1,445 @@
+#acr_pagan_investiture_score
+
+acr_pagan_investiture_score = {
+	additive_modifier = {
+		value = -60
+
+		custom_tooltip = {
+			text = tooltip_cl_investiture_score_ill
+
+			FROMFROM = {
+				character_disease_trigger = yes
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -60
+
+		custom_tooltip = {
+			text = tooltip_cl_investiture_score_maimed
+
+			FROMFROM = {
+				is_maimed_trigger = yes
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 15
+
+		FROMFROM = {
+			show_scope_change = no
+
+			diplomacy >= 8
+
+			hidden_trigger = {
+				diplomacy < 12
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 30
+
+		FROMFROM = {
+			show_scope_change = no
+
+			diplomacy >= 12
+
+			hidden_trigger = {
+				diplomacy < 16
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 55
+
+		FROMFROM = {
+			show_scope_change = no
+
+			diplomacy >= 16
+
+			hidden_trigger = {
+				diplomacy < 20
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 90
+
+		FROMFROM = {
+			show_scope_change = no
+
+			diplomacy >= 20
+		}
+	}
+
+	additive_modifier = {
+		value = 15
+
+		FROMFROM = {
+			show_scope_change = no
+
+			martial >= 8
+
+			hidden_trigger = {
+				martial < 12
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 30
+
+		FROMFROM = {
+			show_scope_change = no
+
+			martial >= 12
+
+			hidden_trigger = {
+				martial < 16
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 55
+
+		FROMFROM = {
+			show_scope_change = no
+
+			martial >= 16
+
+			hidden_trigger = {
+				martial < 20
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 90
+
+		FROMFROM = {
+			show_scope_change = no
+
+			martial >= 20
+		}
+	}
+
+	additive_modifier = {
+		value = 15
+
+		FROMFROM = {
+			show_scope_change = no
+
+			stewardship >= 8
+
+			hidden_trigger = {
+				stewardship < 12
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 30
+
+		FROMFROM = {
+			show_scope_change = no
+
+			stewardship >= 12
+
+			hidden_trigger = {
+				stewardship < 16
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 55
+
+		FROMFROM = {
+			show_scope_change = no
+
+			stewardship >= 16
+
+			hidden_trigger = {
+				stewardship < 20
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 90
+
+		FROMFROM = {
+			show_scope_change = no
+
+			stewardship >= 20
+		}
+	}
+
+	additive_modifier = {
+		value = 15
+
+		FROMFROM = {
+			show_scope_change = no
+
+			intrigue >= 8
+
+			hidden_trigger = {
+				intrigue < 12
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 30
+
+		FROMFROM = {
+			show_scope_change = no
+
+			intrigue >= 12
+
+			hidden_trigger = {
+				intrigue < 16
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 55
+
+		FROMFROM = {
+			show_scope_change = no
+
+			intrigue >= 16
+
+			hidden_trigger = {
+				intrigue < 20
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 90
+
+		FROMFROM = {
+			show_scope_change = no
+
+			intrigue >= 20
+		}
+	}
+
+	additive_modifier = {
+		value = 20
+
+		FROMFROM = {
+			show_scope_change = no
+
+			learning >= 8
+
+			hidden_trigger = {
+				learning < 12
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 40
+
+		FROMFROM = {
+			show_scope_change = no
+
+			learning >= 12
+
+			hidden_trigger = {
+				learning < 16
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 75
+
+		FROMFROM = {
+			show_scope_change = no
+
+			learning >= 16
+
+			hidden_trigger = {
+				learning < 20
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 120
+
+		FROMFROM = {
+			show_scope_change = no
+
+			learning = 20
+		}
+	}
+
+	additive_modifier = {
+		value = 40
+
+		FROMFROM = {
+			show_scope_change = no
+
+			trait = genius
+		}
+	}
+
+	additive_modifier = {
+		value = 30
+
+		FROMFROM = {
+			show_scope_change = no
+
+			trait = quick
+		}
+	}
+
+	additive_modifier = {
+		value = 30
+
+		FROMFROM = {
+			show_scope_change = no
+
+			trait = shrewd
+		}
+	}
+
+	additive_modifier = {
+		value = 30
+
+		custom_tooltip = {
+			text = tooltip_cl_investiture_score_dynasty
+
+			FROMFROM = {
+				dynasty = ROOT_FROM
+
+				NOT = { is_close_relative = ROOT_FROM }
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 45
+
+		custom_tooltip = {
+			text = tooltip_cl_investiture_score_relative
+
+			FROMFROM = {
+				is_close_relative = ROOT_FROM
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 30
+
+		custom_tooltip = {
+			text = tooltip_cl_investiture_score_opinion_friend
+
+			FROMFROM = {
+				is_friend = ROOT_FROM
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -60
+
+		custom_tooltip = {
+			text = tooltip_cl_investiture_score_opinion_foe
+
+			FROMFROM = {
+				is_foe = ROOT_FROM
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 15
+
+		custom_tooltip = {
+			text = tooltip_cl_investiture_score_opinion_favor
+
+			FROMFROM = {
+				owes_favor_to = ROOT_FROM
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 40
+
+		FROMFROM = {
+			show_scope_change = no
+
+			trait = mystic
+		}
+	}
+
+	additive_modifier = {
+		value = 40
+
+		FROMFROM = {
+			show_scope_change = no
+
+			trait = scholar
+		}
+	}
+
+	additive_modifier = {
+		value = 40
+
+		FROMFROM = {
+			show_scope_change = no
+
+			trait = theologian
+		}
+	}
+
+	additive_modifier = {
+		value = 20
+
+		custom_tooltip = {
+			text = has_learning_education_tt
+
+			FROMFROM = {
+				has_education_learning_trigger = yes
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 15
+
+		custom_tooltip = {
+			text = tribute_interaction_level3_education_tt
+
+			FROMFROM = {
+				has_3rd_tier_education_trait_trigger = yes
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = 30
+
+		custom_tooltip = {
+			text = tribute_interaction_level4_education_tt
+
+			FROMFROM = {
+				has_top_tier_education_trait_trigger = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,96 @@
+targetted_decisions = {
+
+	PDP_play_as = {
+		ai = no
+		ai_target_filter = none
+		filter = all
+		#diplomacy_icon = GFX_trait_amateurish_plotter
+		from_potential  = {
+			NOR = {
+				has_landed_title = k_teutonic_state
+				has_landed_title = d_teutonic_order
+				has_landed_title = d_livonian_order
+				has_landed_title = d_knights_hospitaler
+				has_landed_title = d_knights_templar
+				has_landed_title = d_knights_santiago
+				has_landed_title = d_knights_calatrava
+				has_landed_title = d_hashshashin
+				has_landed_title = d_bektashi
+				has_landed_title = d_haruriyyah
+				has_landed_title = d_jomsvikings
+				has_landed_title = d_immortals
+				has_landed_title = d_zealots
+				has_landed_title = d_holy_sepulchre
+				has_landed_title = d_saint_anthony
+				has_landed_title = d_saint_addai
+				has_landed_title = d_sky_lords
+				has_landed_title = d_spirit_guardians
+				has_landed_title = d_warriors_perun
+				has_landed_title = d_chosen_perkunas
+				has_landed_title = d_sons_kaleva
+				has_landed_title = d_huitzilopochtli
+				has_landed_title = d_followers_arjuna
+				has_landed_title = d_ashokas_chosen
+				has_landed_title = d_dralhas_children
+				has_landed_title = d_bulls_rishabha
+				has_landed_title = d_zun_warriors
+				has_landed_title = d_myrmidons
+				has_landed_title = d_army_light
+			}
+			ai = no
+		}
+		potential = {
+			OR = {
+				has_landed_title = k_teutonic_state
+				has_landed_title = d_teutonic_order
+				has_landed_title = d_livonian_order
+				has_landed_title = d_knights_hospitaler
+				has_landed_title = d_knights_templar
+				has_landed_title = d_knights_santiago
+				has_landed_title = d_knights_calatrava
+				has_landed_title = d_hashshashin
+				has_landed_title = d_bektashi
+				has_landed_title = d_haruriyyah
+				has_landed_title = d_jomsvikings
+				has_landed_title = d_immortals
+				has_landed_title = d_zealots
+				has_landed_title = d_holy_sepulchre
+				has_landed_title = d_saint_anthony
+				has_landed_title = d_saint_addai
+				has_landed_title = d_sky_lords
+				has_landed_title = d_spirit_guardians
+				has_landed_title = d_warriors_perun
+				has_landed_title = d_chosen_perkunas
+				has_landed_title = d_sons_kaleva
+				has_landed_title = d_huitzilopochtli
+				has_landed_title = d_followers_arjuna
+				has_landed_title = d_ashokas_chosen
+				has_landed_title = d_dralhas_children
+				has_landed_title = d_bulls_rishabha
+				has_landed_title = d_zun_warriors
+				has_landed_title = d_myrmidons
+				has_landed_title = d_army_light
+			}
+			AND = {
+				ai = yes
+				higher_tier_than = baron
+				has_game_rule = { name = PDP_play_as_rule value = on }
+			}
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			ROOT = {
+				save_event_target_as = new_player
+				if = {
+					limit = {is_theocracy = yes}
+					set_government_type = religious_head
+				}
+				character_event = {id = PDP.3 days = 1}
+			}
+			FROM = { set_player_character = ROOT }
+		}
+	}
+
+}

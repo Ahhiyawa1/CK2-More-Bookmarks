@@ -1,0 +1,27 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+;;;;;;;;;;;;;;
+NIE.127;Former thief brings his sister before you;;;;;;;;;;;;;x
+EVTNAMENIE.127;Former thief brings his sister before you;;;;;;;;;;;;;x
+EVTDESC_NIE_127;Former thief, now your courtier, request an audience with you. He comes to your private hall with young and beutiful girl. He introduces her as his sister. You immediatly find her very attractive, your eyes meet amd she smiles gently. She greets you and politely asks if you would make her an honour and accept as your courtier.;;;;;;;;;;;;;x
+EVTOPTA_NIE_127;Courtier? Oh no, I have much better idea!;;;;;;;;;;;;;x
+EVTOPTB_NIE_127;If you want you can stay in my court.;;;;;;;;;;;;;x
+EVTOPTC_NIE_127;There is no free room for peasants in my court!;;;;;;;;;;;;;x
+sister_lover2;Story will progress…;;;;;;;;;;;;;x
+sister_courtier;Story will progress…;;;;;;;;;;;;;x
+sister_send_away;Story will end.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.128;Peasant girl is unhappy  at court;;;;;;;;;;;;;x
+EVTNAMENIE.128;Peasant girl is unhappy  at court;;;;;;;;;;;;;x
+EVTDESC_NIE_128;The peasant girl that I took on my court asked to talk to me during my daily walk in the garden. Something surely looms large in her mind. She quickly started to complain about situation in my court. Other handmaidens seems to ignore or even hate her. She has no friends and she finds no joy in life as courtier. Clearly she is not happy.;;;;;;;;;;;;;x
+EVTOPTA_NIE_128;Oh, stop whimpering already!;;;;;;;;;;;;;x
+EVTOPTB_NIE_128;I'll try to cheer her up!;;;;;;;;;;;;;x
+EVTOPTC_NIE_128;I think I know what will make you happy.;;;;;;;;;;;;;x
+sister_courtier_cruel;Story will progress…;;;;;;;;;;;;;x
+sister_courtier_cheerfull;Story will progress…;;;;;;;;;;;;;x
+sister_courtier_passionate;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.129;Sister released from dungeon;;;;;;;;;;;;;x
+EVTNAMENIE.129;Peasant girl is released from dungeon;;;;;;;;;;;;;x
+EVTDESC_NIE_129;You've decided that she has learned her lesson. She leaves your dungeon and she is now a different kind of woman. Every shadow, every stranger scares her. It will take her a long time to recover.;;;;;;;;;;;;;x
+EVTOPTA_NIE_129;She shouldn't anger me.;;;;;;;;;;;;;x
+sister_is_free;Story will end.;;;;;;;;;;;;;x

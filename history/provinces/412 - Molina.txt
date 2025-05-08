@@ -1,0 +1,19 @@
+# County Title
+title = c_molina
+# Settlements
+max_settlements = 3
+b_molina = castle
+b_elpedregal = temple
+b_cabanillasdelcampo = city
+# Misc
+culture = romano_hispanic
+religion = catholic
+terrain = hills
+800.1.1 = { culture = visigothic }
+################################################################################
+# History
+################################################################################
+955.1.1 = { culture = castilian } 
+################################################################################
+# 412 - Molina
+################################################################################

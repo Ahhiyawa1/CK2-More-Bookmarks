@@ -1,0 +1,1230 @@
+# Banjar placeholders 1000007000-1000007099
+# First unused index: 1000007084
+
+# Arifin dynasty (placeholders in Kapuas, Balangan, Paser)
+
+1000007000 = {
+	name = "Bagus"
+	dynasty = 1000028310 # Arifin
+	religion = dayak_pagan
+	culture = banjar
+	720.1.1 = {
+		birth = yes
+	}
+	780.1.1 = {
+		death = yes
+	}
+}
+
+1000007001 = {
+	name = "Kusuma"
+	dynasty = 1000028310 # Arifin
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007000
+	750.1.1 = {
+		birth = yes
+	}
+	810.1.1 = {
+		death = yes
+	}
+}
+
+1000007002 = {
+	name = "Surya"
+	dynasty = 1000028310 # Arifin
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007001
+	780.1.1 = {
+		birth = yes
+	}
+	840.1.1 = {
+		death = yes
+	}
+}
+
+1000007003 = {
+	name = "Tirta"
+	dynasty = 1000028310 # Arifin
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007002
+	810.1.1 = {
+		birth = yes
+	}
+	870.1.1 = {
+		death = yes
+	}
+}
+
+1000007004 = {
+	name = "Krisna"
+	dynasty = 1000028310 # Arifin
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007003
+	840.1.1 = {
+		birth = yes
+	}
+	900.1.1 = {
+		death = yes
+	}
+}
+
+1000007005 = {
+	name = "Eka"
+	dynasty = 1000028310 # Arifin
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007004
+	867.1.1 = {
+		birth = yes
+	}
+	930.1.1 = {
+		death = yes
+	}
+}
+
+1000007006 = {
+	name = "Cahya"
+	dynasty = 1000028310 # Arifin
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007005
+	900.1.1 = {
+		birth = yes
+	}
+	960.1.1 = {
+		death = yes
+	}
+}
+
+1000007007 = {
+	name = "Bima"
+	dynasty = 1000028310 # Arifin
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007006
+	930.1.1 = {
+		birth = yes
+	}
+	990.1.1 = {
+		death = yes
+	}
+}
+
+1000007008 = {
+	name = "Agus"
+	dynasty = 1000028310 # Arifin
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007007
+	960.1.1 = {
+		birth = yes
+	}
+	1020.1.1 = {
+		death = yes
+	}
+}
+
+1000007009 = {
+	name = "Darma"
+	dynasty = 1000028310 # Arifin
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007008
+	990.1.1 = {
+		birth = yes
+	}
+	1050.1.1 = {
+		death = yes
+	}
+}
+
+1000007010 = {
+	name = "Susila"
+	dynasty = 1000028310 # Arifin
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007009
+	1020.1.1 = {
+		birth = yes
+	}
+	1080.1.1 = {
+		death = yes
+	}
+}
+
+1000007011 = {
+	name = "Kusuma"
+	dynasty = 1000028310 # Arifin
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007010
+	1050.1.1 = {
+		birth = yes
+	}
+	1110.1.1 = {
+		death = yes
+	}
+}
+
+1000007012 = {
+	name = "Putra"
+	dynasty = 1000028310 # Arifin
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007011
+	1080.1.1 = {
+		birth = yes
+	}
+	1140.1.1 = {
+		death = yes
+	}
+}
+
+1000007013 = {
+	name = "Buana"
+	dynasty = 1000028310 # Arifin
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007012
+	1110.1.1 = {
+		birth = yes
+	}
+	1170.1.1 = {
+		death = yes
+	}
+}
+
+1000007014 = {
+	name = "Harta"
+	dynasty = 1000028310 # Arifin
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007013
+	1140.1.1 = {
+		birth = yes
+	}
+	1200.1.1 = {
+		death = yes
+	}
+}
+
+1000007015 = {
+	name = "Kusuma"
+	dynasty = 1000028310 # Arifin
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007014
+	1170.1.1 = {
+		birth = yes
+	}
+	1230.1.1 = {
+		death = yes
+	}
+}
+
+1000007016 = {
+	name = "Dian"
+	dynasty = 1000028310 # Arifin
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007015
+	1200.1.1 = {
+		birth = yes
+	}
+	1260.1.1 = {
+		death = yes
+	}
+}
+
+1000007017 = {
+	name = "Dwi"
+	dynasty = 1000028310 # Arifin
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007016
+	1230.1.1 = {
+		birth = yes
+	}
+	1290.1.1 = {
+		death = yes
+	}
+}
+
+1000007018 = {
+	name = "Kusuma"
+	dynasty = 1000028310 # Arifin
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007017
+	1260.1.1 = {
+		birth = yes
+	}
+	1320.1.1 = {
+		death = yes
+	}
+}
+
+1000007019 = {
+	name = "Sri"
+	dynasty = 1000028310 # Arifin
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007018
+	1290.1.1 = {
+		birth = yes
+	}
+	1350.1.1 = {
+		death = yes
+	}
+}
+
+1000007020 = {
+	name = "Tri"
+	dynasty = 1000028310 # Arifin
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007019
+	1320.1.1 = {
+		birth = yes
+	}
+	1380.1.1 = {
+		death = yes
+	}
+}
+
+# Gazali dynasty (placeholders in Kapuas, Banjar, Balangan, Kota Baru, and Paser)
+
+1000007021 = {
+	name = "Putera"
+	dynasty = 1000028311 # Gazali
+	religion = dayak_pagan
+	culture = banjar
+	750.1.1 = {
+		birth = yes
+	}
+	821.1.1 = {
+		death = yes
+	}
+}
+
+1000007022 = {
+	name = "Eka"
+	dynasty = 1000028311 # Gazali
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007021
+	779.1.1 = {
+		birth = yes
+	}
+	832.1.1 = {
+		death = yes
+	}
+}
+
+1000007023 = {
+	name = "Harta"
+	dynasty = 1000028311 # Gazali
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007022
+	812.1.1 = {
+		birth = yes
+	}
+	877.1.1 = {
+		death = yes
+	}
+}
+
+1000007024 = {
+	name = "Surya"
+	dynasty = 1000028311 # Gazali
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007023
+	842.1.1 = {
+		birth = yes
+	}
+	912.1.1 = {
+		death = yes
+	}
+}
+
+1000007025 = {
+	name = "Sri"
+	dynasty = 1000028311 # Gazali
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007024
+	871.1.1 = {
+		birth = yes
+	}
+	935.1.1 = {
+		death = yes
+	}
+}
+
+1000007026 = {
+	name = "Tirta"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007025
+	896.1.1 = {
+		birth = yes
+	}
+	962.1.1 = {
+		death = yes
+	}
+}
+
+1000007027 = {
+	name = "Adityu"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007026
+	925.1.1 = {
+		birth = yes
+	}
+	987.1.1 = {
+		death = yes
+	}
+}
+
+1000007028 = {
+	name = "Agung"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007027
+	959.1.1 = {
+		birth = yes
+	}
+	1023.1.1 = {
+		death = yes
+	}
+}
+
+1000007029 = {
+	name = "Bagus"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007028
+	990.1.1 = {
+		birth = yes
+	}
+	1047.1.1 = {
+		death = yes
+	}
+}
+
+1000007030 = {
+	name = "Adi"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007029
+	1018.1.1 = {
+		birth = yes
+	}
+	1087.1.1 = {
+		death = yes
+	}
+}
+
+1000007031 = {
+	name = "Darma"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007030
+	1044.1.1 = {
+		birth = yes
+	}
+	1108.1.1 = {
+		death = yes
+	}
+}
+
+1000007032 = {
+	name = "Surya"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007031
+	1069.1.1 = {
+		birth = yes
+	}
+	1133.1.1 = {
+		death = yes
+	}
+}
+
+1000007033 = {
+	name = "Tri"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007032
+	1094.1.1 = {
+		birth = yes
+	}
+	1163.1.1 = {
+		death = yes
+	}
+}
+
+1000007034 = {
+	name = "Kusuma"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007033
+	1126.1.1 = {
+		birth = yes
+	}
+	1187.1.1 = {
+		death = yes
+	}
+}
+
+1000007035 = {
+	name = "Wira"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007034
+	1155.1.1 = {
+		birth = yes
+	}
+	1213.1.1 = {
+		death = yes
+	}
+}
+
+1000007036 = {
+	name = "Krisna"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007035
+	1184.1.1 = {
+		birth = yes
+	}
+	1243.1.1 = {
+		death = yes
+	}
+}
+
+1000007037 = {
+	name = "Setiawan"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007036
+	1215.1.1 = {
+		birth = yes
+	}
+	1278.1.1 = {
+		death = yes
+	}
+}
+
+1000007038 = {
+	name = "Wahyu"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007037
+	1243.1.1 = {
+		birth = yes
+	}
+	1309.1.1 = {
+		death = yes
+	}
+}
+
+1000007039 = {
+	name = "Agus"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007038
+	1272.1.1 = {
+		birth = yes
+	}
+	1338.1.1 = {
+		death = yes
+	}
+}
+
+1000007040 = {
+	name = "Cahaya"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007039
+	1301.1.1 = {
+		birth = yes
+	}
+	1372.1.1 = {
+		death = yes
+	}
+}
+
+1000007041 = {
+	name = "Mega"
+	dynasty = 1000028311 # Gazali
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007040
+	1329.1.1 = {
+		birth = yes
+	}
+	1398.1.1 = {
+		death = yes
+	}
+}
+
+# Muzaki dynasty (placeholders in Kutai and Samarinda)
+
+1000007042 = {
+	name = "Mega"
+	dynasty = 1000028313 # Muzaki
+	religion = dayak_pagan
+	culture = banjar
+	720.1.1 = {
+		birth = yes
+	}
+	780.1.1 = {
+		death = yes
+	}
+}
+
+1000007043 = {
+	name = "Tirta"
+	dynasty = 1000028313 # Muzaki
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007042
+	750.1.1 = {
+		birth = yes
+	}
+	810.1.1 = {
+		death = yes
+	}
+}
+
+1000007044 = {
+	name = "Surya"
+	dynasty = 1000028313 # Muzaki
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007043
+	780.1.1 = {
+		birth = yes
+	}
+	840.1.1 = {
+		death = yes
+	}
+}
+
+1000007045 = {
+	name = "Setiawan"
+	dynasty = 1000028313 # Muzaki
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007044
+	810.1.1 = {
+		birth = yes
+	}
+	870.1.1 = {
+		death = yes
+	}
+}
+
+1000007046 = {
+	name = "Adi"
+	dynasty = 1000028313 # Muzaki
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007045
+	840.1.1 = {
+		birth = yes
+	}
+	900.1.1 = {
+		death = yes
+	}
+}
+
+1000007047 = {
+	name = "Cahya"
+	dynasty = 1000028313 # Muzaki
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007046
+	867.1.1 = {
+		birth = yes
+	}
+	930.1.1 = {
+		death = yes
+	}
+}
+
+1000007048 = {
+	name = "Dwi"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007047
+	900.1.1 = {
+		birth = yes
+	}
+	960.1.1 = {
+		death = yes
+	}
+}
+
+1000007049 = {
+	name = "Harta"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007048
+	930.1.1 = {
+		birth = yes
+	}
+	990.1.1 = {
+		death = yes
+	}
+}
+
+1000007050 = {
+	name = "Cahaya"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007049
+	960.1.1 = {
+		birth = yes
+	}
+	1020.1.1 = {
+		death = yes
+	}
+}
+
+1000007051 = {
+	name = "Surya"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007050
+	990.1.1 = {
+		birth = yes
+	}
+	1050.1.1 = {
+		death = yes
+	}
+}
+
+1000007052 = {
+	name = "Kusuma"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007051
+	1020.1.1 = {
+		birth = yes
+	}
+	1080.1.1 = {
+		death = yes
+	}
+}
+
+1000007053 = {
+	name = "Purnama"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007052
+	1050.1.1 = {
+		birth = yes
+	}
+	1110.1.1 = {
+		death = yes
+	}
+}
+
+1000007054 = {
+	name = "Setiawan"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007053
+	1080.1.1 = {
+		birth = yes
+	}
+	1140.1.1 = {
+		death = yes
+	}
+}
+
+1000007055 = {
+	name = "Tri"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007054
+	1110.1.1 = {
+		birth = yes
+	}
+	1170.1.1 = {
+		death = yes
+	}
+}
+
+1000007056 = {
+	name = "Sri"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007055
+	1140.1.1 = {
+		birth = yes
+	}
+	1200.1.1 = {
+		death = yes
+	}
+}
+
+1000007057 = {
+	name = "Eka"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007056
+	1170.1.1 = {
+		birth = yes
+	}
+	1230.1.1 = {
+		death = yes
+	}
+}
+
+1000007058 = {
+	name = "Darma"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007057
+	1200.1.1 = {
+		birth = yes
+	}
+	1260.1.1 = {
+		death = yes
+	}
+}
+
+1000007059 = {
+	name = "Mega"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007058
+	1230.1.1 = {
+		birth = yes
+	}
+	1290.1.1 = {
+		death = yes
+	}
+}
+
+1000007060 = {
+	name = "Surya"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007059
+	1260.1.1 = {
+		birth = yes
+	}
+	1320.1.1 = {
+		death = yes
+	}
+}
+
+1000007061 = {
+	name = "Krisna"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007060
+	1290.1.1 = {
+		birth = yes
+	}
+	1350.1.1 = {
+		death = yes
+	}
+}
+
+1000007062 = {
+	name = "Harta"
+	dynasty = 1000028313 # Muzaki
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007061
+	1320.1.1 = {
+		birth = yes
+	}
+	1380.1.1 = {
+		death = yes
+	}
+}
+
+# Hayati dynasty (placeholders in Berau, Bulungan)
+
+1000007063 = {
+	name = "Cahya"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	700.1.1 = {
+		birth = yes
+	}
+	772.1.1 = {
+		death = yes
+	}
+}
+
+1000007064 = {
+	name = "Darma"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007063
+	731.1.1 = {
+		birth = yes
+	}
+	799.1.1 = {
+		death = yes
+	}
+}
+
+1000007065 = {
+	name = "Putra"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007064
+	762.1.1 = {
+		birth = yes
+	}
+	835.1.1 = {
+		death = yes
+	}
+}
+
+1000007066 = {
+	name = "Adityu"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007065
+	794.1.1 = {
+		birth = yes
+	}
+	865.1.1 = {
+		death = yes
+	}
+}
+
+1000007067 = {
+	name = "AGung"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007066
+	823.1.1 = {
+		birth = yes
+	}
+	889.1.1 = {
+		death = yes
+	}
+}
+
+1000007068 = {
+	name = "Dwi"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007067
+	852.1.1 = {
+		birth = yes
+	}
+	921.1.1 = {
+		death = yes
+	}
+}
+
+1000007069 = {
+	name = "Susila"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007068
+	883.1.1 = {
+		birth = yes
+	}
+	945.1.1 = {
+		death = yes
+	}
+}
+
+1000007070 = {
+	name = "Kusuma"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007069
+	912.1.1 = {
+		birth = yes
+	}
+	978.1.1 = {
+		death = yes
+	}
+}
+
+1000007071 = {
+	name = "Darma"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007070
+	944.1.1 = {
+		birth = yes
+	}
+	1015.1.1 = {
+		death = yes
+	}
+}
+
+1000007072 = {
+	name = "Cahya"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007071
+	976.1.1 = {
+		birth = yes
+	}
+	1038.1.1 = {
+		death = yes
+	}
+}
+
+1000007073 = {
+	name = "Sri"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007072
+	1009.1.1 = {
+		birth = yes
+	}
+	1077.1.1 = {
+		death = yes
+	}
+}
+
+1000007074 = {
+	name = "Putera"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007073
+	1040.1.1 = {
+		birth = yes
+	}
+	1106.1.1 = {
+		death = yes
+	}
+}
+
+1000007075 = {
+	name = "Setiawan"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007074
+	1071.1.1 = {
+		birth = yes
+	}
+	1133.1.1 = {
+		death = yes
+	}
+}
+
+1000007076 = {
+	name = "Bagus"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007075
+	1104.1.1 = {
+		birth = yes
+	}
+	1167.1.1 = {
+		death = yes
+	}
+}
+
+1000007077 = {
+	name = "Agung"
+	dynasty = 1000028314 # Hayati
+	religion = dayak_pagan
+	culture = banjar
+	father = 1000007076
+	1136.1.1 = {
+		birth = yes
+	}
+	1202.1.1 = {
+		death = yes
+	}
+}
+
+1000007078 = {
+	name = "Tri"
+	dynasty = 1000028314 # Hayati
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007077
+	1168.1.1 = {
+		birth = yes
+	}
+	1234.1.1 = {
+		death = yes
+	}
+}
+
+1000007079 = {
+	name = "Surya"
+	dynasty = 1000028314 # Hayati
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007078
+	1199.1.1 = {
+		birth = yes
+	}
+	1262.1.1 = {
+		death = yes
+	}
+}
+
+1000007080 = {
+	name = "Tirta"
+	dynasty = 1000028314 # Hayati
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007079
+	1229.1.1 = {
+		birth = yes
+	}
+	1295.1.1 = {
+		death = yes
+	}
+}
+
+1000007081 = {
+	name = "Bagus"
+	dynasty = 1000028314 # Hayati
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007080
+	1258.1.1 = {
+		birth = yes
+	}
+	1319.1.1 = {
+		death = yes
+	}
+}
+
+1000007082 = {
+	name = "Dwi"
+	dynasty = 1000028314 # Hayati
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007081
+	1286.1.1 = {
+		birth = yes
+	}
+	1349.1.1 = {
+		death = yes
+	}
+}
+
+1000007083 = {
+	name = "Darma"
+	dynasty = 1000028314 # Hayati
+	religion = hindu
+	trait = kshatriya
+	culture = banjar
+	father = 1000007082
+	1317.1.1 = {
+		birth = yes
+	}
+	1383.1.1 = {
+		death = yes
+	}
+}

@@ -1,0 +1,252 @@
+###########################################
+#                                         #
+# New Immersive Events v. 0.01c           #
+# Rulership Events - Trait/opinion        #
+# ID NIE.225-NIE.230					  #
+# Written and designed by wielkicien      #
+# Bugfixed and edited by Erbkaiser		  #
+#                                         #
+###########################################
+
+namespace = NIE
+
+### Solo events
+
+#Approval for thrift
+character_event = {
+	id = NIE.226
+	title = "EVTNAMENIE.226"
+	desc = EVTDESC_NIE_226
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		stewardship = 14
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_event_opinion }
+		ai = no
+	}
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_stewardship }
+	}
+
+	option = {
+		name = EVTOPTA_NIE_226
+		custom_tooltip = { text = NIE_thrift_opinion }
+		tooltip_info = stewardship
+		wealth = 50
+		any_vassal = {
+				limit = {
+					OR = {
+						is_republic = yes
+						is_merchant_republic = yes
+						stewardship = 14
+					}
+				}
+				opinion = {
+					modifier = opinion_approves_thrift
+					who = ROOT
+					years = 2
+				}
+				wealth = -10
+		}
+	}
+}
+###
+#Approval for scholarship
+character_event = {
+	id = NIE.227
+	title = "EVTNAMENIE.227"
+	desc = EVTDESC_NIE_227
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		learning = 14
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_event_opinion }
+		ai = no
+	}
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_scholarship }
+	}
+
+	option = {
+		name = EVTOPTA_NIE_227
+		custom_tooltip = { text = NIE_scholarship_opinion }
+		tooltip_info = learning
+		piety = 30
+		prestige = 30
+		any_vassal = {
+				limit = {
+					learning = 14
+				}
+				opinion = {
+					modifier = opinion_approves_scholarship
+					who = ROOT
+					years = 2
+				}
+		}
+	}
+}
+###
+#Approval for diplomacy
+character_event = {
+	id = NIE.228
+	title = "EVTNAMENIE.228"
+	desc = EVTDESC_NIE_228
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		diplomacy = 14
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_event_opinion }
+		ai = no
+	}
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_diplomacy }
+	}
+
+	option = {
+		name = EVTOPTA_NIE_228
+		custom_tooltip = { text = NIE_diplomacy_opinion }
+		tooltip_info = diplomacy
+		piety = 30
+		prestige = 30
+		any_vassal = {
+				limit = {
+					diplomacy = 14
+				}
+				opinion = {
+					modifier = opinion_approves_diplomacy
+					who = ROOT
+					years = 2
+				}
+		}
+	}
+}
+###
+#Approval for martial
+character_event = {
+	id = NIE.229
+	title = "EVTNAMENIE.229"
+	desc = EVTDESC_NIE_229
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		martial = 14
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_event_opinion }
+		ai = no
+	}
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_martial }
+	}
+
+	option = {
+		name = EVTOPTA_NIE_229
+		custom_tooltip = { text = NIE_martial_opinion }
+		tooltip_info = martial
+		prestige = 50
+		any_vassal = {
+				limit = {
+					martial = 14
+				}
+				opinion = {
+					modifier = opinion_approves_martial
+					who = ROOT
+					years = 2
+				}
+		}
+	}
+}
+###
+#Approval for wealth
+character_event = {
+	id = NIE.230
+	title = "EVTNAMENIE.230"
+	desc = EVTDESC_NIE_230
+	picture = GFX_evt_throne_room
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		wealth = 250
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_event_opinion }
+		ai = no
+	}
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_wealth }
+	}
+
+	option = {
+		name = EVTOPTA_NIE_230
+		custom_tooltip = { text = NIE_wealth_opinion }
+		tooltip_info = stewardship
+		prestige = 50
+		any_vassal = {
+				limit = {
+					wealth = 0
+				}
+				opinion = {
+					modifier = opinion_approves_wealth
+					who = ROOT
+					years = 2
+				}
+		}
+		any_vassal = {
+				limit = {
+					NOT = {
+						wealth = 0
+					}
+				}
+				opinion = {
+					modifier = opinion_disapproves_wealth
+					who = ROOT
+					years = 2
+				}
+		}
+	}
+}

@@ -1,0 +1,681 @@
+### File contains society specific clothing.
+spriteTypes = {
+
+	# monastic_order_benedictine
+
+	# Male
+
+	spriteType = {
+		name = "GFX_society_benedictine_male_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_benedictine_male_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_benedictine_male_clothing_front"
+		textureFile = "gfx/characters/societies/mom_benedictine_male_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	#spriteType = {
+	#	name = "GFX_society_benedictine_male_headgear_front"
+	#	textureFile = "gfx/characters/societies/mom_benedictine_male_headgear_front.dds"
+	#	noOfFrames = 2
+	#}
+
+	portraitType = {
+		name = "PORTRAIT_society_benedictine_clothing_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_benedictine = yes
+				OR = {
+					blg_wear_christian_monastic_clothing = yes
+					blg_portrait_monk = yes
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_benedictine_male_clothing_behind:c0"
+			"GFX_empty:c1"
+			"GFX_society_benedictine_male_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_empty:c4"
+			"GFX_dummy:c5"
+			"GFX_clothing_monk_male_hair:c7"
+		}
+
+		# Tonsure hairstyle, no beard
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+
+		headgear_that_hides_hair = { 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 }
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_benedictine_clothing_male_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+
+				blg_society_benedictine = yes
+				portrait_in_command = no
+				OR = {
+					blg_wear_society_clothing_off = no
+					portrait_has_trait = on_pilgrimage
+				}
+				NAND = {
+					blg_portrait_theocracy = yes
+					portrait_tier = king
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_benedictine_male_clothing_behind:c0"
+			"GFX_society_benedictine_male_clothing_front:c2"
+		}
+	}
+
+	# Female
+
+	spriteType = {
+		name = "GFX_society_benedictine_female_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_benedictine_female_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_benedictine_female_clothing_front"
+		textureFile = "gfx/characters/societies/mom_benedictine_female_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_benedictine_female_headgear_behind"
+		textureFile = "gfx/characters/societies/mom_benedictine_female_headgear_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_benedictine_female_headgear_front"
+		textureFile = "gfx/characters/societies/mom_benedictine_female_headgear_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_benedictine_clothing_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_benedictine = yes
+				OR = {
+					blg_wear_christian_monastic_clothing = yes
+					blg_portrait_nun = yes
+					portrait_has_trait = on_pilgrimage
+					portrait_has_trait = blgquesting
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_benedictine_female_clothing_behind:c0"
+			"GFX_society_benedictine_female_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_society_benedictine_female_headgear_behind:c1"
+			"GFX_society_benedictine_female_headgear_front:c5"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			32 = {
+				0 = { always = yes }
+			}
+			33 = {
+				0 = { always = yes }
+			}
+		}
+
+		headgear_that_hides_hair = { 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 }
+	}
+
+	# monastic_order_dominican
+
+	# Male
+
+	spriteType = {
+		name = "GFX_society_dominican_male_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_dominican_male_clothing_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_dominican_male_clothing_front"
+		textureFile = "gfx/characters/societies/mom_dominican_male_clothing_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_dominican_male_headgear_behind"
+		textureFile = "gfx/characters/societies/mom_dominican_male_headgear_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_dominican_male_headgear_front"
+		textureFile = "gfx/characters/societies/mom_dominican_male_headgear_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_dominican_male_headgear_mid"
+		textureFile = "gfx/characters/societies/mom_dominican_male_headgear_mid.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_dominican_clothing_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_dominican = yes
+				OR = {
+					blg_wear_christian_monastic_clothing = yes
+					blg_portrait_monk = yes
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_dominican_male_clothing_behind:c0"
+			"GFX_society_dominican_male_clothing_front:c2"
+			"GFX_society_dominican_male_headgear_behind:c1"
+			"GFX_society_dominican_male_headgear_front:c5"
+			"GFX_society_dominican_male_headgear_mid:c3"
+			"GFX_clothing_monk_male_hair:c7"
+		}
+
+		# Tonsure hairstyle, no beard
+		allow_property_values = {
+			3 = {
+				1 = { always = yes }
+			}
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+
+		headgear_that_hides_hair = { 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 }
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_dominican_clothing_male_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+
+				blg_society_dominican = yes
+				portrait_in_command = no
+				OR = {
+					blg_wear_society_clothing_off = no
+					portrait_has_trait = on_pilgrimage
+				}
+				NAND = {
+					blg_portrait_theocracy = yes
+					portrait_tier = king
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_dominican_male_clothing_behind:c0"
+			"GFX_society_dominican_male_clothing_front:c2"
+		}
+
+		allow_property_values = {
+			3 = {
+				1 = { always = yes }
+			}
+		}
+	}
+
+	# Female
+
+	spriteType = {
+		name = "GFX_society_dominican_female_headgear_behind"
+		textureFile = "gfx/characters/societies/mom_dominican_female_headgear_behind.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_dominican_female_headgear_front"
+		textureFile = "gfx/characters/societies/mom_dominican_female_headgear_front.dds"
+		noOfFrames = 2
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_dominican_clothing_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				blg_society_dominican = yes
+				OR = {
+					blg_wear_christian_monastic_clothing = yes
+					blg_portrait_nun = yes
+					portrait_has_trait = on_pilgrimage
+					portrait_has_trait = blgquesting
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_benedictine_female_clothing_behind:c0"
+			"GFX_society_benedictine_female_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_society_dominican_female_headgear_behind:c1"
+			"GFX_society_dominican_female_headgear_front:c5"
+			"GFX_empty:c7"
+		}
+
+		allow_property_values = {
+			19 = {
+				0 = { always = yes }
+			}
+			32 = {
+				0 = { always = yes }
+			}
+			33 = {
+				0 = { always = yes }
+			}
+		}
+
+		headgear_that_hides_hair = { 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 }
+	}
+
+	# monastic_order_orthodox
+
+	# Male
+
+	spriteType = {
+		name = "GFX_society_orthodox_monk_male_clothing_behind"
+		textureFile = "gfx/characters/societies/mom_orthodox_monk_male_clothing_back.dds"
+		noOfFrames = 5
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_orthodox_monk_male_clothing_front"
+		textureFile = "gfx/characters/societies/mom_orthodox_monk_male_clothing_front.dds"
+		noOfFrames = 5
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_orthodox_monk_male_headgear_behind"
+		textureFile = "gfx/characters/societies/mom_orthodox_monk_male_headgear_behind.dds"
+		noOfFrames = 5
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_orthodox_monk_male_headgear_front"
+		textureFile = "gfx/characters/societies/mom_orthodox_monk_male_headgear_front.dds"
+		noOfFrames = 5
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_orthodox_clothing_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_orthodox = yes
+				OR = {
+					blg_wear_christian_monastic_clothing = yes
+					blg_portrait_monk = yes
+					portrait_has_trait = on_pilgrimage
+					portrait_has_trait = blgquesting
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_orthodox_monk_male_clothing_behind:c0"
+			"GFX_society_orthodox_monk_male_clothing_front:c2"
+			"GFX_society_orthodox_monk_male_headgear_behind:c1"
+			"GFX_society_orthodox_monk_male_headgear_front:c5"
+			"GFX_empty:c3"
+			"GFX_empty:c7"
+		}
+
+		# Ranks, slot 3 is for Greek orthodox, 4 for Russian orthodox.
+		allow_property_values = {
+			3 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+					blg_portrait_byzantine = yes
+				}
+				4 = {
+					portrait_society_rank = 4
+					blg_portrait_byzantine = no
+				}
+			}
+			5 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+					blg_portrait_east_slavic = no
+				}
+				4 = {
+					portrait_society_rank = 4
+					blg_portrait_east_slavic = yes
+				}
+			}
+			19 = {
+				0 = { always = yes }
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_orthodox_clothing_male_lay"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 9000
+				portrait_clothing = yes
+				portrait_age > child
+
+				OR = {
+					blg_society_orthodox = yes
+					blg_society_monophysite = yes
+				}
+				portrait_in_command = no
+				blg_wear_society_clothing_off = no
+			}
+		}
+
+		layer = {
+			"GFX_society_orthodox_monk_male_clothing_behind:c0"
+			"GFX_society_orthodox_monk_male_clothing_front:c2"
+		}
+
+		# Ranks, slot 3 is for Greek orthodox, 4 for Russian orthodox.
+		allow_property_values = {
+			3 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+					blg_portrait_byzantine = yes
+				}
+				4 = {
+					portrait_society_rank = 4
+					blg_portrait_byzantine = no
+				}
+			}
+		}
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_monophysite_clothing_male"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = no
+
+				blg_society_monophysite = yes
+				OR = {
+					blg_wear_christian_monastic_clothing = yes
+					blg_portrait_monk = yes
+					portrait_has_trait = on_pilgrimage
+					portrait_has_trait = blgquesting
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_orthodox_monk_male_clothing_behind:c0"
+			"GFX_empty:c1"
+			"GFX_society_orthodox_monk_male_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_empty:c4"
+			"GFX_empty:c5"
+			"GFX_empty:c7"
+		}
+
+		# Ranks, slot 3 is for Greek orthodox, 4 for Russian orthodox.
+		allow_property_values = {
+			3 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+					blg_portrait_byzantine = yes
+				}
+				4 = {
+					portrait_society_rank = 4
+					blg_portrait_byzantine = no
+				}
+			}
+			31 = {
+				0 = { always = yes }
+			}
+		}
+	}
+
+	# Female
+
+	spriteType = {
+		name = "GFX_society_orthodox_monk_female_headgear_behind"
+		textureFile = "gfx/characters/societies/mom_orthodox_monk_female_headgear_behind.dds"
+		noOfFrames = 5
+		norefcount = yes
+	}
+
+	spriteType = {
+		name = "GFX_society_orthodox_monk_female_headgear_front"
+		textureFile = "gfx/characters/societies/mom_orthodox_monk_female_headgear_front.dds"
+		noOfFrames = 5
+		norefcount = yes
+	}
+
+	portraitType = {
+		name = "PORTRAIT_society_orthodox_clothing_female"
+		effectFile = "gfx/FX/portrait.lua"
+
+		weight = {
+			additive_modifier = {
+				value = 10000
+				portrait_clothing = yes
+				portrait_age > child
+				portrait_is_female = yes
+
+				OR = {
+					blg_society_orthodox = yes
+					blg_society_monophysite = yes
+				}
+				OR = {
+					blg_wear_christian_monastic_clothing = yes
+					blg_portrait_nun = yes
+					portrait_has_trait = on_pilgrimage
+					portrait_has_trait = blgquesting
+				}
+				OR = {
+					portrait_in_command = no
+					blg_portrait_theocracy = yes
+				}
+			}
+		}
+
+		layer = {
+			"GFX_society_benedictine_female_clothing_behind:c0"
+			"GFX_society_benedictine_female_clothing_front:c2"
+			"GFX_empty:c3"
+			"GFX_society_orthodox_monk_female_headgear_behind:c1"
+			"GFX_society_orthodox_monk_female_headgear_front:c5"
+			"GFX_empty:c7"
+		}
+
+		# Hide hair, ranks, slot 3 is for Greek orthodox, 4 for Russian orthodox.
+		allow_property_values = {
+			5 = {
+				0 = {
+					portrait_society_rank = 1
+				}
+				1 = {
+					portrait_society_rank = 2
+				}
+				2 = {
+					portrait_society_rank = 3
+				}
+				3 = {
+					portrait_society_rank = 4
+					blg_portrait_east_slavic = no
+				}
+				4 = {
+					portrait_society_rank = 4
+					blg_portrait_east_slavic = yes
+				}
+			}
+			19 = {
+				0 = { always = yes }
+			}
+			32 = {
+				0 = { always = yes }
+			}
+			33 = {
+				0 = { always = yes }
+			}
+		}
+
+		headgear_that_hides_hair = { 0 1 2 3 4 }
+	}
+}

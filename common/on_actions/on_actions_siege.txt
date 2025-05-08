@@ -1,0 +1,6 @@
+on_siege_over_loc_chars = {
+    events = {
+        ckrpg_siege.0001
+    }
+}
+

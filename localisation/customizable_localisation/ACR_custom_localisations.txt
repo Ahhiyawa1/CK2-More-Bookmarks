@@ -1,0 +1,759 @@
+# example locale for ACR
+defined_text = {
+	name = GetDruidDryad
+
+	text = {
+		trigger = { is_female = no }
+		localisation_key = druid_lowercase
+	}
+	text = {
+		trigger = { is_female = yes }
+		localisation_key = dryad_lowercase
+	}
+}
+
+defined_text = {
+	name = GetDruidDryadCap
+
+	text = {
+		trigger = { is_female = no }
+		localisation_key = DRUID
+	}
+	text = {
+		trigger = { is_female = yes }
+		localisation_key = DRYAD
+	}
+}
+
+defined_text = {
+	name = GetRandomAncientThinker
+
+	text = {
+		trigger = { always = yes }
+		localisation_key = AncientThinker_Aristotle
+	}
+	text = {
+		trigger = { always = yes }
+		localisation_key = AncientThinker_Plato
+	}
+	text = {
+		trigger = { always = yes }
+		localisation_key = AncientThinker_Socrates
+	}
+	text = {
+		trigger = { always = yes }
+		localisation_key = AncientThinker_Xenophon
+	}
+	text = {
+		trigger = { always = yes }
+		localisation_key = AncientThinker_Pliny
+	}
+	text = {
+		trigger = { always = yes }
+		localisation_key = AncientThinker_Epicurious
+	}
+	text = {
+		trigger = { always = yes }
+		localisation_key = AncientThinker_Zeno
+	}
+	text = {
+		trigger = { always = yes }
+		localisation_key = AncientThinker_Posidonius
+	}
+	text = {
+		trigger = { always = yes }
+		localisation_key = AncientThinker_Seneca
+	}
+}
+
+defined_text = {
+	name = GetReligiousHeadElectionBody
+
+	text = {
+		trigger = { religion_head = { religion_group = christian } }
+		localisation_key = acr_college_of_cardinals
+	}
+
+	text = {
+		trigger = { religion_head = { religion = egyptian_pagan_reformed } }
+		localisation_key = XROJ_COUNCIL
+	}
+
+	text = {
+		trigger = { religion_head = { religion_openly_celtic_or_reformed_trigger = yes } }
+		localisation_key = acr_circle_of_druids
+	}
+
+	text = {
+		trigger = { religion_head = { religion = britannic_pagan } }
+		localisation_key = CIRCLE_OF_DRYADS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = baltic_pagan_reformed } }
+		localisation_key = COLLEGE_OF_BALTIC_CARDINALS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = tengri_pagan_reformed } }
+		localisation_key = COLLEGE_OF_TENGRI_CARDINALS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = finnish_pagan_reformed } }
+		localisation_key = COLLEGE_OF_FINNISH_CARDINALS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = aztec_pagan_reformed } }
+		localisation_key = COLLEGE_OF_AZTEC_CARDINALS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = slavic_pagan_reformed } }
+		localisation_key = COLLEGE_OF_SLAVIC_CARDINALS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = west_african_pagan_reformed } }
+		localisation_key = COLLEGE_OF_WEST_AFRICAN_CARDINALS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = zun_pagan_reformed } }
+		localisation_key = COLLEGE_OF_ZUN_CARDINALS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = zoroastrian } }
+		localisation_key = COLLEGE_OF_ZOROASTRIAN_CARDINALS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = jewish } }
+		localisation_key = COLLEGE_OF_JEWISH_CARDINALS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = promethean_pagan } }
+		localisation_key = COLLEGE_OF_PROMETHEAN_CARDINALS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = norse_pagan_reformed } }
+		localisation_key = COLLEGE_OF_NORSE_CARDINALS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = bon_pagan_reformed } }
+		localisation_key = COLLEGE_OF_BON_CARDINALS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = manichaean } }
+		localisation_key = COLLEGE_OF_MANICHAEAN_CARDINALS
+	}
+}
+
+defined_text = {
+	name = GetReligiousHeadElectorTitle
+
+	text = {
+		trigger = { religion_head = { religion_group = christian } }
+		localisation_key = acr_cardinal
+	}
+	text = {
+		trigger = { religion_head = { religion = egyptian_pagan_reformed } }
+		localisation_key = title_xroj_council_member
+	}
+	text = {
+		trigger = { religion_head = { religion_openly_celtic_or_reformed_trigger = yes } }
+		localisation_key = acr_druid_of_the_circle
+	}
+	text = {
+		trigger = { religion_head = { religion = britannic_pagan } }
+		localisation_key = acr_dryad_of_the_circle
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = baltic_pagan_reformed } }
+		localisation_key = title_baltic_pagan_reformed_cardinal
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = tengri_pagan_reformed } }
+		localisation_key = title_tengri_pagan_reformed_cardinal
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = finnish_pagan_reformed } }
+		localisation_key = title_finnish_pagan_reformed_cardinal
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = aztec_pagan_reformed } }
+		localisation_key = title_aztec_pagan_reformed_cardinal
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = slavic_pagan_reformed } }
+		localisation_key = title_slavic_pagan_reformed_cardinal
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = west_african_pagan_reformed } }
+		localisation_key = title_west_african_pagan_reformed_cardinal
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = zun_pagan_reformed } }
+		localisation_key = title_zun_pagan_reformed_cardinal
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = zoroastrian } }
+		localisation_key = title_zoroastrian_cardinal
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = jewish } }
+		localisation_key = title_jewish_cardinal
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = promethean_pagan } }
+		localisation_key = title_promethean_pagan_cardinal
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = norse_pagan_reformed } }
+		localisation_key = title_norse_pagan_reformed_cardinal
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = bon_pagan_reformed } }
+		localisation_key = title_bon_pagan_reformed_cardinal
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = manichaean } }
+		localisation_key = title_manichaean_cardinal
+	}
+}
+
+defined_text = {
+	name = GetReligiousHeadTitle
+
+	text = {
+		trigger = { religion_head = { religion_group = christian } }
+		localisation_key = acr_pope
+	}
+
+	text = {
+		trigger = { religion_head = { religion = egyptian_pagan_reformed } }
+		localisation_key = PARAGON_XROJ
+	}
+
+	text = {
+		trigger = { religion_head = { religion_openly_celtic_or_reformed_trigger = yes } }
+		localisation_key = ARCHDRUID
+	}
+
+	text = {
+		trigger = { religion_head = { religion = britannic_pagan } }
+		localisation_key = ARCHDRYAD
+	}
+	
+	text = {
+		trigger = {
+			religion_head = {
+				religion = baltic_pagan_reformed
+				is_female = no
+			}
+		}
+		localisation_key = FIRST_VAIDILA
+	}
+	
+	text = {
+		trigger = {
+			religion_head = {
+				religion = baltic_pagan_reformed
+				is_female = yes
+			}
+		}
+		localisation_key = FIRST_VAIDILUTE
+	}
+	
+	text = {
+		trigger = {
+			religion_head = {
+				religion = tengri_pagan_reformed
+				is_female = no
+			}
+		}
+		localisation_key = TENGRIKUT
+	}
+	
+	text = {
+		trigger = {
+			religion_head = {
+				religion = tengri_pagan_reformed
+				is_female = yes
+			}
+		}
+		localisation_key = TENGRIKIZ
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = finnish_pagan_reformed } }
+		localisation_key = TIETAJA
+	}
+	
+	text = {
+		trigger = {
+			religion_head = {
+				religion = aztec_pagan_reformed
+				is_female = no
+			}
+		}
+		localisation_key = TLATOANI
+	}
+	
+	text = {
+		trigger = {
+			religion_head = {
+				religion = aztec_pagan_reformed
+				is_female = yes
+			}
+		}
+		localisation_key = CIHUATLATOANI
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = slavic_pagan_reformed } }
+		localisation_key = VELKY_VOLHV
+	}
+	
+	text = {
+		trigger = {
+			religion_head = {
+				religion = west_african_pagan_reformed
+				is_female = no
+			}
+		}
+		localisation_key = HEAD_AFRICAN_PRIEST
+	}
+	
+	text = {
+		trigger = {
+			religion_head = {
+				religion = west_african_pagan_reformed
+				is_female = yes
+			}
+		}
+		localisation_key = HEAD_AFRICAN_PRIESTESS
+	}
+	
+	text = {
+		trigger = {
+			religion_head = {
+				religion = zun_pagan_reformed
+				is_female = no
+			}
+		}
+		localisation_key = HEAD_ZUN_PRIEST
+	}
+	
+	text = {
+		trigger = {
+			religion_head = {
+				religion = zun_pagan_reformed
+				is_female = yes
+			}
+		}
+		localisation_key = HEAD_ZUN_PRIESTESS
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = zoroastrian } }
+		localisation_key = HEAD_MOABADAN_MOABAD
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = jewish } }
+		localisation_key = HEAD_KOHEN_GADOL
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = promethean_pagan } }
+		localisation_key = SCHOLARCH
+	}
+	
+	text = {
+		trigger = {
+			religion_head = {
+				religion = norse_pagan_reformed
+				is_female = no
+			}
+		}
+		localisation_key = FYLKIR
+	}
+	
+	text = {
+		trigger = {
+			religion_head = {
+				religion = norse_pagan_reformed
+				is_female = yes
+			}
+		}
+		localisation_key = FYLKJA
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = bon_pagan_reformed } }
+		localisation_key = HEAD_DALAI_LAMA
+	}
+	
+	text = {
+		trigger = { religion_head = { religion = manichaean } }
+		localisation_key = YAMAG
+	}
+}
+
+defined_text = {
+	name = GetCelticWarriorLodge
+
+	text = {
+		trigger = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
+		localisation_key = warrior_lodge_celtic_random
+	}
+	text = {
+		trigger = {
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+		localisation_key = warrior_lodge_celtic_real
+	}
+}
+defined_text = {
+	name = GetCelticWarriorLodgeDesc
+
+	text = {
+		trigger = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
+		localisation_key = warrior_lodge_celtic_desc_random
+	}
+	text = {
+		trigger = {
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+		localisation_key = warrior_lodge_celtic_desc_real
+	}
+}
+
+defined_text = {
+	name = GetBritannicWarriorLodge
+
+	text = {
+		trigger = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
+		localisation_key = warrior_lodge_britannic_random
+	}
+	text = {
+		trigger = {
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+		localisation_key = warrior_lodge_britannic_real
+	}
+}
+defined_text = {
+	name = GetBritannicWarriorLodgeDesc
+
+	text = {
+		trigger = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
+		localisation_key = warrior_lodge_britannic_desc_random
+	}
+	text = {
+		trigger = {
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+		localisation_key = warrior_lodge_britannic_desc_real
+	}
+}
+
+defined_text = {
+	name = GetTitanWarriorLodge
+
+	text = {
+		trigger = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
+		localisation_key = warrior_lodge_titan_random
+	}
+	text = {
+		trigger = {
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+		localisation_key = warrior_lodge_titan_real
+	}
+}
+defined_text = {
+	name = GetTitanWarriorLodgeDesc
+
+	text = {
+		trigger = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
+		localisation_key = warrior_lodge_titan_desc_random
+	}
+	text = {
+		trigger = {
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+		localisation_key = warrior_lodge_titan_desc_real
+	}
+}
+
+defined_text = {
+	name = GetEgyptianWarriorLodge
+
+	text = {
+		trigger = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
+		localisation_key = warrior_lodge_egyptian_random
+	}
+	text = {
+		trigger = {
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+		localisation_key = warrior_lodge_egyptian_real
+	}
+}
+defined_text = {
+	name = GetEgyptianWarriorLodgeDesc
+
+	text = {
+		trigger = {
+			has_alternate_start_parameter = { key = religion_names value = random }
+		}
+		localisation_key = warrior_lodge_egyptian_desc_random
+	}
+	text = {
+		trigger = {
+			NOT = { has_alternate_start_parameter = { key = religion_names value = random } }
+		}
+		localisation_key = warrior_lodge_egyptian_desc_real
+	}
+}
+
+defined_text = {
+	name = GetKemeticHeadTitle
+
+	text = {
+		localisation_key = AAI_PHARAOH
+		trigger = {
+			has_global_flag = acr_aai_pharaoh
+		}
+	}
+	fallback_text = {
+		localisation_key = PARAGON_XROJ
+	}
+}
+
+defined_text = {
+	name = GetImmortalMysticIntroduction
+
+	# diplomacy mystic
+	text = {
+		localisation_key = EVTDSC_RIP_21019_DIPLOMACY_A
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_idunn
+				religion = ROOT
+			}
+		}
+	}
+	text = {
+		localisation_key = EVTDSC_RIP_21019_DIPLOMACY_B
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_idunn
+				NOT = { religion = ROOT }
+			}
+		}
+	}
+	text = {
+		localisation_key = immortal_mystic_nestor_a
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_nestor
+				religion = ROOT
+			}
+		}
+	}
+	text = {
+		localisation_key = immortal_mystic_nestor_b
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_nestor
+				NOT = { religion = ROOT }
+			}
+		}
+	}
+
+	# martial mystic
+	text = {
+		localisation_key = immortal_mystic_spartan_a
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_spartan
+				religion = ROOT
+			}
+		}
+	}
+	text = {
+		localisation_key = immortal_mystic_spartan_b
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_spartan
+				NOT = { religion = ROOT }
+			}
+		}
+	}
+	text = {
+		localisation_key = EVTDSC_RIP_21019_MARTIAL_A
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_amina
+				religion = ROOT
+			}
+		}
+	}
+	text = {
+		localisation_key = EVTDSC_RIP_21019_MARTIAL_B
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_amina
+				NOT = { religion = ROOT }
+			}
+		}
+	}
+	text = {
+		localisation_key = immortal_mystic_gaul_a
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_gaul
+				religion = ROOT
+			}
+		}
+	}
+	text = {
+		localisation_key = immortal_mystic_gaul_b
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_gaul
+				NOT = { religion = ROOT }
+			}
+		}
+	}
+
+	# intrigue mystic
+	text = {
+		localisation_key = EVTDSC_RIP_21019_INTRIGUE_A
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_hunchback
+				religion = ROOT
+			}
+		}
+	}
+	text = {
+		localisation_key = EVTDSC_RIP_21019_INTRIGUE_B
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_hunchback
+				NOT = { religion = ROOT }
+			}
+		}
+	}
+	text = {
+		localisation_key = immortal_mystic_cleopatra_a
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_cleopatra
+				religion = ROOT
+			}
+		}
+	}
+	text = {
+		localisation_key = immortal_mystic_cleopatra_b
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_cleopatra
+				NOT = { religion = ROOT }
+			}
+		}
+	}
+
+	# learning mystic
+	text = {
+		localisation_key = EVTDSC_RIP_21019_LEARNING_A
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_achala
+				religion = ROOT
+			}
+		}
+	}
+	text = {
+		localisation_key = EVTDSC_RIP_21019_LEARNING_B
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_achala
+				NOT = { religion = ROOT }
+			}
+		}
+	}
+	text = {
+		localisation_key = immortal_mystic_lucan_a
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_lucan
+				religion = ROOT
+			}
+		}
+	}
+	text = {
+		localisation_key = immortal_mystic_lucan_b
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_lucan
+				NOT = { religion = ROOT }
+			}
+		}
+	}
+	text = {
+		localisation_key = immortal_mystic_seneca_a
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_seneca
+				religion = ROOT
+			}
+		}
+	}
+	text = {
+		localisation_key = immortal_mystic_seneca_b
+		trigger = {
+			event_target:eternal_life_mystic = {
+				has_character_flag = immortal_mystic_seneca
+				NOT = { religion = ROOT }
+			}
+		}
+	}
+}

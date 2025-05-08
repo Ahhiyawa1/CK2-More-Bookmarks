@@ -1,0 +1,47 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+;;;;;;;;;;;;;;
+NIE.206;Weak ruler;;;;;;;;;;;;;x
+EVTNAMENIE.206;Your court physician proposes to help with your weakness;;;;;;;;;;;;;x
+EVTDESC_NIE_206;Your court physician [physician_target_weak_ruler.GetFirstName] visited you in your private chambers in order to talk about his new invention. It appears that [physician_target_weak_ruler.GetSheHe] brew a potion that could help you remove your weakness. 'It's entirely safe' - [physician_target_weak_ruler.GetSheHe] assures you. It's only up to you if you'd be willing to try it out.;;;;;;;;;;;;;x
+EVTOPTA_NIE_206;Give it to me!;;;;;;;;;;;;;x
+EVTOPTB_NIE_206;I don't feel like risking my life to your drug!;;;;;;;;;;;;;x
+EVTOPTC_NIE_206;I can't change the way I've been created.;;;;;;;;;;;;;x
+EVTOPTD_NIE_206;Actually I can think of another idea…;;;;;;;;;;;;;x
+accept_help;You accept to drink the potion.;;;;;;;;;;;;;x
+reject_help_physician;You refuse to drink the potion.;;;;;;;;;;;;;x
+reject_help_zealous;You refuse to drink the potion.;;;;;;;;;;;;;x
+propose_another;You try to make another potion.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.207;Lunatic ruler;;;;;;;;;;;;;x
+EVTNAMENIE.207;You are falling down into madness…;;;;;;;;;;;;;x
+EVTDESC_NIE_207;It has got you. Madness. The darkness, the abyss… It stares at you. You have nowhere to run. Nowhere to hide. You must run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run. Run.;;;;;;;;;;;;;x
+EVTOPTA_NIE_207;Hahahahaha!;;;;;;;;;;;;;x
+EVTOPTB_NIE_207;Hehehehehe!;;;;;;;;;;;;;x
+EVTOPTC_NIE_207;Hohohohoho!;;;;;;;;;;;;;x
+EVTOPTD_NIE_207;Put and end to it!;;;;;;;;;;;;;x
+hahaha_ha;Hahahahaha!;;;;;;;;;;;;;x
+hehehe_he;Hehehehehe!;;;;;;;;;;;;;x
+hohoho_ho;Hohohohoho!;;;;;;;;;;;;;x
+stop_this_madness;End this event.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.208;Possessed ruler;;;;;;;;;;;;;x
+EVTNAMENIE.208;Exorcism of [Root.GetTitledName];;;;;;;;;;;;;x
+EVTDESC_NIE_208;You are being approached by [From.GetLordSpiritualName] [Root.job_spiritual.GetTitledFirstName]. [Root.job_spiritual.GetSheHe] brings a number of followers with [Root.job_spiritual.GetHerHim], all of them looking angry at you. '[Root.GetTitledName]!' - [Root.job_spiritual.GetSheHe] shouts. 'You are abomination to the [Root.Religion.GetGroupName] world. You shall be exorcised, in order to remove your malfunction from it!';;;;;;;;;;;;;x
+EVTOPTA_NIE_208;Do your duty…;;;;;;;;;;;;;x
+EVTOPTB_NIE_208;I won't let you do anything!;;;;;;;;;;;;;x
+EVTOPTC_NIE_208;I would rather see you dead!;;;;;;;;;;;;;x
+let_exorcism;Agree to partake in exorcism.;;;;;;;;;;;;;x
+dont_let_exorcism;Don't let him do anything to you.;;;;;;;;;;;;;x
+kill_him;Kill that stupid priest.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.209;Excommunication;;;;;;;;;;;;;x
+EVTNAMENIE.209;You've been excommunicated;;;;;;;;;;;;;x
+EVTDESC_NIE_209;Because of your recent actions the Pope has decided to excommunicate you. You've been separated from the society of all Christians, excluded from the bosom of the Holy Mother the Church in Heaven and on earth.;;;;;;;;;;;;;x
+EVTOPTA_NIE_209;Well then, that was expected.;;;;;;;;;;;;;x
+get_excommunicated;You've been excommunicated.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.210;Exorcism failed;;;;;;;;;;;;;x
+EVTNAMENIE.210;Exorcism failed;;;;;;;;;;;;;x
+EVTDESC_NIE_210;The ritual is complete, exorcism is done. Yet nothing happens.  [Root.job_spiritual.GetTitledFirstName] seems to loose his temper,  [Root.job_spiritual.GetSheHe] doesn't now what to say. Either you were not possessed at all or you've somehow overpowered  [Root.job_spiritual.GetHerHis] rites. That doesn't matter now, as you order everyone to get out of your sight. You are left alone in the darkness.;;;;;;;;;;;;;x
+EVTOPTA_NIE_210;So what now?;;;;;;;;;;;;;x
+exorcism_failed;Exorcism didn't work.;;;;;;;;;;;;;x

@@ -1,0 +1,155 @@
+300.9.1={ # Unclear
+	holder=1000001882 #Micheon
+	liege = k_goryeo
+}
+331.1.1={
+	holder=1000001884 #Gogugwon
+}
+371.1.1={
+	holder=1000001885 #Sosurim
+}
+384.1.1={
+	holder=1000001886 #Gogugyang
+}
+391.6.1={
+	holder=1000001887 #Gwanggaeto the Great
+}
+413.1.1={
+	holder=1000001888 #Jangsu
+}
+491.1.1={
+	holder=1000001890 #Munjamyeong
+}
+519.1.1={
+	holder=1000001891 #Anjang
+}
+531.1.1={
+	holder=1000001892 #Anwon
+}
+545.4.1={
+	holder=1000001893 #Yangwon
+}
+559.1.1={
+	holder=1000001899 #Pyeongwon
+}
+590.1.1={
+	holder=1000001900 #Yeongyang
+}
+618.1.1={
+	holder=1000001901 #Yeongnyu
+}
+642.1.1={
+	holder=1000001914 #Bojang
+}
+668.1.1 = {
+	holder = 0
+	liege = 0
+}
+
+# Huangtou dynasty (placeholders)
+750.1.1 = {
+	holder = 1000000823 # Shefuchen
+}
+784.1.1 = {
+	holder = 1000000824 # Xibaxiong
+}
+813.1.1 = {
+	holder = 1000000825 # Hongji
+}
+844.1.1 = {
+	holder = 1000000826 # Zhengge
+}
+866.1.1 = {
+	holder = 1000000827 # Mohuba
+}
+895.1.1 = {
+	holder = 1000000828 # Sibu
+}
+
+# Liao dynasty
+907.1.1 = {
+	active = yes
+	#historical_nomad = yes
+	holder = 194325 # Abaoji/Taizu
+	law = succ_primogeniture
+}
+926.9.6 = {
+	holder = 194326 # Deguang/Taizong
+}
+947.5.18 = {
+	holder = 194328 # Ruan/Shizong
+}
+951.10.7 = {
+	holder = 194329 # Jing/Muzong
+}
+969.3.12 = {
+	holder = 194330 # Xian/Jingzong
+}
+982.10.13 = {
+	holder = 194331 # Longxu/Shengzong
+}
+1031.6.25 = {
+	holder = 194332 # Zongzhen/Xingzong
+}
+1055.8.28 = {
+	holder = 194333 # Hongji/Daozong
+}
+1101.2.12 = {
+	holder = 194334 # Yanxi/Tianzuo
+}
+
+# End of Liao - to Jin
+1125.3.26 = {
+	liege = e_golden_river
+	holder=217731 #Wuqimai
+}
+1135.2.9 = {
+	holder = 217732 #Hela
+}
+1150.1.9 = {
+	holder = 217734 #Digunai
+}
+1161.12.15 = {
+	holder = 217735 #Wulu
+}
+1189.1.20 = {
+	holder = 217736 #Madage
+}
+1208.12.29 = {
+	holder = 217737 #Yongji
+}
+1213.9.11 = {
+	holder = 217738 #Wudubu
+}
+
+# Dong-Xia
+1215.1.1 = {
+	liege = k_dongxia
+	holder = 1000000985 # Puxian Wannu
+}
+# Under the Mongols
+1233.7.1 = {
+	holder = 166855 # Temüge; end of Dong-Xia
+	liege = k_mongolia
+}
+1246.8.24 = {
+	holder = 166954 # Tacar, grandson of Temüge and grandfather of Nayan; his grandfather dies this date
+}
+1260.1.1 = {
+	holder = 166955 # Ajul, father of Nayan; his father dies this date
+}
+1264.8.21 = {
+	liege = k_liaoning
+}
+1273.1.1 = {
+	holder = 166956 # Nayan; his father dies this date
+}
+1287.7.16 = {
+	holder = 1000002239 # Hong Jungi (a.k.a. Hong Dagu)
+}
+1291.1.1 = {
+	holder = 1000002274 # Hong Gyu
+}
+1316.6.23 = {
+	holder = 1000002276 # Hong Gyeong
+}

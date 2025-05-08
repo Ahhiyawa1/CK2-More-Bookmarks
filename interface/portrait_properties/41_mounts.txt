@@ -1,0 +1,313 @@
+# p41 Mounts
+41 = {
+	0 = { # 0 - blank
+		factor = 1
+		modifier = {
+			factor = 100
+			NOR = {
+				blg_in_combat = yes
+				blg_travelling = yes
+				death_reason = death_execution_horses
+				death_reason = death_accident_bear
+				death_reason = death_execution_bear
+				death_reason = death_accident_tiger
+				death_reason = death_execution_tiger
+				death_reason = death_execution_lion
+			}
+		}
+
+		modifier = {
+			factor = 100
+			OR = {
+				is_at_sea = yes
+				siege = { is_attacker = no }
+				blg_travelling_arrived = yes
+			}
+		}
+	}
+
+	1 = { # a - Dragon
+		factor = 100
+		trigger = {
+			blg_mount_dragon_black = yes
+		}
+	}
+
+	2 = { # b - Dragon
+		factor = 100
+		trigger = {
+			blg_mount_dragon_red = yes
+		}
+	}
+
+	3 = { # c - Dragon
+		factor = 100
+		trigger = {
+			blg_mount_dragon_white = yes
+		}
+	}
+
+	4 = { # d - Dragon
+		factor = 100
+		trigger = {
+			blg_mount_dragon_green = yes
+		}
+	}
+
+	5 = { # e - Dragon
+		factor = 100
+		trigger = {
+			blg_mount_dragon_blue = yes
+		}
+	}
+
+	6 = { # f - Dragon
+		factor = 100
+		trigger = {
+			blg_mount_dragon_silver = yes
+		}
+	}
+
+	7 = { # g - Dragon
+		factor = 100
+		trigger = {
+			blg_mount_dragon_bronze = yes
+		}
+	}
+
+	8 = { # h - Dragon
+		factor = 100
+		trigger = {
+			blg_mount_dragon_gold = yes
+		}
+	}
+
+	9 = { # i - Unique Horse
+		factor = 100
+		trigger = {
+			blg_mount_horse_black = yes
+		}
+	}
+
+	10 = { # j - Unique Horse
+		factor = 100
+		trigger = {
+			blg_mount_horse_white = yes
+		}
+	}
+
+	11 = { # k - Horse Armor
+		factor = 100
+		trigger = {
+			blg_mount_horse_armor_3 = yes
+		}
+	}
+
+	12 = { # l - Horse Armor
+		factor = 100
+		trigger = {
+			blg_mount_horse_armor_2 = yes
+		}
+	}
+
+	13 = { # m - Wolf
+		factor = 100
+		trigger = {
+			blg_mount_wolf = yes
+		}
+	}
+
+	14 = { # n - Bear
+		factor = 100
+		trigger = {
+			OR = {
+				death_reason = death_accident_bear
+				death_reason = death_execution_bear
+				blg_mount_bear = yes
+			}
+		}
+	}
+
+	15 = { # o - Polar Bear
+		factor = 100
+		trigger = {
+			blg_mount_polarbear = yes
+		}
+	}
+
+	16 = { # p - Reindeer
+		factor = 100
+		trigger = {
+			blg_mount_reindeer = yes
+		}
+	}
+
+	17 = { # q - Tiger
+		factor = 100
+		trigger = {
+			OR = {
+				death_reason = death_accident_tiger
+				death_reason = death_execution_tiger
+				blg_mount_tiger = yes
+			}
+		}
+	}
+
+	18 = { # r - Lion
+		factor = 100
+		trigger = {
+			OR = {
+				death_reason = death_execution_lion
+				blg_mount_lion = yes
+			}
+		}
+	}
+
+	19 = { # s - Yak
+		factor = 100
+		trigger = {
+			blg_mount_yak = yes
+		}
+	}
+
+	20 = { # t - Lizard
+		factor = 100
+		trigger = {
+			blg_mount_lizard = yes
+		}
+	}
+
+	21 = { # u - Elephant
+		factor = 100
+		trigger = {
+			OR = {
+				any_unit = {
+					blg_unit_elephants = yes
+					OR = {
+						left_flank_leader = { character = ROOT }
+						center_flank_leader = { character = ROOT }
+						right_flank_leader = { character = ROOT }
+					}
+				}
+
+				liege = {
+					any_unit = {
+						blg_unit_elephants = yes
+						OR = {
+							left_flank_leader = { character = ROOT }
+							center_flank_leader = { character = ROOT }
+							right_flank_leader = { character = ROOT }
+						}
+					}
+				}
+
+				blg_mount_elephant = yes
+			}
+		}
+	}
+
+	22 = { # v - Camel
+		factor = 100
+		trigger = {
+			OR = {
+				any_unit = {
+					blg_unit_camel = yes
+					OR = {
+						left_flank_leader = { character = ROOT }
+						center_flank_leader = { character = ROOT }
+						right_flank_leader = { character = ROOT }
+					}
+				}
+
+				liege = {
+					any_unit = {
+						blg_unit_camel = yes
+						OR = {
+							left_flank_leader = { character = ROOT }
+							center_flank_leader = { character = ROOT }
+							right_flank_leader = { character = ROOT }
+						}
+					}
+				}
+
+				blg_mount_camel = yes
+			}
+		}
+	}
+
+	23 = { # w - Horse Armor
+		factor = 100
+		trigger = {
+			OR = {
+				any_unit = {
+					blg_unit_knights = yes
+					OR = {
+						left_flank_leader = { character = ROOT }
+						center_flank_leader = { character = ROOT }
+						right_flank_leader = { character = ROOT }
+					}
+				}
+
+				liege = {
+					any_unit = {
+						blg_unit_knights = yes
+						OR = {
+							left_flank_leader = { character = ROOT }
+							center_flank_leader = { character = ROOT }
+							right_flank_leader = { character = ROOT }
+						}
+					}
+				}
+
+				blg_mount_horse_armor_1 = yes
+			}
+		}
+	}
+
+	24 = { # x - Horse
+		factor = 100
+		trigger = {
+			blg_mount_horse_charger = yes
+		}
+	}
+
+	25 = { # y - Horse
+		factor = 100
+		trigger = {
+			OR = {
+				has_character_modifier = nomad_warhorse
+				death_reason = death_execution_horses
+				blg_mount_horse_destrier = yes
+			}
+		}
+	}
+
+	26 = { # z - Horse
+		factor = 100
+		trigger = {
+			OR = {
+				any_unit = {
+					blg_unit_horse = yes
+					OR = {
+						left_flank_leader = { character = ROOT }
+						center_flank_leader = { character = ROOT }
+						right_flank_leader = { character = ROOT }
+					}
+				}
+
+				liege = {
+					any_unit = {
+						blg_unit_horse = yes
+						OR = {
+							left_flank_leader = { character = ROOT }
+							center_flank_leader = { character = ROOT }
+							right_flank_leader = { character = ROOT }
+						}
+					}
+				}
+
+				blg_mount_horse = yes
+			}
+		}
+	}
+}

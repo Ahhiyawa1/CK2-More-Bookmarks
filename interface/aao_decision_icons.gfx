@@ -1,0 +1,73 @@
+spriteTypes = {
+	
+	
+	spriteType = {
+		name = "GFX_ai_steal_artifact"
+		texturefile = "gfx\\interface\\decision_icon_borrow_money.dds"
+	}
+	spriteType = {
+		name = "GFX_request_ita_crown"
+		texturefile = "gfx\\interface\\decision_icon_form_new_kingdom.dds"
+	}
+	spriteType = {
+		name = "GFX_rebuild_sampo"
+		texturefile = "gfx\\interface\\decision_icon_employ_a_smith.dds"
+	}
+	spriteType = {
+		name = "GFX_fragments_search"
+		texturefile = "gfx\\interface\\decision_icon_catholic_pilgrimage.dds"
+	}
+	spriteType = {
+		name = "GFX_ai_fragments_search"
+		texturefile = "gfx\\interface\\decision_icon_catholic_pilgrimage.dds"
+	}
+	spriteType = {
+		name = "GFX_forge_meteorite"
+		texturefile = "gfx\\interface\\decision_icon_employ_a_smith.dds"
+	}
+	spriteType = {
+		name = "GFX_become_herald_of_zun"
+		texturefile = "gfx\\interface\\decision_icon_hold_zun_feast.dds"
+	}
+	spriteType = {
+		name = "GFX_create_herbal_medicine"
+		texturefile = "gfx\\interface\\decision_icon_aquire_ingredients.dds"
+	}
+	spriteType = {
+		name = "GFX_african_blessing"
+		texturefile = "gfx\\interface\\decision_icon_ancestor_worship.dds"
+	}
+	spriteType = {
+		name = "GFX_open_jerusalem"
+		texturefile = "gfx\\interface\\decision_icon_catholic_pilgrimage.dds"
+	}
+	spriteType = {
+		name = "GFX_jerusalem_change_pilgrims"
+		texturefile = "gfx\\interface\\decision_icon_catholic_pilgrimage.dds"
+	}
+	spriteType = {
+		name = "GFX_face_fafnir"
+		texturefile = "gfx\\interface\\decision_icon_hold_a_furusiyya.dds"
+	}
+	spriteType = {
+		name = "GFX_face_fafnir_ai"
+		texturefile = "gfx\\interface\\decision_icon_hold_a_furusiyya.dds"
+	}
+	spriteType = {
+		name = "GFX_carve_out_eye"
+		texturefile = "gfx\\interface\\decision_icon_ancestor_worship.dds"
+	}
+	spriteType = {
+		name = "GFX_gaze_into_eye"
+		texturefile = "gfx\\interface\\decision_icon_convert_to_liege_religion.dds"
+	}
+	spriteType = {
+		name = "GFX_open_pandoras_box"
+		texturefile = "gfx\\interface\\decision_icon_sky_burial_decision.dds"
+	}
+	spriteType = {
+		name = "GFX_joyeuse_restore_carolingian_empire"
+		texturefile = "gfx\\interface\\decision_icon_form_new_empire.dds"
+	}
+	
+}

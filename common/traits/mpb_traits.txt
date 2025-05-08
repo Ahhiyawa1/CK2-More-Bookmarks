@@ -1,0 +1,153 @@
+pagan_branch_5_animist = {
+	opposites = {
+		pagan_branch_1
+		pagan_branch_2
+		pagan_branch_3
+		pagan_branch_6_theist
+		pagan_branch_7_intellect
+		pagan_branch_8_might
+		pagan_branch_9_egoist
+		pagan_branch_10_altruist
+	}
+	religious_branch = pagan_reformation
+
+	same_opinion_if_same_religion = 25
+	command_modifier = {
+		morale_defence = 0.1
+	}
+	opposite_opinion = -5
+	
+	ai_zeal = -20
+	
+	potential = { has_religion_feature = religion_no_leader }
+	random = no
+	religious = yes
+	ruler_designer_cost = 0
+}
+pagan_branch_6_theist = {
+	opposites = {
+		pagan_branch_1
+		pagan_branch_2
+		pagan_branch_3
+		pagan_branch_5_animist
+		pagan_branch_7_intellect
+		pagan_branch_8_might
+		pagan_branch_9_egoist
+		pagan_branch_10_altruist
+	}
+	religious_branch = pagan_reformation
+
+	stewardship = 1
+	health = 1
+	opposite_opinion = -5
+	
+	ai_zeal = 100
+	
+	potential = { has_religion_feature = religion_no_leader }
+	random = no
+	religious = yes
+	ruler_designer_cost = 0
+}
+pagan_branch_7_intellect = {
+	opposites = {
+		pagan_branch_1
+		pagan_branch_2
+		pagan_branch_3
+		pagan_branch_5_animist
+		pagan_branch_6_theist
+		pagan_branch_8_might
+		pagan_branch_9_egoist
+		pagan_branch_10_altruist
+	}
+	religious_branch = pagan_reformation
+
+	learning = 1
+	command_modifier = {
+		random = 0.1
+	}
+	opposite_opinion = -5
+	
+	ai_rationality = 30
+	
+	potential = { has_religion_feature = religion_no_leader }
+	random = no
+	religious = yes
+	ruler_designer_cost = 0
+}
+pagan_branch_8_might = {
+	opposites = {
+		pagan_branch_1
+		pagan_branch_2
+		pagan_branch_3
+		pagan_branch_5_animist
+		pagan_branch_6_theist
+		pagan_branch_7_intellect
+		pagan_branch_9_egoist
+		pagan_branch_10_altruist
+	}
+	religious_branch = pagan_reformation
+
+	martial = 1
+	command_modifier = {
+		damage = 0.1
+	}
+	opposite_opinion = -5
+	
+	ai_rationality = -10
+	
+	potential = { has_religion_feature = religion_no_leader }
+	random = no
+	religious = yes
+	ruler_designer_cost = 0
+}
+pagan_branch_9_egoist = {
+	opposites = {
+		pagan_branch_1
+		pagan_branch_2
+		pagan_branch_3
+		pagan_branch_5_animist
+		pagan_branch_6_theist
+		pagan_branch_7_intellect
+		pagan_branch_8_might
+		pagan_branch_10_altruist
+	}
+	religious_branch = pagan_reformation
+
+	intrigue = 1
+	monthly_character_wealth = 0.1
+	greedy_opinion = 5
+	opposite_opinion = -5
+	
+	ai_honor = -30
+	
+	potential = { has_religion_feature = religion_no_leader }
+	random = no
+	religious = yes
+	ruler_designer_cost = 0
+}
+pagan_branch_10_altruist = {
+	opposites = {
+		pagan_branch_1
+		pagan_branch_2
+		pagan_branch_3
+		pagan_branch_5_animist
+		pagan_branch_6_theist
+		pagan_branch_7_intellect
+		pagan_branch_8_might
+		pagan_branch_9_egoist
+	}
+	religious_branch = pagan_reformation
+
+	vassal_opinion = 5
+	kind_opinion = 5
+	diplomacy = 1
+	opposite_opinion = -5
+	
+	ai_honor = 30
+	
+	potential = { has_religion_feature = religion_no_leader }
+	random = no
+	religious = yes
+	ruler_designer_cost = 0
+}
+##############################

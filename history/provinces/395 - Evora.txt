@@ -1,0 +1,27 @@
+# County Title
+title = c_evora
+# Settlements
+max_settlements = 4
+b_evora = castle
+b_portalegre = city
+b_avis = temple
+# Misc
+culture = romano_hispanic
+religion = catholic
+800.1.1 = { culture = visigothic }
+################################################################################
+# History
+################################################################################
+939.1.1 = { culture = andalusian_arabic religion = sunni } 
+1161.1.1 = { culture = portuguese religion = catholic } 
+################################################################################
+# 395 - Évora
+################################################################################
+
+################################################################################
+# b_marvao = castle
+# b_castelodevide = castle
+# b_crato = temple
+# b_monforte = castle
+# b_ouguela = castle
+################################################################################

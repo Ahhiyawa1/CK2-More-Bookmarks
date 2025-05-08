@@ -1,0 +1,94 @@
+1356001 = {
+    name = "Alcetid"
+	culture = atlantean
+}
+
+1356002 = {
+    name = "Apollonid"
+	culture = atlantean
+}
+
+1356003 = {
+    name = "Aratid"
+	culture = atlantean
+}
+
+1356004 = {
+    name = "Helladid"
+	culture = atlantean
+}
+
+1356005 = {
+    name = "Omirid"
+	culture = atlantean
+}
+
+1356006 = {
+    name = "Peithid"
+	culture = atlantean
+}
+
+1356007 = {
+    name = "Peneid"
+	culture = atlantean
+}
+
+1356008 = {
+    name = "Philonid"
+	culture = atlantean
+}
+
+1356009 = {
+    name = "Proctid"
+	culture = atlantean
+}
+
+1356010 = {
+    name = "Pytheid"
+	culture = atlantean
+}
+
+1356011 = {
+    name = "Sosiclid"
+	culture = atlantean
+}
+
+1356012 = {
+    name = "Therid"
+	culture = atlantean
+} 
+
+1356013 = {
+    name = "Theronid"
+	culture = atlantean
+}
+
+1356014 = {
+    name = "Timolid"
+	culture = atlantean
+}
+
+1356015 = {
+    name = "Xenonid"
+	culture = atlantean
+}
+
+1356016 = {
+    name = "Zagreid"
+	culture = atlantean
+}
+
+1356017 = {
+    name = "Zosimid"
+	culture = atlantean
+}
+
+1356018 = {
+    name = "Zoticid"
+	culture = atlantean
+}
+
+1356019 = {
+    name = "Atlantid"
+	culture = atlantean
+}

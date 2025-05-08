@@ -1,0 +1,2514 @@
+namespace = ke_ancrel_m
+
+# Give Investiture w/ Pagan Papal (Theocracies)
+character_event = {
+	id = ke_ancrel_m.1
+	is_triggered_only = yes
+	hide_window = yes
+	
+	has_global_flag = acr_pagan_papal
+	ai = yes
+	
+	trigger = {
+		is_law_potential = succ_catholic_bishopric
+		controls_religion = no
+		NOR = {
+			is_law_potential = succ_papal_succession
+			has_law = succ_catholic_bishopric
+			religion = britannic_pagan
+		}
+	}
+	
+	immediate = {
+		any_demesne_title = {
+			add_law = {
+				law = succ_catholic_bishopric
+				cooldown = no
+				opinion_effect = no
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+	}
+}
+
+# Give Investiture w/ Pagan Papal (Other)
+character_event = {
+	id = ke_ancrel_m.2
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			has_global_flag = acr_pagan_papal
+			has_global_flag = acr_pagan_antipopes
+		}
+		is_law_potential = investiture_law_0
+		NOR = {
+			has_law = investiture_law_0
+			has_law = investiture_law_1
+			religion = catholic
+			religion = fraticelli
+		}
+	}
+	
+	immediate = {
+		any_demesne_title = {
+			limit = {
+				NOR = {
+					has_law = investiture_law_0
+					has_law = investiture_law_1
+				}
+			}
+			add_law = {
+				law = investiture_law_0
+				cooldown = no
+				opinion_effect = no
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+	}
+}
+
+# Non-Christian Free Investiture Succession
+character_event = {
+	id = ke_ancrel_m.3
+	is_triggered_only = yes
+	hide_window = yes
+	
+	only_rulers = yes
+	
+	trigger = {
+		OR = {
+			has_global_flag = acr_pagan_papal
+			has_global_flag = acr_pagan_antipopes
+		}
+		is_theocracy = yes
+		trigger_if = {
+			limit = { cl_kinich_uses_autocephaly = no }
+			crownlaw_title = { has_law = investiture_law_1 }
+		}
+		has_character_flag = acr_invested_priest
+		persistent_event_target:pagan_papal_priest_successor = {
+			is_alive = yes
+			trigger_if = {
+				limit = {
+					cl_kinich_uses_autocephaly = yes
+					#ROOT = { controls_religion = yes }
+					ROOT = { rightful_religious_head = ROOT }
+				}
+				is_landed = yes
+				is_theocracy = yes
+			}
+			trigger_else = {
+				is_ruler = no
+			}
+			religion = ROOT
+			trigger_if = {
+				limit = {
+					OR = {
+						religion_group = christian
+						religion_group = zoroastrian_group
+						religion_openly_bon_or_reformed_trigger = yes
+						religion = jain
+						religion = buddhist
+						religion = taoist
+						persistent_event_target:religion_title = { has_title_flag = kcc_is_monastic_religion }
+					}
+				}
+				is_betrothed = no
+				is_married = no
+			}
+		}
+	}
+	
+	fail_trigger_effect = {
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = acr_pagan_papal
+					has_global_flag = acr_pagan_antipopes
+				}
+				has_character_flag = acr_invested_priest
+			}
+			persistent_event_target:pagan_papal_priest_successor = {
+				clr_character_flag = acr_invested_successor
+				clear_persistent_event_target = pagan_papal_invested_priest
+			}
+			clear_persistent_event_target = pagan_papal_priest_successor
+			clr_character_flag = acr_invested_priest
+		}
+	}
+	
+	immediate = {
+		clr_character_flag = acr_invested_priest
+		liege = { save_event_target_as = invested_liege_01 }
+		persistent_event_target:pagan_papal_priest_successor = {
+			acr_druid_dryad_investiture_effect = yes
+			if = {
+				limit = {
+					cl_kinich_uses_autocephaly = yes
+					#ROOT = { controls_religion = yes }
+					ROOT = { rightful_religious_head = ROOT }
+					has_character_flag = acr_invested_priest
+				}
+				save_event_target_as = old_priest
+				clr_character_flag = acr_invested_priest
+				persistent_event_target:pagan_papal_priest_successor = {
+					clr_character_flag = acr_invested_successor
+					clear_persistent_event_target = pagan_papal_invested_priest
+					save_event_target_as = new_priest
+				}
+				clear_persistent_event_target = pagan_papal_priest_successor
+				liege = { save_event_target_as = invested_liege_02 }
+				any_demesne_title = { gain_title = event_target:new_priest }
+				event_target:new_priest = {
+					opinion = {
+						modifier = opinion_investiture
+						who = event_target:invested_liege_02
+					}
+					any_demesne_title = { add_claim = event_target:old_priest }
+					if = {
+						limit = {
+							NOT = { vassal_of = event_target:invested_liege_02 }
+						}
+						set_defacto_liege = event_target:invested_liege_02
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					cl_kinich_uses_autocephaly = yes
+					#ROOT = { controls_religion = yes }
+					ROOT = { rightful_religious_head = ROOT }
+				}
+				save_event_target_as = old_priest
+				if = {
+					limit = { religion_allows_female_temple_holders = no }
+
+					create_random_priest = {
+						random_traits = yes
+						religion = event_target:old_priest
+						culture = event_target:old_priest
+						female = no
+						min_age = 25
+						max_age = 45
+						attributes = {
+							learning = 10
+						}
+					}
+				}
+				else_if = {
+					limit = { religion_allows_male_temple_holders = no }
+
+					create_random_priest = {
+						random_traits = yes
+						religion = event_target:old_priest
+						culture = event_target:old_priest
+						female = yes
+						min_age = 25
+						max_age = 45
+						attributes = {
+							learning = 10
+						}
+					}
+				}
+				else = {
+					random_list = {
+						50 = {
+							create_random_priest = {
+								random_traits = yes
+								religion = event_target:old_priest
+								culture = event_target:old_priest
+								female = yes
+								min_age = 25
+								max_age = 45
+								attributes = {
+									learning = 10
+								}
+							}
+						}
+						50 = {
+							create_random_priest = {
+								random_traits = yes
+								religion = event_target:old_priest
+								culture = event_target:old_priest
+								female = no
+								min_age = 25
+								max_age = 45
+								attributes = {
+									learning = 10
+								}
+							}
+						}
+					}
+				}
+				new_character = {
+					save_event_target_as = new_priest
+					if = {
+						limit = { has_any_lifestyle_trait = no }
+						random_list = {
+							20 = { add_trait = scholar }
+							20 = { add_trait = theologian }
+							20 = { add_trait = mystic }
+							20 = { add_trait = game_master }
+							20 = { add_trait = gardener }
+						}
+					}
+					if = {
+						limit = {
+							NOR = {
+								trait = poet
+								trait = erudite
+								trait = physician
+							}
+						}
+						random_list = {
+							30 = { }
+							20 = { change_learning = 1 }
+							20 = { add_trait = poet }
+							20 = { add_trait = erudite }
+							10 = { add_trait = physician }
+						}
+					}
+				}
+				any_demesne_title = { gain_title = event_target:new_priest }
+			}
+			clr_character_flag = acr_invested_successor
+			clear_persistent_event_target = pagan_papal_invested_priest
+			ROOT = {
+				any_demesne_title = { gain_title = PREVPREV }
+				
+				any_artifact = {
+					transfer_artifact = {
+						from = ROOT
+						to = PREVPREV
+					}
+				}
+
+				transfer_scaled_wealth = {
+					to = PREVPREV
+					value = all
+				}
+			
+			}
+			opinion = {
+				modifier = opinion_investiture
+				who = event_target:invested_liege_01
+			}
+			if = {
+				limit = {
+					NOT = { vassal_of = event_target:invested_liege_01 }
+				}
+				set_defacto_liege = event_target:invested_liege_01
+			}
+		}
+		clear_persistent_event_target = pagan_papal_priest_successor
+	}
+	
+	weight_multiplier = {
+		days = 1
+	}
+}
+
+# Non-Christian Free Investiture Maintainence
+character_event = {
+	id = ke_ancrel_m.4
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = { has_character_flag = acr_invested_priest }
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					is_theocracy = no
+					trigger_if = {
+						limit = { cl_kinich_uses_autocephaly = no }
+						crownlaw_title = { NOT = { has_law = investiture_law_1 } }
+					}
+					persistent_event_target:pagan_papal_priest_successor = {
+						OR = {
+							is_alive = no
+							trigger_if = {
+								limit = {
+									cl_kinich_uses_autocephaly = yes
+									#ROOT = { controls_religion = yes }
+									ROOT = { rightful_religious_head = ROOT }
+								}
+								OR = {
+									is_ruler = no
+									is_theocracy = no
+								}
+							}
+							trigger_else = {
+								is_landed = yes
+							}
+							NOT = { religion = ROOT }
+							is_incapable = yes
+							prisoner = yes
+							trigger_if = {
+								limit = {
+									OR = {
+										religion_group = christian
+										religion_group = zoroastrian_group
+										religion_openly_bon_or_reformed_trigger = yes
+										religion = jain
+										religion = buddhist
+										religion = taoist
+										persistent_event_target:religion_title = { has_title_flag = kcc_is_monastic_religion }
+									}
+								}
+								OR = {
+									is_betrothed = yes
+									is_married = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			persistent_event_target:pagan_papal_priest_successor = {
+				clr_character_flag = acr_invested_successor
+				clear_persistent_event_target = pagan_papal_invested_priest
+			}
+			clear_persistent_event_target = pagan_papal_priest_successor
+			clr_character_flag = acr_invested_priest
+			if = {
+				limit = {
+					is_theocracy = yes
+					trigger_if = {
+						limit = { cl_kinich_uses_autocephaly = no }
+						crownlaw_title = { has_law = investiture_law_1 }
+					}
+				}
+				liege = { character_event = { id = ke_ancrel_m.5 } }
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+	}
+}
+
+character_event = { #Let liege know FROM needs new successor
+	id = ke_ancrel_m.5
+	desc = EVTDESC_ke_ancrel_m.5
+	picture = GFX_evt_heretic
+
+	notification = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+# Give old titles to invested successor if you become head of religion
+character_event = {
+	id = ke_ancrel_m.6
+	is_triggered_only = yes
+	hide_window = yes
+	
+	only_rulers = yes
+	
+	trigger = {
+		OR = {
+			has_global_flag = acr_pagan_papal
+			has_global_flag = acr_pagan_antipopes
+		}
+		is_theocracy = yes
+		#controls_religion = yes
+		rightful_religious_head = ROOT
+		current_heir = {
+			trigger_if = {
+				limit = { crownlaw_title = { has_law = investiture_law_1 } }
+				has_character_flag = acr_invested_priest
+				persistent_event_target:pagan_papal_priest_successor = {
+					is_alive = yes
+					is_ruler = no
+					religion = ROOT
+					trigger_if = {
+						limit = {
+							OR = {
+								religion_group = christian
+								religion_group = zoroastrian_group
+								religion_openly_bon_or_reformed_trigger = yes
+								religion = jain
+								religion = buddhist
+								religion = taoist
+								persistent_event_target:religion_title = { has_title_flag = kcc_is_monastic_religion }
+							}
+						}
+						is_betrothed = no
+						is_married = no
+					}
+				}
+			}
+			trigger_else = {
+				crownlaw_title = { has_law = investiture_law_0 }
+				OR = {
+					any_liege = {
+						has_character_flag = acr_nominated_priest
+						NOT = { has_character_flag = acr_is_nominating_priest }
+						persistent_event_target:pagan_papal_priest_nominee = {
+							is_alive = yes
+							is_ruler = no
+							religion = ROOT
+							trigger_if = {
+								limit = {
+									OR = {
+										religion_group = christian
+										religion_group = zoroastrian_group
+										religion_openly_bon_or_reformed_trigger = yes
+										religion = jain
+										religion = buddhist
+										religion = taoist
+										persistent_event_target:religion_title = { has_title_flag = kcc_is_monastic_religion }
+									}
+								}
+								is_betrothed = no
+								is_married = no
+							}
+						}
+					}
+					any_liege = {
+						has_character_flag = acr_nominated_priest
+						has_character_flag = acr_is_nominating_priest
+						persistent_event_target:pagan_papal_priest_backup_nominee = {
+							is_alive = yes
+							is_ruler = no
+							religion = ROOT
+							trigger_if = {
+								limit = {
+									OR = {
+										religion_group = christian
+										religion_group = zoroastrian_group
+										religion_openly_bon_or_reformed_trigger = yes
+										religion = jain
+										religion = buddhist
+										religion = taoist
+										persistent_event_target:religion_title = { has_title_flag = kcc_is_monastic_religion }
+									}
+								}
+								is_betrothed = no
+								is_married = no
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		liege = { save_event_target_as = invested_liege_01 }
+		current_heir = {
+			liege = { save_event_target_as = invested_liege_02 }
+			save_event_target_as = acr_new_pope
+			if = {
+				limit = { crownlaw_title = { has_law = investiture_law_1 } }
+				clr_character_flag = acr_invested_priest
+				persistent_event_target:pagan_papal_priest_successor = {
+					acr_druid_dryad_investiture_effect = yes
+					clr_character_flag = acr_invested_successor
+					clear_persistent_event_target = pagan_papal_invested_priest
+					event_target:acr_new_pope = {
+						any_demesne_title = { gain_title = PREVPREV }
+					}
+					opinion = {
+						modifier = opinion_investiture
+						who = event_target:invested_liege_02
+					}
+					if = {
+						limit = {
+							NOT = { vassal_of = event_target:invested_liege_02 }
+						}
+						set_defacto_liege = event_target:invested_liege_02
+					}
+					any_demesne_title = { add_claim = event_target:acr_new_pope }
+				}
+				clear_persistent_event_target = pagan_papal_priest_successor
+			}
+			else = {
+				random_character = {
+					limit = {
+						has_character_flag = acr_nominated_priest
+						is_liege_or_above_of = event_target:acr_new_pope
+					}
+					preferred_limit = { independent = yes }
+					save_event_target_as = invested_liege_03
+				}
+				event_target:invested_liege_03 = {
+					if = {
+						limit = { has_character_flag = acr_is_nominating_priest }
+						persistent_event_target:pagan_papal_priest_backup_nominee = {
+							acr_druid_dryad_investiture_effect = yes
+							clr_character_flag = acr_nominated_successor
+							clear_persistent_event_target = pagan_papal_priest_nominator
+							event_target:acr_new_pope = {
+								any_demesne_title = { gain_title = PREVPREV }
+								
+								any_artifact = {
+									transfer_artifact = {
+										from = event_target:acr_new_pope
+										to = PREVPREV
+									}
+								}
+
+								transfer_scaled_wealth = {
+									to = PREVPREV
+									value = all
+								}
+							
+							}
+							opinion = {
+								modifier = opinion_investiture
+								who = event_target:invested_liege_03
+							}
+							if = {
+								limit = {
+									NOT = { vassal_of = event_target:invested_liege_02 }
+								}
+								set_defacto_liege = event_target:invested_liege_02
+							}
+						}
+						clear_persistent_event_target = pagan_papal_priest_backup_nominee
+					}
+					else = {
+						persistent_event_target:pagan_papal_priest_nominee = {
+							acr_druid_dryad_investiture_effect = yes
+							clr_character_flag = acr_nominated_successor
+							clear_persistent_event_target = pagan_papal_priest_nominator
+							event_target:acr_new_pope = {
+								any_demesne_title = { gain_title = PREVPREV }
+								
+								any_artifact = {
+									transfer_artifact = {
+										from = event_target:acr_new_pope
+										to = PREVPREV
+									}
+								}
+
+								transfer_scaled_wealth = {
+									to = PREVPREV
+									value = all
+								}
+							
+							}
+							opinion = {
+								modifier = opinion_investiture
+								who = event_target:invested_liege_03
+							}
+							if = {
+								limit = {
+									NOT = { vassal_of = event_target:invested_liege_02 }
+								}
+								set_defacto_liege = event_target:invested_liege_02
+							}
+						}
+						clear_persistent_event_target = pagan_papal_priest_nominee
+						clr_character_flag = acr_nominated_priest
+					}
+				}
+			}
+		}
+		any_demesne_title = {
+			gain_title = event_target:acr_new_pope
+		}
+		
+		any_artifact = {
+			transfer_artifact = {
+				from = ROOT
+				to = event_target:acr_new_pope
+			}
+		}
+
+		transfer_scaled_wealth = {
+			to = event_target:acr_new_pope
+			value = all
+		}
+		
+		event_target:acr_new_pope = {
+			if = {
+				limit = {
+					NOT = { vassal_of = event_target:invested_liege_01 }
+				}
+				set_defacto_liege = event_target:invested_liege_01
+			}
+			if = {
+				limit = { has_minor_title = title_druid_circle_member }
+				remove_title = title_druid_circle_member
+			}
+			else_if = {
+				limit = { has_minor_title = title_dryad_circle_member }
+				remove_title = title_dryad_circle_member
+			}
+			else_if = {
+				limit = { has_minor_title = title_collegium_member }
+				remove_title = title_collegium_member
+			}
+			else_if = {
+				limit = { has_minor_title = title_xroj_council_member }
+				remove_title = title_xroj_council_member
+			}
+			else_if = {
+				limit = { has_minor_title = title_baltic_pagan_reformed_cardinal }
+				remove_title = title_baltic_pagan_reformed_cardinal
+			}
+			else_if = {
+				limit = { has_minor_title = title_tengri_pagan_reformed_cardinal }
+				remove_title = title_tengri_pagan_reformed_cardinal
+			}
+			else_if = {
+				limit = { has_minor_title = title_finnish_pagan_reformed_cardinal }
+				remove_title = title_finnish_pagan_reformed_cardinal
+			}
+			else_if = {
+				limit = { has_minor_title = title_aztec_pagan_reformed_cardinal }
+				remove_title = title_aztec_pagan_reformed_cardinal
+			}
+			else_if = {
+				limit = { has_minor_title = title_slavic_pagan_reformed_cardinal }
+				remove_title = title_slavic_pagan_reformed_cardinal
+			}
+			else_if = {
+				limit = { has_minor_title = title_west_african_pagan_reformed_cardinal }
+				remove_title = title_west_african_pagan_reformed_cardinal
+			}
+			else_if = {
+				limit = { has_minor_title = title_zun_pagan_reformed_cardinal }
+				remove_title = title_zun_pagan_reformed_cardinal
+			}
+			else_if = {
+				limit = { has_minor_title = title_zoroastrian_cardinal }
+				remove_title = title_zoroastrian_cardinal
+			}
+			else_if = {
+				limit = { has_minor_title = title_jewish_cardinal }
+				remove_title = title_jewish_cardinal
+			}
+			else_if = {
+				limit = { has_minor_title = title_promethean_pagan_cardinal }
+				remove_title = title_promethean_pagan_cardinal
+			}
+			else_if = {
+				limit = { has_minor_title = title_norse_pagan_reformed_cardinal }
+				remove_title = title_norse_pagan_reformed_cardinal
+			}
+			else_if = {
+				limit = { has_minor_title = title_bon_pagan_reformed_cardinal }
+				remove_title = title_bon_pagan_reformed_cardinal
+			}
+			else_if = {
+				limit = { has_minor_title = title_manichaean_cardinal }
+				remove_title = title_manichaean_cardinal
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+	}
+}
+
+# Non-Christian Papal Investiture Succession
+character_event = {
+	id = ke_ancrel_m.7
+	is_triggered_only = yes
+	hide_window = yes
+	
+	only_rulers = yes
+	
+	trigger = {
+		OR = {
+			has_global_flag = acr_pagan_papal
+			has_global_flag = acr_pagan_antipopes
+		}
+		is_theocracy = yes
+		crownlaw_title = { has_law = investiture_law_0 }
+		OR = {
+			any_liege = {
+				has_character_flag = acr_nominated_priest
+				NOT = { has_character_flag = acr_is_nominating_priest }
+				persistent_event_target:pagan_papal_priest_nominee = {
+					is_alive = yes
+					is_ruler = no
+					religion = ROOT
+					trigger_if = {
+						limit = {
+							OR = {
+								religion_group = christian
+								religion_group = zoroastrian_group
+								religion_openly_bon_or_reformed_trigger = yes
+								religion = jain
+								religion = buddhist
+								religion = taoist
+								persistent_event_target:religion_title = { has_title_flag = kcc_is_monastic_religion }
+							}
+						}
+						is_betrothed = no
+						is_married = no
+					}
+				}
+			}
+			any_liege = {
+				has_character_flag = acr_nominated_priest
+				has_character_flag = acr_is_nominating_priest
+				persistent_event_target:pagan_papal_priest_backup_nominee = {
+					is_alive = yes
+					is_ruler = no
+					religion = ROOT
+					trigger_if = {
+						limit = {
+							OR = {
+								religion_group = christian
+								religion_group = zoroastrian_group
+								religion_openly_bon_or_reformed_trigger = yes
+								religion = jain
+								religion = buddhist
+								religion = taoist
+								persistent_event_target:religion_title = { has_title_flag = kcc_is_monastic_religion }
+							}
+						}
+						is_betrothed = no
+						is_married = no
+					}
+				}
+			}
+		}
+	}
+	
+	immediate = {
+		liege = { save_event_target_as = invested_liege_01 }
+		##any_liege = {
+		##	limit = { has_character_flag = acr_nominated_priest }
+		##	set_character_flag = acr_compensate_for_no_random_liege_scope
+		##}
+		random_character = {
+			limit = {
+				#has_character_flag = acr_compensate_for_no_random_liege_scope
+				has_character_flag = acr_nominated_priest
+				is_liege_or_above_of = ROOT
+			}
+			preferred_limit = { independent = yes }
+			save_event_target_as = invested_liege_02
+		}
+		##any_liege = {
+		##	limit = { has_character_flag = acr_compensate_for_no_random_liege_scope }
+		##	clr_character_flag = acr_compensate_for_no_random_liege_scope
+		##}
+		#if = {
+		#	limit = { top_liege = { has_character_flag = acr_nominated_priest } }
+		#	top_liege = { save_event_target_as = invested_liege_02 }
+		#}
+		#else_if = {
+		#	limit = { liege = { liege = { liege = { has_character_flag = acr_nominated_priest } } } }
+		#	liege = { liege = { liege = { save_event_target_as = invested_liege_02 } } }
+		#}
+		#else_if = {
+		#	limit = { liege = { liege = { has_character_flag = acr_nominated_priest } } }
+		#	liege = { liege = { save_event_target_as = invested_liege_02 } }
+		#}
+		#else_if = {
+		#	limit = { liege = { has_character_flag = acr_nominated_priest } }
+		#	liege = { save_event_target_as = invested_liege_02 }
+		#}
+		event_target:invested_liege_02 = {
+			if = {
+				limit = { has_character_flag = acr_is_nominating_priest }
+				persistent_event_target:pagan_papal_priest_backup_nominee = {
+					acr_druid_dryad_investiture_effect = yes
+					clr_character_flag = acr_nominated_successor
+					clear_persistent_event_target = pagan_papal_priest_nominator
+					ROOT = {
+						any_demesne_title = { gain_title = PREVPREV }
+						
+						any_artifact = {
+							transfer_artifact = {
+								from = ROOT
+								to = PREVPREV
+							}
+						}
+
+						transfer_scaled_wealth = {
+							to = PREVPREV
+							value = all
+						}
+					
+					}
+					opinion = {
+						modifier = opinion_investiture
+						who = event_target:invested_liege_02
+					}
+					if = {
+						limit = {
+							NOT = { vassal_of = event_target:invested_liege_01 }
+						}
+						set_defacto_liege = event_target:invested_liege_01
+					}
+				}
+				clear_persistent_event_target = pagan_papal_priest_backup_nominee
+			}
+			else = {
+				persistent_event_target:pagan_papal_priest_nominee = {
+					acr_druid_dryad_investiture_effect = yes
+					clr_character_flag = acr_nominated_successor
+					clear_persistent_event_target = pagan_papal_priest_nominator
+					ROOT = {
+						any_demesne_title = { gain_title = PREVPREV }
+						
+						any_artifact = {
+							transfer_artifact = {
+								from = ROOT
+								to = PREVPREV
+							}
+						}
+
+						transfer_scaled_wealth = {
+							to = PREVPREV
+							value = all
+						}
+					
+					}
+					opinion = {
+						modifier = opinion_investiture
+						who = event_target:invested_liege_02
+					}
+					if = {
+						limit = {
+							NOT = { vassal_of = event_target:invested_liege_01 }
+						}
+						set_defacto_liege = event_target:invested_liege_01
+					}
+				}
+				clear_persistent_event_target = pagan_papal_priest_nominee
+				clr_character_flag = acr_nominated_priest
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+	}
+}
+
+# Non-Christian Papal Investiture Maintainence
+character_event = {
+	id = ke_ancrel_m.8
+	is_triggered_only = yes
+	hide_window = yes
+	
+	trigger = { has_character_flag = acr_nominated_priest }
+	
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					NOT = { has_law = investiture_law_0 }
+					persistent_event_target:pagan_papal_priest_nominee = {
+						OR = {
+							is_alive = no
+							is_landed = yes
+							NOT = { religion = ROOT }
+							is_incapable = yes
+							prisoner = yes
+							trigger_if = {
+								limit = {
+									OR = {
+										religion_group = christian
+										religion_group = zoroastrian_group
+										religion_openly_bon_or_reformed_trigger = yes
+										religion = jain
+										religion = buddhist
+										religion = taoist
+										persistent_event_target:religion_title = { has_title_flag = kcc_is_monastic_religion }
+									}
+								}
+								OR = {
+									is_betrothed = yes
+									is_married = yes
+								}
+							}
+						}
+					}
+				}
+			}
+			persistent_event_target:pagan_papal_priest_nominee = {
+				clr_character_flag = acr_nominated_successor
+				clear_persistent_event_target = pagan_papal_priest_nominator
+			}
+			clear_persistent_event_target = pagan_papal_priest_nominee
+			clr_character_flag = acr_nominated_priest
+			if = {
+				limit = {
+					is_landed = yes
+					is_theocracy = no
+					has_law = investiture_law_0
+				}
+				character_event = { id = ke_ancrel_m.9 }
+			}
+		}
+	}
+	
+	weight_multiplier = {
+		days = 1
+	}
+}
+
+character_event = { #Let liege know THIS needs new successor
+	id = ke_ancrel_m.9
+	desc = EVTDESC_ke_ancrel_m.9
+	picture = GFX_evt_heretic
+
+	notification = yes
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = { #Ping event for scopes
+	id = ke_ancrel_m.10
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		religion_head = {
+			character_event = { id = ke_ancrel_m.11 }
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+character_event = { #Pagan Pope decides whether or not to support your choice of bishop
+	id = ke_ancrel_m.11
+	is_triggered_only = yes
+	hide_window = yes
+	
+	immediate = {
+		FROM = {
+			save_event_target_as = acr_is_potential_bishop
+			persistent_event_target:pagan_papal_priest_nominator = { save_event_target_as = acr_wants_to_nominate_bishop }
+		}
+		set_variable = { which = "acr_bishop_score" value = -50 }
+		if = {		#POPE_AIREASON_MODIFIER_BISHOP_EDUCATION
+			limit = { event_target:acr_is_potential_bishop = { has_education_learning_trigger = yes } }
+			change_variable = { which = "acr_bishop_score" value = 10 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_BISHOP_LEARNING
+			limit = { event_target:acr_is_potential_bishop = { learning < 5 } }
+			change_variable = { which = "acr_bishop_score" value = -10 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_BISHOP_LEARNING
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					learning >= 5
+					learning < 8
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 2 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_BISHOP_LEARNING
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					learning >= 8
+					learning < 12
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 4 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_BISHOP_LEARNING
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					learning >= 12
+					learning < 16
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 6 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_BISHOP_LEARNING
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					learning >= 16
+					learning < 20
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 8 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_BISHOP_LEARNING
+			limit = { event_target:acr_is_potential_bishop = { learning >= 20 } }
+			change_variable = { which = "acr_bishop_score" value = 10 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_IS_EXCOMMUNICATED
+			limit = { event_target:acr_wants_to_nominate_bishop = { excommunicated_for = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = -1000 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_RULER_HAS_SAINTLY_BLOODLINE_TARGET
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = {
+					any_owned_bloodline = {
+						### ACR ###
+						OR = {
+							has_bloodline_flag = saintly_bloodline
+							has_bloodline_flag = ancestor_worship_bloodline
+						}
+						bloodline_is_active_for = PREV
+						NOT = { has_bloodline_flag = wicked_saint }
+					}
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = {
+					OR = {
+						trait = baptized_by_pope
+						trait = baptized_by_patriarch
+					}
+					persistent_event_target:baptizing_pope_per = { character = ROOT } # Ruler asking was baptized by this very same Pope
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 10 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_BAPTIZED_CHILD
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = {
+					OR = {
+						trait = baptized_by_pope
+						trait = baptized_by_patriarch
+					}
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_NAPOLEON_RULER
+			limit = { event_target:acr_wants_to_nominate_bishop = { trait = crowned_by_myself } }
+			change_variable = { which = "acr_bishop_score" value = -100 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_UNCROWNED_RULER
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = {
+					is_decision_potential = prepare_coronation_ceremony
+					is_adult = yes
+					religion = ROOT
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = -15 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_CROWNED_BY_ME
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = {
+					trait = crowned_by_pope
+					persistent_event_target:coronation_priest_per = { character = ROOT } # Ruler asking was crowned by this very same Pope
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 15 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_CROWNED_BY_POPE
+			limit = { event_target:acr_wants_to_nominate_bishop = { trait = crowned_by_pope } }
+			change_variable = { which = "acr_bishop_score" value = 10 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_PET_POPE
+			limit = { event_target:acr_wants_to_nominate_bishop = { is_liege_of = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = 50 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_MY_CHILD
+			limit = { event_target:acr_wants_to_nominate_bishop = { is_child_of = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = 20 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_MY_PARENT
+			limit = { event_target:acr_wants_to_nominate_bishop = { is_parent_of = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = 15 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_CLOSE_RELATIVE
+			limit = { event_target:acr_wants_to_nominate_bishop = { is_close_relative = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = 10 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_SAME_DYNASTY
+			limit = { event_target:acr_wants_to_nominate_bishop = { dynasty = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_MY_FRIEND
+			limit = { event_target:acr_wants_to_nominate_bishop = { is_friend = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = 15 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_MY_LOVER
+			limit = { event_target:acr_wants_to_nominate_bishop = { is_lover = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = 20 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_MY_RIVAL
+			limit = { event_target:acr_wants_to_nominate_bishop = { is_rival = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = -100 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_SAME_CULTURE
+			limit = { culture = event_target:acr_wants_to_nominate_bishop }
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_MADE_ME_CARDINAL
+			limit = {
+				has_opinion_modifier = {
+					name = opinion_supported_cardinal
+					who = event_target:acr_wants_to_nominate_bishop
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 15 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_MADE_ME_POPE
+			limit = {
+				has_opinion_modifier = {
+					name = opinion_supported_pope
+					who = event_target:acr_wants_to_nominate_bishop
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 30 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_FREE_INVESTITURE
+			limit = { event_target:acr_wants_to_nominate_bishop = { has_law = investiture_law_1 } }
+			change_variable = { which = "acr_bishop_score" value = -30 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_PLEDGED_TO_CRUSADE
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = {
+					is_preparing_crusade = yes
+					has_pledged_crusade_participation = yes
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 15 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_WAGING_CRUSADE
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = {
+					any_war = {
+						OR = {
+							using_cb = new_crusade
+							using_cb = crusade
+						}
+					}
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 30 }
+		}
+		#POPE_AIREASON_MODIFIER_CONTROLLED_CARDINALS
+		set_variable = { which = "acr_controlled_cardinals_score" value = 0 }
+		while = {
+			limit = { 
+				check_variable = {
+					which = acr_controlled_cardinals_score
+					value <= 45
+				}
+				event_target:acr_wants_to_nominate_bishop = {
+					any_realm_character = {
+						is_cardinal = yes
+						religion = ROOT
+						NOT = { has_character_flag = acr_contributed_to_controlled_cardinals_score }
+					}
+				}
+			}
+			event_target:acr_wants_to_nominate_bishop = {
+				random_realm_character = {
+					limit = {
+						is_cardinal = yes
+						religion = ROOT
+						NOT = { has_character_flag = acr_contributed_to_controlled_cardinals_score }
+					}
+					set_character_flag = acr_contributed_to_controlled_cardinals_score
+				}
+			}
+			change_variable = { which = "acr_controlled_cardinals_score" value = 2 }
+		}
+		change_variable = { which = "acr_bishop_score" which = "acr_controlled_cardinals_score" }
+		#POPE_AIREASON_MODIFIER_RULER_PIETY
+		if = {
+			limit = { event_target:acr_wants_to_nominate_bishop = { piety < -250 } }
+			change_variable = { which = "acr_bishop_score" value = -15 }
+		}
+		else_if = {
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = {
+					piety >= -250
+					piety < -100
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = -10 }
+		}
+		else_if = {
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = {
+					piety >= -100
+					piety < -50
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = -5 }
+		}
+		else_if = {
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = {
+					piety >= 150
+					piety < 350
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		else_if = {
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = {
+					piety >= 350
+					piety < 750
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 10 }
+		}
+		else_if = {
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = {
+					piety >= 750
+					piety < 1500
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 15 }
+		}
+		else_if = {
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = {
+					piety >= 1500
+					piety < 2000
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 20 }
+		}
+		else_if = {
+			limit = { event_target:acr_wants_to_nominate_bishop = { piety >= 2000 } }
+			change_variable = { which = "acr_bishop_score" value = 25 }
+		}
+		#POPE_AIREASON_MODIFIER_OPINION_RULER
+		set_variable = { which = "acr_pope_opinion_score_01" value = -100 }
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -95
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -90
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -85
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -80
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -75
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -70
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -65
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -60
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -55
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -50
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -45
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -40
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -35
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -30
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -25
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -20
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -15
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -10
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= -5
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 0
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 5
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 10
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 15
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 20
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 25
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 30
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 35
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 40
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 45
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 50
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 55
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 60
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 65
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 70
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 75
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 80
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 85
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 90
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 95
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_wants_to_nominate_bishop
+					value >= 100
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_01" value = 5 }
+		}
+		divide_variable = { which = "acr_pope_opinion_score_01" value = 4 }
+		change_variable = { which = "acr_bishop_score" which = "acr_pope_opinion_score_01" }
+		if = {		#POPE_AIREASON_MODIFIER_RULER_ZEALOUS
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = { trait = zealous }
+				ROOT = {
+					has_bad_priest_trait_trigger = no
+					NOT = { trait = cynical }
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_RULER_CYNICAL
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = { trait = cynical }
+				ROOT = {
+					has_bad_priest_trait_trigger = no
+					NOT = { trait = cynical }
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = -10 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_RULER_ZEALOUS_NEGATIVE
+			limit = {
+				event_target:acr_wants_to_nominate_bishop = { trait = zealous }
+				ROOT = {
+					OR = {
+						has_bad_priest_trait_trigger = yes
+						trait = cynical
+					}
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = -10 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_TARGET_IS_KINSLAYER
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					OR = {
+						trait = kinslayer
+						trait = familial_kinslayer
+						trait = dynastic_kinslayer
+					}
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = -25 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_TARGET_IS_SINNER
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					OR = {
+						has_character_modifier = rampant_sinner_christian
+						has_character_modifier = rampant_sinner_dharmic
+						has_character_modifier = known_satanist
+						has_character_modifier = known_witch
+					}
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = -40 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME_TARGET
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					OR = {
+						trait = baptized_by_pope
+						trait = baptized_by_patriarch
+					}
+					persistent_event_target:baptizing_pope_per = { character = ROOT } # Ruler asking was baptized by this very same Pope
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 10 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_BAPTIZED_CHILD_TARGET
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					OR = {
+						trait = baptized_by_pope
+						trait = baptized_by_patriarch
+					}
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_MY_CHILD_TARGET
+			limit = { event_target:acr_is_potential_bishop = { is_child_of = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = 20 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_MY_PARENT_TARGET
+			limit = { event_target:acr_is_potential_bishop = { is_parent_of = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = 15 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_CLOSE_RELATIVE_TARGET
+			limit = { event_target:acr_is_potential_bishop = { is_close_relative = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = 10 }
+		}
+		else_if = {		#POPE_AIREASON_MODIFIER_SAME_DYNASTY_TARGET
+			limit = { event_target:acr_is_potential_bishop = { dynasty = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_MY_FRIEND_TARGET
+			limit = { event_target:acr_is_potential_bishop = { is_friend = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = 15 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_MY_LOVER_TARGET
+			limit = { event_target:acr_is_potential_bishop = { is_lover = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = 20 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_MY_RIVAL_TARGET
+			limit = { event_target:acr_is_potential_bishop = { is_rival = ROOT } }
+			change_variable = { which = "acr_bishop_score" value = -100 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_SAME_CULTURE_TARGET
+			limit = { culture = event_target:acr_is_potential_bishop }
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_MADE_ME_CARDINAL_TARGET
+			limit = {
+				has_opinion_modifier = {
+					name = opinion_supported_cardinal
+					who = event_target:acr_is_potential_bishop
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 15 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_MADE_ME_POPE_TARGET
+			limit = {
+				has_opinion_modifier = {
+					name = opinion_supported_pope
+					who = event_target:acr_is_potential_bishop
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 30 }
+		}
+		#POPE_AIREASON_MODIFIER_RULER_PIETY_TARGET
+		if = {
+			limit = { event_target:acr_is_potential_bishop = { piety < -250 } }
+			change_variable = { which = "acr_bishop_score" value = -15 }
+		}
+		else_if = {
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					piety >= -250
+					piety < -100
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = -10 }
+		}
+		else_if = {
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					piety >= -100
+					piety < -50
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = -5 }
+		}
+		else_if = {
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					piety >= 150
+					piety < 350
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		else_if = {
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					piety >= 350
+					piety < 750
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 10 }
+		}
+		else_if = {
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					piety >= 750
+					piety < 1500
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 15 }
+		}
+		else_if = {
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					piety >= 1500
+					piety < 2000
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 20 }
+		}
+		else_if = {
+			limit = { event_target:acr_is_potential_bishop = { piety >= 2000 } }
+			change_variable = { which = "acr_bishop_score" value = 25 }
+		}
+		#POPE_AIREASON_MODIFIER_OPINION_RULER_TARGET
+		set_variable = { which = "acr_pope_opinion_score_02" value = -100 }
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -95
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -90
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -85
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -80
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -75
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -70
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -65
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -60
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -55
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -50
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -45
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -40
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -35
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -30
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -25
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -20
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -15
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -10
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= -5
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 0
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 5
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 10
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 15
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 20
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 25
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 30
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 35
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 40
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 45
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 50
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 55
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 60
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 65
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 70
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 75
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 80
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 85
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 90
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 95
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		if = {
+			limit = {
+				opinion = {
+					who = event_target:acr_is_potential_bishop
+					value >= 100
+				}
+			}
+			change_variable = { which = "acr_pope_opinion_score_02" value = 5 }
+		}
+		divide_variable = { which = "acr_pope_opinion_score_02" value = 4 }
+		change_variable = { which = "acr_bishop_score" which = "acr_pope_opinion_score_02" }
+		if = {		#POPE_AIREASON_MODIFIER_RULER_HAS_SAINTLY_BLOODLINE_TARGET
+			limit = {
+				event_target:acr_is_potential_bishop = {
+					any_owned_bloodline = {
+						### ACR ###
+						OR = {
+							has_bloodline_flag = saintly_bloodline
+							has_bloodline_flag = ancestor_worship_bloodline
+						}
+						bloodline_is_active_for = PREV
+						NOT = { has_bloodline_flag = wicked_saint }
+					}
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_RULER_ZEALOUS_TARGET
+			limit = {
+				event_target:acr_is_potential_bishop = { trait = zealous }
+				ROOT = {
+					has_bad_priest_trait_trigger = no
+					NOT = { trait = cynical }
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_RULER_TEMPERATE_TARGET
+			limit = {
+				event_target:acr_is_potential_bishop = { trait = temperate }
+				ROOT = {
+					has_bad_priest_trait_trigger = no
+					NOT = { trait = gluttonous }
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_RULER_DILIGENT_TARGET
+			limit = {
+				event_target:acr_is_potential_bishop = { trait = diligent }
+				ROOT = {
+					has_bad_priest_trait_trigger = no
+					NOT = { trait = slothful }
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = 5 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_RULER_CYNICAL
+			limit = {
+				event_target:acr_is_potential_bishop = { trait = cynical }
+				ROOT = {
+					has_bad_priest_trait_trigger = no
+					NOT = { trait = cynical }
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = -10 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_RULER_TEMPERATE_NEGATIVE
+			limit = {
+				event_target:acr_is_potential_bishop = { trait = temperate }
+				ROOT = {
+					OR = {
+						has_bad_priest_trait_trigger = yes
+						trait = gluttonous
+					}
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = -10 }
+		}
+		if = {		#POPE_AIREASON_MODIFIER_RULER_ZEALOUS_NEGATIVE
+			limit = {
+				event_target:acr_is_potential_bishop = { trait = zealous }
+				ROOT = {
+					OR = {
+						has_bad_priest_trait_trigger = yes
+						trait = cynical
+					}
+				}
+			}
+			change_variable = { which = "acr_bishop_score" value = -10 }
+		}
+		
+		if = {
+			limit = {
+				check_variable = {
+					which = acr_bishop_score
+					value >= 0
+				}
+			}
+			event_target:acr_wants_to_nominate_bishop = {
+				if = {
+					limit = { has_global_flag = ancrel_debug }
+					letter_event = { id = ke_ancrel_m.12 }
+				}
+				else = {
+					letter_event = {
+						id = ke_ancrel_m.12
+						days = 5
+						random = 20
+					}
+				}
+			}
+		}
+		else = {
+			
+			event_target:acr_wants_to_nominate_bishop = {
+				if = {
+					limit = { has_global_flag = ancrel_debug }
+					letter_event = { id = ke_ancrel_m.13 }
+				}
+				else = {
+					letter_event = {
+						id = ke_ancrel_m.13
+						days = 5
+						random = 20
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+	
+	after = {
+		set_variable = { which = "acr_bishop_score" value = 0 }
+		event_target:acr_wants_to_nominate_bishop = {
+			any_realm_character = {
+				limit = {
+					is_cardinal = yes
+					religion = ROOT
+					has_character_flag = acr_contributed_to_controlled_cardinals_score
+				}
+				clr_character_flag = acr_contributed_to_controlled_cardinals_score
+			}
+		}
+		set_variable = { which = "acr_controlled_cardinals_score" value = 0 }
+		set_variable = { which = "acr_pope_opinion_score_01" value = 0 }
+		set_variable = { which = "acr_pope_opinion_score_02" value = 0 }
+	}
+}
+
+letter_event = {
+	id = ke_ancrel_m.12
+	desc = EVTDESC_ke_ancrel_m.12
+	border = GFX_event_letter_frame_diplomacy
+
+	is_triggered_only = yes
+
+	immediate = { clr_character_flag = acr_is_nominating_priest }
+
+	option = {
+		name = EVTOPT_ke_ancrel_m.12a
+		trigger = { persistent_event_target:pagan_papal_priest_nominee = { is_alive = yes } }
+
+		wealth = -50
+		piety = -30
+	}
+
+	option = {
+		name = EVTOPT_ke_ancrel_m.12b
+		trigger = { persistent_event_target:pagan_papal_priest_nominee = { is_alive = no } }
+		hidden_effect = {
+			persistent_event_target:pagan_papal_priest_nominee = {
+				clr_character_flag = acr_nominated_successor
+				clear_persistent_event_target = pagan_papal_priest_nominator
+			}
+			clear_persistent_event_target = pagan_papal_priest_nominee
+			clr_character_flag = acr_nominated_priest
+		}
+	}
+	
+	after = {
+		if = {
+			limit = {
+				persistent_event_target:pagan_papal_priest_backup_nominee = { is_alive = yes }
+			}
+			save_persistent_event_target = {
+				name = pagan_papal_priest_nominee
+				scope = persistent_event_target:pagan_papal_priest_backup_nominee
+			}
+			clear_persistent_event_target = pagan_papal_priest_backup_nominee
+		}
+	}
+}
+
+letter_event = {
+	id = ke_ancrel_m.13
+	desc = EVTDESC_ke_ancrel_m.13
+	border = GFX_event_letter_frame_diplomacy
+
+	is_triggered_only = yes
+
+	immediate = {
+		clr_character_flag = acr_is_nominating_priest
+		persistent_event_target:pagan_papal_priest_nominee = {
+			clr_character_flag = acr_nominated_successor
+			clear_persistent_event_target = pagan_papal_priest_nominator
+			set_character_flag = acr_rejected_nominee
+		}
+		clear_persistent_event_target = pagan_papal_priest_nominee
+		if = {
+			limit = {
+				persistent_event_target:pagan_papal_priest_backup_nominee = { is_alive = yes }
+			}
+			save_persistent_event_target = {
+				name = pagan_papal_priest_nominee
+				scope = persistent_event_target:pagan_papal_priest_backup_nominee
+			}
+			clear_persistent_event_target = pagan_papal_priest_backup_nominee
+		}
+		else = { clr_character_flag = acr_nominated_priest }
+	}
+
+	option = {
+		name = EVTOPT_ke_ancrel_m.13
+	}
+}
+
+letter_event = { #Ancestor Worship checker
+	id = ke_ancrel_m.14
+	desc = EVTDESC_ke_ancrel_m.14
+	#picture = GFX_evt_heretic
+	portrait = event_target:acr_target_ancestor
+
+	#notification = yes
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		random_bloodline = {
+			limit = {
+				founder = { religion = ROOT }
+				has_bloodline_flag = ancestor_worship_bloodline
+				NOT = { has_bloodline_flag = acr_contributed_to_bloodline_check }
+			}
+			set_bloodline_flag = acr_contributed_to_bloodline_check
+			founder = { save_event_target_as = acr_target_ancestor }
+		}
+	}
+	
+	option = {
+		name = OK
+	}
+	
+	after = {
+		if = {
+			limit = {
+				any_bloodline = {
+					founder = { religion = ROOT }
+					has_bloodline_flag = ancestor_worship_bloodline
+					NOT = { has_bloodline_flag = acr_contributed_to_bloodline_check }
+				}
+			}
+			letter_event = { id = ke_ancrel_m.14 }
+		}
+		else = {
+			any_bloodline = {
+				limit = {
+					founder = { religion = ROOT }
+					has_bloodline_flag = ancestor_worship_bloodline
+					has_bloodline_flag = acr_contributed_to_bloodline_check
+				}
+				clr_bloodline_flag = acr_contributed_to_bloodline_check
+			}
+		}
+	}
+}
+
+#character_event = { #Ping event for portrait
+#	id = ke_ancrel_m.6
+#	is_triggered_only = yes
+#	hide_window = yes
+#	
+#	immediate = {
+#		persistent_event_target:pagan_papal_invested_priest = { liege = { character_event = { id = ke_ancrel_m.6 } } }
+#	}
+#	
+#	weight_multiplier = {
+#		days = 1
+#	}
+#}
+#
+#character_event = { #This is the successor you appointed
+#	id = ke_ancrel_m.7
+#	desc = EVTDESC_ke_ancrel_m.7
+#	picture = GFX_evt_heretic
+#
+#	notification = yes
+#	
+#	is_triggered_only = yes
+#	
+#	option = {
+#		name = OK
+#	}
+#}

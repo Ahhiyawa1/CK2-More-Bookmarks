@@ -1,0 +1,33 @@
+# County Title
+title = c_dorostotum
+# Settlements
+max_settlements = 3
+b_dorosturum = castle
+b_rusi = city
+b_shumen = temple
+# Misc
+culture = helleno_thracian
+religion = orthodox
+################################################################################
+# History
+################################################################################
+
+################################################################################
+# History
+################################################################################
+865.1.1 = { religion = orthodox } 
+970.1.1 = { religion = paulician } 
+1030.1.1 = { religion = bogomilist culture = bulgarian } 
+1187.1.1 = { max_settlements = 4 b_slivopole = castle } 
+1400.1.1 = { religion = orthodox } 
+################################################################################
+# 531 - Dorostotum
+################################################################################
+
+################################################################################
+# b_borovo = castle
+# b_slivopole = castle
+# b_byaladve = castle
+# b_tsenovo = castle
+# b_samuil = castle
+################################################################################

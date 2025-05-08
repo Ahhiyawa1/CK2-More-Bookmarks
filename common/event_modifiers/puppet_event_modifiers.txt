@@ -1,0 +1,15 @@
+political_instab = {
+	icon = 29
+	local_revolt_risk = 0.08
+	supply_limit = -0.25
+	siege_defence = -0.2
+	local_tax_modifier = -0.10
+}
+colony_change = { icon = 29 }
+not_legit = {
+	global_revolt_risk = 0.20
+	vassal_opinion = -20
+	monthly_character_prestige = -0.25
+	monthly_character_piety =  -0.25
+	icon = 36
+}

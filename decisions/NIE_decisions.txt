@@ -1,0 +1,33 @@
+decisions = {
+	
+	launch_NIE_events = {
+		only_playable = yes
+		potential = {
+			is_playable = yes
+			prisoner = no
+			NOT = {
+				has_character_modifier = NIE_events_launched
+			}
+		}
+		allow = {
+			war = no
+			prisoner = no
+		}
+		effect = {
+			add_character_modifier = {
+				name = NIE_events_launched
+				duration = 12
+			}
+			set_character_flag = recent_minor_decision
+			hidden_tooltip = {
+				narrative_event = { 
+					id = NIE.139  
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 0
+			
+		}
+	}
+}

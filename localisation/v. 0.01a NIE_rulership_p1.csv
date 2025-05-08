@@ -1,0 +1,87 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+;;;;;;;;;;;;;;
+NIE.100;Thief caught stealing;;;;;;;;;;;;;x
+EVTNAMENIE.100;Thief caught stealing;;;;;;;;;;;;;x
+EVTDESC_NIE_100;Accused of thievery, that one of your courtiers has caught in the armoury, is dragged before you. As he approaches, the castle smith informs you about similar accidents in the last weeks. The man you see quickly admits to stealing. Traditionally the penalty is cutting one's hand, but you could also listen to the advice of your jailer and throw the thief into the prison, where he could learn his lesson. It's obvious for everyone that there must be a punishment - a just one.;;;;;;;;;;;;;x
+EVTOPTA_NIE_100;Justice will be delivered with blood.;;;;;;;;;;;;;x
+EVTOPTB_NIE_100;He will learn about justice while imprisoned.;;;;;;;;;;;;;x
+EVTOPTC_NIE_100;It will be just to cut thieving hand.;;;;;;;;;;;;;x
+EVTOPTD_NIE_100;Sometimes mercy is better than justice.;;;;;;;;;;;;;x
+thief_executed;Story will progress...;;;;;;;;;;;;;x
+thief_imprisoned;Story will progress…;;;;;;;;;;;;;x
+thief_fingerless;Story will progress…;;;;;;;;;;;;;x
+thief_released1;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.101;Sister begs for thief's release;;;;;;;;;;;;;x
+EVTNAMENIE.101;Sister begs for thief's release;;;;;;;;;;;;;x
+EVTDESC_NIE_101;It was thirty days ago that you ordered thief to be imprisoned. Now his sister comes before you in the great hall, awaiting her brothers release. She is very frightened, oddly though you find her very beautiful. When she sees you, the girl gets on her knees and begs for your mercy, therefore for pardoning her brother crimes and releasing him.;;;;;;;;;;;;;x
+EVTOPTA_NIE_101;That lad surely had his punishment already, release him.;;;;;;;;;;;;;x
+EVTOPTB_NIE_101;He stays in the dungeon.;;;;;;;;;;;;;x
+EVTOPTC_NIE_101;If she loves him so much maybe she should join him there?;;;;;;;;;;;;;x
+EVTOPTD_NIE_101;Let the brother go and take his sister as your lover.;;;;;;;;;;;;;x
+EVTOPTE_NIE_101;She must be mistaken, he is not my prisoner.;;;;;;;;;;;;;x
+thief_already_released;Story will progress…;;;;;;;;;;;;;x
+thief_released2;Story will progress…;;;;;;;;;;;;;x
+thief_not_released;Story will progress…;;;;;;;;;;;;;x
+sister_in_dungeon;Story will progress…;;;;;;;;;;;;;x
+sister_lover;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.102;Sister came for thief's body;;;;;;;;;;;;;x
+EVTNAMENIE.102;Sister came for thief's body;;;;;;;;;;;;;x
+EVTDESC_NIE_102;One of your council meetings is interrupted by captain of your castle guard. He presents to you frightened, yet beautiful, young peasant girl. She happens to be sister of the thief you recently executed. The girl gets on her knees and begs for your mercy, therefore for letting her take brothers bones.;;;;;;;;;;;;;x
+EVTOPTA_NIE_102;Of course, let her take his body.;;;;;;;;;;;;;x
+EVTOPTB_NIE_102;Take it, but I'll be keeping his skull for myself!;;;;;;;;;;;;;x
+EVTOPTC_NIE_102;Seize her and throw to prison!;;;;;;;;;;;;;x
+body_given;Story will end.;;;;;;;;;;;;;x
+skull_kept;Story will end.;;;;;;;;;;;;;x
+sister_imprisoned;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.103;Brother and sister in dungeon;;;;;;;;;;;;;x
+EVTNAMENIE.103;Brother and sister in dungeon;;;;;;;;;;;;;x
+EVTDESC_NIE_103;You decide to visit the siblings you imprisoned some time ago. As you enter their cell, you see them dirty, naked, and hopeless. They look at you with glance of hope in their eyes. They beg you for mercy. ;;;;;;;;;;;;;x
+EVTOPTA_NIE_103;You shall have none. Prepare for little fun.;;;;;;;;;;;;;x
+EVTOPTB_NIE_103;You've had your punishment already. You are free to go.;;;;;;;;;;;;;x
+EVTOPTC_NIE_103;Laught at them, spit and leave them here forever.;;;;;;;;;;;;;x
+have_fun;Story will progress…;;;;;;;;;;;;;x
+release_both;Story will progress…;;;;;;;;;;;;;x
+leave_them_to_their_fate;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.104;Brother and sister in dungeon (have fun);;;;;;;;;;;;;x
+EVTNAMENIE.104;Having fun with siblings;;;;;;;;;;;;;x
+EVTDESC_NIE_104;The siblings start to hold each other closely, trembling, and waiting for you to decide their fate. You wonder who you should take first. The sister is, despite her current situation, still very attractive and could be a fun play toy. But maybe it would be funnier to make her watch brother tortured first?;;;;;;;;;;;;;x
+EVTOPTA_NIE_104;Take sister.;;;;;;;;;;;;;x
+EVTOPTB_NIE_104;Take brother.;;;;;;;;;;;;;x
+EVTOPTC_NIE_104;Finish with them and leave them here forever.;;;;;;;;;;;;;x
+torture_sister;Torture that young brat.;;;;;;;;;;;;;x
+torture_brother;Torture that thievieng rat.;;;;;;;;;;;;;x
+leave_them_in_dungeon;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.105;Brother and sister in dungeon (dead);;;;;;;;;;;;;x
+EVTNAMENIE.105;Siblings are dead;;;;;;;;;;;;;x
+EVTDESC_NIE_105;It's been some time since you visited brother and sister, you once imprisoned. A quick walk to see if they still remember the torment you gave them should help you with all the stress you had recently. Unfortunately, upon entering their cell you see only their white bones. They surely are dead from quite some time. They died holding each other.;;;;;;;;;;;;;x
+EVTOPTA_NIE_105;Unfortunately for them… Have the guards clean this mess.;;;;;;;;;;;;;x
+they_are_dead;Story will end.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.106;Thief in dungeon;;;;;;;;;;;;;x
+EVTNAMENIE.106;Thief in dungeon;;;;;;;;;;;;;x
+EVTDESC_NIE_106;You've decided to make a visit to the thief, you recently imprisoned. He lies on the floor in one of the darkest cells your castle has. You see him there, dirty and unable to do anything. He surely wasn't fed for days. His fate rests in your hands.;;;;;;;;;;;;;x
+EVTOPTA_NIE_106;Lock him in the chains and make him scream… Slowly…;;;;;;;;;;;;;x
+EVTOPTB_NIE_106;His thievieng knowledge could surely be of nice use to you.;;;;;;;;;;;;;x
+EVTOPTC_NIE_106;He had his punishment already. Release him.;;;;;;;;;;;;;x
+EVTOPTD_NIE_106;Finish with him and leave.;;;;;;;;;;;;;x
+torture_him;Torture that thievieng rat.;;;;;;;;;;;;;x
+spoil_me_your_secrets;Let's see what he can teach you.;;;;;;;;;;;;;x
+release_from_dungeon;Story will progress…;;;;;;;;;;;;;x
+leave_him;Story will progress…;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.107;Thief in dungeon (dead);;;;;;;;;;;;;x
+EVTNAMENIE.107;Thief is dead;;;;;;;;;;;;;x
+EVTDESC_NIE_107;It's been some time since you visited the thief, you once imprisoned. A quick walk to see if he still remembers the torment you gave him should help you with all the stress you had recently. Unfortunately, upon entering his cell you see only his white bones. He died alone in the darkness some time ago.;;;;;;;;;;;;;x
+EVTOPTA_NIE_107;Have the guards clean this mess.;;;;;;;;;;;;;x
+he_is_dead;Story will end.;;;;;;;;;;;;;x
+;;;;;;;;;;;;;;x
+NIE.108;Spoiling secrets;;;;;;;;;;;;;x
+EVTNAMENIE.108;Thief spoils some secrets;;;;;;;;;;;;;x
+EVTDESC_NIE_108;The thief is really surprised when he hears your request. He stutters: 'Couldn't you ask me that earlier?'. He get's on his knees, then stands, and agrees to teach you several things about life in shadows. He definitely isn't the greatest thief in the world you manage to increase your skills. You let him go afterwards.;;;;;;;;;;;;;x
+EVTOPTA_NIE_108;Let's hope it was worth it.;;;;;;;;;;;;;x
+spoiling_secrets;Story will progress…;;;;;;;;;;;;;x

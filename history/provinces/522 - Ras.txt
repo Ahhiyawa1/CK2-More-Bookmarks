@@ -1,0 +1,28 @@
+# County Title
+title = c_ras
+# Settlements
+max_settlements = 4
+b_plav = tribal
+# Misc
+culture = serbian
+religion = slavic_pagan
+600.1.1 = { religion = catholic culture = illyro_roman }
+################################################################################
+# History
+################################################################################
+800.1.1 = { b_plav = castle b_novipazar = city b_pec = temple } 
+870.1.1 = { religion = orthodox } 
+920.1.1 = { religion = orthodox culture = serbian }
+1050.1.1 = { religion = bogomilist } 
+1200.1.1 = { religion = orthodox } 
+################################################################################
+# 522 - Ras
+################################################################################
+
+################################################################################
+# b_stupovi = castle
+# b_belacrkva = castle
+# b_bradarevo = castle
+# b_moraca = castle
+# b_medun = castle
+################################################################################

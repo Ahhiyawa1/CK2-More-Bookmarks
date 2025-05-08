@@ -1,0 +1,382 @@
+###########################################
+#                                         #
+# New Immersive Events	                  #
+# Starting solo events	                  #
+# ID NIE.2-NIE.4			  #
+# Written and designed by wielkicien      #
+# Bugfixed by Erbkaiser			  #
+#                                         #
+###########################################
+
+namespace = NIE
+
+#Starting solo events
+character_event = {
+	id = NIE.2
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		has_focus = focus_rulership
+		NOT = { has_character_flag = NIE_fired_solo_event }
+	}
+	
+	mean_time_to_happen = {
+		days = 180
+	}
+	
+	immediate = {
+		ROOT = { set_character_flag = NIE_fired_solo_event }
+		random_list = {
+			10 = {
+				modifier = {
+					NOT = { trait = slothful }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_slothful
+					factor = 0
+				}
+				character_event = { id = NIE.200 }
+			}
+			10 = {
+				modifier = {
+					NOT = { trait = depressed }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_depressed
+					factor = 0
+				}
+				character_event = { id = NIE.203 }
+			}
+			10 = {
+				modifier = {
+					NOT = { trait = craven }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_craven
+					factor = 0
+				}
+				character_event = { id = NIE.205 }
+			} 
+			10 = {
+				modifier = {
+					NOT = { trait = weak }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_weak
+					factor = 0
+				}
+				character_event = { id = NIE.206 }
+			}
+			10 = {
+				modifier = {
+					NOT = { trait = lunatic }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_lunatic
+					factor = 0
+				}
+				character_event = { id = NIE.207 }
+			}
+			10 = {
+				modifier = {
+					NOT = { trait = possessed }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_possessed
+					factor = 0
+				}
+				character_event = { id = NIE.208 }
+			}
+			10 = {
+				modifier = {
+					NOT = { trait = just }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_just
+					factor = 0
+				}
+				character_event = { id = NIE.220 }
+			}
+			10 = {
+				modifier = {
+					NOT = { trait = zealous }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_zealous
+					factor = 0
+				}
+				character_event = { id = NIE.221 }
+			}
+			10 = {
+				modifier = {
+					NOT = { trait = diligent }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_diligent
+					factor = 0
+				}
+				character_event = { id = NIE.222 }
+			}
+			10 = {
+				modifier = {
+					NOT = { trait = brave }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_brave
+					factor = 0
+				}
+				character_event = { id = NIE.223 }
+			}
+			10 = {
+				modifier = {
+					NOT = { trait = honest }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_honest
+					factor = 0
+				}
+				character_event = { id = NIE.224 }
+			}
+			10 = {
+				modifier = {
+					NOT = { trait = celibate }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_celibate
+					factor = 0
+				}
+				character_event = { id = NIE.225 }
+			}
+			10 = {
+				modifier = {
+					NOT = { stewardship = 14 }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_stewardship
+					factor = 0
+				}
+				character_event = { id = NIE.226 }
+			}
+			10 = {
+				modifier = {
+					NOT = { learning = 14 }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_scholarship
+					factor = 0
+				}
+				character_event = { id = NIE.227 }
+			}
+			10 = {
+				modifier = {
+					NOT = { diplomacy = 14 }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_diplomacy
+					factor = 0
+				}
+				character_event = { id = NIE.228 }
+			}
+			10 = {
+				modifier = {
+					NOT = { martial = 14 }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_martial
+					factor = 0
+				}
+				character_event = { id = NIE.229 }
+			}
+			10 = {
+				modifier = {
+					NOT = { wealth = 250 }
+					factor = 0
+				}
+				modifier = {
+					has_character_flag = NIE_wealth
+					factor = 0
+				}
+				character_event = { id = NIE.230 }
+			}
+		}
+	}
+}
+
+###
+#Starting solo events 2
+character_event = {
+	id = NIE.4
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		has_character_flag = NIE_fired_solo_event
+	}
+	
+	mean_time_to_happen = {
+		days = 120
+	}
+	
+	immediate = {
+		clr_character_flag = NIE_fired_solo_event
+	}
+}
+
+###
+#Starting solo events 3
+character_event = {
+	id = NIE.15
+	hide_window = yes
+	
+	only_playable = yes
+	prisoner = no
+	only_capable = yes
+	
+	trigger = {
+		OR = {
+			has_character_flag = NIE_slothful
+			has_character_flag = NIE_depressed
+			has_character_flag = NIE_craven
+			has_character_flag = NIE_weak
+			has_character_flag = NIE_lunatic
+			has_character_flag = NIE_possessed
+			has_character_flag = NIE_just
+			has_character_flag = NIE_zealous
+			has_character_flag = NIE_diligent
+			has_character_flag = NIE_brave
+			has_character_flag = NIE_honest
+			has_character_flag = NIE_celibate
+			has_character_flag = NIE_stewardship
+			has_character_flag = NIE_scholarhsip
+			has_character_flag = NIE_diplomacy
+			has_character_flag = NIE_martial
+			has_character_flag = NIE_wealth
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 400
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				has_character_flag = NIE_slothful
+			}
+			clr_character_flag = NIE_slothful
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_depressed
+			}
+			clr_character_flag = NIE_depressed
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_weak
+			}
+			clr_character_flag = NIE_weak
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_lunatic
+			}
+			clr_character_flag = NIE_lunatic
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_possessed
+			}
+			clr_character_flag = NIE_possessed
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_just
+			}
+			clr_character_flag = NIE_just
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_zealous
+			}
+			clr_character_flag = NIE_zealous
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_diligent
+			}
+			clr_character_flag = NIE_diligent
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_brave
+			}
+			clr_character_flag = NIE_brave
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_honest
+			}
+			clr_character_flag = NIE_honest
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_celibate
+			}
+			clr_character_flag = NIE_celibate
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_stewardship
+			}
+			clr_character_flag = NIE_stewardship
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_scholarship
+			}
+			clr_character_flag = NIE_scholarship
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_diplomacy
+			}
+			clr_character_flag = NIE_diplomacy
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_martial
+			}
+			clr_character_flag = NIE_martial
+		}
+		if = {
+			limit = {
+				has_character_flag = NIE_wealth
+			}
+			clr_character_flag = NIE_wealth
+		}
+	}
+}

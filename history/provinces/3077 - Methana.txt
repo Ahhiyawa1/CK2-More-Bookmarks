@@ -1,0 +1,30 @@
+# 3076 - Methana
+
+# County Title
+title = c_methana
+
+# Settlements
+max_settlements = 5
+
+b_methana = castle
+b_pityonessos = city
+b_arcadalea = city
+b_kekryphaleia = castle
+b_poros_kaulareia = temple
+
+# Misc
+culture = greek
+religion = hellenic_pagan
+terrain = hills
+
+# History
+880.1.1 = { religion = orthodox }
+1137.1.1 = { trade_post = b_morosini }
+
+# 4th crusade
+
+#1205.1.1 = { culture = frankish }
+#1205.1.1 = { religion = catholic }
+
+
+

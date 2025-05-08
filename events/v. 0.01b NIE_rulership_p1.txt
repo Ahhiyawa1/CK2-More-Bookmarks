@@ -1,0 +1,396 @@
+###########################################
+#                                         #
+# New Immersive Events v. 0.01b           #
+# Rulership Events						  #
+# ID NIE.200-NIE.204			  		  #
+# Written and designed by wielkicien      #
+# Bugfixed and edited by Erbkaiser		  #
+#                                         #
+###########################################
+
+namespace = NIE
+
+### Solo events
+
+#Lazy ruling
+character_event = {
+	id = NIE.200
+	title = "EVTNAMENIE.200"
+	desc = EVTDESC_NIE_200
+	picture = GFX_evt_noble_in_castle
+	border = GFX_event_normal_frame_economy
+
+	min_age = 16
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+
+	trigger = {
+		trait = slothful
+		has_focus = focus_rulership
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_lazy_ruling }
+		ai = no
+		any_vassal = {
+			age = 16
+			prisoner = no
+			trait = diligent
+			ai = yes
+		}
+				
+	}
+
+	immediate = {
+		ROOT = { set_character_flag = NIE_slothful }
+		random_vassal = {
+			limit = {
+				age = 16
+				prisoner = no
+				trait = diligent
+				ai = yes
+			}
+			save_event_target_as = lazy_ruling_event_target
+		}
+	}
+	option = {
+		name = EVTOPTA_NIE_200
+		custom_tooltip = { text = Try_to_convince }
+		hidden_tooltip = {
+			event_target:lazy_ruling_event_target = {
+				set_character_flag = lazy_ruler
+			}
+			random_list = {
+				50 = { 
+					character_event = {id = NIE.201 } 
+				}
+				50 = { 
+					character_event = {id = NIE.202 } 
+				}
+			}
+		}
+		random = {
+			chance = 40
+			add_trait = deceitful
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_200
+		custom_tooltip = { text = Try_to_be_better }
+		event_target:lazy_ruling_event_target = {
+			opinion = {
+				modifier = opinion_happy
+				who = ROOT
+				years = 5
+			}
+		}
+		random = {
+			chance = 55
+			if = {
+				limit = { trait = slothful }
+				remove_trait = slothful
+			}
+		}
+		random_list = {	
+			25 ={ add_trait = diligent }
+			15 = { add_trait = ambitious }
+			60 = {}
+		}
+		prestige = -30
+	}
+	option = {
+		name = EVTOPTC_NIE_200
+		custom_tooltip = { text = Ignore_advice }
+		event_target:lazy_ruling_event_target = {
+			opinion = {
+				modifier = opinion_angry
+				who = ROOT
+				years = 5
+			}
+			random = {
+				chance = 10
+				add_rival = ROOT
+			}
+			prestige = -20
+		}
+		prestige = 20
+		random = {
+			chance = 33
+			add_trait = proud
+		}
+		random = {
+			chance = 33
+			add_trait = stubborn
+		}
+	}
+	option = {
+		name = EVTOPTD_NIE_200
+		custom_tooltip = { text = Lock_him_down }
+		tooltip_info =  wroth			    
+		trigger =  {
+			OR = {	
+				trait = wroth
+				trait = cruel
+				trait = impaler
+			}
+			NOT = { 
+				OR = {
+					trait = kind
+					trait = charitable
+				}
+			}
+		}
+		event_target:lazy_ruling_event_target = {
+			opinion = {
+				modifier = opinion_angry
+				who = ROOT
+				years = 5
+			}
+			random = {
+				chance = 40
+				add_rival = ROOT
+			}
+			imprison = ROOT
+			prestige = -20
+		}
+		any_realm_character = {
+			limit = {
+				is_adult = yes
+				NOT = { character = ROOT }
+				NOT = { trait = cynical }
+				NOT = { trait = arbitrary }
+			}
+			opinion = {
+				modifier = opinion_dislike
+				who = ROOT
+				years = 10
+			}
+		}
+	}
+}
+###
+#Noble on wrong way
+character_event = {
+	id = NIE.201
+	title = "EVTNAMENIE.201"
+	desc = EVTDESC_NIE_201
+	picture = GFX_evt_noble_in_castle
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = lazy_ruler
+			}
+			save_event_target_as = lazy_ruling_event_target
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_NIE_201
+		custom_tooltip = { text = noble_on_wrong_way }
+		hidden_tooltip = {
+			event_target:lazy_ruling_event_target = {
+				clr_character_flag = lazy_ruler
+			}
+		}
+		event_target:lazy_ruling_event_target = {
+			opinion = {
+				modifier = opinion_happy
+				who = ROOT
+				years = 5
+			}
+			if = {
+				limit = { 
+					trait = diligent 
+				}
+				remove_trait = diligent
+			}
+			add_trait = slothful
+		}
+		random_list = {	
+			35 = { add_trait = gregarious }
+			5 = { add_trait = ambitious }
+			70 = {}
+		}
+		piety = -20
+	}
+}
+###
+#Noble not on wrong way
+character_event = {
+	id = NIE.202
+	title = "EVTNAMENIE.202"
+	desc = EVTDESC_NIE_202
+	picture = GFX_evt_noble_in_castle
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	
+	immediate = {
+		random_vassal = {
+			limit = {
+				has_character_flag = lazy_ruler
+			}
+			save_event_target_as = lazy_ruling_event_target
+		}
+	}	
+
+	option = {
+		name = EVTOPTA_NIE_202
+		custom_tooltip = { text = noble_not_on_wrong_way }
+		hidden_tooltip = {
+			event_target:lazy_ruling_event_target = {
+				clr_character_flag = lazy_ruler
+			}
+		}
+		event_target:lazy_ruling_event_target = {
+			piety = 20
+			prestige = 20
+			opinion = {
+				modifier = opinion_angry
+				who = ROOT
+				years = 5
+			}
+			random = {
+				chance = 15
+				add_rival = ROOT
+			}
+		}
+		prestige = -20
+		random = {
+			chance = 20
+			add_trait = wroth
+		}
+	}
+}
+###
+# Get rid of depressed
+character_event = {
+	id = NIE.203
+	title = "EVTNAMENIE.203"
+	desc = EVTDESC_NIE_203
+	picture = GFX_evt_bad_news
+	border = GFX_event_normal_frame_economy
+
+	capable_only = yes
+	only_playable = yes
+	prisoner = no
+
+	is_triggered_only = yes
+	
+	trigger = {
+		trait = depressed
+		has_focus = focus_rulership
+		NOT = { has_character_flag = in_seclusion }
+		NOT = { has_character_flag = NIE_depressed_ruling }
+		ai = no
+	}
+	immediate = {
+		ROOT = { set_character_flag = NIE_depressed }
+	}
+	option = {
+		name = EVTOPTA_NIE_203
+		custom_tooltip = { text = force_yourself_through }
+		tooltip_info =  wroth			    
+		trigger =  { 
+			OR = {
+				trait = wroth
+				trait = strong
+			}
+		}
+		random = {
+			chance = 50
+			if = {
+				limit = { trait = depressed }
+				remove_trait = depressed
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_NIE_203
+		custom_tooltip = { text = try_to_find_joy }
+		tooltip_info =  lustful
+		trigger =  { 
+		 	OR = {	trait = lustful
+				trait = hedonist
+				trait = gluttonous
+			}
+		}
+		random = {
+			chance = 50
+			if = {
+				limit = { trait = depressed }
+				remove_trait = depressed
+			}
+		}
+	}
+	option = {
+		name = EVTOPTC_NIE_203
+		custom_tooltip = { text = NIE_commit_suicide }
+		tooltip_info =  stressed
+		trigger =  {	
+			trait = stressed
+		}
+		if = {
+				limit = { has_dlc = "Reapers" }
+
+				set_character_flag = attempting_suicide
+
+				if = {
+					limit = { NOT = { trait = incapable } }
+					character_event = { id = RIP.30200 }
+				}
+				if = {
+					limit = { trait = incapable } 
+					character_event = { id = RIP.30210 }
+				}
+		}
+		if = {
+				limit = { NOT = { has_dlc = "Reapers" } }
+
+				prestige = -200
+
+				add_character_modifier = {
+					modifier = suicide
+					duration = -1
+				}
+				death = { death_reason = death_suicide }
+		}
+	}
+	option = {
+		name = EVTOPTD_NIE_203
+		custom_tooltip = { text = try_faith  }
+		tooltip_info =  zealous
+		trigger =  { 	
+			trait = zealous
+		}
+		random = {
+			chance = 50
+			if = {
+				limit = { trait = depressed }
+				remove_trait = depressed
+			}
+		}
+	}
+	option = {
+		name = EVTOPTE_NIE_203
+		custom_tooltip = { text = give_up_trying  }
+		random = {
+			chance = 10
+			add_trait = craven
+		}
+	}
+}

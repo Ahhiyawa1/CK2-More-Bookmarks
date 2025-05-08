@@ -1,0 +1,34 @@
+RETTYPE_CAT_ELEPHANT = 
+{
+	first_type = 6
+	first_amount = 100
+	
+	special_troops = war_elephants
+	
+	potential = {
+		is_nomadic = no
+		culture = romanoindian
+	}
+	
+	modifier = {
+		war_elephants_offensive = 0.25
+		war_elephants_defensive = 0.45
+	}
+}
+
+RETTYPE_VIETI_PHALANX = 
+{
+	first_type = 2
+	first_amount = 400
+	
+	potential = {
+		is_nomadic = no
+		culture = romanoindian
+	}
+	
+	modifier = {
+		pikemen_defensive = 0.3
+		pikemen_offensive = 0.3
+		pikemen_morale = 0.3
+	}
+}

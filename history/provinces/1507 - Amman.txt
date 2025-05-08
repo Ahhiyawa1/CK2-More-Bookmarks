@@ -1,0 +1,14 @@
+# County Title
+title = c_amman
+# Settlements
+max_settlements = 3
+b_amman = castle
+b_mahis = temple
+b_salt = city
+# Misc
+culture = bedouin_arabic
+religion = nestorian
+867.1.1 = { religion = sunni }
+################################################################################
+# 1507 - Amman
+################################################################################

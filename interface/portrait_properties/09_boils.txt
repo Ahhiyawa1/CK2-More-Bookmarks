@@ -1,0 +1,78 @@
+# p9 Boils
+9 = {
+	0 = { # 0 - blank
+		factor = 1
+	}
+
+	1 = { # a - Bubonic plague
+		factor = 100
+		trigger = {
+			blg_bubonic = yes
+
+			blg_disease_rule = yes
+		}
+	}
+
+	2 = { # b - Boils
+		factor = 100
+		trigger = {
+			blg_boils = yes
+
+			blg_disease_rule = yes
+		}
+	}
+
+	3 = { # c - Bleeding
+		factor = 100
+		trigger = {
+			blg_bleeding = yes
+
+			blg_disease_rule = yes
+		}
+	}
+
+	4 = { # d - Red dots
+		factor = 100
+		trigger = {
+			blg_rash = yes
+
+			blg_disease_rule = yes
+		}
+	}
+
+	5 = { # e - Early leprosy
+		factor = 100
+		trigger = {
+			trait = leper
+
+			blg_disease_rule = yes
+		}
+	}
+
+	6 = { # f - Ugly mole
+		factor = 99
+		trigger = {
+			blg_ugly = yes
+			NOT = { has_portrait_property = { layer = 9 index = 7 } }
+
+			blg_traits_rule = yes
+		}
+	}
+
+	7 = { # g - Ugly monobrow
+		factor = 99
+		trigger = {
+			blg_ugly = yes
+			NOT = { has_portrait_property = { layer = 9 index = 6 } }
+
+			blg_traits_rule = yes
+		}
+	}
+
+	8 = { # h - Vampire
+		factor = 100
+		trigger = {
+			blg_vampire = yes
+		}
+	}
+}

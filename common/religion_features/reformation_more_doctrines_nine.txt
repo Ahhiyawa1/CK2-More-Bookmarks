@@ -1,0 +1,3 @@
+religion_doctrine = {
+	buttons = { doctrine3 doctrine4 doctrine5 doctrine6 doctrine7 doctrine8 doctrine9 }
+}

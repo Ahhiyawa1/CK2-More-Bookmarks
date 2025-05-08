@@ -1,0 +1,59 @@
+#tributary stuff
+
+
+puppet;puppet;;;x
+TRIBUTARY_PUPPET;Puppet State;;;x
+TRIBUTARY_PUPPET_PLURAL;Puppet States;;;x
+
+
+#cbs
+
+CB_NAME_FUCK_YOU_PUPPET;Regime Change;;;x
+WAR_NAME_FUCK_YOU_PUPPET;$ORDER$ $FIRST_ADJ$-$SECOND_ADJ$ Regime Change War;;;x
+puppet_war_desc;These people need to be properly ruled. We must intervene to save them from themselves!;;;x
+
+
+#modifiers
+
+not_legit;Illegitimate Ruler;;;x
+political_instab;Political Instability;;;x
+beholden;Beholden;;;x
+
+replace_colony;Replace Ruler;;;x
+replace_colony_desc;[Root.GetFirstName] has outlived [Root.GetHerHis] usefulness. You may choose someone else to rule this puppet state.;;;x
+colony_change;Cooldown;;;x
+
+#decisions
+change_colony_succ;Change Succession;;;x
+change_colony_succ_desc;Change the succession system of your puppet state.;;;x
+
+
+#events
+
+EVTDESCroy_puppet_events.4;[target_loser.GetTitledName] is defeated and [target_loser.GetHerHis] armies have surrendered and laid down their arms. What is to be done with this new territory?;;;x
+
+EVTOPTAroy_puppet_events.4;Replace [target_loser.GetTitledName];;;x
+dcolon1;Have your courtier administer [target_loser.PrimaryTitle.GetName] as your puppet.;;;x
+EVTOPTBroy_puppet_events.4;Colonize [target_loser.PrimaryTitle.GetName];;;x
+dcolon2;Make [target_loser.GetTitledName] sign an unfair treaty that allows you to control them.;;;xx
+
+EVTDESCroy_puppet_events.5;Change the succession laws of the Puppet State.;;;x
+EVTOPTAroy_puppet_events.5;Gavelkind;;;x
+EVTOPTBroy_puppet_events.5;Primogeniture;;;x
+EVTOPTCroy_puppet_events.5;Feudal Elective;;;x
+EVTOPTDroy_puppet_events.5;More;;;x
+EVTOPTAroy_puppet_events.6;Ultimogeniture;;;x
+EVTOPTBroy_puppet_events.6;Elective Gavelkind;;;x
+EVTOPTCroy_puppet_events.6;Eldership;;;x
+
+
+
+
+
+
+
+
+
+
+
+

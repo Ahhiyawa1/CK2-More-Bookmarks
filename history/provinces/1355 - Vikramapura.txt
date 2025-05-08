@@ -1,0 +1,18 @@
+# County Title
+title = c_vikramapura
+# Settlements
+max_settlements = 3
+b_vikramapura = castle
+b_kolayat = temple
+# Misc
+culture = rajput
+religion = hindu
+################################################################################
+# 1355 - Vikramapura
+################################################################################
+
+################################################################################
+# b_bhurupal = city
+# b_bhandasar = temple
+# b_shekhsar = castle
+################################################################################

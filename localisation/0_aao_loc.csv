@@ -1,0 +1,406 @@
+
+
+
+############Artifacts############
+
+##slots
+head;Head;;;;;;;;;;;;;x
+shield;Shield;;;;;;;;;;;;;x
+
+
+
+##Christian
+iron_crown_of_lombardy_modifier;Will always remain with the King or Emperor of §YItaly§! unless it is a subject of the §YHoly Roman Empire§! or does not exist;;;;;;;;;;;;;x
+crown_of_thorns_activation;Must have at least one virtue and no sins;;;;;;;;;;;;;x
+
+
+
+##Muslim
+
+##Jewish
+
+hezekiahs_hammer;Hezekiah's Hammer;;;;;;;;;;;;;x
+hezekiahs_hammer_desc;The hammer used by Hezekiah, the 13th King of Judea, to banish paganism from his realm.;;;;;;;;;;;;;x
+menorah;The Menorah;;;;;;;;;;;;;x
+menorah_desc;This seven-branched candelabrum is one of the oldest symbols of the Jewish faith since the foundation of the first temple.;;;;;;;;;;;;;x 
+maccabean_shield;Maccabean Shield;;;;;;;;;;;;;x
+maccabean_shield_desc;A shield used by the Maccabean leaders of the Selucid revolt in Judea.;;;;;;;;;;;;;x
+himyarite_mask;Himyarite Mask;;;;;;;;;;;;;x
+himyarite_mask_desc;Abu Karab was the Himyarite king of Yemen and one of the first of several kings of Arabia to convert to Judaism.;;;;;;;;;;;;;x
+priestly_breastplate;Priestly Breastplate;;;;;;;;;;;;;x
+priestly_breastplate_desc;A Sacred breastplate worn only by the High Priest of the Israelites, the stones were used to determine God's will in a particular situation.;;;;;;;;;;;;;x
+priestly_breastplate_modifier;The Jewish Priesthood will be §Rfurious§! if this is worn by someone other than the Religious Head;;;;;;;;;;;;;x
+brass_snake;Brass Snake;;;;;;;;;;;;;x
+brass_snake_desc;Believed to possess great healing powers, this broken brass figurine traces its origins back to the old heresies of Judea.;;;;;;;;;;;;;x
+
+##Zoroastrian
+
+##Germanic
+andvaranaut_modifier;Will create §Ygold§! every two years for a §Rprice§!;;;;;;;;;;;;;x
+
+gungnir;Gungnir;;;;;;;;;;;;;x
+gungnir_desc;The legendary spear of Odin. Appeared during his champion's time of need.;;;;;;;;;;;;;x
+gungnir_modifier;A Germanic army will rally to the wielder when declaring war on other §Yreligions§!;;;;;;;;;;;;;x
+odins_eye;Odin's Eye;;;;;;;;;;;;;x
+odins_eye_desc;A small orb recieved from the Allfather. Has the power to reveal both the known and unknown.;;;;;;;;;;;;;x
+odins_eye_modifier;§YGaze into the Eye§! if you wish to unravel the secrets of the universe;;;;;;;;;;;;;x
+gleipnir;Gleipnir;;;;;;;;;;;;;x
+gleipnir_desc;The silken chains of the great wolf Fenrir. Now ruined and in tatters, yet still stronger than any mortal chains.;;;;;;;;;;;;;x
+jarngreipr;Jarngreipr;;;;;;;;;;;;;x
+jarngreipr_desc;The gauntlet of Thor, with which he holds mighty Mjolnir and is one of his three crucial possessions.;;;;;;;;;;;;;x
+fafnirs_scale;Fafnir's Scale;;;;;;;;;;;;;x
+fafnirs_scale_desc;One of the Cursed Dragon's scales. Despite being decayed, it is stronger than the strongest steel.;;;;;;;;;;;;;x
+braggis_harp;Braggi's Harp;;;;;;;;;;;;;x
+braggis_harp_desc;Braggi was one of the most skilled Skalds to have ever existed. The tunes played on his harp can charm even the vilest of people.;;;;;;;;;;;;;x
+brisingamen;Brisingamen;;;;;;;;;;;;;x
+brisingamen_desc;The necklace of Freyja, the goddess of love and fertility.;;;;;;;;;;;;;x
+tarnkappe;Tarnkappe;;;;;;;;;;;;;x
+tarnkappe_desc;The fabled cloak of invisibility. Wearing it renders the user completely invisible, that is if you can find the cloak first.;;;;;;;;;;;;;x
+huginns_feather;Huginn's Feather;;;;;;;;;;;;;x
+huginns_feather_desc;The feather of one of Odin's twin ravens. They fly daily across the entire world then tell the Allfather all they have seen.;;;;;;;;;;;;;x
+muninns_feather;Muninn's Feather;;;;;;;;;;;;;x
+muninns_feather_desc;The feather of one of Odin's twin ravens. Although Odin feared for both of their safety, he feared more for Munnin.;;;;;;;;;;;;;x
+slayers_skull;[From.OriginalOwner.GetTitledFirstName]'s Skull;;;;;;;;;;;;;x
+slayers_skull_desc;All that remains of [From.OriginalOwner.GetBestName] as [From.OriginalOwner.GetSheHe] attempted to slay mighty Fenrir.\n§RThis artifact will always be destroyed on death!§!;;;;;;;;;;;;;x
+
+
+##West African
+
+jaguar_spear;Ritual Hunting Spear;;;;;;;;;;;;;x
+jaguar_spear_desc;A tribal spear that is given to the fiercest and most accomplished hunter.;;;;;;;;;;;;;x
+djembe;Djembe;;;;;;;;;;;;;x
+djembe_desc;A traditional drum to spread merriment to those who hear it, requires some skill to actually be effective.;;;;;;;;;;;;;x 
+dan_mask;Dan Mask;;;;;;;;;;;;;x
+dan_mask_desc;Dan masks are used for protection and as a channel for communication with the spirit world.;;;;;;;;;;;;;x 
+ashanti_doll;Ashanti Doll;;;;;;;;;;;;;x
+ashanti_doll_desc;Legend has it that the bearer of these fertility dolls will give birth to beautiful children.\n§RThis artifact will always be destroyed on death!§!;;;;;;;;;;;;;x 
+ashanti_doll_modifier;Children have a §Y15%§! chance to gain the §GAttractive§! trait when born;;;;;;;;;;;;;x
+herbal_medicine;Herbal Medicine;;;;;;;;;;;;;x
+herbal_medicine_desc;A pouch filled with various medicinal herbs.\n§RThis artifact will always be destroyed on death!§!;;;;;;;;;;;;;x 
+
+
+
+##Finnish/Soume
+ukonvasara;Ukonvasara;;;;;;;;;;;;;x
+ukonvasara_desc;The Hammer of Ukko the God of Thunder. This large hammer can easily crush a man with its weight.;;;;;;;;;;;;;x
+sampo_fragment;Sampo fragment;;;;;;;;;;;;;x
+sampo_fragment_desc;One of the nine pieces of the Legendary Sampo, it's power remains dormant.;;;;;;;;;;;;;x
+vipunens_magic_scroll;Vipunen's Magic Scroll;;;;;;;;;;;;;x
+vipunens_magic_scroll_desc;Antero Vipunen is a giant with considerable knowledge and spells and this is one of his scrolls. The nature of these spells require a great mind to decipher.;;;;;;;;;;;;;x
+vainamoinens_harp;Vainamoinen's Harp;;;;;;;;;;;;;x
+vainamoinens_harp_desc;The hero Vainamoinen fashioned this harp from a pike he killed at sea, plays a bewitching melody;;;;;;;;;;;;;x
+kalevanmiekka;Kalevanmiekka;;;;;;;;;;;;;x
+kalevanmiekka_desc;This is the sword of Kalevi, a great Finnish ruler. After he passed away, his sons quickly fell out of the grace of their people.;;;;;;;;;;;;;x
+beard_of_moss;Beard of Moss;;;;;;;;;;;;;x
+beard_of_moss_desc;A lump of moss gathered together in reverence of the Sea God Ahti. Believed to ward off storms at sea.;;;;;;;;;;;;;x
+axe_pendant;Axe Pendant;;;;;;;;;;;;;x
+axe_pendant_desc;These pendants are common symbols of the god Ukko. The axe represents his other weapon Ukonkirves.;;;;;;;;;;;;;x
+
+
+##Slavic
+axe_of_perun_activation;Must have won Perun's Challenge;;;;;;;;;;;;;x
+axe_of_perun_modifier;§YPerun's Challenge§! will be issued to nearby §YSlavic§! rulers when inherited;;;;;;;;;;;;;x
+svarogs_hammer;Svarog's Hammer;;;;;;;;;;;;;x
+svarogs_hammer_desc;The Blacksmith God, Svarog once struck a great rock with a hammer which gave birth to the gods of fire and wind. A powerful tool capable of creation can also cause destruction.;;;;;;;;;;;;;x
+kladenets;Kladenets;;;;;;;;;;;;;x
+kladenets_desc;The Sword of Steel, a fabulous magic sword of great power, thought to be mere myth.;;;;;;;;;;;;;x
+peruns_stones;Perun's Stones;;;;;;;;;;;;;x
+peruns_stones_desc;The lightning stones of Perun protected against bad luck, evil magic, disease, lightning itself.;;;;;;;;;;;;;x
+raskovnik;Raskovnik;;;;;;;;;;;;;x
+raskovnik_desc;Few people, if any, could actually recognize this herb. The Raskovnik could unlock any gate or padlock, regardless of its size, material or key.;;;;;;;;;;;;;x
+fern_flower;Fern Flower;;;;;;;;;;;;;x
+fern_flower_desc;A magic flower that blooms for a very short time on the eve of the Summer Solstice. Brings fortune to the person who finds it.;;;;;;;;;;;;;x
+
+
+##Baltic/Romuvan
+world_tree_branch;Branch of the World Tree;;;;;;;;;;;;;x
+world_tree_branch_desc;A branch of the fabled World Tree that carries the World.;;;;;;;;;;;;;x
+velnias_bow;Velnias's Bow;;;;;;;;;;;;;x
+velnias_bow_desc;The Bow of the Devil was paid for in blood, yet it still yearns for more.;;;;;;;;;;;;;x
+laimas_scales;Laima's Scales;;;;;;;;;;;;;x
+laimas_scales_desc;Some people believe fate cannot be changed, but with the Scales of Fate perhaps it can be.;;;;;;;;;;;;;x
+evening_star_mark;Mark of the Evening Star;;;;;;;;;;;;;x
+evening_star_mark_desc;The Mark of the God of Fertility, Vakraine the dark of Venus.;;;;;;;;;;;;;x
+morning_star_mark;Mark of the Morning Star;;;;;;;;;;;;;x
+morning_star_mark_desc;The Mark of the Goddess of Fertility, Ausrine the light of Venus.;;;;;;;;;;;;;x
+
+##Tengri
+aram;Aram;;;;;;;;;;;;;x
+aram_desc;The Spear of Jangar, a legendary Mongol hero who became Khan at the age of three.;;;;;;;;;;;;;x
+asenas_paw;Asena's Paw;;;;;;;;;;;;;x
+asenas_paw_desc;The paw of the great wolf that gave birth to ten half-wolf Turks that later established the Ashina Clan.;;;;;;;;;;;;;x
+skai_unav;Skai Unav;;;;;;;;;;;;;x
+skai_unav_desc;A blade forged from a meteorite that fell from the sky, extremely durable.;;;;;;;;;;;;;x
+alpamyshs_chains;Alpamysh's Chains;;;;;;;;;;;;;x
+alpamyshs_chains_desc;Alpamysh was tricked by his foes and imprisoned, he managed to escape with the help of his shepherd servant.;;;;;;;;;;;;;x
+tengris_favor;Tengri's Favor;;;;;;;;;;;;;x
+tengris_favor_desc;A pendant depicting Tengri, the God of the Sky.;;;;;;;;;;;;;x
+meteorite;Meteorite;;;;;;;;;;;;;x
+meteorite_desc;A heavy stone that fell from the sky.;;;;;;;;;;;;;x
+
+
+##Zunist
+
+blazing_crown;The Blazing Crown;;;;;;;;;;;;;x
+blazing_crown_desc;Adorned with fiery symbols, this crown proves complete dominance over the followers of Zun.;;;;;;;;;;;;;x
+ashrune;Ashrune;;;;;;;;;;;;;x
+ashrune_desc;A mighty flail that is set eternally on fire. A fitting weapon to bring the light of Zun to the heathens.;;;;;;;;;;;;;x 
+sun_scepter;Scepter of the Sun;;;;;;;;;;;;;x
+sun_scepter_desc;This scepter is one of the last remaining artifacts of a people that also worshipped the sun long ago.;;;;;;;;;;;;;x
+mask_of_terror;Mask of Terror;;;;;;;;;;;;;x
+mask_of_terror_desc;A mask created in a moment of madness to inspire fear in potential rivals.;;;;;;;;;;;;;x
+cylinder_of_secrets;Cylinder of Secrets;;;;;;;;;;;;;x
+cylinder_of_secrets_desc;A locked cylinder with unknown contents. No method exists that can open it.;;;;;;;;;;;;;x
+sunlight_medallion;Sunlight Medallion;;;;;;;;;;;;;x
+sunlight_medallion_desc;The mark of the Knights of the Sun, only given to worthy commanders.\n§RThis artifact will always be destroyed on death!§!;;;;;;;;;;;;;x
+sunlight_medallion_activation;Is a former Knight of the Sun;;;;;;;;;;;;;x
+
+
+##Hellenic
+pandoras_box;Pandora's Box;;;;;;;;;;;;;x
+pandoras_box_desc;The Box that contains all the misfortunes of the world. It is said that when Pandora opened the box all the evils escaped, but a sparkle of hope remained. Opening it would invite disaster to the realm, but man's curiosity is terrible indeed.;;;;;;;;;;;;;x
+pandoras_box_modifier;Can be opened for §Yrandom§! results;;;;;;;;;;;;;x
+trident_of_poseidon;Trident of [From.Owner.GetNeptuneName];;;;;;;;;;;;;x
+trident_of_poseidon_desc;This trident is the symbol of [From.Owner.GetNeptuneName], the god of the Seas. As one of the chief dietys of the Pantheon, [From.Owner.GetNeptuneName] is widely worshipped by many Hellenics.;;;;;;;;;;;;;x
+trident_of_poseidon_modifier;Periodically §Gblesses§! random §Ycoastal provinces§!;;;;;;;;;;;;;x
+bow_of_artemis;[From.Owner.GetDianaName]'s Bow;;;;;;;;;;;;;x
+bow_of_artemis_desc;The golden bow of [From.Owner.GetDianaName] given to her by the Cyclops. It is believed that the arrows of [From.Owner.GetDianaName] could also bring sudden death and disease to women.;;;;;;;;;;;;;x
+girdle_of_aphrodite;Girdle of [From.GetAphroditeVenusName];;;;;;;;;;;;;x
+girdle_of_aphrodite_desc;The god [From.GetVulcanName] was overjoyed to have the goddess of beauty as his wife and thus forged for her the most beautiful jewelry he could make. This curious girdle is actually worn around the breasts and not the waist. It's power to seduce men is not to be taken lightly.;;;;;;;;;;;;;x
+girdle_of_aphrodite_modifier;Enables the §GCharm§! decision on §Ymale§! characters;;;;;;;;;;;;;x
+sandals_of_hermes;Talaria;;;;;;;;;;;;;x
+sandals_of_hermes_desc;The winged sandals of [From.Owner.GetMercuryName]. Forged by [From.Owner.GetVulcanName] out of imperishable gold. These sandals carried [From.Owner.GetMercuryName] across the skies as swift as any bird.;;;;;;;;;;;;;x
+
+
+##Indian
+
+
+##Cultural/Misc
+armor_of_achilles;Armor of Achilles;;;;;;;;;;;;;x
+armor_of_achilles_desc;The armor of the legendary Greek hero Achilles, forged by the god Hephaestus. After Achilles' death, this armor eventually ended up in the possession of his son Pyrrhus.;;;;;;;;;;;;;x
+shield_of_achilles;Shield of Achilles;;;;;;;;;;;;;x
+shield_of_achilles_desc;The shield of the legendary Greek hero Achilles. This fine shield was created by the god Hephaestus himself to serve as a replacement after Achilles lost his armor and shield to the Trojan hero Hector.;;;;;;;;;;;;;x
+pelt_of_the_nemean_lion;Pelt of the Nemean Lion;;;;;;;;;;;;;x
+pelt_of_the_nemean_lion_desc;The pelt of the invincible Nemean Lion. No mortal weapon could harm it, the lion was ultimately killed by Heracles and skinned with it's own claws.;;;;;;;;;;;;;x
+pelt_of_the_nemean_lion_modifier;May make it's owner §Ybrawny§! if [From.Owner.GetSheHe] cannot wear it;;;;;;;;;;;;;x
+alberichs_ring;Alberich's Ring;;;;;;;;;;;;;x
+alberichs_ring_desc;A magic ring that grants the power to rule the world, forged by the Nibelung dwarf Alberich from gold he stole from the Rhine maidens in the river Rhine. Was later stolen from him by the gods.;;;;;;;;;;;;;x
+nagelring;Nagelring;;;;;;;;;;;;;x
+nagelring_desc;The sword of Dietrich von Bern. This magical sword was given to Dietrich by the dwarf Alberich to slay the giants Grim and Hilde, for only it could pierce their skins. With the help of his mentor Hildebrand, Dietrich's quest was a success.;;;;;;;;;;;;;x
+brionac;Brionac;;;;;;;;;;;;;x
+brionac_desc;The spear of the Irish god Lugh, with which he blinded the Fomorian Balor by hurling it at his poisonous eye.;;;;;;;;;;;;;x
+brionac_modifier;Has a chance to §Gkill§! enemy §Ycommanders§! during battle;;;;;;;;;;;;;x
+curtana;Curtana;;;;;;;;;;;;;x
+curtana_desc; Also known as the Sword of Mercy, it's end is blunted and squared for that reason. Believed to be the sword of the Arthurian Knight Tristan, it is used for the coronation of English Kings.;;;;;;;;;;;;;x
+durandal;Durandal;;;;;;;;;;;;;x
+durandal_desc;The sword of Roland, one of Charlemagne's twelve Paladins. The blade is made from an indestructable metal, which prevented Roland from destroying it at his heroic death.;;;;;;;;;;;;;x
+durandal_modifier;Enables the §YHeroic Stand§! combat tactic;;;;;;;;;;;;;x
+joyeuse;Joyeuse;;;;;;;;;;;;;x
+joyeuse_desc;The sword of legendary Charlemagne. A blade sought after by the most ambitious of men in an attempt to unite Western Europe, just as it's owner did long ago.\n§YJoyeuse can only be claimed in war.§!;;;;;;;;;;;;;x
+joyeuse_modifier;Enables the §YCarolingian Reconquest§! Casus Belli on §YDuchys§! of the old Carolingian Empire after the year 900;;;;;;;;;;;;;x
+joyeuse_ceromonial;Joyeuse;;;;;;;;;;;;;x
+joyeuse_ceromonial_desc;The sword of legendary Charlemagne. Having restored the borders of Charlemagne's realm the sword has lost it's splendor as a weapon of war. Instead it is now one of the most prestigious artifacts of this age.;;;;;;;;;;;;;x
+
+
+
+############Game Rules############
+RULE_SUPERNATURAL_ARTIFACTS;§BAAO:§! Supernatural Artifacts and Events;;;;;;;;;;;;;x
+RULE_SUPERNATURAL_ARTIFACTS_ALL_DESC;All custom artifacts and their associated events are available.;;;;;;;;;;;;;x
+RULE_OPTION_HISTORIC_MYTHOLOGICAL;Historical/Mythological only;;;;;;;;;;;;;x
+RULE_SUPERNATURAL_ARTIFACTS_HISTORIC_MYTHOLOGICAL_DESC;Only Supernatural Artifacts that have some historic or mytholigical basis will appear.;;;;;;;;;;;;;x
+RULE_SUPERNATURAL_ARTIFACTS_OFF_DESC;No Supernatural Artifacts or related events will appear.;;;;;;;;;;;;;x
+
+
+
+############Casus Belli############
+CB_NAME_CLAIM_JOYEUSE;Claim Joyeuse;;;;;;;;;;;;;x
+WAR_NAME_CLAIM_JOYEUSE;$ORDER$$FIRST_ADJ$ Claim on Joyeuse;;;;;;;;;;;;;x
+claim_joyeuse_cb_desc;The legendary Charlemagne's sword is in the possession of §Y$TARGET$§!, with enough prestige you may claim it as your own.;;;;;;;;;;;;;x
+
+CB_NAME_JOYEUSE_RECONQUEST;Carolingian Reconquest of [Title.GetBaseName];;;;;;;;;;;;;x
+WAR_NAME_JOYEUSE_RECONQUEST;$ORDER$$FIRST_ADJ$ Carolingian Reconquest of $OTHER_TITLE$;;;;;;;;;;;;;x
+joyeuse_reconquest_cb_desc;The Carolingian Empire is shattered, but with the sword of Charlemagne in your hands you can restore it!;;;;;;;;;;;;;x
+joyeuse_reconquest_cb_no_rome;§RRome will remain with the Pope.§!;;;;;;;;;;;;;x
+joyeuse_is_equipped;Joyeuse is equipped;;;;;;;;;;;;;x
+
+
+
+############Combat Tactics############
+durandal_tactic;Heroic Stand;;;;;;;;;;;;;x
+
+
+############Traits############
+herald_of_zun;Herald of Zun;;;;;;;;;;;;;x
+herald_of_zun_desc;This character has declared [GetHerselfHimself] the manifestation of Zun's will.;;;;;;;;;;;;;x
+herald_of_zun_descendant;Herald of Zun's Descendant;;;;;;;;;;;;;x
+herald_of_zun_descendant_desc;This character is a descendant of the Herald of Zun.;;;;;;;;;;;;;x
+fafnir_regent;fafnir regency;;;;;;;;;;;;;x
+fafnir_regent_desc;if you see this please report it on the Artifact Acquisition and Overhaul mod page.;;;;;;;;;;;;;x
+
+odin_child_sickness;Strange illness;;;;;;;;;;;;;x
+odin_child_sickness_desc;A strange illness has this character on death's door.;;;;;;;;;;;;;x
+
+durandal_trait;Loyal Subject;;;;;;;;;;;;;x
+durandal_trait_desc;if you see this please report it on the Artifact Acquisition and Overhaul mod page.;;;;;;;;;;;;;x
+
+
+
+############Event Modifiers############
+denied_crown;Denied Crown;;;;;;;;;;;;;x
+perun_champion;Perun's Champion;;;;;;;;;;;;;x
+african_blessing_modifier;Blessed by the High Priest;;;;;;;;;;;;;x
+priestly_breastplate_debuff;Theft of the Priestly Breastplate;;;;;;;;;;;;;x
+christian_pilgrims;Christian Pilgrims;;;;;;;;;;;;;x
+muslim_pilgrims;Muslim Pilgrims;;;;;;;;;;;;;x
+both_pilgrims;Religious Pilgrims;;;;;;;;;;;;;x
+fafnir_curse;Fafnir;;;;;;;;;;;;;x
+fafnir_curse_desc;Your greed has turned you into a cursed dragon.;;;;;;;;;;;;;x
+odins_intervention;Odin's Intervention;;;;;;;;;;;;;x
+odins_intervention_desc;Believed to have been saved from death by the Allfather himself.;;;;;;;;;;;;;x
+
+##province
+pandoras_box_province_pos1;Loyal Peasants;;;;;;;;;;;;;x
+pandoras_box_province_pos2;Eager Recruits;;;;;;;;;;;;;x
+pandoras_box_province_pos3;Abundant Resources;;;;;;;;;;;;;x
+pandoras_box_province_pos4;Peaceful Province;;;;;;;;;;;;;x
+pandoras_box_province_pos5;Great Deals;;;;;;;;;;;;;x
+pandoras_box_province_neg1;Corrupt Administrators;;;;;;;;;;;;;x
+pandoras_box_province_neg2;Lethargic Soldiers;;;;;;;;;;;;;x
+pandoras_box_province_neg3;Fragile Stones;;;;;;;;;;;;;x
+pandoras_box_province_neg4;Chaotic Province;;;;;;;;;;;;;x
+pandoras_box_province_neg5;Shady Deals;;;;;;;;;;;;;x
+
+poseidon_blessing;[From.GetNeptuneName]'s Blessing;;;;;;;;;;;;;x
+poseidon_blessing_desc;[From.GetNeptuneName], God of the Sea has blessed this province. The Sea's bounty brings both prosperity and protection.;;;;;;;;;;;;;x
+
+
+###religious modifiers
+menorah_authority;The Menorah is held by a Jew;;;;;;;;;;;;;x
+
+###modifier defs
+blacklist_modifier;This artifact cannot be §Rstolen§! or §Rseized§!;;;;;;;;;;;;;x
+special_inheritance_modifier;This artifact will always remain with the §Yholder§! of it's associated §Ytitle§! or §Ydynasty§!;;;;;;;;;;;;;x
+attractive_children_chance;Chance of Children Gaining Attractive on Birth;;;;;;;;;;;;;x
+religious_authority_artifact;Religious Authority;;;;;;;;;;;;;x
+
+###Timers
+gaze_into_eye_timer;odins eye cd;;;;;;;;;;;;;x
+gaze_into_eye_timer_desc;if you see this please report it on the Artifact Acquisition and Overhaul mode page.;;;;;;;;;;;;;x
+open_pandoras_box_timer;pandora cd;;;;;;;;;;;;;x
+open_pandoras_box_timer_desc;if you see this please report it on the Artifact Acquisition and Overhaul mode page.;;;;;;;;;;;;;x
+
+
+############Opinion Modifiers############
+opinion_requested_crown;Requested Italian Crown;;;;;;;;;;;;;x
+opinion_axe_challenger;Challenger;;;;;;;;;;;;;x
+
+
+############Death############
+death_fafnir_desc;was killed by Fafnir;;;;;;;;;;;;;x
+
+
+
+############Nicknames############
+nick_the_wrath_of_perun;the Wrath of Perun;;;;;;;;;;;;;x
+nick_the_son_of_odin;Odinson;;;;;;;;;;;;;x
+
+############Minor Titles############
+
+############Buildings############
+
+############Scripted Triggers############
+aao_is_crowned_trigger_tooltip;Is crowned;;;;;;;;;;;;;x
+
+
+############Decisions############
+
+
+request_ita_crown;Request the Crown of Lombardy;;;;;;;;;;;;;x
+request_ita_crown_desc; Your liege currently holds your rightful crown as King of Italy, make a request for it.;;;;;;;;;;;;;x
+request_ita_crown_allow;You have not already made this request to your current liege;;;;;;;;;;;;;x
+
+
+fragments_search;Search for a fragment of the Sampo;;;;;;;;;;;;;x
+fragments_search_desc;Go looking for a fragment of the Sampo, you are not sure if you may succeed.;;;;;;;;;;;;;x
+fragments_search_allow;Must NOT have previously searched for a fragment;;;;;;;;;;;;;x
+ai_fragments_search;ai sampo search;;;;;;;;;;;;;x
+ai_fragments_search_desc;if you see this please report it on the Artifact Acquisition and Overhaul mod page.;;;;;;;;;;;;;x
+
+
+become_herald_of_zun;Declare yourself the Herald of Zun;;;;;;;;;;;;;x
+become_herald_of_zun_allow;All vassals are either Zunists or Old Zunists;;;;;;;;;;;;;x
+become_herald_of_zun_desc;The heathens have been driven back and you have carved yourself a large realm from their remains, ruled solely by the worshippers of mighty Zun. Perhaps it is time to become something more than a mere ruler.;;;;;;;;;;;;;x
+send_son_to_zun;Send Son to Knights of the Sun;;;;;;;;;;;;;x
+send_son_to_zun_desc;Your son wastes away in court. His abilities would be better used to fight the enemies of Zun. Yet he will not forget his duties and shall return after a decade.;;;;;;;;;;;;;x
+
+create_herbal_medicine;Collect Some Herbal Medicine;;;;;;;;;;;;;x
+create_herbal_medicine_allow;Has a competent Court Physician;;;;;;;;;;;;;x
+create_herbal_medicine_desc;Either using your own knowledge or your physician's, gathering some medicinal plants will surely keep sickness at bay.;;;;;;;;;;;;;x
+african_blessing;Ask the High Priest for a Blessing;;;;;;;;;;;;;x
+african_blessing_desc;The word of the High Priest is respected by your pagan brethren. Ask him to bestow his favor on you, if you think you're pious enough.;;;;;;;;;;;;;x
+african_blessing_allow;The High Priest will only give one blessing per ruler;;;;;;;;;;;;;x
+african_blessing_effect;The High Priest will consider your request;;;;;;;;;;;;;x
+
+open_jerusalem;Open Jerusalem to Other Faiths;;;;;;;;;;;;;x
+open_jerusalem_desc;Allowing pilgrims to enter the Holy Land will surely bring you both wealth and respect.;;;;;;;;;;;;;x
+open_jerusalem_effect;Decide who can enter;;;;;;;;;;;;;x
+jerusalem_change_pilgrims;Change Allowed Pilgrims;;;;;;;;;;;;;x
+jerusalem_change_pilgrims_desc;Change which pilgrims may enter the Holy Land.;;;;;;;;;;;;;x
+jerusalem_change_pilgrims_effect;Decide who can enter;;;;;;;;;;;;;x
+
+face_fafnir;Face Fafnir;;;;;;;;;;;;;x
+face_fafnir_desc;You travel to the dragon's lair in order to slay it and claim it's treasure. This will probably be extremely dangerous and should not be taken lightly.;;;;;;;;;;;;;x
+face_fafnir_allow;Fafnir is not currently in combat;;;;;;;;;;;;;x
+face_fafnir_effect;You set out;;;;;;;;;;;;;x
+face_fafnir_ai;ai fafnir chain;;;;;;;;;;;;;x
+face_fafnir_ai_desc;if you see this please report it on the Artifact Acquisition and Overhaul mod page.;;;;;;;;;;;;;x
+
+
+
+
+####artifact power decisions
+
+carve_out_eye;Carve Out an Eye;;;;;;;;;;;;;x
+carve_out_eye_desc;Remove one of your eyes in prepartion for using the powerful artifact Odin's Eye.;;;;;;;;;;;;;x
+gaze_into_eye;Gaze into Odin's Eye;;;;;;;;;;;;;x
+gaze_into_eye_desc;Look into the Eye, who knows what secrets it may reveal?;;;;;;;;;;;;;x
+gaze_into_eye_allow1;Odin's Eye is active;;;;;;;;;;;;;x
+gaze_into_eye_allow2;Due to fatigue you can only use the Eye once every 8 years[Root.GetAaoOdinEyeCooldown];;;;;;;;;;;;;x
+gaze_into_eye_cooldown;   §YReady on: [This.gaze_into_eye_timer.GetExpiryDate]§!;;;;;;;;;;;;;x
+gaze_into_eye_effect;Unravel life's mysteries;;;;;;;;;;;;;x
+
+rebuild_sampo; Rebuild the Legendary Sampo;;;;;;;;;;;;;x
+rebuild_sampo_desc;The Sampo lies shattered into nine pieces. With all of them in your possession, you seek the greatest minds to reconstruct this legendary artifact.;;;;;;;;;;;;;x
+rebuild_sampo_allow;Must have all nine pieces of the Sampo;;;;;;;;;;;;;x
+
+forge_meteorite;Forge Meteorite Blade;;;;;;;;;;;;;x
+forge_meteorite_desc;The stone you found is very durable but useless to you in it's current form. Forge it into a powerful blade worthy of you.;;;;;;;;;;;;;x
+
+open_pandoras_box;Open Pandora's Box;;;;;;;;;;;;;x
+open_pandoras_box_desc;What wonders and horrors does this mythical box contain? Only one way to find out.;;;;;;;;;;;;;x
+open_pandoras_box_allow1;Pandora's Box is active;;;;;;;;;;;;;x
+open_pandoras_box_allow2;Has NOT opened Pandora's Box in the last five years[Root.GetAaoPandoraCooldown];;;;;;;;;;;;;x
+open_pandoras_box_cooldown;   §YReady on: [This.open_pandoras_box_timer.GetExpiryDate]§!;;;;;;;;;;;;;x
+open_pandoras_box_effect;Unleash Pandemonium!;;;;;;;;;;;;;x
+
+joyeuse_restore_carolingian_empire;Restore the Carolingian Empire;;;;;;;;;;;;;x
+joyeuse_restore_carolingian_empire_desc;The great conquests are over, the old borders of the Carolingian Empire are finally under your control.;;;;;;;;;;;;;x
+joyeuse_restore_carolingian_empire_allow;Completely controls all of Francia except for Brittany;;;;;;;;;;;;;x
+joyeuse_restore_carolingian_empire_allow3;Completely controls all of Germania except for the Kingdoms of Bohemia and Pommerania;;;;;;;;;;;;;x
+joyeuse_restore_carolingian_empire_allow4;Completely controls all of Northern Italy up to the Duchy of Spoleto except Latium;;;;;;;;;;;;;x
+joyeuse_restore_carolingian_empire_effect1;All Titles of the Carolingian Empire will become dejure vassals of [Root.PrimaryTitle.GetFullName];;;;;;;;;;;;;x
+joyeuse_restore_carolingian_empire_effect2;Joyeuse will become a ceromonial artifact of the [Root.GetOnlyDynastyName] dynasty;;;;;;;;;;;;;x
+
+girdle_of_aphrodite_power;Charm;;;;;;;;;;;;;x
+girdle_of_aphrodite_power_desc;Using the power of the Girdle of [From.GetAphroditeVenusName] you are able to make [Root.GetBestName] your lover.;;;;;;;;;;;;;x
+
+
+####Misc Custom Loc
+vulcan_god_name;Vulcan;;;;;;;;;;;;;x
+hephaestus_god_name;Hephaestus;;;;;;;;;;;;;x
+
+artemis_god_name;Artemis;;;;;;;;;;;;;x
+diana_god_name;Diana;;;;;;;;;;;;;x
+
+
+

@@ -1,0 +1,110 @@
+# Huangtou dynasty (placeholders)
+750.1.1 = {
+	holder = 1000000823 # Shefuchen
+}
+784.1.1 = {
+	holder = 1000000824 # Xibaxiong
+}
+813.1.1 = {
+	holder = 1000000825 # Hongji
+}
+844.1.1 = {
+	holder = 1000000826 # Zhengge
+}
+
+# Yaolian Dynasty
+860.1.1 = {
+	holder=1000001007 # Xi'er
+	liege = d_shajing
+}
+882.1.1 = {
+	holder=1000001008 # Qinde
+}
+
+# Liao dynasty
+907.1.1 = {
+	active = yes
+	#historical_nomad = yes
+	holder = 194325 # Abaoji/Taizu
+	law = succ_primogeniture
+}
+926.9.6 = {
+	holder = 194326 # Deguang/Taizong
+}
+947.5.18 = {
+	holder = 194328 # Ruan/Shizong
+}
+951.10.7 = {
+	holder = 194329 # Jing/Muzong
+}
+969.3.12 = {
+	holder = 194330 # Xian/Jingzong
+}
+982.10.13 = {
+	holder = 194331 # Longxu/Shengzong
+}
+1031.6.25 = {
+	holder = 194332 # Zongzhen/Xingzong
+}
+1055.8.28 = {
+	holder = 194333 # Hongji/Daozong
+}
+1101.2.12 = {
+	holder = 194334 # Yanxi/Tianzuo
+}
+
+# End of Liao - to Jin
+1125.3.26 = {
+	liege = e_golden_river
+	holder=217731 #Wuqimai
+}
+1135.2.9 = {
+	holder = 217732 #Hela
+}
+1150.1.9 = {
+	holder = 217734 #Digunai
+}
+1161.12.15 = {
+	holder = 217735 #Wulu
+}
+1189.1.20 = {
+	holder = 217736 #Madage
+}
+1208.12.29 = {
+	holder = 217737 #Yongji
+}
+1213.9.11 = {
+	holder = 217738 #Wudubu
+}
+
+# Dong-Xia
+1215.1.1 = {
+	liege = k_dongxia
+	holder = 1000000985 # Puxian Wannu
+}
+# Under the Mongols
+1233.7.1 = {
+	holder = 166855 # Temüge; end of Dong-Xia
+	liege = k_mongolia
+}
+1246.8.24 = {
+	holder = 166954 # Tacar, grandson of Temüge and grandfather of Nayan; his grandfather dies this date
+}
+1260.1.1 = {
+	holder = 166955 # Ajul, father of Nayan; his father dies this date
+}
+1264.8.21 = {
+	liege = k_liaoning
+}
+1273.1.1 = {
+	holder = 166956 # Nayan; his father dies this date
+}
+1287.7.16 = {
+	holder = 1000002239 # Hong Jungi (a.k.a. Hong Dagu)
+}
+1291.1.1 = {
+	holder = 1000002274 # Hong Gyu
+}
+1316.6.23 = {
+	holder = 1000002276 # Hong Gyeong
+}

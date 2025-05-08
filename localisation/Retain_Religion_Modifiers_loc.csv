@@ -1,0 +1,8 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+tooltip_defensive_pagan_minor_effect_tt;§GDue to our heritage armies gain minor bonuses when defending their home territories.§!;;;;;;;;;;;;;x
+tooltip_defensive_pagan_lose_effect_tt;§RArmies will no longer gain bonuses when defending their home territories.§!;;;;;;;;;;;;;x
+tooltip_lose_current_levy_and_troop_bonuses_tt;§RWe will lose our current Levy and Garrison bonuses.§!;;;;;;;;;;;;;x
+TENGRI_RELENTLESS_RELIGION;Invaders;Envahisseurs;Eindringlinge;;Invasores;;;;;;;;x
+TENGRI_RELENTLESS_ANIMISTIC_RELIGION;Animistic Invaders;Envahisseurs Animiste;Animistisch Eindringlinge;;Invasores Animista;;;;;;;;x
+ANIMISTIC_RELIGION;Animistic;Animiste;Animistisch;;Animista;;;;;;;;;x
+RELENTLESS_ANIMISTIC_RELIGION;Animistic Unrelenting;Doctrine Implacable Animiste;Animistisch Unnachgiebige Lehre;;Doctrina Implacable Animista;;;;;;;;x

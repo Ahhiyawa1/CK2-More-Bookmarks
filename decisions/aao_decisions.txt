@@ -1,0 +1,413 @@
+decisions = {
+
+	###lombardy crown and hre
+	request_ita_crown = { 
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			has_landed_title = k_italy
+			NOT = { has_artifact = iron_crown_of_lombardy }
+			liege = { has_artifact = iron_crown_of_lombardy }
+		}
+		allow = {
+			has_landed_title = k_italy
+			prestige = 250
+			custom_tooltip = {
+				text = request_ita_crown_allow
+				NAND = {
+					has_character_flag = requested_crown
+					liege = { has_character_flag = requested_crown }
+				}
+			}
+		}
+		effect = {
+			prestige = -100
+			set_character_flag = requested_crown	
+			hidden_tooltip = {
+				liege = {
+					character_event = {id = aaoa.200 days = 5}
+					opinion = {who = ROOT modifier = opinion_requested_crown}
+					set_character_flag = requested_crown
+				}
+			}	
+		}
+		ai_will_do = { factor = 1 }
+		ai_check_interval = 12
+	}
+	
+	###search for sampo fragments
+	fragments_search = {
+	
+		only_playable = yes
+		is_high_prio = yes
+		ai = no
+		
+		potential = {
+			religion_openly_finnish_or_reformed_trigger = yes
+			NOR = { 
+				has_global_flag = sampo_rebuilt
+				check_variable = { which = global_sampo_fragment value = 9 }
+			}
+		}
+		allow = {
+			is_adult = yes
+			is_incapable = no
+			prisoner = no
+			custom_tooltip = {
+				text = fragments_search_allow
+				NOT = { has_character_flag = searched_fragments }
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_character_flag = searched_fragments
+				character_event = { id = aaop.401 days = 2 }
+			}
+		}
+	}
+	
+	###search for sampo fragments AI version
+	ai_fragments_search = {
+	
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			ai = yes
+			religion_openly_finnish_or_reformed_trigger = yes
+			NOT = { 
+				has_global_flag = sampo_rebuilt
+				check_variable = {which = global_sampo_fragment value = 9}
+			}	
+		}
+		allow = {
+			is_adult = yes
+			is_incapable = no
+			prisoner = no
+			custom_tooltip = {
+				text = fragments_search_allow
+				NOT = {has_character_flag = searched_fragments}
+			}
+			higher_tier_than = COUNT
+			OR = {
+				trait = greedy
+				trait = ambitious
+				trait = envious
+			}
+			NOT = { trait = content}
+			OR = {
+				diplomacy = 8
+				learning = 8
+				martial = 8
+				intrigue = 8
+				stewardship = 8
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				set_character_flag = searched_fragments
+				character_event = {id = aaop.401 days = 2}
+			}
+		}
+		ai_will_do = {factor = 1}
+		ai_check_interval = 24
+	}
+	
+	
+	###herald of zun
+	become_herald_of_zun = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			religion_openly_zun_or_reformed_trigger = yes
+			NOT = { has_global_flag = herald_of_zun_declared }
+		}
+		allow = {
+			independent = yes
+			religion_authority = 0.75
+			realm_size = 150
+			custom_tooltip = {
+				text = become_herald_of_zun_allow
+				any_vassal = {
+					OR = {
+						religion = zun_pagan
+						religion = zun_pagan_reformed
+					}
+				}
+			}
+		}
+		effect = {
+			set_global_flag = herald_of_zun_declared
+			add_trait = herald_of_zun
+			prestige = 500
+			piety = 500
+			hidden_tooltip = {
+				character_event = {id = aaop.1204 days = 10}
+				any_child = {
+					character_event = { id = aaop.1205 days = 2 }
+				}
+			}
+		}
+		ai_will_do = {factor = 1}
+		ai_check_interval = 24
+	}
+	
+	###herbal medicine
+	create_herbal_medicine = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			religion_openly_west_african_or_reformed_trigger = yes
+			NOT = {has_artifact = herbal_medicine}
+			is_ruler = yes
+		}
+		allow = {
+			OR = {
+				learning = 12
+				custom_tooltip = {
+					text = create_herbal_medicine_allow
+					any_courtier_or_vassal = {
+						has_minor_title = title_court_physician
+						OR = {
+							trait = physician
+							learning = 20
+						}
+					}
+				}
+			}
+		}
+		effect = { add_artifact = herbal_medicine }
+		ai_will_do = {factor = 1}
+		ai_check_interval = 24
+	}
+	
+	###african blessing
+	african_blessing = {
+		only_playable = yes
+		is_high_prio = yes
+	
+		potential = {
+			religion_openly_west_african_or_reformed_trigger = yes
+			d_west_african_pagan_reformed = { has_holder = yes }
+			is_landed = yes
+			NOT = { has_landed_title = d_west_african_pagan_reformed }
+		}
+		allow = {
+			piety = 100
+			d_west_african_pagan_reformed = {
+				show_scope_change = no
+				holder_scope = {
+					opinion = { who = ROOT value = 0 }
+				}
+			}
+			custom_tooltip = {
+				text = african_blessing_allow
+				NOT = { has_character_flag = requested_african_blessing }
+			}
+		}
+		effect = {
+			custom_tooltip = {
+				text = african_blessing_effect
+				d_west_african_pagan_reformed = {
+					holder_scope = {
+						character_event = {id = aaop.200 days = 10}
+					}
+				}
+				set_character_flag = requested_african_blessing
+			}	
+		}
+		ai_will_do = { factor = 1 }
+		ai_check_interval = 24
+	}
+
+	
+	###Jewish jerusalem pilgrims
+	open_jerusalem = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		potential = {
+			religion = jewish
+			completely_controls = c_jerusalem
+			NOT = { has_character_flag = opened_jerusalem }
+		}
+		allow = {
+			completely_controls = d_jerusalem
+			NOT = { trait = zealous }
+			piety = 250
+			war = no
+			independent = yes
+		}
+		effect = {
+			piety = -250
+			custom_tooltip = {
+				text = open_jerusalem_effect
+				set_character_flag = opened_jerusalem
+				character_event = { id = aaoa.606 }
+			}
+		}
+		ai_will_do = {factor = 1}
+		ai_check_interval = 24
+	}
+	###change allowed pilgrims
+	jerusalem_change_pilgrims = {
+		only_playable = yes
+		ai = no
+		
+		potential = { has_character_flag = opened_jerusalem }
+		allow = {
+			piety = 100
+			war = no
+		}
+		effect = {
+			piety = -100
+			custom_tooltip = {
+				text = jerusalem_change_pilgrims_effect
+				character_event = {id = aaoa.606}
+			}
+		}
+	}
+	
+	###face fafnir
+	face_fafnir = {
+		only_playable = yes
+		is_high_prio = yes
+		ai = no
+		
+		potential = {
+			has_global_flag = fafnir_alive
+			religion_openly_norse_or_reformed_trigger = yes
+			NOR = { 
+				has_character_flag = facing_fafnir 
+				has_character_flag = fafnir
+			}
+		}
+		allow = {
+			war = no
+			in_seclusion = no
+			is_incapable = no
+			is_adult = yes
+			custom_tooltip = {
+				text = face_fafnir_allow
+				NOT = { has_global_flag = fafnir_busy }
+			}
+		}
+		effect = {
+			custom_tooltip = {
+				text = face_fafnir_effect
+				set_global_flag = fafnir_busy
+				set_character_flag = facing_fafnir
+				character_event = { id = aaop.005 days = 10 }
+			}
+		}
+	}
+	###face fafnir ai
+	face_fafnir_ai = {
+		only_playable = yes
+		is_high_prio = yes
+		
+		
+		potential = {
+			ai = yes
+			has_global_flag = fafnir_alive
+			religion_openly_norse_or_reformed_trigger = yes
+			NOR = { 
+				has_character_flag = facing_fafnir 
+				has_character_flag = fafnir
+			}
+		}
+		allow = {
+			war = no
+			in_seclusion = no
+			is_incapable = no
+			is_adult = yes
+			has_disease_trigger = no
+			any_child = {
+				is_alive = yes
+				is_female = no
+			}
+			OR = {
+				martial = 12
+				combat_rating = 2
+			}
+		}
+		effect = {
+			custom_tooltip = {
+				text = face_fafnir_effect
+				set_global_flag = fafnir_busy
+				set_character_flag = facing_fafnir
+				character_event = { id = aaop.005 days = 10 }
+			}
+		}
+		ai_will_do = {factor = 1}
+		ai_check_interval = 24
+	}
+	
+}	
+
+targeted_decisions = {
+	
+	##Zunist knights of the sun
+	send_son_to_zun = {
+		only_playable = yes
+		
+		filter = dynasty
+		ai_target_filter = home_court
+		
+		from_potential = {
+			religion = zun_pagan_reformed
+			is_landed = yes
+			NOT = { has_landed_title = d_zun_warriors }
+		}
+		
+		potential = {
+			dynasty = FROM
+			liege = { character = FROM }
+		}
+	
+		allow = {
+			is_title_active = d_zun_warriors
+			ROOT = {
+				is_child_of = FROM
+				is_adult = yes
+				is_female = no
+				is_landed = no
+				is_incapable = no
+				in_seclusion = no
+				religion = zun_pagan_reformed
+				NOT = { has_bottom_tier_education_trait_trigger = yes }
+				OR = {
+					diplomacy = 10
+					martial = 10
+					stewardship = 10
+					intrigue = 10
+					learning = 10
+				}
+			}
+		}
+		effect = {
+			FROM = { piety = 100 }
+			ROOT = { character_event = { id = aaop.1201 } }
+		}
+		ai_will_do = {
+			factor = 0.25
+			modifier = {
+				factor = 2
+				FROM = { trait = zealous }
+			}
+			modifier = {
+				factor = 0
+				FROM = { trait = cynical }
+			}
+			modifier = {
+				factor = 0
+				ROOT = { is_primary_heir = yes }
+			}
+		}
+		ai_check_interval = 24
+	}
+	
+}

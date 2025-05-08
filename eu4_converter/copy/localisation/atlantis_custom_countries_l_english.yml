@@ -1,0 +1,23 @@
+﻿l_english:
+ imperial_government_ruler_atlantean: "Basileus"
+ imperial_government_ruler_female_atlantean: "Basilissa"
+ feudal_monarchy_ruler_atlantean: "Basileus"
+ feudal_monarchy_ruler_female_atlantean: "Basilissa"
+ despotic_monarchy_ruler_atlantean: "Basileus"
+ despotic_monarchy_ruler_female_atlantean: "Basilissa"
+ administrative_monarchy_ruler_atlantean: "Basileus"
+ administrative_monarchy_ruler_female_atlantean: "Basilissa"
+ absolute_monarchy_ruler_atlantean: "Basileus"
+ absolute_monarchy_ruler_female_atlantean: "Basilissa"
+ constitutional_monarchy_ruler_atlantean: "Basileus"
+ constitutional_monarchy_ruler_female_atlantean: "Basilissa"
+ enlightened_despotism_ruler_atlantean: "Basileus"
+ enlightened_despotism_ruler_female_atlantean: "Basilissa"
+ merchant_republic_ruler_atlantean: "Archon"
+ merchant_republic_ruler_female_atlantean: "Archontissa"
+ administrative_republic_ruler_atlantean: "Archon"
+ administrative_republic_ruler_female_atlantean: "Archontissa"
+ ATL: "Atlantis"
+ ATL_ADJ: "Atlantean"
+ 
+ 

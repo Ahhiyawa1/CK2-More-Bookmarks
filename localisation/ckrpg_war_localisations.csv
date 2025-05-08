@@ -1,0 +1,17 @@
+#CODE;ENGLISH;FRENCH;GERMAN;;SPANISH;;;;;;;;;x
+ckrpg_siege_0001;At the end of a long siege, soldiers drag you out of your hiding spot.;;Nach einer langen Belagerung, ziehen euch feindliche Belagerer aus eurem Versteck!;;;;;;;;;;;x
+ckrpg_siege_0002;You capture [From.GetBestName] in the midst of the siege. What do you want to do with [From.GetHerHim]?;;Ihr habt [From.GetBestName] gefangen genommen. Was möchtet ihr mit [From.GetHerHim] anstellen?;;;;;;;;;;;x
+EVTOPTA_ckrpg_siege.0002;Imprison [From.GetHerHim];;[From.GetHerHim] einkerkern;;;;;;;;;;;x
+EVTOPTB_ckrpg_siege.0002;Imprison and convert [From.GetHerHim] by sword;;[From.GetHerHim] einkerkern und zur Konvertierung zwingen;;;;;;;;;;;x
+EVTOPTC_ckrpg_siege.0002;Behead [From.GetHerHim];;[From.GetHerHim] köpfen;;;;;;;;;;;x
+EVTOPTD_ckrpg_siege.0002;Release [From.GetHerHim];;[From.GetHerHim] freilassen;;;;;;;;;;;x
+ckrpg_siege_0004;[target_imprisoned_and_converted.GetBestName] has been imprisoned and converted by sword by [target_imprisoner.GetBestName] after a siege.;;[target_imprisoned_and_converted.GetBestName] wurde eingekerkert und von [target_imprisoner.GetBestName] zur Konvertierung gezwungen.;;;;;;;;;;;x
+EVTOPTA_ckrpg_siege.0004;Oh no!;;Oh nein!;;;;;;;;;;;x
+ckrpg_siege_0005;[target_imprisoned.GetBestName] has been imprisoned by [target_imprisoner.GetBestName] after a siege.;;[target_imprisoned.GetBestName] wurde nach einer Belagerung von [target_imprisoner.GetBestName] eingekerkert.;;;;;;;;;;;x
+EVTOPTA_ckrpg_siege.0005;Oh no!;;Oh nein!;;;;;;;;;;;x
+ckrpg_siege_0007;[target_executed.GetBestName] is dragged from [target_executed.GetHerHis] hiding place after a siege and beheaded on the order of [target_killer.GetBestName].;;[target_executed.GetBestName] wurde von [target_executed.GetHerHis] aus dem Versteck gezogen und auf Befehl von [target_killer.GetBestName] geköpft.;;;;;;;;;;;x
+ckrpg_converted_by_force;Converted By Force;;Zur Konvertierung zwingen;;;;;;;;;;;x
+ckrpg_converted_by_force_desc;After abandoning your faith under duress, it may be hard for anyone to trust you again.;;Nach dem ihr eurem Glauben abgeschworen habt, wird es anderen eventuell schwerfallen euch wieder zu vertrauen.;;;;;;;;;;;x
+ckrpg_executed_courtier;Executed a Courtier After Siege;;Hat einen Höfling nach einer Belagerung hingerichtet;;;;;;;;;;;x
+ckrpg_executed_family_member;Executed a Family Member After Siege;;Hat ein Familienmitglied nach einer Belagerung hingerichtet;;;;;;;;;;;x
+ckrpg_executed_child;Executed Character's Child;;Hat ein Kind vom Charakter nach einer Belagerung hingerichtet;;;;;;;;;;;

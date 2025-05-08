@@ -1,0 +1,2243 @@
+#Pretty same as aztec invasion, but it is carribean greek. Why? Because I can!
+
+namespace = ATLI
+
+# First Contact - Trireme
+province_event = {
+	id = ATLI.1
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			AND = {
+				has_game_rule = {
+					name = atlantis_invasion
+					value = historical
+				}
+				year = 1100
+			}
+			AND = {
+				has_game_rule = {
+					name = atlantis_invasion
+					value = random
+				}
+				total_years_played = 50
+			}
+			AND = {
+				has_game_rule = {
+					name = atlantis_invasion
+					value = delayed_random
+				}
+				year = 1000
+				total_years_played = 50
+			}
+			AND = {
+				has_game_rule = {
+					name = atlantis_invasion
+					value = immediately
+				}
+			}
+		}
+		NOR = {
+			has_global_flag = atlantean_ships 
+			has_game_rule = {
+				name = atlantis_invasion
+				value = off
+			}
+		}
+		OR = {
+			province_id = 1 # Vestisland
+			province_id = 9 # Connacht
+			province_id = 35 # Inse Gall
+			province_id = 31 # Cornwall
+			province_id = 104 # Cornouaille
+			province_id = 149 # Bordeaux
+			province_id = 156 # Coruna
+			province_id = 162 # Silves
+			province_id = 841 # Tangier
+			province_id = 845 # Anti-Atlas
+		}
+	}
+	
+	immediate = {
+		if = { 
+			limit = {  
+				OR = {
+					has_game_rule = {
+						name = atlantis_invasion
+						value = random
+					}
+					has_game_rule = {
+						name = atlantis_invasion
+						value = delayed_random
+					}
+					has_game_rule = {
+				        name = atlantis_invasion
+			           	value = immediately
+			        }
+				}
+				NOT = { year = 1300 } #Will never fire otherwise.
+			}
+			random = { 
+				chance = 40
+					modifier = {
+						factor = 0.75
+						total_years_played = 100
+					}
+					modifier = {
+						factor = 0.5
+						total_years_played = 150
+					}
+					modifier = {
+						factor = 0.25
+						total_years_played = 200
+					}
+				break = yes #Chance of misfire to prevent the randomized invasions from firing immediately after 50 years of game.
+			}
+
+		}
+		set_global_flag = atlantean_ships
+		set_province_flag = atlantean_ships
+		activate_title = { title = e_atlantis status = yes }
+		owner = { character_event = { id = ATLI.74 } }
+		
+		k_papal_state = {
+			holder_scope = {
+				create_random_soldier = {
+					dynasty = 1356019 # Atlantid
+					random_traits = yes
+					culture = atlantean
+					religion = hellenic_pagan
+				}
+				new_character = {
+					e_atlantis = {
+						grant_title = PREV
+					}
+					set_government_type = feudal_government
+					e_atlantis = {
+						add_law = succ_primogeniture
+						add_law = cognatic_succession
+						if = {
+							limit = {
+								has_dlc = "Zeus"
+							}
+							add_law = revoke_title_law_2
+						}
+						if = {
+							limit = {
+								NOT = { has_dlc = "Zeus" }
+							}
+							add_law = crown_authority_1
+						}
+					}
+					set_defacto_liege = THIS
+					set_character_flag = leader_of_invasion 
+					narrative_event = { id = ATLI.2 days = 7 }
+				}
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 720
+		modifier = {
+			factor = 0.5
+			year = 1320
+		}
+		modifier = {
+			factor = 4
+			has_game_rule = {
+				name = atlantis_invasion
+				value = random
+			}
+		}
+		modifier = {
+			factor = 3
+			has_game_rule = {
+				name = atlantis_invasion
+				value = delayed_random
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_ATLI_001
+	}
+}
+
+# Rumors of people from across the Atlantic
+narrative_event = {
+	id = ATLI.2
+	title = EVTNAME_ATLI_002
+	
+	desc = {
+		text = EVTDESC_ATLI_002
+	}
+	
+	major = yes
+	
+	picture = GFX_evt_atlantis_ship
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	major_trigger = {
+		FROM = { owner = { NOT = { character = PREVPREV } } }
+	}
+	
+	immediate = {
+		e_atlantis = {
+			holder_scope = {
+				character_event = { id = CM.10018 }  # Chronicle
+			}
+		}
+	}
+	
+	option = {
+		name = {
+			text = EVTOPTA_ATLI_002
+		}
+	}
+}
+
+# First Landing of the Atlanteans
+province_event = {
+	id = ATLI.3
+	desc = EVTDESC_ATLI_003
+	
+	picture = GFX_evt_atlantean_landing
+	border = GFX_event_normal_frame_war
+	
+	trigger = {
+		OR = {
+			AND = {
+				has_game_rule = {
+					name = atlantis_invasion
+					value = historical
+				}
+				year = 1250
+			}
+			AND = {
+				has_game_rule = {
+					name = atlantis_invasion
+					value = random
+				}
+				total_years_played = 50
+			}
+			AND = {
+				has_game_rule = {
+					name = atlantis_invasion
+					value = delayed_random
+				}
+				year = 1000
+				total_years_played = 50
+			}
+			AND = {
+				has_game_rule = {
+					name = atlantis_invasion
+					value = immediately
+				}
+			}
+		}
+		NOT = { has_global_flag = atlanteans_arrival }
+		had_province_flag = { flag = atlantean_ships days = 730 }
+	}
+	
+	immediate = {
+		set_global_flag = atlanteans_arrival
+#		culture = atlantean
+#		religion = hellenic_pagan
+		e_atlantis = {
+			holder_scope = {
+				narrative_event = { id = ATLI.4 }
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {
+		name = EVTOPTA_ATLI_003
+	}
+}
+
+# First Landing of the Atlanteans
+narrative_event = {
+	id = ATLI.4
+	title = EVTNAME_ATLI_004
+	desc = EVTDESC_ATLI_004
+	major = yes
+	hide_new = yes
+	
+	picture = GFX_evt_atlantean_landing
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	major_trigger = {
+		FROM = { owner = { NOT = { character = PREVPREV } } }
+	}
+	
+	immediate = {
+		any_playable_ruler = {
+			limit = {
+				ai = no
+				capital_scope = {
+					NOT = { region = world_india }
+				}
+			}
+			character_event = { id = CM.10020 }  # Chronicle
+		}
+	
+		wealth = 10000
+		FROM = {
+			kingdom = {
+				ROOT = {
+					war = {
+						casus_belli = atlantean_invasion
+						target = PREVPREV # The top liege of the province owner
+						thirdparty_title = PREV # The de jure kingdom
+					}
+				}
+			}
+		}
+		
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops = 
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 25
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 22
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 31
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 24
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 23
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 25
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 22
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 18
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 28
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 29
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		
+		random = {
+			chance = 50
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 30
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 25
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 22
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+		}
+		
+		random = {
+			chance = 50
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 30
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 25
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 22
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+		}
+		
+		random = {
+			chance = 50
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 30
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 25
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 22
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+		}
+		
+		# Ships
+		if = {
+			limit = {
+				FROM = { 
+					OR = {
+						province_id = 1 # Vestisland
+						province_id = 9 # Connacht
+						province_id = 35 # Inse Gall
+						province_id = 31 # Cornwall
+					}
+				}
+			}
+			FROM = {
+				sea_zone = {
+					ROOT = {
+						spawn_unit = {
+							province = PREV
+							home = FROM
+							owner = ROOT
+							earmark = atlantean_invasion_fleet
+							troops =
+							{
+								galleys = { 1000 1000 }
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		# Some extra courtiers
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 18
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 18
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 20
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 25
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 26
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 28
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 17
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 18
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = yes
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = yes
+			age = 17
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = yes
+			age = 18
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = yes
+			age = 18
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = yes
+			age = 20
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = yes
+			age = 16
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = yes
+			age = 16
+		}
+
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_ATLI_004
+
+		trigger = {
+			has_power_omen_modifier_trigger = no
+			has_battle_omen_modifier_trigger = no
+		}
+	}
+
+	option = { # Monks & Mystics - Hermetics Scrying reaction
+		name = EVTOPTA_ATLI_004
+
+		if = { # for safety
+			limit = {
+				OR = {
+					has_power_omen_modifier_trigger = yes
+					has_battle_omen_modifier_trigger = yes
+				}
+			}
+			set_character_flag = negative_event_flag # For the scrying outcome calculation...
+		}
+
+		calculate_scrying_outcome_effect = yes
+		remove_scrying_omen_modifiers_effect = yes
+
+		tooltip_info = yes
+		trigger = {
+			OR = {
+				has_power_omen_modifier_trigger = yes
+				has_battle_omen_modifier_trigger = yes
+			}
+		}
+	}
+}
+
+# Second Landing of the Atlanteans
+province_event = {
+	id = ATLI.5
+	desc = EVTDESC_ATLI_005
+	
+	picture = GFX_evt_atlantean_landing
+	border = GFX_event_normal_frame_war
+
+	has_global_flag = atlanteans_arrival
+	
+	trigger = {
+		OR = {
+			AND = {
+				has_game_rule = {
+					name = atlantis_invasion
+					value = historical
+				}
+				year = 1250
+			}
+			AND = {
+				has_game_rule = {
+					name = atlantis_invasion
+					value = random
+				}
+				total_years_played = 50
+			}
+			AND = {
+				has_game_rule = {
+					name = atlantis_invasion
+					value = delayed_random
+				}
+				year = 1000
+				total_years_played = 50
+			}
+		}
+		NOT = { has_global_flag = atlanteans_arrival_2 }
+		OR = {
+			province_id = 1 # Vestisland
+			province_id = 9 # Connacht
+			province_id = 35 # Inse Gall
+			province_id = 31 # Cornwall
+			province_id = 104 # Cornouaille
+			province_id = 149 # Bordeaux
+			province_id = 156 # Coruna
+			province_id = 162 # Silves
+			province_id = 841 # Tangier
+			province_id = 845 # Anti-Atlas
+		}
+		owner = {
+			NOT = { religion = hellenic_pagan }
+		}
+	}
+	
+	immediate = {
+		set_global_flag = atlanteans_arrival_2
+		set_province_flag = atlanteans_second_wave
+#		culture = atlantean
+#		religion = hellenic_pagan
+		e_atlantis = {
+			holder_scope = {
+				narrative_event = { id = ATLI.6 }
+			}
+		}
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {
+		name = EVTOPTA_ATLI_005
+	}
+}
+
+# Second Landing of the Atlanteans
+narrative_event = {
+	id = ATLI.6
+	title = EVTNAME_ATLI_006
+	desc = EVTDESC_ATLI_006
+	major = yes
+	hide_new = yes
+	
+	picture = GFX_evt_atlantean_landing
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	major_trigger = {
+		FROM = { owner = { NOT = { character = PREVPREV } } }
+	}
+	
+	immediate = {
+		FROM = {
+			kingdom = {
+				ROOT = {
+					war = {
+						casus_belli = atlantean_invasion
+						target = PREVPREV # The top liege of the province owner
+						thirdparty_title = PREV # The de jure kingdom
+					}
+				}
+			}
+		}
+		
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 25
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 22
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 25
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 22
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 25
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 22
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 30
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 25
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		create_character = {
+			random_traits = yes
+			dynasty = random
+			religion = hellenic_pagan
+			culture = atlantean
+			female = no
+			age = 22
+			attributes = {
+				martial = 12
+			}
+			trait = brilliant_strategist
+		}
+		new_character = {
+			spawn_unit = {
+				province = FROM
+				home = FROM
+				troops =
+				{
+					heavy_infantry = { 2800 2800 }
+					pikemen = { 1400 1300 }
+					archers = { 1400 1300 }
+				}
+			}
+		}
+		
+		random = {
+			chance = 50
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 30
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 25
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 22
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+		}
+		
+		random = {
+			chance = 50
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 30
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 25
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 22
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+		}
+		
+		random = {
+			chance = 50
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 30
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 25
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = hellenic_pagan
+				culture = atlantean
+				female = no
+				age = 22
+				attributes = {
+					martial = 12
+				}
+				trait = brilliant_strategist
+			}
+			new_character = {
+				spawn_unit = {
+					province = FROM
+					home = FROM
+					troops =
+					{
+						heavy_infantry = { 2800 2800 }
+						pikemen = { 1400 1300 }
+						archers = { 1400 1300 }
+					}
+				}
+			}
+		}
+		
+		# Ships
+		if = {
+			limit = {
+				FROM = { 
+					OR = {
+						province_id = 1 # Vestisland
+						province_id = 9 # Connacht
+						province_id = 35 # Inse Gall
+						province_id = 31 # Cornwall
+					}
+				}
+			}
+			FROM = {
+				sea_zone = {
+					ROOT = {
+						spawn_unit = {
+							province = PREV
+							home = FROM
+							owner = ROOT
+							earmark = atlantean_invasion_fleet
+							troops =
+							{
+								galleys = { 1000 1000 }
+							}
+						}
+					}
+				}
+			}
+		}
+		any_playable_ruler = {
+			limit = { ai = no }
+			if = {
+				limit = {
+					OR = {
+						has_power_omen_modifier_trigger = yes
+						has_battle_omen_modifier_trigger = yes
+					}
+				}
+				set_character_flag = negative_event_flag # For the scrying outcome calculation...
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_ATLI_006
+
+		trigger = {
+			has_power_omen_modifier_trigger = no
+			has_battle_omen_modifier_trigger = no
+			NOR = { 
+		        has_landed_title = e_atlantis
+		        has_landed_title = e_atlantis_landed
+		    }
+		}
+		
+	}
+
+	option = { # Monks & Mystics - Hermetics Scrying reaction
+		name = EVTOPTA_ATLI_006
+
+		if = { # for safety
+			limit = {
+				OR = {
+					has_power_omen_modifier_trigger = yes
+					has_battle_omen_modifier_trigger = yes
+				}
+			}
+			set_character_flag = negative_event_flag # For the scrying outcome calculation...
+		}
+
+		calculate_scrying_outcome_effect = yes
+		remove_scrying_omen_modifiers_effect = yes
+
+		tooltip_info = yes
+		trigger = {
+			OR = {
+				has_power_omen_modifier_trigger = yes
+				has_battle_omen_modifier_trigger = yes
+			}
+			NOR = { 
+		        has_landed_title = e_atlantis
+		        has_landed_title = e_atlantis_landed
+		    }
+		}
+	}
+	option = {
+		name = EVTOPTB_ATLI_006
+		trigger = {
+			OR = { 
+		    has_landed_title = e_atlantis
+		    has_landed_title = e_atlantis_landed
+		    }
+		}
+	}
+}
+
+# Atlantean Invasion Fleets disband
+character_event = {
+	id = ATLI.100
+	hide_window = yes
+	
+	only_playable = yes
+	has_global_flag = atlanteans_arrival
+	
+	trigger = {
+		has_landed_title = e_atlantis
+		NOT = { has_global_flag = atlantean_invasion_fleet_disbanded }
+		had_global_flag = { flag = atlanteans_arrival days = 18250 }
+	}
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+	
+	immediate = {
+		disband_event_forces = atlantean_invasion_fleet
+		set_global_flag = atlantean_invasion_fleet_disbanded
+	}
+	
+	option = {
+		name = OK
+	}
+}
+
+# Atlanteans Thrown Back Into the Sea
+narrative_event = {
+	id = ATLI.105
+	title = EVTNAME_ATLI_105
+	desc = EVTDESC_ATLI_105
+	
+	picture = GFX_evt_atlantean_defeat
+	border = GFX_event_narrative_frame_war
+	
+	major = yes
+	
+	has_global_flag = atlanteans_arrival_2
+	only_playable = yes
+	
+	trigger = {
+		NOT = { has_global_flag = atlanteans_defeated }
+		OR = { 
+		    has_landed_title = e_atlantis
+		    has_landed_title = e_atlantis_landed
+		}
+		has_regiments = no
+		is_landed = no
+	}
+	
+	major_trigger = {
+		ai = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+	    activate_title = { title = e_atlantis status = no } #just in case
+		activate_title = { title = e_atlantis_landed status = no }
+		set_global_flag = atlanteans_defeated
+	}
+	
+	option = {
+		name = EVTOPTA_ATLI_105
+	}
+}
+
+# Food From the Americas
+narrative_event = {
+	id = ATLI.35
+	title = EVTNAME_ATLI_035
+	desc = EVTDESC_ATLI_035
+	
+	picture = GFX_evt_atlantis_ship
+	border = GFX_event_narrative_frame_war
+	
+	major = yes
+	
+	only_playable = yes
+	has_global_flag = atlanteans_arrival
+	
+	trigger = {
+		OR = { 
+		    has_landed_title = e_atlantis
+		    has_landed_title = e_atlantis_landed
+		}
+		NOT = { has_global_flag = aztec_food }
+		NOT = { has_global_flag = atlanteans_defeated }
+	}
+	
+	major_trigger = {
+		ai = no
+	}	
+	
+	mean_time_to_happen = {
+		months = 220
+	}
+	
+	immediate = {
+		set_global_flag = aztec_food
+	}
+	
+	option = {
+		name = EVTOPTA_ATLI_035
+		trigger = {
+			NOR = { 
+			    has_landed_title = e_atlantis 
+			    has_landed_title = e_atlantis_landed
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_ATLI_035_B
+		trigger = {
+			OR = { 
+		    has_landed_title = e_atlantis
+		    has_landed_title = e_atlantis_landed
+		    }
+		}
+	}
+}
+
+# Atlanteans Hold Greece
+narrative_event = {
+	id = ATLI.42
+	title = EVTNAME_ATLI_042
+	desc = EVTDESC_ATLI_042
+	
+	picture = GFX_evt_atlantean_victory
+	border = GFX_event_narrative_frame_war
+	
+	major = yes
+	
+	only_playable = yes
+	has_global_flag = atlanteans_arrival
+	
+	trigger = {
+		OR = { 
+		    has_landed_title = e_atlantis
+		    has_landed_title = e_atlantis_landed
+		}
+		NOT = { has_global_flag = atlantis_greece }
+		completely_controls = d_achaia
+		completely_controls = d_aegean_islands
+		completely_controls = d_athens
+		completely_controls = d_krete
+		completely_controls = d_thessalonika
+		completely_controls = d_epirus
+		completely_controls = d_cephalonia
+		completely_controls = d_ohrid
+		completely_controls = d_dyrrachion
+	}
+	
+	major_trigger = {
+		ai = no
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+		
+	immediate = {
+		set_global_flag = atlantis_greece
+	}
+	
+	option = {
+		name = EVTOPTA_ATLI_042
+		trigger = {
+			NOR = { 
+			    has_landed_title = e_atlantis 
+			    has_landed_title = e_atlantis_landed
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_ATLI_042
+		trigger = {
+			OR = { 
+		    has_landed_title = e_atlantis
+		    has_landed_title = e_atlantis_landed
+		    }
+		}
+	}
+}
+
+# Atlanteans Hold Athens
+narrative_event = {
+	id = ATLI.43
+	title = EVTNAME_ATLI_043
+	desc = EVTDESC_ATLI_043
+	
+	picture = GFX_evt_hellenic_temple
+	border = GFX_event_narrative_frame_war
+	
+	major = yes
+	
+	only_playable = yes
+	has_global_flag = atlanteans_arrival
+	
+	trigger = {
+		OR = { 
+		    has_landed_title = e_atlantis
+		    has_landed_title = e_atlantis_landed
+		}
+		completely_controls = c_hellas
+		NOT = { has_global_flag = atlanteans_athens }
+	}
+	
+	major_trigger = {
+		ai = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+		
+	immediate = {
+		set_global_flag = atlanteans_athens
+	}
+	
+	option = {
+		name = EVTOPTA_ATLI_043
+		trigger = {
+			NOR = { 
+			    has_landed_title = e_atlantis 
+			    has_landed_title = e_atlantis_landed
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_ATLI_043
+		trigger = {
+			OR = { 
+		    has_landed_title = e_atlantis
+		    has_landed_title = e_atlantis_landed
+		    }
+		}
+	}
+}
+
+# Atlanteans Hold Alexandria
+narrative_event = {
+	id = ATLI.44
+	title = EVTNAME_ATLI_044
+	desc = EVTDESC_ATLI_044
+	
+	picture = GFX_evt_atlantean_victory
+	border = GFX_event_narrative_frame_war
+	
+	major = yes
+	
+	only_playable = yes
+	has_global_flag = atlanteans_arrival
+	
+	trigger = {
+		OR = { 
+		    has_landed_title = e_atlantis
+		    has_landed_title = e_atlantis_landed
+		}
+		completely_controls = c_alexandria
+		NOT = { has_global_flag = atlantis_alexandria }
+	}
+	
+	major_trigger = {
+		ai = no
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+		
+	immediate = {
+		set_global_flag = atlantis_alexandria
+	}
+	
+	option = {
+		name = EVTOPTA_ATLI_044
+		trigger = {
+			NOR = { 
+			    has_landed_title = e_atlantis 
+			    has_landed_title = e_atlantis_landed
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_ATLI_044
+		trigger = {
+			OR = { 
+		    has_landed_title = e_atlantis
+		    has_landed_title = e_atlantis_landed
+		    }
+		}
+	}
+}
+
+# Atlanteans Hold Rome
+narrative_event = {
+	id = ATLI.45
+	title = EVTNAME_ATLI_045
+	desc = EVTDESC_ATLI_045
+	
+	picture = GFX_evt_hellenic_temple
+	border = GFX_event_narrative_frame_war
+	
+	major = yes
+	
+	only_playable = yes
+	has_global_flag = atlanteans_arrival
+	
+	trigger = {
+		OR = { 
+		    has_landed_title = e_atlantis
+		    has_landed_title = e_atlantis_landed
+		}
+		completely_controls = c_roma
+		NOT = { has_global_flag = atlantis_rome }
+	}
+	
+	major_trigger = {
+		ai = no
+	}	
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+		
+	immediate = {
+		set_global_flag = atlantis_rome
+	}
+	
+	option = {
+		name = EVTOPTA_ATLI_045
+		trigger = {
+			NOR = { 
+			    has_landed_title = e_atlantis 
+			    has_landed_title = e_atlantis_landed
+			}
+		}
+	}
+	option = {
+		name = EVTOPTB_ATLI_045
+		trigger = {
+			OR = { 
+		    has_landed_title = e_atlantis
+		    has_landed_title = e_atlantis_landed
+		    }
+		}
+	}
+}
+
+# Notification event at beginning of invasion.
+character_event = {
+	id = ATLI.74
+	title = EVTNAME_ATLI_001
+	desc = EVTDESC_ATLI_001
+	
+	picture = GFX_evt_atlantis_ship
+	border = GFX_event_normal_frame_war
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_ATLI_001
+	}
+}
+
+# Atlanteans Had Landed Title - Offer to switch to Atlanteans
+narrative_event = {
+	id = ATLI.75
+	title = EVTNAME_ATLI_075
+	desc = EVTDESC_ATLI_075
+	
+	picture = GFX_evt_atlantean_victory
+	border = GFX_event_narrative_frame_war
+	
+	is_triggered_only = yes
+	
+	major = yes
+	
+	only_playable = yes
+	has_global_flag = atlanteans_arrival
+	
+	trigger = {
+		has_landed_title = e_atlantis_landed
+        is_landed = yes
+	    NOT = { has_global_flag = atlantis_offer }
+	}
+	
+	major_trigger = {
+		ai = no
+	}
+		
+	immediate = {
+		set_global_flag = atlantis_offer
+		ROOT = { 
+            save_event_target_as = leader_of_invasion 
+        }
+		activate_title = { title = e_atlantis status = no }
+	}
+	
+	option = {
+		name = EVTOPTA_ATLI_075_A
+	}
+	option = {
+	    name = EVTOPTA_ATLI_075_B
+		tooltip_info = yes
+        if = {
+            limit = {
+                event_target:leader_of_invasion = {
+                    ai = yes
+                    is_alive = yes
+                }
+            }
+            custom_tooltip = {
+                text = player_character_invasion_leader
+                set_player_character = event_target:leader_of_invasion
+            }
+		}	
+	}
+}
+
+#Debug event to allow atlanteans change succession laws. For some stupid reason "hordes" can not change laws, so I make two "Atlantis" titles - one is horde and one is not. Player is not supposed to see it.
+character_event = {
+	id = ATLI.76
+	desc = EVTDESC_ATLI_075
+	
+	trigger = {
+		has_landed_title = e_atlantis
+        is_landed = yes
+	    NOT = { has_global_flag = atlantis_succ_laws }
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		set_global_flag = atlantis_succ_laws
+	}
+	
+	option = {
+	    name = EVTOPTA_ATLI_075_B
+		hidden_tooltip = {
+			primary_title = {
+				any_direct_de_jure_vassal_title = {
+					de_jure_liege = e_atlantis_landed
+				}
+			}
+		}
+		e_atlantis_landed = {
+			show_scope_change = no
+			grant_title = ROOT
+			hidden_tooltip = { make_primary_title = yes }
+			copy_title_laws = e_atlantis
+			copy_title_history = e_atlantis
+			holder_scope = {
+				character_event = { id = ATLI.75 }
+			}
+		}
+		e_atlantis = {
+			show_scope_change = no
+			destroy_landed_title = THIS
+		}
+		hidden_tooltip = {
+			activate_title = { title = e_atlantis status = no }
+		}
+	}
+}

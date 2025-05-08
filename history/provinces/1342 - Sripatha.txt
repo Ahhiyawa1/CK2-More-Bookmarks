@@ -1,0 +1,18 @@
+# County Title
+title = c_sripatha
+# Settlements
+max_settlements = 4
+b_sripatha = castle
+b_bayana = city
+b_dhavalapuri = castle
+# Misc
+culture = hindustani
+religion = hindu
+################################################################################
+# 1342 - Sripatha
+################################################################################
+
+################################################################################
+# b_dholeshwar_mahadev = temple
+# b_abanhagari = city
+################################################################################

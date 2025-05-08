@@ -1,0 +1,17 @@
+#497 - Dominica
+
+culture = atlantean
+owner = ATL
+controller = ATL
+add_core = ATL
+is_city = yes
+religion = hellenic_pagan
+capital = "Antaphos"
+trade_goods = dyes 
+hre = no
+base_tax = 4
+base_production = 5
+base_manpower = 4
+discovered_by = CAB
+discovered_by = ARW
+discovered_by = ATL

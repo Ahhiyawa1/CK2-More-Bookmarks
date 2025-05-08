@@ -1,0 +1,32 @@
+herald_of_zun = {
+	
+	same_religion_opinion = 10
+	martial = 3
+	
+	customizer = no
+	random = no
+}
+herald_of_zun_descendant = {
+
+	same_religion_opinion = 5
+	martial = 1
+
+	customizer = no
+	random = no
+}
+fafnir_regent = {
+	incapacitating = yes
+	hidden = yes
+	
+	customizer = no
+	random = no
+}
+odin_child_sickness = {
+	health = -1
+
+	is_health = yes
+	is_illness = yes
+	
+	customizer = no
+	random = no
+}

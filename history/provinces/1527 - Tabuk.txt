@@ -1,0 +1,14 @@
+# County Title
+title = c_tabuk
+# Settlements
+max_settlements = 4
+b_mariyiat = castle
+b_duba = city
+b_tabuk = temple
+# Misc
+culture = bedouin_arabic
+religion = miaphysite
+867.1.1 = { religion = sunni }
+################################################################################
+# 1527 - Tabuk
+################################################################################

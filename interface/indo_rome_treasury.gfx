@@ -1,0 +1,165 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_indoroman_portrait_decent"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_portrait_decent.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_portrait_decent_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_portrait_decent_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_indoroman_portrait_lowquality"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_portrait_lowquality.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_portrait_lowquality_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_portrait_lowquality_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_indoroman_portrait_mastercraft"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_portrait_mastercraft.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_portrait_mastercraft_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_portrait_mastercraft_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_indoroman_spatha"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_spatha.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_spatha_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_spatha_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_indoroman_mastercraft_spatha"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_mastercraft_spatha.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_mastercraft_spatha_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_mastercraft_spatha_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_indoroman_cold_spatha"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_cold_spatha.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_cold_spatha_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_cold_spatha_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_indoroman_traitor_spatha"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_traitor_spatha.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_traitor_spatha_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_traitor_spatha_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_indoroman_jack_spatha"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_jack_spatha.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_jack_spatha_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_jack_spatha_small.dds"
+	}
+
+	spriteType = {
+		name = "GFX_indoroman_lamellar"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_lamellar.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_lamellar_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_lamellar_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_indoroman_lamellar_walakrios"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_lamellar_walakrios.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_lamellar_walakrios_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_lamellar_walakrios_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_indoroman_lamellar_dragonbreaker"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_lamellar_dragonbreaker.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_lamellar_dragonbreaker_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_lamellar_dragonbreaker_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_indoroman_lamellar_dusty"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_lamellar_dusty.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_lamellar_dusty_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_lamellar_dusty_small.dds"
+	}
+	
+	
+	spriteType = {
+		name = "GFX_indoroman_lamellar_celestial"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_lamellar_celestial.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_lamellar_celestial_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_lamellar_celestial_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_indoroman_hybrid_armor"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_hybrid_armor.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_hybrid_armor_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_hybrid_armor_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_muramarius"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\muramarius.dds"
+	}
+	spriteType = {
+		name = "GFX_muramarius_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\muramarius_small.dds"
+	}
+	
+		spriteType = {
+		name = "GFX_indoroman_dragonseeker_spatha"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_dragonseeker_spatha.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_dragonseeker_spatha_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_dragonseeker_spatha_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_indoroman_stormdivider_spatha"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_stormdivider_spatha.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_stormdivider_spatha_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_stormdivider_spatha_small.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_indoroman_toothpick_of_annihilation"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_toothpick_of_annihilation.dds"
+	}
+	spriteType = {
+		name = "GFX_indoroman_toothpick_of_annihilation_small"
+		texturefile = "gfx\\interface\\inventory\\artifacts\\indoroman_toothpick_of_annihilation_small.dds"
+	}
+
+}

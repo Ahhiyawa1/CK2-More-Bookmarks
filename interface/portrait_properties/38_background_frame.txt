@@ -1,0 +1,161 @@
+# p38 Background window frames.
+38 = {
+	0 = { # 0 - blank
+		factor = 5
+
+		modifier = {
+			factor = 100
+			NOR = {
+				is_landed = yes
+				spouse = { is_landed = yes }
+				blg_animal_falcon = yes
+				blg_animal_boar = yes
+				blg_animal_ape = yes
+				blg_animal_vulture = yes
+			}
+		}
+
+		modifier = {
+			factor = 100
+			OR = {
+				is_alive = no
+				NOT = { host = { at_location = ROOT } }
+				in_command = yes
+				trait = in_hiding
+				blg_travelling = yes
+			}
+		}
+	}
+
+	1 = { # a - Wooden window
+		factor = 2
+		trigger = {
+			is_nomadic = no
+		}
+	}
+
+	2 = { # b - Stone window
+		factor = 2
+		trigger = {
+			capital_holding = {
+				OR = {
+					holding_type = castle
+					holding_type = city
+					holding_type = temple
+					holding_type = family_palace
+				}
+			}
+		}
+	}
+
+	3 = { # c - Stone window
+		factor = 2
+		trigger = {
+			capital_holding = {
+				OR = {
+					holding_type = castle
+					holding_type = city
+					holding_type = temple
+					holding_type = family_palace
+				}
+			}
+		}
+	}
+
+	4 = { # d - Tent window
+		factor = 2
+		trigger = {
+			capital_scope = {
+				blg_region_europe = no
+			}
+		}
+	}
+
+	5 = { # e - Stone window
+		factor = 2
+		trigger = {
+			capital_holding = {
+				OR = {
+					holding_type = castle
+					holding_type = city
+					holding_type = temple
+					holding_type = family_palace
+				}
+			}
+		}
+	}
+
+	6 = { # f - Glass window
+		factor = 1
+		trigger = {
+			OR = {
+				higher_real_tier_than = count
+				spouse = { higher_real_tier_than = count }
+			}
+			capital_holding = {
+				OR = {
+					holding_type = city
+					holding_type = temple
+					holding_type = family_palace
+				}
+			}
+		}
+	}
+
+	7 = { # g - Grated window
+		factor = 1
+		trigger = {
+			OR = {
+				higher_real_tier_than = count
+				spouse = { higher_real_tier_than = count }
+			}
+			capital_holding = {
+				OR = {
+					holding_type = castle
+					holding_type = city
+					holding_type = temple
+					holding_type = family_palace
+				}
+			}
+			capital_scope = {
+				blg_region_muslim = yes
+			}
+		}
+	}
+
+	8 = { # h - Falcon
+		factor = 10
+		trigger = {
+			blg_animal_falcon = yes
+
+			blg_artifact_rule = yes
+		}
+	}
+
+	9 = { # i - Boar
+		factor = 50
+		trigger = {
+			blg_animal_boar = yes
+
+			blg_artifact_rule = yes
+		}
+	}
+
+	10 = { # j - Ape
+		factor = 50
+		trigger = {
+			blg_animal_ape = yes
+
+			blg_artifact_rule = yes
+		}
+	}
+
+	11 = { # k - Vulture
+		factor = 50
+		trigger = {
+			blg_animal_vulture = yes
+
+			blg_artifact_rule = yes
+		}
+	}
+}

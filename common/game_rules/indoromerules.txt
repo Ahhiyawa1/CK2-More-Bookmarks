@@ -1,0 +1,60 @@
+indo_rome_name = {
+	name = indoromename
+    group = "RULE_GROUP_INDO_ROME"
+	option = {
+		name = indoromenamedefault
+		text = "indoromenamedefault_text"
+		desc = "indoromenamedefault_desc"
+	}
+	option = {
+		name = indoromenamesaegoria
+		text = "indoromenamesaegoria_text"
+		desc = "indoromenamesaegoria_desc"
+	}
+	option = {
+		name = indoromenamevietia
+		text = "indoromenamevietia_text"
+		desc = "indoromenamevietia_desc"
+	}
+	option = {
+		name = indoromenameindia
+		text = "indoromenameindia_text"
+		desc = "indoromenameindia_desc"
+	}
+	option = {
+		name = indoromenameyindu
+		text = "indoromenameyindu_text"
+		desc = "indoromenameyindu_desc"
+	}
+	option = {
+		name = indoromenamejustrome
+		text = "indoromenamejustrome_text"
+		desc = "indoromenamejustrome_desc"
+	}
+	option = {
+		name = indoromenamebigredblob
+		text = "indoromenamebigredblob_text"
+		desc = "indoromenamebigredblob_desc"
+	}
+	option = {
+		name = indoromenameromalan
+		text = "indoromenameromalan_text"
+		desc = "indoromenameromalan_desc"
+	}
+}
+
+indo_rome_wild_ride = {
+	name = indoromewildride
+    group = "RULE_GROUP_INDO_ROME"
+	option = {
+		name = indoromewildridedefault
+		text = "indoromewildridedefault_text"
+		desc = "indoromewildridedefault_desc"
+	}
+	
+	option = {
+		name = indoromewildrideyeehaw
+		text = "indoromewildrideyeehaw_text"
+		desc = "indoromewildrideyeehaw_desc"
+	}
+}

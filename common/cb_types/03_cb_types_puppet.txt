@@ -1,0 +1,134 @@
+puppet_war = {
+	name = CB_NAME_FUCK_YOU_PUPPET
+	war_name = WAR_NAME_FUCK_YOU_PUPPET
+  	sprite = 8
+	truce_days = 3650
+	hostile_against_others = yes
+	full_hostility = yes
+	capturing_defender_is_complete_victory = yes
+	is_permanent = yes
+	allow_distant = yes
+	can_ask_to_join_war = yes
+	defender_can_call_allies = yes
+	
+	allowed_to_target_tributaries = no
+	allowed_to_target_suzerains = no
+
+	can_use_gui = {
+		ROOT = {
+			higher_tier_than = DUKE
+		}
+	}
+	
+
+	can_use = {
+		ROOT = {
+			independent = yes
+			primary_title = { higher_tier_than = DUKE }
+			NOT = { same_realm = FROM }
+			mercenary = no
+			NOT = { is_liege_or_above = FROM }
+		}
+		FROM = { 
+			higher_tier_than = BARON
+		}
+		OR = { 
+			FROM = { NOT = { higher_tier_than = DUKE } }
+			AND = {
+				FROM = { tier = KING }
+				ROOT = { tier = EMPEROR }
+				}
+			}
+		}
+	
+	is_valid = {
+			FROM = { higher_tier_than = BARON }
+	}
+	
+
+	on_success = {
+		FROM = { 
+			prestige = -200
+		}	
+		ROOT = { 
+			make_tributary = { who = FROM tributary_type = puppet }
+		}
+		ROOT = {
+			prestige = 300
+			piety = 100
+		}
+		any_attacker = {
+			limit = { character = ROOT }
+			participation_scaled_prestige = 200	
+		}
+		any_attacker = {
+			limit = { NOT = { character = ROOT } }
+			hidden_tooltip = { 
+				participation_scaled_prestige = 200
+			}
+		}
+		FROM = {
+			prestige = -200
+		}
+	}
+	
+
+	on_fail = {
+		FROM = {
+			prestige = 300
+		}
+		any_defender = {
+			limit = { character = FROM }
+			participation_scaled_prestige = 100
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { participation_scaled_prestige = 100 }
+		}
+		ROOT = {
+			prestige = -500
+		}
+	}
+
+	on_reverse_demand = {
+		ROOT = {
+			prestige = -200
+			transfer_scaled_wealth = {
+				to = FROM
+				value = 2.0
+			}
+		}
+		FROM = {
+			prestige = 500
+			piety = 150
+		}
+		any_defender = {
+			limit = { character = FROM }
+			participation_scaled_prestige = 200
+		}
+		any_defender = {
+			limit = { NOT = { character = FROM } }
+			hidden_tooltip = { participation_scaled_prestige = 200 }
+		}
+	}
+
+	attacker_ai_victory_worth = {
+		factor = 100
+	}
+	
+	attacker_ai_defeat_worth = {
+		factor = 100
+	}
+
+	defender_ai_victory_worth = {
+		factor = -1 # always accept
+	}
+	
+	defender_ai_defeat_worth = {
+		factor = 150
+	}
+	
+	ai_will_do = { 
+		factor = 0
+	}
+}
